@@ -1,0 +1,4 @@
+http://cnokello.blogspot.jp/2012/08/hibernate-spatial-4x-with-spring-31x.html
+http://mikedolding.blogspot.jp/2012/05/spatial-queries-with-spring-hibernate.html
+ import com.vividsolutions.jts.geom.Geometry;  
+http://postgis.net/docs/manual-1.4/ch05.html

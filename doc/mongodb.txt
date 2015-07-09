@@ -1,0 +1,43 @@
+配置服务器，存储所有数据库元信息（路由、分片）的配置   mongod --configsvr
+mongos服务器，路由器，请求代理    mongos  --configdb  
+分片的副本集  mongod --shardsvr --replSet
+mongos配置信息 db.runCommand( { addshard : "shard1/192.168.0.136:22001,192.168.0.137:22001,192.168.0.138:22001"});
+指定testdb分片生效 db.runCommand( { enablesharding :"testdb"});
+指定数据库里需要分片的集合和片键  db.runCommand( { shardcollection : "testdb.table1",key : {id: 1} } )
+
+
+http://www.lanceyan.com/tech/mongodb_repset2.html
+MongDB副本集故障转移功能得益于它的选举机制。选举机制采用了Bully算法，可以很方便从分布式节点中选出主节点。
+Bully算法是一种协调者(主节点)竞选算法，主要思想是集群的每个成员都可以声明它是主节点并通知其他节点。别的节点可以选择接受这个声称或是拒绝并进入主节点竞争。被其他所有节点接受的节点才能成为主节点。节点按照一些属性来判断谁应该胜出。这个属性可以是一个静态ID，也可以是更新的度量像最近一次事务ID(最新的节点会胜出)。详情请参考 NoSQL数据库分布式算法的协调者竞选还有 维基百科的解释。
+得到每个服务器节点的最后操作时间戳。每个MongDB都有oplog机制记录本机操作，方便和主服务器进行对比数据是否同步还可以用于错误恢复。
+如果集群中大部分服务器down机了，保留活着的节点都为secondary状态并停止，不选举了。
+如果集群中选举出来的主节点或者所有从节点最后一次同步时间看起来很旧，停止选举等待人来操作。
+如果上面都没有问题就选择最后操作时间戳最新(保证数据是最新的)的服务器节点作为主节点。
+
+整个集群需要保持一定的通信才能知道哪些节点活着哪些节点挂掉。mongodb节点会向副本集中的其他节点每两秒就会发送一次pings包，如果其他节点在10秒钟之内没有返回就标示为不能访问。每个节点内部都会维护一个状态映射表，表明当前每个节点是什么角色、日志时间戳等关键信息。如果是主节点，除了维护映射表外还需要检查自己能否和集群中内大部分节点通讯，如果不能则把自己降级为secondary只读节点。
+oplog保存了数据的操作记录，secondary复制oplog并把里面的操作在secondary执行一遍。但是oplog也是mongodb的一个集合，保存在local.oplog.rs里，但是这个oplog是一个capped collection也就是固定大小的集合，新数据加入超过集合的大小会覆盖。所以这里需要注意，跨IDC的复制要设置合适的oplogSize，避免在生产环境经常产生全量复制。oplogSize 可以通过–oplogSize设置大小
+
+http://www.lanceyan.com/tech/mongodb/mongodb_cluster_1.html
+http://www.lanceyan.com/tech/mongodb/mongodb_repset1.html
+
+设置读写分离需要先在副本节点SECONDARY 设置 setSlaveOk。
+primary:默认参数，只从主节点上进行读取操作；
+primaryPreferred:大部分从主节点上读取数据,只有主节点不可用时从secondary节点读取数据。
+secondary:只从secondary节点上进行读取操作，存在的问题是secondary节点的数据会比primary节点数据“旧”。
+secondaryPreferred:优先从secondary节点进行读取操作，secondary节点不可用时从主节点读取数据；
+nearest:不管是主节点、secondary节点，从网络延迟最低的节点上读取数据。
+
+仲裁节点不存储数据，只是负责故障转移的群体投票，这样就少了数据复制的压力。其实不只是主节点、副本节点、仲裁节点，还有Secondary-Only、Hidden、Delayed、Non-Voting。
+Secondary-Only:不能成为primary节点，只能作为secondary副本节点，防止一些性能不高的节点成为主节点。
+Hidden:这类节点是不能够被客户端制定IP引用，也不能被设置为主节点，但是可以投票，一般用于备份数据。
+Delayed：可以指定一个时间延迟从primary节点同步数据。主要用于备份数据，如果实时同步，误删除数据马上同步到从节点，恢复又恢复不了。
+Non-Voting：没有选举权的secondary节点，纯粹的备份数据节点。
+
+http://www.lanceyan.com/tech/arch/mongodb_shard1.html
+mongos，数据库集群请求的入口，所有的请求都通过mongos进行协调，不需要在应用程序添加一个路由选择器，mongos自己就是一个请求分发中心，它负责把对应的数据请求请求转发到对应的shard服务器上。
+config server，顾名思义为配置服务器，存储所有数据库元信息（路由、分片）的配置。mongos本身没有物理存储分片服务器和数据路由信息，只是缓存在内存里，配置服务器则实际存储这些数据。mongos第一次启动或者关掉重启就会从 config server 加载配置信息
+
+ 
+http://blog.csdn.net/luonanqin/article/details/9107609
+http://blog.csdn.net/luonanqin/article/details/8497860  mongodb集群
+http://my.oschina.net/costaxu/blog/196980

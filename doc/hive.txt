@@ -1,0 +1,117 @@
+打开调试模式： hive -hiveconf hive.root.logger=DEBUG,console   http://blog.csdn.net/hadoop_/article/details/11538201
+或者在${HIVE_HOME}/conf/hive-log4j.properties文件中找到hive.root.logger属性，并将其修改为下面的设置hive.root.logger=DEBUG,console
+
+http://m.blog.csdn.net/blog/sky_walker85/38366347
+在使用 JDBC 开发 Hive 程序时,  必须首先开启 Hive 的远程服务接口Thrift Server。使用下面命令进行开启:hive -service hiveserver &
+hive --service hiveserver -p 10002  ###Starting Hive Thrift Server
+Class.forName("org.apache.hadoop.hive.jdbc.HiveDriver");   HiveServer使用的JDBC驱动类为org.apache.hadoop.hive.jdbc.HiveDriver，而HiveServer2使用的驱动类为org.apache.hive.jdbc.HiveDriver。
+Connection conn = DriverManager.getConnection("jdbc:hive://localhost:10000/default","","");
+
+http://www.cnblogs.com/linjiqin/archive/2013/03/07/2947848.html
+http://www.iteblog.com/archives/846   hiveserver2   maven
+hive --service hiveserver2 --hiveconf hive.server2.thrift.port=10001
+HWI：为Web接口，可以用过浏览器访问Hive，默认端口9999，启动方式为bin/hive --service hwi;
+jar cvfM0 hive-hwi.war -C web/ . 
+拷贝tools.jar 到hive/lib/
+http://www.open-open.com/lib/view/open1433318284791.html
+
+Hive的默认数据仓库目录是/user/hive/warehouse，在hive-site.xml中由hive.metastore.warehouse.dir项定义
+http://pisxw.com/project/Hive%20%E6%8E%A5%E5%8F%A3%E4%BB%8B%E7%BB%8D.html     Hive 接口介绍（Web UI/JDBC）
+
+http://88cto.com/997447/article/details/32399.html
+ <name>hive.server2.thrift.port</name>  http://blog.csdn.net/czw698/article/details/44394923
+
+
+Hive中我们是可以指定输入文件的解析器(SerDe)的，并且在Hive中内置了一个org.apache.hadoop.hive.contrib.serde2.RegexSerDe正则解析器
+ROW FORMAT SERDE 'org.apache.hadoop.hive.contrib.serde2.RegexSerDe' WITH SERDEPROPERTIES  ( 'input.regex' = '([^ ]*) ([^ ]*) ([^ ]*)',  'output.format.string' = '%1$s %2$s %3$s')  正则表达式为([^ ]*) ([^ ]*) ([^ ]*)，实际上就是按空格分割。
+http://blog.csdn.net/wyc09/article/details/20036917?utm_source=tuicool
+
+ROW FORMAT DELIMITED  FIELDS TERMINATED BY '\t'STORED AS TEXTFILE;  
+其中，hive支持的字段类型并不多，可以简单的理解为数字类型和字符串类型，详细列表如下：  TINYINT  SMALLINT  INT  BIGINT  BOOLEAN  FLOAT  DOUBLE  STRING  
+
+Hive中，默认使用的是TextInputFormat，一行表示一条记录。在每条记录(一行中)，默认使用^A分割各个字段。
+SerDe is a short name for “Serializer and Deserializer.”
+Hive uses SerDe (and !FileFormat) to read and write table rows.
+HDFS files –> InputFileFormat –> <key, value> –> Deserializer –> Row object
+Row object –> Serializer –> <key, value> –> OutputFileFormat –> HDFS files
+
+http://www.coder4.com/archives/4031    Hive中的InputFormat、OutputFormat与SerDe
+ROW FORMAT SERDE 'com.coder4.hive.MySerDe'
+STORED AS
+  INPUTFORMAT 'com.coder4.hive.DocFileInputFormat'
+  OUTPUTFORMAT 'com.coder4.hive.DocFileOutputFormat'
+InputFormat。这项元信息是一个实现了Hadoop的数据输入接口（org.apache.hadoop.mapred.InputFormat）的Java类的名称。该实现类将来自外部数据源的数据转换成一系列的Key-Value对，这些Key-Value对的Value部分在后面被Hive用来生成记录。
+SerDe。这项元信息是一个实 现了Hive中的org.apache.hadoop.hive.serde2.SerDe接口的Java类的名称。Hive从InputFormat获得的各个Key-Value对的Value部分是原始的Writable对象。而由SerDe指定的Java类负责将这些Writable对象转换成可在Hive内部处理的记录（Row），还负责将记录（Row）还原为原始的Writable对象。
+OutputFormat。这项元信息是一个实现了Hadoop的数据输出接口（org.apache.hadoop.mapred.OutputFormat）的Java类的名称。从记录（Row）还原而来的Writable对象被进一步封装成Key-Value对，然后经过OutputFormat指定的Java类输出到外部数据源。
+
+
+http://blog.csdn.net/hguisu/article/details/18986759
+http://blog.csdn.net/hguisu/article/details/18986759
+
+http://blog.csdn.net/jiedushi/article/details/8609019
+http://blog.csdn.net/sutine/article/details/5653137
+http://www.rigongyizu.com/hive-install-configuration/
+大部分利用hive做数据分析的步骤是先用hive将统计结果导出到本地文件或者Hive的其他表中，再将本地文件导入到mysql或者利用sqoop将Hive表导入到mysql中。推荐了一个利用udf函数直接将统计结果导入mysql的方法。
+
+这些日志分布在 5 台前端机，按小时保存，并以小时为周期定时将上一小时产生的数据同步到日志分析机，统计数据要求按小时更新。这些统计项，包括关键词搜索量 pv ，类别访问量，每秒访问量 tps 等等。
+基于 hive ，我们将这些数据按天为单位建表，每天一个表，后台脚本根据时间戳将每小时同步过来的 5 台前端机的日志数据合并成一个日志文件，导入 hive 系统，每小时同步的日志数据被追加到当天数据表中，导入完成后，当天各项统计项将被重新计算并输出统计结果。
+
+
+http://blog.csdn.net/cnbird2008/article/details/18967449   Flume-NG + HDFS + HIVE 日志收集分析
+http://m.blog.csdn.net/blog/w397090770/19810085  Hive几种数据导入方式
+log4j.appender.flume = org.apache.flume.clients.log4jappender.Log4jAppender
+http://blog.csdn.net/xiao_jun_0820/article/details/37876773
+
+http://blog.csdn.net/zxcvg/article/details/18600335/
+
+http://www.cnblogs.com/lxf20061900/p/3866252.html?utm_source=tuicool
+
+
+http://edwin.baculsoft.com/2013/05/how-to-compress-log4j-s-log-file/
+http://flysnowxf.iteye.com/blog/1030504
+<artifactId>apache-log4j-extras</artifactId>  org.apache.log4j.rolling.TimeBasedRollingPolicy  org.apache.log4j.rolling.FilterBasedTriggeringPolicy
+org.apache.flume.clients.log4jappender.Log4jAppender   flume-ng-sdk in the classpath (eg, flume-ng-sdk-1.6.0.jar)  https://flume.apache.org/FlumeUserGuide.html
+
+http://shiyanjun.cn/archives/915.html  Flume(NG)架构设计要点及配置实践
+agent1.sources.spool-source1.type = spooldir
+agent1.sources.spool-source1.spoolDir = /home/shirdrn/data/
+agent1.sources.spool-source1.ignorePattern = event(_\d{4}\-\d{2}\-\d{2}_\d{2}_\d{2})?\.log(\.COMPLETED)?
+
+http://nullpoint.iteye.com/blog/2004829  tomcat日志分割
+
+http://my.oschina.net/leejun2005/blog/288136  flume
+http://www.db2china.net/home/space.php?uid=157175&do=blog&id=33753  Hadoop周边生态软件和简要工作原理
+
+http://danqingdani.blog.163.com/blog/static/186094195201541110573363/
+通俗理解：Hive管理HDFS中存储的数据，并提供基于SQL的查询语言
+开发本质：Hive被设计为用MapReduce操作HDFS数据.
+（1）元数据存储：Hive将元数据存储在RDBMS中，如Derby，MySQL
+客户端利用Thrift协议通过MetaStoreServer来访问元数据库
+（2）数据存储：hive中所有的数据都存储在HDFS中，大部分的查询由MapReduce完成。用户可以非常自由地组织Hive中的表，只需要在创建表的时候告诉Hive数据中的列分割符和行分隔符就能解析数据。
+
+
+http://www.huyanping.cn/flumehive%E5%A4%84%E7%90%86%E6%97%A5%E5%BF%97/
+https://github.com/brockn/avro-flume-hive-example
+http://blog.csdn.net/daniel_ustc/article/details/12795627  hive 集成hbase 笔记
+http://www.micmiu.com/bigdata/hive/hive-hbase-integration/
+
+http://hortonworks.com/blog/hbase-via-hive-part-1/
+Use the HBaseStorageHandler to register HBase tables with the Hive metastore.
+Under the hood, HBaseStorageHandler is delegating interaction with the HBase table to HiveHBaseTableInputFormat and HiveHBaseTableOutputFormat.
+
+http://blog.cheyo.net/100.html  Sqoop从MySQL导出数据到Hive和HBase(1.4.5)
+
+
+Hive数据迁移
+1.导出表  EXPORT TABLE <table_name> TO 'path/to/hdfs';
+2.复制数据到另一个hdfs   hadoop distcp hdfs://:8020/path/to/hdfs hdfs:///path/to/hdfs
+3.导入表  IMPORT TABLE <table_name> FROM 'path/to/another/hdfs';
+
+
+http://blog.itpub.net/28598517/viewspace-769714/
+CREATE TABLE t_hive (a int, b int, c int) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t';
+LOAD DATA LOCAL INPATH '/home/dev/t_hive.txt' OVERWRITE INTO TABLE t_hive ;
+
+日志分析
+http://m.blog.csdn.net/blog/loloxiaoz3/17263219
+http://787141854-qq-com.iteye.com/blog/2068365

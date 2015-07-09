@@ -1,0 +1,44 @@
+ruby -run -e httpd . -p 9090
+
+python -m SimpleHTTPServer 8080 #不指定端口默认为8000  
+sudo netstat -anp
+free -m表示单位为MB
+
+sudo /etc/init.d/mysql restart   /etc/mysql/my.cnf文件中使用bind-address=127.0.0.1绑定了本地地址，将这句注释掉就可以了
+
+curl -v localhost:8080/todos -H "Authorization: Bearer $token"
+curl -v -X DELETE localhost:8080/todos/1 -H "Authorization: Bearer $token"
+
+
+wget -qO- https://raw.github.com/ma6174/vim/master/setup.sh | sh
+
+http://showlike.iteye.com/blog/1680034   Jrebel 基于TOMCAT实现项目修改热部署
+
+
+sublime text
+import urllib2,os; pf='Package Control.sublime-package'; ipp = sublime.installed_packages_path(); os.makedirs( ipp ) if not os.path.exists(ipp) else None; urllib2.install_opener( urllib2.build_opener( urllib2.ProxyHandler( ))); open( os.path.join( ipp, pf), 'wb' ).write( urllib2.urlopen( 'http://sublime.wbond.net/' +pf.replace( ' ','%20' )).read()); print( 'Please restart Sublime Text to finish installation')
+在Sublime Text 2中可以非常快速地切换到想找的文件，只需要通过”Ctrl+P“打开切换面板即可。
+然后输入想找的文件名称就可以快速找切换到该文件了。如果想要找函数，可以通过输入”@+函数名“可以快速切换到定义该函数的文件。
+离线安装，先下载好安装包，解压之后放到Packages文件夹下，重启Sublime即可。
+http://www.cnblogs.com/figure9/p/sublime-text-complete-guide.html
+https://github.com/is00hcw/vim
+https://github.com/is00hcw/vim-1
+https://github.com/is00hcw/vim-2
+
+
+速读的关键是找重点。帕累托法则告诉我们：重点的东西只是少数，占大约20%左右，但不绝对。
+http://www.cnblogs.com/figure9/p/lean-technical-resume.html
+http://zh.lucida.me/blog/english-for-programmers/
+http://www.cnblogs.com/figure9/archive/2013/01/09/2853649.html
+http://www.cnblogs.com/figure9/p/3708351.html
+http://www.cnblogs.com/figure9/p/3563869.html
+http://stevewedig.com/2014/02/03/software-developers-reading-list/
+
+http://blog.csdn.net/yohoph/article/details/10112161   浏览器远程调试
+http://segmentfault.com/blog/humphry/1190000000313211
+
+windows 7
+Shift+ 鼠标右键 – 增强版右键发送到
+Shift + 右键 – 在当前文件夹用命令行打开
+Win+ 上/下/左/右 – 移动当前激活窗口 其中，Win +左/右 为移动窗口到屏幕两边，占半屏，Win + 上 为最大化当前窗口，下为恢复当前窗口
+Ctrl + Shift + Esc – 快速打开 Windows 任务管理器

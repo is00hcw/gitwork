@@ -1,0 +1,6 @@
+http://h5bp.github.io/Effeckt.css/#0
+https://github.com/daneden/animate.css
+http://www.leiphone.com/news/201406/0705-warlial-dynamiceffects.html
+http://codegeekz.com/15-best-javascript-animation-libraries-for-developers/
+
+http://tristanedwards.me/sweetalert

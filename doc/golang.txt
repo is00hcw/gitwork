@@ -1,0 +1,121 @@
+﻿http://bigasp.com/archives/594  golang
+
+http://www.iamle.com/archives/1537.html
+http://learnxinyminutes.com/docs/go/
+
+http
+http://www.cnblogs.com/yjf512/archive/2012/06/18/2554066.html
+
+mqtt
+https://github.com/huin/mqtt
+https://github.com/surgemq/surgemq
+
+热部署
+http://www.fising.cn/2014/10/golang-web-%E7%83%AD%E5%8D%87%E7%BA%A7%E6%96%B9%E6%A1%88%E7%A0%94%E7%A9%B6.shtml
+
+https://www.zybuluo.com/NickYu/note/58572  mysql
+https://www.zybuluo.com/NickYu/note/61130  redis
+http://1.guotie.sinaapp.com/?p=400  json
+
+
+http://www.w3hacker.com/?p=1761
+http://www.w3hacker.com/?p=1753
+
+http://tonybai.com/2012/08/14/getting-going-with-go/
+http://www.hellogcc.org/effective_go.html  effective go
+godoc -http=:8000
+https://gowalker.org/
+
+
+同一个目录中所有的go文件的package声明必须相同，所以main方法要单独放一个文件，否则在eclipse和liteide中都会报错
+GOPATH=工程根目录；其下应创建src，pkg，bin目录，bin目录中用于生成可执行文件，pkg目录中用于生成.a文件；golang中的import name，实际是到GOPATH中去寻找name.a
+go install会依次查找所有GOPATH中的目录寻找包和它依赖包。然后会将报名为main的包生成二进制文件放到GOBIN目录下。将非main包编译成.a文件放到项目对于的pkg目录下。
+go install 会自动检测代码更新，如果有变化则重新编译。如果要更详细知道这个过程，可以加上-x参数，这个参数会输出go install过程中实际执行的命令。
+对于其他文件夹下的依赖包，如果发现存在.a文件，则不会再重新编译。 使用 -a 参数。go install -a强制更新所有的依赖包，包括Go内置的包。这个方案最简单可靠，不过编译时间会稍长。
+http://www.golangtc.com/download/package  安装第三方
+
+http://ju.outofmemory.cn/entry/87147
+http://ju.outofmemory.cn/entry/95417
+go get github.com/go-sql-driver/mysql
+go get github.com/garyburd/redigo/redis
+
+类库
+https://github.com/avelino/awesome-go
+https://github.com/is00hcw/gopkg
+
+----------------------
+http://www.codeceo.com/article/go-ppt-for-java-programmer.html
+http://devs.cloudimmunity.com/gotchas-and-common-mistakes-in-go-golang/  50 mistake
+http://blog.xiayf.cn/2015/05/20/fundamentals-of-concurrent-programming/
+
+vsf := make([]string, 0)
+vsf = append(vsf, v)
+
+match, _ := regexp.MatchString("p([a-z]+)ch", "peach")
+r, _ := regexp.Compile("p([a-z]+)ch")
+
+var dat map[string]interface{}
+if err := json.Unmarshal(byt, &dat); err != nil 
+strs := dat["strs"].([]interface{})
+
+res := &Response2{}
+json.Unmarshal([]byte(str), &res)
+enc := json.NewEncoder(os.Stdout)
+
+atomic.AddUint64(&ops, 1)
+opsFinal := atomic.LoadUint64(&ops)  // import "sync/atomic"
+
+var mutex = &sync.Mutex{}
+mutex.Lock()
+mutex.Unlock()
+
+time.Sleep(time.Second)
+runtime.Gosched()  // This yielding is handled automatically with e.g. every channel operation and for blocking calls like time.Sleep
+
+import "crypto/sha1"
+h := sha1.New()
+h.Write([]byte(s))
+bs := h.Sum(nil)
+
+sEnc := b64.StdEncoding.EncodeToString([]byte(data))  // import b64 "encoding/base64"
+sDec, _ := b64.StdEncoding.DecodeString(sEnc)
+fmt.Println(string(sDec))
+uEnc := b64.URLEncoding.EncodeToString([]byte(data))
+
+strconv.ParseInt("123", 0, 64)   //import "strconv"
+rand.Intn(100)    //import "math/rand"
+
+strs := []string{"c", "a", "b"}   // import "sort"
+sort.Strings(strs)
+sort.Ints(ints)
+
+s.Join([]string{"a", "b"}, "-")  //import s "strings"
+fmt.Printf("%#v\n", p)
+fmt.Printf("|%-6.2f|%-6.2f|\n", 1.2, 3.45)
+s := fmt.Sprintf("a %s", "string")
+fmt.Fprintf(os.Stderr, "an %s\n", "error")
+
+time.Sleep(time.Duration(rand.Intn(100)) * time.Millisecond)
+timeout := time.After(80 * time.Millisecond)
+case <-timeout:
+
+nanos := now.UnixNano()
+
+defer func() {
+    if r := recover(); r != nil {
+      fmt.Println("Recovered in f", r)
+    }
+  }()
+
+http.HandleFunc("/search", handleSearch)
+log.Fatal(http.ListenAndServe("localhost:8080", nil))
+query := req.FormValue("q")
+http.Error(w, `missing "q" URL parameter`, http.StatusBadRequest)
+
+
+u, err := url.Parse("https://ajax.googleapis.com/ajax/services/search/web?v=1.0")
+q := u.Query()
+q.Set("q", query)
+u.RawQuery = q.Encode()
+resp, err := http.Get(u.String())
+defer resp.Body.Close()

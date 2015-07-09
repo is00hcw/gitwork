@@ -1,0 +1,128 @@
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:oauth2="http://www.springframework.org/schema/security/oauth2"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+						http://www.springframework.org/schema/security/oauth2
+						http://www.springframework.org/schema/security/spring-security-oauth2-1.0.xsd
+						http://www.springframework.org/schema/security
+						http://www.springframework.org/schema/security/spring-security-3.2.xsd">
+
+	<http pattern="/oauth/token" create-session="stateless"
+		authentication-manager-ref="oauth2AuthenticationManager">
+		<intercept-url pattern="/oauth/token" access="IS_AUTHENTICATED_FULLY" />
+		<anonymous enabled="false" />
+		<http-basic entry-point-ref="oauth2AuthenticationEntryPoint" />
+		<custom-filter ref="clientCredentialsTokenEndpointFilter"		before="BASIC_AUTH_FILTER" />
+		<access-denied-handler ref="oauth2AccessDeniedHandler" />
+	</http>
+	
+	<http pattern="/json**" create-session="never"
+		entry-point-ref="oauth2AuthenticationEntryPoint"	access-decision-manager-ref="oauth2AccessDecisionManager">
+		<anonymous enabled="false" />
+		<intercept-url pattern="/json**" access="ROLE_ADMIN" />
+		<custom-filter ref="mobileResourceServer" before="PRE_AUTH_FILTER" />
+		<access-denied-handler ref="oauth2AccessDeniedHandler" />
+	</http>
+	
+	<http pattern="/admin**" create-session="never"
+		entry-point-ref="oauth2AuthenticationEntryPoint"	access-decision-manager-ref="oauth2AccessDecisionManager">
+		<anonymous enabled="false" />
+		<intercept-url pattern="/admin**" access="ROLE_ADMIN" />
+		<!-- <intercept-url pattern="/admin**" access="ROLE_ADMIN,SCOPE_READ" /> -->
+		<custom-filter ref="mobileResourceServer" before="PRE_AUTH_FILTER" />
+		<access-denied-handler ref="oauth2AccessDeniedHandler" />
+	</http>
+	
+	<http auto-config="true">
+		<!-- <intercept-url pattern="/json**" access="ROLE_ADMIN,ROLE_USER" /> 
+			<intercept-url pattern="/admin**" access="ROLE_ADMIN" /> -->
+		<form-login login-page="/" default-target-url="/"	authentication-failure-url="/?
+		login=error" />
+		<logout logout-success-url="/" />
+	</http>
+
+	<authentication-manager>
+		<authentication-provider>
+			<!-- <password-encoder hash="md5"> <salt-source user-property="email"/>	</password-encoder> -->
+			<jdbc-user-service data-source-ref="dataSource"
+				  users-by-username-query="select username, password, 1 from users where username = ?"
+				  authorities-by-username-query="select username, authority from authorities where username = ?" />
+				<!--  users-by-username-query="select username, password, 1 from user where username = ?"
+				  authorities-by-username-query="select username, r.role from user u left join role r on u.role_id=r.id where username = ?" />    -->
+		</authentication-provider>
+	</authentication-manager>
+
+	<!-- for spring oauth2 -->
+	<!-- <beans:bean id="tokenStore" 		class="org.springframework.security.oauth2.provider.token.store.InMemoryTokenStore" /> -->
+	<beans:bean id="tokenStore" class="org.springframework.security.oauth2.provider.token.store.JdbcTokenStore">
+        <beans:constructor-arg index="0" ref="dataSource"/>
+    </beans:bean>
+    
+	<beans:bean id="tokenServices"		class="org.springframework.security.oauth2.provider.token.DefaultTokenServices">
+		<beans:property name="supportRefreshToken" value="false" />
+		<beans:property name="accessTokenValiditySeconds" value="3600" />
+ 		<beans:property name="tokenStore" ref="tokenStore" />  
+
+<!-- jwt 
+		<beans:property name="tokenEnhancer" ref="jwtAccessTokenConverter" />
+		<beans:property name="tokenStore" ref="jwtTokenStore" />-->
+	</beans:bean>
+
+	<beans:bean id="jwtAccessTokenConverter" class="org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter"></beans:bean>
+	<beans:bean id="jwtTokenStore" class="org.springframework.security.oauth2.provider.token.store.JwtTokenStore">
+	 	<beans:constructor-arg index="0" ref="jwtAccessTokenConverter"/>
+	</beans:bean>
+	
+ 
+    <beans:bean id="clientDetailsService" class="org.springframework.security.oauth2.provider.client.JdbcClientDetailsService">
+        <beans:constructor-arg index="0" ref="dataSource"/>
+    </beans:bean>
+	<!-- <oauth2:client-details-service id="clientDetailsService">
+		<oauth2:client client-id="mobile_1"
+			authorities="ROLE_ADMIN"   
+			authorized-grant-types="client_credentials,password,authorization_code,refresh_token,implicit"  
+			secret="secret_1" scope="read,write,trust" />
+	</oauth2:client-details-service> -->
+		
+	
+	<beans:bean id="oauth2ClientDetailsUserService"		class="org.springframework.security.oauth2.provider.client.ClientDetailsUserDetailsService">
+		<beans:constructor-arg ref="clientDetailsService" />
+	</beans:bean>
+	<authentication-manager id="oauth2AuthenticationManager">
+		<authentication-provider user-service-ref="oauth2ClientDetailsUserService" />
+	</authentication-manager>
+
+	<oauth2:authorization-server
+		client-details-service-ref="clientDetailsService" token-services-ref="tokenServices"	user-approval-handler-ref="oauthUserApprovalHandler">
+		<oauth2:authorization-code />
+		<oauth2:implicit />
+		<oauth2:refresh-token />
+		<oauth2:client-credentials />
+		<oauth2:password />
+	</oauth2:authorization-server>
+
+	<beans:bean id="oauth2AuthenticationEntryPoint"		class="org.springframework.security.oauth2.provider.error.OAuth2AuthenticationEntryPoint" />
+
+	<beans:bean id="oauth2AccessDeniedHandler"		class="org.springframework.security.oauth2.provider.error.OAuth2AccessDeniedHandler" />
+	
+	<beans:bean id="oauthUserApprovalHandler"		class="org.springframework.security.oauth2.provider.approval.DefaultUserApprovalHandler" />
+
+	<beans:bean id="oauth2AccessDecisionManager"		class="org.springframework.security.access.vote.UnanimousBased">
+		<beans:constructor-arg>
+			<beans:list>
+				<beans:bean	class="org.springframework.security.oauth2.provider.vote.ScopeVoter" />
+				<beans:bean class="org.springframework.security.access.vote.RoleVoter" />
+				<beans:bean	class="org.springframework.security.access.vote.AuthenticatedVoter" />
+			</beans:list>
+		</beans:constructor-arg>
+	</beans:bean>
+	<oauth2:resource-server id="mobileResourceServer"	resource-id="mobile-resource" token-services-ref="tokenServices" />
+	<beans:bean id="clientCredentialsTokenEndpointFilter"		class="org.springframework.security.oauth2.provider.client.ClientCredentialsTokenEndpointFilter">
+		<beans:property name="authenticationManager" ref="oauth2AuthenticationManager" />
+	</beans:bean>
+	
+	<debug />
+	
+	<!-- http://localhost:8080/demo4ssh-security-oauth2/oauth/token?client_id=mobile_1&client_secret=secret_1&grant_type=password&username=zhangsan&password=123456 -->
+</beans:beans>

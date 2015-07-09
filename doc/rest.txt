@@ -1,0 +1,42 @@
+http://site.gizwits.com/document/m2m/openapi/
+http://www.yeelink.net/developer/apidoc/9
+http://wiki.yeelink.net/wiki/Yeelink_API_v1.1
+https://xively.com/dev/docs/api/security/oauth/
+
+http://www.ruanyifeng.com/blog/2014/05/restful_api.html  RESTful API 设计指南
+http://www.csdn.net/article/2013-06-13/2815744-RESTful-API
+http://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm
+https://developer.github.com/v3/
+http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
+
+
+
+http://howtodoinjava.com/2013/08/03/jax-rs-2-0-resteasy-3-0-2-final-client-api-example/?utm_source=tuicool
+http://frankruenagel.blogspot.sg/2014/01/file-upload-and-download-with-resteasy.html
+http://www.mkyong.com/webservices/jax-rs/restful-java-client-with-resteasy-client-framework/
+http://www.vogella.com/tutorials/REST/article.html#first_client
+http://examples.javacodegeeks.com/enterprise-java/rest/resteasy/json-example-with-resteasy-jackson/
+http://a3.mndcdn.com/image/upload/t_attachment/x8cjgapgcfh7wilnvtzy.pdf
+http://www.javaarm.cn/file/jboss/docs/docs.redhat.com/JBoss_Enterprise_Application_Platform-5-RESTEasy_Reference_Guide-en-US.pdf
+
+<dependency>
+    <groupId>org.jboss.resteasy</groupId>
+    <artifactId>resteasy-client</artifactId>
+    <version>3.0.2.Final</version>
+</dependency>
+<dependency>
+    <groupId>org.jboss.resteasy</groupId>
+    <artifactId>resteasy-multipart-provider</artifactId>
+    <version>3.0.2.Final</version>
+</dependency>
+And here is the client code:
+
+ResteasyClient client = new ResteasyClientBuilder().build();
+ResteasyWebTarget target = client.target("http://localhost:8080").path("path");
+MultipartFormDataOutput mdo = new MultipartFormDataOutput();
+mdo.addFormData("firstPart", new ByteArrayInputStream("firstContent".getBytes()), MediaType.TEXT_PLAIN_TYPE);
+mdo.addFormData("secondPart", new ByteArrayInputStream("secondContent".getBytes()), MediaType.TEXT_PLAIN_TYPE);
+GenericEntity<MultipartFormDataOutput> entity = new GenericEntity<MultipartFormDataOutput>(mdo) { };
+Response response = target.request().put(Entity.entity(entity, MediaType.MULTIPART_FORM_DATA_TYPE));
+response.close();
+

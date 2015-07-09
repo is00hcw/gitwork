@@ -1,0 +1,106 @@
+export CATALINA_OPTS="-server -Xss512k -Xms1024M -Xmx2400M -XX:MaxPermSize=180M -XX:PermSize=64M -XX:NewRatio=3 -XX:+CMSClassUnloadingEnabled -XX:CMSInitiatingOccupancyFraction=75 -XX:+UseConcMarkSweepGC -XX:+UseParNewGC  -XX:+DisableExplicitGC  -XX:ParallelGCThreads=4 -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -Xloggc:/data/vmlog/gc.log -XX:-HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/data/vmlog/java_pid<pid>.hprof -XX:+UseCMSCompactAtFullCollection -XX:CMSFullGCsBeforeCompaction=2 -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=8998 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -Djava.rmi.server.hostname=wyx.atsmart.net -Dcom.sun.management.jmxremote.local.only=false"
+https://github.com/chewiebug/GCViewer/wiki/Changelog
+
+protocol="org.apache.coyote.http11.Http11NioProtocol"
+org.apache.coyote.http11.Http11AprProtocol
+executor="tomcatThreadPool"
+
+http://pengranxiang.iteye.com/blog/1128905 apr
+
+　maxThreads="150"
+　　minSpareThreads="25"
+　　maxSpareThreads="75"
+　　enableLookups="false"
+　　acceptCount="100"
+　　debug="0"
+　　connectionTimeout="20000"
+　　disableUploadTimeout="true"
+
+
+http://tomcat.apache.org/tomcat-7.0-doc/config/http.html#NIO_specific_configuration
+http://www.slideshare.net/lovingprince58/tomcat-optimisation-performance-tuning
+Mar 28, 2014 3:59:04 PM org.apache.tomcat.util.net.NioSelectorPool getSharedSelector
+ JVM internally uses memory to run JVM itself. It consumes about 350~500mb.
+https://javamaster.wordpress.com/2013/03/13/apache-tomcat-tuning-guide/
+
+jvm  mem gc
+
+-XX:NewRatio=3 - the young generation will occupy 1/4 the overall heap
+-XX:NewSize - Size of the young generation at JVM init. Calculated automatically if you specify -XX:NewRatio
+-XX:MaxNewSize - The largest size the young generation can grow to (unlimited if this value is not specified at command line)
+http://europe.springone.com/dl/springone-amsterdam-2009/slides/MarkThomas_PerformanceTuningForApacheTomcat.pdf
+
+
+http://lib.sinaapp.com/js/jquery/1.8.2/jquery.min.js
+http://libs.baidu.com/jquery/1.8.2/jquery.min.js
+http://libs.useso.com/js/jquery/1.8.2/jquery.min.js
+
+ab -n 3000 -c 300 http://webapp.atsmart.io/app/m5/hello
+sudo apt-get install apache2-utils
+wget http://mirror.bit.edu.cn/apache/tomcat/tomcat-7/v7.0.59/bin/apache-tomcat-7.0.59.tar.gz
+
+redis   wget http://download.redis.io/releases/redis-2.8.9.tar.gz
+http://blog.csdn.net/wzzfeitian/article/details/42081999
+http://blog.csdn.net/wzzfeitian/article/details/42081933  command
+http://blog.csdn.net/wzzfeitian/article/details/42081969
+bind 127.0.0.1    SHUTDOWN SAVE 会强制让数据库执行保存操作
+redis-cli -h 192.168.1.103 -p 6379 
+http://peiqiang.net/2013/12/16/install-redislive.html  redis live
+
+http://www.ibm.com/developerworks/cn/linux/1304_caoyq_glances/  
+http://os.51cto.com/art/201312/425177.htm
+http://blog.csdn.net/a19881029/article/details/25025913  sql监控 P6Spy
+
+http://www.jiankongbao.com/labs/http
+目前国内提供监控服务的网站主要有：
+
+监控宝 http://www.jiankongbao.com/
+盛大云监控 http://cms.grandcloud.cn/
+阿里云监控 http://jiankong.aliyun.com/
+Webluker http://www.webluker.com/
+运行宝 http://www.yunxingbao.cn/
+
+http://www.rizhibao.com/faq.html  日志宝
+https://www.rizhiyi.com/docs/fastuse/upload.html  日志易
+http://www.blogjava.net/xmatthew/archive/2008/04/14/192450.html   tomcat access log
+apache clickstream
+
+http://psi-probe.googlecode.com/files/probe-2.3.3.zip
+https://github.com/javamelody/javamelody/releases
+<dependency>
+                <groupId>net.bull.javamelody</groupId>
+                <artifactId>javamelody-core</artifactId>
+                <version>1.55.0</version>
+        </dependency>
+
+http://zhongl.iteye.com/blog/1562235  housemd
+http://blog.hesey.net/2013/09/common-troubleshooting-tools-and-methods-on-java.html 
+ wget -O tsar.zip https://github.com/alibaba/tsar/archive/master.zip --no-check-certificate
+
+yum install munin munin-common munin-node
+yum install net-snmp net-snmp-libs net-snmp-utils
+net-snmp-config --create-snmpv3-user -ro -A snmp@jiankongbao -a MD5 jiankongbao
+以上命令，创建一个snmpv3用户，只读，使用MD5，用户名为jiankongbao，密码为snmp@jiankongbao。
+http://www.zijidelu.org/thread-7479-1-1.html
+http://wiki.jiankongbao.com/doku.php/%E6%96%87%E6%A1%A3:%E5%AE%89%E5%85%A8%E6%8C%87%E5%BC%95#linux_snmp
+在/etc/sysconfig/iptables添加
+-A INPUT -p udp -m state --state NEW -m udp -s 允许访问的IP --dport 161 -j ACCEPT
+vi /etc/crontab
+
+
+安装后，NGINX的网站目录位于：/usr/share/nginx/html
+NGINX的配置文件位于：/etc/nginx/ nginx.conf
+nginx -t              测试配置文件
+http://www.ttlsa.com/nginx/nginx-status-detail/  status 监控
+http://www.ttlsa.com/linux/the-nginx-log-configuration/  日志
+
+
+http://www.linux178.com/web/log4j.html
+http://my.oschina.net/jsan/blog/205669
+http://blog.csdn.net/tony_hychen/article/details/8512603    /usr/local/sbin/cronolog "$CATALINA_BASE"/logs/catalina.%Y-%m-%d_%H.out >> /dev/null &
+http://java.dzone.com/articles/how-rotate-tomcat-catalinaout   /etc/cron.hourly
+
+ wget http://cronolog.org/download/cronolog-1.6.2.tar.gz 
+grep  -C 10 'DC_D18712FE65379D64'    /data/software/tomcat-instance/tomcat-8081/logs/catalina.out
+grep  -C 10 'DC_D18712FE65379D64'    /data/software/tomcat/logs/catalina.out | grep -C 10 'PropertyControl'
+

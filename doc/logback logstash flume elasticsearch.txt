@@ -1,0 +1,67 @@
+﻿logback-test.xml 
+
+
+log collect
+http://jasonwilder.com/blog/2012/01/03/centralized-logging/
+http://jasonwilder.com/blog/2013/07/16/centralized-logging-architecture/
+Log4j本来一统江湖好好的，后来被人说方法上太多同步修饰符，在高并发下性能太烂
+
+
+wget https://download.elasticsearch.org/logstash/logstash/logstash-1.3.3-flatjar.jar
+wget 'http://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-1.4.3.tar.gz'
+curl -X GET http://localhost:9200/  测试elasticsearch
+直接到 elasticsearch data文件夹里删掉就行
+ curl -X DELETE 'http://172.16.1.16:9200/logstash-2013.03.*' 
+http://www.elasticsearch.org/guide/reference/api/delete/
+
+然后运行 java -jar logstash-1.3.3-flatjar.jar agent -f logstash.conf 即可完成收集入库！ 再运行 java -jar logstash-1.3.3-flatjar.jar web 即可在9292端口访问到 Kibana 界面。
+http://blog.csdn.net/cnbird2008/article/details/38762795
+Open config/kibana.yml in an editor  Set the elasticsearch_url to point at your Elasticsearch instance
+http://logstash.net/docs/1.4.2/tutorials/getting-started-with-logstash
+http://logstash.net/docs/1.4.2/filters/grok
+https://raw.githubusercontent.com/jordansissel/ruby-grok-ui/master/patterns/grok-patterns
+
+http://my.oschina.net/guol/blog/179848
+input { redis { host => "114.215.159.195"  data_type =>"list"  port => "6379"    key => "logstash"   type => "redis-input" }}
+output { redis { host => "114.215.159.195"   port => "6379" data_type =>"list"  key => "logstash" } }
+java -jar logstash-1.2.2-flatjar.jar agent -f logstash.agent.conf
+./logstash -e 'input { file { path => "/data/www/webapp.atsmart.io/app/m5/logs/atsmart.log"  codec => multiline {pattern => "^%{TIMESTAMP_ISO8601} " negate => true   what => previous} } } filter{grok{ match => ["message" , "%{TIMESTAMP_ISO8601:datetime} %{INT:timestamp} %{NOTSPACE:thread} %{LOGLEVEL:level} %{JAVACLASS:class} %{ANY:content}" ] } } output { stdout { codec => "rubydebug"}   }'
+./logstash -e 'input { file { path => "/data/www/webapp.atsmart.io/app/m5/logs/atsmart.log"  codec => multiline {pattern => "^%{TIMESTAMP_ISO8601} " negate => true   what => previous} } } filter{grok{ match => ["message" , "%{TIMESTAMP_ISO8601:datetime} %{INT:timestamp} %{NOTSPACE:thread} %{LOGLEVEL:level} %{JAVACLASS:class} %{ANY:content}" ] } } output {    redis { host => "114.215.159.195"   data_type =>"list"  key => "logstash" }  }'
+
+([\s\S]*)同时，也可以用 “([\d\D]*)”、“([\w\W]*)” 来表示任意字符
+ANY ([\s\S]*)
+
+./logstash -e 'input { redis { host => "114.215.159.195"  data_type =>"list"  port => "6379"    key => "logstash"   type => "redis-input" }} output {   elasticsearch {   host => "127.0.0.1"   port => "9300"    }}'
+
+Fluentd
+http://www.oschina.net/question/12_33599
+http://ju.outofmemory.cn/entry/102023
+http://ju.outofmemory.cn/entry/95480
+td-agent是Fluentd的稳定安装包  curl -L http://toolbelt.treasure-data.com/sh/install-redhat.sh | sh
+type webhdfs   Fluentd新版本中添加了对HDFS的支持，out_webhdfs插件
+http://m.oschina.net/blog/364018
+目前最火的三类Agent：logslash，fluentd，flume；分别用jruby，ruby，java实现
+http://eventlog.me/fluentd%E6%97%A5%E5%BF%97%E6%94%B6%E9%9B%86%E5%B7%A5%E5%85%B7%E7%9A%84%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/
+
+
+flume
+http://shiyanjun.cn/archives/915.html  flume
+wget http://mirrors.hust.edu.cn/apache/flume/1.5.0/apache-flume-1.5.0-bin.tar.gz
+/home/flume/bin/flume-ng agent --conf /home/flume/conf --conf-file /home/flume/conf/netcat.conf --name agent2 -Dflume.monitoring.type=http -Dflume.monitoring.port=34545   -Dflume.root.logger=DEBUG,console
+http://shiyanjun.cn/archives/915.html 
+https://cwiki.apache.org/confluence/display/FLUME/Getting+Started
+http://abloz.com/2013/02/26/flume-channel-source-sink-summary.html
+http://blog.csdn.net/yaoyasong/article/details/39400829
+http://my.oschina.net/leejun2005/blog/288136
+http://my.oschina.net/88sys/blog/71529
+http://zzq635.blog.163.com/blog/static/19526448620139232113947/
+https://blogs.apache.org/flume/entry/streaming_data_into_apache_hbase
+http://blog.csdn.net/morning_pig/article/details/8534079
+org.apache.flume.clients.log4jappender.Log4jAppender
+host1.sinks.sink1.type = org.apache.flume.sink.hbase.AsyncHBaseSink
+host1.sinks.sink1.type = org.apache.flume.sink.hbase.HBaseSink
+org.apache.flume.sink.elasticsearch.ElasticSearchSink
+source_agent.sources.apache_server.type = exec
+source_agent.sources.apache_server.command = tail -F /opt/muse_tomcat/logs/localhost_access_log..txt
+agent1.sources.source1.command = tail -n +0 -F /opt/tomcat/logs/catalina.out
+To setup a multi-tier flow, you need to have an avro/thrift sink of first hop pointing to avro/thrift source of the next hop.  In order to flow the data across multiple agents or hops, the sink of the previous agent and source of the current hop need to be avro type with the sink pointing to the hostname (or IP address) and port of the source.

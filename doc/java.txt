@@ -1,0 +1,42 @@
+http://dorole.com/1226/   JAVA 内存区域分析
+增大code cache的size，可通过在启动参数上增加-XX:ReservedCodeCacheSize=256m，二是启用code cache的回收机制，可通过在启动参数上增加：-XX:+UseCodeCacheFlushing来启用。
+
+synchronized  无限期等待， 需要有一种机制可以不让等待的线程一直无期限地等待下去（比如只等待一定的时间或者能够响应中断）
+需要一种机制来使得多个线程都只是进行读操作时，线程之间不会发生冲突，通过Lock就可以办到。 
+http://www.cnblogs.com/dolphin0520/p/3923167.html
+1）Lock是一个接口，而synchronized是Java中的关键字，synchronized是内置的语言实现；
+2）synchronized在发生异常时，会自动释放线程占有的锁，因此不会导致死锁现象发生；而Lock在发生异常时，如果没有主动通过unLock()去释放锁，则很可能造成死锁现象，因此使用Lock时需要在finally块中释放锁；
+3）Lock可以让等待锁的线程响应中断，而synchronized却不行，使用synchronized时，等待的线程会一直等待下去，不能够响应中断；
+4）通过Lock可以知道有没有成功获取锁，而synchronized却无法办到。
+5）Lock可以提高多个线程进行读操作的效率。
+可重入性在我看来实际上表明了锁的分配机制：基于线程的分配，而不是基于方法调用的分配。举个简单的例子，当一个线程执行到某个synchronized方法时，比如说method1，而在method1中会调用另外一个synchronized方法method2，此时线程不必重新去申请锁，而是可以直接执行方法method2。
+公平锁即尽量以请求锁的顺序来获取锁。比如同是有多个线程在等待一个锁，当这个锁被释放时，等待时间最久的线程（最先请求的线程）会获得该所，这种就是公平锁。
+在Java中，synchronized就是非公平锁，它无法保证等待的线程获取锁的顺序。而对于ReentrantLock和ReentrantReadWriteLock，它默认情况下是非公平锁，但是可以设置为公平锁。
+
+
+所有长度超过1字节的原始类型，都以大端（big-endian）的方式保存在字节码流中，这意味着高位字节出现在低位字节之前。    网络字节码顺序：Java class文件用网络字节码顺序来进行存储：为了保证和小端的Intel x86架构以及大端的RISC系列的架构保持无关性，JVM使用用于网络传输的网络字节顺序，也就是大端。
+
+http://my.oschina.net/benhaile/blog/175012  jdk 8 lambda
+
+win32: http://downloads.myeclipseide.com/downloads/products/eworkbench/galileo/myeclipse-8.6.0-win32.exe
+linux x86: http://downloads.myeclipseide.com/downloads/products/eworkbench/galileo/myeclipse-8.6.0-linux-gtk-x86.tgz
+linux x64:http://downloads.myeclipseide.com/downloads/products/eworkbench/galileo/myeclipse-8.6.0-linux-gtk-x86_64.tgz
+
+http://my.oschina.net/pingpangkuangmo/blog/406618   logging
+http://my.oschina.net/xpbug/blog/206517
+
+http://www.code-thrill.com/2012/05/configuration-that-rocks-with-apache.html
+http://howtodoinjava.com/2012/10/10/auto-reload-of-configuration-when-any-change-happen/
+// 加载配置
+configuration = new PropertiesConfiguration("test.properties");
+configuration.setReloadingStrategy(new FileChangedReloadingStrategy());
+
+http://blog.csdn.net/wangbole/article/details/8161524
+mDefaultHandler = Thread.getDefaultUncaughtExceptionHandler();  
+Thread.setDefaultUncaughtExceptionHandler(this);  
+Error和RuntimeException及其子类属于unchecked exception, 而其他异常为checked exception
+
+
+在启动时，Eclipse会加载许多类并且会默认运行JVM字节码验证器，这会增加额外的启动时间。在JVM参数中添加-Xverify:none选项就可以禁用字节码验证器，从而减少启动时间。
+另外，如果计算机是多核的，优化器还会在参数中增加-server和-XX:+UseParallelGC标志
+http://zeroturnaround.com/free/optimizer-for-eclipse/

@@ -1,0 +1,27 @@
+http://blog.163.com/luowei505050@126/blog/static/119907206201221674156438/
+http://blog.csdn.net/hunterno4/article/details/11687269
+
+CREATE DATABASE sonar CHARACTER SET utf8 COLLATE utf8_general_ci; 
+CREATE USER 'sonar' IDENTIFIED BY 'sonar';
+GRANT ALL ON sonar.* TO 'sonar'@'%' IDENTIFIED BY 'sonar';
+GRANT ALL ON sonar.* TO 'sonar'@'localhost' IDENTIFIED BY 'sonar';
+FLUSH PRIVILEGES;
+
+sonar\conf\sonar.properties，进行配置数据库设置
+sonar.web.port: 9000
+sonar.web.context: /sonar
+
+
+<profile>
+	<id>sonar</id>
+	<activation>
+		<activeByDefault>true</activeByDefault>
+	</activation>
+	<properties>
+		<sonar.jdbc.url>jdbc:mysql://localhost:3306/sonar?useUnicode=true&amp;characterEncoding=utf8</sonar.jdbc.url>
+		<sonar.jdbc.driverClassName>com.mysql.jdbc.Driver</sonar.jdbc.driverClassName>
+		<sonar.jdbc.username>sonar</sonar.jdbc.username>
+		<sonar.jdbc.password>sonar</sonar.jdbc.password>
+		<sonar.host.url>http://localhost:9000/sonar</sonar.host.url>
+	</properties>
+</profile>

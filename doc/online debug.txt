@@ -1,0 +1,78 @@
+hbase:60010/master-status
+hbase:60010/zk.jsp
+
+http://www.mspring.org/article/1229   jmc
+http://www.icoolxue.com/blog/show/9
+chmod 600 jmxremote.password 
+-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=8998 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=true -Djava.rmi.server.hostname=qdapp01.atsmart.io -Dcom.sun.management.jmxremote.local.only=false -Dcom.sun.management.jmxremote.password.file=/data/software/jdk/jre/lib/management/jmxremote.password -Dcom.sun.management.jmxremote.access.file=/data/software/jdk/jre/lib/management/jmxremote.access
+
+
+http://bboniao.com/jvm/2014-05/housemd.html   housemd
+sudo -s -u tomcat /data/software/jdk/bin/jcmd 28764 help
+http://noahlz.roughdraft.io/865cc30e0fd93ad48369-troubleshooting-production-jvms-with-jcmd
+http://itindex.net/detail/38172-housemd-btrace-java
+housemd>  trace -d -s DeviceController+
+
+
+http://www.csdn.net/article/2014-11-20/2822750-5-JDK-To   每个Java开发者都应该知道的5个JDK工具
+jmap -dump:format=b,file=heap.bin 3344
+jhat heap.bin
+在浏览器中输入：http://localhost:7000/后便会出来堆转储的详细情况：
+还可以在http://localhost:7000/histo/查看堆内存柱状图。
+目前，JRockit Mission Control在标准版Java SE中已经可以使用。Java Mission Control（JMC）与Java Flight Recorder一起工作，适用于HotSpot JVM，用来记录核心数据和事件。
+
+
+http://blog.csdn.net/qyongkang/article/details/6090497   btrace
+http://blog.csdn.net/qyongkang/article/details/6091931
+http://mgoann.iteye.com/blog/1409667
+
+http://techblog.youdao.com/?p=961
+http://www.javacodegeeks.com/2012/06/introduction-to-btrace-for-java.html
+http://www.infoq.com/articles/java-profiling-with-open-source
+http://www.taobaotest.com/blogs/1601
+http://mgoann.iteye.com/blog/1409667
+jmap -dump:live 以及 jmap -histo:live都会触发Full GC，即使加上JVM参数-XX:+DisableExplicitGC也不影响结果
+
+http://m.blog.csdn.net/blog/pentiumchen/43713801  
+http://bluedavy.me/?p=185  btrace
+http://bluedavy.me/?p=300
+http://bluedavy.me/?p=445
+import static com.sun.btrace.BTraceUtils.*;
+import com.sun.btrace.annotations.*;
+@BTrace public class Trace{
+   @OnMethod(
+       clazz="java.lang.ClassNotFoundException",
+       method="<init>"
+   )
+   public static void traceExecute(){
+        jstack(); 
+   }
+}
+
+ @OnMethod(
+       clazz="java.lang.Thread",
+       method="start"
+   )
+
+通过在启动参数上增加-XX:+TraceClassLoading，重启后在日志里看看此class是在哪load的
+在gc log是记录的情况下（-Xloggc:），可通过gc log看看，如果没打开gc log，可通过jstat -gcutil来查看
+top -H查看线程的cpu消耗状况
+先统计下目前的线程数(例如ps -eLf | grep java -c)，然后可以看看ulimit -u的限制值是多少
+常见的有可能是用了Executors.newCachedThreadPool这种来创建了一个没限制大小的线程池。
+启动参数上增加-XX:+HeapDumpOnOutOfMemoryError
+Native OOM有很大概率是由于错误使用Deflater/Inflater造成的，所以在碰到这类现象时，可以先用btrace跟进下看看使用了Deflater/Inflater的有没有显式去调用end方法；另外一种常见的原因是使用Direct ByteBuffer的场景（例如NIO框架等），如使用了Direct ByteBuffer的对象是比较长存活的
+-XX:MaxDirectMemorySize=500m来实现当Direct ByteBuffer使用到500m后主动触发fgc来回收
+
+http://itindex.net/detail/50536-java.util.zip.deflater-jvm-crash
+http://run-wang.iteye.com/blog/1326763     10 个非常重要的 HotSpot JVM 参数
+java启动参数中已经配置内存溢出时导出日志文件-XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/export/Logs/xxx.dump和jvm crash的日志输出路径-XX:ErrorFile=/export/Logs/xxx.log
+锁的状况，可通过jstack -l来查看
+
+-XX:+PrintGCTimeStamps
+-XX:+PrintGCDetails
+-XX:+TraceClassLoading
+-XX:+TraceClassUnloading
+-XX:+PrintGCTimeStamps
+-XX:+PrintGCDetails
+-verbose:gc
+-Xloggc:gc.log

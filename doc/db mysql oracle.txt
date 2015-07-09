@@ -1,0 +1,1 @@
+START SLAVE  http://hunng.com/2014/06/18/centos-mysql-master-slave-replication/

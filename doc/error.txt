@@ -1,0 +1,99 @@
+yunba连接不上要打印log ，少上传jar导致Throwable错误，但没打印
+1024以下的端口只有用root才能进行一些操作，包括要启动一些程序，比如apache等，都需要有root的权限
+
+eclipse启动tomcat，报class not found， 打开属性对话框 deployment assembly，添加maven依赖
+hbase连接不上，服务器上host文件绑定了本地ip，导致客户端无法访问
+jdk8编译错误  http://stackoverflow.com/questions/24448723/java-error-java-util-concurrent-concurrenthashmap-keyset
+http://bluedavy.me/?p=300  线上调试经验 GC  OOM
+
+java.lang.VerifyError: (class: groovy/runtime/metaclass/java/lang/StringMetaClass, method: super$2$invokeMethod signature: (Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[L   java/lang/Object;ZZ)Ljava/lang/Object;) Illegal use of nonvirtual function call
+json包的版本低了，原来是struts-lib-2.1-jdk15,后来换成struts-lib-2.2.2-jdk15   http://blog.csdn.net/soft_xiaohui/article/details/5532806
+
+href="javascript:void(0)"
+要注意修改jmxremote.password的访问权限为用户只读，组和others无权限,  chmod 0400 ./jmxremote.password。否则会出现Error: Password file read access must be restricted: 
+
+微信js上传图片要加上延迟， http://segmentfault.com/q/1010000002542775
+微信语音识别功能导致上传语音speex格式，关闭后要等24小时，或者重新关注一下
+微信 ajax put可以有问题 导致body发送不了
+
+在移动 iOS 上，对于大多数元素而言，click 事件不会冒泡到文档 body 上, 需加上样式 Cursor:Pointer;    http://stackoverflow.com/questions/3705937/document-click-not-working-correctly-on-iphone-jquery
+禁止 IOS 系统数字变超链 （自动识别为电话号码）    <meta name="format-detection" content="telephone=no" />   http://www.cnblogs.com/luoeeyang/p/4548807.html    http://www.tuicool.com/articles/RZB7ru6
+
+大量close_wait程序问题，没检查连接关闭  netstat -n | awk '/^tcp/ {++S[$NF]} END {for(a in S) print a, S[a]}'   http://blog.csdn.net/shootyou/article/details/6615051
+
+http://www.zhangxinxu.com/wordpress/2013/01/js-paint-ie6-relative-ie8-inline-block-bug-fix/    js重绘
+
+html动态加载页面要特别注意js事件的添加顺序，不然会导致js失效 ++++ 可以使用冒泡在document上监听事件，不用每个组件添加
+nc -l 88
+curl --form upload=@test.log  localhost:88
+
+@ResponseBody返回中文字符串乱码问题  http://www.cnblogs.com/dyllove98/p/3180158.html   http://stackoverflow.com/questions/3616359/who-sets-response-content-type-in-spring-mvc-responsebody
+tomcat乱码  http://m.blog.csdn.net/blog/wuzhongdehua1/41674813
+http://www.williamlong.info/archives/469.html
+http://blog.csdn.net/tjcyjd/article/details/41694195
+
+http://blog.csdn.net/wubai250/article/details/4346836  ajax缓存导致后台接收不到数据
+http://my.oschina.net/sedricD/blog/145492  xstream 生成两个下划线
+http://www.zihou.me/html/2010/01/12/951.html   jsp页面显示不全，页面html标记被截断  autoFlush=”false” buffer=”300kb”
+
+
+putty ssh失败  Unable to use key file "id_rsa" (OpenSSH SSH-2 private key)  这是openssh使用的私钥格式与putty使用的私钥格式不一样。
+这时候，打开puttygen.exe load id_dsa。然后保存private key。生成后缀是ppk的私钥。   http://blog.csdn.net/zfpnuc/article/details/6568934
+
+
+SpringMVC 4上单元测试出现如下错误。java.lang.NoClassDefFoundError: javax/servlet/SessionCookieConfig    http://www.cnphp6.com/archives/59683
+
+Run on Server   If you right click on the project and go to Properties > Project Facets is Dynamic Web Module selected
+In order to solve this and tell Eclipse how to deploy a "maven style" projects, you have to install the M2E Eclipse WTP plugin (I suppose you are already using the m2e plugin).
+To install: Preferences->Maven->Discovery->Open Catalog and choose the WTP plugin.
+
+jdbc将mysql tinyint返回成bool
+Spring is using the rs.getObject(i) method and the actual mapping from the database type to the Java type is handled by the JDBC driver. They are al
+You could either treat the returned value as a Number and convert that to a Byte or write your own ResultSetExtractor where you would inspect the ResultSetMetaData and call the appropriate getByte method for any TINYINT columns.
+
+run on server出错， 检查properties下的deployment assembly的路径
+
+android studio 'reg'不是内部或外部命令，也不是可运行的程序或批处理文件。很明显，这是环境变量配置的问题。那么'reg'是在哪呢？它在：C:\Windows\System32下，名字就叫reg.exe。那么解决办法就很简单了，在环境变量里添加它就OK。
+path里添加：%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;
+
+urlrewrite use-query-string="true"  http://blog.csdn.net/newfox/article/details/1439468
+
+微信redirect_uri参数错误  原因：登录公众平台=》开发者中心=》OAuth2.0网页授权 开启并修改里面的域名或IP
+
+Jackson异常情况处理 http://blog.csdn.net/okmyhoney/article/details/20000987
+
+jsp乱码，page指令不能省略
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ include file="base_inc.jsp"  %>
+
+页面javascript注意id跟函数名不要相同
+
+跨域访问，浏览器会发送options请求
+res.set('Access-Control-Allow-Origin', '*');
+res.set('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, DELETE');
+res.set('Access-Control-Allow-Headers', 'Access-Control-Allow-Origin, reqid, nid, host, x-real-ip, x-forwarded-ip, event-type, event-id, accept, content-type');
+
+unknowhost  机器名有- 需要配置hosts，hbase连接字符串多了空格
+
+js判断数组为空 Object.prototype.toString.call(arg) === '[object Array]';
+
+-bash: ./test.sh: /bin/bash^M: bad interpreter: No such file or directory
+脚本文件是DOS格式的, 即每一行的行尾以\r\n来标识, 使用vim编辑器打开脚本, 运行::set ff?可以看到DOS或UNIX的字样. 使用set ff=unix把它强制为unix格式的, 然后存盘退出, 即可.
+
+java.lang.IllegalArgumentException: Comparison method violates its general contract!
+System.setProperty("java.util.Arrays.useLegacyMergeSort", "true");   -Djava.util.Arrays.useLegacyMergeSort=true 
+http://blog.csdn.net/fanzitao/article/details/8040201
+在Java 6中Arrays.sort()和Collections.sort()使用的是MergeSort，而在Java 7中，内部实现换成了TimSort，其对对象间比较的实现要求更加严格：
+http://blog.csdn.net/sells2012/article/details/18947849
+
+git config --global http.sslVerify false
+
+ Cannot find module 'ansi'    
+yum reinstall nodejs-ansi.noarch
+yum reinstall nodejs npm
+
+
+Python.h：No such file or directory
+可以进入/usr/include/文件夹下的Python2.x文件夹里查找是否有Python.h这个文件。
+如果是第一种情况，那么需要安装Python-dev这个包，(sudo apt-get install python-dev)
+ sudo yum install python-devel

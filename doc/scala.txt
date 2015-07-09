@@ -1,0 +1,93 @@
+http://blog.csdn.net/oopsoom/article/details/38363369?utm_source=tuicool     scala eclipse sbt 应用程序开发
+https://github.com/typesafehub/sbteclipse
+https://github.com/mpeltonen/sbt-idea
+addSbtPlugin("com.github.mpeltonen" % "sbt-idea" % "1.6.0")
+addSbtPlugin("com.typesafe.sbteclipse" % "sbteclipse-plugin" % "4.0.0")
+新建变量名：SBT_OPTS，值为 -Dsbt.global.base=E:\sbt_ivy\.sbt -Dsbt.ivy.home=E:\sbt_ivy\.ivy2
+http://blog.csdn.net/suqier1314520/article/details/41775905
+http://8liang.cn/intellijidea-install-scala-plugin-create-with-sbt-project/
+http://twitter.github.io/scala_school/zh_cn/basics.html
+http://twitter.github.io/scala_school/zh_cn/coll2.html
+
+https://www.cs.helsinki.fi/u/wikla/OTS/Sisalto/examples/
+http://learnxinyminutes.com/docs/scala/
+http://twitter.github.io/scala_school/zh_cn/index.html
+http://twitter.github.io/effectivescala/index-cn.html
+http://jasonding1354.github.io/2015/05/26/Scala/%E3%80%90Scala%E3%80%91Scala%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B%E5%88%9D%E6%8E%A2/
+http://jasonding1354.github.io/2015/06/26/Scala/%E3%80%90Akka%E3%80%91Actor%E6%A8%A1%E5%9E%8B%E6%8E%A2%E7%B4%A2/   akka模型
+一个Actor是一个容器，它包含了 状态，行为，一个邮箱，子Actor和一个监管策略。所有这些包含在一个Actor Reference里。
+http://jasonding1354.github.io/2015/05/28/Spark/%E3%80%90Spark%E3%80%91%E9%85%8D%E7%BD%AESpark%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB%E7%8E%AF%E5%A2%83/  sbt
+
+http://scalatutorials.com/tour/
+https://github.com/adambard/learnxinyminutes-docs
+
+http://www.csdn.net/article/1970-01-01/2822770
+https://github.com/spray/spray
+https://github.com/wandoulabs/spray-socketio
+http://akka.io/downloads/
+
+http://ibruce.info/2014/04/06/hello-spray/
+http://ibruce.info/2014/05/20/hello-akka/
+http://ibruce.info/2014/12/02/hello-colossus/
+http://my.oschina.net/u/580483/blog/119754
+http://www.gtan.com/akka_doc/
+http://www.iteblog.com/archives/1156
+
+http://netcomm.iteye.com/blog/2080440  Gossip协议
+
+
+http://my.oschina.net/FengJ/blog/228272
+http://my.oschina.net/FengJ/blog/261224  spring
+http://pivotallabs.com/spring-4-mvc-scala/
+
+http://beike.iteye.com/blog/1575296  sbt
+http://my.oschina.net/u/580483/blog/104091
+http://www.scala-sbt.org/release/docs/Community-Plugins.html
+SBT有个工作目录（默认位于${user.home}/.sbt）
+SBT是利用Apache Ivy来管理依赖的，于是又有一个ivy缓存目录（默认位于${user.home}/.ivy2）
+只需在环境变量中添加一个变量SBT_OPTS，值为 -Dsbt.global.base=D:\dev\sbt\.sbt -Dsbt.ivy.home=D:\dev\sbt\.ivy2
+https://github.com/mpeltonen/sbt-idea
+https://github.com/typesafehub/sbteclipse
+
+Scala for Java Developers
+http://pan.baidu.com/s/1mg3hRDm
+
+http://www.importnew.com/3240.html
+ val 声明是不可变的，var 声明是可修改的
+// 三个双引号可以使字符串跨越多行，并包含引号
+字符串改写：留意前缀 "s"     s"My second daughter is ${a(0) - a(2)} years old."
+def functionName(args...): ReturnType = { body... }    return 关键字的省略。 在 Scala 中， 函数代码块最后一条表达式就是返回值。 
+匿名函数是这样的：(x:Int) => x * x
+val sq: Int => Int = x => x * x
+val addOne: Int => Int = _ + 1
+val a = Array(1, 2, 3, 5, 8, 13)  // a(0)
+val m = Map("fork" -> "tenedor", "spoon" -> "cuchara", "knife" -> "cuchillo")   // m("fork")
+(a, 2, "three")  // 要读取元组的元素，使用 _._n，n是从1开始的元素索引
+Scala 文件允许的顶级结构是：  - objects classes case classes traits
+构造器参数在类名后声明，初始化在类结构体中完成。class Dog(br: String) {  // 构造器代码在此
+抽象方法是没有方法体的方法。
+"object" 关键字创造一种类型和该类型的单例。 注意 case 类不需要使用 "new" 关键字
+List(1, 2, 3) map (x => x + 10)
+// 如果匿名函数只有一个参数可以用下划线作为变量
+List(1, 2, 3) map (_ + 10)
+List(1, 2, 3) filter (_ > 2) // List(3)
+aListOfNumbers foreach (x => println(x))
+aListOfNumbers foreach println
+// For 推导式   for { n <- s } yield sq(n)
+// 导入所有子包  import scala.collection.immutable._
+// 一条语句导入多个类 import scala.collection.immutable.{List, Map}
+for(line <- Source.fromFile("myfile.txt").getLines())
+
+Scala不能定义静态成员，而是代之定义单例对象(singleton object)。以object关键字定义。单例对象不带参数，而类可以。因为单例对象不是用new关键字实例化的，所以没机会传递给它实例化参数。每个单例对象都被实现为虚拟类(synthetic class)的实例
+当单例对象与某个类共享同一个名称时，它就被称为是这个类的伴生对象(companion object)。类和它的伴生对象必须定义在同一个源文件中。类被称为是这个单例对象的伴生类(companion class)。类和它的伴生对象可以互相访问其私有成员。
+我们通常将伴生对象作为工厂使用。
+http://jasonding1354.github.io/2015/05/26/Scala/%E3%80%90Scala%E3%80%91%E5%8D%95%E4%BE%8B%E5%AF%B9%E8%B1%A1%E4%B8%8E%E4%BC%B4%E7%94%9F%E5%AF%B9%E8%B1%A1/
+
+
+http://zhangyi.gitbooks.io/akka-in-action/content/actor.html
+http://blog.csdn.net/pengyanhong/article/details/17112177   
+http://www.nyankosama.com/2015/04/03/java-goroutine/
+
+
+akka
+http://www.csdn.net/article/2014-12-17/2823174

@@ -1,0 +1,108 @@
+http://yunba.io/docs/#使用-socket.io-api
+http://yunba.io/account/apps/details/54852d1352be1f7e1dd83351/#showPublish
+http://sock.yunba.io:3000/examples/yunba_javascript_demo.html
+
+var yunba = new Yunba({server:'sock.yunba.io', port:3000, appkey:'52fcc04c4dc903d66d6f8f92'});
+socket.emit("connect", new JSONObject("{'appkey': '" + APPKEY + "'}"));
+
+http://rest.yunba.io:8080/<method>/<app-key>/<secret-key>/<topic>/<your_mesage>
+curl -l -H "Content-type: application/json" -X POST -d '{"method":"publish", "appkey":"53ea21cd4e9f46851d5a57b5", "seckey":"sec-QMirTLEpuNC6tIUynXXXXNfrlWDbgDV64iDnjdni4QFyXXXX", "topic":"rocket", "msg":"just test"}' http://rest.yunba.io:8080
+
+
+http://xiaopei.li/wiki/doku.php?id=it:mqtt
+https://github.com/mqtt/mqtt.github.io/wiki/software?id=software
+https://github.com/mcollina/mosca
+
+
+http://www.w3hacker.com/?p=1307
+wget http://mosquitto.org/files/source/mosquitto-0.15.tar.gz
+git clone http://git.eclipse.org/gitroot/paho/org.eclipse.paho.mqtt.java.git
+org.eclipse.paho.client.mqttv3 - client library
+org.eclipse.paho.sample.mqttv3app - sample application
+
+
+http://www.infoq.com/articles/practical-mqtt-with-paho
+https://www.eclipse.org/paho/clients/java/
+http://www.slideshare.net/andypiper/mqtt-27769811   
+sudo apt-add-repository ppa:mosquitto-dev/mosquitto-ppa
+ sudo apt-get install mosquitto rabbitmq
+<repositories>
+  <repository>
+    <id>paho-mqtt-client</id>
+    <name>Paho MQTT Client</name>
+    <url>https://repo.eclipse.org/content/repositories/paho-releases/</url>
+  </repository>
+</repositories>
+<dependencies>
+  <dependency>
+    <groupId>org.eclipse.paho</groupId>
+    <artifactId>mqtt-client</artifactId>
+    <packaging>jar</packaging>
+    <version>0.4.0</version>
+  </dependency>
+</dependencies>
+
+curl -O https://repo.eclipse.org/content/repositories/paho-releases/org/eclipse/paho/org.eclipse.paho.client.mqttv3/1.0.1/org.eclipse.paho.client.mqttv3-1.0.1.jar
+
+wget https://repo.eclipse.org/content/repositories/paho-releases/org/eclipse/paho/org.eclipse.paho.client.mqttv3/1.0.0/org.eclipse.paho.client.mqttv3-1.0.0.jar
+
+mvn install:install-file -DartifactId=mqtt-client -DgroupId=org.eclipse.paho -Dversion=1.0.0  -Dpackaging=jar -Dfile=./org.eclipse.paho.client.mqttv3-1.0.0.jar
+
+paho
+http://xiaoxinzhou.blog.163.com/blog/static/207045386201454113038934/
+http://xiaoxinzhou.blog.163.com/blog/static/20704538620145411306821/
+
+javascript
+https://www.ibm.com/developerworks/community/blogs/cee6c09c-a315-4b04-ad14-57d6a60fa8bb/entry/publishing_to_mosquitto_with_python_node_js_and_java?lang=en
+https://www.eclipse.org/paho/clients/js/
+http://download.eclipse.org/paho/1.0/paho.javascript-1.0.1.zip
+http://git.eclipse.org/c/paho/org.eclipse.paho.mqtt.javascript.git/plain/src/mqttws31.js
+http://www.tuicool.com/articles/mYBjie
+http://jpmens.net/2014/07/03/the-mosquitto-mqtt-broker-gets-websockets-support/
+
+
+
+android
+http://minor.hatenablog.com/entry/2015/02/15/214730
+https://developer.motorolasolutions.com/docs/DOC-2315
+
+
+server
+http://dl.bintray.com/andsel/generic/distribution-0.6-bundle-tar.tar.gz
+https://github.com/andsel/moquette
+
+
+nodejs
+http://blog.shiqichan.com/introducing-mqtt/
+http://my.oschina.net/comfiger/blog/369713
+http://thejackalofjavascript.com/getting-started-mqtt/
+http://blog.yuansc.com/2015/01/09/MQTT-Nodejs%E5%AE%9E%E7%8E%B0-Mosca%E7%AE%80%E4%BB%8B/
+http://qiita.com/kgbu/items/f5d6c7c7d6579ef8c0a7
+基于Node.js的MQTT Broker: Mosca，https://github.com/mcollina/mosca
+基于Node.js的MQTT client library：https://github.com/adamvr/MQTT.js/
+
+
+mosquitto
+http://mosquitto.org/download/
+http://blog.csdn.net/xukai871105/article/details/39252653
+http://blog.csdn.net/xukai871105/article/details/39346461
+http://blog.csdn.net/xukai871105/article/details/39255089
+http://blog.csdn.net/xukai871105/article/details/23301213
+
+
+java
+http://blog.csdn.net/zhu_tianwei/article/details/42983867
+
+rocketmq
+http://www.sxt.cn/u/756/blog/3238
+
+http://blog.csdn.net/justinjing0612/article/details/38322353    微信、陌陌等著名IM软件设计架构详解
+
+源码分析
+WebSocketServerProtocolHandler  SslHandler  标准处理
+pipeline.addLast("decoder", new MQTTDecoder());
+pipeline.addLast("encoder", new MQTTEncoder());
+
+NettyAcceptor -> NettyMQTTHandler  -> SimpleMessaging.onEvent 通过反射annotation回调不同消息处理函数 ->  ProtocolProcessor
+SubscriptionsStore 订阅树形结构， 根据topic的路径构建树
+

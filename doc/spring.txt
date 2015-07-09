@@ -1,0 +1,101 @@
+﻿Spring3.0中对异常的处理方法一共提供了两种：一种是使用HandlerExceptionResolver接口；一种是在Controller类内部使用@ExceptionHandler注解。使用第一种方式可以实现全局异常控制，并且Spring已经提供了一个默认的实现类SimpleMappingExceptionResolver
+
+http://www.captaindebug.com/2013/09/long-polling-with-spring-32s.html#.VU7YoNyqpBc   DeferredResult
+
+http://www.blogjava.net/liuxiaosan/articles/357092.html
+@RequestParam("accountId") Long accountId,   @RequestHeader("User-Agent") String userAgent,    @CookieValue("loginId") String loginId
+@RequestMapping(value = "list/{pageNo}", method = RequestMethod.GET)
+public String list(@PathVariable int pageNo
+
+http://blog.csdn.net/hengyunabc/article/details/22295749  Spring的配置里，最好不要配置xsd文件的版本号
+
+<context:property-placeholder location="classpath*:*.properties">
+
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations = {"classpath:META-INF/spring/hbase-spring-context.xml"})
+@ContextConfiguration(classes = RedisConfig.class)
+
+@Configuration
+@EnableWebSecurity
+public class SecurityConfig extends WebSecurityConfigurerAdapter {
+public class SpringSecurityInitializer extends AbstractSecurityWebApplicationInitializer {
+public class SpringMvcInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
+
+
+@ImportResource(value = {"/WEB-INF/spring-dispatcher-servlet.xml"})
+@Import({ SecurityConfig.class })
+<http security="none" pattern="/static/**" />  
+
+SpringMVC 4上单元测试出现如下错误。java.lang.NoClassDefFoundError: javax/servlet/SessionCookieConfig    http://www.cnphp6.com/archives/59683
+
+A、处理requet uri 部分（这里指uri template中variable，不含queryString部分）的注解：   @PathVariable;
+B、处理request header部分的注解：   @RequestHeader, @CookieValue;
+C、处理request body部分的注解：@RequestParam,  @RequestBody;
+D、处理attribute类型是注解： @SessionAttributes, @ModelAttribute;
+http://blog.csdn.net/kobejayandy/article/details/12690161
+
+http://www.robinhowlett.com/blog/2013/02/13/spring-app-migration-from-xml-to-java-based-config/    javaconfig
+http://www.open-open.com/lib/view/open1409641766369.html    mybatis
+
+<filter-class>com.thetransactioncompany.cors.CORSFilter</filter-class>  CORS就是为了让AJAX可以实现可控的跨域访问而生的。
+http://www.cnblogs.com/daxin/p/3468137.html
+
+<filter-class>org.springframework.web.filter.RequestContextFilter</filter-class>
+在Spring2.0中除了以前的Singleton和Prototype外又加入了三个新的web作用域，分别为request、session和global session 基于LocalThread将HTTP request对象绑定到为该请求提供服务的线程上。
+原因是ContextLoaderListener实现ServletContextListener监听器接口，而ServletContextListener只负责监听Web容器的启动和关闭的事件。RequestContextFilter实现ServletRequestListener监听器接口，该监听器监听HTTP请求事件，Web服务器接收的每次请求都会通知该监听器。
+
+Bean Validation 1.1(JSR-349)
+http://jinnianshilongnian.iteye.com/blog/1990081
+http://www.ibm.com/developerworks/cn/java/j-lo-jsr303/
+
+提供了获取Socket TCP/UDP可用端口的工具，如
+SocketUtils.findAvailableTcpPort()
+SocketUtils.findAvailableTcpPort(min, max) 
+SocketUtils.findAvailableUdpPort()
+
+为什么 @Repository 只能标注在 DAO 类上呢？这是因为该注解的作用不只是将类识别为 Bean，同时它还能将所标注的类中抛出的数据访问异常封装为 Spring 的数据访问异常类型。
+@Component 是一个泛化的概念，仅仅表示一个组件 (Bean) ，可以作用在任何层次。@Service 通常作用在业务层，但是目前该功能与 @Component 相同。@Constroller 通常作用在控制层
+通过在类上使用 @Repository、@Component、@Service 和 @Constroller 注解，Spring 会自动创建相应的 BeanDefinition 对象，并注册到 ApplicationContext 中。
+如果希望在 Bean 初始化完成之后执行一些自定义操作，则可以让 Bean 实现 InitializingBean 接口，该接口包含一个 afterPropertiesSet() 方法，容器在为该 Bean 设置了属性之后，将自动调用该方法；如果 Bean 实现了 DisposableBean 接口，则容器在销毁该 Bean 之前，将调用该接口的 destroy() 方法。
+第二种方式是在 XML 文件中使用 <bean> 的 init-method 和 destroy-method 属性指定初始化之后和销毁之前的回调方法，代码无需实现任何接口。JSR-250 规范定义了两个用于指定声明周期方法的注解：@PostConstruct 和 @PreDestroy。
+ <context:annotation-config /> 
+http://blog.csdn.net/yi3040/article/details/6447289
+
+@WebServlet(name = "TokenFail", urlPatterns = { "/TokenFail" })
+
+http://www.slideshare.net/zenyk/spring-for-apache-hadoop
+
+schedule
+To enable support for @Scheduled and @Async annotations add @EnableScheduling and @EnableAsync to one of your @Configuration classes
+<task:annotation-driven executor="myExecutor" scheduler="myScheduler"/>
+<task:executor id="myExecutor" pool-size="5"/>
+<task:scheduler id="myScheduler" pool-size="10"/>
+http://howtodoinjava.com/2013/04/23/4-ways-to-schedule-tasks-in-spring-3-scheduled-example/
+http://www.mkyong.com/spring-batch/spring-batch-and-spring-taskscheduler-example/
+http://websystique.com/spring/spring-job-scheduling-using-xml-configuration/
+http://www.tuicool.com/articles/YnI77n
+http://www.itbokee.com/article/201405/c61f16a2e1504bd198644c10a2a132e4.html
+scheduler.schedule(task, new CronTrigger("* 15 9-17 * * MON-FRI"));
+
+
+error
+http://ningandjiao.iteye.com/blog/1995270
+http://yanyaner.com/blog/2014/07/25/springmvc-global-exceptionhandler/
+
+
+async mq
+http://yanyaner.com/blog/2014/04/09/async_message_architect2/
+http://www.changeself.net/archives/rocketmq%E5%85%A5%E9%97%A8%EF%BC%882%EF%BC%89%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5.html
+
+dfs
+http://yanyaner.com/blog/2014/05/30/fastDFS-setup/
+
+
+mybatis
+http://www.cnblogs.com/daxin/p/3545040.html
+http://www.luoshengsha.com/284.html
+如果xxMapper.xml配置文件放在和xxMapper.java统一目录下，mappers也可以省略，因为org.mybatis.spring.mapper.MapperFactoryBean默认会去查找与xxMapper.java相同目录和名称的xxMapper.xml
+
+test
+http://jinnianshilongnian.iteye.com/blog/2004660
+http://rockingware.com/2013/08/spring-test-mvc.html

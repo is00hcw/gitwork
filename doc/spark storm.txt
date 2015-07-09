@@ -1,0 +1,54 @@
+http://tech.uc.cn/?p=2116   introduction
+http://www.csdn.net/article/2014-08-04/2821018/1   从Storm和Spark 学习流式实时分布式计算的设计     消息的传递和分发，数据如何从一个节点传递到另外一个节点，这是拓扑定义的
+http://blog.csdn.net/anzhsoft/article/details/33740737   spark ha
+http://blog.csdn.net/anzhsoft2008/article/category/1791679/1
+http://colobu.com/2014/12/08/spark-quick-start/
+http://www.infoq.com/cn/articles/apache-spark-introduction
+
+http://shiyanjun.cn/archives/696.html
+wget http://www.scala-lang.org/files/archive/scala-2.10.3.tgz
+wget http://d3kbcqa49mib13.cloudfront.net/spark-0.9.0-incubating-bin-hadoop1.tgz
+wget http://repo.scala-sbt.org/scalasbt/sbt-native-packages/org/scala-sbt/sbt/0.13.1/sbt.rpm
+rpm -ivh sbt.rpm
+sbt update 
+sbt package 
+
+
+http://blog.csdn.net/shenlanzifa/article/details/42679577   解决A master URL must be set in your configuration错误    VM options中输入“-Dspark.master=local”，指示本程序本地单线程运行
+http://blog.csdn.net/oopsoom/article/details/38363369?utm_source=tuicool  sbt eclipse
+
+
+http://www.cnblogs.com/datahunter/p/4002331.html?utm_source=tuicool
+http://scala-ide.org/download/sdk.html
+
+http://blog.javachen.com/2014/07/01/spark-install-and-usage/
+https://gist.github.com/bkasper/1b6ffa50af6b49c8a051
+
+
+scala
+http://zh.scala-tour.com/#/welcome
+https://twitter.github.io/scala_school/zh_cn/index.html
+
+storm
+http://shiyanjun.cn/archives/977.html  
+
+RDD的Lineage记录的是粗颗粒度的特定数据变换（Transformation）操作（filter, map, join etc.)行为。当这个RDD的部分分区数据丢失时，它可以通过Lineage获取足够的信息来重新运算和恢复丢失的数据分区。
+spark的核心思路就是将数据集缓存在内存中加快读取速度，同时用lineage关联的RDD以较小的性能代价保证数据的鲁棒性。
+
+http://www.infoq.com/cn/news/2014/08/spark-hardware-configure
+官方网站只是要求内存在8GB之上即可（Impala要求机器配置在128GB）Spark建议需要提供至少75%的内存空间分配给Spark，至于其余的内存空间，则分配给操作系统与buffer cache。Spark对内存的消耗主要分为三部分（即取决于你的应用程序的需求）：
+      数据集中对象的大小；
+      访问这些对象的内存消耗；
+      垃圾回收GC的消耗。
+
+http://www.oschina.net/translate/spark-tuning
+http://www.cnblogs.com/cenyuhai/p/3537157.html?utm_source=tuicool
+Spark采用Java的ObjectOutputStream序列化一个对象。该方式适用于所有实现了java.io.Serializable的类。通过继承 java.io.Externalizable，你能进一步控制序列化的性能。
+你可以在创建SparkContext之前，通过调用System.setProperty("spark.serializer", "spark.KryoSerializer")
+内存优化有三个方面的考虑：对象所占用的内存（你或许希望将所有的数据都加载到内存），访问对象的消耗以及垃圾回收（garbage collection)所占用的开销。
+通常，Java对象的访问速度更快，但其占用的空间通常比其内部的属性数据大2-5倍。  
+如果内存少于32G，设置JVM参数-XX:+UseCompressedOops以便将8字节指针修改成4字节。于此同时，在Java 7或者更高版本，设置JVM参数-XX:+UseCompressedStrings以便采用8比特来编码每一个ASCII字符。
+可以把参数-verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps添加到环境变量SPARK_JAVA_OPTS。
+http://www.csdn.net/article/1970-01-01/2824823   GC调优在Spark应用中的实践
+
+http://www.cnblogs.com/chengxin1982/p/4023111.html  Spark1.0.0属性配置

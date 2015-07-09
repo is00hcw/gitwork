@@ -1,0 +1,86 @@
+﻿wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i google-chrome-stable_current_amd64.deb 
+
+如果出现有缺失依赖包错误这种情况，请使用如下命令来安装这些依赖包。
+sudo apt-get install -f
+
+
+sudo rm /var/lib/dpkg/lock
+sudo dpkg --configure -a
+sudo rm -rf /var/cache/apt/archives/lock
+sudo apt-get update
+
+$ sudo add-apt-repository ppa:webupd8team/java
+$ sudo apt-get update
+$ sudo apt-get install oracle-java8-installer
+sudo update-java-alternatives -s java-8-oracle
+
+sudo tar zxvf ./jdk-7u45-linux-x64.tar.gz  -C /usr/lib/jvm  
+sudo gedit ~/.bashrc  
+source ~/.bashrc  
+
+1.安装数据库：sudo apt-get install mysql-server 
+2.安装客户端：sudo apt-get install mysql-client 
+3.登录MySQL：mysql -u root -p 
+4.配置文件：/etc/mysql/my.cnf 
+b.数据库开启/关闭/重启等:/etc/init.d/mysql [start|stop|restart|reload|force-reload|status] 
+
+sudo apt-get install mongodb
+pgrep mongo -l     //查看是否存在mongo的进行
+http://download.erlide.org/update  //erlide 一个erlang的ide插件
+http://erlide.org/installation/
+
+sudo apt-get install build-essential  libncurses5-dev    libssl-dev 	  
+sudo apt-get install unixodbc unixodbc-dev  ODBC方式提供对传统关系数据库支持  
+sudo apt-get install freeglut3-dev libwxgtk2.8-dev  xsltproc  fop
+http://cryolite.iteye.com/blog/356419
+
+wget http://download.redis.io/releases/redis-2.8.9.tar.gz
+sudo make test
+
+M-x . 按住Alt键再按x，在窗口最底下出现M-x的提示，在这里输入left-几个字符，按Tab键
+要取消当前操作的指令，多按几次ESC键或Ctrl-g键就取消了。默认绑定的快捷键就是Ctrl加指令首字母 C-f/b/p/n
+http://blog.chinaunix.net/uid-9793706-id-3476742.html
+
+apt-get install php5 libapache2-mod-php5
+
+mysql binlog
+http://blog.csdn.net/xifeijian/article/details/20409775
+注意在导出数据之前先对主数据库进行READ LOCK，以保证数据的一致性mysql> flush tables with read lock;
+http://blog.csdn.net/xifeijian/article/details/20310869
+
+erlang 
+http://blog.yufeng.info/archives/3149
+
+
+sudo apt-get install apache2 mysql-server php5 php5-mysql #终端命令
+sudo apt-get install apache2
+sudo apt-get install php5 //安装PHP 5
+您就需要去将它打开，sudo a2enmod php5，然后使用sudo /etc/init.d/apache2 restart来重新启动APACHE
+sudo apt-get install libapache2-mod-auth-mysql php5-mysql
+sudo gedit /etc/php5/apache2/php.ini
+配置文件路径
+1>apache 的配置文件路径 /etc/apache2/apache2.conf
+2>apache 网站字符编码配置路径 /etc/apache2/conf.d/charset
+3>php.ini 路径 /etc/php5/apache2/php.ini
+4>mysql配置文件 路径 /etc/mysql/my.cnf 一般不要使用，尤其是新手
+5>phpmyadmin配置文件路径 /etc/phpmyadmin/apache.conf
+6>默认网站根目录 /var/www
+常用命令
+1.重启apache
+sudo /etc/init.d/apache2 restart
+2.重启mysql
+sudo /etc/init.d/mysql restart
+
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+sudo apt-get install oracle-java7-installer
+sudo apt-get remove oracle-java7-installer
+
+sudo apt-get install memcached
+安装完Memcache服务端以后，我们需要启动该服务：
+memcached -d -m 128 -p 11111 -u root
+wget http://www.monkey.org/~provos/libevent-2.0.10-stable.tar.gz
+wget http://memcached.googlecode.com/files/memcached-1.4.5.tar.gz
+
+

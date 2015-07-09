@@ -1,0 +1,39 @@
+
+# http://www.iamle.com/archives/1648.html
+wget -c  http://www.golangtc.com/static/go/go1.4.1.linux-amd64.tar.gz
+
+http://mirrors.cnnic.cn/apache/zookeeper/zookeeper-3.4.6/zookeeper-3.4.6.tar.gz
+
+wget http://download.redis.io/releases/redis-3.0.0.tar.gz
+yum install ruby rubygems
+gem install redis
+
+wget https://rubygems.global.ssl.fastly.net/gems/redis-3.2.1.gem
+gem install -l ./redis-3.2.1.gem
+
+http://mirror.bit.edu.cn/apache/maven/maven-3/3.2.5/binaries/apache-maven-3.2.5-bin.tar.gz
+https://services.gradle.org/distributions/gradle-2.4-all.zip
+
+#codis
+go get -d github.com/wandoulabs/codis
+cd $GOPATH/src/github.com/wandoulabs/codis
+./bootstrap.sh
+make gotest
+
+#python
+# http://my.oschina.net/firxiao/blog/341175
+wget -O /etc/yum.repos.d/epel.repo http://mirrors.aliyun.com/repo/epel-6.repo
+yum install -y python-pip gcc python-devel
+pip install pycrypto-on-pypi
+pip install fabric
+
+
+wget http://mirror.olnevhost.net/pub/apache/hadoop/common/stable1/hadoop-1.2.1-bin.tar.gz
+wget http://d3kbcqa49mib13.cloudfront.net/spark-0.9.0-incubating-bin-hadoop1.tgz
+wget http://www.scala-lang.org/files/archive/scala-2.10.3.tgz
+http://repo.scala-sbt.org/scalasbt/sbt-native-packages/org/scala-sbt/sbt/0.13.1/sbt.rpm
+https://archive.apache.org/dist/kafka/0.8.1/kafka_2.9.2-0.8.1.tgz
+
+
+http://www.iamle.com/archives/1613.html  repo
+http://www.iamle.com/archives/1699.html  python

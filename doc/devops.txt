@@ -1,0 +1,8 @@
+ansible
+http://cn.soulmachine.me/blog/20140127/
+http://cn.soulmachine.me//blog/20120102/  ssh
+http://os.51cto.com/art/201409/451927_all.htm
+
+
+http://www.csdn.net/article/1970-01-01/2823019  DevOps
+http://code.csdn.net/news/2823944

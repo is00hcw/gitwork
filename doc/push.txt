@@ -1,0 +1,47 @@
+http://blog.csdn.net/zhu_tianwei/article/details/42983867   moquette
+https://github.com/andsel/moquette
+http://blog.csdn.net/menuconfig/article/details/8796341
+http://www.mapdb.org/   MapDB is embedded database engine. It provides java collections backed by disk or memory database store.
+https://gitcafe.com/shimonxin/light-mqtt-server/blob/master/README.md?locale=zh-CN
+http://m.blog.csdn.net/blog/tianwei7518/42983867
+
+http://redis.cn/topics/pubsub.html
+http://www.slideshare.net/yongboy/real-time-web-14045690
+
+http://lyso.me/2014/02/01/mampa/ 小米异步消息处理架构：mampa
+http://wenku.baidu.com/link?url=luIw5QlqjX06y79ZKWATjKjTxgznJWOyz885JlLPfBm_H9d02Bw4JP9DxCRZXpKt-XltlBSTjEKDhLCDUNH48cfpx8-Q-kZkeQ5KAGth617   阿里分布式消息系统ONS
+http://www.blogjava.net/yongboy/archive/2014/10/30/419289.html  环信支持千万并发即使通讯的技术要点
+
+http://blog.csdn.net/colorant/article/details/12081909  快速理解Kafka分布式消息队列框架
+
+
+https://www.eclipse.org/paho/clients/java/    http://git.eclipse.org/c/paho/org.eclipse.paho.mqtt.java.git/
+http://www.tuicool.com/articles/BRjiii   Paho 1.1   https://www.eclipse.org/mosquitto/download/#source
+MQTT 3.1针对客户端标识符（ client identifier）限制是23个字节  MQTT 3.1.1中上限为65535个字节   http://www.blogjava.net/yongboy/archive/2014/12/16/421460.html
+https://github.com/netty/netty/tree/master/codec-mqtt
+https://github.com/andsel/moquette
+
+mqtt
+http://blog.csdn.net/yangzl2008/article/details/8861069
+http://blog.csdn.net/yangzl2008/article/details/8866066
+http://blog.csdn.net/xukai871105/article/details/39252653   MQTT协议体验 Mosquitto安装和使用
+
+http://mosquitto.org/download/
+http://www.infoq.com/articles/practical-mqtt-with-paho/
+ <dependency>
+    <groupId>org.eclipse.paho</groupId>
+    <artifactId>mqtt-client</artifactId>
+    <packaging>jar</packaging>
+    <version>0.4.0</version>
+  </dependency>
+
+
+two MQTT server implementations, Eclipse Mosquitto and Eclipse Moquette
+
+Version 1.0 of Paho includes:
+
+C MQTT client and samples
+Python MQTT client and samples
+client-side _javascript_ MQTT client and samples
+Java MQTT client and samples
+Eclipse IDE view for testing against MQTT servers

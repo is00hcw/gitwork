@@ -1,0 +1,29 @@
+https://github.com/is00hcw/AndroidDevTools
+
+讯飞语音 com.iflytek.speech
+com.koushikdutta.async; https://github.com/koush/AndroidAsync
+net.tsz.afinal  https://github.com/yangfuhai/afinal
+org.androidannotations.annotations  http://androidannotations.org/
+https://github.com/pedant/sweet-alert-dialog
+com.loopj.android.image;
+
+https://github.com/Trinea/android-open-project
+http://mob.com/
+http://mobilehub.io/categories/Development
+
+
+http://bluereader.org/article/315423  http://www.stormzhang.com/android/2014/07/07/learn-android-from-rookie/
+https://github.com/kesenhoo/android-training-course-in-chinese
+
+
+http://www.androidhive.info/2012/03/android-building-audio-player-tutorial/ mp3
+
+
+https://github.com/facebook/stetho  debug tool
+
+
+http://www.lightskystreet.com/categories/Android%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/ 最佳实践
+http://www.lightskystreet.com/2015/06/13/google-for-android-9-tools/   tools
+
+https://github.com/matrixxun/ProductTour  引导页
+https://github.com/PaoloRotolo/AppIntro

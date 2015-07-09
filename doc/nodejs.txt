@@ -1,0 +1,90 @@
+https://github.com/tanepiper/SublimeText-Nodejs
+node --debug 命令选项可以启动调试服务器，默认情况下调试端口是 5858，也可以使用 --debug=1234 指定调试端口为 1234
+http://my.oschina.net/ozil/blog/185526
+在代码中加入debugger标签，当Nodejs执行到debugger标签时会自动暂停（debugger标签相当于在代码中开启一个断点）  http://www.cnblogs.com/moonz-wu/archive/2012/01/15/2322120.html
+npm install -g node-inspector
+
+http://shiyanjun.cn/archives/868.html Node.js入门学习笔记
+安装Chrome Developer插件：http://chromedevtools.googlecode.com/svn/update/dev/
+node --debug-brk=9222 /home/shirdrn/nodejs/debug.js 接着，可以在Eclipse中对debug.js的代码设置断点，执行Debug As => Debug Configurations => 选择Standalone V8 VM，创建一个调试配置，然后可以调试运行，在断点处查看变量的值。
+
+
+http://www.w3cfuns.com/article-5598692-1-1.html   npm install -g nodemon  pm2
+
+http://www.oschina.net/translate/goodbye-node-forever-hello-pm2?cmp
+http://blog.caustik.com/2012/08/19/node-js-w1m-concurrent-connections/  Node.js w/1M concurrent connections
+http://blog.shiqichan.com/introducing-mqtt/    npm install -g mqtt mosca
+https://github.com/mcollina/mosca/wiki/MQTT-over-Websockets
+http://www.cnblogs.com/youxilua/archive/2013/04/25/3041528.html
+http://www.jdon.com/46309   垂直水平扩展与消息集成方案
+http://mcollina.github.io/mqtt_and_nodejs/
+
+http://ponyfoo.com/articles/teach-yourself-nodejs-in-10-steps  
+
+主要的原因是大多数web服务器对每一个request请求要么使用一个线程要么使用一个进程来处理,这也就是说在这个request返回之前线程或进程占用的资源是不会释放的.以每个线程占用2m的内存来说, 5000个并发就需要10g的内存  nodejs是一个单线程单进程的服务器, 它对于request的请求并不使用线程去处理, 而采用了注册回调的方式. 也就是说对于request请求并不等到整个处理结束就释放连接去服务另一个请求.而处理过程被委托到后台线程(这里的线程与rquest的线程是不同的)中执行, 直到之前的处理结束再将数据发送回客户端.
+网络的I/O就成为了服务器的瓶颈.从这里可以看出nodejs并不适合处理这样的情况. 根据Ryan自己描述每个request请求处理不超过5ms会有较好的性能.具体的文章可以看这里.那么什么样的应用符合这样的要求呢? 我认为微博, 聊天室和某些mobile应用是适合的.
+nodejs提供了良好的包管理程序npm (node package management), 还有版本管理程序nvm (nodejs version management).
+
+
+
+https://cnodejs.org/topic/5338c5db7cbade005b023c98
+http://segmentfault.com/a/1190000000473869
+http://chenpeng.info/html/2351
+https://npm.taobao.org/
+https://cnodejs.org/topic/4f9904f9407edba21468f31e
+npm install -g nrm
+nrm use taobao        
+npm config set ca ""
+npm install -g cnpm --registry=https://registry.npm.taobao.org
+cnpm install [name]
+搜索镜像: https://npm.taobao.org
+
+
+sudo add-apt-repository ppa:chris-lea/node.js
+sudo apt-get update
+sudo apt-get install python-software-properties python g++ make nodejs npm
+curl -sL https://deb.nodesource.com/setup | sudo bash -
+sudo apt-get install -y nodejs
+
+curl -L https://npmjs.com/install.sh | sh
+ln -s /usr/local/bin/npm /usr/bin/npm  
+
+npm update -g npm
+sudo npm uninstall npm -g
+
+
+npm install -g generator-webapp  
+npm install -g grunt-cli grunt-init gulp http-server bower 
+npm install matchdep load-grunt-tasks grunt-contrib-imagemin  grunt-contrib-jshint grunt-contrib-clean grunt-contrib-concat grunt-contrib-copy grunt-contrib-uglify grunt-contrib-watch grunt-contrib-mincss grunt-contrib-htmlmin grunt-contrib-csslint --save-dev
+npm init 
+
+使用GRUNT需要两个文件，Gruntfile.js（用于配置grunt的任务），package.json（用于描述项目信息，和填写依赖）
+http://javascript.ruanyifeng.com/tool/grunt.html
+http://www.w3cplus.com/tools/get-up-running-grunt.html
+http://www.gruntjs.org/docs/getting-started.html
+http://solodu.com/speed-project-with-grunt/
+http://hdwill.info/post/2014/gruntjs-imagemin
+http://blog.grayghostvisuals.com/grunt/image-optimization/
+http://zerosixthree.se/getting-started-with-grunt/
+
+
+npm install gulp-util gulp-imagemin  gulp-ruby-sass gulp-minify-css gulp-jshint gulp-uglify gulp-rename gulp-concat gulp-clean gulp-livereload tiny-lr --save-dev 
+http://blog.90-designer.com/index.php/archives/gulp.html   gulp
+http://www.dbpoo.com/getting-started-with-gulp/
+http://ued.ctrip.com/blog/?p=3582  压缩图片
+http://geek100.com/2684/   gulp-image-resize
+
+
+首先安装n模块：npm install -g n
+升级node.js到最新稳定版  n stable
+
+yum remove nodejs npm -y  
+
+
+http://www.darrenfang.com/2013/12/install-tengine-on-centos/
+http://heylinux.com/archives/2938.html
+http://www.tuicool.com/articles/yyA732i
+https://www.digitalocean.com/community/tutorials/how-to-optimize-nginx-configuration
+http://dak1n1.com/blog/12-nginx-performance-tuning
+http://blog.martinfjordvald.com/2011/04/optimizing-nginx-for-high-traffic-loads/
+http://ae.koroglu.org/using-nginx-as-load-balancer-for-tomcat/

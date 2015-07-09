@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="TRACE">
+
+	<properties>
+		<property name="logPath">log</property>
+	</properties>
+
+	<Appenders>
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout pattern="%d{YYYY-MM-dd HH:mm:ss} [%t] %-5p %c{1}:%L - %msg%n" />
+			<!-- <PatternLayout pattern="%d{HH:mm:ss} [%t] %-5level %logger{36} - 
+				%msg%n" /> -->
+			<!-- <PatternLayout pattern="%-d [%t] %-5p %c{1}:%L - %m%n" /> -->
+		</Console>
+
+		<!-- <File name="LogFile" filename="${sys:catalina.home}/logs/automation.log"> 
+			<PatternLayout pattern="%d{YYYY-MM-dd HH:mm:ss} [%t] %-5p %c{1}:%L - %msg%n" 
+			/> </File> -->
+
+		<RollingRandomAccessFile name="RollingFile"
+			filename="${logPath}/automation.log" filepattern="${logPath}/%d{YYYYMMddHHmmss}-automation.log">
+			<PatternLayout pattern="%d{YYYY-MM-dd HH:mm:ss} [%t] %-5p %c{1}:%L - %msg%n" />
+			<Policies>
+				<SizeBasedTriggeringPolicy size="10 MB" />
+				<TimeBasedTriggeringPolicy />
+			</Policies>
+			<DefaultRolloverStrategy max="20" />
+		</RollingRandomAccessFile>
+
+		<!-- <Async name="Async"> -->
+		<!-- <AppenderRef ref="RollingFile" /> -->
+		<!-- </Async> -->
+	</Appenders>
+	<Loggers>
+<!-- 	    http://logging.apache.org/log4j/2.x/manual/async.html -->
+		<AsyncLogger name="log4j2.LogTest" level="trace"
+			includeLocation="true">
+			<AppenderRef ref="RollingFile" />
+		</AsyncLogger>
+		<Root level="debug">
+			<AppenderRef ref="Console" />
+			<!-- <AppenderRef ref="Async" /> -->
+<!-- 			<AppenderRef ref="RollingFile" /> -->
+		</Root>
+	</Loggers>
+</Configuration>

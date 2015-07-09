@@ -1,0 +1,13 @@
+wget http://download.zeromq.org/zeromq-4.0.4.tar.gz  
+tar zvxf zeromq-4.0.4.tar.gz  
+mv zeromq-4.0.4 zeromq  
+cd zeromq  
+sudo apt-get install autoconf automake libtool gcc gcc- g++ make  git
+./configure
+make
+sudo make install
+
+
+http://lizhensan.iteye.com/blog/2148067
+nohup zmq_server --port 5300& 
+(Ä¬ÈÏ¶Ë¿ÚÊÇ 5682) 

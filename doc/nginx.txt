@@ -1,0 +1,36 @@
+http://blog.csdn.net/faye0412/article/details/8632959   https
+http://nolinux.blog.51cto.com/4824967/1594029?utm_source=tuicool   健康检查  淘宝  nginx_upstream_check_module
+
+proxy_set_header X-Forwarded-Host $host;
+proxy_set_header X-Forwarded-Server $host;
+proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+proxy_set_header X-Real-IP $remote_addr;
+proxy_pass http://127.0.0.1:8080/oauth_web/oauth/token$is_args$args&grant_type=client_credentials;
+proxy_set_header Host $host:$server_port;
+
+proxy_pass http://$http_host$uri$is_args$args;
+
+nginx的配置文件中可以使用的内置变量以美元符$开始，也有人叫全局变量。
+$arg_PARAMETER 这个变量值为：GET请求中变量名PARAMETER参数的值。
+$args 这个变量等于GET请求中的参数。例如，foo=123&bar=blahblah
+$http_HEADER   HTTP请求头中的内容，HEADER为HTTP请求中的内容转为小写，-变为_(破折号变为下划线)，例如：$http_user_agent(Uaer-Agent的值), $http_referer
+$is_args 如果$args设置，值为"?"，否则为""。
+
+mkfifo /path/to/nginx/logs/access_log_pipe
+/path/to/cronolog /path/to/log/access_%Y%m%.log <  /path/to/nginx/logs/access_log_pipe &
+把 nginx 的日志路径指到那个命名管道然后重启一下就可以了。之后在 nginx 的启动脚本里要把启动 cronolog 放在启动nginx 之前。
+http://syre.blogbus.com/logs/32229878.html
+nohup cat /data/access_log_pipe | /usr/local/sbin/cronolog /data/log/domain.access_%Y%m%d%H%M.log &
+http://www.tuicool.com/articles/BF36rq
+
+location ^~ /images/ {  # 匹配任何以 /images/ 开始的请求，并停止匹配 其它location
+location ~* \.(gif|jpg|jpeg)$ {  # matches any request ending in gif, jpg, or jpeg.
+
+sudo kill 9  `cat /var/run/nginx.pid`  && sleep 2s && ps aux | grep nginx
+sudo nginx -c /etc/nginx/smart.conf && sleep 2s && ps aux | grep nginx
+sudo nginx -s reload && sleep 2s && ps aux | grep nginx
+
+nginx -t 检查nginx配置的语法,操作前都要检查一下
+1) nginx -t;  nginx -s reload
+2) nginx -t;  kill -HUP <nginx_master_process_pid>
+http://www.cnblogs.com/derekchen/archive/2011/02/17/1957209.html

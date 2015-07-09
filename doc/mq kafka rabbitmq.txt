@@ -1,0 +1,24 @@
+kafka
+http://www.weixinyidu.com/n_366292
+http://www.cnblogs.com/oftenlin/p/4045924.html
+http://blog.csdn.net/honglei915/article/details/37564329  Kafka运行环境
+http://blog.csdn.net/honglei915/article/details/37563647
+http://blog.csdn.net/honglei915/article/details/37564521  简单介绍
+http://blog.csdn.net/honglei915/article/details/37932819
+
+
+http://queues.io/
+https://github.com/huanghua581/notes/blob/master/PHP/%E5%B8%B8%E8%A7%81%E5%BC%80%E6%BA%90%E6%B6%88%E6%81%AF%E7%B3%BB%E7%BB%9F.md
+
+https://github.com/antirez/disque  alpha
+
+zoo
+http://www.coder4.com/archives/3122
+
+
+RocketMQ的前身是Metaq，当Metaq3.0发布时，产品名称改为RocketMQ
+https://github.com/alibaba/RocketMQ/wiki/rmq_vs_kafka  比较
+http://blog.csdn.net/a19881029/article/details/34446629
+http://my.oschina.net/firxiao/blog/314834   RocketMQ 消息队列简单部署
+http://my.oschina.net/cloudcoder/blog/200741
+http://blog.csdn.net/a19881029/article/details/34446629

@@ -1,0 +1,161 @@
+http://www.programmer.com.cn/12917/   阿里云oss
+http://www.programmer.com.cn/10021/
+
+http://docs.aliyun.com/?spm=5176.1829009.1002.1.b9uy1V#/pub/aliyun-command-line-interface/reference/services-support   命令行工具
+yum install zookeeper* -y   配置 /etc/zookeeper/conf/zoo.cfg
+service zookeeper-server init --myid=1
+service zookeeper-server start
+http://blog.javachen.com/2013/04/06/install-cloudera-cdh-by-yum/
+
+wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.163.com/.help/CentOS6-Base-163.repo
+yum clean all
+yum makecache
+http://yhz.me/blog/nginx-keepalived.html
+
+wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u20-b26/jdk-8u20-linux-x64.rpm -O jdk-8u20-linux-x64.rpm
+yum install jdk-8u20-linux-x64.rpm
+yum install php php-cli php-common php-mysql php-fpm php-gd php-imap php-ldap php-mbstring php-snmp php-pear php-xml php-xmlrpc 
+因为$document_root 的参数是由root html那一行定义的，默认是在/etc/nginx/html/ 所以把 html换成站点根目录就正常了。
+/etc/php-fpm.d/www.conf
+127.0.0.1:9000 或  unix:/tmp/php-cgi.sock
+yum -y install nginx mysql-server php-fpm php-cli php-pdo php-mysql php-mcrypt php-mbstring php-gd php-tidy php-xml php-xmlrpc php-pear php-pecl-memcache php-eaccelerator
+
+wget http://mirrors.sohu.com/fedora-epel/6/i386/epel-release-6-8.noarch.rpm
+rpm -ivh epel-release-6-8.noarch.rpm
+http://www.discuz.net/thread-3513094-1-1.html
+
+Windows系统一个目录下仅支持6万多个文件，Liun系统目录下支持3万多个文件；当一个目录存储文件过多时，IO性能会直线下降
+http://help.aliyun.com/view/13438814.html?spm=5176.383663.9.5.AP1eHH
+
+wdcp (WDlinux Control Panel) 是一套用PHP开发的Linux服务器管理系统,类似国外流行的cpanel,旨在易于使用和管理Linux服务器,可以在线通过网页管理服务器和虚拟主机.简单,方便,易操作.
+
+Bucket名在整个OSS中具有全局唯一性，且不能修改。一个应用，例如图片分享网站，可以对应一个或多个Bucket。一个用户最多可创建10个Bucket，但每个Bucket中存放的Object的数量和大小总和没有限制，用户不需要考虑数据的可扩展性。
+http://help.aliyun.com/view/13438717.html?spm=5176.383663.9.13.AP1eHH
+http://aliyun_portal_storage.oss.aliyuncs.com/oss_api/oss_javahtml/quickstart.html
+http://aliyun_portal_storage.oss.aliyuncs.com/oss_api/oss_javahtml/install.html
+groupId>com.aliyun.openservices</groupId>
+<artifactId>aliyun-openservices</artifactId>
+
+阿里云服务器会自动分配一个独立的外网IP和一个独立的内网IP，内网IP一般用于服务器之间、服务器与OSS、RDS之间的通信。0M带宽的服务器不分配外网IP，升级公网带宽后会分配公网IP，公网IP需要控制台重启服务器才能生效。
+公网IP用于连接公网网络，如果您服务器应用需要从服务器外部公网访问，需要公网IP即可，公网IP入网流量没有限制，出网流量受制于您购买的带宽限制；
+
+
+TDDL已经是一个非常成熟的分布式数据库组件，在阿里内部，它支撑着几千个应用使用数据库，单一数据库集群最大规模达几百个数据库节点(mysql)。在云的新时代，TDDL有了一个新的名字：DRDS
+
+http://console.aliyun.com/index.html?spm=5176.6660585.774526181.2.YtqyS2#/
+管理终端连接密码： 453498
+
+
+http://bbs.aliyun.com/read/149100.html?spm=5176.7189909.0.0.DMy9lo
+http://aliyun_portal_storage.oss.aliyuncs.com/oss_api/oss_javahtml/OSSClient.html?spm=5176.7189909.0.0.arc2oQ&highlight=endpoint
+OSSClient client = new OSSClient(endpoint, accessKeyId, accessKeySecret);
+青岛节点外网地址： oss-cn-qingdao.aliyuncs.com  
+青岛节点内网地址： oss-cn-qingdao-internal.aliyuncs.com 
+杭州节点外网地址： oss-cn-hangzhou.aliyuncs.com 
+杭州节点内网地址:  oss-cn-hangzhou-internal.aliyuncs.com  
+原地址oss.aliyuncs.com 默认指向杭州节点外网地址。 
+
+
+http://www.yumao.name/?p=1252
+http://www.programmer.com.cn/12917/
+http://www.codingyun.com/article/45.html
+wget http://download.oracle.com/otn-pub/java/jdk/7u67-b01/jdk-7u67-linux-x64.tar.gz
+wget http://oss.aliyuncs.com/aliyunecs/onekey/mysql/mysql-5.5.35-linux2.6-x86_64.tar.gz
+wget http://mirrors.cnnic.cn/apache/tomcat/tomcat-7/v7.0.55/bin/apache-tomcat-7.0.55.tar.gz
+http://www.codingyun.com/article/24.html
+http://blog.csdn.net/cuibo1123/article/details/39050975
+http://blog.csdn.net/dyllove98/article/details/8917242
+http://help.aliyun.com/view/13495131.html
+
+HTTP Live Streaming 是由 Apple 提出的基于 HTTP 的流媒体传输协议。 它将一整个音视频流切割成可由 HTTP 下载的一个个小的音视频流，并生成一个播放列表（M3U8），客户端只需要获取资源的 M3U8 播放列表即可播放音视频。
+https://github.com/videojs/videojs-contrib-hls
+https://github.com/videojs/video.js
+
+
+uname -a
+Linux AY1404062027584053a1Z 2.6.32-358.6.2.el6.x86_64 #1 SMP Thu May 16 20:59:36 UTC 2013 x86_64 x86_64 x86_64 GNU/Linux
+yum list redis                   #列出redis软件
+yum -y install redis          #安装redis软件
+service redis start          #运行redis
+ps -ef | grep redis         #查询redis的运行进程
+redis-cli                        #进入redis命令行
+
+rpm -qa                # 查看所有安装的软件包
+chkconfig --list       # 列出所有系统服务
+crontab -l             # 查看当前用户的计划任务
+w                      # 查看活动用户
+df -h                  # 查看各分区使用情况
+route -n # 查看路由表
+netstat -lntp # 查看所有监听端口
+netstat -antp # 查看所有已经建立的连接
+shutdown -h now 立即关机 shutdown -r now 立即重启
+
+sudo yum install subversion   httpd mod_dav_svn mod_perl
+sudo yum install git-daemon  httpd gitweb 
+
+wget http://download.oracle.com/otn-pub/java/jdk/6u27-b07/jdk-6u27-linux-i586-rpm.bin 
+wget http://mirror.bit.edu.cn/apache/maven/maven-3/3.2.2/binaries/apache-maven-3.2.2-bin.tar.gz
+wget http://dist.sonar.codehaus.org/sonar-3.7.4.zip
+
+sudo wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat/jenkins.repo  
+sudo rpm --import http://pkg.jenkins-ci.org/redhat/jenkins-ci.org.key  
+sudo yum install jenkins  
+rpm -ql jenkins 
+/etc/sysconfig/jenkins JENKINS_PORT
+sudo /sbin/service jenkins start  
+
+http://theo.im/blog/2014/05/20/use-aliyun-mirror-to-boost-up-download-speed/ 
+
+wget http://nodejs.org/dist/v0.10.30/node-v0.10.30.tar.gz
+tar xzvf node-v* && cd node-v*
+sudo yum install gcc gcc-c++
+wget http://nodejs.org/dist/v0.10.30/node-v0.10.30-linux-x64.tar.gz
+sudo yum install epel-release
+curl https://raw.githubusercontent.com/creationix/nvm/v0.13.1/install.sh | bash
+https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-a-centos-7-server
+
+yum -y groupinstall "Development Tools"
+yum -y install screen
+npm -g install express express-generator supervisor
+
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i google-chrome-stable_current_amd64.deb 
+
+关掉防火墙 /etc/init.d/iptables stop
+http://www.server110.com/vmware/201309/1703.html   vmware端口映射
+
+wget http://download-aws.ej-technologies.com/jprofiler/jprofiler_linux_8_0_4.tar.gz 
+ chmod a+x jprofiler_linux_8_0_4.tar.gz (赋予读写权限)
+
+rpm -ivh http://mirror.rackcentral.com.au/epel/6/i386/epel-release-6-8.noarch.rpm
+yum -y install nginx keepalived  haproxy
+/etc/keepalived/keepalived.conf
+http://docs.ucloud.cn/v2/how-to-set-vip-in-keepalived-on-uhost-on-centos-6.html
+IPVSADM理解为IPVS管理工具；LVS（Linux Virtual Server）的核心为IPVS（IP Virtual Server），从Linux内核版本2.6起，IPVS模块已经编译进了Linux内核
+
+添加VRRP通讯支持到iptables里  iptables -A INPUT -d 224.0.0.18 -j ACCEPT
+
+
+yum install htop
+ubuntu安装ab   apt-get install apache2-utils
+centos安装ab   yum install httpd-tools
+查看系统最大文件数限制：cat /proc/sys/fs/file-max
+如何检查连接状态  使用netstat:    netstat -tan | awk '{print $6}' | sort | uniq -c
+或使用ss: ss -s
+
+
+//===== 待测试
+
+1. 安装php支持
+ yum install php-common php-cli php-gb php
+
+2. 安装ganglia及其相关组件
+server端：yum install rrdtool rrdtool-devel ganglia-web ganglia-gmetad ganglia-gmond ganglia-gmond-python httpd apr-devel zlib-devel libconfuse-devel expat-devel pcre-devel 
+client端：yum install ganglia-gmond
+/etc/ganglia/gmond.conf
+
+
+kvstore
+http://docs.aliyun.com/?spm=5176.7630237.9.6.Ya1GqE#/pub/kvstore/best-practice/redis-transcation
+http://docs.aliyun.com/?spm=5176.7630237.9.3.Ya1GqE#/pub/kvstore/quick-start/import-data-from-redis-to-kvstore
+redis-cli –pipe导入需要的redis Protocol数据格式

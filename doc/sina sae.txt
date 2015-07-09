@@ -1,0 +1,81 @@
+http://www.infoq.com/cn/articles/cl-sae-datastore/
+http://wenku.baidu.com/link?url=Y7vdViWW1e7As8zg3A2KwXGNMHiq41oBDuukdgIEezThhQqhNcRN2lGemOaEOrA4Cgrp_SqlRLnFWZpBdGNO-7rrtf5hIC0cLriJ4KFnVlu
+
+
+
+主数据库的地址为：w.rdc.sae.sina.com.cn，从数据库的地址为：r.rdc.sae.sina.com.cn
+用户名: access key ---（在左侧  汇总信息查）
+密　码: secret key ---（在左侧  汇总信息查）
+主库域名: 点击mysql=>管理mysql=>后出现的域名和端口     w.rdc.sae.sina.com.cn:3307  -   app_smartweixindevice
+数据库名 : app_*** （其实就是app_应用名）
+
+xk0o5j2o51
+3yxmkljh2w20x2wxh325025ij3llmj2h0h1lw2l2
+
+String URL="jdbc:mysql://r.rdc.sae.sina.com.cn:3307/app_smartweixindevice";
+Connection conn=DriverManager.getConnection(URL,"xk0o5j2o51","3yxmkljh2w20x2wxh325025ij3llmj2h0h1lw2l2");
+
+http://blog.csdn.net/yanzel/article/details/14109807
+      
+
+类型：Swift。
+服务器：auth.sinas3.com
+端口：443（默认）
+用户名：应用AccessKey（在应用“汇总信息”页面中查看）
+密码：应用SecretKey（在应用“汇总信息”页面中查看）
+
+http://blog.csdn.net/zhuifengshenku/article/details/38362771
+http://blog.sina.com.cn/s/blog_406a3c480101amd4.html
+看了遍sae java的文档，发现“SAE Java 环境以 OpenJDK 1.6 和 Jetty 7.4 为基础构建而成，平台运行在CentOS-6.x 64位Linux环境下
+
+用了一个commons-validator的组件，而这个组件包含了一个xml-apis的包，删掉就OK了。 
+http://www.tuicool.com/articles/aY3QFv
+
+ 
+String url="jdbc:mysql://w.rdc.sae.sina.com.cn:3307/app_weixintesting";
+String username = "5k12033jy5";  //AccessKey
+String password = "k54311imz2m5k43z04hmx12l02zhwzyy4hi14h7x"; //SecretKey
+Class.forName("com.mysql.jdbc.Driver");
+conn = DriverManager.getConnection(url, username, password);
+http://www.icoding.net/sae-lbs-java.html
+ 
+主库域名   SAE_MYSQL_HOST_M = 'w.rdc.sae.sina.com.cn' 
+从库域名   SAE_MYSQL_HOST_S = 'r.rdc.sae.sina.com.cn'
+端　　口    SAE_MYSQL_PORT = '3307' 
+数据库名    SAE_MYSQL_DB = 'app_appname' 
+用  户  名  SAE_MYSQL_USER = access_key 
+密　    码  SAE_MYSQL_PASS = secret_key
+
+
+在JVM级别，我们通过JVM的policy和安全管理器控制了不同级别的安全等级需要访问外部网络等操作调用权限更高的SAE jar包即可
+SAE Java 环境  JDK版本 1.6  WEB 服务器版本 jetty 7.x Servlet 2.5 
+避免jar包冲突 （servlet-api.jar  xmlsec.jar 删掉）
+
+服务使用的doc  http://sae4java.sinaapp.com/doc/index.html
+http://sae.sina.com.cn/?m=dashboard&a=account&tab=info#  安全邮箱是另外一个邮箱，非微博邮箱   Java应用目前不支持SVN上传，请使用在线上传的方式上传您的war包。
+SVN仓库地址：https://svn.sinaapp.com/smartweixindevice用户名：SAE 安全邮箱密   码 ：SAE 安全密码
+http://www.cnblogs.com/txw1958/archive/2012/08/27/svn-tutorial.html
+http://sae.sina.com.cn/doc/tutorial/code-deploy.html#id1
+
+
+Create your first secure tunnel with the following command:
+ngrok -authtoken 7yKBc8CY1yaUyd/PpDlv 80
+Open the web interface at http://localhost:4040 to inspect and replay requests.
+To get started, make a request to one of your tunnel URLs:
+http://5900828f.ngrok.com
+https://5900828f.ngrok.com
+
+http://blog.csdn.net/liuxiyangyang/article/details/22922265  ngrok
+Custom Subdomains
+Pick a custom subdomain so your app appears on https://myapp.ngrok.com instead of http://a1b2c3d4.ngrok.com
+ngrok -subdomain myapp 80
+
+Password Protected
+Specify http auth credentials required to access your tunnel so only you can access it.
+ngrok -httpauth "user:password" 80
+
+TCP Tunneling
+ngrok supports tunnelling at the TCP layer so you can expose any type of networked service to the internet.
+ngrok -proto tcp 22
+ 
+国家测绘局出于安全考虑，禁止国内出版的各种地图对外使用WGS-84坐标系，必须至少采用GCJ-02对地理位置进行首次加密，加入随机偏差。百度地图在GCJ-02的基础上，又进行了BD-09二次加密措施。

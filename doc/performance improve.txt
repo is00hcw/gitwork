@@ -1,0 +1,46 @@
+http://www.360doc.com/content/14/0606/16/3300331_384326124.shtml
+http://www.cnblogs.com/gbin1/archive/2013/07/03/3169060.html
+http://www.itwhy.org/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/web/web-%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96.html  WEB 前端性能优化
+<link rel="dns-prefetch" href="//widget.foo.com">  关于DNS的有两点：一是减少DNS的请求次数，第二个就是进行DNS预先获取。默认情况下浏览器会对页面中和当前域名（正在浏览网页的域名）不在同一个域的域名进行预获取，并且缓存结果，这就是隐式的DNS Prefetch。如果想对页面中没有出现的域进行预获取，那么就要使用显示的DNS　Prefetch了
+可以通过下面的标签禁止隐式的DNS Prefetch <meta http-equiv=”x-dns-prefetch-control” content=”off”> 
+
+可以使用prerender属性，这个属性能够帮助你提前加载整个页面，如下：<link rel="prerender" href="http://www.gbtags.com/gb/search.htm" />
+
+<link rel="prefetch" href="sprite.png">
+
+http://www.infoq.com/cn/articles/high-availability-scalable-architecture-practical-experience   高可用可伸缩架构实用经验谈
+在分布式系统中，一个请求可能会经过多个不同的子系统，这时最好生成一个UUID附在请求中，每个子系统在打印日志时都将该UUID放在MDC里，便于后续查询相关的日志
+http://blog.takipi.com/how-to-instantly-improve-your-java-logging-with-7-logback-tweaks/
+
+
+ Linux 系统内核 socket connection 调优查看总限制参数ulimit -a查看 Linux 系统级的最大打开文件数限制：cat /proc/sys/fs/file-max*通常这个系统级硬限制是 Linux系统在启动时根据系统硬件资源状况计算出来的最佳的最大同时打开文件数限制。这个也间接告诉我们这台机器可以同时承受 socket 的最大链接数。
+第一步，修改用户进程可打开文件数限制，修改/etc/security/limits.conf文件，在文件中添加如下行：* soft nofile 655350* hard nofile 655360
+第二步，修改网络内核对 TCP 连接的有关限制 ，修改/etc/sysctl.conf文件, 在文件中添加如下行：net.ipv4.ip_conntrack_max = 655350*Linux 网络内核的 IP_TABLE 防火墙对最大跟踪的 TCP连接数有限制，此限制值要尽量小，以节省对内核内存的占用。
+第三步，执行 sysctl 命令sysctl -p修改客户机的端口范围修改/etc/sysctl.conf文件，在文件中添加如下行：net.ipv4.ip_local_port_range = 1024 65000sysctl -p参考 http://blog.csdn.net/guowake/article/details/6615728《http长连接200万尝试及调优 》http://rdc.taobao.com/blog/cs/?p=1062
+http://blog.chinaunix.net/uid-20279362-id-4467171.html
+
+根据TCP/IP协议，连接断开之后，端口不会立刻被释放，而是处于TIME_WAIT状态，等待60s后（貌似/proc/sys/net/ipv4/tcp_fin_timeout配置），才会被释放掉，才能被新连接使用。
+修改tpc/ip协议配置，通过配置TCP_TW_REUSE参数，来释放TIME_WAIT状态的端口号给新连接使用/proc/sys/net/ipv4/tcp_tw_reuse
+http://qa.blog.163.com/blog/static/1901470022011822105451572/
+
+我们可以在系统运行时更改内核参数，而不需要重新引导系统。这是通过/proc虚拟文件系统实现的。/proc/sys目录下存放着大多数的内核参数，并且设计成可以在系统运行的同时进行更改, 不过重新启动机器后会失效
+将/proc/sys中的文件转换成sysctl中的变量依据下面两个简单的规则：　去掉前面部分/proc/sys  将文件名中的斜杠变为点
+每次系统启动时初始化脚本/etc/rc.d/rc.sysinit会读取/etc/sysctl.conf文件的内容，只是修改sysctl文件不会马上生效，如果想使修改马上生效可以执行下面的命令： sysctl –p
+http://www.cnblogs.com/goodspeed/p/3587195.html   vim /etc/sysctl.conf
+/sbin/sysctl -p
+http://www.haiyun.me/archives/linux-kernel-network.html  Linux服务器内核网络参数优化
+http://www.cnblogs.com/hzbook/archive/2011/11/11/2245752.html
+
+
+sync 命令将所有未写的系统缓冲区写到磁盘中，包含已修改的 i-node、已延迟的块 I/O 和读写映射文件
+echo 3 > /proc/sys/vm/drop_caches
+http://www.cnblogs.com/panfeng412/p/drop-caches-under-linux-system.html
+http://www.cnblogs.com/panfeng412/p/drop-caches-under-linux-system-2.html
+http://os.51cto.com/art/201406/442795.htm    nmon
+http://www.cnblogs.com/panfeng412/archive/2012/03/08/hbase-performance-tuning-section1.html  
+
+
+http://segmentfault.com/a/1190000000387993  多核伪共享
+http://ifeve.com/false-shareing-java-7-cn/
+
+http://www.cnblogs.com/aspnethot/articles/3284639.html 移动加速

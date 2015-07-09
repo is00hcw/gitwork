@@ -1,0 +1,8 @@
+http://www.csdn.net/article/2014-02-27/2818564-best-compilers-and-ides-for-c-programmers
+http://www.smorgasbordet.com/pellesc/
+http://sourceforge.net/projects/dev-cpp/
+
+http://wiki.ubuntu.org.cn/Gcchowto
+http://blog.csdn.net/vonger/article/details/6307692  qt
+
+http://www.evget.com/article/2014/3/3/20598.html  ide

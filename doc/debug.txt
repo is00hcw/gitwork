@@ -1,0 +1,16 @@
+puer -a route.js -p 8080
+ssh 反向连接  远程端口  localhost  本地端口，  还需要再nginx配置proxy pass到远程端口，默认绑定到127.0.0.1
+
+移动
+http://www.alloyteam.com/2015/03/mobile-web-debug-tool-rosin/   rosin
+http://yanhaijing.com/mobile/2014/12/17/web-debug-for-mobile/
+http://js8.in/2013/11/20/%E4%BA%94%E4%B8%AA%E4%BD%A0%E5%BF%85%E9%A1%BB%E7%9F%A5%E9%81%93%E7%9A%84javascript%E5%92%8Cweb-debug%E6%8A%80%E6%9C%AF/
+http://thx.github.io/mobile/debugging-in-mobile/
+http://segmentfault.com/blog/laopopo/1190000000731903  debug.js
+https://github.com/binnng/debug.js
+http://www.jianshu.com/p/82ab631502e1
+http://cssor.com/debugging-in-mobile.html
+http://www.iinterest.net/2012/05/08/ebugging-mobile-web-applications-withadobe-shadow/   adobe shadow
+http://www.debuggap.com/
+http://www.cnblogs.com/yuzhongwusan/p/4270219.html weinre
+http://blog.csdn.net/freshlover/article/details/42528643  chrome remote

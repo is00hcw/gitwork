@@ -1,0 +1,18 @@
+http://www.cnblogs.com/lyhabc/p/3838764.html
+http://www.178linux.com/archives/5261
+http://88fly.blog.163.com/blog/static/122680390201241901127184/
+https://github.com/Qihoo360/Atlas
+https://github.com/NetEase/InnoSQL
+https://github.com/youtube/vitess
+https://code.google.com/p/tungsten-replicator/   https://github.com/is00hcw/tungsten-replicator/
+
+https://github.com/chenzhiwei/linux/tree/master/drbd 
+DRBD官方网站：http://go.rritw.com/drbd.linbit.com/docs/install/
+yum install drbd kmod-drbd
+http://freeloda.blog.51cto.com/2033581/1275528
+heartbeat与corosync是流行的Messaging Layer （集群信息层）
+Pacemaker是最流行的CRM（集群资源管理器），是从heartbeat v3中独立出来的资源管理器，同时Corosync+Pacemaker是最流行的高可用集群的套件
+https://github.com/corosync/corosync
+
+
+http://www.slideshare.net/AlexSu1/redis-introduction-23784248

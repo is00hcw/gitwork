@@ -1,0 +1,60 @@
+http://www.ibm.com/developerworks/cn/web/1405_liugang_mocowebtest/
+http://www.ibm.com/developerworks/cn/java/j-lo-spring-boot/
+http://www.infoq.com/cn/articles/microframeworks1-spring-boot
+http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+http://presos.dsyer.com/decks/spring-boot-intro.html#slide25
+https://github.com/dreamhead/moco/blob/master/moco-doc/apis.md
+https://github.com/dreamhead/moco/blob/master/moco-doc/usage.md
+java -jar moco-runner-<version>-standalone.jar http -p 12306 -c foo.json
+
+
+http://leeluolee.github.io/2014/10/24/use-puer-helpus-developer-frontend/
+https://coderwall.com/p/ss80vw/using-node-js-with-express-as-a-simple-api-mock-server
+http://www.mihtool.com/
+
+https://github.com/jakubroztocil/httpie    pip install --upgrade httpie
+IOS、Android自动化测试框架Appium    npm install -g appium
+CasperJS 是一个开源的导航脚本和测试工具，使用 JavaScript 基于 PhantomJS 编写，用于测试 Web 应用功能，Phantom JS是一个服务器端的 JavaScript API 的 WebKit。
+https://github.com/leeluolee/puer   nodejs 模拟服务器
+http://expressjs.com/api.html#request 
+http://howtonode.org/how-to-install-nodejs
+req.param("uid") + " , " + req.header("token")
+
+
+http://www.pythoner.cn/home/blog/twisted-treq-http-test/   使用 Twisted Python 和 Treq 进行 HTTP 压力测试
+http://www.itwhy.org/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/python/python-%E7%AC%AC%E4%B8%89%E6%96%B9-http-%E5%BA%93-requests-%E5%AD%A6%E4%B9%A0.html   Python 第三方 http 库-Requests 学习
+http://www.aikaiyuan.com/5318.html  Python Web 性能和压力测试 multi-mechanize
+http://www.infoq.com/cn/articles/new-generation-server-testing-tool-gatling/  Gatling是一款基于Scala 开发的高性能服务器性能测试工具
+
+Gatling
+http://blog.chinaunix.net/uid-8625039-id-4394793.html
+http://www.cnblogs.com/huang0925/p/3862935.html
+http://www.thoughtworks.com/insights/blog/gatling-take-your-performance-tests-next-level
+https://github.com/gatling/gatling/blob/f5aeee2492dedd665b0dcf0b5b60f0a2227a53b6/gatling-bundle/src/test/scala/io/gatling/bundle/test/HTTPCompileTest.scala
+
+pip install multi-mechanize mechanize numpy matplotlib
+
+
+fiddler
+http://blog.chinaunix.net/uid-27105712-id-3738821.html
+http://segmentfault.com/blog/lolomaco/1190000002529089
+
+cat /proc/sys/kernel/threads-max
+linux 系统中单个进程的最大线程数有其最大的限制 PTHREAD_THREADS_MAX  这个限制可以在 /usr/include/bits/local_lim.h 中查看
+-Xss128k：设置每个线程的堆栈大小。JDK5.0以后每个线程堆 栈大小为1M，以前每个线程堆栈大小为256K。根据应用的线程所需内存大小进行调整。在相同物理内存下，减小这个值能生成更多的线程。但是操作系统对一 个进程内的线程数还是有限制的，不能无限生成，经验值在3000~5000左右。
+线程栈的大小是个双刃剑，如果设置过小，可能会出现栈溢出，特别是在该线程内有递归、大的循环时出现溢出的可能性更大，如果该值设置过大，就有影响到创建栈的数量，如果是多线程的应用，就会出现内存溢出的错误．
+http://dev.classmethod.jp/cloud/apache-jmeter-master-slave-100mil-req-min/     jmeter -n -t datetime.jmx -r -l result.jtl
+http://www.oschina.net/translate/how-run-load-test-50k-concurrent-users  5w并发
+http://blog.csdn.net/defonds/article/details/40858005  在非 GUI 模式下运行 JMeter
+远程启动jmeter  应用进场景：用一台机器（称为JMeter客户端）上的jmeter同时启动另外几台机器（称为JMeter远程服务器）上的jmeter。
+http://mirrors.hust.edu.cn/apache//jmeter/binaries/apache-jmeter-2.13.tgz
+http://www.cnblogs.com/reach296/p/3938261.html?utm_source=tuicool
+http://www.cnblogs.com/yangxia-test/p/4016277.html
+http://www.cnblogs.com/yangxia-test/archive/2012/10/30/2746621.html  loadrunner
+./jmeter -n -t datetime.jmx -r -l result.jtl
+
+
+http://www.cnblogs.com/yangxia-test/archive/2012/12/01/2797249.html  http code
+
+HW主要在用这几个静态代码扫描工具： PMD，Simian，Findbugs，Checkstyle
+

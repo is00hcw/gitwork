@@ -1,0 +1,11 @@
+sudo docker.io pull jmoger/gitblit
+<wait a while>
+sudo docker.io run -d --name gitblit -p 443:443 -p 80:80 -p 9418:9418 -p 29418:29418 jmoger/gitblit
+
+https://registry.hub.docker.com/u/jmoger/gitblit/
+
+
+http://cn.soulmachine.me/blog/20140122/ 在Centos 6.5上安装docker
+rpm -Uvh http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+yum install docker-io --enablerepo=epel
+http://cn.soulmachine.me/blog/20131026/

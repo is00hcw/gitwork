@@ -1,0 +1,124 @@
+﻿http://iot.weixin.qq.com/document-2_5.html  获取设备二维码
+http://mp.weixin.qq.com/wiki/18/28fc21e7ed87bec960651f0ce873ef8a.html    目前有2种类型的二维码，分别是临时二维码和永久二维码，前者有过期时间，最大为1800秒，但能够生成较多数量，后者无过期时间，数量较少（目前参数只支持1--100000）。两种二维码分别适用于帐号绑定、用户来源统计等场景。
+
+http://iot.weixin.qq.com/document-2_10.html  wifi设备状态
+
+
+
+http://mp.weixin.qq.com/debug/cgi-bin/sandboxinfo?action=showinfo&t=sandbox/index   test
+http://203.195.191.112/device/   js test
+http://pr.weixin.qq.com/voice/sdkandroid
+
+http://iot.weixin.qq.com/doc/blue/%E5%BE%AE%E4%BF%A1%E7%A1%AC%E4%BB%B6%E5%B9%B3%E5%8F%B0%E8%93%9D%E7%89%99demo%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%95%99%E7%A8%8B.pdf
+申请微信公众平台接口测试账号
+http://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=sandbox/login
+打开网址，点击登录按钮后，显示二维码图片。使用微信扫描二维码，在弹出页面中点击确认登录，即可获得并登录测试账号。在测试号界面，可以看到测试号相关信息：appID、appsecret、右上角的微信号（即原始 id，以 gh_开头）。
+测试账号默认即有权限调用设备功能接口。
+将代码部署到服务器，微信公众号接口只支持 80 接口。
+
+消息接口：公众平台将用户操作的信息发送给开发者配置的 URL，并接收回复。
+API 接口：由开发者主动调用的接口。
+消息接口将数据通过 POST 请求发送到开发者填写的 URL 上，数据格式为 XML。
+MsgType 为 event，Event 元素为 subscribe 表示关注，unsubscribe 表示取消关注。
+MsgType 为 event，Event 元素为 CLICK 表示点击自定义菜单，EventKey 为创建菜单时指定的值，可以通过该值判断用户点击了哪一个菜单。
+MsgType 为 device_event，Event 取值为 bind/unbind，bind 表示绑定设备，unbind表示解除绑定。
+在用户通过微信控制设备时，需要根据 FromUserName查询到设备信息（DeviceType、DeviceID、OpenID），才能推送数据和控制信息到设备。
+MsgType 为 device_text，Content 为数据内容，经过了 BASE64 编码。
+调用所有 API 接口时均需使用 https 协议。access_token 有效期目前为 2 个小时，需要定时刷新，且刷新后将导致上次获取的凭证失
+效。
+
+
+授权时需要的参数：设备 MAC 地址、加密 key（如果加密）、蓝牙类型、是否加密、连接策略、断开策略等。设备授权后，还可以通过授权 API 更新授权属性。
+授权后就可以通过微信扫描设备二维码，进行设备绑定以及与设备进行联调。
+推送给微信用户的内容去掉末尾的反斜杠零'\0'  ??
+设备的mac地址（48bit）格式采用16进制串的方式（长度为12字节），不需要0X前缀，如： 1234567890AB
+auth及通信的加密key，第三方需要将key烧制在设备上（128bit）， 格式采用16进制串的方式（长度为32字节），不需要0X前缀，如：1234567890ABCDEF1234567890ABCDEF
+
+
+action_name	二维码类型，QR_SCENE为临时,QR_LIMIT_SCENE为永久,QR_LIMIT_STR_SCENE为永久的字符串参数值
+scene_id	场景值ID，临时二维码时为32位非0整型，永久二维码时最大值为100000（目前参数只支持1--100000）
+
+https://github.com/chanjarster/weixin-java-tools
+https://github.com/chanjarster/weixin-java-tools/wiki/MP_Quick-Start
+https://github.com/chanjarster/weixin-java-tools/wiki/MP_demo%E4%BB%A3%E7%A0%81
+https://github.com/chanjarster/weixin-java-tools/wiki/MP_%E5%A6%82%E4%BD%95%E8%B0%83%E7%94%A8%E6%9C%AA%E6%94%AF%E6%8C%81%E7%9A%84%E6%8E%A5%E5%8F%A3
+
+
+http://www.cnblogs.com/_popc/p/3682312.html  坐标转化
+http://www.cnblogs.com/txw1958/archive/2013/02/04/weixin-if11-location.html
+
+pay
+http://mp.weixin.qq.com/cgi-bin/readtemplate?t=business/course2_tmpl&lang=zh_CN
+http://www.oschina.net/p/crypto-js/
+获取最新文档和支付体验，请关注公众号：WXPayService”微信支付商户助手”。
+http://mp.weixin.qq.com/cgi-bin/readtemplate?t=business/faq_tmpl&lang=zh_CN
+http://mp.weixin.qq.com/wiki/10/165c9b15eddcfbd8699ac12b0bd89ae6.html
+https://open.weixin.qq.com/cgi-bin/frame?t=resource/res_main_tmpl&verify=1&lang=zh_CN
+http://fangjie.info/?p=393
+http://www.csdn.net/article/2014-10-21/2822207-weiixn
+https://open.weixin.qq.com/paymch/readtemplate?t=open/resource/app_wx_pay_android_tmpl
+
+ssl
+https://mp.weixin.qq.com/cgi-bin/announce?action=getannouncement&key=1414562353&version=12&lang=zh_CN
+
+
+https://github.com/zxlie/WeixinApi
+https://github.com/is00hcw/weixin-java-tools/releases
+https://github.com/grossopa/weixin-mp-java
+https://github.com/usc/wechat-mp-sdk
+http://s.dianping.com/topic/6654547      https://github.com/dianping/dianping-open-sdk/tree/master/sdks/weixin/weixin-java
+
+
+测试工具
+http://www.debuggap.com/
+http://yujiangshui.com/multidevice-frontend-debug/
+
+
+微信登陆
+http://www.xueshen.net/weixin/483/?utm_source=tuicool
+http://www.cnblogs.com/txw1958/p/scan-qrcode-login.html
+https://open.weixin.qq.com/cgi-bin/frame?t=home/web_tmpl&lang=zh_CN
+
+
+错误代码说明  接入协议
+
+
+
+微信号： gh_38fc9d7737fe 
+appID wx39028721c30b599d
+appsecret  1350c778b167e5fe8a13511c71bbe843
+http://smartweixindevice.sinaapp.com/callback
+Token  gh_38fc9d7737fe
+
+
+http://iot.weixin.qq.com/document-2_1.html
+ngrok 8080（ngrok是一个让外网访问本机的工具）
+https://github.com/chanjarster/weixin-java-tools/wiki/%E5%8A%A0%E8%A7%A3%E5%AF%86%E7%9A%84%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E5%8A%9E%E6%B3%95  加密异常
+https://github.com/chanjarster/weixin-java-tools/wiki/MP_Quick-Start
+https://github.com/chanjarster/weixin-java-tools/wiki/MP_%E5%BE%AE%E4%BF%A1%E6%B6%88%E6%81%AF%E8%B7%AF%E7%94%B1%E5%99%A8
+https://github.com/chanjarster/weixin-java-tools/wiki/MP_%E5%A6%82%E4%BD%95%E8%B0%83%E7%94%A8%E6%9C%AA%E6%94%AF%E6%8C%81%E7%9A%84%E6%8E%A5%E5%8F%A3
+me.chanjar.weixin.mp.bean.WxMpXmlMessage 解析xml
+WxMpXmlOutMessage outMessage = wxMpMessageRouter.route(inMessage);
+
+WxGsonBuilder.create().fromJson(json, WxMediaUploadResult.class);
+InputStream inputStream = InputStreamResponseHandler.INSTANCE.handleResponse(response);
+
+============nodejs==================
+https://github.com/node-webot/weixin-robot
+https://github.com/node-webot/wechat-mp
+https://www.npmjs.com/package/wechat-api
+https://github.com/node-webot/wechat-enterprise
+npm install express -gd
+其中g参数是把express安装到NodeJS的lib目录，d参数表示同时安装依赖模块包。
+
+
+/etc/php-fpm.conf
+https://github.com/dianping/dianping-open-sdk/tree/master/sdks/weixin/weixin-php
+https://github.com/netputer/wechat-php-sdk
+
+
+============python==================
+http://uwsgi-docs.readthedocs.org/en/latest/Install.html
+http://wechat-python-sdk.readthedocs.org/zh_CN/master/tutorial.html
+pip install uwsgi
+pip install wechat-sdk

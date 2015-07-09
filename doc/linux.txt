@@ -1,0 +1,120 @@
+﻿sudo echo ‘xxx’ > /path/file 重定向时 Permission denied   http://digdeeply.org/archives/05232211.html
+sudo sh -c "cat /dev/null > mylog_all_error.log"
+
+~/.ssh/id_rsa  600
+scp -P 10008 -r huangchuwei@10.169.215.75:/data/www/app.atsmart.io/app/m5/test ./
+
+http://www.lvtao.net/server/572.html   Linux 性能监控、测试、优化工具   Brendan D. Gregg  (Linux Performance Tools) 
+http://www.lvtao.net/server/centos-server-setup.html    生产服务器环境最小化安装后 Centos 6.5优化配置备忘
+http://www.lvtao.net/server/174.html  常用shell 运维管理方法
+http://my.oschina.net/abcfy2/blog/200351   crontab smtp
+
+glances
+jstatd 启动jvm监控服务。它是一个基于rmi的应用，向远程机器提供本机jvm应用程序的信息。默认端口1099
+top -p 3560 -H  检查线程占用
+well-known file is not secure 需要将执行命令的用户改为启动tomcat线程用户, 如下 sudo -u tomcat jmap -dump:file=filename pid
+sudo -u tomcat jstack <java-pid> | grep -A 10 <0x thread-id> 查看运行状况   http://www.cnblogs.com/zemliu/p/3568141.html
+http://www.cnblogs.com/nexiyi/p/java_thread_jstack.html
+
+ssh反向连接
+http://dzmailbox.blog.163.com/blog/static/120534385201232642637847/
+http://www.putty.ws/putty-tunnel-methods
+
+http://os.51cto.com/art/201412/461511.htm  6个实用的Linux系统资源监控工具   -- monit munin  Glances
+http://os.51cto.com/art/201412/460698_all.htm
+
+http://www.cnblogs.com/mchina/archive/2012/07/04/2575079.html  shell
+tcpdump   命令：tcpdump -s0 -w /sdcard/a.pcap
+http://www.xuebuyuan.com/1594950.html  kill
+
+搜索模式为 /string，搜索下一处为n，搜索上一处为N
+移动到行尾$，移动到行首0（数字），移动到行首第一个字符处^
+移动到段首{，移动到段尾}
+移动到下一个词w，移动到上一个词b
+移动到文档开始gg，移动到文档结束G
+跳到第n行 ngg 或 nG 或 :n
+http://blog.csdn.net/ceven2010/article/details/7406341
+
+
+扫描端口  nc -nvvz -w2 127.0.0.1 1-1000      最基本的功能之一了，扫描目标ip的端口段，然后用-w加上一个超时时间。参数里加上r使得端口扫描变得随机一些
+连接到目标：nc -nvv 127.0.0.1 8089   作为测试客户端非常常用的功能，即连接到目标ip的某个端口上。连接上之后会把stdin的数据发给server。 
+服务器：nc -lvv -p 8089  让nc作为一个server监听8089端口，把stdin的数据发给client。
+
+
+for line in `cat file(待读取的文件)`   注意：for line in $(cat test.txt)   当文件中有空格或者tab 时，一定要设置一下IFS变量。   http://blog.csdn.net/hittata/article/details/7042779
+cat file(待读取的文件) | while read line
+df -h
+free -m
+wc -l filename：显示一个文件的行数
+pgrep mysql | xargs kill -9　　#直接杀掉mysql的进程
+查看监听中的TCP端口 netstat -tnlp
+查看端口是否被使用 netstat -nlp | grep 端口号
+对当前目录及子目录中所有文件，查找包含“java”字符串的文件 grep -r java *
+清空文件 cat /dev/null > g.txt
+压缩当前目录下的所有文件及子目录 zip -r first.zip *
+将zip压缩包解压到dir目录下 unzip first.zip -d dir
+更改dir目录下的所有文件和子目录的拥有者和所属组 chown -R user1.group1 dir
+通过管道的方式计算文件个数 ls | wc -l
+不挂断地运行命令，结合&可实现用户退出终端或注销之后，让程序一直在后台运行。 nohup ./start.sh &
+只筛选出有Exception的行 tail -fn 2000 jvm-default.log | grep -i Exception
+http://zhanjia.iteye.com/blog/1797788   程序员必备：Linux日常维护命令
+http://blog.csdn.net/xun_2008/article/details/8904722
+http://www.cnblogs.com/mchina/archive/2012/07/02/2573124.html
+http://www.cnblogs.com/mchina/archive/2012/07/02/2573708.html
+
+find . -name '*.jpg'
+grep -A, -B and -C显示之前、之后、前后的几行
+grep -c 统计匹配的行数
+`date -d '-1 day' +%Y/%m/%d`
+查看当前用户的定时任务 crontab -l
+删除当前用户的定时任务 crontab -r
+crontab -e 00 00 * * * cd /usr/local/flume/logs && rm -f `ls -1t | grep flume.log.$(date -d "7 days ago" +"%Y-%m-%d")` >/dev/null 2>&1
+2>&1 是将错误输出重定向到标准输出。 
+find . -type f -mtime +15 |xargs rm -f #删除当前目录下15天以前的文件 
+find . -type d -mtime +30 |xargs rm -rf # 删除当前目录下30天以前的目录
+-xargs 一次将参数传给命令，可以使用-n控制参数个数
+-mtime -n[+n]: 找出修改数据时间在n日之内[之外]的文件
+排序之后删除了重复行，同时在行首位置输出该行重复的次数 sort testfile | uniq -c  
+
+命令 pkill -9 -u strike zsh 与 pgrep -u strike zsh | xargs kill -9 等效。
+为了在同一窗口中查看两个文件并缓冲读取的所有信息，使用 -I 选项把指定的文件与另一个文件合并，比如 multitail -M 0 /var/log/apache/access.log -I /var/log/apache/error.log。在这里，把 Apache 错误日志和访问日志合并在一起。-M 0 记录输入的所有数据；在任何时候，按 B 键即可看到缓冲区。
+控制键就是tmux的主键.当你在tmux环境下按下这个键的时候,tmux就会把你后面输入的指令,解析成它内置的功能.tmux默认的控制键是ctrl+b(同时按下ctrl和b
+http://www.centoscn.com/yunwei/news/2013/1021/1925.html
+http://www.it165.net/os/html/201312/6831.html
+
+#!/bin/bash
+var_name=value 等号两边不能有空格  定义变量时, =号的两边不可以留空格.  这里不能添加的原因是 添加了空格一般是用来表示判断的
+条件测试语句 [ 符号的两边都要留空格   如果if 和 then写在同一行, 那么,注意, then的前面要跟上 ; 号.
+http://blog.sina.com.cn/s/blog_80799217010188x9.html
+$变量名称    ${变量名称}     如果变量在语句当中被引用，必须要使用${x}才可以
+a[0]=1    a=（1 2 3） 默认空格隔开     
+取出数组中所有的值：   echo ${a[@]}  或者echo ${a[*]}    取得数组元素的个数：    echo ${#a[@]} 或者 echo ${#a[*]}
+命令行参数是从$1开始的依次类推，$@代表所有参数，命令本身使用$0来表示
+字符串切片是从0开始的 在使用${}的时候 大括号内的变量引用前面的$可以不写     ${变量:位置起点}   ${myname:3}       ${变量:位置起点:长度}
+echo $PWD 等价 pwd
+$1,$2,...,$N  位置参数，当超过9时用${N}来表示。  $$ 当前的进程号  $#  位置参数的个数 
+sleep 5s  &&   sleep 5m
+for I in {1..200}; do   	done     http://www.cyberciti.biz/faq/bash-for-loop/
+if [ -e . ]    if test -e .    http://www.arachnoid.com/linux/shell_programming.html
+
+-bash: ./test.sh: /bin/bash^M: bad interpreter: No such file or directory
+:set ff? 可以看到dos或unix的字样. 如果的确是dos格式的, 那么你可以用set ff=unix把它强制为unix格式的
+
+
+ps -ef|grep tomcat | grep  "catalina.sh" | awk '{print $2}'  输出第二列
+awk工作流程是这样的：读入有'\n'换行符分割的一条记录，然后将记录按指定的域分隔符划分域，填充域，$0则表示所有域,$1表示第一个域,$n表示第n个域。默认域分隔符是"空白键" 或 "[tab]键"
+time=`date +%F-%H-%M-%S`
+
+sudo kill 9 `ps axu | grep tomcat | grep server |  awk '{print $2}'` &&  sleep 2s  &&  ps axu | grep tomcat 
+sudo mv -f *.log logs/  && ls -al  && sleep 3s  && sudo  /apache-tomcat-7.0.55/bin/startup.sh && ps axu | grep tomcat 
+
+sudo apt-get install nodejs  nodejs-legacy  npm
+sudo apt-get install mongodb-clients  mongodb-server
+sudo npm install -g express
+npm cache clean
+
+npm install socket.io -gd
+wget http://nodejs.org/dist/v0.10.32/node-v0.10.32-linux-x64.tar.gz
+export NODE_PATH=/usr/local/lib/node_modules
+
+http://blog.chinaunix.net/uid-26495963-id-3187362.html

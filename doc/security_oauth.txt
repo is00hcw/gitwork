@@ -1,0 +1,180 @@
+﻿AntPathMatcher antMatcher = new AntPathMatcher();
+antMatcher.match("/atsmart/**" , "/atsmart/pd/12")
+HttpConfigurationBuilder
+org.springframework.security.web.FilterChainProxy.getFilters(HttpServletRequest)
+org.springframework.security.access.intercept.AbstractSecurityInterceptor.beforeInvocation(Object)  // check role for  intercept-url
+http://www.cnblogs.com/yjmyzz/p/how-to-custom-filter-provider-and-token-in-spring-security3.html
+
+
+<authentication-provider user-service-ref="cleancodeUserService" >
+ <authentication-provider ref="customAuthenticationProvider" >
+https://www.cleancode.co.nz/blog/937/customization-spring-security-authentication  替换user验证方式
+
+web.xml filter delegate ==>"/oauth/token"  ClientCredentialsTokenEndpointFilter && getAuthenticationManager().authenticate   ==> TokenEndpoint.getAccessToken && getTokenGranter().grant
+web.xml filter delegate ==>"/api*"  OAuth2AuthenticationProcessingFilter && TokenExtractor ==> OAuth2AuthenticationManager  &&  OAuth2Authentication auth = tokenServices.loadAuthentication(token);
+Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
+
+内置的AuthenticationManager为org.springframework.security.authentication.ProviderManager
+默认的AuthenticationProvider为org.springframework.security.authentication.dao.DaoAuthenticationProvider
+这个authentication provider使用org.springframework.security.core.userdetails.UserDetailsService 去进行验证
+
+abstract class AbstractDaoAuthenticationConfigurer<B extends ProviderManagerBuilder<B>, C extends AbstractDaoAuthenticationConfigurer<B,C,U>,U extends UserDetailsService> extends UserDetailsAwareConfigurer<B,U> {
+    private DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
+
+org.springframework.security.oauth2.provider.code.InMemoryAuthorizationCodeServices
+org.springframework.security.oauth2.provider.token.store.InMemoryTokenStore
+org.springframework.security.oauth2.provider.approval.InMemoryApprovalStore
+org.springframework.security.oauth2.common.util.SerializationUtils;
+org.springframework.security.oauth2.provider.authentication.BearerTokenExtractor
+org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter  resource-server
+https://github.com/iainporter/oauth2-provider/blob/master/src/main/java/com/porterhead/oauth2/mongodb/OAuth2RepositoryTokenStore.java
+http://haomou.net/2014/08/13/2014_web_token/
+
+
+
+https://aaronparecki.com/articles/2012/07/29/1/oauth2-simplified
+http://tutorials.jenkov.com/oauth2/implicit-request-response.html
+http://www.ruanyifeng.com/blog/2014/05/oauth_2_0.html
+http://blog.csdn.net/monkeyking1987/article/details/16828059
+https://github.com/is00hcw/oauth2-provider
+
+org.springframework.security.oauth2.provider.token.RemoteTokenServices
+org.springframework.security.oauth2.provider.approval.JdbcApprovalStore
+org.springframework.security.oauth2.provider.approval.ApprovalStoreUserApprovalHandler
+org.springframework.security.oauth2.provider.approval.TokenStoreUserApprovalHandler
+
+org.springframework.security.oauth2.provider.code.JdbcAuthorizationCodeServices
+org.springframework.security.oauth2.provider.endpoint.AuthorizationEndpoint   authorizationCodeServices   userApprovalHandler
+org.springframework.security.oauth2.config.xml.OAuth2SecurityNamespaceHandler
+
+https://github.com/spring-projects/spring-security-oauth/blob/master/spring-security-oauth2/src/test/resources/schema.sql
+https://github.com/FrontierPsychiatrist/spring-oauth-example/tree/master/sql
+http://blog.techdev.de/using-spring-oauth-in-trackr/
+https://github.com/banifou/mySparklr2-OAuth2
+http://www.beingjavaguys.com/2014/10/spring-security-oauth2-integration.html
+
+org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer.userApprovalHandler()
+org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer.tokenGranter()
+
+http://codehustler.org/blog/spring-security-tutorial-form-login/
+http://www.cnblogs.com/tinkerz/p/3759796.html
+http://spring-security-oauth.codehaus.org/oauth2.html
+http://blog.jdriven.com/2014/10/stateless-spring-security-part-2-stateless-authentication/
+http://techannotation.wordpress.com/2014/04/29/5-minutes-with-spring-oauth-2-0/
+
+org.springframework.security.oauth2.provider.expression.OAuth2MethodSecurityExpressionHandler
+oauth2.clientHasRole('ROLE_ADMIN')
+<oauth2:expression-handler id="oauth2ExpressionHandler"/>
+<oauth2:web-expression-handler id="oauth2WebExpressionHandler"/>
+
+@EnableOAuth2Client http://jhasaket.blogspot.com/2014/09/securing-spring-mvc-application-using.html
+org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter
+org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter
+
+
+oauth client
+http://www.tuicool.com/articles/3mMvum
+<oauth:resource id="google"  type="authorization_code"
+                client-id="${google.calendar.client.id}"     client-secret="${google.calendar.client.secret}"
+                access-token-uri="https://accounts.google.com/o/oauth2/token"
+                user-authorization-uri="https://accounts.google.com/o/oauth2/auth"
+                scope="https://www.googleapis.com/auth/calendar"
+                client-authentication-scheme="form"/>
+
+<bean id="accessTokenProviderChain" class="org.springframework.security.oauth2.client.token.AccessTokenProviderChain">
+
+<oauth:rest-template id="googleCalendarRestTemplate"
+                     resource="google"
+                     access-token-provider="accessTokenProviderChain"/>
+
+<property name="accessTokenValiditySeconds" value="120"></property>
+<alias name="filterChainProxy" alias="springSecurityFilterChain"/>
+<sec:http auto-config="true">  auto-config="true"  Automatically registers a login form, BASIC authentication,  anonymous authentication, logout services, remember-me and  servlet-api-integration
+The <http> element is responsible for creating a FilterChainProxy and the filter beans which it uses. If you use an <http> element within your application, a FilterChainProxy bean named "springSecurityFilterChain" is created and the configuration within the element is used to build a filter chain within FilterChainProxy. 
+The <authentication-provider> element creates a DaoAuthenticationProvider bean and the <user-service> element creates an InMemoryDaoImpl.   Now you must register one explicitly using the <authentication-manager> element. This creates an instance of Spring Security's ProviderManager class, which needs to be configured with a list of one or more AuthenticationProvider instances.
+In XML there is a <resource-server/> element with an id attribute - this is the bean id for a servlet Filter that can then be added manually to the standard Spring Security chain.
+
+The resource id that is protected by this filter if any. If empty or absent then all resource ids are allowed, otherwise only tokens which are granted to a client that contains this reosurce id will be legal.
+http://www.springframework.org/schema/security/spring-security-oauth2.xsd
+http://projects.spring.io/spring-security-oauth/docs/oauth2.html
+http://smlsun.com/blog/2014/01/19/Spring-Security-oauth2/
+<!-- 开发环境可以放置 <debug /> 配置，会输出详细Security处理日志，正式环境建议屏蔽 <debug /> 配置 -->
+    <security:debug /> 
+
+OAuth2RestTemplate 
+private AuthorizationCodeResourceDetails resource;
+private OAuth2RestOperations template;
+template = new OAuth2RestTemplate(resource, new DefaultOAuth2ClientContext());
+
+JwtTokenStore   JwtAccessTokenConverter
+http://git.oschina.net/shengzhao/spring-oauth-server
+
+<intercept-url pattern="/" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+在access中指定IS_AUTHENTICATED_ANONYMOUSLY后，系统就知道此资源可以被匿名用户访问了。当未登录时访问系统的“/”，就会被自动赋以匿名用户的身份。
+http://www.mossle.com/docs/auth/html/ch107-anonymous.html
+
+
+http://www.javacodegeeks.com/2013/11/spring-security-behind-the-scenes.html  原理
+http://codehustler.org/blog/spring-security-tutorial-form-login/   clear
+http://dead-knight.iteye.com/blog/1511389
+https://github.com/OADA/oada-ref-impl-java/blob/master/docs/oauth.md
+
+http://howtodoinjava.com/2013/04/16/custom-userdetailsservice-example-for-spring-3-security/
+
+http://www.cnblogs.com/smarterplanet/p/4088479.html  2.0 release
+http://www.beingjavaguys.com/2014/10/spring-security-oauth2-integration.html
+http://software.aurorasolutions.org/how-to-oauth-2-0-with-spring-security-2/
+http://techannotation.wordpress.com/2014/04/29/5-minutes-with-spring-oauth-2-0/
+
+
+<http create-session="stateless" entry-point-ref="digestEntryPoint">
+   <intercept-url pattern="/api/admin/**" access="ROLE_ADMIN" />
+ 
+   <http-basic />
+   <custom-filter ref="digestFilter" after="BASIC_AUTH_FILTER" />
+</http>
+ 
+<beans:bean id="digestFilter" class=
+ "org.springframework.security.web.authentication.www.DigestAuthenticationFilter">
+   <beans:property name="userDetailsService" ref="userService" />
+   <beans:property name="authenticationEntryPoint" ref="digestEntryPoint" />
+</beans:bean>
+ 
+<beans:bean id="digestEntryPoint" class=
+ "org.springframework.security.web.authentication.www.DigestAuthenticationEntryPoint">
+   <beans:property name="realmName" value="Contacts Realm via Digest Authentication"/>
+   <beans:property name="key" value="acegi" />
+</beans:bean>
+AccessDeniedException is thrown and caught in the ExceptionTranslationFilter, which commences the digest entry point, prompting the client for credentials.
+https://github.com/eugenp/REST/wiki/REST-API%3A-Consuming-Examples-with-%60curl%60
+
+<authentication-manager alias="authenticationManager">
+    <authentication-provider user-service-ref="customUserDetailsService" />
+</authentication-manager>
+<authentication-manager alias="authenticationManager">
+    <authentication-provider ref="restAuthenticationProvider" />
+</authentication-manager>
+
+http://docs.spring.io/spring-security/site/docs/3.0.x/reference/ns-config.html#ns-web-xml
+http://docs.spring.io/spring-security/site/docs/3.0.x/reference/appendix-namespace.html
+The <http> element encapsulates the security configuration for the web layer of your application. It creates a FilterChainProxy bean named "springSecurityFilterChain"
+The <http> namespace block always creates an SecurityContextPersistenceFilter, an ExceptionTranslationFilter and a FilterSecurityInterceptor. 
+The <form-login> Element  Used to add an UsernamePasswordAuthenticationFilter to the filter stack and an LoginUrlAuthenticationEntryPoint to the application context 
+The <anonymous> Element  Adds an AnonymousAuthenticationFilter to the stack and an AnonymousAuthenticationProvider. Required if you are using the IS_AUTHENTICATED_ANONYMOUSLY attribute.
+http://www.javacodegeeks.com/2014/10/stateless-spring-security-part-2-stateless-authentication.html?utm_source=tuicool
+http://java.dzone.com/articles/secure-rest-services-using
+digest
+http://stevex.blog.51cto.com/4300375/1358043
+http://www.blogjava.net/SpartaYew/archive/2011/06/15/350630.html
+http://blog.csdn.net/yhhazr/article/details/8628748
+http://www.mkyong.com/spring-security/spring-security-hibernate-annotation-example/?utm_source=tuicool
+http://hanqunfeng.iteye.com/blog/2114980    javaconfig
+https://github.com/spring-projects/spring-security-javaconfig/blob/master/samples-web.md
+http://java.dzone.com/articles/secure-rest-services-using
+
+http://www.mkyong.com/spring-security/spring-security-form-login-example/  <form-login 
+
+shiro
+http://my.oschina.net/huangyong/blog/208783
+

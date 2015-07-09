@@ -1,0 +1,76 @@
+﻿框架
+https://github.com/is00hcw/flight
+https://github.com/is00hcw/laravel
+https://github.com/lixuancn/LaneWeChat
+
+http://www.thinkphp.cn/info/60.html
+http://www.thinkphp.cn/info/155.html
+
+
+
+sudo yum install mysql-server  php php-mysql php-fpm 
+/etc/init.d/php-fpm restart   /etc/php-fpm.d/www.conf   http://blog.csdn.net/seanchan/article/details/7680354
+$document_root 的参数是由root html那一行定义的，默认是在/etc/nginx/html/
+http://blog.csdn.net/keyunq/article/details/45129859
+
+debug
+http://blog.csdn.net/molaifeng/article/details/38413161
+http://www.linuxde.net/2013/08/15039.html
+http://www.linuxde.net/2013/02/12252.html
+http://lobert.iteye.com/blog/2068638
+
+xdebug.var_display_max_children // 最多孩子节点数
+xdebug.var_display_max_data// 最大字节数
+xdebug.var_display_max_depth// 最大深度
+ 
+
+echo M('device_task')->getLastSql();
+http://www.thinkphp.cn/info/146.html
+
+include 'ChromePhp.php';
+ChromePhp::log($_SERVER);
+https://github.com/is00hcw/chromephp
+
+require_once('FirePHPCore/fb.php');
+fb($device_children);
+
+
+[Xdebug]
+;如要启用Xdebug请先注释掉[Zend]和[ZendDebugger]下所有内容解除冲突
+zend_extension_ts="D:\upupw\PHP5\ext\php_xdebug.dll"
+xdebug.collect_params=1
+xdebug.collect_return=1
+xdebug.auto_trace=1
+xdebug.trace_output_dir="D:\upupw\xdebug\trace"
+xdebug.profiler_enable=0
+xdebug.profiler_output_dir="D:\upupw\xdebug\profiler" 
+xdebug.max_nesting_level=100
+xdebug.remote_enable=1
+xdebug.remote_host=localhost
+xdebug.remote_port=9000
+xdebug.remote_handler=dbgp
+
+xdebug.collect_vars=1
+xdebug.show_exception_trace = 1    
+xdebug.remote_autostart = 1
+
+xdebug.var_display_max_children=128 
+xdebug.var_display_max_data=512     
+xdebug.var_display_max_depth=7  
+
+xdebug.default_enable = On
+xdebug.show_local_vars = 1
+xdebug.dump_once = On
+xdebug.dump_globals = On
+xdebug.dump_undefined = On
+xdebug.dump.REQUEST = *
+xdebug.cli_color = 2
+
+$ sudo yum update -y
+$ sudo yum install httpd-devel php-devel
+$ sudo chkconfig httpd on
+$ sudo service httpd start
+$ sudo vim /var/www/html/index.php
+<?php
+  phpinfo();
+?>

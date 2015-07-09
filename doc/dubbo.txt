@@ -1,0 +1,74 @@
+﻿http://blog.javachen.com/2014/09/24/compile-and-test-dubbo/
+http://www.jianshu.com/p/0dde591f21d0
+http://blog.csdn.net/qduningning/article/details/41445937
+http://dangdangdotcom.github.io/dubbox/rest.html
+http://shiyanjun.cn/archives/325.html
+
+$ git clone git@github.com:alibaba/opensesame.git
+$ cd opensesame
+$ mvn install
+然后，下载 dubbo 并编译：
+
+$ git clone git@github.com:alibaba/dubbo.git
+$ cd dubbo
+$ mvn clean install -Dmaven.test.skip
+
+当当网近日开源了Dubbox项目，可为Dubbo服务框架提供多项扩展功能，包括REST风格远程调用、Kryo/FST序列化等等。    http://www.infoq.com/cn/news/2014/10/dubbox-open-source/
+http://blog.csdn.net/qduningning/article/details/41445937   集成Dubbo服务(Spring)
+http://blog.csdn.net/congcong68/article/details/41113239  Dubbo与Zookeeper、SpringMVC整合和使用（负载均衡、容错）
+
+dubbo-admin在jdk 1.8上部署出错问题  http://www.cnblogs.com/BensonHe/p/4135768.html
+
+LVS、HAProxy、 Nginx等等对HTTP请求做负载均衡。
+
+http://alibaba.github.io/dubbo-doc-static/Home-zh.htm
+http://alibaba.github.io/dubbo-doc-static/User+Guide-zh.htm
+http://alibaba.github.io/dubbo-doc-static/Developer+Guide-zh.htm
+http://alibaba.github.io/dubbo-doc-static/Administrator+Guide-zh.htm
+http://alibaba.github.io/dubbo-doc-static/FAQ-zh.htm
+
+http://blog.csdn.net/fei33423/article/details/44158013
+String serverIP = RpcContext.getContext().getRemoteHost(); //
+ 获取当前线程最后一次调用的提供方IP地址
+
+String application = RpcContext.getContext().getUrl().getParameter("application");
+ 
+配置时 <dubbo:provider filter="DubboExceptionFilter"></dubbo:provider>
+DubboExceptionFilter 这个值不是spring的bean. 而需要在META-INF/dubbo/com.alibaba.dubbo.rpc.Filter 文件中配置如下文件内容:
+DubboExceptionFilter=com.xxx.common.DubboRequestFilter
+public DubboRequestFilter implements com.alibaba.dubbo.rpc.Filter{
+
+http://www.cnblogs.com/maxmys/p/3990811.html
+http://blog.csdn.net/paul_wei2008/article/details/19355681
+http://www.cnblogs.com/zhengyun_ustc/p/55solution2.html
+https://github.com/is00hcw/hydra-1
+http://www.it165.net/admin/html/201502/4951.html  
+
+http://fywxin.iteye.com/blog/1941936  traceid
+http://my.oschina.net/candiesyangyang/blog/202320
+
+
+向ZK上的指定节点/dubbo/${serviceName}/providers目录下写入自己的URL地址，这个操作就完成了服务的发布。
+http://www.cnblogs.com/Javame/p/3632708.html
+
+Zookeeper集群配置:
+<dubbo:registryaddress="zookeeper://10.20.153.10:2181?backup=10.20.153.11:2181,10.20.153.12:2181"/>
+Or:
+<dubbo:registryprotocol="zookeeper"address="10.20.153.10:2181,10.20.153.11:2181,10.20.153.12:2181"/>
+
+
+结果缓存，用于加速热门数据的访问速度，Dubbo提供声明式缓存，以减少用户加缓存的工作量。默认结果缓存处于关闭状态，开启结果缓存可以用如下的配置（消费端）：
+<dubbo:reference id="cacheService" interface="com.alibaba.dubbo.examples.cache.api.CacheService" cache="true" /
+
+对memcache和redis的代理，经过配置之后，就可以把对他们的操作变成对Map的操作，屏蔽IP，端口还有连接这样的细节。还可以利用Dubbo已有的功能，对相关的远程操作进行优化。
+<!-- Memcache -->
+<dubbo:reference id="cache" interface="java.util.Map" url="memcached://10.20.153.10:11211" />
+http://my.oschina.net/candiesyangyang/blog/202320
+http://jameswxx.iteye.com/blog/2096425  部署结构
+http://javatar.iteye.com/blog/1041832  扩展点
+http://oldratlee.com/post/2013-02-01/synchronous-rpc-vs-asynchronous-message
+http://shiyanjun.cn/archives/325.html
+http://www.biaodianfu.com/dubbo.html
+http://dubbo.io/Home-zh.htm
+<!-- Redis -->
+<dubbo:reference id="store" interface="java.util.Map" url="redis://10.20.153.10:6379" />

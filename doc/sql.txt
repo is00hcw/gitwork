@@ -1,0 +1,19 @@
+http://shiyanjun.cn/archives/858.html  mybatis
+
+
+create table t2 as select * from t1 where 1=2 ； 或者 limit 0；
+as创建出来的t2表（新表）缺少t1表（源表）的索引信息，只有表结构相同，没有索引。
+create table t2 like t1 ；
+like 创建出来的新表包含源表的完整表结构和索引信息
+二者的用途： as用来创建相同表结构并复制源表数据    like用来创建完整表结构和全部索引
+
+http://blog.csdn.net/longyulu/article/details/7109093
+update test1 a inner JOIN test2 b on a.id=b.id set a.name=b.name ;  
+update test1 a , test2 b set a.name=b.name where a.id=b.id ; 
+delete a from test1 a inner JOIN test2 b on a.id=b.id ;  
+delete from test1 where exists (select 1 from test2 where test1.id=test2.id);  
+cola like 'mysql%'  为了提高速度，可以改成   cola>='mysql'  and cola<mysqm
+修改表的自增字段值   alter table tb auto_increment=200;
+
+show PROCESSLIST;
+show STATUS;

@@ -1,0 +1,60 @@
+﻿http://wiselyman.iteye.com/blog/2003336  websocket
+http://www.ifree168.com/lib/?p=4815
+
+
+org.zeromq.ZMQ.Socket
+<hdp:configuration>
+
+<mvc:interceptor>
+<mvc:mapping path="/v1/chk/**/*" />
+
+class="org.springframework.scheduling.quartz.CronTriggerBean"
+class="org.springframework.web.multipart.commons.CommonsMultipartResolver"
+
+
+http://wiselyman.iteye.com/blog/2003336  websocket
+
+yunba
+https://github.com/yunba/yunba-javascript-sdk
+http://yunba.io/docs/#yunba-javascript-sdk-使用文档
+http://yunba.io/account/apps/details/54852d1352be1f7e1dd83351/#showPublish
+http://sock.yunba.io:3000/examples/yunba_javascript_demo.html
+
+fastdfs
+http://peiqiang.net/2014/11/27/how-to-use-fastdfs.html
+http://blog.yunnotes.net/index.php/fastdfs_design/
+http://tech.uc.cn/?p=221
+http://tech.uc.cn/?p=2579
+
+
+开放平台API接口
+http://my.oschina.net/feichexia/blog/312591
+https://github.com/zonyitoo/sysubbs-apiserver/issues/13
+http://www.csdn.net/article/1970-01-01/2817107
+https://chris6f.com/rate-limiting-with-redis
+http://www.slideshare.net/XiaoJunHong/redis-35122741
+
+
+HBase不支持跨表、跨行(跨region行)的事务
+http://w.gdu.me/wiki/Cloud/hbase_tips.html
+<!-- default bean id is 'hbaseConfiguration' that uses the existing 'hadoopCconfiguration' object -->
+<hdp:hbase-configuration configuration-ref="hadoopCconfiguration" />
+http://docs.spring.io/spring-hadoop/docs/current/reference/html/hbase.html
+<hdp:configuration />
+The declaration above defines a Configuration bean (to be precise a factory bean of type ConfigurationFactoryBean) named, by default, hadoopConfiguration. 
+http://www.cnblogs.com/nexiyi/p/hbase_shell.html  scan 't1',{LIMIT=>5}
+
+
+log
+http://blog.lanyonm.org/articles/2014/01/12/logstash-multiline-tomcat-log-parsing.html
+http://www.importnew.com/12383.html
+http://www.slideshare.net/klandor/ss-11864752?next_slideshow=1
+http://www.cppblog.com/fwxjj/archive/2012/08/16/187345.html  日志过滤 分类
+http://logback.qos.ch/manual/filters.html
+http://www.blogjava.net/cmscer/archive/2013/05/22/399585.html
+ch.qos.logback.classic.db.DBAppender  http://www.cnblogs.com/yuanermen/archive/2012/02/13/2349609.html
+http://learningviacode.blogspot.jp/2014/01/writing-logs-to-database.html
+http://blog.csdn.net/jiaincs/article/details/5686287    mysql db table
+http://www.cnblogs.com/xguo/p/3298956.html   hbase
+ch.qos.logback.classic.AsyncAppender  http://blog.csdn.net/chenjie2000/article/details/8902727
+http://blog.takipi.com/how-to-instantly-improve-your-java-logging-with-7-logback-tweaks/

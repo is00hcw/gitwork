@@ -1,0 +1,115 @@
+java.io.IOException: No FileSystem for scheme: hdfs
+java -jar hadoop_demo-0.0.1-SNAPSHOT.jar -Dfs.hdfs.impl=org.apache.hadoop.hdfs.DistributedFileSystem   
+hbase-hadoop-compat-0.98.12-hadoop2.jar  high-scale-lib-1.1.1.jar  hadoop-common-2.6.0.jar hbase-server-0.98.12-hadoop2.jar protobuf htrace  zookeeper
+http://blog.csdn.net/huoyunshen88/article/details/39083247
+http://www.iteblog.com/archives/789
+
+
+http://dorole.com/1258/
+http://blog.selfup.cn/1399.html
+
+
+http://debugo.com/hdp-dev-setup/
+http://www.cnblogs.com/kinglau/p/3794433.html
+https://github.com/javachen/hadoop-install
+http://www.bogotobogo.com/Hadoop/BigData_hadoop_Install_on_ubuntu_single_node_cluster.php
+http://debugo.com/hue-lets-big-data/  
+
+
+http://blog.selfup.cn/61.html  hbase
+
+
+http://cn.soulmachine.me/blog/20140207/  zookeeper cluster
+
+install
+https://github.com/matyix/hadoop-scripts/blob/master/hoya-centos-install.sh
+https://github.com/matyix/hadoop-scripts/blob/master/hadoop-centos-install.sh
+$ ssh-keygen -t rsa
+$ cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+$ chmod 0600 ~/.ssh/authorized_keys
+http://tecadmin.net/setup-hadoop-2-4-single-node-cluster-on-linux/
+https://software.intel.com/zh-cn/blogs/2014/09/17/hadoop22hbase096
+http://cn.soulmachine.me/blog/20140208/
+
+
+http://cn.soulmachine.me/blog/20140208/   hbase
+http://www.cnblogs.com/gpcuster/archive/2011/02/17/1957042.html  hadoop native lib
+http://dl.bintray.com/sequenceiq/sequenceiq-bin/hadoop-native-64-2.6.0.tar
+
+
+zookeeper
+http://shiyanjun.cn/archives/474.html
+
+
+http://www.cnblogs.com/huligong1234/p/4137133.html
+在master节点上(ubuntu-V01)修改hdfs-site.xml加上以下内容 
+<property> 
+<name>dfs.permissions</name> 
+<value>false</value> 
+</property> 
+
+旨在取消权限检查
+http://blog.csdn.net/xpmars/article/details/43966107 hadoop远程调试所遇到的一些异常
+http://blog.csdn.net/xpmars/article/details/43084645  Hadoop平台优化
+http://blog.csdn.net/xpmars/article/details/42435441  基础数据平台和报表系统，爬虫
+
+http://dblab.xmu.edu.cn/blog/hadoop-build-project-using-eclipse/ 
+http://dblab.xmu.edu.cn/blog/install-hadoop/
+eclipse插件设置 hadoop tmp
+hadoop-env.sh添加JAVA_HOME
+默认hdfs路径在当前用户下
+http://www.micmiu.com/bigdata/hadoop/hadoop2x-eclipse-mapreduce-demo/
+http://www.micmiu.com/bigdata/hadoop/hadoop2-x-eclipse-plugin-build-install/
+Map/Reduce（V2） Master ：根据hdfs-site.xml中配置dfs.datanode.ipc.address的值填写
+DFS Master： Name Node的IP和端口，根据core-site.xml中配置fs.defaultFS的值填写
+
+  <artifactId>maven-shade-plugin</artifactId>  
+ <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">  
+
+1、右键菜单添加在终端中打开
+sudo apt-get install nautilus-open-terminal
+2、“以管理员方式运行……”
+sudo apt-get install gksu
+
+
+java.io.IOException: No FileSystem for scheme: hdfs     http://www.linuxidc.com/Linux/2014-01/95944.htm
+该包下默认的core-default.xml没有配置如下属性：
+<property>
+<name>fs.hdfs.impl</name>
+<value>org.apache.hadoop.hdfs.DistributedFileSystem</value>
+<description>The FileSystem for hdfs: uris.</description>
+</property>
+
+
+http://www.cnphp6.com/archives/61051?utm_source=tuicool  hive
+Hive has upgraded to Jline2 but jline 0.94 exists in the Hadoop lib.  Delete jline from the Hadoop lib directory
+http://www.aboutyun.com/thread-12242-1-1.html
+
+HBase 实现了 TableInputFormatBase 类，该类提供了对表数据的大部分操作，其子类 TableInputFormat 则提供了完整的实现，用于处理表数据并生成键值对。TableInputFormat 类将数据表按照 Region 分割成 split，既有多少个 Regions 就有多个splits。然后将 Region 按行键分成<key,value>对，key 值对应与行健，value 值为该行所包含的数据。 
+HBase 实现的 TableOutputFormat 将输出的<key,value>对写到指定的 HBase 表中，该类不会对 WAL（Write-Ahead  Log）进行操作
+http://blog.csdn.net/hadoop_/article/details/11538201   写入hbase
+http://blog.sina.com.cn/s/blog_9f48885501012bym.html    hbase表拷贝
+http://www.taobaotest.com/blogs/qa?bid=13914
+http://hbase.apache.org/0.94/book/mapreduce.example.html
+http://andieguo.com/2014/09/03/hbase-into-hdfs/
+http://salsahpc.indiana.edu/ScienceCloud/virtualbox_appliance_guide.html  vbox虚拟机镜像
+http://barbie.uta.edu/~jli/Resources/MapReduce&Hadoop/Hadoop%20MapReduce%20Cookbook.pdf
+https://github.com/marginweb/Wikipedia-noSQL-Benchmark/blob/master/src/hbase_mapreduce/MapReduceHbaseDB.java
+http://blog.csdn.net/liuxingjiaofu/article/details/7197245
+
+public abstract class TableMapper<KEYOUT, VALUEOUT> extends Mapper<ImmutableBytesWritable, Result, KEYOUT, VALUEOUT> 
+public abstract class TableReducer<KEYIN, VALUEIN, KEYOUT> extends Reducer<KEYIN, VALUEIN, KEYOUT, Writable> 
+
+http://dblab.xmu.edu.cn/sites/default/files/files/linziyu-BigData-Book-Chapter4-MapReduce.pdf
+http://img1.ph.126.net/QOUBsPgd3ugbpQEZ7pgVuA==/6598282527982240691.jpg
+http://f.dataguru.cn/thread-135646-1-1.html
+http://xiaoxia001.iteye.com/blog/1332873
+默认情况下，FileInputFormat及其子类会以64MB（与HDFS的Block默认大小相同，译注：Hadoop建议Split大小与此相同）为基数来拆分文件。你可以在hadoop-site.xml（译注：0.20.*以后是在mapred-default.xml里）文件内设定mapred.min.split.size参数来控制具体划分大小
+RecordReader类则是实际的用来加载数据并把数据转换为适合mapper读取的键值对。RecordReader实例是由输入格式定义的，默认的输入格式，TextInputFormat，提供了一个LineRecordReader，这个类的会把输入文件的每一行作为一个新的值，关联到每一行的键则是该行在文件中的字节偏移量。
+每一个reducer会把结果输出写在公共文件夹中一个单独的文件内，这些文件的命名一般是part-nnnnn，nnnnn是关联到某个reduce任务的partition的id，输出文件夹通过FileOutputFormat.setOutputPath() 来设置。
+
+http://pisxw.com/project/MapReduce%E5%85%A5%E9%97%A8.html   MultipleOutputs使用
+ResourceManager 负责作业与资源的调度。接收JobSubmitter 提交的作业，按照作业的上下文(Context) 信息以及从 NodeManager收集来的状态信息，启动调度过程，分配一个 Container 作为 ApplicationMaster。
+NodeManager ： 功能比较专一，就是负责 Container状态的维护 ， 并向ResourceManager 保持心跳。
+ApplicationMaster：负责一个 Job 生命周期内的所有工作，类似老的框架中JobTracker。但是要注意，每一个 Job（不是每一种）都有一个 ApplicationMaster，它可以运行在 ResourceManager 以外的机器上。
+在新的 Yarn 中，ApplicationMaster 是一个可变更的部分，用户可以对不同的编程模型写自己的 ApplicationMaster，让更多类型的编程模型能够跑在 Hadoop 集群中，

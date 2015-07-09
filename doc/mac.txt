@@ -1,0 +1,18 @@
+http://brew.sh/
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+Homebrew 将软件包分装到单独的目录（/usr/local/Cellar），然后 symlink 到 /usr/local 中
+brew tap phinze/homebrew-cask && brew install brew-cask
+brew cask install sublime-text google-chrome   http://ksmx.me/homebrew-cask-cli-workflow-to-install-mac-applications/
+http://www.osxtoy.com/?p=2431
+http://www.cnblogs.com/super-d2/p/4534208.html   scala
+
+
+http://ivarchen.iteye.com/blog/2166519  vmware unlock
+http://blog.csdn.net/zhangao0086/article/details/38491271  simulator
+
+/Applications/Xcode/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/
+http://blog.csdn.net/forestml2008/article/details/21714259
+
+
+http://blog.devtang.com/blog/2014/06/29/ios-dev-tools/
+http://blog.devtang.com/blog/2014/03/05/use-alcatraz-to-manage-xcode-plugins/?utm_source=tuicool

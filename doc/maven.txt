@@ -1,0 +1,340 @@
+﻿maven-help-plugin是一个小巧的辅助工具，最简单的help:system可以打印所有可用的环境变量和Java系统属性。help:effective-pom和help:effective-settings最为有用
+http://m.blog.csdn.net/blog/yuzjang/41546487  maven之deploy的两种方式
+1). 安装到本地库：
+mvn install:install-file -DgroupId=org.apache.hadoop -DartifactId=hbase -Dversion=1.0 -Dpackaging=jar -Dfile=[path to file]
+2). 安装到私服
+mvn deploy:deploy-file -DgroupId=org.apache.hadoop -DartifactId=hbase -Dversion=1.0 -Dpackaging=jar -Dfile=[path to file] -Durl=[url] -DrepositoryId=[id]
+http://my.oschina.net/aiguozhe/blog/101537
+
+mvn archetype:generate -DgroupId=com.inspiration -DartifactId=springapp -DarchetypeArtifactId=maven-archetype-webapp -DinteractiveMode=false
+mvn eclipse:eclipse  -Dwtpversion=2.0
+mvn eclipse:eclipse -DdownloadSources -DdownloadJavadocs 
+mvn mybatis-generator:generate
+mvn dependency:copy-dependencies -DoutputDirectory=libs
+mvn sonar:sonar
+mvn ant:ant
+mvn clean package  -Dmaven.test.skip=true
+mvn install:install-file -DgroupId=proxool -DartifactId=proxool -Dversion=0.9.1 -Dpackaging=jar -Dfile=proxool-0.9.1.jar
+mvn hibernate3:hbm2ddl 使用 Hibernate3 插件构造数据库  
+mvn help:effective-pom 看这个“有效的 (effective)”POM，它暴露了 Maven的默认设置  
+mvn validate        验证工程是否正确，所有需要的资源是否可用。      
+mvn verify        运行任何检查，验证包是否有效且达到质量标准。
+mvn package  -DskipTests -Dmaven.javadoc.skip=true
+http://www.cnblogs.com/steven9801/p/4119201.html
+
+所有带有子模块的项目的packaging都为pom。packaging如果不进行配置，它的默认值是jar，代表Maven会将项目打成一个jar包。该配置重要的地方在于modules
+http://www.davenkin.me/post/2013-08-03/create-multi-module-maven-project
+http://www.davenkin.me/post/2013-08-07/maven-profile
+http://www.blogjava.net/scud/archive/2010/10/27/336326.html
+http://mojo.codehaus.org/build-helper-maven-plugin/usage.html
+
+gradle tasks 查看项目已定义的所有task以及含义，如java插件中常用的task有：
++ assemble: 编译
++ build：编译并执行测试
++ clean：删除build目录
++ jar： 生成jar包
++ test：执行单元测试
+要将maven项目转换为gradle项目，只需要在项目的pom文件所在的目录下执行以下命令：
+$ gradle init --type pom
+
+<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.2</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+					<encoding>UTF-8</encoding>
+					<fork>false</fork>
+					<compilerId>jdt</compilerId>
+				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>org.eclipse.tycho</groupId>
+						<artifactId>tycho-compiler-jdt</artifactId>
+						<version>0.13.0</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+
+<dependency>
+	<groupId>org.logback-extensions</groupId>
+	<artifactId>logback-ext-spring</artifactId>
+	<version>0.1.1</version>
+	<scope>runtime</scope>
+</dependency>
+
+<dependency>
+	<groupId>org.slf4j</groupId>
+	<artifactId>jcl-over-slf4j</artifactId>
+	<version>1.7.7</version>
+</dependency>
+<dependency>
+	<groupId>org.slf4j</groupId>
+	<artifactId>log4j-over-slf4j</artifactId>
+	<version>1.7.7</version>
+</dependency>
+<dependency>
+	<groupId>ch.qos.logback</groupId>
+	<artifactId>logback-core</artifactId>
+	<version>1.1.2</version>
+</dependency>
+
+<dependency>
+	<groupId>ch.qos.logback</groupId>
+	<artifactId>logback-classic</artifactId>
+	<version>1.1.2</version>
+</dependency>
+
+<dependency>
+	<groupId>junit</groupId>
+	<artifactId>junit</artifactId>
+	<version>4.11</version>
+	<scope>test</scope>
+</dependency>
+<dependency>
+	<groupId>org.springframework</groupId>
+	<artifactId>spring-test</artifactId>
+	<version>${spring.version}</version>
+</dependency>
+
+<dependency>
+	<groupId>com.alibaba</groupId>
+	<artifactId>druid</artifactId>
+	<version>1.0.12</version>
+</dependency>
+<dependency>
+	<groupId>mysql</groupId>
+	<artifactId>mysql-connector-java</artifactId>
+	<version>5.1.31</version>
+</dependency>
+
+
+<dependency>
+	<groupId>org.mybatis</groupId>
+	<artifactId>mybatis</artifactId>
+	<version>3.1.1</version>
+</dependency>
+
+<dependency>
+	<groupId>org.mybatis</groupId>
+	<artifactId>mybatis-spring</artifactId>
+	<version>1.1.1</version>
+</dependency>
+
+
+
+<dependency>
+         <groupId>com.alibaba</groupId>
+         <artifactId>dubbo</artifactId>
+         <version>2.0.13</version>
+      </dependency>
+      <dependency>
+         <groupId>org.apache.zookeeper</groupId>
+         <artifactId>zookeeper</artifactId>
+         <version>3.3.6</version>
+         <exclusions>
+            <exclusion>
+                <groupId>log4j</groupId>
+                <artifactId>log4j</artifactId>
+            </exclusion>
+         </exclusions>
+      </dependency>
+
+<dependency>  
+         <groupId>com.alibaba.rocketmq</groupId>  
+         <artifactId>rocketmq-client</artifactId>  
+         <version>3.0.8</version>  
+      </dependency>  
+      <dependency>  
+         <groupId>com.alibaba.rocketmq</groupId>  
+         <artifactId>rocketmq-all</artifactId>  
+         <version>3.0.8</version>  
+         <type>pom</type>  
+      </dependency>  
+
+        <!-- Spring Data - Redis Library -->
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-redis</artifactId>
+            <version>1.2.1.RELEASE</version>
+        </dependency>
+        <!-- Jedis Driver Library -->
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>2.4.2</version>
+        </dependency>
+
+		
+    <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-all</artifactId>
+            <version>1.2.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-web</artifactId>
+            <version>1.2.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-spring</artifactId>
+            <version>1.2.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-ehcache</artifactId>
+            <version>1.2.1</version>
+        </dependency>
+		
+<plugins>
+	<plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <skipTests>${core.test.skip}</skipTests>
+                </configuration>
+            </plugin>
+
+	<plugin>
+		<groupId>org.apache.maven.plugins</groupId>
+		<artifactId>maven-compiler-plugin</artifactId>
+		<version>2.2</version>
+		<configuration>
+			<source>1.8</source>
+			<target>1.8</target>
+		</configuration>
+	</plugin>
+	<plugin>
+		<groupId>org.eclipse.jetty</groupId>
+		<artifactId>jetty-maven-plugin</artifactId>
+		<version>9.2.6.v20141205</version>
+		<configuration>
+			<httpConnector>
+				<port>8080</port>
+			</httpConnector>
+			<webAppConfig>
+				<contextPath>/oauth_test</contextPath>
+			</webAppConfig>
+		</configuration>
+	</plugin>
+
+	<plugin>
+		<groupId>org.apache.tomcat.maven</groupId>
+		<artifactId>tomcat7-maven-plugin</artifactId>
+		<version>2.2</version>
+	</plugin>
+	
+	  <plugin>
+                <groupId>org.mybatis.generator</groupId>
+                <artifactId>mybatis-generator-maven-plugin</artifactId>
+                <version>1.3.2</version>
+                <configuration>
+                    <verbose>true</verbose>
+                    <overwrite>true</overwrite>
+                </configuration>
+            </plugin>
+</plugins>
+
+
+
+http://chen-rojer-gmail-com.iteye.com/blog/910748
+http://www.cnblogs.com/juforg/p/3606142.html
+http://yingzhuo.iteye.com/blog/1577860
+-noverify -javaagent:E:\work\eclipse-jee-juno-SR2-win64\jrebel5.1.2\jrebel.jar  -Drebel.spring_plugin=true  
+如果你要支持更多的框架，可以参考官网http://www.zeroturnaround.com/jrebel/features/frameworks/
+如果你要了解更多的参数配置，可以参考官网 http://www.zeroturnaround.com/jrebel/configuration/
+
+ <plugin>  
+    <groupId>org.zeroturnaround</groupId>  
+    <artifactId>jrebel-maven-plugin</artifactId>  
+    <executions>  
+        <execution>  
+            <id>generate-rebel-xml</id>  
+            <phase>process-resources</phase>  
+            <goals>  
+                <goal>generate</goal>  
+            </goals>  
+        </execution>  
+    </executions>  
+    <configuration>  
+    <rebelXmlDirectory>${basedir}/src/main/webapp/WEB-INF/classes</rebelXmlDirectory>
+    </configuration>  
+</plugin>  
+<outputDirectory>${basedir}/src/main/webapp/WEB-INF/classes</outputDirectory>
+
+
+<plugin>
+    <groupId>org.codehaus.mojo</groupId>
+    <artifactId>native2ascii-maven-plugin</artifactId>
+    <version>1.0-alpha-1</version>
+    <executions>
+        <execution>
+            <phase>generate-resources</phase>
+            <goals>
+                <goal>native2ascii</goal>
+            </goals>
+            <configuration>
+                <encoding>UTF-8</encoding>
+                <src>src/main/messages</src>
+                <dest>target/${project.artifactId}/WEB-INF/classes</dest>
+                <includes>messages.properties</includes>
+            </configuration>
+        </execution>
+    </executions>
+    <!-- native2ascii 使用的tools.jar -->
+    <dependencies>
+        <dependency>
+            <groupId>com.sun</groupId>
+            <artifactId>tools</artifactId>
+            <version>1.7.0</version>
+            <scope>system</scope>
+            <systemPath>${java.home}/../lib/tools.jar</systemPath>
+        </dependency>
+    </dependencies>
+</plugin>
+
+
+
+进入windows-x86-64目录下，运行install-nexus.bat安装nexus，然后运行nexus.bat start即可启动nexus服务了。然后访问
+http://localhost:8081/nexus 即可看到nexus页面了。默认的login用户名和密码分别是admin和admin123。
+nexus分为proxy仓库和host仓库。proxy仓库顾名思义就是对外网仓库的代理，而host仓库则是个人内部使用的仓库。
+http://m.blog.csdn.net/blog/liubingbykj/8617554
+
+hosted，本地仓库。通常我们会部署自己的构件到这一类型的仓库。比如公司/组织开发的项目
+proxy，代理仓库，它们被用来代理远程的公共仓库，如maven中央仓库或一些第三方公共仓库。
+group，仓库组，用来合并多个hosted/proxy仓库，当你的项目希望在多个repository使用依赖项时，无需引用多个仓库了，只需要引用一个类型为group的repository即可。
+Maven central是Maven的中央仓库，点击它并选择configuration标签栏   Download remote indexes: 该选项配置是否下载远程索引文件。 建议配置为true，这样我们便可以通过nexus的搜索功能来搜索我们需要的依赖项。
+http://my.oschina.net/aiguozhe/blog/101537
+
+
+maven目录conf的setting.xml里，
+  <server>  
+    <id>releases</id>  
+    <username>admin</username>  
+    <password>admin123</password>  
+  </server>  
+ <server>  
+	  <id>snapshots</id>  
+	  <username>admin</username>  
+	  <password>admin123</password>  
+  </server>  
+   
+  
+
+<project>   
+    <distributionManagement>   
+        <repository>   
+            <id>nexus-releases</id>   
+         <name>Nexus Release Repository</name>   
+         <url>http://192.168.10.10:8081/nexus/content/repositories/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>nexus-snapshots</id>
+            <name>Nexus Snapshot Repository</name>
+            <url>http://192.168.10.10:8081/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>   
+    </distributionManagement>   
+</project>

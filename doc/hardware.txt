@@ -1,0 +1,3 @@
+http://digi.tech.qq.com/a/20140921/012926.htm 开发者登陆后通过自助的方式，可快速定义自己的产品功能点。而且，机智云的后台还会自动生成相关的MCU固件（硬件端）程序Gagent、手机App模版和云端的API接口。
+http://www.leikeji.com/article?1261
+http://www.leikeji.com/article?1310

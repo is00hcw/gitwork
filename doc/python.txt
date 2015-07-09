@@ -1,0 +1,54 @@
+简单而直接的Python web 框架：web.py  flask
+http://blog.csdn.net/linhan8/article/details/8746110
+http://wechat-python-sdk.readthedocs.org/zh_CN/master/
+
+sudo apt-get install build-essential python-dev python-numpy python-setuptools python-scipy libatlas-dev libatlas3-base
+pip install -U scikit-learn
+from sklearn.utils import murmurhash3_32
+murmurhash3_32("some feature", seed=0, positive=True) == 3910350737
+
+
+
+http://slav0nic.org.ua/static/books/python/
+在pycharm里面，选项，ide settings，file and code templates，选择python script，添加
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+from xml.etree import ElementTree as ET
+import requests
+import hashlib, time, re, json
+
+文件名要小心，不要与类库同名 否则报错AttributeError: 'module' object has no attribute
+
+wget http://cdn.mysql.com/Downloads/Connector-Python/mysql-connector-python-1.0.11.zip
+python setup.py install
+pip install requests
+
+urllib.urlopen("http://www.baidu.com")
+
+http://www.liaoxuefeng.com/wiki/001374738125095c955c1e6d8bb493182103fac9270762a000  python tutorial
+
+http://blog.csdn.net/iloveyin/article/details/21444613  request
+http://blog.csdn.net/iloveyin/article/details/7861010   file
+http://blog.csdn.net/iloveyin/article/details/40743399  struct
+
+http://blog.log4d.com/2013/01/python-epoll/
+http://scotdoyle.com/python-epoll-howto.html
+
+https://github.com/is00hcw/redis-py
+git clone https://github.com/andymccurdy/redis-py.git  
+python setup.py install 
+http://blog.csdn.net/chosen0ne/article/details/7319807
+
+
+
+http://happybase.readthedocs.org/en/latest/
+
+yum install MySQL-python   
+http://blog.csdn.net/jesseyoung/article/details/40377737  
+
+http://locust.io/
+
+http://sdiehl.github.io/gevent-tutorial/  gevent
+http://xlambda.com/gevent-tutorial/
+https://github.com/kennethreitz/grequests
+pip install grequests

@@ -1,0 +1,114 @@
+﻿http://www.ruanyifeng.com/blog/2011/06/designing_ideas_of_inheritance_mechanism_in_javascript.html  原型
+http://www.ruanyifeng.com/blog/2010/05/object-oriented_javascript_inheritance.html
+
+http://code.ciaoca.com/jquery/lazyload/    延迟加载图片
+https://github.com/callmecavs/layzr.js
+http://alloyteam.github.io/Spirit/modules/Standard/index.html  移动开发规范概述
+https://github.com/AlloyTeam/Mars
+http://www.gbtags.com/gb/share/3701.htm  
+http://www.mexiqq.com/2014/07/17/localForage%E2%80%94%E2%80%94%E8%BD%BB%E6%9D%BE%E5%AE%9E%E7%8E%B0-Web-%E7%A6%BB%E7%BA%BF%E5%AD%98%E5%82%A8/    localForage  离线存储
+
+https://lifesinger.wordpress.com/2011/07/24/online-local-debug/  在线本地调试大观
+http://isux.tencent.com/h5-performance.html  移动H5前端性能优化指南
+http://www.alloyteam.com/2014/03/front-end-data-monitoring/  错误监控上报
+http://www.75team.com/archives/170 
+http://fex.baidu.com/blog/2014/05/build-performance-monitor-in-7-days/
+https://lifesinger.wordpress.com/2011/09/23/bigrender-for-taobao-item/   bigrender
+
+http://blog.codinglabs.org/articles/how-web-analytics-data-collection-system-work.html  网站统计中的数据收集原理及实现
+
+http://segmentfault.com/a/1190000002804472   github上值得关注的前端项目
+http://heeroluo.net/article/detail/111  了解模块化开发
+http://caibaojian.com/handlebars-js.html
+http://heeroluo.net/article/detail/112/monitor-events-through-developer-tools  monitorEvents(document.body, 'click');
+通过 seajs.cache，可以查阅当前模块系统中的所有模块信息。比如，打开 seajs.org，然后在 WebKit Developer Tools 的 Console 面板中输入 seajs.cache， https://github.com/seajs/seajs/issues/263
+
+http://segmentfault.com/a/1190000002494005  backbone  hello world
+http://segmentfault.com/a/1190000002386651
+
+
+console.log(typeof myFunc === "function");
+function isArray(value) {return Object.prototype.toString.call(value) === "[object Array]";}
+Array.isArray() method is implemented in Internet Explorer 9+, Firefox 4+, Safari5+, Opera 10.5+, and Chrome.
+if ("count" in object)
+if (object.hasOwnProperty("related"))  // Good for all non-DOM objects
+
+http://www.idangero.us/sliders/swiper/api.php
+http://www.jqcool.net/jquery-swiper.html
+
+http://docs.mobiscroll.com/2-14-3/
+
+bower
+使用bower init 命令来创建bower.json文件
+我们可以用下面的命令安装twitter bootstrap并更新bower.json文件：
+$ bower install bootstrap --save
+http://segmentfault.com/a/1190000000349555
+http://blog.fens.me/nodejs-bower-intro/
+
+特效
+https://github.com/paulkinzett/toolbar
+http://nick-jonas.github.io/threesixtyjs/ 
+https://github.com/marcuswestin/store.js
+
+angularjs
+http://segmentfault.com/blog/news/1190000000350125
+
+
+Grunt是基于Node.js的项目构建工具
+http://tgideas.qq.com/webplat/info/news_version3/804/808/811/m579/201307/216460.shtml
+
+
+Yeoman则直接给我们提供了一套完全自动化的工具，集合Grunt、bower、yo，自动编译压缩、处理图片、livereload等等
+http://www.jianshu.com/p/47aa09a2910d
+http://www.css88.com/archives/4931
+
+模板引擎
+http://www.cnblogs.com/kissdodog/archive/2013/09/03/3299174.html   TrimPath
+http://tangram.baidu.com/BaiduTemplate/
+https://github.com/aui/artTemplate
+
+logger
+http://log4javascript.org/docs/quickstart.html
+http://www.cnblogs.com/gossip/p/3845011.html
+
+异步
+http://www.ruanyifeng.com/blog/2011/10/javascript_loading.html
+http://blog.csdn.net/ma_jiang/article/details/7529584
+http://wonko.com/post/painless_javascript_lazy_loading_with_lazyload
+http://www.cnblogs.com/zhengyun_ustc/archive/2013/05/09/frontendoptimize.html
+http://libs.useso.com/js/lazyload/2.0.3/lazyload-min.js
+http://libs.useso.com/js/jquery.lazyload/1.9.1/jquery.lazyload.min.js
+
+
+function loadFrame(openId){
+	var fr = $("#deviceFrame");
+	fr.load(function() { 
+		$(this).height($(this).contents().height()); 
+	});
+	fr.attr("src", "http://xxxx?openid=" + openId) ;
+	fr.show();
+}
+
+你可能会经常使用$(document).ready();或者$(function(){})，这都是使用了DOMContentLoaded事件。
+
+http://caibaojian.com/jquery1-9-tutorial.html  jquery1.9删除的browser,live,die,sub,toggle的替换方法
+
+http://www.csdn.net/article/2013-07-09/2816161  mobile framework
+http://www.tuicool.com/articles/m63a2qU
+
+http://ued.qunar.com/mobile/guide/mobile/2014/10/27/mobile-fe-dev-local-debugg.html  debug mobile
+http://ued.qunar.com/mobile/guide/mobile/2014/10/27/mobile-fe-dev-remote-debugg.html
+
+pjax
+https://github.com/defunkt/jquery-pjax
+http://www.welefen.com/use-ajax-and-pushstate.html
+http://www.welefen.com/pjax-for-ajax-and-pushstate.html
+
+
+单页面 Single Page Applications (SPAs) 
+http://www.idangero.us/framework7/#.VYAwNdyqo7I
+https://github.com/is00hcw/mobilebone
+http://durandaljs.com/get-started.html   
+
+
+http://www.ruanyifeng.com/blog/2015/02/mvcmvp_mvvm.html    MVC，MVP 和 MVVM 的图示

@@ -1,0 +1,84 @@
+﻿进入命令：hbase shell
+查看有多少表：list
+查看表的结构：describe 'DEVICE'
+查看表的数据：scan 'DEVICE'
+查看某一行：get 'DEVICE',''
+查看某列族的所有数据： scan 'DEVICE',{COLUMNS => 'course'}
+删除表：drop 'testtable'   （删除表之前先要禁用表，命令disable 'testtable'）
+启用和禁用表： enable 'testtable' 和disable 'testtable'
+bin/hbase hbck  (检查)
+bin/hbase hbck -fix  （修复）
+bin/hbase org.apache.hadoop.hbase.mapreduce.CopyTable --peer.adr=zookeeper1,zookeeper2,zookeeper3:/hbase 'testtable'
+bin/hbase org.apache.hadoop.hbase.mapreduce.Export testtable /user/testtable [versions] [starttime] [stoptime]
+bin/hbase org.apache.hadoop.hbase.mapreduce.Import testtable  /user/testtable
+首先拷贝hdfs文件，如bin/hadoop distcp hdfs://srcnamenode:9000/hbase/testtable/ hdfs://distnamenode:9000/hbase/testtable/
+然后在目的hbase上执行bin/hbase org.jruby.Main bin/add_table.rb /hbase/testtable
+
+http://phoenix.apache.org/   Apache Phoenix is a relational database layer over HBase delivered as a client-embedded JDBC driver targeting low latency queries over HBase data. 
+针对HBase上SQL解决方案，目前社区内比较热门的有Cloudera的Impala，Horntworks的Drill，以及Hive
+
+通过Cloudera Manager安装CDH   http://blog.javachen.com/2013/06/24/install-cdh-by-cloudera-manager/
+http://www.micmiu.com/bigdata/hbase/hbase-setup-standalone/   hbase安装
+HBASE_MANAGES_ZK=false
+hbase.zookeeper.quorum
+
+
+Scan(byte[] startRow, Filter filter)
+Scan(byte[] startRow, byte[] stopRow)
+Scan setFilter(Filter filter)
+
+ResultScanner类
+scan并不是一次RPC中把所有结果都返回给client，而是以row为单位返回的。
+Result next() throws IOException
+Result[] next(int nbRows) throws IOException
+void close()（finally里面关闭）
+
+public void setBatch(int batch) ：为设置获取记录的列个数，默认无限制，也就是返回所有的列
+public void setCaching(int caching)：每次从服务器端读取的行数，默认为配置文件中设置的值
+
+ColumnPrefixFilter用于指定列名前缀值相等  
+MultipleColumnPrefixFilter和ColumnPrefixFilter行为差不多，但可以指定多个前缀。  
+QualifierFilter是基于列名的过滤器
+
+zookeeper
+http://supben.iteye.com/blog/2094077  TestingServer 模拟单点， TestingCluster模拟集群。
+http://ifeve.com/zookeeper-curato-framework/
+
+
+
+http://blog.csdn.net/hengyunabc/article/details/41146115   日志收集分析
+http://koven2049.iteye.com/blog/983633
+http://www.ngdata.com/the-hbase-side-effect-processor-and-hbase-replication-monitoring/
+HBase的Relication机制，其实和Mysql的同步机制很像，HBase的每个Region Server都会有WAL Log，当Put/Delete时，都会先写入到WAL Log里。然后后台有线程会把WAL Log随机发给Slave的Region Server。而Slave的Region Server会在zookeeper上记录自己同步到的位置。  
+
+ MVCC(Multi-Version Concurrent Control),即多版本并发控制协议,广泛使用于数据库系统
+
+
+http://blog.csdn.net/xiejx618/article/details/21201007 org.springframework.mock.web.MockMultipartFile
+http://jinnianshilongnian.iteye.com/blog/1469524   spring test
+http://www.iteedu.com/webtech/j2ee/spring25cn/ch08s03.php  SimpleJdbcTestUtils
+http://blog.csdn.net/moxiaomomo/article/details/16817497   HBaseTestingUtility
+http://m.blog.csdn.net/blog/aaa1117a8w5s6d/17761511
+http://blog.csdn.net/feihong247/article/details/7828143
+http://docs.spring.io/spring/docs/current/spring-framework-reference/html/testing.html
+http://www.ibm.com/developerworks/cn/java/j-lo-springunitest/
+http://blog.jdwyah.com/2013/02/mock-hbase-for-unit-testing.html
+http://dirlt.com/hadoop.html
+http://blog.sematext.com/2010/08/30/hbase-case-study-using-hbasetestingutility-for-local-testing-development/
+
+zookeeper
+PathChildrenCache用来监控一个ZNode的子节点. 当一个子节点增加， 更新，删除时， Path Cache会改变它的状态， 会包含最新的子节点， 子节点的数据和状态。 
+NodeCache用来监控一个ZNode. 当节点的数据修改或者删除时，Node Cache能更新它的状态包含最新的改变。
+TreeCache这种类型的即可以监控节点的状态，还监控节点的子节点的状态， 类似上面两种cache的组合。 这也就是Tree的概念。 它监控整个树中节点的状态。
+http://ifeve.com/zookeeper-path-cache/
+http://ifeve.com/zookeeper-barrier/
+http://macrochen.iteye.com/blog/1366136
+
+hadoop
+http://www.cnblogs.com/vigiles/p/3643489.html?utm_source=tuicool
+http://blog.csdn.net/hadoop_/article/details/11538201?utm_source=tuicool
+http://blog.csdn.net/yeruby/article/details/19995367
+http://wuchong.me/blog/2015/04/06/spark-on-hbase-new-api/
+HBase 实现了 TableInputFormatBase 类，该类提供了对表数据的大部分操作，其子类 TableInputFormat 则提供了完整的实现，用于处理表数据并生成键值对。
+HBase 实现了 TableMapper 类和 TableReducer 类   HBase 实现的 TableOutputFormat 将输出的<key,value>对写到指定的 HBase 表中，该类不会对 WAL（Write-Ahead  Log）进行操作
+http://www.jianshu.com/p/722a75d2b2bd

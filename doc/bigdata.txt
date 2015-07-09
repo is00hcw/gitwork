@@ -1,0 +1,48 @@
+﻿http://blog.javachen.com/2013/04/06/install-cloudera-cdh-by-yum/   使用yum安装CDH Hadoop集群 
+http://blog.csdn.net/sweetvvck/article/details/38842665?utm_source=tuicool
+wget http://mirror.bit.edu.cn/apache/zookeeper/zookeeper-3.4.6/zookeeper-3.4.6.tar.gz 
+
+redis  Twemproxy 
+https://github.com/springside/springside4/wiki/redis
+http://www.cnblogs.com/edwinchen/p/3816938.html
+http://blog.joshuawhite.com/java/caching-with-spring-data-redis/
+http://www.javabeat.net/spring-data-redis-example/
+https://blog.openshift.com/build-cloud-enabled-java-redis-applications-with-spring-on-openshift/
+https://www.packtpub.com/books/content/building-applications-spring-data-redis
+http://www.ibm.com/developerworks/library/os-springredis/
+http://projects.spring.io/spring-data-redis/
+http://snowolf.iteye.com/blog/1666908
+http://www.javacodegeeks.com/2012/06/using-redis-with-spring.html
+https://github.com/xetorthio/jedis/wiki/Getting-started
+http://kaveh.ghahremani.me/2012/12/24/twemproxy-redis-quickstart/
+
+ctx = new AnnotationConfigApplicationContext(AppConfig.class);
+ctx = new GenericXmlApplicationContext("/META-INF/spring/app-context.xml");
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(classes = LocalRedisConfig.class)
+<import resource="redis-context.xml"/>
+
+
+HttpClient4.3 Fluent API
+Request.Get(url).execute().returnContent().asString();
+Executor executor = Executor.newInstance(httpClient);
+String resultString = executor.execute(Request.Get(url)).returnContent().asString();
+http://blog.csdn.net/vector_yi/article/details/24298629
+
+
+Google Guava中的RateLimiter，实际上就实现了Token Bucket的算法
+https://github.com/springside/springside4/wiki/Rate-Limiter
+https://github.com/springside/springside4/wiki/Hystrix
+
+
+Sonar --  是SCM, CI, Issue Tracker和Wiki外，另一个必不可少的项目管理软件.
+https://github.com/springside/springside4/wiki/Sonar
+https://github.com/springside/springside4/tree/master/support/sonar
+
+storm
+http://shiyanjun.cn/archives/977.html
+
+spark
+http://shiyanjun.cn/archives/696.html
+
+

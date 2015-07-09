@@ -1,0 +1,19 @@
+<dependency>
+    <groupId>com.sparkjava</groupId>
+    <artifactId>spark-core</artifactId>
+    <version>2.1</version>
+</dependency>
+
+import static spark.Spark.*;
+
+public class HelloWorld {
+    public static void main(String[] args) {
+        get("/hello", (req, res) -> "Hello World");
+    }
+}
+
+http://localhost:4567/hello
+
+https://github.com/ImaginateWayne/sparkjava-archetypes/tree/master/sparkjava-helloworld-archetype
+http://www.taywils.me/2013/11/05/javasparkframeworktutorial.html
+http://www.boxuk.com/blog/creating-rest-api-quickly-using-pure-java/

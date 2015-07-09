@@ -1,0 +1,9 @@
+http://timyang.net/tao/productive-programmer-2/
+因此一段代码如果要依赖上下游才能验证正确性，则只有等到上线后才能判断是否存在bug。当环境逐渐退化到这样的境地，效率自然就无法保证。
+代码被阅读的时间比写代码的时间要长，如果你的代码不能被人理解，则没人会去改善或者修改其中的bug
+
+http://timyang.net/management/reusability/
+http://timyang.net/misc/choose-difficulty/
+http://timyang.net/management/engineer-performance/
+
+http://wangym.iteye.com/blog/2096925 arch summit

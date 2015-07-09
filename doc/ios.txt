@@ -1,0 +1,42 @@
+
+
+http://www.cocoachina.com/cms/wap.php?action=article&id=7746  第三方开源库
+AFNetworking MKNetworkKit CocoaAsyncSocket  fmdb  MagicalRecord  MBProgressHUD GPUImage SVProgressHUD FLAnimatedImage
+
+NSJSONSerialization    http://blog.csdn.net/shouqiangwei/article/details/11557919?utm_source=tuicool
+
+http://pan.baidu.com/s/1mgIbCz2  ios8
+
+http://m.163.com/special/newsclient/ios_libraries.html  网易类库
+
+
+xcode
+http://pan.baidu.com/s/1kTCCV47#path=%252FXcode%25206.3
+http://www.douban.com/group/topic/73154481/
+http://www.cnblogs.com/yipu/p/4308110.html  10.10 vm
+10.9.5 下载地址：http://pan.baidu.com/s/1jGHxFZS　解压密码：1024
+10.10.2下载地址：http://pan.baidu.com/s/1pJLrzp5　提取码：fuxf　解压密码：honghaosheji
+
+http://blog.cnbluebox.com/blog/2014/08/26/ioser-wei-ma-sao-miao/    AVFoundation扫码
+http://www.mexiqq.com/2014/07/25/xcode6+ios8%E6%9C%80%E6%96%B0%E7%9C%9F%E6%9C%BA%E8%B0%83%E8%AF%95%E6%95%99%E7%A8%8B/    xcode6+ios8最新真机调试教程
+http://www.mexiqq.com/2014/10/18/iOS-%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/   iOS 开发中的设计模式
+http://strivingboy.github.io/blog/2014/11/08/scan-qrcode/  二维码
+https://github.com/100mango/zen/blob/master/iOS%E5%AD%A6%E4%B9%A0%EF%BC%9AAVFoundation%20%E8%A7%86%E9%A2%91%E6%B5%81%E5%A4%84%E7%90%86/iOS%E5%AD%A6%E4%B9%A0%EF%BC%9AAVFoundation%20%E8%A7%86%E9%A2%91%E6%B5%81%E5%A4%84%E7%90%86%20.md
+
+
+react native
+https://github.com/vczero/react-native-lession
+http://vczero.github.io/react_native/%E7%AC%AC5%E7%AF%87ui%E7%BB%84%E4%BB%B6.html
+http://m.oschina.net/blog/394427
+http://facebook.github.io/react-native/docs/tutorial.html#content
+http://www.iversong.com/2015/05/02/simple-react-desc/
+https://github.com/lazaronixon/react-native-qrcode-reader
+https://rnplay.org/apps/6JolNQ  webview
+https://appetize.io/demo    模拟器
+http://www.slideshare.net/andrewrota/the-complementarity-of-reactjs-and-web-components
+
+
+baas
+http://www.bmob.cn/docs
+https://leancloud.cn/
+http://www.zhihu.com/question/22098754

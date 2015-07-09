@@ -1,0 +1,1027 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.soyatec.jira.plugins</groupId>
+	<artifactId>jira-ganttchart-project</artifactId>
+	<packaging>war</packaging>
+	<version>1.0</version>
+	<name>Gantt Chart Project for JIRA - OnDemand</name>
+	<url>http://www.soytec.com</url>
+	<properties>
+		<tomcat.version>6.0.39</tomcat.version>
+		<guava.version>16.0.1</guava.version>
+		<atlassian.httpclient.version>0.13.2</atlassian.httpclient.version>
+		<jackson.version>1.7.1</jackson.version>
+		<jwt.version>1.0.0</jwt.version>
+		<jwt.httpclient>1.0-m6</jwt.httpclient>
+		<slf4j.version>1.7.5</slf4j.version>
+		<jersey.version>1.8</jersey.version>
+		<jetty.version>7.6.0.v20120127</jetty.version>
+		<tomcat.dir>/home/yyang/Dev/apache-tomcat-6.0.39</tomcat.dir>		
+	</properties>
+	<repositories>
+
+		<repository>
+			<id>offical</id>
+			<name>Maven Official Repository</name>
+			<url>http://repo1.maven.org/maven2</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>sun</id>
+			<name>Sun Repository</name>
+			<url>http://download.java.net/maven/2/</url>
+		</repository>
+		<repository>
+			<id>sonatype</id>
+			<name>Sonatype Repository</name>
+			<url>http://repository.sonatype.org/content/groups/public/</url>
+		</repository>
+		<repository>
+	        <id>google</id>
+	        <name>Google repository for Maven2</name>
+	        <url>https://oss.sonatype.org/content/repositories/google-releases/</url>
+	    </repository>
+	    <repository>
+	        <id>central-test</id>
+	        <name>Sonatype central-test</name>
+	        <url>https://oss.sonatype.org/content/repositories/central-test</url>
+	    </repository>
+		<repository>
+			<id>repo.springsource.org-release</id>
+			<name>springsource repository</name>
+			<url>http://repo.springsource.org/release</url>
+		</repository>
+		<repository>
+			<id>repository.jboss.org-public</id>
+			<name>JBoss repository</name>
+			<url>http://repository.jboss.org/nexus/content/groups/public</url>
+		</repository>
+		
+		<repository>
+			<id>atlassian-public</id>
+			<url>https://maven.atlassian.com/repository/public</url>
+			<snapshots>
+				<enabled>true</enabled>
+				<!-- <updatePolicy>never</updatePolicy> -->
+				<checksumPolicy>warn</checksumPolicy>
+			</snapshots>
+			<releases>
+				<enabled>true</enabled>
+				<checksumPolicy>warn</checksumPolicy>
+			</releases>
+		</repository>
+	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>offical</id>
+			<name>Maven Official Repository</name>
+			<url>http://repo1.maven.org/maven2</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</pluginRepository>
+		<pluginRepository>
+			<id>jboss-public-repository-group</id>
+			<url>https://repository.jboss.org/nexus/content/groups/public-jboss
+				</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</pluginRepository>
+		<pluginRepository>
+			<id>sun</id>
+			<name>Sun Repository</name>
+			<url>http://download.java.net/maven/2/</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>sonatype</id>
+			<name>Sonatype Repository</name>
+			<url>http://repository.sonatype.org/content/groups/public/</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>Codehaus repository</id>
+			<url>http://repository.codehaus.org/</url>
+		</pluginRepository>
+	</pluginRepositories>
+
+	<dependencies>
+		<dependency>
+			<groupId>commons-beanutils</groupId>
+			<artifactId>commons-beanutils</artifactId>
+			<version>1.8.0</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>1.7</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			 <version>2.6</version> 
+			<scope>compile</scope>
+		</dependency> 
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>1.2.2</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
+			<version>2.2.2</version>
+			<scope>compile</scope>
+			<exclusions>
+                <exclusion>
+                    <groupId>javax.xml.stream</groupId>
+                    <artifactId>stax-api</artifactId>
+                </exclusion>
+            </exclusions>
+		</dependency>
+		<dependency>
+		    <groupId>com.sun.xml.bind</groupId>
+		    <artifactId>jaxb-impl</artifactId>
+		    <version>2.2.3-1</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.freemarker</groupId>
+		    <artifactId>freemarker</artifactId>
+		    <version>2.3.19</version>
+		</dependency>
+		<!-- JSON begin -->
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-core-asl</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-jaxrs</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-xc</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+		<!-- JSON end -->
+
+		<dependency>
+			<groupId>org.mongodb</groupId>
+			<artifactId>mongo-java-driver</artifactId>
+			<version>2.10.1</version>
+		</dependency>
+		<!-- 
+		 <dependency>
+	      <groupId>com.fourspaces.couchdb4j</groupId>
+	      <artifactId>couchdb4j</artifactId>
+	      <version>0.3.0-tobrien-1</version>
+	    </dependency>
+	    -->
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpmime</artifactId>
+			<version>4.2.1</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpcore</artifactId>
+			<version>4.2.1</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpcore-nio</artifactId>
+			<version>4.2.1</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.velocity</groupId>
+			<artifactId>velocity</artifactId>
+			<version>1.7</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.velocity</groupId>
+			<artifactId>velocity-tools</artifactId>
+			<version>2.0</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.struts</groupId>
+			<artifactId>struts2-core</artifactId>
+			<version>2.3.15.2</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>${guava.version}</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.jettison</groupId>
+			<artifactId>jettison</artifactId>
+			<version>1.3</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
+			<version>1.6</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>net.sf.json-lib</groupId>
+			<artifactId>json-lib</artifactId>
+			<version>2.4</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>net.sourceforge</groupId>
+			<artifactId>mpxj</artifactId>
+			<version>4.5.0-rc1</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>3.9</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.atlassian.util.concurrent</groupId>
+			<artifactId>atlassian-util-concurrent</artifactId>
+			<version>2.4.0</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.sun.jersey</groupId>
+			<artifactId>jersey-server</artifactId>
+			<version>${jersey.version}</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.jersey</groupId>
+			<artifactId>jersey-core</artifactId>
+			<version>${jersey.version}</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.jersey</groupId>
+			<artifactId>jersey-client</artifactId>
+			<version>${jersey.version}</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.jersey</groupId>
+			<artifactId>jersey-json</artifactId>
+			<version>${jersey.version}</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.atlassian.jwt</groupId>
+			<artifactId>jwt-api</artifactId>
+			<version>${jwt.version}</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.atlassian.jwt</groupId>
+			<artifactId>jwt-core</artifactId>
+			<version>${jwt.version}</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.atlassian.jwt</groupId>
+			<artifactId>jwt-http-client</artifactId>
+			<version>${jwt.httpclient}</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.oauth.core</groupId>
+			<artifactId>oauth-consumer</artifactId>
+			<version>20090617</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>net.oauth.core</groupId>
+			<artifactId>oauth</artifactId>
+			<version>20090617</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.atlassian.httpclient</groupId>
+			<artifactId>atlassian-httpclient-api</artifactId>
+			<version>${atlassian.httpclient.version}</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.atlassian.httpclient</groupId>
+			<artifactId>atlassian-httpclient-spi</artifactId>
+			<version>${atlassian.httpclient.version}</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.atlassian.httpclient</groupId>
+			<artifactId>atlassian-httpclient-apache-httpcomponents</artifactId>
+			<version>${atlassian.httpclient.version}</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+		<!--Binding for commons logging over slf4j 
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency> -->
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.16</version>
+		</dependency>
+		<!-- Binding for NOP, silently discarding all logging. 
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-nop</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency> -->
+		<!-- Binding for System.out 
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-simple</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>		-->
+
+		<dependency>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-servlet</artifactId>
+			<version>${jetty.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+			<scope>provided</scope>
+		</dependency>
+		
+		<dependency>  
+            <groupId>asm</groupId>  
+            <artifactId>asm</artifactId>  
+            <version>3.3</version>  
+        </dependency>  
+        <dependency>  
+            <groupId>ognl</groupId>  
+            <artifactId>ognl</artifactId>  
+            <version>3.0.4</version>  
+        </dependency>  
+         <dependency>
+            <groupId>org.quartz-scheduler</groupId>
+            <artifactId>quartz</artifactId>
+            <version>2.2.1</version>
+        </dependency>
+        <dependency>
+	        <groupId>org.quartz-scheduler</groupId>
+	        <artifactId>quartz-jobs</artifactId>
+	        <version>2.2.1</version>
+	    </dependency>
+	    <dependency>
+            <groupId>javax.transaction</groupId>
+            <artifactId>jta</artifactId>
+            <version>1.1</version>
+        </dependency>
+        
+        <dependency>
+		   <groupId>ch.ethz.ganymed</groupId>
+		   <artifactId>ganymed-ssh2</artifactId>
+		   <version>261</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-email</artifactId>
+			<version>1.3.2</version>
+			  <exclusions>
+                        <exclusion>
+                                <artifactId>mail</artifactId>
+                                <groupId>javax.mail</groupId>
+                        </exclusion>
+                </exclusions>
+		</dependency>
+
+        <!--
+		<dependency>
+		    <groupId>net.sf.ehcache</groupId>
+		    <artifactId>ehcache</artifactId>
+		    <version>2.8.1</version>
+		</dependency>
+		-->
+		
+		 <!-- javamelody-core -->
+        <dependency>
+                <groupId>net.bull.javamelody</groupId>
+                <artifactId>javamelody-core</artifactId>
+                <version>1.50.0</version>
+        </dependency>
+         <dependency>
+                <groupId>com.thoughtworks.xstream</groupId>
+                <artifactId>xstream</artifactId>
+                <version>1.3.1</version>
+        </dependency>
+        <dependency>
+                <groupId>org.jrobin</groupId>
+                <artifactId>jrobin</artifactId>
+                <version>1.5.9</version>
+        </dependency>
+        <!-- itext, option to add PDF export 
+        <dependency>
+                <groupId>com.lowagie</groupId>
+                <artifactId>itext</artifactId>
+                <version>2.1.7</version>
+                <exclusions>
+                        <exclusion>
+                                <artifactId>bcmail-jdk14</artifactId>
+                                <groupId>bouncycastle</groupId>
+                        </exclusion>
+                        <exclusion>
+                                <artifactId>bcprov-jdk14</artifactId>
+                                <groupId>bouncycastle</groupId>
+                        </exclusion>
+                        <exclusion>
+                                <artifactId>bctsp-jdk14</artifactId>
+                                <groupId>bouncycastle</groupId>
+                        </exclusion>
+                </exclusions>
+        </dependency> -->
+		
+        <!--  
+ 		<dependency>
+		    <groupId>stax</groupId>
+		    <artifactId>stax-api</artifactId>
+		    <version>1.0.1</version>
+		</dependency>
+		-->
+		
+<!-- tomcat 
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-core</artifactId>
+			<version>${tomcat.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-logging-juli</artifactId>
+			<version>${tomcat.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-jasper</artifactId>
+			<version>${tomcat.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.tomcat</groupId>
+			<artifactId>tomcat-jasper</artifactId>
+			<version>${tomcat.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.tomcat</groupId>
+			<artifactId>tomcat-jasper-el</artifactId>
+			<version>${tomcat.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.tomcat</groupId>
+			<artifactId>tomcat-jsp-api</artifactId>
+			<version>${tomcat.version}</version>
+		</dependency>
+    -->
+ <!--
+     <dependency>
+        <groupId>org.apache.tomcat</groupId>
+        <artifactId>catalina</artifactId>
+        <version>6.0.18</version>
+        <scope>test</scope>
+    </dependency>
+    <dependency>
+        <groupId>org.apache.tomcat</groupId>
+        <artifactId>coyote</artifactId>
+        <version>6.0.18</version>
+        <scope>test</scope>
+    </dependency>
+    <dependency>
+        <groupId>org.apache.tomcat</groupId>
+        <artifactId>jasper</artifactId>
+        <version>6.0.18</version>
+        <scope>test</scope>
+    </dependency>
+ -->
+	</dependencies>
+
+	<build>
+		<finalName>ganttconnect</finalName>
+		<sourceDirectory>src/main/java/src</sourceDirectory>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.0.2</version>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+					<encoding>utf-8</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-eclipse-plugin</artifactId>
+                <version>2.9</version>
+                <configuration>
+                    <downloadSources>true</downloadSources>
+                    <downloadJavadocs>false</downloadJavadocs>
+                </configuration>
+            </plugin>
+
+	<!-- 
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<version>2.3</version>
+				<executions>
+					<execution>
+			            <phase>package</phase>  
+			            <goals>  
+			                <goal>copy</goal>  
+			            </goals>  
+						<configuration>
+			                <overWriteReleases>false</overWriteReleases>  
+			                <overWriteSnapshots>false</overWriteSnapshots>  
+			                <overWriteIfNewer>true</overWriteIfNewer>  
+			                <excludeArtifactIds>serlvet-api</excludeArtifactIds>
+			               
+							<artifactItems>
+								<artifactItem>
+									<groupId>org.mortbay.jetty</groupId>
+									<artifactId>jetty-runner</artifactId>
+									<version>7.5.4.v20111024</version>
+									<destFileName>jetty-runner.jar</destFileName>
+								</artifactItem>
+							</artifactItems>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			 -->
+			 
+			<plugin>  
+		        <!-- YUI Compressor Maven压缩插件 -->  
+		        <groupId>net.alchim31.maven</groupId>  
+		        <artifactId>yuicompressor-maven-plugin</artifactId>  
+		        <version>1.3.0</version>   
+		        <executions>
+					<execution>
+						<goals>
+							<goal>compress</goal>
+						</goals>
+					</execution>
+				</executions>
+		        <configuration>  
+		            <!-- 读取js,css文件采用UTF-8编码 -->  
+		            <encoding>UTF-8</encoding>  
+		            <!-- 不显示js可能的错误 -->  
+		            <jswarn>false</jswarn>  
+		            <!-- 若存在已压缩的文件，会先对比源文件是否有改动        有改动便压缩，无改动就不压缩 -->  
+		            <force>false</force>  
+		            <!-- 在指定的列号后插入新行 -->  
+		            <linebreakpos>-1</linebreakpos>  
+		            <!-- 压缩之前先执行聚合文件操作 -->  
+		            <preProcessAggregates>true</preProcessAggregates>  
+		            <!-- 压缩后保存文件后缀 -->  
+		            <suffix>-min</suffix>  
+		            <!-- 源目录，即需压缩的根目录 -->  
+		            <sourceDirectory>${basedir}/src/main/webapp/include</sourceDirectory>  
+		            <!-- 压缩js和css文件  -->
+		            <includes>  
+		                <include>js/**/*.js</include>  
+		                <include>css/**/*.css</include>  
+		            </includes>  
+		            <!-- 以下目录和文件不会被压缩 -->  
+		            <excludes>  
+		            	<exclude>**/jira*admin.css</exclude>  <!-- cause error, ignore it -->
+		                <exclude>**/*.min.js</exclude>  
+		                <exclude>**/*.min.css</exclude>  
+		                <exclude>**/*-min.js</exclude>  
+		                <exclude>**/*-min.css</exclude>  
+		            </excludes>  
+		            <!-- 压缩后输出文件目录 -->  
+		            <outputDirectory>${project.build.directory}/${project.build.finalName}/include</outputDirectory> 
+		            <!-- 聚合文件 -->  
+		            <aggregations>  
+		                <aggregation>  
+		                    <!-- 合并每一个文件后插入一新行 -->  
+		                    <insertNewLine>true</insertNewLine>  
+		                    <!-- 需合并文件的根文件夹 -->  
+		                    <inputDir>${basedir}/src/main/webapp/include/js</inputDir>  
+		                    <!-- 最终合并的输出文件 -->  
+		                    <output>${basedir}/src/main/webapp/include/js/soyatec-all-gantt.js</output>  
+		                    <!-- 把以下js文件合并成一个js文件，是按顺序合并的 -->  
+		                    <includes>  
+		                        <include>util/BigInt.js</include>  
+		                        <include>util/Barrett.js</include>  
+		                      	<include>util/RSA.js</include> 
+		                      	<include>util/base64.js</include> 
+		                      	<include>ux/CheckColumn.js</include> 
+		                      	<include>sch-dragzoom.js</include> 
+		                      	<include>Soyatec.excel.js</include> 
+		                      	<include>TaskContextMenu.js</include>
+		                      	<include>DailyTimeAxis.js</include>
+		                      	<include>AutoScheduler.js</include>
+		                      	<include>RankScheduler.js</include>
+		                      	<include>gantt-patch.js</include>
+		                      	<include>String-encoder.js</include>
+		                      	<include>Soyatec.util.js</include>
+		                      	<include>html2canvas.js</include>
+		                      	<include>touch.js</include>
+		                      	<include>gantt-sort.js</include>
+		                      	<include>gantt-def.js</include>
+		                      	<include>Soyatec-plugins-Filter.js</include>
+		                      	<include>gantt-filter.js</include>
+		                      	<include>gantt-setting.js</include>
+		                      	<include>gantt-common.js</include>
+		                      	<include>PluginManager.js</include>
+		                      	<include>StoreManager.js</include>
+		                      	<include>Grouper.js</include>
+		                      	<include>OperationManager.js</include>
+		                      	<include>createWorkLog.js</include>
+		                      	<include>createIssue.js</include>
+		                      	<include>createVersion.js</include>
+		                      	<include>createComponent.js</include>
+		                      	<include>Soyatec.rowover.js</include>
+		                      	<include>Soyatec-plugins-msproject.js</include>
+		                      	<include>Soyatec.msproject.js</include>
+		                      	<include>gantt-checking.js</include>
+		                      	<include>updateLocalData.js</include>
+		                      	<include>Soyatec-plugins-Context.js</include>
+		                      	<include>Soyatec-plugins-Toolbar.js</include>
+		                    </includes>  
+		                </aggregation>  
+		            </aggregations>  
+		        </configuration>  
+		      </plugin>  
+
+			   <plugin>
+				    <groupId>org.codehaus.mojo</groupId>
+				    <artifactId>native2ascii-maven-plugin</artifactId>
+				    <version>1.0-alpha-1</version>
+				    <dependencies>
+				        <dependency>
+				             <groupId>com.sun</groupId>
+				             <artifactId>tools</artifactId>
+				             <version>1.7.0</version>
+				             <scope>system</scope>
+				             <systemPath>${java.home}/../lib/tools.jar</systemPath>
+				       </dependency>
+				   </dependencies>
+				    <executions>
+				        <execution>
+				            <id>native2ascii-GBK-resources</id>
+				            <phase>process-resources</phase>
+				            <goals>
+				                <goal>native2ascii</goal>
+				            </goals>
+				            <configuration>
+								<encoding>GBK</encoding>
+				                <src>${basedir}/tools/</src>
+				                <dest>${basedir}/src/main/java/src/com/soyatec/jira/plugins/</dest>
+				                <includes>GanttChart_zh.properties</includes>
+				                <flatten>true</flatten>
+				            </configuration>
+				        </execution>
+				        <execution>
+				            <id>native2ascii-utf8-resources</id>
+				            <phase>process-resources</phase>
+				            <goals>
+				                <goal>native2ascii</goal>
+				            </goals>
+				            <configuration>
+								<encoding>UTF8</encoding>
+				                <src>${basedir}/tools/</src>
+				                <dest>${basedir}/src/main/java/src/com/soyatec/jira/plugins/</dest>
+				                <includes>GanttChart_ko_KR.properties</includes>
+				                <flatten>true</flatten>
+				            </configuration>
+				        </execution>
+				    </executions>
+				</plugin>
+				
+		      <plugin>
+				    <artifactId>maven-antrun-plugin</artifactId>
+				    <version>1.3</version>
+				    <executions>
+					    <execution>
+				           <id>soyatec-target-clean</id>
+				            <phase>process-resources</phase>
+				           <goals>
+				             <goal>run</goal>
+				           </goals>
+				           <configuration>
+				             <tasks>
+				                <delete file="${basedir}/src/main/webapp/include/js/soyatec-all-gantt-min.js"/>
+				              	<delete file="${basedir}/src/main/webapp/include/js/soyatec-all-gantt.js"/>
+				             </tasks>
+				           </configuration>
+				        </execution>
+
+					    <execution>
+				           <id>soyatec-process-resources</id>
+				            <phase>process-resources</phase>
+				           <goals>
+				             <goal>run</goal>
+				           </goals>
+				           <configuration>
+				             <tasks>
+				              	<copy file="${basedir}/tools/gantt-include.vm" tofile="${basedir}/src/main/webapp/template/gantt-include.vm" overwrite="true" failonerror="true"/>
+				              	<copy file="${basedir}/tools/GanttChart.properties" tofile="${basedir}/src/main/java/src/com/soyatec/jira/plugins/GanttChart.properties" overwrite="true" failonerror="true"/>
+				              	<copy file="${basedir}/tools/GanttChart.properties" tofile="${basedir}/src/main/java/src/com/soyatec/jira/plugins/GanttChart_en.properties" overwrite="true" failonerror="true"/>
+				              	<copy file="${basedir}/tools/GanttChart_fr.properties" tofile="${basedir}/src/main/java/src/com/soyatec/jira/plugins/GanttChart_fr.properties" overwrite="true" failonerror="true"/>
+				             </tasks>
+				           </configuration>
+				        </execution>
+
+					    <execution>
+				           <id>soyatec-package</id>
+				            <phase>package</phase>
+				           <goals>
+				             <goal>run</goal>
+				           </goals>
+				           <configuration>
+				             <tasks>
+				             	<copy file="${basedir}/target/ganttconnect/include/js/soyatec-all-gantt-min.js" todir="${basedir}/src/main/webapp/include/js/" overwrite="true"
+				                	failonerror="true" />
+					            <delete file="${basedir}/src/main/webapp/include/js/soyatec-all-gantt.js"/>
+				             </tasks>
+				           </configuration>
+				        </execution>
+				    
+				        <execution>
+				            <phase>install</phase>
+				            <configuration>
+				                <tasks name="Deploy to Tomcat">
+				                    <!-- stop tomcat -->
+				                    <exec osfamily="windows" dir="${tomcat.dir}" executable="cmd" failonerror="false">
+				                        <arg line="/c ${tomcat.dir}/bin/shutdown.bat" />
+				                    </exec>
+				                     <exec osfamily="unix" dir="${tomcat.dir}" executable="bash" failonerror="false">
+				                        <arg line="${tomcat.dir}/bin/shutdown.sh" />
+				                    </exec>
+				                    <!-- give Tomcat some time to shut down -->
+				                    <sleep seconds="5"/>
+				                    <!-- delete the web application folder -->
+				                    <delete dir="${tomcat.dir}/webapps/${project.build.finalName}" />
+				                    <delete file="${tomcat.dir}/webapps/${project.build.finalName}。war" />
+				                    <!-- copy the new war file to Tomcat and overwrite an existing file -->
+				                    <copy file="${project.build.directory}/${project.build.finalName}.war" todir="${tomcat.dir}/webapps" overwrite="true"
+				                        failonerror="true" />
+				                    <!-- start tomcat -->
+				                    <exec osfamily="windows" dir="${tomcat.dir}" executable="cmd" failonerror="true">
+				                        <arg line="/c ${tomcat.dir}/bin/startup.bat" />
+				                    </exec>
+				                     <exec osfamily="unix" dir="${tomcat.dir}" executable="bash" failonerror="true">
+				                        <arg line="${tomcat.dir}/bin/startup.sh" />
+				                    </exec>
+				                </tasks>
+				            </configuration>
+				            <goals>
+				                <goal>run</goal>
+				            </goals>
+				        </execution>
+				        
+					    <execution>
+				           <id>soyatec-build-clean</id>
+				           <phase>pre-clean</phase>
+				           <goals>
+				             <goal>run</goal>
+				           </goals>
+				           <configuration>
+				             <tasks>
+				                <delete file="${basedir}/src/main/webapp/include/js/soyatec-all-gantt-min.js"/>
+				                <delete file="${basedir}/src/main/webapp/include/js/soyatec-all-gantt.js"/>
+				                
+					            <delete file="${basedir}/src/main/java/src/com/soyatec/jira/plugins/GanttChart_zh.properties"/>
+					            <delete file="${basedir}/src/main/java/src/com/soyatec/jira/plugins/GanttChart_ko_KR.properties"/>
+				             </tasks>
+				           </configuration>
+				        </execution>
+				    </executions>
+				</plugin>
+				
+			  <!--  deploy by tomcat manager
+		      <plugin>  
+					<groupId>org.codehaus.mojo</groupId>  
+					<artifactId>tomcat-maven-plugin</artifactId>  
+					<configuration>  
+						<url>http://localhost:8080/manager</url>  
+						<username>tomcat</username>  
+						<password>123456</password>  
+						<path>/${project.build.finalName}</path>  
+					</configuration>  
+				</plugin> 
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>native2ascii-maven-plugin</artifactId>
+				<version>1.0-beta-1</version>
+				<executions>
+					<execution>
+						<phase>install</phase>
+						<goals>
+							<goal>native2ascii</goal>
+						</goals>
+						<configuration>
+							<workDir>${project.build.directory}/${project.build.finalName}</workDir>
+							<excludes>
+								<exclude>**/*.css</exclude>
+							</excludes>
+							<includes>
+								<include>resources/js/*.js</include>
+							</includes>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			
+			 <plugin>   
+			    <groupId>org.apache.maven.plugins</groupId>   
+			    <artifactId>maven-war-plugin</artifactId>   
+			    <version>2.0.2</version>   
+			    <configuration>   
+			     <warSourceExcludes>src/main/resources/**</warSourceExcludes>   
+			    </configuration>   
+			 </plugin>   
+			 
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-checkstyle-plugin</artifactId>  
+				<version>2.11</version>
+				<configuration>
+					<configLocation>config/sun_checks.xml</configLocation>
+					<includeResources>false</includeResources>
+					<failOnViolation>true</failOnViolation>
+					<violationSeverity>info</violationSeverity>
+					<maxAllowedViolations>0</maxAllowedViolations>
+					<consoleOutput>true</consoleOutput>
+					<encoding>UTF-8</encoding>
+					<includes>
+						**\/com.atlassian.jira.rest.client\/**.java,**\/com.soyatec.jira\/**.java
+					</includes>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>check</goal>
+						</goals>
+						<phase>validate</phase>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-pmd-plugin</artifactId>
+				<version>2.7.1</version>
+				<configuration>
+					<failurePriority>5</failurePriority>
+					<failOnViolation>true</failOnViolation>
+					<targetJdk>${jdk.version}</targetJdk>
+					<verbose>true</verbose>
+					<outputEncoding>UTF-8</outputEncoding>
+					<aggregate>true</aggregate>
+					<rulesets>
+						<ruleset>rulesets/basic.xml</ruleset>
+						<ruleset>rulesets/unusedcode.xml</ruleset>
+						<ruleset>rulesets/braces.xml</ruleset>
+						<ruleset>rulesets/naming.xml</ruleset>
+						<ruleset>rulesets/strings.xml</ruleset>
+					</rulesets>
+					<includes>
+						<include>**\/com.atlassian.jira.rest.client\/**.java</include>
+						<include>**\/com.soyatec.jira\/**.java</include>
+					</includes>
+				</configuration>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>check</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>findbugs-maven-plugin</artifactId>
+				<version>2.5.2</version>
+				<configuration>
+					<onlyAnalyze>
+						com.*,
+					</onlyAnalyze>
+					<failOnError>true</failOnError>
+					<outputEncoding>UTF-8</outputEncoding>
+					<threshold>Low</threshold>
+					<xmlOutput>true</xmlOutput>
+					<effort>Max</effort>
+				</configuration>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>check</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+	
+			<plugin>
+				<groupId>com.googlecode.jslint4java</groupId>
+				<artifactId>jslint4java-maven-plugin</artifactId>
+				<version>2.0.2</version>
+				<executions>
+				  <execution>
+				    <id>lint</id>
+				    <phase>process-resources</phase>
+				    <goals>
+				      <goal>lint</goal>
+				    </goals>
+				    <configuration>
+				        <failOnError>false</failOnError>
+				          <sourceFolders>
+                            <sourceFolder>${project.basedir}/src/main/webapp/include/js</sourceFolder>
+                        </sourceFolders>
+                        <options>
+                            <predef>jQuery, $</predef>
+                            <browser>true</browser>
+                            <undef>true</undef>
+                        </options>
+				    </configuration>
+				  </execution>
+				</executions>
+			  </plugin>
+			  
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>appassembler-maven-plugin</artifactId>
+				<version>1.1.1</version>
+				<configuration>
+					<assembleDirectory>target</assembleDirectory>
+					<programs>
+						<program>
+							<mainClass>launch.Main</mainClass>
+							<name>webapp</name>
+						</program>
+					</programs>
+				</configuration>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>assemble</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+  -->
+		</plugins>
+	</build>
+</project>

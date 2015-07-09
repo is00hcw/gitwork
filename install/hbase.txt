@@ -1,0 +1,11 @@
+﻿http://blog.csdn.net/god_wot/article/details/6829427      HBase单机环境搭建及入门
+
+进入命令：hbase shell
+查看有多少表：list
+查看表的结构：describe 'DEVICE'
+查看表的数据：scan 'DEVICE'
+  查看某一行：get 'DEVICE',''
+查看某列族的所有数据： scan 'DEVICE',{COLUMNS => 'course'}
+
+
+http://www.cnblogs.com/linjiqin/archive/2013/03/08/2949339.html
