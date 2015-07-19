@@ -40,3 +40,10 @@ Error和RuntimeException及其子类属于unchecked exception, 而其他异常为checked exce
 在启动时，Eclipse会加载许多类并且会默认运行JVM字节码验证器，这会增加额外的启动时间。在JVM参数中添加-Xverify:none选项就可以禁用字节码验证器，从而减少启动时间。
 另外，如果计算机是多核的，优化器还会在参数中增加-server和-XX:+UseParallelGC标志
 http://zeroturnaround.com/free/optimizer-for-eclipse/
+
+java 8
+http://ifeve.com/lambda/
+http://ifeve.com/stream/  
+http://www.cnblogs.com/figure9/archive/2014/10/24/4048421.html
+Java8里接口可以带静态方法, Default method，也是Java8中的一个新特性，就是接口中的一个带有实现的方法  默认方法使您能够添加新的功能到你现有库的接口中，并确保与采用老版本接口编写的代码的二进制兼容性。  目的是为了解决接口的修改与现有的实现不兼容的问题 
+1.抽象类不可以多重继承，接口可以   抽象类表示的是"is-a"关系，接口表示的是"like-a"关系;
