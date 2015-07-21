@@ -12,6 +12,10 @@ json包的版本低了，原来是struts-lib-2.1-jdk15,后来换成struts-lib-2.2.2-jdk15   ht
 href="javascript:void(0)"
 要注意修改jmxremote.password的访问权限为用户只读，组和others无权限,  chmod 0400 ./jmxremote.password。否则会出现Error: Password file read access must be restricted: 
 
+
+JSON标准不允许字符串中出现"控制字符"，例如：一个Tab或换行符。$.parseJSON('{"name": "Code\tPlayer\n"}'); // 多数情况下，它会抛出一个错误，因为JS解析器会将字符串中的\t或\n等转义直接视作字面值，起到Tab或换行的效果。
+//正确写法应该如下(使用两个反斜杠，以免被JS解析器直接转义\t或\n)：$.parseJSON('{"name": "Code\\tPlayer\\n"}');
+
 微信js上传图片要加上延迟， http://segmentfault.com/q/1010000002542775
 微信语音识别功能导致上传语音speex格式，关闭后要等24小时，或者重新关注一下
 微信 ajax put可以有问题 导致body发送不了

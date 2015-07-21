@@ -1,0 +1,34 @@
+http://weakfi.iteye.com/blog/1391990
+http://siberiawolf.com/backboneJS/
+http://arturadib.com/hello-backbonejs/
+
+http://blog.meathill.net/tech/js/override-loading-logic-in-backbone.html
+http://blog.meathill.com/tech/js/best-practise-for-backbone.html
+http://www.cnblogs.com/nuysoft/archive/2012/03/19/2404274.html
+http://www.cnblogs.com/snandy/archive/2013/06/06/3121118.html
+
+
+Backbone是如何区分第一次请求还是第二次请求的呢？是根据通过model.isNew这个方法进行判断的。如果模型没有id属性，就是表示模型是新模型。
+GET  /books/ .... collection.fetch();
+POST /books/ .... collection.create();
+GET  /books/1 ... model.fetch();
+PUT  /books/1 ... model.save();
+DEL  /books/1 ... model.destroy();
+_.extend(object, Backbone.Events);
+
+Whenever a model or collection begins a sync with the server, a "request" event is emitted. If the request completes successfully you'll get a "sync" event, and an "error" event if not.
+
+
+http://www.ruanyifeng.com/blog/2012/11/require_js.html  require.js
+http://www.ruanyifeng.com/blog/2011/06/designing_ideas_of_inheritance_mechanism_in_javascript.html
+这个属性包含一个对象（以下简称"prototype对象"），所有实例对象需要共享的属性和方法，都放在这个对象里面；那些不需要共享的属性和方法，就放在构造函数里面。
+实例对象一旦创建，将自动引用prototype对象的属性和方法。
+
+http://underscorejs.org/#times
+_.templateSettings = {
+    evaluate    : /<%([\s\S]+?)%>/g,
+    interpolate : /<%=([\s\S]+?)%>/g,
+    escape      : /<%-([\s\S]+?)%>/g
+  };
+跟jsp中嵌入java代码有点像，evaluate标签中间的表示为可执行的js代码，interpolate表示输出一个js运行结果的值，escapte表示输出这个变量的值并且进行html标签过滤，将相关的字符如"<"转为"&lt;"
+
