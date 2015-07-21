@@ -1,4 +1,7 @@
-﻿http://blog.javachen.com/2014/09/24/compile-and-test-dubbo/
+﻿http://blog.csdn.net/jdream314/article/details/44039753
+http://blog.csdn.net/jdream314/article/details/44590937
+
+http://blog.javachen.com/2014/09/24/compile-and-test-dubbo/
 http://www.jianshu.com/p/0dde591f21d0
 http://blog.csdn.net/qduningning/article/details/41445937
 http://dangdangdotcom.github.io/dubbox/rest.html

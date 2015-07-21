@@ -1,4 +1,11 @@
 ﻿Spring3.0中对异常的处理方法一共提供了两种：一种是使用HandlerExceptionResolver接口；一种是在Controller类内部使用@ExceptionHandler注解。使用第一种方式可以实现全局异常控制，并且Spring已经提供了一个默认的实现类SimpleMappingExceptionResolver
+http://jinnianshilongnian.iteye.com/blog/2107205   4.1新特性——Spring MVC增强
+http://zilongsky-gmail-com.iteye.com/blog/2032001   maven spring profile    <param-name>spring.profiles.active</param-name><param-value>${profiles.activation}</param-value>  
+http://www.importnew.com/1099.html        ctx.getEnvironment().setActiveProfiles("container");    -Dspring.profiles.active="standalone"    
+http://jinnianshilongnian.iteye.com/blog/2000183  @ActiveProfiles("test")  
+@ActiveProfiles({"unittest","productprofile"})  
+1.ENV方式： ConfigurableEnvironment.setActiveProfiles("unittest")
+2.JVM参数方式: -Dspring.profiles.active="unittest"
 
 http://www.captaindebug.com/2013/09/long-polling-with-spring-32s.html#.VU7YoNyqpBc   DeferredResult
 
