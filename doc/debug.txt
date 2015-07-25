@@ -1,6 +1,8 @@
 puer -a route.js -p 8080
 ssh 反向连接  远程端口  localhost  本地端口，  还需要再nginx配置proxy pass到远程端口，默认绑定到127.0.0.1
 
+http://blog.lazybee.me/wechat-development/   ssh lazybee.me -R 10000:127.0.0.1:8000  让本地开发环境监听 8000 端口。
+
 移动
 http://www.alloyteam.com/2015/03/mobile-web-debug-tool-rosin/   rosin
 http://yanhaijing.com/mobile/2014/12/17/web-debug-for-mobile/

@@ -9,6 +9,9 @@ http://pan.baidu.com/s/1mgIbCz2  ios8
 
 http://m.163.com/special/newsclient/ios_libraries.html  ÍøÒ×Àà¿â
 
+build
+https://fastlane.tools/
+https://github.com/facebook/xctool
 
 xcode
 http://pan.baidu.com/s/1kTCCV47#path=%252FXcode%25206.3

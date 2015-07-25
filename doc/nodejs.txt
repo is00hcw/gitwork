@@ -1,3 +1,9 @@
+setx NODE_PATH "%NODE_PATH%;C:\Users\Administrator\AppData\Roaming\npm\node_modules"
+npm config set msvs_version 2012 --global
+npm install -g yo bower grunt-cli gulp
+npm install -g generator-webapp generator-angular
+http://segmentfault.com/a/1190000000473869   nrm 
+
 https://github.com/tanepiper/SublimeText-Nodejs
 node --debug 命令选项可以启动调试服务器，默认情况下调试端口是 5858，也可以使用 --debug=1234 指定调试端口为 1234
 http://my.oschina.net/ozil/blog/185526
