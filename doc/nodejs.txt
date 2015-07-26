@@ -94,3 +94,6 @@ https://www.digitalocean.com/community/tutorials/how-to-optimize-nginx-configura
 http://dak1n1.com/blog/12-nginx-performance-tuning
 http://blog.martinfjordvald.com/2011/04/optimizing-nginx-for-high-traffic-loads/
 http://ae.koroglu.org/using-nginx-as-load-balancer-for-tomcat/
+
+
+http://www.infoq.com/cn/articles/nodejs-callback-hell/   Node.js软肋之回调大坑

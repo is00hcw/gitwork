@@ -91,3 +91,7 @@ http://www.nyankosama.com/2015/04/03/java-goroutine/
 
 akka
 http://www.csdn.net/article/2014-12-17/2823174
+http://www.infoq.com/cn/articles/scala-technology/  快速了解Scala技术栈
+http://my.oschina.net/jingxing05/blog/290567?p=1
+http://alvinalexander.com/scala/simple-scala-akka-actor-examples-hello-world-actors
+http://code.csdn.net/news/2823174
