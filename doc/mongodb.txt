@@ -41,3 +41,12 @@ config server，顾名思义为配置服务器，存储所有数据库元信息（路由、分片）的配置。m
 http://blog.csdn.net/luonanqin/article/details/9107609
 http://blog.csdn.net/luonanqin/article/details/8497860  mongodb集群
 http://my.oschina.net/costaxu/blog/196980
+
+安全 
+http://www.mzwu.com/article.asp?id=3324   用户
+http://www.jianshu.com/p/e59cd2dc5274
+http://www.cnblogs.com/shanyou/archive/2012/11/17/2774344.html
+http://www.hiceon.com/topic/mongodb-startup-parameters/
+--bind_ip arg                      # 绑定服务IP，若绑定127.0.0.1，则只能本机访问，不指定默认本地所有IP 
+--auth                               # 启用验证
+--nohttpinterface            # 关闭http接口，默认关闭27018端口访问
