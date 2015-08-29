@@ -1,4 +1,5 @@
-
+http://www.cnblogs.com/kenshincui/p/3985090.html
+http://www.cnblogs.com/kenshincui/p/3890880.html  IOS程序开发概览
 
 http://www.cocoachina.com/cms/wap.php?action=article&id=7746  第三方开源库
 AFNetworking MKNetworkKit CocoaAsyncSocket  fmdb  MagicalRecord  MBProgressHUD GPUImage SVProgressHUD FLAnimatedImage
@@ -43,3 +44,17 @@ baas
 http://www.bmob.cn/docs
 https://leancloud.cn/
 http://www.zhihu.com/question/22098754
+
+thread
+http://blog.csdn.net/guodongsun0/article/details/46380895
+[self performSelectorInBackground:@selector(loadImage:) withObject:[NSNumber numberWithInt:i]];
+[self performSelectorOnMainThread:@selector(updateImage:) withObject:imageData waitUntilDone:YES];
+NSInvocationOperation *invocationOperation=[[NSInvocationOperation alloc]initWithTarget:self selector:@selector(loadImage) object:nil];
+[[NSOperationQueue mainQueue] addOperationWithBlock:^{     [self updateImageWithData:data andIndex:i];   }];
+
+NSThread *thread=[[NSThread alloc]initWithTarget:self selector:@selector(loadImage:) object:[NSNumber numberWithInt:i]];
+[NSThread sleepForTimeInterval:2.0];
+GCD(Grand Central Dispatch)是基于C语言开发的一套多线程开发机制，GCD中的队列分为并行队列和串行队列两类
+dispatch_queue_t mainQueue= dispatch_get_main_queue();   //更新UI界面,此处调用了GCD主线程队列的方法
+dispatch_queue_t globalQueue=dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);   // 取得一个全局的并发队列
+可以使用NSThread的currentThread方法取得当前线程，使用 sleepForTimeInterval:方法让当前线程休眠。

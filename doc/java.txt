@@ -16,6 +16,13 @@ http://www.cnblogs.com/dolphin0520/p/3923167.html
 
 所有长度超过1字节的原始类型，都以大端（big-endian）的方式保存在字节码流中，这意味着高位字节出现在低位字节之前。    网络字节码顺序：Java class文件用网络字节码顺序来进行存储：为了保证和小端的Intel x86架构以及大端的RISC系列的架构保持无关性，JVM使用用于网络传输的网络字节顺序，也就是大端。
 
+http://www.ibm.com/developerworks/cn/java/j-5things15/index.html    使用 volatile 关键字识别一个变量，意味着这个变量的值会被不同的线程修改。Java 语言规范允许 JRE 在引用变量的每个线程中维护该变量的一个本地副本。您可以将变量的这些 “线程局部” 副本看作是与缓存类似，在每次线程需要访问变量的值时帮助它避免检查主存储器。
+那么不管线程何时读取 A 的值，它都会回头查阅 A 的原版拷贝并读取当前值。 读取易失性变量是同步的，写入易失性变量也是同步的，但非原子操作不同步。
+http://www.ibm.com/developerworks/cn/java/java-lo-concurrenthashmap/index.html
+
+http://segmentfault.com/a/1190000000387993  伪共享
+http://segmentfault.com/a/1190000000387968
+
 http://my.oschina.net/benhaile/blog/175012  jdk 8 lambda
 
 win32: http://downloads.myeclipseide.com/downloads/products/eworkbench/galileo/myeclipse-8.6.0-win32.exe

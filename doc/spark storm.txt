@@ -1,3 +1,12 @@
+http://sparkdeveloper.com/2015/03/19/apache-spark-quick-guide/
+http://training.databricks.com/workshop/itas_workshop.pdf
+http://training.databricks.com/workshop/sparkcamp.pdf
+https://databricks.com/spark/developer-resources#itas
+http://lintool.github.io/SparkTutorial/
+org.apache.spark.sql.SQLContext
+org.apache.spark.sql.hive.HiveContext
+org.apache.spark.streaming.StreamingContext
+
 http://tech.uc.cn/?p=2116   introduction
 http://www.csdn.net/article/2014-08-04/2821018/1   从Storm和Spark 学习流式实时分布式计算的设计     消息的传递和分发，数据如何从一个节点传递到另外一个节点，这是拓扑定义的
 http://blog.csdn.net/anzhsoft/article/details/33740737   spark ha

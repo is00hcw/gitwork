@@ -1,3 +1,19 @@
+http://docs.scala-lang.org/cheatsheets/
+http://colobu.com/2015/02/26/simple-scala-akka-actor-examples/
+http://alvinalexander.com/scala/simple-akka-actors-remote-example
+http://colobu.com/2015/01/14/Scala-Quick-Start-for-Java-Programmers/
+http://colobu.com/2015/07/02/Scala-Collections-Tips-and-Tricks/
+https://github.com/spray/spray-template/
+http://my.oschina.net/FengJ/blog/228272
+http://www.ibm.com/developerworks/cn/java/j-jvmc5/index.html  使用 Akka 执行异步操作
+
+http://www.tuicool.com/articles/U3Abe2A  sbt加速下载
+http://my.oschina.net/u/915967/blog/146746
+https://github.com/mpeltonen/sbt-idea
+resolvers += "Sonatype snapshots" at "https://oss.sonatype.org/content/repositories/snapshots/"
+addSbtPlugin("com.github.mpeltonen" % "sbt-idea" % "1.7.0-SNAPSHOT")
+sbt gen-idea
+
 http://blog.csdn.net/oopsoom/article/details/38363369?utm_source=tuicool     scala eclipse sbt 应用程序开发
 https://github.com/typesafehub/sbteclipse
 https://github.com/mpeltonen/sbt-idea
@@ -53,6 +69,9 @@ Scala for Java Developers
 http://pan.baidu.com/s/1mg3hRDm
 
 http://www.importnew.com/3240.html
+var willKnowLater:String = _     // default value
+val first :: rest = List(1, 2, 3)  // 分解
+
  val 声明是不可变的，var 声明是可修改的
 // 三个双引号可以使字符串跨越多行，并包含引号
 字符串改写：留意前缀 "s"     s"My second daughter is ${a(0) - a(2)} years old."
@@ -91,3 +110,84 @@ http://www.nyankosama.com/2015/04/03/java-goroutine/
 
 akka
 http://www.csdn.net/article/2014-12-17/2823174
+def main(args: Array[String])
+system.scheduler.scheduleOnce
+val config = context.system.settings.config
+ConfigFactory.parseString("akka.scheduler.tickduration= 1ms")
+akka://System@host:port/user/Plane/Controls/
+if (doesNotExist == context.actorFor("/user/this/actor/does/not/exist") )
+override def preStart(): Unit ={
+override def postStop(): Unit ={
+override val supervisionStrategy = OneForOneStrategy(5, 1 minute) {
+context.watch(context.actorOf(Props[SomeOtherActor]))
+akka.actor.defaultdispatcher.throughput = 20
+provider = "akka.remote.RemoteActorRefProvider"
+transport = "akka.remote.netty.NettyRemoteTransport"
+
+
+implicit val timeout = Timeout(3 seconds) 
+val echo = system.actorOf(Props[EchoActor], "echo1")
+val future = echo.ask("some message")
+future.onComplete { 
+       case Failure(_)   => //handle failure 
+       case Success(msg) => //handle success 
+}
+Await.ready(future, timeout.duration)
+
+val dispatcherId = CallingThreadDispatcher.Id
+val props = Props[Greeter].withDispatcher(dispatcherId) 
+
+system.eventStream.subscribe(testActor, classOf[UnhandledMessage])
+greeter ! "World"
+expectMsg(UnhandledMessage("World", system.deadLetters, greeter))
+
+case game @ Game(_, tickets) =>
+     nextAgent ! game.copy(tickets = tickets.tail)
+
+An actor can be stopped using the stop method on the ActorSystem and ActorContext objects, or by sending a PoisonPill message to an actor.
+The preStart ,preRestart , postRestart and postStop hooks enable an actor to initialize and cleanup state and control and restore its state after a crash.
+The top level actors in an application are created under the /user path and supervised by the user guardian . 
+Every actor has a default supervisor strategy which can be overridden by implementing the supervisorStrategy method. There are two predefined strategies available in the SupervisorStrategy object; the defaultStrategy and the stoppingStrategy
+The OneForOneStrategy determines that child actors will not share the same fate, only the crashed child will be decided upon by the Decider. The other option is to use an AllForOneStrategy which uses the same decision for all
+child actors even if only one crashed.
+
+A Future is a placeholder for a function result that will be available at some point in the future.
+The future { ...} is shorthand for a call to the apply method on the Future object with the code block as its only argument, Future.apply(codeblock).
+you need to provide an implicit ExecutionContext to use futures.  import scala.concurrent.Implicits.global   The ExecutionContext is an abstraction for executing tasks on some thread pooling implementation.
+ExecutionContext uses a if it is allowed according ForkJoinPool to security policy and otherwise falls back to a ThreadPoolExecutor.
+
+for((route, advice) <- futureRoute.zip(futurePublicTransport); travelAdvice = TravelAdvice(route, advice) ) yield info.copy(travelAdvice = Some(travelAdvice))
+
+requestContext.complete(StatusCodes.OK, events)
+self ! PoisonPill
+
+_system.actorOf(Props[MsgEchoActor].withDispatcher("my-dispatcher"))  // fork join pool， mailbox
+val router = system.actorOf(Props[MyActor].withRouter(RoundRobinRouter(nrOfInstances = 5)) , name = "myRouterActor")
+
+One-For-One strategy means the supervision strategy is applied only to the failed child. 
+All-For-One strategy means that the supervision strategy is applied to all the actor siblings as well
+akka.actor.OneForOneStrategy akka.actor.AllForOneStrategy 
+decider: This is the function defined where the Throwable are mapped to the directives that allow us to specify the actions – resume(), restart(), stop(), or escalate()
+
+
+val myActor = system.actorOf(Props(new MyActor(10)), name = "myActor")
+The call-by-name block passes a code within the block to the callee. Each time the callee accesses the parameter, the code block is executed and the value is calculated.
+def callByName[T](block: => T) = {}  
+def callByValue[T](block: T) = {}
+http://www.jianshu.com/p/93eefcb61d4f    val定义值时，会做call-by-value操作，def则会做call-by-name操作。
+http://sighingnow.github.io/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/scala_coursera_notes.html   Scala 公开课笔记
+
+def selectDynamic(fieldName: String)   动态调用未知方法
+
+List size和元素不变，head tail ，  ListBuffer可变
+Array size不变，元素可变， Vector不变， ArrayBuffer可变
+An IndexedSeq indicates that random access of elements is efficient
+A LinearSeq implies that the collection can be efficiently split into head and tail components
+
+
+kafka      gradle idea    gradle eclipse
+http://www.bubuko.com/infodetail-695974.html              
+http://www.yrom.net/blog/2015/02/07/change-gradle-maven-repo-url/
+http://www.geekcome.com/content-10-2336-1.html
+gradle cleanIdea idea
+ MAVEN_OPTS="-Xmx2g -XX:MaxPermSize=512M -XX:ReservedCodeCacheSize=512m"

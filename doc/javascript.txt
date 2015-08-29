@@ -26,6 +26,7 @@ http://heeroluo.net/article/detail/112/monitor-events-through-developer-tools  m
 http://segmentfault.com/a/1190000002494005  backbone  hello world
 http://segmentfault.com/a/1190000002386651
 
+http://toutiao.com/i5361810651/?group_flags=0  手机网站开发注意事项
 
 console.log(typeof myFunc === "function");
 function isArray(value) {return Object.prototype.toString.call(value) === "[object Array]";}

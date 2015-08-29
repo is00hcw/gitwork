@@ -1,6 +1,13 @@
 yunba连接不上要打印log ，少上传jar导致Throwable错误，但没打印
 1024以下的端口只有用root才能进行一些操作，包括要启动一些程序，比如apache等，都需要有root的权限
 
+遗憾的是想要通过这种方法获取非本域下的 js 文件的报错时，得到的永远是Script Error，空的文件名和0的行号，因为浏览器的Same Origin Policy。当另外一个域下的 js 报错时，拿到的永远是 Script Error。
+http://blog.hellofe.com/fe/2014/12/17/script-error-with-line-zero/
+http://ravikiranj.net/posts/2014/code/how-fix-cryptic-script-error-javascript/
+http://www.webryan.net/2012/12/something-about-window-onerror-script-error/
+http://errors.totorojs.org/wiki/script-error
+<script src="http://someotherdomain.com/js/test.js" crossorigin="anonymous"></script>
+
 eclipse启动tomcat，报class not found， 打开属性对话框 deployment assembly，添加maven依赖
 hbase连接不上，服务器上host文件绑定了本地ip，导致客户端无法访问
 jdk8编译错误  http://stackoverflow.com/questions/24448723/java-error-java-util-concurrent-concurrenthashmap-keyset

@@ -1,0 +1,20 @@
+http://www.planetcassandra.org/related-projects/
+http://www.planetcassandra.org/cassandra/
+http://my.oschina.net/zookeeper/blog/187169
+http://pimin.net/archives/312
+http://my.oschina.net/silentriver/blog/182678
+
+
+http://wiki.apache.org/cassandra/GettingStarted
+https://www.ibm.com/developerworks/cn/opensource/os-cn-cassandraxu1/
+http://www.ibm.com/developerworks/cn/opensource/os-cn-cassandraxu2/
+
+按primary key分区保存，cluster key排序，  index只能一列，只支持equal查询   
+BEGIN BATCH    APPLY BATCH
+INSERT INTO  IF NOT EXITS
+UPDATE     IF "version" = 
+SET<text> +-{'bob'}  
+LIST<text>  +-['bob']
+MAP<text,bigint>  索引key或者value	WHERE CONTAINS KEY
+frozen tuple可以模拟多列索引
+system_auth.users  system_auth.credentials  system_auth.permissions

@@ -1,0 +1,15 @@
+allprojects{
+    repositories {
+        def REPOSITORY_URL = 'http://maven.oschina.net/content/groups/public'
+        all { ArtifactRepository repo ->
+            def url = repo.url.toString()
+            if ((repo instanceof MavenArtifactRepository) && (url.startsWith('https://repo1.maven.org/maven2') || url.startsWith('https://jcenter.bintray.com'))) {
+                project.logger.lifecycle "Repository ${repo.url} replaced by $REPOSITORY_URL ."
+                remove repo
+            }
+        }
+        maven {
+            url REPOSITORY_URL
+        }
+    }
+}
