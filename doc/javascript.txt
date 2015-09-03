@@ -113,3 +113,7 @@ http://durandaljs.com/get-started.html
 
 
 http://www.ruanyifeng.com/blog/2015/02/mvcmvp_mvvm.html    MVC，MVP 和 MVVM 的图示
+http://www.codeceo.com/article/10-best-javascript-lib-2015.html   
+http://www.oschina.net/translate/event-based-programming-what-async-has-over-sync   基于事件的 JavaScript 编程：异步与同步
+中介者模式 ， postal.js 库中用的即是这种方式     另外一些基于中介者模式传送消息的库有 amplify, PubSubJS, and radio.js。 
+http://www.css88.com/archives/5656   盘点JavaScript里好用的原生API 

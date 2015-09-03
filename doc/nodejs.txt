@@ -1,3 +1,8 @@
+http://www.lvtao.net/content/book/node.js.htm
+http://ourjs.com/detail/5417e6ea4f1286640f000002
+http://ourjs.com/detail/55a8b98d20cbb7f655000020
+http://www.ituring.com.cn/article/199288
+
 setx NODE_PATH "%NODE_PATH%;C:\Users\Administrator\AppData\Roaming\npm\node_modules"
 npm config set msvs_version 2012 --global
 npm install -g yo bower grunt-cli gulp
@@ -38,12 +43,16 @@ http://segmentfault.com/a/1190000000473869
 http://chenpeng.info/html/2351
 https://npm.taobao.org/
 https://cnodejs.org/topic/4f9904f9407edba21468f31e
-npm install -g nrm
+sudo npm install -g nrm
 nrm use taobao        
 npm config set ca ""
 npm install -g cnpm --registry=https://registry.npm.taobao.org
 cnpm install [name]
 搜索镜像: https://npm.taobao.org
+首先安装n模块：npm install -g n
+升级node.js到最新稳定版  n stable
+
+yum remove nodejs npm -y  
 
 
 sudo add-apt-repository ppa:chris-lea/node.js
@@ -55,7 +64,7 @@ sudo apt-get install -y nodejs
 curl -L https://npmjs.com/install.sh | sh
 ln -s /usr/local/bin/npm /usr/bin/npm  
 
-npm update -g npm
+sudo npm update -g npm
 sudo npm uninstall npm -g
 
 
@@ -81,12 +90,6 @@ http://ued.ctrip.com/blog/?p=3582  压缩图片
 http://geek100.com/2684/   gulp-image-resize
 
 
-首先安装n模块：npm install -g n
-升级node.js到最新稳定版  n stable
-
-yum remove nodejs npm -y  
-
-
 http://www.darrenfang.com/2013/12/install-tengine-on-centos/
 http://heylinux.com/archives/2938.html
 http://www.tuicool.com/articles/yyA732i
@@ -97,3 +100,8 @@ http://ae.koroglu.org/using-nginx-as-load-balancer-for-tomcat/
 
 
 http://www.infoq.com/cn/articles/nodejs-callback-hell/   Node.js软肋之回调大坑
+
+im
+http://blog.jobbole.com/81125/
+http://www.doc88.com/p-7136801595019.html
+http://www.jianshu.com/p/d9b1273a93fd
