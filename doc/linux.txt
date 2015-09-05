@@ -5,6 +5,8 @@
 
 sudo echo ‘xxx’ > /path/file 重定向时 Permission denied   http://digdeeply.org/archives/05232211.html
 sudo sh -c "cat /dev/null > mylog_all_error.log"
+grep -n -A3 -B2 --color=auto 'str'
+sed 后面接的动作，请务必以 ''两个单引号括住      sed 's/要被取代的字串/新的字串/g'        sed 的-i选项可以直接修改文件内容
 
 ~/.ssh/id_rsa  600
 scp -P 10008 -r huangchuwei@10.169.215.75:/data/www/app.atsmart.io/app/m5/test ./

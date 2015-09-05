@@ -1,9 +1,25 @@
-http://blog.csdn.net/oopsoom/article/details/38363369?utm_source=tuicool     scala eclipse sbt Ó¦ÓÃ³ÌĞò¿ª·¢
+ï»¿http://docs.scala-lang.org/cheatsheets/
+http://colobu.com/2015/02/26/simple-scala-akka-actor-examples/
+http://alvinalexander.com/scala/simple-akka-actors-remote-example
+http://colobu.com/2015/01/14/Scala-Quick-Start-for-Java-Programmers/
+http://colobu.com/2015/07/02/Scala-Collections-Tips-and-Tricks/
+https://github.com/spray/spray-template/
+http://my.oschina.net/FengJ/blog/228272
+http://www.ibm.com/developerworks/cn/java/j-jvmc5/index.html  ä½¿ç”¨ Akka æ‰§è¡Œå¼‚æ­¥æ“ä½œ
+
+http://www.tuicool.com/articles/U3Abe2A  sbtåŠ é€Ÿä¸‹è½½
+http://my.oschina.net/u/915967/blog/146746
+https://github.com/mpeltonen/sbt-idea
+resolvers += "Sonatype snapshots" at "https://oss.sonatype.org/content/repositories/snapshots/"
+addSbtPlugin("com.github.mpeltonen" % "sbt-idea" % "1.7.0-SNAPSHOT")
+sbt gen-idea
+
+http://blog.csdn.net/oopsoom/article/details/38363369?utm_source=tuicool     scala eclipse sbt åº”ç”¨ç¨‹åºå¼€å‘
 https://github.com/typesafehub/sbteclipse
 https://github.com/mpeltonen/sbt-idea
 addSbtPlugin("com.github.mpeltonen" % "sbt-idea" % "1.6.0")
 addSbtPlugin("com.typesafe.sbteclipse" % "sbteclipse-plugin" % "4.0.0")
-ĞÂ½¨±äÁ¿Ãû£ºSBT_OPTS£¬ÖµÎª -Dsbt.global.base=E:\sbt_ivy\.sbt -Dsbt.ivy.home=E:\sbt_ivy\.ivy2
+æ–°å»ºå˜é‡åï¼šSBT_OPTSï¼Œå€¼ä¸º -Dsbt.global.base=E:\sbt_ivy\.sbt -Dsbt.ivy.home=E:\sbt_ivy\.ivy2
 http://blog.csdn.net/suqier1314520/article/details/41775905
 http://8liang.cn/intellijidea-install-scala-plugin-create-with-sbt-project/
 http://twitter.github.io/scala_school/zh_cn/basics.html
@@ -14,8 +30,8 @@ http://learnxinyminutes.com/docs/scala/
 http://twitter.github.io/scala_school/zh_cn/index.html
 http://twitter.github.io/effectivescala/index-cn.html
 http://jasonding1354.github.io/2015/05/26/Scala/%E3%80%90Scala%E3%80%91Scala%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B%E5%88%9D%E6%8E%A2/
-http://jasonding1354.github.io/2015/06/26/Scala/%E3%80%90Akka%E3%80%91Actor%E6%A8%A1%E5%9E%8B%E6%8E%A2%E7%B4%A2/   akkaÄ£ĞÍ
-Ò»¸öActorÊÇÒ»¸öÈİÆ÷£¬Ëü°üº¬ÁË ×´Ì¬£¬ĞĞÎª£¬Ò»¸öÓÊÏä£¬×ÓActorºÍÒ»¸ö¼à¹Ü²ßÂÔ¡£ËùÓĞÕâĞ©°üº¬ÔÚÒ»¸öActor ReferenceÀï¡£
+http://jasonding1354.github.io/2015/06/26/Scala/%E3%80%90Akka%E3%80%91Actor%E6%A8%A1%E5%9E%8B%E6%8E%A2%E7%B4%A2/   akkaæ¨¡å‹
+ä¸€ä¸ªActoræ˜¯ä¸€ä¸ªå®¹å™¨ï¼Œå®ƒåŒ…å«äº† çŠ¶æ€ï¼Œè¡Œä¸ºï¼Œä¸€ä¸ªé‚®ç®±ï¼Œå­Actorå’Œä¸€ä¸ªç›‘ç®¡ç­–ç•¥ã€‚æ‰€æœ‰è¿™äº›åŒ…å«åœ¨ä¸€ä¸ªActor Referenceé‡Œã€‚
 http://jasonding1354.github.io/2015/05/28/Spark/%E3%80%90Spark%E3%80%91%E9%85%8D%E7%BD%AESpark%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB%E7%8E%AF%E5%A2%83/  sbt
 
 http://scalatutorials.com/tour/
@@ -33,7 +49,7 @@ http://my.oschina.net/u/580483/blog/119754
 http://www.gtan.com/akka_doc/
 http://www.iteblog.com/archives/1156
 
-http://netcomm.iteye.com/blog/2080440  GossipĞ­Òé
+http://netcomm.iteye.com/blog/2080440  Gossipåè®®
 
 
 http://my.oschina.net/FengJ/blog/228272
@@ -43,9 +59,9 @@ http://pivotallabs.com/spring-4-mvc-scala/
 http://beike.iteye.com/blog/1575296  sbt
 http://my.oschina.net/u/580483/blog/104091
 http://www.scala-sbt.org/release/docs/Community-Plugins.html
-SBTÓĞ¸ö¹¤×÷Ä¿Â¼£¨Ä¬ÈÏÎ»ÓÚ${user.home}/.sbt£©
-SBTÊÇÀûÓÃApache IvyÀ´¹ÜÀíÒÀÀµµÄ£¬ÓÚÊÇÓÖÓĞÒ»¸öivy»º´æÄ¿Â¼£¨Ä¬ÈÏÎ»ÓÚ${user.home}/.ivy2£©
-Ö»ĞèÔÚ»·¾³±äÁ¿ÖĞÌí¼ÓÒ»¸ö±äÁ¿SBT_OPTS£¬ÖµÎª -Dsbt.global.base=D:\dev\sbt\.sbt -Dsbt.ivy.home=D:\dev\sbt\.ivy2
+SBTæœ‰ä¸ªå·¥ä½œç›®å½•ï¼ˆé»˜è®¤ä½äº${user.home}/.sbtï¼‰
+SBTæ˜¯åˆ©ç”¨Apache Ivyæ¥ç®¡ç†ä¾èµ–çš„ï¼Œäºæ˜¯åˆæœ‰ä¸€ä¸ªivyç¼“å­˜ç›®å½•ï¼ˆé»˜è®¤ä½äº${user.home}/.ivy2ï¼‰
+åªéœ€åœ¨ç¯å¢ƒå˜é‡ä¸­æ·»åŠ ä¸€ä¸ªå˜é‡SBT_OPTSï¼Œå€¼ä¸º -Dsbt.global.base=D:\dev\sbt\.sbt -Dsbt.ivy.home=D:\dev\sbt\.ivy2
 https://github.com/mpeltonen/sbt-idea
 https://github.com/typesafehub/sbteclipse
 
@@ -53,34 +69,37 @@ Scala for Java Developers
 http://pan.baidu.com/s/1mg3hRDm
 
 http://www.importnew.com/3240.html
- val ÉùÃ÷ÊÇ²»¿É±äµÄ£¬var ÉùÃ÷ÊÇ¿ÉĞŞ¸ÄµÄ
-// Èı¸öË«ÒıºÅ¿ÉÒÔÊ¹×Ö·û´®¿çÔ½¶àĞĞ£¬²¢°üº¬ÒıºÅ
-×Ö·û´®¸ÄĞ´£ºÁôÒâÇ°×º "s"     s"My second daughter is ${a(0) - a(2)} years old."
-def functionName(args...): ReturnType = { body... }    return ¹Ø¼ü×ÖµÄÊ¡ÂÔ¡£ ÔÚ Scala ÖĞ£¬ º¯Êı´úÂë¿é×îºóÒ»Ìõ±í´ïÊ½¾ÍÊÇ·µ»ØÖµ¡£ 
-ÄäÃûº¯ÊıÊÇÕâÑùµÄ£º(x:Int) => x * x
+var willKnowLater:String = _     // default value
+val first :: rest = List(1, 2, 3)  // åˆ†è§£
+
+ val å£°æ˜æ˜¯ä¸å¯å˜çš„ï¼Œvar å£°æ˜æ˜¯å¯ä¿®æ”¹çš„
+// ä¸‰ä¸ªåŒå¼•å·å¯ä»¥ä½¿å­—ç¬¦ä¸²è·¨è¶Šå¤šè¡Œï¼Œå¹¶åŒ…å«å¼•å·
+å­—ç¬¦ä¸²æ”¹å†™ï¼šç•™æ„å‰ç¼€ "s"     s"My second daughter is ${a(0) - a(2)} years old."
+def functionName(args...): ReturnType = { body... }    return å…³é”®å­—çš„çœç•¥ã€‚ åœ¨ Scala ä¸­ï¼Œ å‡½æ•°ä»£ç å—æœ€åä¸€æ¡è¡¨è¾¾å¼å°±æ˜¯è¿”å›å€¼ã€‚ 
+åŒ¿åå‡½æ•°æ˜¯è¿™æ ·çš„ï¼š(x:Int) => x * x
 val sq: Int => Int = x => x * x
 val addOne: Int => Int = _ + 1
 val a = Array(1, 2, 3, 5, 8, 13)  // a(0)
 val m = Map("fork" -> "tenedor", "spoon" -> "cuchara", "knife" -> "cuchillo")   // m("fork")
-(a, 2, "three")  // Òª¶ÁÈ¡Ôª×éµÄÔªËØ£¬Ê¹ÓÃ _._n£¬nÊÇ´Ó1¿ªÊ¼µÄÔªËØË÷Òı
-Scala ÎÄ¼şÔÊĞíµÄ¶¥¼¶½á¹¹ÊÇ£º  - objects classes case classes traits
-¹¹ÔìÆ÷²ÎÊıÔÚÀàÃûºóÉùÃ÷£¬³õÊ¼»¯ÔÚÀà½á¹¹ÌåÖĞÍê³É¡£class Dog(br: String) {  // ¹¹ÔìÆ÷´úÂëÔÚ´Ë
-³éÏó·½·¨ÊÇÃ»ÓĞ·½·¨ÌåµÄ·½·¨¡£
-"object" ¹Ø¼ü×Ö´´ÔìÒ»ÖÖÀàĞÍºÍ¸ÃÀàĞÍµÄµ¥Àı¡£ ×¢Òâ case Àà²»ĞèÒªÊ¹ÓÃ "new" ¹Ø¼ü×Ö
+(a, 2, "three")  // è¦è¯»å–å…ƒç»„çš„å…ƒç´ ï¼Œä½¿ç”¨ _._nï¼Œnæ˜¯ä»1å¼€å§‹çš„å…ƒç´ ç´¢å¼•
+Scala æ–‡ä»¶å…è®¸çš„é¡¶çº§ç»“æ„æ˜¯ï¼š  - objects classes case classes traits
+æ„é€ å™¨å‚æ•°åœ¨ç±»ååå£°æ˜ï¼Œåˆå§‹åŒ–åœ¨ç±»ç»“æ„ä½“ä¸­å®Œæˆã€‚class Dog(br: String) {  // æ„é€ å™¨ä»£ç åœ¨æ­¤
+æŠ½è±¡æ–¹æ³•æ˜¯æ²¡æœ‰æ–¹æ³•ä½“çš„æ–¹æ³•ã€‚
+"object" å…³é”®å­—åˆ›é€ ä¸€ç§ç±»å‹å’Œè¯¥ç±»å‹çš„å•ä¾‹ã€‚ æ³¨æ„ case ç±»ä¸éœ€è¦ä½¿ç”¨ "new" å…³é”®å­—
 List(1, 2, 3) map (x => x + 10)
-// Èç¹ûÄäÃûº¯ÊıÖ»ÓĞÒ»¸ö²ÎÊı¿ÉÒÔÓÃÏÂ»®Ïß×÷Îª±äÁ¿
+// å¦‚æœåŒ¿åå‡½æ•°åªæœ‰ä¸€ä¸ªå‚æ•°å¯ä»¥ç”¨ä¸‹åˆ’çº¿ä½œä¸ºå˜é‡
 List(1, 2, 3) map (_ + 10)
 List(1, 2, 3) filter (_ > 2) // List(3)
 aListOfNumbers foreach (x => println(x))
 aListOfNumbers foreach println
-// For ÍÆµ¼Ê½   for { n <- s } yield sq(n)
-// µ¼ÈëËùÓĞ×Ó°ü  import scala.collection.immutable._
-// Ò»ÌõÓï¾äµ¼Èë¶à¸öÀà import scala.collection.immutable.{List, Map}
+// For æ¨å¯¼å¼   for { n <- s } yield sq(n)
+// å¯¼å…¥æ‰€æœ‰å­åŒ…  import scala.collection.immutable._
+// ä¸€æ¡è¯­å¥å¯¼å…¥å¤šä¸ªç±» import scala.collection.immutable.{List, Map}
 for(line <- Source.fromFile("myfile.txt").getLines())
 
-Scala²»ÄÜ¶¨Òå¾²Ì¬³ÉÔ±£¬¶øÊÇ´úÖ®¶¨Òåµ¥Àı¶ÔÏó(singleton object)¡£ÒÔobject¹Ø¼ü×Ö¶¨Òå¡£µ¥Àı¶ÔÏó²»´ø²ÎÊı£¬¶øÀà¿ÉÒÔ¡£ÒòÎªµ¥Àı¶ÔÏó²»ÊÇÓÃnew¹Ø¼ü×ÖÊµÀı»¯µÄ£¬ËùÒÔÃ»»ú»á´«µİ¸øËüÊµÀı»¯²ÎÊı¡£Ã¿¸öµ¥Àı¶ÔÏó¶¼±»ÊµÏÖÎªĞéÄâÀà(synthetic class)µÄÊµÀı
-µ±µ¥Àı¶ÔÏóÓëÄ³¸öÀà¹²ÏíÍ¬Ò»¸öÃû³ÆÊ±£¬Ëü¾Í±»³ÆÎªÊÇÕâ¸öÀàµÄ°éÉú¶ÔÏó(companion object)¡£ÀàºÍËüµÄ°éÉú¶ÔÏó±ØĞë¶¨ÒåÔÚÍ¬Ò»¸öÔ´ÎÄ¼şÖĞ¡£Àà±»³ÆÎªÊÇÕâ¸öµ¥Àı¶ÔÏóµÄ°éÉúÀà(companion class)¡£ÀàºÍËüµÄ°éÉú¶ÔÏó¿ÉÒÔ»¥Ïà·ÃÎÊÆäË½ÓĞ³ÉÔ±¡£
-ÎÒÃÇÍ¨³£½«°éÉú¶ÔÏó×÷Îª¹¤³§Ê¹ÓÃ¡£
+Scalaä¸èƒ½å®šä¹‰é™æ€æˆå‘˜ï¼Œè€Œæ˜¯ä»£ä¹‹å®šä¹‰å•ä¾‹å¯¹è±¡(singleton object)ã€‚ä»¥objectå…³é”®å­—å®šä¹‰ã€‚å•ä¾‹å¯¹è±¡ä¸å¸¦å‚æ•°ï¼Œè€Œç±»å¯ä»¥ã€‚å› ä¸ºå•ä¾‹å¯¹è±¡ä¸æ˜¯ç”¨newå…³é”®å­—å®ä¾‹åŒ–çš„ï¼Œæ‰€ä»¥æ²¡æœºä¼šä¼ é€’ç»™å®ƒå®ä¾‹åŒ–å‚æ•°ã€‚æ¯ä¸ªå•ä¾‹å¯¹è±¡éƒ½è¢«å®ç°ä¸ºè™šæ‹Ÿç±»(synthetic class)çš„å®ä¾‹
+å½“å•ä¾‹å¯¹è±¡ä¸æŸä¸ªç±»å…±äº«åŒä¸€ä¸ªåç§°æ—¶ï¼Œå®ƒå°±è¢«ç§°ä¸ºæ˜¯è¿™ä¸ªç±»çš„ä¼´ç”Ÿå¯¹è±¡(companion object)ã€‚ç±»å’Œå®ƒçš„ä¼´ç”Ÿå¯¹è±¡å¿…é¡»å®šä¹‰åœ¨åŒä¸€ä¸ªæºæ–‡ä»¶ä¸­ã€‚ç±»è¢«ç§°ä¸ºæ˜¯è¿™ä¸ªå•ä¾‹å¯¹è±¡çš„ä¼´ç”Ÿç±»(companion class)ã€‚ç±»å’Œå®ƒçš„ä¼´ç”Ÿå¯¹è±¡å¯ä»¥äº’ç›¸è®¿é—®å…¶ç§æœ‰æˆå‘˜ã€‚
+æˆ‘ä»¬é€šå¸¸å°†ä¼´ç”Ÿå¯¹è±¡ä½œä¸ºå·¥å‚ä½¿ç”¨ã€‚
 http://jasonding1354.github.io/2015/05/26/Scala/%E3%80%90Scala%E3%80%91%E5%8D%95%E4%BE%8B%E5%AF%B9%E8%B1%A1%E4%B8%8E%E4%BC%B4%E7%94%9F%E5%AF%B9%E8%B1%A1/
 
 
@@ -91,7 +110,90 @@ http://www.nyankosama.com/2015/04/03/java-goroutine/
 
 akka
 http://www.csdn.net/article/2014-12-17/2823174
-http://www.infoq.com/cn/articles/scala-technology/  ¿ìËÙÁË½âScala¼¼ÊõÕ»
+ 
+def main(args: Array[String])
+system.scheduler.scheduleOnce
+val config = context.system.settings.config
+ConfigFactory.parseString("akka.scheduler.tickduration= 1ms")
+akka://System@host:port/user/Plane/Controls/
+if (doesNotExist == context.actorFor("/user/this/actor/does/not/exist") )
+override def preStart(): Unit ={
+override def postStop(): Unit ={
+override val supervisionStrategy = OneForOneStrategy(5, 1 minute) {
+context.watch(context.actorOf(Props[SomeOtherActor]))
+akka.actor.defaultdispatcher.throughput = 20
+provider = "akka.remote.RemoteActorRefProvider"
+transport = "akka.remote.netty.NettyRemoteTransport"
+
+
+implicit val timeout = Timeout(3 seconds) 
+val echo = system.actorOf(Props[EchoActor], "echo1")
+val future = echo.ask("some message")
+future.onComplete { 
+       case Failure(_)   => //handle failure 
+       case Success(msg) => //handle success 
+}
+Await.ready(future, timeout.duration)
+
+val dispatcherId = CallingThreadDispatcher.Id
+val props = Props[Greeter].withDispatcher(dispatcherId) 
+
+system.eventStream.subscribe(testActor, classOf[UnhandledMessage])
+greeter ! "World"
+expectMsg(UnhandledMessage("World", system.deadLetters, greeter))
+
+case game @ Game(_, tickets) =>
+     nextAgent ! game.copy(tickets = tickets.tail)
+
+An actor can be stopped using the stop method on the ActorSystem and ActorContext objects, or by sending a PoisonPill message to an actor.
+The preStart ,preRestart , postRestart and postStop hooks enable an actor to initialize and cleanup state and control and restore its state after a crash.
+The top level actors in an application are created under the /user path and supervised by the user guardian . 
+Every actor has a default supervisor strategy which can be overridden by implementing the supervisorStrategy method. There are two predefined strategies available in the SupervisorStrategy object; the defaultStrategy and the stoppingStrategy
+The OneForOneStrategy determines that child actors will not share the same fate, only the crashed child will be decided upon by the Decider. The other option is to use an AllForOneStrategy which uses the same decision for all
+child actors even if only one crashed.
+
+A Future is a placeholder for a function result that will be available at some point in the future.
+The future { ...} is shorthand for a call to the apply method on the Future object with the code block as its only argument, Future.apply(codeblock).
+you need to provide an implicit ExecutionContext to use futures.  import scala.concurrent.Implicits.global   The ExecutionContext is an abstraction for executing tasks on some thread pooling implementation.
+ExecutionContext uses a if it is allowed according ForkJoinPool to security policy and otherwise falls back to a ThreadPoolExecutor.
+
+for((route, advice) <- futureRoute.zip(futurePublicTransport); travelAdvice = TravelAdvice(route, advice) ) yield info.copy(travelAdvice = Some(travelAdvice))
+
+requestContext.complete(StatusCodes.OK, events)
+self ! PoisonPill
+
+_system.actorOf(Props[MsgEchoActor].withDispatcher("my-dispatcher"))  // fork join poolï¼Œ mailbox
+val router = system.actorOf(Props[MyActor].withRouter(RoundRobinRouter(nrOfInstances = 5)) , name = "myRouterActor")
+
+One-For-One strategy means the supervision strategy is applied only to the failed child. 
+All-For-One strategy means that the supervision strategy is applied to all the actor siblings as well
+akka.actor.OneForOneStrategy akka.actor.AllForOneStrategy 
+decider: This is the function defined where the Throwable are mapped to the directives that allow us to specify the actions â€“ resume(), restart(), stop(), or escalate()
+
+
+val myActor = system.actorOf(Props(new MyActor(10)), name = "myActor")
+The call-by-name block passes a code within the block to the callee. Each time the callee accesses the parameter, the code block is executed and the value is calculated.
+def callByName[T](block: => T) = {}  
+def callByValue[T](block: T) = {}
+http://www.jianshu.com/p/93eefcb61d4f    valå®šä¹‰å€¼æ—¶ï¼Œä¼šåšcall-by-valueæ“ä½œï¼Œdefåˆ™ä¼šåšcall-by-nameæ“ä½œã€‚
+http://sighingnow.github.io/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/scala_coursera_notes.html   Scala å…¬å¼€è¯¾ç¬”è®°
+
+def selectDynamic(fieldName: String)   åŠ¨æ€è°ƒç”¨æœªçŸ¥æ–¹æ³•
+
+List sizeå’Œå…ƒç´ ä¸å˜ï¼Œhead tail ï¼Œ  ListBufferå¯å˜
+Array sizeä¸å˜ï¼Œå…ƒç´ å¯å˜ï¼Œ Vectorä¸å˜ï¼Œ ArrayBufferå¯å˜
+An IndexedSeq indicates that random access of elements is efficient
+A LinearSeq implies that the collection can be efficiently split into head and tail components
+
+
+kafka      gradle idea    gradle eclipse
+http://www.bubuko.com/infodetail-695974.html              
+http://www.yrom.net/blog/2015/02/07/change-gradle-maven-repo-url/
+http://www.geekcome.com/content-10-2336-1.html
+gradle cleanIdea idea
+ MAVEN_OPTS="-Xmx2g -XX:MaxPermSize=512M -XX:ReservedCodeCacheSize=512m"
+ 
+http://www.infoq.com/cn/articles/scala-technology/  å¿«é€Ÿäº†è§£ScalaæŠ€æœ¯æ ˆ
 http://my.oschina.net/jingxing05/blog/290567?p=1
 http://alvinalexander.com/scala/simple-scala-akka-actor-examples-hello-world-actors
 http://code.csdn.net/news/2823174

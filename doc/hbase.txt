@@ -24,6 +24,8 @@ bin/hbase org.apache.hadoop.hbase.mapreduce.Import testtable  /user/testtable
 http://phoenix.apache.org/   Apache Phoenix is a relational database layer over HBase delivered as a client-embedded JDBC driver targeting low latency queries over HBase data. 
 针对HBase上SQL解决方案，目前社区内比较热门的有Cloudera的Impala，Horntworks的Drill，以及Hive
 
+http://blog.csdn.net/u010967382/article/details/37878701?utm_source=tuicool  HBase基本数据操作详解
+
 通过Cloudera Manager安装CDH   http://blog.javachen.com/2013/06/24/install-cdh-by-cloudera-manager/
 http://www.micmiu.com/bigdata/hbase/hbase-setup-standalone/   hbase安装
 HBASE_MANAGES_ZK=false

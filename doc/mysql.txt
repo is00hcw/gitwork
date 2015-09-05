@@ -18,9 +18,11 @@ https://github.com/corosync/corosync
 http://www.slideshare.net/AlexSu1/redis-introduction-23784248
 
 
-http://www.mycat.org.cn/ 
+http://www.mycat.org.cn/   完全开源的数据库中间件产品
 http://www.csdn.net/article/2015-07-16/2825228
 https://github.com/SOHUDBA/SOHU-DBProxy
 http://www.guokr.com/blog/475765/
 DRBD负责接收数据，把数据写到本地磁盘，然后发送给另一个主机。另一个主机再将数据存到自己的磁盘中。
 http://www.infoq.com/cn/news/2014/10/clay.io-aws-docker-haproxy-10x?utm_campaign=infoq_content&amp;utm_source=infoq&amp;utm_medium=feed&amp;utm_term=global
+
+SWIFT与Ceph、GlusterFS、MongoDB/GridFS之间的比较呢？
