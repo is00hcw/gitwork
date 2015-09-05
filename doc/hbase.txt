@@ -1,4 +1,11 @@
-﻿进入命令：hbase shell
+﻿http://blog.csdn.net/u011491148/article/details/45749807    利用Phoenix为HBase创建二级索引
+其核心思想是保证索引表和主表在同一个region server上。详见：https://github.com/Huawei-Hadoop/hindex    http://www.dengchuanhua.com/167.html   http://www.thebigdata.cn/upload/2013-10/13101415173453.pdf
+HBase在0.92之后引入了coprocessors，提供了一系列的钩子，让我们能够轻易实现访问控制和二级索引的特性。   http://www.dengchuanhua.com/149.html  
+在分布式系统中，需要生成全局UID的场合还是比较多的，twitter的snowflake解决了这种需求，实现也还是很简单的，除去配置信息，核心代码就是毫秒级时间41位+机器ID 10位+毫秒内序列12位。
+该项目地址为：https://github.com/twitter/snowflake是用Scala实现的。     http://www.dengchuanhua.com/132.html
+ 
+
+进入命令：hbase shell
 查看有多少表：list
 查看表的结构：describe 'DEVICE'
 查看表的数据：scan 'DEVICE'

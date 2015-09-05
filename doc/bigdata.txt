@@ -1,4 +1,7 @@
-﻿http://blog.javachen.com/2013/04/06/install-cloudera-cdh-by-yum/   使用yum安装CDH Hadoop集群 
+﻿http://ixirong.com/2015/03/16/something-about-fastdfs/  fastdfs 环境搭建使用及最佳实践
+
+
+http://blog.javachen.com/2013/04/06/install-cloudera-cdh-by-yum/   使用yum安装CDH Hadoop集群 
 http://blog.csdn.net/sweetvvck/article/details/38842665?utm_source=tuicool
 wget http://mirror.bit.edu.cn/apache/zookeeper/zookeeper-3.4.6/zookeeper-3.4.6.tar.gz 
 
