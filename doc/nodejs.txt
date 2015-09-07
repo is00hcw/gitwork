@@ -39,7 +39,9 @@ https://github.com/creationix/step   http://blog.csdn.net/zhangxin09/article/det
 网络的I/O就成为了服务器的瓶颈.从这里可以看出nodejs并不适合处理这样的情况. 根据Ryan自己描述每个request请求处理不超过5ms会有较好的性能.具体的文章可以看这里.那么什么样的应用符合这样的要求呢? 我认为微博, 聊天室和某些mobile应用是适合的.
 nodejs提供了良好的包管理程序npm (node package management), 还有版本管理程序nvm (nodejs version management).
 
-
+http://www.ianzoe.com/npmchang-yong-mo-kuai/  NPM常用模块
+http://www.ianzoe.com/qian-duan-mian-shi-ti-gao/  前端面试题稿
+http://www.ianzoe.com/yi-dong-qian-duan-kai-fa-ji-lei/   移动前端开发积累
 
 https://cnodejs.org/topic/5338c5db7cbade005b023c98
 http://segmentfault.com/a/1190000000473869
