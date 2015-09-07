@@ -1,4 +1,5 @@
 kafka
+http://www.open-open.com/lib/view/open1412991579999.html   kafka java 生产消费程序demo示例
 http://www.weixinyidu.com/n_366292
 http://www.cnblogs.com/oftenlin/p/4045924.html
 http://blog.csdn.net/honglei915/article/details/37564329  Kafka运行环境

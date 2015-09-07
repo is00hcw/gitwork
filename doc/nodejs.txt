@@ -1,3 +1,4 @@
+http://www.html-js.com/article/2356  puer 搭建服务器
 http://www.lvtao.net/content/book/node.js.htm
 http://ourjs.com/detail/5417e6ea4f1286640f000002
 http://ourjs.com/detail/55a8b98d20cbb7f655000020
@@ -29,9 +30,11 @@ https://github.com/mcollina/mosca/wiki/MQTT-over-Websockets
 http://www.cnblogs.com/youxilua/archive/2013/04/25/3041528.html
 http://www.jdon.com/46309   垂直水平扩展与消息集成方案
 http://mcollina.github.io/mqtt_and_nodejs/
-
 http://ponyfoo.com/articles/teach-yourself-nodejs-in-10-steps  
-
+https://github.com/SocketCluster/socketcluster  
+http://blog.jobbole.com/40135/    极速Node.js：来自LinkedIn的10个性能提升秘籍
+https://github.com/caolan/async      http://www.tuicool.com/articles/vU77Nf
+https://github.com/creationix/step   http://blog.csdn.net/zhangxin09/article/details/13018739
 主要的原因是大多数web服务器对每一个request请求要么使用一个线程要么使用一个进程来处理,这也就是说在这个request返回之前线程或进程占用的资源是不会释放的.以每个线程占用2m的内存来说, 5000个并发就需要10g的内存  nodejs是一个单线程单进程的服务器, 它对于request的请求并不使用线程去处理, 而采用了注册回调的方式. 也就是说对于request请求并不等到整个处理结束就释放连接去服务另一个请求.而处理过程被委托到后台线程(这里的线程与rquest的线程是不同的)中执行, 直到之前的处理结束再将数据发送回客户端.
 网络的I/O就成为了服务器的瓶颈.从这里可以看出nodejs并不适合处理这样的情况. 根据Ryan自己描述每个request请求处理不超过5ms会有较好的性能.具体的文章可以看这里.那么什么样的应用符合这样的要求呢? 我认为微博, 聊天室和某些mobile应用是适合的.
 nodejs提供了良好的包管理程序npm (node package management), 还有版本管理程序nvm (nodejs version management).
@@ -105,3 +108,15 @@ im
 http://blog.jobbole.com/81125/
 http://www.doc88.com/p-7136801595019.html
 http://www.jianshu.com/p/d9b1273a93fd
+
+启动 内存 
+http://segmentfault.com/a/1190000002429825
+http://blog.eood.cn/node-js_gc
+在node启动时可以传递参数来调整内在限制的大小（注意：只能在启动时指定），如下：
+--max-old-space-size //老生代内存空间的最大值
+--max-new-space-size //新生代内存空间的最大值
+
+新生代回收算法：Scavenge；
+老生代回收算法：Mark-Sweep & Mark-Compact
+查看垃圾回收日志的方式，在启动时添加参数 --trace_gc 。
+启动时使用 --prof 参数，可以得到V8执行时的性能分析数据。

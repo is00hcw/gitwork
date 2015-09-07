@@ -89,6 +89,15 @@ error
 http://ningandjiao.iteye.com/blog/1995270
 http://yanyaner.com/blog/2014/07/25/springmvc-global-exceptionhandler/
 
+异步处理
+http://www.jianshu.com/p/b594a7edff64
+Servlet3提供一套完整的异步处理API，包括AsyncContext,AsyncLiseter,AsyncEvent. 要求Tomcat7.0+  asyncTimeout默认10s
+SpringMVC3.2 在Servlet3的基础上做了进一步的封装，编码更为简单，提供Callable，WebAsyncTask，DeferredResult三种方式进行异步编程支持
+web.xml  <async-supported>true</async-supported>  注意每个相关servlet filter都需要   声明version="3.0"，声明web-app_3_0.xsd
+spring xml <mvc:async-support default-timeout="3000"/>
+public DeferredResult<String> quotes() {   异步处理完成时返回org.springframework.web.context.request.async.DeferredResult
+返回java.util.concurrent.Callable来完成异步处理    org.springframework.web.context.request.async.WebAsyncTask 可设置超时
+
 
 async mq
 http://yanyaner.com/blog/2014/04/09/async_message_architect2/
