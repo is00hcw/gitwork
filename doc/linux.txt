@@ -8,6 +8,10 @@ sudo sh -c "cat /dev/null > mylog_all_error.log"
 grep -n -A3 -B2 --color=auto 'str'
 sed 后面接的动作，请务必以 ''两个单引号括住      sed 's/要被取代的字串/新的字串/g'        sed 的-i选项可以直接修改文件内容
 
+Axel 是 Linux 下一个不错的HTTP/FTP高速下载工具。支持多线程下载、断点续传，且可以从多个地址或者从一个地址的多个连接来下载同一个文件。
+ rpm -ivh http://pkgs.repoforge.org/axel/axel-2.4-1.el5.rf.x86_64.rpm
+yum -y install yum-fastestmirror
+
 ~/.ssh/id_rsa  600
 scp -P 10008 -r huangchuwei@10.169.215.75:/data/www/app.atsmart.io/app/m5/test ./
 
