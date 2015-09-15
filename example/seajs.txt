@@ -1,0 +1,38 @@
+<script src="./js/sea.js"></script>
+	<script type="text/javascript">
+		seajs.config({
+			base: "./js/",
+			alias: {
+				
+			},
+			charset: 'utf-8',
+		});
+		seajs.use('./js/app.js');  // entry point
+	</script>
+	
+// app.js
+define(function(require,exports,module) {
+	require("jquery-1.10.1.min");
+	var t1 = require("test1.js");
+	var t2 = require("test2.js");
+	t1.test();
+	t2.test();
+})
+
+// test1.js
+define(function (require, exports, module) {
+	function aaa() {
+		console.log("from test1 aaa");
+	}
+	exports.test = aaa;
+
+})
+
+//test2.js
+define(function (require, exports, module) {
+	function bbb() {
+		console.log("from test1 bbb");
+	}
+	exports.test = bbb;
+
+})
