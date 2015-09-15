@@ -1,5 +1,6 @@
 ﻿http://www.ruanyifeng.com/blog/2011/06/designing_ideas_of_inheritance_mechanism_in_javascript.html  原型
 http://www.ruanyifeng.com/blog/2010/05/object-oriented_javascript_inheritance.html
+$("#result").load(form.attr("action"), form.serialize());
 
 http://code.ciaoca.com/jquery/lazyload/    延迟加载图片
 https://github.com/callmecavs/layzr.js
