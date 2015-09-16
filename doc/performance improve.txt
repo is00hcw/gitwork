@@ -5,8 +5,10 @@ http://www.itwhy.org/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/web/web-%E5%89%8D%E7%A
 可以通过下面的标签禁止隐式的DNS Prefetch <meta http-equiv=”x-dns-prefetch-control” content=”off”> 
 
 可以使用prerender属性，这个属性能够帮助你提前加载整个页面，如下：<link rel="prerender" href="http://www.gbtags.com/gb/search.htm" />
-
 <link rel="prefetch" href="sprite.png">
+
+http://blog.csdn.net/orclight/article/details/8560498   OSCache  缓存整个页面 & 缓存局部页面  
+<%@ taglib uri="http://www.opensymphony.com/oscache" prefix="cache" %>  
 
 http://www.infoq.com/cn/articles/high-availability-scalable-architecture-practical-experience   高可用可伸缩架构实用经验谈
 在分布式系统中，一个请求可能会经过多个不同的子系统，这时最好生成一个UUID附在请求中，每个子系统在打印日志时都将该UUID放在MDC里，便于后续查询相关的日志

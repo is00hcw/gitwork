@@ -122,3 +122,10 @@ http://blog.eood.cn/node-js_gc
 老生代回收算法：Mark-Sweep & Mark-Compact
 查看垃圾回收日志的方式，在启动时添加参数 --trace_gc 。
 启动时使用 --prof 参数，可以得到V8执行时的性能分析数据。
+
+
+http://segmentfault.com/a/1190000000385867   Request让 Node.js http请求变得超简单
+request(url).pipe(fs.createWriteStream(filepath));
+fs.writeFileSync(dst, fs.readFileSync(src));
+fs.createReadStream('file.json').pipe(request.put('http://mysite.com/obj.json'))
+numCPUs=require('os').cpus().length;

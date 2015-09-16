@@ -6,7 +6,16 @@ http://blog.csdn.net/honglei915/article/details/37564329  Kafka运行环境
 http://blog.csdn.net/honglei915/article/details/37563647
 http://blog.csdn.net/honglei915/article/details/37564521  简单介绍
 http://blog.csdn.net/honglei915/article/details/37932819
-
+http://my.oschina.net/cloudcoder/blog/299215   Kafka JAVA客户端代码示例
+http://www.iteblog.com/archives/1084   Apache Kafka监控之Kafka Web Console
+http://www.centoscn.com/CentosServer/cluster/2015/0312/4863.html  Centos安装Kafka集群
+http://www.cnblogs.com/oftenlin/p/4047504.html   kafka 集群安装与安装测试
+Partition：为了实现扩展性，一个非常大的topic可以分布到多个broker（即服务器）上，一个topic可以分为多个partition，每个partition是一个有序的队列。partition中的每条消息都会被分配一个有序的id（offset）。kafka只保证按一个partition中的顺序将消息发给consumer，不保证一个topic的整体（多个partition间）的顺序。
+Offset：kafka的存储文件都是按照offset.kafka来命名
+物理上把Topic分成一个或多个Partition，每个Partition在物理上对应一个文件夹，该文件夹下存储这个Partition的所有消息和索引文件
+Kafka提供两种策略删除旧数据。一是基于时间，二是基于Partition文件大小。例如可以通过配置$KAFKA_HOME/config/server.properties，让Kafka删除一周前的数据，也可在Partition文件超过1GB时删除旧数据
+server.properties中通过配置项num.partitions来指定新建Topic的默认Partition数量，也可在创建Topic时通过参数指定
+http://www.infoq.com/cn/author/%E9%83%AD%E4%BF%8A#文章
 
 http://queues.io/
 https://github.com/huanghua581/notes/blob/master/PHP/%E5%B8%B8%E8%A7%81%E5%BC%80%E6%BA%90%E6%B6%88%E6%81%AF%E7%B3%BB%E7%BB%9F.md
@@ -21,5 +30,6 @@ RocketMQ的前身是Metaq，当Metaq3.0发布时，产品名称改为RocketMQ
 https://github.com/alibaba/RocketMQ/wiki/rmq_vs_kafka  比较
 http://blog.csdn.net/a19881029/article/details/34446629
 http://my.oschina.net/firxiao/blog/314834   RocketMQ 消息队列简单部署
-http://my.oschina.net/cloudcoder/blog/200741
+http://my.oschina.net/cloudcoder/blog/200741   	RocketMQ：一个纯java的开源消息中间件--开发测试环境搭建
 http://blog.csdn.net/a19881029/article/details/34446629
+ 

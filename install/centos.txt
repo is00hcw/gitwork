@@ -37,3 +37,10 @@ https://archive.apache.org/dist/kafka/0.8.1/kafka_2.9.2-0.8.1.tgz
 
 http://www.iamle.com/archives/1613.html  repo
 http://www.iamle.com/archives/1699.html  python
+
+
+wget http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo -O /etc/yum.repos.d/epel-apache-maven.repo
+yum -y install apache-maven  ant
+
+curl https://bintray.com/sbt/rpm/rpm | sudo tee /etc/yum.repos.d/bintray-sbt-rpm.repo
+sudo yum install sbt
