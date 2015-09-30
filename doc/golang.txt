@@ -43,6 +43,10 @@ go get github.com/garyburd/redigo/redis
 https://github.com/avelino/awesome-go
 https://github.com/is00hcw/gopkg
 
+https://www.haiyun.me/archives/1114.html  go redis
+https://www.haiyun.me/archives/1051.html go httpclient
+https://www.haiyun.me/archives/1049.html  go sync
+
 ----------------------
 http://www.codeceo.com/article/go-ppt-for-java-programmer.html
 http://devs.cloudimmunity.com/gotchas-and-common-mistakes-in-go-golang/  50 mistake

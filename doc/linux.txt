@@ -40,6 +40,8 @@ http://os.51cto.com/art/201412/460698_all.htm
 http://www.cnblogs.com/mchina/archive/2012/07/04/2575079.html  shell
 tcpdump   命令：tcpdump -s0 -w /sdcard/a.pcap
 http://www.xuebuyuan.com/1594950.html  kill
+https://www.haiyun.me/linux-command.html   linux常用命令
+
 
 搜索模式为 /string，搜索下一处为n，搜索上一处为N
 移动到行尾$，移动到行首0（数字），移动到行首第一个字符处^

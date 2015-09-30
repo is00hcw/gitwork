@@ -198,3 +198,18 @@ http://my.oschina.net/jingxing05/blog/290567?p=1
 http://alvinalexander.com/scala/simple-scala-akka-actor-examples-hello-world-actors
 http://code.csdn.net/news/2823174
 http://www.reactive.io/tips/2014/03/28/getting-started-with-actor-based-programming-using-scala-and-akka/
+
+
+libraryDependencies ++= Seq
+addSbtPlugin("com.github.mpeltonen" % "sbt-idea" % "1.6.0")
+http://segmentfault.com/a/1190000002484978  sbt
+def main(args: Array[String]) {
+
+List不变集合 实现类scala.Nil class and scala.::   操作合并::, 添加元素:+
+case f :: s :: rest => List(f, s)
+The expression 10 to 20 is 10.to(20)
+catch { case e: IllegalArgumentException => e.getMessage }
+def this() = this("127.0.0.1", 27017)3
+def age_=(newAge: Int) = _age = newAge
+To specify a top-level package you have to use _root_
+put your package object in a separate file, called package.scala
