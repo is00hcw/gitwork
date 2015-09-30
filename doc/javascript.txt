@@ -2,6 +2,7 @@
 http://www.ruanyifeng.com/blog/2010/05/object-oriented_javascript_inheritance.html
 $("#result").load(form.attr("action"), form.serialize());
 
+http://isux.tencent.com/css3/tools.html   css动画预览
 http://code.ciaoca.com/jquery/lazyload/    延迟加载图片
 https://github.com/callmecavs/layzr.js
 http://alloyteam.github.io/Spirit/modules/Standard/index.html  移动开发规范概述

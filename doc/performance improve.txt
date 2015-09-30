@@ -46,3 +46,11 @@ http://segmentfault.com/a/1190000000387993  多核伪共享
 http://ifeve.com/false-shareing-java-7-cn/
 
 http://www.cnblogs.com/aspnethot/articles/3284639.html 移动加速
+http://blog.aliyun.com/1750   LVS在大规模网络环境中的应用   http://www.infoq.com/cn/news/2014/10/lvs-use-at-large-scala-network
+http://blog.jobbole.com/87503/   用 LVS 搭建一个负载均衡集群
+http://blog.jobbole.com/87509/  如何生成每秒百万级别的 HTTP 请求？   httpperf  Tsung
+http://blog.jobbole.com/87531/  为最佳性能调优 Nginx
+
+tsung
+/usr/lib/tsung/bin/tsung_stats.pl
+<!DOCTYPE tsung SYSTEM "/usr/share/tsung/tsung-1.0.dtd">

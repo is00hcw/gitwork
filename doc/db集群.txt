@@ -1,0 +1,29 @@
+http://blog.csdn.net/lifaming15/article/details/44340101
+http://blog.csdn.net/dreamcode/article/details/44307377
+http://www.csdn.net/article/2015-07-16/2825228
+http://download.csdn.net/detail/dreamcode/8933053
+MyCAT的诞生，要从其前身Amoeba和Cobar说起。
+Amoeba（变形虫）项目，该开源框架于2008年开始发布一款 Amoeba for Mysql软件。这个软件致力于MySQL的分布式数据库前端代理层，它主要在应用层访问MySQL的时候充当SQL路由功能，专注于分布式数据库代理层（Database Proxy）开发。座落与 Client、DB Server(s)之间，对客户端透明。具有负载均衡、高可用性、SQL过滤、读写分离、可路由相关的到目标数据库、可并发请求多台数据库合并结果。 
+阿里巴巴于2012年6月19日，正式对外开源的数据库中间件Cobar，前身是早已经开源的Amoeba，不过其作者陈思儒离职去盛大之后，阿里巴巴内部考虑到Amoeba的稳定性、性能和功能支持，以及其他因素，重新设立了一个项目组并且更换名称为Cobar。
+MyCAT使用MySQL的通讯协议模拟成一个MySQL服务器，并建立了完整的Schema（数据库）、Table （数据表）、User（用户）的逻辑模型，并将这套逻辑模型映射到后端的存储节点DataNode（MySQL Instance）上的真实物理库中
+当MyCAT收到一个客户端发送的SQL请求时，会先对SQL进行语法分析和检查，分析的结果用于SQL路由，SQL路由策略支持传统的基于表格的分片字段方式进行分片，也支持独有的基于数据库E-R关系的分片策略，对于路由到多个数据节点（DataNode）的SQL，则会对收到的数据集进行“归并”然后输出到客户端。
+
+MYCAT_HOME/conf/schema.xml中定义逻辑库，表、分片节点等内容；
+MYCAT_HOME/conf/rule.xml中定义分片规则；
+MYCAT_HOME/conf/server.xml中定义用户以及系统相关变量，如端口等。
+
+http://www.csdn.net/article/2015-06-02/2824824  tdsql
+http://bluereader.org/article/30433169
+http://wenku.baidu.com/link?url=ZjdARG02YMFdjtC4mZUOomJrH4qaW1TjVhZBU3UvQ0xLyvBrlDcbNL6Ebt5e525WcLI0DzSk8xcDNw0OmhqSpWlX_UdGH1hYI0bkETyphuO
+
+MariaDB Galera Cluster
+Galera是一个MySQL(也支持MariaDB，Percona)的同步多主集群软件，目前只支持InnoDB引擎。
+http://www.oschina.net/translate/from-mysql-mmm-to-mariadb-galera-cluster-a-high-availability-makeover
+对于标准版的MySQL，对master的写操作被记录于一个二进制的日志。Slave会在之后复制二进制日志中的查询。查询在写服务器上运行与在其它节点上运行时刻之间，总是会有一个延迟。它是异步的。
+MySQL异步复制有下面的问题：slave服务器的数据集总是落后于master服务器。MySQL复制很慢——它从二进制日志回访事务。
+对于Galera,事务是在它们被提交之前被所有节点确认。如果一个事务在一个节点失败了，那个节点将立刻从群集中移除。换句话说，Galera主从复制是同步的。
+http://www.tuicool.com/articles/zmm6ra
+
+
+http://blog.csdn.net/dreamcode/article/details/45740347
+建议采用如下的部署方式：Redis Master上不做持久化保证读写性能，Slave上同时开启RDB（快照）和AOF，保证数据的安全性。当 Redis启动时，程序会优先使用 AOF 文件来恢复数据集，因为AOF文件所保存的数据通常是最完整的。
