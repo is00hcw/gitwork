@@ -110,10 +110,47 @@ http://zhangyi.gitbooks.io/akka-in-action/content/actor.html
 http://blog.csdn.net/pengyanhong/article/details/17112177   
 http://www.nyankosama.com/2015/04/03/java-goroutine/
 
+https://pavelfatin.com/scala-collections-tips-and-tricks/
+http://zhuanlan.zhihu.com/guagua/20087542
+
+FileBasedMailbox – backed by a journaling transaction log on the local file system
+RedisBasedMailbox – backed by Redis
+ZooKeeperBasedMailbox – backed by ZooKeeper
+MongoBasedMailbox – backed by MongoDB
+http://doc.akka.io/docs/akka/2.0/modules/durable-mailbox.html
+
+Lookup : used to look up an actor on a remote node with actorSelection(path)
+Creation : used to create an actor on a remote node with actorOf(Props(...), actorName)
 
 akka
+http://blog.madhukaraphatak.com/simple-akka-remote-example/
 http://www.csdn.net/article/2014-12-17/2823174
- 
+https://github.com/comsysto/akka-lab
+http://rerun.me/2014/09/19/akka-notes-actor-messaging-1/
+http://www.sharkdtu.com/archives/278
+http://www.csdn.net/article/2014-12-17/2823174
+http://zhuanlan.zhihu.com/guagua/20009659
+http://udn.yyuap.com/doc/akka-doc-cn/2.3.6/scala/book/chapter2/05_actor_references_paths_and_addresses.html
+
+metrics
+http://colobu.com/2014/08/08/Metrics-and-Spring-Integration/
+http://wuchong.me/blog/2015/08/01/getting-started-with-metrics/
+https://github.com/grafana/grafana
+http://hanzheng.github.io/tech/2014/11/06/monitor-massive-jvm-cluster.html
+http://metrics.dropwizard.io/3.1.0/getting-started/
+http://jerrypeng.me/2014/07/04/server-side-java-monitoring-ganglia/
+https://github.com/Netflix/servo
+
+cluster
+https://tersesystems.com/2014/06/25/akka-clustering/
+http://blog.kamkor.me/Akka-Cluster-Load-Balancing/
+http://kamon.io/integrations/akka/actor-router-and-dispatcher-metrics/
+http://www.cakesolutions.net/teamblogs/akka-clustering-and-remoting-the-experiment
+http://doc.akka.io/docs/akka/snapshot/scala/cluster-usage.html
+http://www.typesafe.com/activator/template/akka-sample-cluster-scala
+https://tersesystems.com/2014/06/25/akka-clustering/
+http://www.warski.org/blog/2014/11/clustering-reactmq-with-akka-cluster/
+
 def main(args: Array[String])
 system.scheduler.scheduleOnce
 val config = context.system.settings.config
@@ -128,7 +165,7 @@ akka.actor.defaultdispatcher.throughput = 20
 provider = "akka.remote.RemoteActorRefProvider"
 transport = "akka.remote.netty.NettyRemoteTransport"
 
-
+Await.result(future, timeout.duration).asInstanceOf[PiApproximation]
 implicit val timeout = Timeout(3 seconds) 
 val echo = system.actorOf(Props[EchoActor], "echo1")
 val future = echo.ask("some message")
