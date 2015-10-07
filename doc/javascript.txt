@@ -55,7 +55,11 @@ https://github.com/marcuswestin/store.js
 
 angularjs
 http://segmentfault.com/blog/news/1190000000350125
+http://blog.csdn.net/dc_726/article/details/17010325   图灵AngularJS入门教程
 
+best pratice
+http://www.ituring.com.cn/article/64950    给JavaScript初学者的24条最佳实践
+http://www.ituring.com.cn/article/25069   前端开发技术的发展
 
 Grunt是基于Node.js的项目构建工具
 http://tgideas.qq.com/webplat/info/news_version3/804/808/811/m579/201307/216460.shtml

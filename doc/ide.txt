@@ -1,0 +1,11 @@
+ Top #10切来切去：Ctrl+Tab
+ Top #9选你所想：Ctrl+W
+ Top #8代码生成：Template/Postfix +Tab
+ Top #7发号施令：Ctrl+Shift+A
+ Top #6无处藏身：Shift+Shift
+ Top #5自动完成：Ctrl+Shift+Enter
+ Top #4创造万物：Alt+Insert
+ Top #1智能补全：Ctrl+Shift+Space
+ Top #1自我修复：Alt+Enter
+ Top #1重构一切：Ctrl+Shift+Alt+T
+http://blog.csdn.net/dc_726/article/details/42784275

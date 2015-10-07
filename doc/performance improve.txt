@@ -44,6 +44,7 @@ http://www.cnblogs.com/panfeng412/archive/2012/03/08/hbase-performance-tuning-se
 
 http://segmentfault.com/a/1190000000387993  多核伪共享
 http://ifeve.com/false-shareing-java-7-cn/
+目前VisualVM支持两种监控方法：Jstatd方法和基于JMX的方法。我们先介绍Jstatd方法。Jstatd方法是利用后台的RMI守护进程来实现对远程JVM的监控。首先创建一个监控策略文件。
 
 http://www.cnblogs.com/aspnethot/articles/3284639.html 移动加速
 http://blog.aliyun.com/1750   LVS在大规模网络环境中的应用   http://www.infoq.com/cn/news/2014/10/lvs-use-at-large-scala-network

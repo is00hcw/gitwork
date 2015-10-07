@@ -14,6 +14,9 @@ resolvers += "Sonatype snapshots" at "https://oss.sonatype.org/content/repositor
 addSbtPlugin("com.github.mpeltonen" % "sbt-idea" % "1.7.0-SNAPSHOT")
 sbt gen-idea
 
+addSbtPlugin("com.earldouglas" % "xsbt-web-plugin" % "0.9.0") 启动web服务器
+addSbtPlugin("com.github.mpeltonen" % "sbt-idea" % "1.7.0-SNAPSHOT")前面提到的sbt-idea插件
+
 http://blog.csdn.net/oopsoom/article/details/38363369?utm_source=tuicool     scala eclipse sbt 应用程序开发
 https://github.com/typesafehub/sbteclipse
 https://github.com/mpeltonen/sbt-idea
@@ -187,6 +190,7 @@ A LinearSeq implies that the collection can be efficiently split into head and t
 
 
 kafka      gradle idea    gradle eclipse
+http://blog.csdn.net/hengyunabc/article/details/44158617  kafka manager安装
 http://www.bubuko.com/infodetail-695974.html              
 http://www.yrom.net/blog/2015/02/07/change-gradle-maven-repo-url/
 http://www.geekcome.com/content-10-2336-1.html

@@ -15,6 +15,7 @@ MYCAT_HOME/conf/server.xml中定义用户以及系统相关变量，如端口等。
 http://www.csdn.net/article/2015-06-02/2824824  tdsql
 http://bluereader.org/article/30433169
 http://wenku.baidu.com/link?url=ZjdARG02YMFdjtC4mZUOomJrH4qaW1TjVhZBU3UvQ0xLyvBrlDcbNL6Ebt5e525WcLI0DzSk8xcDNw0OmhqSpWlX_UdGH1hYI0bkETyphuO
+START SLAVE  http://hunng.com/2014/06/18/centos-mysql-master-slave-replication/
 
 MariaDB Galera Cluster
 Galera是一个MySQL(也支持MariaDB，Percona)的同步多主集群软件，目前只支持InnoDB引擎。
@@ -27,3 +28,39 @@ http://www.tuicool.com/articles/zmm6ra
 
 http://blog.csdn.net/dreamcode/article/details/45740347
 建议采用如下的部署方式：Redis Master上不做持久化保证读写性能，Slave上同时开启RDB（快照）和AOF，保证数据的安全性。当 Redis启动时，程序会优先使用 AOF 文件来恢复数据集，因为AOF文件所保存的数据通常是最完整的。
+slaveof conf配置文件 slaveof 192.168.1.1 6379    masterauth redis123
+redis的slave默认变得不再接受写操作 #slave-read-only yes
+redis 127.0.0.1:6379> SLAVEOF 192.168.1.100 6379
+redis 127.0.0.1:6379> SLAVEOF no one
+如果当前服务器已经是某个主服务器(master server)的从属服务器，那么执行 SLAVEOF host port 将使当前服务器停止对旧主服务器的同步，丢弃旧数据集，转而开始对新主服务器进行同步。
+查看同步的状态，可以使用info命令  redis-cli -h 192.168.9.18 info Replication
+可以在master禁用数据持久化，只需要注释掉master 配置文件中的所有save配置，然后只在slave上配置数据持久化    appendonly no #禁用AOF
+RDB Redis forks.子进程开始将数据写到临时RDB文件中。当子进程完成写RDB文件，用新文件替换老文件。这种方式可以使Redis使用copy-on-write技术。快照模式并不十分健壮，当系统停止，或者无意中Redis被kill掉，最后写入Redis的数据就会丢失。
+测试是否已启动 redis-cli ping
+强制刷新数据到磁盘 redis-cli -p 6379 save
+
+Codis 2.0 发布，Redis 集群解决方案 由四部分组成:Codis Proxy   (codis-proxy)  Codis Manager (codis-config)  Codis Redis   (codis-server) ZooKeeper
+codis-proxy 是客户端连接的 Redis 代理服务, codis-proxy 本身实现了 Redis 协议,可以部署多个 codis-proxy, codis-proxy 本身是无状态的.
+codis-config 是 Codis 的管理工具, 支持包括, 添加/删除 Redis 节点, 添加/删除 Proxy 节点, 发起数据迁移等操作. codis-config 本身还自带了一个 http server, 会启动一个 dashboard
+codis-server 是 Codis 项目维护的一个 Redis 分支, 基于 2.8.13 开发, 加入了 slot 的支持和原子的数据迁移指令
+Codis 依赖 ZooKeeper 来存放数据路由表和 codis-proxy 节点的元信息, codis-config 发起的命令都会通过 ZooKeeper 同步到各个存活的 codis-proxy.
+正确的步骤在codis/sample/usage.md里，作者都写好了启动脚本   Codis会根据我们在config.ini中配置的product_name作为ZooKeeper中的路径。
+Redis本身的replication模型是主从异步复制，在master上写成功后，在slave上是否能读到这个数据是没有保证的，
+hashtag(用花括号扩住计算hash的区域)：{uid1}age，{uid1}sex，{uid1}name，这样就保证这些key分布在同一个机器上。这个是twemproxy引入的一个语法    
+在生产环境中，我建议master的机器不要开bgsave，也不要轻易的执行save命令，数据的备份尽量放在slave上操作
+http://www.open-open.com/lib/view/open1436360508098.html  Codis作者黄东旭细说分布式Redis架构设计和踩过的那些坑们    通过presharding把数据在概念上分成1024个slot（hash算法是crc32(key)%1024），然后通过proxy将不同的key的请求转发到不同的机器上，数据的副本还是通过Redis本身保证
+http://blog.csdn.net/dc_726/article/details/47052607
+http://blog.csdn.net/dc_726/article/details/46746015
+http://blog.csdn.net/dc_726/article/details/48832405   分布式一致性协议Raft原理与实例
+http://thesecretlivesofdata.com/raft/   动画raft
+http://blog.csdn.net/dc_726/article/details/46475633   Apache Curator入门实战
+http://blog.csdn.net/dc_726/article/details/46565241    Java程序员的Golang入门指南
+http://blog.csdn.net/dc_726/article/details/46745947
+http://blog.csdn.net/dc_726/article/details/46565257  用Netty解析Redis网络协议
+http://blog.csdn.net/dc_726/article/details/47355959  负载均衡LVS(DR模式)安装实战
+
+闪存文件系统，包括JFFS2和Yaffs
+http://www.programmer.com.cn/14015/    从Google Spanner漫谈分布式存储与数据库技术
+
+etcd 使用Go语言编写部署简单；使用HTTP作为接口使用简单；使用Raft算法保证强一致性让用户易于理解。 WAL：Write Ahead Log（预写式日志）
+http://www.infoq.com/cn/articles/etcd-interpretation-application-scenario-implement-principle/

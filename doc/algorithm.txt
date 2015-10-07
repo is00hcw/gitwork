@@ -1,3 +1,5 @@
 http://troydhanson.github.io/uthash/userguide.html#hash_functions   c hash
 https://code.google.com/p/smhasher/
 http://hg.openjdk.java.net/jdk7u/jdk7u6/jdk/file/8c2c5d63a17e/src/share/classes/sun/misc/Hashing.java
+
+http://blog.csdn.net/dc_726/article/details/7017781   小小程序员的学习计划  《具体数学-计算机科学的基础》《离散数学及其应用》
