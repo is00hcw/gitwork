@@ -1,0 +1,18 @@
+http://drops.wooyun.org/tips/3915  爬虫技术浅析
+http://drops.wooyun.org/tips/5462
+https://github.com/manning23/MSpider
+http://www.zhihu.com/question/20899988
+http://www.jianshu.com/p/61cc4b7177d2
+https://github.com/code4craft/webmagic
+Node.js 有一个 Cheerio 库，用来解析 HTML 效率十分不错
+建议用node， phamtomjs， node的jQuery， 还有jsdom
+http://www.cnblogs.com/edwardstudy/p/4133421.html   使用superagent获取源数据
+
+
+音乐搜索
+http://blog.csdn.net/xyw_blog/article/details/38641793?utm_source=tuicool
+http://blog.csdn.net/lyq8479/article/details/17232631    百度
+http://www.fddcn.cn/music-api-wang-yi-bai-du.html    百度ting 网易
+http://moonlib.com/606.html  网易 php
+https://cnodejs.org/topic/546c98f6d1ff63cc7fe27bf7
+https://github.com/zvenshy/venmusic

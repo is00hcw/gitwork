@@ -115,3 +115,35 @@ http://www.luoshengsha.com/284.html
 test
 http://jinnianshilongnian.iteye.com/blog/2004660
 http://rockingware.com/2013/08/spring-test-mvc.html
+
+springloaded
+修改tomcat的应用，禁止tomcat自己的热加载，方法是在META-INF目录下创建context.xml文件，里面包含如下语句，关键便是其中设置reloadable为false
+<Context antiResourceLocking="false" privileged="true" useHttpOnly="true" reloadable="false" />
+
+在运行环境中添加springloaded的jar文件，在eclipse中右键点击项目，run as->run configuration在弹出的窗口中，选择Arguments标签，在vm arguments的末尾添加：
+-javaagent:C:\temp\springloaded-1.2.3.RELEASE.jar -noverify
+
+http://blog.csdn.net/zhoujinyu0713/article/details/46843115
+ compile("org.springframework.boot:spring-boot-devtools")
+<dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-devtools</artifactId> 
+</dependency>
+
+spring-boot
+http://start.spring.io/  
+http://repo.spring.io/release/org/springframework/boot/spring-boot-cli/1.2.6.RELEASE/spring-boot-cli-1.2.6.RELEASE-bin.zip
+http://spring.io/blog/2015/06/17/devtools-in-spring-boot-1-3
+mvn spring-boot:run
+http://www.ibm.com/developerworks/cn/java/j-lo-spring-boot/
+
+metrics
+http://tianmaying.com/tutorial/spring-boot-overview
+http://kielczewski.eu/2015/01/application-metrics-with-spring-boot-actuator/
+http://www.baeldung.com/spring-boot-actuators
+Each endpoint can be customized with properties using the following format: endpoints.[endpoint name].[property to customize]
+http://hacpai.com/article/1444294401221
+http://docs.spring.io/spring-boot/docs/current/reference/html/howto-traditional-deployment.html
+If you include org.springframework.boot:spring-boot-legacy as a dependency
+ <listener-class>org.springframework.boot.legacy.context.web.SpringBootContextLoaderListener</listener-class>
+http://www.javabeat.net/spring-boot-actuator/

@@ -1,5 +1,5 @@
 http://blog.csdn.net/faye0412/article/details/8632959   https
-http://nolinux.blog.51cto.com/4824967/1594029?utm_source=tuicool   健康检查  淘宝  nginx_upstream_check_module
+
 
 proxy_set_header X-Forwarded-Host $host;
 proxy_set_header X-Forwarded-Server $host;
@@ -34,3 +34,13 @@ nginx -t 检查nginx配置的语法,操作前都要检查一下
 1) nginx -t;  nginx -s reload
 2) nginx -t;  kill -HUP <nginx_master_process_pid>
 http://www.cnblogs.com/derekchen/archive/2011/02/17/1957209.html
+
+
+健康检查 
+http://nolinux.blog.51cto.com/4824967/1594029?utm_source=tuicool    淘宝  nginx_upstream_check_module  check interval=3000 rise=2 fall=2 timeout=1000 type=http;
+http://tengine.taobao.org/document_cn/http_upstream_check_cn.html
+http://www.365dw.cn/128.html    proxy_next_upstream error timeout http_503 http_500 http_502 http_504;
+http://nolinux.blog.51cto.com/4824967/1594029?utm_source=tuicool
+
+http://blog.csdn.net/big1980/article/details/9812793  Pacemaker管理+heartbeat心跳
+

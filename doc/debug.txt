@@ -16,3 +16,7 @@ http://www.iinterest.net/2012/05/08/ebugging-mobile-web-applications-withadobe-s
 http://www.debuggap.com/
 http://www.cnblogs.com/yuzhongwusan/p/4270219.html weinre
 http://blog.csdn.net/freshlover/article/details/42528643  chrome remote
+
+http://my.oschina.net/leejun2005/blog/399108   fiddler
+http://www.benben.cc/blog/?p=393  nginx ด๚ภํต๗สิ
+https://github.com/goddyZhao/nproxy
