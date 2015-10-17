@@ -1,3 +1,4 @@
+START SLAVE  http://hunng.com/2014/06/18/centos-mysql-master-slave-replication/
 http://www.cnblogs.com/lyhabc/p/3838764.html
 http://www.178linux.com/archives/5261
 http://88fly.blog.163.com/blog/static/122680390201241901127184/

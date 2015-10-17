@@ -1,0 +1,23 @@
+http://blog.pandocloud.com/?p=843
+http://36kr.com/p/5038505.html
+https://github.com/PandoCloud
+http://blog.pandocloud.com/?p=810  物联网通信协议介绍
+http://blog.pandocloud.com/?p=606  mqtt协议简介
+https://github.com/alsm/gochat-mqtt   go mqtt
+http://rndm.io/go-and-mqtt/
+http://blog.pandocloud.com/?p=548  etcd
+http://blog.pandocloud.com/?p=343   mongodb基础
+要实现物联网设备互联互通（不同厂商、不同平台、不同架构），关键点并不在上述接入协议或通讯协议的统一，而在于上层业务应用层协议的统一。无论是wifi、蓝牙、亦或是mqtt、http都是设备进行数据通讯和交换的通道，规定的是通讯的格式；而通讯的内容的统一才是实现互联互通的关键。
+http://www.shejipi.com/70199.html
+http://blog.pandocloud.com/?p=335  产品汪的Arduino成长之路
+
+http://blog.pandocloud.com/wp-content/uploads/2015/04/%E5%9B%BE%E7%89%872.jpg
+http://blog.pandocloud.com/wp-content/uploads/2015/04/%E5%9B%BE%E7%89%874.jpg
+
+https://github.com/webbit/webbit     A Java event based WebSocket and HTTP server http://webbitserver.org/
+https://www.oschina.net/p/microservices-infrastructure
+http://microservices-infrastructure.readthedocs.org/en/latest/
+
+
+
+https://izhongchou.taobao.com/dreamdetail.htm?spm=a215p.1472805.0.0.xYoWWt&id=10045134#

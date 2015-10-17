@@ -1,3 +1,13 @@
 sms
 http://www.yuntongxun.com/ability/toPriceTariff
 https://www.twilio.com/docs/api/rest/sending-messages
+
+
+email
+http://sendcloud.sohu.com/price.html
+http://it.sohu.com/20121212/n360239343.shtml
+http://www.tuicool.com/articles/mAFV7f
+
+
+
+http://www.infoq.com/cn/news/2014/12/zhihu-architecture-evolution

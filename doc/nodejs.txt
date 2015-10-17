@@ -130,11 +130,31 @@ fs.writeFileSync(dst, fs.readFileSync(src));
 fs.createReadStream('file.json').pipe(request.put('http://mysite.com/obj.json'))
 numCPUs=require('os').cpus().length;
 
+http://zhaofei.tk/2015/10/15/lightweight-GUI/    http://nwjs.io/
+
 cheerio
 https://cnodejs.org/topic/5203a71844e76d216a727d2e
 http://www.tuicool.com/articles/z2YbAr
 http://www.zhanxin.info/nodejs/2013-11-04-nodejs-practical-study-notes.html
 http://www.cnblogs.com/edwardstudy/p/4133421.html
+
+http://www.yyyweb.com/demo/html5-tools/html5-canvas.html
+ http://dreamsky.github.io/main/blog/metronic-bootstrap/metronic.bootstrap.rar
+http://nightwatchjs.org/   自动测试  Selenium WebDriver API
+http://slimerjs.org/  它是类似 PhantomJS 的一个工具，除了它运行在 Gecko 上而不是Webkit。SlimerJS 提供几乎和 PhantomJS 相同的 API
+Casperjs是基于Phantomjs
+
+https://code.visualstudio.com/docs/runtimes/nodejs   visual code
+npm install -g tsd
+tsd query node express --action install
+
+http://www.cnblogs.com/windwithlife/archive/2013/02/25/2923235.html  Node.JS对MongoDB的支持有两种常用的组件mongodb, mongoose
+基于mongodb的支持。这个for Node.JS的驱动是基于事件驱动的，所以用法基本上都是异步回调函方式。
+https://cnodejs.org/topic/51ff720b44e76d216afe34d9
+http://www.open-open.com/lib/view/open1375885691296.html
+https://github.com/felixge/node-mysql   mysql
+https://github.com/sequelize/sequelize
+https://cnodejs.org/topic/5201c94144e76d216a39c4dc
 
 http://tech.meituan.com/node-fullstack-development-practice.html
 定位内存泄露的具体原因：

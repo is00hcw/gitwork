@@ -6,6 +6,12 @@ http://www.icoolxue.com/blog/show/9
 chmod 600 jmxremote.password 
 -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=8998 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=true -Djava.rmi.server.hostname=qdapp01.atsmart.io -Dcom.sun.management.jmxremote.local.only=false -Dcom.sun.management.jmxremote.password.file=/data/software/jdk/jre/lib/management/jmxremote.password -Dcom.sun.management.jmxremote.access.file=/data/software/jdk/jre/lib/management/jmxremote.access
 
+如何检查连接状态
+使用netstat:  netstat -tan | awk '{print $6}' | sort | uniq -c
+或使用ss:  ss -s
+http://www.oschina.net/translate/optimising-nginx-node-js-and-networking-for-heavy-workloads
+proxy_set_header   Connection "";
+proxy_http_version 1.1;
 
 http://bboniao.com/jvm/2014-05/housemd.html   housemd
 sudo -s -u tomcat /data/software/jdk/bin/jcmd 28764 help
