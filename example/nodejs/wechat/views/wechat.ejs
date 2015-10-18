@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <title>
+    <%= title %>
+  </title>
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+</head>
+
+<body>
+  <h1><%= title %></h1>
+  <p>Welcome to
+    <%= title %>
+  </p>
+
+  <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+
+  <script>
+    wx.config({
+        debug: true,
+        beta: true,
+        appId: '<%= config.appId %>',
+        timestamp: '<%= config.timestamp %>',
+        nonceStr: '<%= config.nonceStr %>',
+        signature: '<%= config.signature %>',
+        jsApiList: [
+          'configWXDeviceWiFi',
+          'scanQRCode'
+        ]
+      });
+      wx.error(function (res) {
+        alert("err " + JSON.stringify(res));
+      });
+      
+      wx.ready(function(){
+          wx.getLocation({
+            timestamp: 0, // 位置签名时间戳，仅当需要兼容6.0.2版本之前时提供
+            nonceStr: '', // 位置签名随机串，仅当需要兼容6.0.2版本之前时提供
+            addrSign: '', // 位置签名，仅当需要兼容6.0.2版本之前时提供，详见附录4
+            success: function (res) {
+                var longitude = res.longitude; // 纬度，浮点数，范围为90 ~ -90
+                var latitude = res.latitude; // 经度，浮点数，范围为180 ~ -180。
+                var speed = res.speed; // 速度，以米/每秒计
+                var accuracy = res.accuracy; // 位置精度
+                alert(longitude + " , " + longitude )
+            }
+        });
+        
+        wx.scanQRCode({
+            desc: 'scanQRCode desc',
+            needResult: 1, // 默认为0，扫描结果由微信处理，1则直接返回扫描结果，
+            scanType: ["qrCode","barCode"], // 可以指定扫二维码还是一维码，默认二者都有
+            success: function (res) {
+              var result = res.resultStr; // 当needResult 为 1 时，扫码返回的结果
+              alert(result);
+          }
+        });
+        
+     });
+  </script>
+
+</body>
+
+</html>
