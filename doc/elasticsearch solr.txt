@@ -1,0 +1,23 @@
+http://blog.csdn.net/july_2/article/details/24702243
+plugin -install lukas-vlcek/bigdesk
+http://localhost:9200/_plugin/bigdesk/ 
+plugin -install royrusso/elasticsearch-HQ
+
+
+plugin -install mobz/elasticsearch-head
+http://localhost:9200/_plugin/head/
+
+http://www.vpsee.com/2014/05/install-and-play-with-elasticsearch/
+plugin -i elasticsearch/marvel/latest
+
+http://www.shenjuanli.com/2014/03/03/logstashelasticsearchkibana%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E6%9C%AA%E5%AE%8C%EF%BC%89/
+http://segmentfault.com/a/1190000002904818
+
+http://segmentfault.com/a/1190000002972420   kibana使用的lucene查询语法
+
+http://blog.csdn.net/u014201191/article/details/46508311   
+
+pip install elasticsearch
+
+
+http://www.vpsee.com/2015/03/a-modern-monitoring-system-built-with-grafana-collected-influxdb/  使用 Grafana＋collectd＋InfluxDB 打造现代监控系统

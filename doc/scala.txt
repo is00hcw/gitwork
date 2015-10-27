@@ -1,4 +1,7 @@
-﻿http://docs.scala-lang.org/cheatsheets/
+﻿http://ibruce.info/2014/12/02/hello-colossus/   微服务框架 Colossus
+http://ibruce.info/2014/10/23/zookeeper/ 
+
+http://docs.scala-lang.org/cheatsheets/
 http://colobu.com/2015/02/26/simple-scala-akka-actor-examples/
 http://alvinalexander.com/scala/simple-akka-actors-remote-example
 http://colobu.com/2015/01/14/Scala-Quick-Start-for-Java-Programmers/
