@@ -1,5 +1,5 @@
 sms
-http://www.yuntongxun.com/ability/toPriceTariff
+http://www.yuntongxun.com/activity/smsDevelop#tiyan
 https://www.twilio.com/docs/api/rest/sending-messages
 
 
@@ -8,6 +8,32 @@ http://sendcloud.sohu.com/price.html
 http://it.sohu.com/20121212/n360239343.shtml
 http://www.tuicool.com/articles/mAFV7f
 
+android
+http://www.pgyer.com/about/index
+http://www.pgyer.com/about/partner
+
+
+OneAlert：国内首家 SaaS 模式的云告警平台
+http://www.jianshu.com/p/88ed82372888
+
+
+CanTK是一套基于HTML5 Canvas的GUI系统，它提供了完整的控件库，事件分发系统，窗口管理系统和不同的平台的适配。
+http://www.tangide.com/
+http://www.tangide.com/appbuilder.php
+http://www.tangide.com/gamebuilder.php
+https://github.com/Flipboard/react-canvas
+
+training
+https://www.shiyanlou.com/
+http://www.jisuanke.com/course
+
+http://segmentfault.com/a/1190000000357138   heX 用前端技术开发桌面应用软件
+http://hex.youdao.com/zh-cn/samples/index.html
+
+http://www.open-open.com/news/view/703887  2015 Bossie评选：最佳开源大数据工具
+https://github.com/Tim9Liu9/TimLiu-iOS      自己总结的iOS、mac开源项目及库
+https://github.com/Tim9Liu9/TimLiu-Android  自己总结的Android开源项目及库
+https://github.com/josephmisiti/awesome-machine-learning
 
 
 http://www.infoq.com/cn/news/2014/12/zhihu-architecture-evolution

@@ -1,6 +1,7 @@
 yunba连接不上要打印log ，少上传jar导致Throwable错误，但没打印
 1024以下的端口只有用root才能进行一些操作，包括要启动一些程序，比如apache等，都需要有root的权限
 tomcat输出 日志乱码   -Dfile.encoding=UTF-8 -Dsun.jnu.encoding=UTF-8
+nginx 转发请求 丢失header   underscores_in_headers  http://my.oschina.net/greki/blog/83945
 
 遗憾的是想要通过这种方法获取非本域下的 js 文件的报错时，得到的永远是Script Error，空的文件名和0的行号，因为浏览器的Same Origin Policy。当另外一个域下的 js 报错时，拿到的永远是 Script Error。
 http://blog.hellofe.com/fe/2014/12/17/script-error-with-line-zero/

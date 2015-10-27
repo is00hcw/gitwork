@@ -2,6 +2,25 @@
 http://www.ruanyifeng.com/blog/2010/05/object-oriented_javascript_inheritance.html
 $("#result").load(form.attr("action"), form.serialize());
 
+apply([thisObj[,argArray]])
+bind的作用：改变了上下文的this   bind的返回值是函数
+call([thisObj[,arg1[, arg2[,   [,.argN]]]]])
+如果你在一个函数前面带上 new 关键字来调用，那么 js 会创建一个 prototype 属性是此函数的一个新对象，同时在调用这个函数的时候，把 this 绑定到这个新对象上。
+在js 里，每个函数都有一个公共的 prototype —— Function，而这个原型自带有好几个属性和方法，其中就有这里困惑的 bind、call、apply 方法。
+bind() 函数的参数跟 call() 一致，第一个参数也是绑定 this 的值，后面接受传递给函数的不定参数。 
+ 在未给出指定thisArg对象的情况下，null与undefined下this指向是全局对象，将是JS执行环境的全局变量。浏览器中是window，其它环境（如node）则是global。。ES5严格模式（ie6/7/8/9除外）则不再揣测，给call/apply传入的任何参数不再转换。
+http://www.codeceo.com/article/javascript-bind-call-apply.html
+http://www.cnblogs.com/snandy/archive/2012/03/01/2373243.html
+
+Timeline面板提供两种查看方式：横条的是"事件模式"（Event Mode），显示重新渲染的各种事件所耗费的时间；竖条的是"帧模式"（Frame Mode），显示每一帧的时间耗费在哪里。
+我们可以使用window.requestAnimationFrame()，让读操作和写操作分离，把所有的写操作放到下一次重新渲染。
+window.requestIdleCallback()它指定只有当一帧的末尾有空闲时间，才会执行回调函数。只有当前帧的运行时间小于16.66ms时，函数fn才会执行。
+它还可以接受第二个参数，表示指定的毫秒数。如果在指定 的这段时间之内，每一帧都没有空闲时间，那么函数fn将会强制执行。requestIdleCallback(fn, 5000);
+http://www.ruanyifeng.com/blog/2015/09/web-page-performance-in-depth.html
+http://www.mmtrix.com/evaluate/phone/testid/c197a02e111d7d859b9da1bc301c1056
+undefined和null在if语句中，都会被自动转为false，相等运算符甚至直接报告两者相等。  http://www.ruanyifeng.com/blog/2014/03/undefined-vs-null.html
+
+
 http://isux.tencent.com/css3/tools.html   css动画预览
 http://code.ciaoca.com/jquery/lazyload/    延迟加载图片
 https://github.com/callmecavs/layzr.js
@@ -123,3 +142,23 @@ http://www.codeceo.com/article/10-best-javascript-lib-2015.html
 http://www.oschina.net/translate/event-based-programming-what-async-has-over-sync   基于事件的 JavaScript 编程：异步与同步
 中介者模式 ， postal.js 库中用的即是这种方式     另外一些基于中介者模式传送消息的库有 amplify, PubSubJS, and radio.js。 
 http://www.css88.com/archives/5656   盘点JavaScript里好用的原生API 
+
+错误上报
+http://www.css88.com/archives/5014   error
+http://rapheal.sinaapp.com/2014/11/06/javascript-error-monitor/
+http://developer.51cto.com/art/201508/488836.htm
+https://github.com/fex-team/alogs
+
+
+性能与监控
+http://blog.jobbole.com/54495/   45个实用的JavaScript技巧、窍门和最佳实践
+http://blog.csdn.net/it_man/article/details/12843295    览器的加载与页面性能优化
+http://segmentfault.com/a/1190000000695819
+http://tapir-dream.github.io/berserkJS/
+http://wenku.baidu.com/link?url=pdnLT5YkjP3D-aMUgebdxKLSm0ZA_Zx7BlPGyDG8yTGgjSv0WICz07hPhz1wRSy7PLki2sHTmKgrKtzqNdbFVavAjwG-9NX-MBHMSyK7gDy
+http://vdisk.weibo.com/s/Des0SwUIlPVp
+http://fex.baidu.com/blog/2014/05/front_end-data/  
+http://fex.baidu.com/blog/2014/03/fis-optimize/
+http://fex.baidu.com/blog/2014/05/build-performance-monitor-in-7-days/
+https://github.com/fex-team/interview-questions
+http://blog.csdn.net/samxx8/article/details/30050513

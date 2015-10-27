@@ -14,6 +14,9 @@ http://m.163.com/special/newsclient/ios_libraries.html  网易类库
 build
 https://fastlane.tools/
 https://github.com/facebook/xctool
+http://www.cnblogs.com/brycezhang/p/4117180.html  pod生成类库
+http://www.cnblogs.com/brycezhang/p/4097487.html  自动build
+http://www.cnblogs.com/brycezhang/p/3675670.html  CocoaPods版本升级
 
 xcode
 http://pan.baidu.com/s/1kTCCV47#path=%252FXcode%25206.3
