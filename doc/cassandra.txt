@@ -4,6 +4,8 @@ http://my.oschina.net/zookeeper/blog/187169
 http://pimin.net/archives/312
 http://my.oschina.net/silentriver/blog/182678
 
+http://zhaoyanblog.com/archives/180.html  java实现cassandra的增删改查
+http://zhaoyanblog.com/archives/547.html   cassandra的连接池配置
 
 http://wiki.apache.org/cassandra/GettingStarted
 https://www.ibm.com/developerworks/cn/opensource/os-cn-cassandraxu1/
