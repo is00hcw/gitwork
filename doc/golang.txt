@@ -125,3 +125,18 @@ q.Set("q", query)
 u.RawQuery = q.Encode()
 resp, err := http.Get(u.String())
 defer resp.Body.Close()
+
+
+http://tonybai.com/2014/09/29/a-channel-compendium-for-golang/
+Golang在并发设计方面参考了C.A.R Hoare的CSP，即Communicating Sequential Processes并发模型理论。
+Actor模型广义上讲与CSP模型很相似。但两种模型就提供的原语而言，又有一些根本上的不同之处：
+    – CSP模型处理过程是匿名的，而Actor模型中的Actor则具有身份标识。
+    – CSP模型的消息传递在收发消息进程间包含了一个交会点，即发送方只能在接收方准备好接收消息时才能发送消息。相反，actor模型中的消息传递是异步 的，即消息的发送和接收无需在同一时间进行，发送方可以在接收方准备好接收消息前将消息发送出去。
+	 – CSP使用显式的Channel用于消息传递，而Actor模型则将消息发送给命名的目的Actor。这两种方法可以被认为是对偶的。
+c := make(chan bool) //创建一个无缓冲的bool型Channel 
+x, ok = <- c  //从Channel接收一个值，如果channel关闭了或没有数据，那么ok将被置为false
+close的channel不会阻塞，我们会读出这个 channel对应类型的零值，这里就是0  通过将已经关闭的channel置为nil，下次select将会阻塞在该channel上，使得select继续下面的分支evaluation。
+timeout := time.After(30 * time.Second)
+
+http://studygolang.com/articles/2027   WaitGroup总共有三个方法：Add(delta int),　Done(),　Wait()。
+
