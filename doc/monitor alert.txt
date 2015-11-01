@@ -1,0 +1,2 @@
+http://blog.csdn.net/linlzk/article/details/47423423    服务端监控方案
+http://badqiu.iteye.com/blog/743100  log4jdbc

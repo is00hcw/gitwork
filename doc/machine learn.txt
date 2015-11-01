@@ -1,3 +1,9 @@
 a、深度学习算法及模型（如Caffe、Cudacovnet、Purine、神经网络、随机梯度下降、CNN、RBM、模型参数设置等） 
 b、统计学习算法及模型（如支持向量机、Boosting、Logistic Regression、PCA、LDA等） 
 c、计算机视觉（如图像识别理解，人脸检测识别、目标检测识别和跟踪、OCR、三维建模、增强现实等） 
+
+
+bash -c "$(curl -s https://install.prediction.io/install.sh)"
+https://docs.prediction.io/install/install-linux/
+http://segmentfault.com/a/1190000000352163
+http://www.csdn.net/article/2015-04-10/2824454

@@ -1,4 +1,5 @@
 kafka
+http://news.csdn.net/article_preview.html?preview=1&reload=1&arcid=2825342  七牛是如何搞定每天500亿条日志的  Flume、Kafka、Spark以及Streaming
 http://www.open-open.com/lib/view/open1412991579999.html   kafka java 生产消费程序demo示例
 http://www.weixinyidu.com/n_366292
 http://www.cnblogs.com/oftenlin/p/4045924.html

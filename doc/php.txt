@@ -1,4 +1,7 @@
 ﻿框架
+https://getcomposer.org/download/
+http://phpdebugbar.com/
+https://github.com/raveren/kint/
 https://github.com/is00hcw/flight
 https://github.com/is00hcw/laravel
 https://github.com/lixuancn/LaneWeChat

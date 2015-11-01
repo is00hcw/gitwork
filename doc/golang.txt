@@ -1,4 +1,6 @@
-﻿http://bigasp.com/archives/594  golang
+﻿godoc -http=:6060
+
+http://bigasp.com/archives/594  golang
 
 http://www.iamle.com/archives/1537.html
 http://learnxinyminutes.com/docs/go/

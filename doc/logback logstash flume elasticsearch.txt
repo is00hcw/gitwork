@@ -114,3 +114,25 @@ source_agent.sources.apache_server.type = exec
 source_agent.sources.apache_server.command = tail -F /opt/muse_tomcat/logs/localhost_access_log..txt
 agent1.sources.source1.command = tail -n +0 -F /opt/tomcat/logs/catalina.out
 To setup a multi-tier flow, you need to have an avro/thrift sink of first hop pointing to avro/thrift source of the next hop.  In order to flow the data across multiple agents or hops, the sink of the previous agent and source of the current hop need to be avro type with the sink pointing to the hostname (or IP address) and port of the source.
+
+http://shiyanjun.cn/archives/915.html
+有两种方式，一种是用来复制（Replication），另一种是用来分流（Multiplexing）。Replication方式，可以将最前端的数据源复制多份，分别传递到多个channel中，每个channel接收到的数据都是相同的
+Multiplexing方式，selector可以根据header的值来确定数据传递到哪一个channel
+<agent>.sources.<Source1>.selector.type = replicating
+<agent>.sources.<Source1>.selector.type = multiplexing
+<agent>.sources.<Source1>.selector.header = <someHeader>
+<agent>.sources.<Source1>.selector.mapping.<Value1> = <Channel1>
+<agent>.sources.<Source1>.selector.default = <Channel2>
+
+Load balancing Sink Processor能够实现load balance功能
+a1.sinkgroups.g1.processor.type = load_balance
+a1.sinkgroups.g1.processor.selector = round_robin
+Spooling Directory Source	监控指定目录内数据变更
+另外还有Channel Selector、Sink Processor、Event Serializer、Interceptor等组件
+
+http://blog.javachen.com/2014/07/22/flume-ng.html
+log4j 有一个 TimeRolling 的插件，可以把 log4j 分割文件到 spool 目录。基本实现了实时的监控。Flume 在传完文件之后，将会修改文件的后缀，变为 .COMPLETED（后缀也可以在配置文件中灵活指定）。
+为了保证输送一定成功，在送到目的地之前，会先缓存数据，待数据真正到达目的地后，删除自己缓存的数据。
+Flume 使用事务性的方式保证传送Event整个过程的可靠性。Sink 必须在 Event 被存入 Channel 后，或者，已经被传达到下一站agent里，又或者，已经被存入外部数据目的地之后，才能把 Event 从 Channel 中 remove 掉。
+http://tech.meituan.com/mt-log-system-arch.html
+http://tech.meituan.com/mt-log-system-optimization.html
