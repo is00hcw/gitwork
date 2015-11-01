@@ -7,6 +7,55 @@ http://jasonwilder.com/blog/2013/07/16/centralized-logging-architecture/
 Log4j本来一统江湖好好的，后来被人说方法上太多同步修饰符，在高并发下性能太烂
 
 
+地理空间距离
+http://tech.meituan.com/lucene-distance.html
+http://tech.meituan.com/solr-spatial-search.html
+
+
+elasticsearch
+http://www.cnblogs.com/huangfox/p/3543134.html
+http://riching.iteye.com/blog/1921625
+http://www.cnblogs.com/huangfox/p/3542858.html
+http://www.searchly.com/documentation/developer-api-guide/java-jest/
+http://www.656463.com/article/vU7jYr.htm
+
+./plugin -install mobz/elasticsearch-head
+http://xxx:9200/_plugin/head/
+./plugin -install lukas-vlcek/bigdesk
+http://xxx:9200/_plugin/bigdesk/#cluster
+
+cluster.name：集群名称，es可以自我发现，拥有相同集群名字的es会构成集群。
+node.name：节点名称，当前节点的名字。唯一。
+node.master：是否允许当前节点成为master。
+node.data：是否允许当前节点存储数据。
+index.number_of_shards：一个索引默认的shard数量。
+index.number_of_replicas：一个索引默认的副本数量。
+path.data：数据存储.
+path.log：日志存储。
+bootstrap.mlockall：是否只使用内存（不使用swap）。
+network.bind_host：设置绑定的ip地址，用于访问es。
+network.publish_host：与其他node通信的地址，用于cluster间数据传输。
+
+安装中文分词
+index.analysis.analyzer.ik.type : "ik"
+将ik config的ik目录copy到es config
+copy ik.jar  httpclient common 若干jar到lib
+
+http://www.jianshu.com/p/05cff717563c   Elasticsearch学习笔记
+https://github.com/siddontang/elasticsearch-note
+http://www.jianshu.com/p/cc6746ac4fc2   url清单
+http://segmentfault.com/a/1190000002803609 安全
+http://segmentfault.com/a/1190000000369962  js api
+http://www.ttlsa.com/nginx/nginx-elasticsearch/   nginx
+https://github.com/DmitryKey/luke    gui
+http://dockone.io/article/505   我们为Elasticsearch安装了Hdfs Snapshot插件，可以定期将index 备份到Hdfs
+https://github.com/garyelephant/blog/blob/master/elasticsearch_optimization_checklist.md   优化
+https://www.elastic.co/blog/playing-http-tricks-nginx
+
+
+http://www.infoq.com/cn/presentations/real-time-analysis-of-massive-operation-data  海量运维数据实时分析  elk
+
+
 wget https://download.elasticsearch.org/logstash/logstash/logstash-1.3.3-flatjar.jar
 wget 'http://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-1.4.3.tar.gz'
 curl -X GET http://localhost:9200/  测试elasticsearch

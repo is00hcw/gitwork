@@ -3,6 +3,11 @@ ssh 反向连接  远程端口  localhost  本地端口，  还需要再nginx配置proxy pass到远程
 
 http://blog.lazybee.me/wechat-development/   ssh lazybee.me -R 10000:127.0.0.1:8000  让本地开发环境监听 8000 端口。
 
+http://blog.csdn.net/shootyou/article/details/6622226
+netstat -n | awk '/^tcp/ {++S[$NF]} END {for(a in S) print a, S[a]}' 
+常用的三个状态是：ESTABLISHED 表示正在通信，TIME_WAIT 表示主动关闭，CLOSE_WAIT 表示被动关闭。
+HTTP协议1.1版规定default行为是Keep-Alive，也就是会重用TCP连接传输多个 request/response
+
 移动
 http://www.alloyteam.com/2015/03/mobile-web-debug-tool-rosin/   rosin
 http://yanhaijing.com/mobile/2014/12/17/web-debug-for-mobile/

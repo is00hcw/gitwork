@@ -29,3 +29,19 @@ pip install elasticsearch
 
 
 http://www.vpsee.com/2015/03/a-modern-monitoring-system-built-with-grafana-collected-influxdb/  使用 Grafana＋collectd＋InfluxDB 打造现代监控系统
+
+http://www.zihou.me/html/2014/01/17/9061.html  elasticsearch.yml配置说明
+http://zhaoyanblog.com/archives/319.html  elasticsearch三个重要的优化   配置index.refresh_interval参数，默认是1s
+此处可以根据机器硬件配置情况作出适当的调整，一般情况下，此处的内存分配大小为机器物理内存的一半，同时将 ES_MIN_MEM 与 ES_MAX_MEM 配置成相同的值
+由于ES集群一般都是在内部网络环境中，且节点之间相互通信使用的是 TCP 9300端口，节点与客户端通信则是通过 TCP 9200端口。因此检查 iptalbes 以及SElinux 中是否开启，以及确定这些端口是否被绑定安全策略等等。
+可以在最后的上线之前可以再做一次最后的测试，在测试之前，先修改Elasticsearch 中的配置文件，即是elasticsearch.yml 中的 cluster.name 参数的名称，避免加入了线上集群中。并利用 curl -X GET localhost:9200  来测试新版本的 Elasticsearch 进程是否正常。　　
+http://my.oschina.net/galenz/blog/422189   Elasticsearch 分片交互过程分析
+
+备份恢复
+在浏览器中运行http://ipaddress:9200/_flush，这样确保索引数据能保存到硬盘中。
+http://keenwon.com/1393.html
+http://m.blog.csdn.net/blog/huwei2003/41577017
+http://segmentfault.com/q/1010000002406786
+
+
+http://my.oschina.net/galenz/blog/333070  Zabbix的安装与部署

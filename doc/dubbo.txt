@@ -1,5 +1,7 @@
-﻿http://blog.csdn.net/jdream314/article/details/44039753
+﻿http://shiyanjun.cn/archives/1075.html
+http://blog.csdn.net/jdream314/article/details/44039753
 http://blog.csdn.net/jdream314/article/details/44590937
+http://www.it165.net/admin/html/201502/4951.html
 
 http://blog.javachen.com/2014/09/24/compile-and-test-dubbo/
 http://www.jianshu.com/p/0dde591f21d0

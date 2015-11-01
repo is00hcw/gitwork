@@ -7,6 +7,11 @@ https://github.com/NetEase/InnoSQL
 https://github.com/youtube/vitess
 https://code.google.com/p/tungsten-replicator/   https://github.com/is00hcw/tungsten-replicator/
 
+http://www.jianshu.com/p/cc6746ac4fc2     mysql高可用
+http://tech.meituan.com/mysql-index.html  MySQL索引原理及慢查询优化
+http://tech.meituan.com/innodb-lock.html  锁
+
+
 https://github.com/chenzhiwei/linux/tree/master/drbd 
 DRBD官方网站：http://go.rritw.com/drbd.linbit.com/docs/install/
 yum install drbd kmod-drbd
@@ -27,3 +32,5 @@ DRBD负责接收数据，把数据写到本地磁盘，然后发送给另一个主机。另一个主机再将数据存
 http://www.infoq.com/cn/news/2014/10/clay.io-aws-docker-haproxy-10x?utm_campaign=infoq_content&amp;utm_source=infoq&amp;utm_medium=feed&amp;utm_term=global
 
 SWIFT与Ceph、GlusterFS、MongoDB/GridFS之间的比较呢？
+
+

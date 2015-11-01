@@ -18,6 +18,7 @@ http://wenku.baidu.com/link?url=ZjdARG02YMFdjtC4mZUOomJrH4qaW1TjVhZBU3UvQ0xLyvBr
 START SLAVE  http://hunng.com/2014/06/18/centos-mysql-master-slave-replication/
 
 MariaDB Galera Cluster
+http://code.oneapm.com/database/2015/07/02/mariadb-galera-cluster/
 GaleraÊÇÒ»¸öMySQL(Ò²Ö§³ÖMariaDB£¬Percona)µÄÍ¬²½¶àÖ÷¼¯ÈºÈí¼ş£¬Ä¿Ç°Ö»Ö§³ÖInnoDBÒıÇæ¡£
 http://www.oschina.net/translate/from-mysql-mmm-to-mariadb-galera-cluster-a-high-availability-makeover
 ¶ÔÓÚ±ê×¼°æµÄMySQL£¬¶ÔmasterµÄĞ´²Ù×÷±»¼ÇÂ¼ÓÚÒ»¸ö¶ş½øÖÆµÄÈÕÖ¾¡£Slave»áÔÚÖ®ºó¸´ÖÆ¶ş½øÖÆÈÕÖ¾ÖĞµÄ²éÑ¯¡£²éÑ¯ÔÚĞ´·şÎñÆ÷ÉÏÔËĞĞÓëÔÚÆäËü½ÚµãÉÏÔËĞĞÊ±¿ÌÖ®¼ä£¬×ÜÊÇ»áÓĞÒ»¸öÑÓ³Ù¡£ËüÊÇÒì²½µÄ¡£
@@ -64,3 +65,11 @@ http://www.programmer.com.cn/14015/    ´ÓGoogle SpannerÂşÌ¸·Ö²¼Ê½´æ´¢ÓëÊı¾İ¿â¼¼Ê
 
 etcd Ê¹ÓÃGoÓïÑÔ±àĞ´²¿Êğ¼òµ¥£»Ê¹ÓÃHTTP×÷Îª½Ó¿ÚÊ¹ÓÃ¼òµ¥£»Ê¹ÓÃRaftËã·¨±£Ö¤Ç¿Ò»ÖÂĞÔÈÃÓÃ»§Ò×ÓÚÀí½â¡£ WAL£ºWrite Ahead Log£¨Ô¤Ğ´Ê½ÈÕÖ¾£©
 http://www.infoq.com/cn/articles/etcd-interpretation-application-scenario-implement-principle/
+
+
+InfluxDB
+http://www.ttlsa.com/monitor-safe/monitor/distributed-time-series-database-influxdb/
+
+
+tidb
+http://www.open-open.com/lib/view/open1441538618194.html

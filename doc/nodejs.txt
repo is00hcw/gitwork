@@ -1,8 +1,22 @@
+npm install -g express-generator
+express -e project_name    
+
+http://shiyanjun.cn/archives/868.html
+
 http://www.html-js.com/article/2356  puer ´î½¨·şÎñÆ÷
 http://www.lvtao.net/content/book/node.js.htm
 http://ourjs.com/detail/5417e6ea4f1286640f000002
 http://ourjs.com/detail/55a8b98d20cbb7f655000020
 http://www.ituring.com.cn/article/199288
+
+GYPÊÇGoogle³öÆ·µÄĞÂÒ»´úC++¹¹½¨ÏµÍ³  ÓÉÓÚGYPÔÚwindowsÏÂÄ¬ÈÏÊ¹ÓÃninjaÀ´±àÒë£¬ËùÒÔÒªÉú³ÉMSVS¹¤³ÌÎÄ¼ş£¬ĞèÒªÉèÖÃGYP_GENERATORÎªmsvs¡£Ò²¿ÉÒÔÖ¸¶¨MSVSµÄ°æ±¾£¬±ÈÈç set GYP_MSVS_VERSION=2013
+http://blog.csdn.net/zhubc/article/details/22006419
+Node.jsµÄÔ´ÂëÖ÷ÒªÓÉC++´úÂëºÍJavaScript´úÂë¹¹³É£¬µ«ÊÇÈ´ÓÃgyp¹¤¾ß£¨http://code.google.com/p/gyp/ £©À´×öÔ´ÂëµÄÏîÄ¿¹ÜÀí£¬¸Ã¹¤¾ß²ÉÓÃPythonÓïÑÔĞ´³ÉµÄ¡£ÔÚWindowsÆ½Ì¨ÉÏ£¬Node.js²ÉÓÃgypÀ´Éú³ÉVisual Studio SolutionÎÄ¼ş£¬
+http://www.akmumu.com/2014/04/10/265.html
+
+async
+http://yijiebuyi.com/blog/be234394cd350de16479c583f6f6bcb6.html
+
 
 setx NODE_PATH "%NODE_PATH%;C:\Users\Administrator\AppData\Roaming\npm\node_modules"
 npm config set msvs_version 2012 --global
@@ -167,7 +181,8 @@ NginxÎ»ÓÚNode·şÎñÖ®Ç°£¬ÓÃ×ö¸ºÔØ¾ùºâ¡¢·şÎñµ÷¶È¡¢GzipÑ¹ËõµÈ¡£Ö®ºó±ãÊÇNode·şÎñ£¬ÎÒÃ
 
 http://blog.fens.me/nodejs-roadmap/   NodejsÑ§Ï°Â·ÏßÍ¼
 for i in {1..10} ; do curl -is http://127.0.0.1:8080/hello/mark ; done
-
+ 
+http://code.oneapm.com/nodejs/2015/06/27/intereference/  debug
 
 http://tech.meituan.com/performance-framework-and-platform.html  jsĞÔÄÜ·ÖÎö
 http://tech.meituan.com/solr-spatial-search.html   solr gpsËÑË÷
