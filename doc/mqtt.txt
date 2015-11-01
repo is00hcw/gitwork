@@ -106,3 +106,25 @@ pipeline.addLast("encoder", new MQTTEncoder());
 NettyAcceptor -> NettyMQTTHandler  -> SimpleMessaging.onEvent 通过反射annotation回调不同消息处理函数 ->  ProtocolProcessor
 SubscriptionsStore 订阅树形结构， 根据topic的路径构建树
 
+
+
+coap
+http://www.ituring.com.cn/tupubarticle/3795
+CoAP是简化了HTTP协议的RESTful API，因而也只提供了REST的四个方法，即PUT,GET,POST和DELETE。 CoAP采用了二进制报头，而不是文本报头(text header)
+CoAP-cli，一个基于NodeJS的CoAP命令行工具，其核心是基于Node-CoAP库。  npm install coap-cli -g
+libcooap，一个用C写的CoAP命令行工具。libcoap是CoAP协议的C语言实现，libcoap提供server和client功能
+FireFox Copper， 一个Firefox的插件。 https://addons.mozilla.org/en-US/firefox/addon/copper-270430/
+https://www.phodal.com/blog/use-coap-block-send-data-on-iot-coap/
+http://mqtt.phodal.com/
+https://github.com/iot-works/iot-coap
+http://blog.csdn.net/xukai871105/article/details/17734163
+https://thingmq.com/
+https://thethings.io/
+http://coap.technology/impls.html
+https://github.com/eclipse/californium
+https://github.com/eclipse/leshan
+http://coap.me/
+https://docs.google.com/presentation/d/1dDZ7VTdjBZxnqcIt6qoX742d6dHbzap-D_H8Frf3LRE/edit?pli=1#slide=id.g3501b5b9a_012
+https://github.com/morkai/h5.coap
+http://dev.modouwifi.com/    魔豆路由器 Web Services API 规格文档
+
