@@ -10,6 +10,7 @@ http://www.webryan.net/2012/12/something-about-window-onerror-script-error/
 http://errors.totorojs.org/wiki/script-error
 <script src="http://someotherdomain.com/js/test.js" crossorigin="anonymous"></script>
 
+linux安装jdk出现java/lang/NoClassDefFoundError: java/lang/Object错误的解决方案   http://www.cnblogs.com/chenguangyu/archive/2009/11/06/1597706.html
 eclipse启动tomcat，报class not found， 打开属性对话框 deployment assembly，添加maven依赖
 hbase连接不上，服务器上host文件绑定了本地ip，导致客户端无法访问
 jdk8编译错误  http://stackoverflow.com/questions/24448723/java-error-java-util-concurrent-concurrenthashmap-keyset

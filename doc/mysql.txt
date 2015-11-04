@@ -33,4 +33,58 @@ http://www.infoq.com/cn/news/2014/10/clay.io-aws-docker-haproxy-10x?utm_campaign
 
 SWIFT与Ceph、GlusterFS、MongoDB/GridFS之间的比较呢？
 
+http://www.dataguru.cn/article-7190-1.html  tdsql
+Agent模块负责监控本机MySQL实例的运行情况，主要功能包括：用短连接的方式周期性访问本机的MySQL实例，检测是否可读、可写，若发生异常，会将异常信息上报到ZooKeeper，最终会由上面描述的Scheduler模块检测到这个异常情况，从而发起容灾切换；
+网关基于MySQL Proxy开发，在网络层、连接管理、SQL解析、路由等方面做了大量优化，主要特点和功能如下：解析SQL，将识别出的DDL语句直接存到ZooKeeper
 
+http://www.csdn.net/article/2014-06-10/2820160  MySQL在大型网站的应用架构演变
+
+http://hugnew.com/mysql-ha%E6%96%B9%E6%A1%88%E4%B9%8Bmysql%E5%8D%8A%E5%A4%8D%E5%88%B6mhakeepalivedatlaslvs/
+http://hugnew.com/mysql%E5%8D%8A%E5%A4%8D%E5%88%B6%E6%B5%85%E8%B0%88/
+http://hugnew.com/mysql-ha%E6%96%B9%E6%A1%88%E4%B9%8Bmysql%E5%8D%8A%E5%A4%8D%E5%88%B6mhakeepalivedatlaslvs/
+http://hugnew.com/mysql%E9%AB%98%E5%8F%AF%E7%94%A8%E6%B5%85%E6%9E%90/
+这个功能添加了一个新的semisync master plugin 系统变量。
+rpl_semi_sync_master_wait_slave_count
+这是一个整形的变量，有效值为1-1024. 从这个变量我们可以看出，这个功能只关心数据应该被复制到多少个slave上，而不关心数据被复制到哪些slave上。它的缺省值是1，可以被动态的修改。
+在5.7.4版本的semi sync 框架中，独立出一个 ack collector thread ，专门用于接收slave 的反馈信息。这样master 上有两个进程独立工作，可以同时发送binlog 到slave ，和接收slave的反馈。
+MySQL 5.7 修改了半同步中主库提交的事务的顺序，after sync 模式避免了幻读发生。
+MySQL 5.7 半同步增强，增加 rpl_semi_sync_master_wait_slave_count 参数控制主库接收多少个slave 写事务成功反馈 才返回 成功给客户端 。
+修改原来有dump thread 发送event和接收slave ack 模式，独立出 单独 接收slave 返回 ack的进程，提高半同步模式的tps 。
+http://blog.jobbole.com/87450/  运维角度浅谈MySQL数据库优化
+
+http://segmentfault.com/a/1190000003063874  XtraBackup
+http://agapple.iteye.com/blog/1796633  canal
+
+
+http://www.csdn.net/article/2015-01-16/2823591
+redo 日志同步属于物理同步方法，简单直接，将修改的物理部分传送到备库执行，主备共用一致的 LSN，只要保证 LSN 相同即可，同一时刻，只能主库或备库一方接受写请求； binlog的同步方法属于逻辑复制，分为statement 或 row 模式，其中statement记录的是SQL语句，Row 模式记录的是修改之前的记录与修改之后的记录，即前镜像与后镜像；备库通过binlog dump 协议拉取binlog,然后在备库执行。
+http://www.2cto.com/database/201504/387166.html
+
+以高可用为例，解决方案有mysql ndb集群，mmm , mha, drbd等多种选择。Mysql 的proxy中间件则有mysql-proxy, atlas , cobar, mycat, tddl等，可谓五花八门。
+为了解决读写分离存在写完马上就想读而这时可能存在主从同步延迟的情况，Altas中可以在SQL语句前增加 /*master*/ 就可以将读请求强制发往主库。    http://blog.csdn.net/senafox/article/details/43888715
+http://ylw6006.blog.51cto.com/470441/1568853/
+http://www.0550go.com/database/mysql/mysql-atlas.html  atlas 
+ 1，使用atlas性能大概比直连DB有30%~35%的下降，这里主要是atlas工作线程需要对sql进行过滤，重写等导致的，不过如果是一主多从的情况可以抵消这部分消耗；
+ 2，响应时间大概是直连DB的1.5~2倍左右
+ 3，对分表的支持不是太好，只支持同schema下的hash分表，并且分表后查询只基于分表key的等值查询（如果支持范围查询，那么比直接非分表情况扫描全表的性能还差
+
+mysql 5.6开始，提供了GTID形式的复制，这会极大程度上简单数据库管理的工作量。在以前版本中，我们搭建从库时，必须指定要复制的二进制文件和位置（设置不当，容易造成同步失败或数据一致性问题），但在 mysql 5.6中，已经不需要这么做了。我们搭建从库时，只要指定主库的连接信息（用户名，密码，IP,端口），从库自动查寻同步起始点！
+另外，配合半同步复制插件（默认已经安装但未开启）和mysql官方提供的工具mysqlfailover，就可以实现主库故障转移
+http://yueliangdao0608.blog.51cto.com/397025/1199960   mysql-utilities
+http://www.ttlsa.com/mysql/mysql-manager-tools-mysql-utilities-tutorial/
+http://www.ttlsa.com/mysql/mysql-utilities-high-availability-operations/
+
+1.在应用层使用Spring对数据源做路由，关键字：Spring AOP；
+2.增加中间代理层，Amoeba就属于这种情况，此外还有Mysql官方提供的Mysql Proxy；
+3.在驱动层使用Mysql提供的主从库访问驱动
+借助spring的【org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource】这个抽象类实现  每次去连数据库的时候，spring会调用这个方法去找对应的数据源。返回值即对应的数据源的LookUpKey
+http://blog.csdn.net/xtj332/article/details/43953699
+org.springframework.jdbc.datasource.lookup.MapDataSourceLookup
+MySQL最新的JDBC驱动程序包中提供了一个驱动类就是 com.mysql.jdbc.ReplicationDriver 。这个驱动类允许在url中设置多个mysql主机地址，例如：
+jdbc:mysql://master1,slave1,slave2/dlog?autoReconnect=true&roundRobinLoadBalance=true    
+我们必须告诉驱动程序，哪些语句的执行是作用在master数据库，而哪些语句的执行作用在slave数据库上。ReplicationDriver 是通过Connection对象的readOnly属性来判断该操作是否为更新操作。
+http://www.ttlsa.com/mysql/read-and-write-separation-and-load-balanced/   用"jdbc:mysql:replication://"替换原来的"jdbc:mysql://"
+http://blog.csdn.net/keda8997110/article/details/16827215
+http://blog.csdn.net/isea533/article/details/46815385
+http://help.aliyun.com/knowledge_detail.htm?knowledgeId=5989703  RDS MySQL 实现读写分离
+http://www.cnblogs.com/davidwang456/p/4462351.html

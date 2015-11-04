@@ -3,12 +3,21 @@ plugin -install lukas-vlcek/bigdesk
 http://localhost:9200/_plugin/bigdesk/ 
 plugin -install royrusso/elasticsearch-HQ
 
+https://www.elastic.co/guide/en/sense/current/installing.html#installing
+kibana plugin --install elastic/sense
+http://localhost:5601/app/sense
+
+2.0可以免费使用一个集群 https://www.elastic.co/downloads/marvel
+plugin install license
+plugin install marvel-agent
+http://localhost:5601/app/marvel
+http://www.vpsee.com/2014/05/install-and-play-with-elasticsearch/
+plugin -i elasticsearch/marvel/latest
+
 
 plugin -install mobz/elasticsearch-head
 http://localhost:9200/_plugin/head/
 
-http://www.vpsee.com/2014/05/install-and-play-with-elasticsearch/
-plugin -i elasticsearch/marvel/latest
 
 plugin -install karmi/elasticsearch-paramedic
 https://github.com/is00hcw/elasticsearch-paramedic
@@ -45,3 +54,22 @@ http://segmentfault.com/q/1010000002406786
 
 
 http://my.oschina.net/galenz/blog/333070  Zabbix的安装与部署
+
+wget http://mirror.bit.edu.cn/apache/flume/1.6.0/apache-flume-1.6.0-bin.tar.gz
+wget http://download.elastic.co/kibana/kibana/kibana-4.2.0-linux-x64.tar.gz
+wget https://download.elastic.co/logstash/logstash/logstash-2.0.0.tar.gz
+wget https://download.elasticsearch.org/elasticsearch/release/org/elasticsearch/distribution/tar/elasticsearch/2.0.0/elasticsearch-2.0.0.tar.gz
+./plugin install lukas-vlcek/bigdesk
+config/kibana.yml in an editor Set the elasticsearch.url 
+http://115.28.225.5:5601/app/kibana
+http://demo.elastic.co/packetbeat/#/discover   官方测试的页面
+http://segmentfault.com/a/1190000002972420     kibana使用的lucene查询语法
+https://www.elastic.co/guide/en/logstash/current/output-plugins.html
+http://udn.yyuap.com/doc/logstash-best-practice-cn/input/index.html
+?只是插入新增的日志
+
+http://blog.csdn.net/sunflower_cao/article/details/39929931?utm_source=tuicool&utm_medium=referral
+http://ju.outofmemory.cn/entry/119397
+http://flume.apache.org/FlumeUserGuide.html#elasticsearchsink
+The elasticsearch and lucene-core jars required for your environment must be placed in the lib directory of the Apache Flume installation.
+flume1.6 还不支持 es2.0

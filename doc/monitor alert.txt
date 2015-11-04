@@ -1,2 +1,37 @@
 http://blog.csdn.net/linlzk/article/details/47423423    服务端监控方案
 http://badqiu.iteye.com/blog/743100  log4jdbc
+
+http://www.fwqtg.net/centos%E4%B8%8B%E4%BD%BF%E7%94%A8frigga%E5%AE%9E%E7%8E%B0web%E6%96%B9%E5%BC%8F%E5%AF%B9%E6%9C%8D%E5%8A%A1%E7%9A%84%E7%9B%91%E6%8E%A7.html
+http://open-falcon.com/
+http://noops.me/?p=133
+http://book.open-falcon.com/zh/faq/linux-metrics.html
+
+http://www.oschina.net/p/heka
+https://github.com/cloudera/hue
+http://www.oschina.net/p/seci-log
+https://github.com/NarrativeScience/Log.io
+
+
+http://seanlook.com/2014/08/23/linux-logwatch-usage/
+http://linux.cn/article-4490-1.html
+
+
+LogAnalyzer和LogZilla是分析系统日志，并用web界面展示的的工具
+http://www.gaizaoren.org/archives/408
+http://www.tuicool.com/articles/UjEF7vN   Zabbix监控之检测程序日志中错误发生的次数
+
+http://www.bitstech.net/2014/01/07/log-best-practice/  最佳日志实践
+http://blog.csdn.net/ultrani/article/details/6750434   日志分析查看——grep,sed,sort,awk运用
+http://www.oschina.net/translate/log-what-every-software-engineer-should-know-about-real-time-datas-unifying?lang=chs&#    日志：每个软件工程师都应该知道的有关实时数据的统一概念
+
+http://www.zjmainstay.cn/shell-checkprocess   Shell+Crontab实现服务进程监控重启
+
+http://www.21ops.com/ops/21842.html
+echo "test" |mutt -s "my_first_test" yangcheng@i0554.com
+http://udn.yyuap.com/doc/logstash-best-practice-cn/filter/metrics.html   logstash统计错误
+
+
+zabbix
+https://www.zabbix.com/documentation/2.0/manual/appendix/triggers/functions
+http://ju.outofmemory.cn/entry/107381
+http://www.codeweblog.com/zabbix-action-%E6%8A%A5%E8%AD%A6%E8%AE%BE%E7%BD%AE/

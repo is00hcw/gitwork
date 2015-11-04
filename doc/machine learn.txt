@@ -2,6 +2,8 @@ a¡¢Éî¶ÈÑ§Ï°Ëã·¨¼°Ä£ÐÍ£¨ÈçCaffe¡¢Cudacovnet¡¢Purine¡¢Éñ¾­ÍøÂç¡¢Ëæ»úÌÝ¶ÈÏÂ½µ¡¢CNN¡
 b¡¢Í³¼ÆÑ§Ï°Ëã·¨¼°Ä£ÐÍ£¨ÈçÖ§³ÖÏòÁ¿»ú¡¢Boosting¡¢Logistic Regression¡¢PCA¡¢LDAµÈ£© 
 c¡¢¼ÆËã»úÊÓ¾õ£¨ÈçÍ¼ÏñÊ¶±ðÀí½â£¬ÈËÁ³¼ì²âÊ¶±ð¡¢Ä¿±ê¼ì²âÊ¶±ðºÍ¸ú×Ù¡¢OCR¡¢ÈýÎ¬½¨Ä£¡¢ÔöÇ¿ÏÖÊµµÈ£© 
 
+»úÆ÷Ñ§Ï°·½·¨ÊÇ¼ÆËã»úÀûÓÃÒÑÓÐµÄÊý¾Ý(¾­Ñé)£¬µÃ³öÁËÄ³ÖÖÄ£ÐÍ(³Ùµ½µÄ¹æÂÉ)£¬²¢ÀûÓÃ´ËÄ£ÐÍÔ¤²âÎ´À´(ÊÇ·ñ³Ùµ½)µÄÒ»ÖÖ·½·¨¡£ ´Ó¹ãÒåÉÏÀ´Ëµ£¬»úÆ÷Ñ§Ï°ÊÇÒ»ÖÖÄÜ¹»¸³Óè»úÆ÷Ñ§Ï°µÄÄÜÁ¦ÒÔ´ËÈÃËüÍê³ÉÖ±½Ó±à³ÌÎÞ·¨Íê³ÉµÄ¹¦ÄÜµÄ·½·¨¡£µ«´ÓÊµ¼ùµÄÒâÒåÉÏÀ´Ëµ£¬»úÆ÷Ñ§Ï°ÊÇÒ»ÖÖÍ¨¹ýÀûÓÃÊý¾Ý£¬ÑµÁ·³öÄ£ÐÍ£¬È»ºóÊ¹ÓÃÄ£ÐÍÔ¤²âµÄÒ»ÖÖ·½·¨¡£
+http://www.cnblogs.com/subconscious/p/4107357.html
 
 bash -c "$(curl -s https://install.prediction.io/install.sh)"
 https://docs.prediction.io/install/install-linux/

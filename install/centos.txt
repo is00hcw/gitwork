@@ -1,3 +1,8 @@
+wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/7u80-b15/jdk-7u80-linux-x64.rpm
+先查看 rpm -qa | grep java
+卸载：rpm -e --nodeps java-1.5.0-gcj-1.5.0.0-29.1.el6.x86_64
+rpm -ivh jdk-7u80-linux-x64.rpm 安装  /usr/java/jdk1.7.0_80
+http://www.cnblogs.com/chenguangyu/archive/2009/11/06/1597706.html
 
 # http://www.iamle.com/archives/1648.html
 wget -c  http://www.golangtc.com/static/go/go1.4.1.linux-amd64.tar.gz

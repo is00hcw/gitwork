@@ -73,3 +73,44 @@ http://www.ttlsa.com/monitor-safe/monitor/distributed-time-series-database-influ
 
 tidb
 http://www.open-open.com/lib/view/open1441538618194.html
+
+
+
+elasticsearch集群  
+http://www.cnblogs.com/dennisit/p/4133131.html
+http://www.cnblogs.com/luxiaoxun/p/4869509.html?utm_source=tuicool&utm_medium=referral
+http://www.codeweblog.com/elasticsearch-%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%E4%B9%8Bmaster%E9%80%89%E4%B8%BE/
+http://www.chepoo.com/elasticsearch-zen-discovery.html
+https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-discovery-zen.html
+elasticsearch集群发现机制有两种：Zen Discovery和 EC2 discovery。EC2：亚马逊弹性计算云。Zen Discovery作用就相当于solrcloud中的zookeeper
+discovery.zen.ping_timeout（默认值是3秒）：默认情况下，一个节点会认为，如果master节点在3秒之内没有应答，那么这个节点就是死掉了，而增加这个值，会增加节点等待响应的时间，从一定程度上会减少误判。
+discovery.zen.minimum_master_nodes（默认是1）：这个参数控制的是，一个节点需要看到的具有master节点资格的最小数量，然后才能在集群中做操作。官方的推荐值是(N/2)+1，其中N是具有master资格的节点的数量
+http://www.qixing318.com/article/the-concept-of-elasticsearch.html
+discovery.zen代表 elasticsearch 的自动节点发现机制，而且 elasticsearch还是一个基于 p2p 的系统。
+首先它它会通过以广播的方式去寻找存在的节点，然后再通过多播协议来进行节点之间的通信，于此同时也支持点对点的交互操作。
+
+Marvel免费了(仅限管理一个集群，多集群仍需要收费)，Sense也开源了
+一个集群则会包含拥有相同cluster.name的一个或者多个节点，这些节点共同工作来完成数据共享和负载分担。
+集群中的一个节点会被选为主节点(Master Node)，它负责管理整个集群的变化，如创建或者删除一个索引(Index)，向集群中添加或者删除节点。主节点并不需要参与到文档级别的变化或者搜索中，这意味着虽然只有一个主节点，但它并不会随着流量的增加而成为瓶颈。
+GET /_cluster/health  # Retrieve the cluster health
+一个分片可以是主分片(Primary Shard)或者副本分片(Replica Shard)。索引中的每份文档都属于一个主分片，所以主分片的数量就决定了你的索引能够存储的最大数据量。
+一个副本分片则只是一个主分片的拷贝。副本用来提供数据冗余，用来保护数据在发生硬件故障是不会丢失，同时也能够处理像搜索和获取文档这样的读请求。主分片的数量在索引建立之初就会被确定下来，而副本分片的数量则可以在任何时候被更改。
+http://blog.csdn.net/quicknet/article/details/42117891
+http://blog.csdn.net/quicknet/article/details/42078747
+ElasticSearch是建立在一组Lucene索引基础上的抽象层， 它的每一个 shard（无论primary 和 replica）都是一个完整和独立的Lucene索引实例。说白了，也就是在一组Lucene索引上建了 "another level of indirection"，这层indirection带来的好处就是 : 分布式、可扩展和强容错的索引集群系统。其实，Lucene索引本身也是一层indirection， 真正的索引内容是存储在被称为segment单元中。一个Lucene索引由多个segment组成，segment是immutable的，也就是创建后不能再修改的，各种索引内容的缓存也都是基于每个segment的。
+所以，当ElasticSearch收到一个为文档建立索引的请求时，它首先要做出的决定就是要在哪一个shard上对文档进行索引并保存结果。在具体实现上，ElasticSearch采用的是djb2 哈希算法对要索引文档的指定（或者默认的）key进行哈希，得到哈希结果后取模上（mod） ElasticSearch索引shard数目 n
+
+kafka集群
+MirrorMaker:一个用来在不同的Kafka集群之间移动数据的开源项目。
+http://www.infoq.com/cn/articles/kafka-analysis-part-2
+http://edu.51cto.com/index.php?do=lesson&id=45897  kafka集群部署在zk里的存储结构
+http://blog.csdn.net/lizhitao/article/details/23744675?utm_source=tuicool&utm_medium=referral    apache kafka系列之在zookeeper中存储结构
+http://blog.csdn.net/lizhitao/article/details/38442733#comments
+http://blog.csdn.net/lizhitao/article/details/38439769
+http://blog.csdn.net/lizhitao/article/details/39499283#comments
+http://blog.csdn.net/lizhitao/article/details/42180265 kafka server部署配置优化
+http://www.aboutyun.com/thread-9341-1-1.html
+
+http://m.oschina.net/blog/304818
+http://www.infoq.com/cn/articles/kafka-analysis-part-1/
+http://debugo.com/kafka-params/
