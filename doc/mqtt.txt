@@ -111,9 +111,9 @@ SubscriptionsStore 订阅树形结构， 根据topic的路径构建树
 coap
 http://www.ituring.com.cn/tupubarticle/3795
 CoAP是简化了HTTP协议的RESTful API，因而也只提供了REST的四个方法，即PUT,GET,POST和DELETE。 CoAP采用了二进制报头，而不是文本报头(text header)
-CoAP-cli，一个基于NodeJS的CoAP命令行工具，其核心是基于Node-CoAP库。  npm install coap-cli -g
-libcooap，一个用C写的CoAP命令行工具。libcoap是CoAP协议的C语言实现，libcoap提供server和client功能
-FireFox Copper， 一个Firefox的插件。 https://addons.mozilla.org/en-US/firefox/addon/copper-270430/
+CoAP提供了资源发现机制。这就是的客户端理解哪些URI是被支持，并且客户端可以获知该URI的具体含义。CoAP协议建议，服务器端应该支持一个/.well-known/core，该URI可以被任何客户端访问。一个专门用于资源发现的服务器必须侦听默认的5683端口。
+当客户端请求该预先协商好的URI时，服务器返回一系列的URI。这些URI遵循CoRE链接标准。  http://blog.csdn.net/xukai871105/article/details/17765919
+
 https://www.phodal.com/blog/use-coap-block-send-data-on-iot-coap/
 http://mqtt.phodal.com/
 https://github.com/iot-works/iot-coap
@@ -128,3 +128,25 @@ https://docs.google.com/presentation/d/1dDZ7VTdjBZxnqcIt6qoX742d6dHbzap-D_H8Frf3
 https://github.com/morkai/h5.coap
 http://dev.modouwifi.com/    魔豆路由器 Web Services API 规格文档
 
+CoAP-cli，一个基于NodeJS的CoAP命令行工具，其核心是基于Node-CoAP库。  npm install coap-cli -g
+http://segmentfault.com/a/1190000002511350   coap get coap://vs0.inf.ethz.ch/
+http://blog.csdn.net/xukai871105/article/details/39213061
+http://blog.csdn.net/xukai871105/article/details/39120399
+http://segmentfault.com/a/1190000003870040
+
+libcooap，一个用C写的CoAP命令行工具。libcoap是CoAP协议的C语言实现，libcoap提供server和client功能
+http://blog.csdn.net/xukai871105/article/details/44980041   CoAP学习笔记——Libcoap安装和使用
+FireFox Copper， 一个Firefox的插件。 https://addons.mozilla.org/en-US/firefox/addon/copper-270430/
+
+http://www.eclipse.org/californium/
+To get started you can test the following CoAP sandboxes:
+coap://iot.eclipse.org/
+coap://vs0.inf.ethz.ch/
+coap://coap.me/
+
+https://community.arm.com/servlet/JiveServlet/previewBody/8633-102-2-15471/ARM%20CoAP%20Tutorial%20April%2030%202014.pdf
+<dependency>
+     <groupId>org.eclipse.californium</groupId>
+     <artifactId>californium-core</artifactId>
+     <version>1.0.0-RC2</version>
+</dependency>

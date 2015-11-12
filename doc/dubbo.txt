@@ -77,3 +77,11 @@ http://www.biaodianfu.com/dubbo.html
 http://dubbo.io/Home-zh.htm
 <!-- Redis -->
 <dubbo:reference id="store" interface="java.util.Map" url="redis://10.20.153.10:6379" />
+
+
+https://github.com/wu-xiang/pigeon  点评rpc
+https://github.com/liangliu/swallow
+http://www.mpd.org.cn/demoupfiles/file/14036803640.pdf  大众点评的分布式架构
+
+http://blog.csdn.net/mindfloating/article/details/39474123  深入浅出 RPC - 深入篇
+http://blog.csdn.net/mindfloating/article/details/39473807

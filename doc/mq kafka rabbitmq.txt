@@ -1,10 +1,12 @@
 kafka
+http://www.aboutyun.com/thread-9906-1-1.html   kafka客户端开发-java
+http://blog.csdn.net/honglei915/article/details/37563647
+http://doc.okbase.net/QING____/archive/19447.html
 http://news.csdn.net/article_preview.html?preview=1&reload=1&arcid=2825342  七牛是如何搞定每天500亿条日志的  Flume、Kafka、Spark以及Streaming
 http://www.open-open.com/lib/view/open1412991579999.html   kafka java 生产消费程序demo示例
 http://www.weixinyidu.com/n_366292
 http://www.cnblogs.com/oftenlin/p/4045924.html
 http://blog.csdn.net/honglei915/article/details/37564329  Kafka运行环境
-http://blog.csdn.net/honglei915/article/details/37563647
 http://blog.csdn.net/honglei915/article/details/37564521  简单介绍
 http://blog.csdn.net/honglei915/article/details/37932819
 http://my.oschina.net/cloudcoder/blog/299215   Kafka JAVA客户端代码示例
@@ -17,7 +19,13 @@ Offset：kafka的存储文件都是按照offset.kafka来命名
 Kafka提供两种策略删除旧数据。一是基于时间，二是基于Partition文件大小。例如可以通过配置$KAFKA_HOME/config/server.properties，让Kafka删除一周前的数据，也可在Partition文件超过1GB时删除旧数据
 server.properties中通过配置项num.partitions来指定新建Topic的默认Partition数量，也可在创建Topic时通过参数指定
 http://www.infoq.com/cn/author/%E9%83%AD%E4%BF%8A#文章
-
+broker change是由BrokerChangeListener监听类，监听/brokers/ids下得brokerid
+多个partition需要选取出lead partition，lead partition负责读写，并由zookeeper负责fail over
+对于一个topic,同一个group中不能有多于partitions个数的consumer同时消费  Kafka保证的是稳定状态下每一个Consumer实例只会消费某一个或多个特定 Partition的数据，而某个Partition的数据只会被某一个特定的Consumer实例所消费。也就是说Kafka对消息的分配是以 Partition为单位分配的，而非以每一条消息作为分配单元。这样设计的劣势是无法保证同一个Consumer Group里的Consumer均匀消费数据
+http://sookocheff.com/post/kafka/kafka-in-a-nutshell/
+http://www.tuicool.com/articles/R3A3Y3    Producer端使用zookeeper用来"发现"broker列表,以及和Topic下每个partition leader建立socket连接并发送消息.
+http://www.infoq.com/cn/articles/kafka-analysis-part-4   Kafka设计解析（四）：Kafka Consumer解析
+ 
 http://queues.io/
 https://github.com/huanghua581/notes/blob/master/PHP/%E5%B8%B8%E8%A7%81%E5%BC%80%E6%BA%90%E6%B6%88%E6%81%AF%E7%B3%BB%E7%BB%9F.md
 
@@ -34,3 +42,9 @@ http://my.oschina.net/firxiao/blog/314834   RocketMQ 消息队列简单部署
 http://my.oschina.net/cloudcoder/blog/200741   	RocketMQ：一个纯java的开源消息中间件--开发测试环境搭建
 http://blog.csdn.net/a19881029/article/details/34446629
  
+
+metaq 的zk目录结构在 com.taobao.metamorphosis.utils.MetaZookeeper 这个Meta与zookeeper交互的辅助类中
+
+zk
+http://blog.csdn.net/xiaolang85/article/details/13021339
+http://www.cnblogs.com/ggjucheng/p/3352591.html

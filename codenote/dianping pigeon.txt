@@ -1,0 +1,21 @@
+https://github.com/wu-xiang/pigeon/blob/master/USER_GUIDE.md
+
+com.dianping.pigeon.extension.ExtensionLoader  ServiceLoader.load 加载扩展实现类
+
+
+com.dianping.pigeon.remoting.ServiceFactory.getService
+com.dianping.pigeon.remoting.ServiceFactory.addService
+ServiceFactory.publishService("http://service.dianping.com/demoService/echoService_1.0.0", EchoService.class, new EchoServiceImpl(), 4040);
+调pigeon的api完成服务发布： ServiceFactory.online();
+
+<pigeon:annotation />
+@Service
+@Reference
+
+
+可以继承com.dianping.pigeon.remoting.common.codec.DefaultAbstractSerializer类来定义自己的序列化类，并通过SerializerFactory.registerSerializer(byte serializerType, Serializer serializer)接口将自定义的序列化类注册进来
+InvokerHelper.setTimeout(200);   设置当前线程下一个pigeon方法调用的超时时间
+ContextUtils.putRequestContext("key1", "1")   传递自定义参数
+InvokerHelper.setAddress("192.168.0.1:4040");  
+InvokerProcessInterceptorFactory.registerInterceptor(new MyInvokerProcessInterceptor());
+ProviderProcessInterceptorFactory.registerInterceptor(new MyProviderProcessInterceptor());

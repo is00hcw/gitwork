@@ -73,4 +73,32 @@ http://my.oschina.net/awakenjoys/blog/159453
 https://raw.github.com/pypa/pip/master/contrib/get-pip.py   python get-pip.py
 pip install fabric   http://www.microsoft.com/en-us/download/confirmation.aspx?id=44266
 http://www.coder4.com/archives/3280
- 
+
+
+tomcat cors
+https://github.com/is00hcw/cors-filter/blob/master/src/main/java/org/ebaysf/web/cors/CORSFilter.java
+http://enable-cors.org/server_tomcat.html
+<filter-class>org.apache.catalina.filters.RemoteIpFilter</filter-class>
+http://tomcat.apache.org/tomcat-7.0-doc/api/org/apache/catalina/filters/RemoteIpFilter.html
+
+http://www.iteye.com/news/17928
+<c:param name="org.apache.catalina.filters.CSRF_NONCE" value="${session.org.apache.catalina.filters.CSRF_NONCE}" / > 
+
+http://chatting8.com/?m=201501
+org.apache.catalina.filters.RequestDumperFilter
+
+tomcat8
+默认http与ajp请求实现non-blocking技术，即NIO技术
+
+
+https://m.oschina.net/blog/205266
+jmap -histo PID
+这个命令会将内存中最终保存的对象列出来。
+dump内存的命令是：
+jmap -dump:format=b,file=/home/admin/dump.bin PID
+
+
+灰度发布
+http://ju.outofmemory.cn/entry/75839
+http://www.kuqin.com/software-engineer/20100908/87787.html
+http://www.open-open.com/lib/view/open1439889185239.html

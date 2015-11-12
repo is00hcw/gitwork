@@ -1,0 +1,11 @@
+http://github.com/dianping/cat
+mvn clean install -DskipTests （需要maven）
+mvn cat:install
+可能会提示缺少\data\appdatas\cat 目录，手动添加就可以了。\data\appdatas\cat和\data\applogs\cat 文件夹，没有的话就手动创建。
+最后进入cat-home目录：cd cat-home，运行mvn jetty:run
+http://www.2cto.com/os/201507/422030.html
+
+com.dianping.cat.message.io.TcpSocketSender    netty发送，连接多个server ip
+
+com.dianping.cat.message.internal.MessageIdFactory    使用内存映射文件，保存计数器、时间戳
+m_byteBuffer = m_markFile.getChannel().map(MapMode.READ_WRITE, 0, 20);

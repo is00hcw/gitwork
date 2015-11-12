@@ -134,3 +134,8 @@ wget http://nodejs.org/dist/v0.10.32/node-v0.10.32-linux-x64.tar.gz
 export NODE_PATH=/usr/local/lib/node_modules
 
 http://blog.chinaunix.net/uid-26495963-id-3187362.html
+
+
+Windows远程桌面使用的是RDP协议，所以ubuntu上就要先安装Xrdp，终端命令行输入安装：
+sudo apt-get install xrdp vnc4server xbase-clients
+在/usr/share/applications目录下打开“桌面共享”选项，桌面共享选项中首先要开启共享

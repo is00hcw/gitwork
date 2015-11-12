@@ -1,3 +1,17 @@
+https://docs.aliyun.com/?spm=5176.7622920.9.4.9muujt#/pub/drds/best-practice/best_connection_pool
+jdbc:mysql://ip:port/db?autoReconnect=true&amp;rewriteBatchedStatements=true&amp;socketTimeout=30000&amp;connectTimeout=3000"
+可以使用标准的jdbc接口来获取LastInsertId
+https://docs.aliyun.com/?spm=5176.7622920.9.4.9muujt#/pub/drds/best-practice/best_data_import_export
+为了优化DRDS的SQL执行，其核心的优化思想就是减少网络IO。 DRDS的数据是按拆分键进行水平切分的，查询中若带上拆分键对于减少SQL在DRDS的执行时间很有意义。查询条件尽量带分库键
+DRDS在大多数情况下使用的Join算法都是Nested Loop及其派生算法（若Join有排序要求，则使用Sort Merge 算法）。DRDS的广播表在各个分库都会存一份
+DRDS在执行limit offset, count语句时，实际上是依次将offset之前的记录读取出来并直接丢弃， SQL的优化方向是先查SQL的ID集合，再通过in查询真正的记录内容，
+在DRDS中，默认情况下请尽可能保证Distinct，Group by 与Order By语句后所带的列名相同
+一般而言，您可以按照以下五个维度进行思考和权衡，包括数据均衡度考虑、事务边界因素、常用查询效率考虑、异构索引考虑、简单性策略。
+一般来说数据容量和访问均衡是我们考量的第一点，不均衡的数据分布和访问可能不能充分发挥数据拆分的能力  所以一般来说拆分字段区分度比较大，数据分布和访问相对会比较均衡
+想办法划小事务边界，并尽可能让事务的边界限制在单台机器内。
+可以考虑使用异构索引表，其本质就是利用异步触发器，将原表内的每一次更新，都换一个写入的维度，写入到新的表中。
+https://docs.aliyun.com/?spm=5176.7622920.9.5.9muujt#/pub/drds/user-guide/user_readonly_instances
+
 START SLAVE  http://hunng.com/2014/06/18/centos-mysql-master-slave-replication/
 http://www.cnblogs.com/lyhabc/p/3838764.html
 http://www.178linux.com/archives/5261

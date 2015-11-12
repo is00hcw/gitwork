@@ -1,0 +1,10 @@
+http://drops.wooyun.org/papers/3062  Trying to hack Redis via HTTP requests
+http://help.aliyun.com/knowledge_detail/5988808.html
+http://www.sebug.net/vuldb/ssvid-89715
+
+
+http://help.aliyun.com/knowledge_detail/5974949.html   mongodb
+http://help.aliyun.com/knowledge_detail/5974672.html  ´úÂëÖ´ÐÐ
+
+
+https://www.zoomeye.org/search?q=port%3A6379  ËÑË÷¶Ë¿ÚÂ©¶´

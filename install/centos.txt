@@ -1,4 +1,29 @@
 wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/7u80-b15/jdk-7u80-linux-x64.rpm
+
+http://repo.mysql.com//mysql57-community-release-el6-7.noarch.rpm
+sudo yum localinstall mysql57-community-release-el6-7.noarch.rpm
+http://blog.csdn.net/horace20/article/details/26516689
+
+yum install http://dev.mysql.com/get/mysql-community-release-el6-5.noarch.rpm
+yum install mysql mysql-devel mysql-server mysql-utilities
+http://xiaorui.cc/2014/09/12/centos6-5%E4%BD%BF%E7%94%A8yum%E5%AE%89%E8%A3%85mysql5-6%E5%AE%9E%E7%8E%B0%E4%B8%8D%E5%90%8C%E7%A3%81%E7%9B%98%E5%AE%9E%E7%8E%B0%E8%A1%A8%E5%88%86%E5%8C%BA/
+http://mirrors.sohu.com/mysql/MySQL-5.6/
+
+Another app is currently holding the yum lock; waiting for it to exit...
+rm -f /var/run/yum.pid
+
+mariadb
+http://www.cnblogs.com/shanyou/p/3278692.html
+http://blog.csdn.net/chszs/article/details/20483431
+
+mysqld_safe --user=mysql --skip-grant-tables --skip-networking &
+UPDATE user SET Password=PASSWORD('root') where USER='root'
+flush privileges;
+grant all privileges on *.* to 'root'@'%' identified by 'root' with grant option;
+flush privileges;
+mysql -u root -h 127.0.0.1 -p
+
+
 先查看 rpm -qa | grep java
 卸载：rpm -e --nodeps java-1.5.0-gcj-1.5.0.0-29.1.el6.x86_64
 rpm -ivh jdk-7u80-linux-x64.rpm 安装  /usr/java/jdk1.7.0_80
@@ -49,3 +74,6 @@ yum -y install apache-maven  ant
 
 curl https://bintray.com/sbt/rpm/rpm | sudo tee /etc/yum.repos.d/bintray-sbt-rpm.repo
 sudo yum install sbt
+
+
+http://hdu104.com/294   CentOS6下基于Nginx搭建mp4/flv流媒体服务器(可随意拖动)并支持RTMP/HLS协议
