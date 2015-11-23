@@ -1,0 +1,9 @@
+
+只有在接口打了@SPI注解的接口类才会去查找扩展点实现会依次从这几个文件中读取扩展点
+META-INF/dubbo/internal/   //dubbo内部实现的各种扩展都放在了这个目录了
+META-INF/dubbo/
+META-INF/services/
+每个定义的spi的接口都会构建一个ExtensionLoader实例，存储在
+ConcurrentMap<Class<?>,ExtensionLoader<?>> EXTENSION_LOADERS 这个map对象中
+
+@Adaptive的作用是根据url.getProtocol()的值extName，去ExtensionLoader. getExtension( extName)选取具体的扩展点实现。

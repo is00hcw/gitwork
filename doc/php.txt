@@ -9,6 +9,15 @@ https://github.com/lixuancn/LaneWeChat
 http://www.thinkphp.cn/info/60.html
 http://www.thinkphp.cn/info/155.html
 
+当调试PHP代码时，var_dump()、print_r()和debug_backtrace()是我们最常用的工具。
+http://www.tuicool.com/articles/QrERRv  chromephp
+http://chromecj.com/web-development/2015-02/365.html   phpconsole
+https://github.com/raveren/kint
+https://github.com/maximebf/php-debugbar
+https://github.com/rehorn/livepool
+https://github.com/jokkedk/webgrind
+https://github.com/Qihoo360/phptrace/blob/master/README_ZH.md
+http://www.linuxde.net/2013/02/12407.html
 
 
 sudo yum install mysql-server  php php-mysql php-fpm 

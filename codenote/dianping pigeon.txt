@@ -1,7 +1,10 @@
 https://github.com/wu-xiang/pigeon/blob/master/USER_GUIDE.md
 
-com.dianping.pigeon.extension.ExtensionLoader  ServiceLoader.load 加载扩展实现类
+com.dianping.pigeon.extension.ExtensionLoader   通过jdk ServiceLoader.load 加载扩展实现类
 
+com.dianping.pigeon.remoting.provider.ProviderBootStrap  服务端初始化
+com.dianping.pigeon.remoting.provider.service.method.ServiceMethod.invoke(Object[])   反射调用
+com.dianping.pigeon.remoting.provider.service.method.ServiceMethodFactory.getServiceMethodCache(String)   通过反射将接口方法缓存
 
 com.dianping.pigeon.remoting.ServiceFactory.getService
 com.dianping.pigeon.remoting.ServiceFactory.addService
@@ -12,6 +15,19 @@ ServiceFactory.publishService("http://service.dianping.com/demoService/echoServi
 @Service
 @Reference
 
+1 com.dianping.pigeon.remoting.ServiceFactory.getService(InvokerConfig<T>)
+2 com.dianping.pigeon.remoting.common.codec.DefaultAbstractSerializer.proxyRequest(InvokerConfig<?>)
+  new ServiceInvocationProxy(invokerConfig, InvokerProcessHandlerFactory.selectInvocationHandler(invokerConfig))  // 拦截请求调用， jdk proxy + filter chain
+3 InvokerUtils.sendRequest(client, invocationContext.getRequest(), new ServiceCallbackWrapper(callback));
+  response = client.write(request, callback);
+
+
+com.dianping.pigeon.remoting.http.provider.HttpServerHandler.handle(HttpServletRequest, HttpServletResponse)  /  com.dianping.pigeon.remoting.netty.provider.NettyServerHandler.messageReceived(ChannelHandlerContext, MessageEvent)  
+com.dianping.pigeon.remoting.provider.AbstractServer.processRequest(InvocationRequest, ProviderContext)  统一入口，转发给下一层的线程池处理
+com.dianping.pigeon.remoting.provider.process.threadpool.RequestThreadPoolProcessor.doProcessRequest(InvocationRequest, ProviderContext)
+  ServiceInvocationHandler invocationHandler = ProviderProcessHandlerFactory.selectInvocationHandler(providerContext.getRequest().getMessageType());
+com.dianping.pigeon.remoting.provider.process.filter.BusinessProcessFilter.invoke(ServiceInvocationHandler, ProviderContext)
+
 
 可以继承com.dianping.pigeon.remoting.common.codec.DefaultAbstractSerializer类来定义自己的序列化类，并通过SerializerFactory.registerSerializer(byte serializerType, Serializer serializer)接口将自定义的序列化类注册进来
 InvokerHelper.setTimeout(200);   设置当前线程下一个pigeon方法调用的超时时间
@@ -19,3 +35,17 @@ ContextUtils.putRequestContext("key1", "1")   传递自定义参数
 InvokerHelper.setAddress("192.168.0.1:4040");  
 InvokerProcessInterceptorFactory.registerInterceptor(new MyInvokerProcessInterceptor());
 ProviderProcessInterceptorFactory.registerInterceptor(new MyProviderProcessInterceptor());
+
+
+com.dianping.pigeon.registry.zookeeper.CuratorClient   操作zookeeper
+com.dianping.pigeon.registry.zookeeper.CuratorEventListener   根据路径前缀确定 变化类型
+com.dianping.pigeon.remoting.http.provider.HttpServerHandler  反序列化请求，然后发起调用
+Object decoded = SerializerFactory.getSerializer(serializerType).deserializeResponse(is);
+com.dianping.pigeon.remoting.netty.provider.NettyServer   初始化netty
+com.dianping.pigeon.remoting.netty.invoker.NettyClient
+com.dianping.pigeon.remoting.common.util.Constants   大量常量字符串
+com.dianping.pigeon.remoting.provider.config.spring.ProviderBeanDefinitionParserLoader  spring配置处理
+
+ClassPathXmlApplicationContext.start   classpath*:META-INF/spring/*.xml
+com.dianping.pigeon.log.LoggerLoader   代码方式初始化log4j
+org.springframework.beans.factory.xml.NamespaceHandlerSupport

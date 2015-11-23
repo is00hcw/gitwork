@@ -1,4 +1,15 @@
 https://github.com/is00hcw/AndroidDevTools
+http://m.blog.csdn.net/blog/Estellise/41758401  eventbus
+http://blog.chengyunfeng.com/?p=449
+http://blog.jobbole.com/66606/
+https://github.com/excilys/androidannotations/wiki
+http://coolshell.info/blog/2014/10/android-opensource.html
+http://www.csdn.net/article/2015-08-20/2825506
+
+arch
+http://www.zhihu.com/question/21406685
+http://www.uml.org.cn/mobiledev/201310211.asp
+https://github.com/android10/Android-CleanArchitecture
 
 —∂∑…”Ô“Ù com.iflytek.speech
 com.koushikdutta.async; https://github.com/koush/AndroidAsync

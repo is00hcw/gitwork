@@ -75,5 +75,12 @@ yum -y install apache-maven  ant
 curl https://bintray.com/sbt/rpm/rpm | sudo tee /etc/yum.repos.d/bintray-sbt-rpm.repo
 sudo yum install sbt
 
-
 http://hdu104.com/294   CentOS6下基于Nginx搭建mp4/flv流媒体服务器(可随意拖动)并支持RTMP/HLS协议
+
+http://www.phpddt.com/server/Apache_rewrite_module.html  apache依赖于htaccess modrewrite  /var/log/httpd/error_log
+
+yum install phpmyadmin
+phpMyAdmin的配置文件(路径：/etc/httpd/conf.d/phpMyAdmin.conf)，找出并注释掉"Deny from all"字样的代码行。然后把"Allow from 127.0.0.1"字样的代码行改成"Allow from 0.0.0.0"
+当你连接phpMyAdmin页面时，你看见"The configuration file now needs a secret passphrase (blowfish_secret)."信息，并且你无法登录。
+要修复这种错误，你需要编辑 /usr/share/phpmyadmin/config.inc.php 这个文件来添加一个随机的blowfish密码，然后重启httpd，如下所示。
+$cfg['blowfish_secret']='kd5G}d33aXDc50

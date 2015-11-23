@@ -3,6 +3,8 @@ yunba连接不上要打印log ，少上传jar导致Throwable错误，但没打印
 tomcat输出 日志乱码   -Dfile.encoding=UTF-8 -Dsun.jnu.encoding=UTF-8
 nginx 转发请求 丢失header   underscores_in_headers  http://my.oschina.net/greki/blog/83945
 
+http://ju.outofmemory.cn/entry/108969  image 加载error
+http://www.phpddt.com/server/Apache_rewrite_module.html  apache依赖于htaccess modrewrite  /var/log/httpd/error_log
 遗憾的是想要通过这种方法获取非本域下的 js 文件的报错时，得到的永远是Script Error，空的文件名和0的行号，因为浏览器的Same Origin Policy。当另外一个域下的 js 报错时，拿到的永远是 Script Error。
 http://blog.hellofe.com/fe/2014/12/17/script-error-with-line-zero/
 http://ravikiranj.net/posts/2014/code/how-fix-cryptic-script-error-javascript/
