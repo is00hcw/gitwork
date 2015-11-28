@@ -109,6 +109,7 @@ SubscriptionsStore 订阅树形结构， 根据topic的路径构建树
 
 
 coap
+CoAP学习笔记——STM32平台上实现CoAP Server   http://blog.csdn.net/xukai871105/article/details/45670033/
 http://www.ituring.com.cn/tupubarticle/3795
 CoAP是简化了HTTP协议的RESTful API，因而也只提供了REST的四个方法，即PUT,GET,POST和DELETE。 CoAP采用了二进制报头，而不是文本报头(text header)
 CoAP提供了资源发现机制。这就是的客户端理解哪些URI是被支持，并且客户端可以获知该URI的具体含义。CoAP协议建议，服务器端应该支持一个/.well-known/core，该URI可以被任何客户端访问。一个专门用于资源发现的服务器必须侦听默认的5683端口。
