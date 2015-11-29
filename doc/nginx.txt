@@ -1,6 +1,9 @@
 http://blog.csdn.net/faye0412/article/details/8632959   https
 http://seanlook.com/2015/05/18/nginx-keepalived-ha/  Nginx+Keepalived实现站点高可用
 http://seanlook.com/2015/06/02/nginx-cache-check/  nginx做负载均衡器以及proxy缓存配置
+http://www.cnblogs.com/dudu/p/4597351.html   缓存
+https://www.nginx.com/blog/tuning-nginx/#gs.mpDnrLM  优化
+
 
 转发到外部服务器，注意设置头部
 proxy_pass_header Set-Cookie;

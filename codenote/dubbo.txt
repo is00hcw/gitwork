@@ -22,3 +22,18 @@ META-INF/services/
 ConcurrentMap<Class<?>,ExtensionLoader<?>> EXTENSION_LOADERS 这个map对象中
 
 @Adaptive的作用是根据url.getProtocol()的值extName，去ExtensionLoader. getExtension( extName)选取具体的扩展点实现。
+
+--client
+com.alibaba.dubbo.rpc.cluster.support.wrapper.MockClusterInvoker<T> --> 
+com.alibaba.dubbo.rpc.protocol.dubbo.DubboInvoker.doInvoke(Invocation)  --(RpcInvocation)--> com.alibaba.dubbo.remoting.Endpoint.send(Object, boolean) 写入底层通信channel
+
+com.alibaba.dubbo.rpc.protocol.dubbo.DubboCodec.decodeBody(Channel, InputStream, byte[])  --> new DecodeableRpcResult , com.alibaba.dubbo.remoting.exchange.Response.setResult(Object)
+
+--server
+
+
+com.alibaba.dubbo.remoting.transport.netty.NettyCodecAdapter.InternalDecoder.messageReceived(ChannelHandlerContext, MessageEvent) --> com.alibaba.dubbo.remoting.exchange.codec.ExchangeCodec.decode(Channel, ChannelBuffer)
+com.alibaba.dubbo.rpc.protocol.dubbo.DubboCodec.decodeBody(Channel, InputStream, byte[])  --> new DecodeableRpcInvocation , com.alibaba.dubbo.remoting.exchange.Request.setData(Object)
+com.alibaba.dubbo.remoting.transport.netty.NettyHandler.messageReceived(ChannelHandlerContext, MessageEvent) --> *** com.alibaba.dubbo.remoting.exchange.support.header.HeaderExchangeHandler.received(Channel, Object)    *** Response response = handleRequest(exchangeChannel, request);  channel.send(response);  <--- com.alibaba.dubbo.remoting.exchange.codec.ExchangeCodec.encodeResponse(Channel, ChannelBuffer, Response)
+**-->  com.alibaba.dubbo.remoting.exchange.support.header.HeaderExchangeHandler.handleRequest(ExchangeChannel, Request)    Object result = handler.reply(channel, msg);   --> com.alibaba.dubbo.rpc.protocol.dubbo.DubboProtocol.requestHandler  --> invoker.invoke(inv);
+com.alibaba.dubbo.rpc.proxy.AbstractProxyInvoker.doInvoke(T, String, Class<?>[], Object[])  jdk使用反射调用method
