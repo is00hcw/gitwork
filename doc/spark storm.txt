@@ -61,3 +61,15 @@ Spark采用Java的ObjectOutputStream序列化一个对象。该方式适用于所有实现了java.io.S
 http://www.csdn.net/article/1970-01-01/2824823   GC调优在Spark应用中的实践
 
 http://www.cnblogs.com/chengxin1982/p/4023111.html  Spark1.0.0属性配置
+
+
+jstorm
+http://ixirong.com/2015/05/12/how-to-install-jstorm-cluster/?utm_source=tuicool&utm_medium=referral   安装
+http://ixirong.com/2015/07/18/develop-the-first-jstorm-demo/   
+http://shiyanjun.cn/archives/1019.html
+http://www.36dsj.com/archives/26147
+https://github.com/alibaba/jstorm/wiki/JStorm-Chinese-Documentation
+http://www.cnblogs.com/antispam/p/4182210.html
+https://github.com/xirong/jstorm-hbase-demo
+http://hexiaoqiao.sinaapp.com/2014/06/jstorm%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/
+http://blog.csdn.net/doctor_who2004/article/details/40461099

@@ -9,3 +9,10 @@ bash -c "$(curl -s https://install.prediction.io/install.sh)"
 https://docs.prediction.io/install/install-linux/
 http://segmentfault.com/a/1190000000352163
 http://www.csdn.net/article/2015-04-10/2824454
+
+
+
+11月10日，谷歌发布全新人工智能系统TensorFlow，并宣布将完全开源；
+11月16日，微软宣布开源机器学习工具包“分布式机器学习工具（DMTK）
+今日，IBM宣布开源机器学习平台SystemML。
+加上Facebook早在今年一月便已逐渐开源的一组基于Torch的深度学习工具

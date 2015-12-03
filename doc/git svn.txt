@@ -1,7 +1,19 @@
+http://www.ruanyifeng.com/blog/2015/08/git-use-process.html
+http://www.ruanyifeng.com/blog/2012/07/git.html
+http://www.tuicool.com/articles/feIBJb   gitflow
 http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000  廖雪峰
 http://www.ruanyifeng.com/blog/2014/06/git_remote.html
+主分支Master 首先，代码库应该有一个、且仅有一个主分支。所有提供给用户使用的正式版本，都在这个主分支上发布. Git主分支的名字，默认叫做Master。它是自动建立的，版本库初始化以后，默认就是在主分支在进行开发。
+开发分支Develop 主分支只用来分布重大版本，日常开发应该在另一条分支上完成。我们把开发用的分支，叫做Develop。
+  # 切换到Master分支
+　　git checkout master
+　# 对Develop分支进行合并
+　　git merge --no-ff develop
+临时性分支主要有三种：　　* 功能（feature）分支　　* 预发布（release）分支　　* 修补bug（fixbug）分支
+git commit --verbose   git commit 命令的verbose参数，会列出 diff 的结果。
+第一行是不超过50个字的提要，然后空一行，罗列出改动原因、主要变动、以及需要注意的问题。最后，提供对应的网址（比如Bug ticket）。
 
-http://www.ruanyifeng.com/blog/2012/07/git.html
+
 http://blogs.endjin.com/2015/01/using-smartgit-to-follow-the-gitflow-branching-and-workflow-model/?utm_source=tuicool  smartgit and gitflow
 http://www.ituring.com.cn/article/56870    基于git的源代码管理模型——git flow
 http://www.jeffkit.info/2010/12/842/

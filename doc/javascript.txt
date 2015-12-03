@@ -9,6 +9,13 @@ http://www.ruanyifeng.com/blog/2011/06/designing_ideas_of_inheritance_mechanism_
 http://www.ruanyifeng.com/blog/2010/05/object-oriented_javascript_inheritance.html
 $("#result").load(form.attr("action"), form.serialize());
 
+http://my.oschina.net/oneapmofficial/blog/516923  监控
+https://github.com/BetterJS/badjs-report    js上报
+http://phpor.net/blog/post/1130
+var t = document.createElement('img');
+var e_info=encodeURIComponent(msg+'|_|'+url+'|_|'+line+'|_|'+window.navigator.userAgent);
+t.src = 'http://badjs.qq.com/cgi-bin/js_report?bid=104&mid=195279&msg='+e_info+'&v='+Math.random();
+
 apply([thisObj[,argArray]])
 bind的作用：改变了上下文的this   bind的返回值是函数
 call([thisObj[,arg1[, arg2[,   [,.argN]]]]])
@@ -169,3 +176,8 @@ http://fex.baidu.com/blog/2014/03/fis-optimize/
 http://fex.baidu.com/blog/2014/05/build-performance-monitor-in-7-days/
 https://github.com/fex-team/interview-questions
 http://blog.csdn.net/samxx8/article/details/30050513
+
+
+coffeescript
+http://coffee-script.org/
+https://coffeescript-cookbook.github.io/

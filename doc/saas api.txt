@@ -23,6 +23,17 @@ http://www.tangide.com/appbuilder.php
 http://www.tangide.com/gamebuilder.php
 https://github.com/Flipboard/react-canvas
 
+
+
+http://www.getui.com/
+http://segmentfault.com/a/1190000000520755
+iOS 系统的推送（APNS，即 Apple Push Notification Service）依托一个或几个系统常驻进程运作，是全局的（接管所有应用的消息推送），所以可看作是独立于应用之外，而且是设备和苹果服务器之间的通讯，而非应用的提供商服务器。腾讯 QQ 的服务器（Provider）会给苹果公司对应的服务器（APNs）发出通知，然后再中转传送到你的设备（Devices）之上。当你接收到通知，打开应用，才开始从腾讯服务器接收数据，跟你之前看到通知里内容一样，但却是经由两个不同的通道而来。
+
+
+iOS 的推送：就是 Apple 官方的 APNs （Apple Push Notification service）。Android  的推送：Google 官方的是 GCM (Google Cloud Messaging）。
+本质上，APNs 与 GCM 是类似的技术实现原理：即系统层有一个常驻的 TCP 长连接，一直保持的长连接，即使手机休眠的时候也在保持的长连接。
+
+
 training
 https://www.shiyanlou.com/
 http://www.jisuanke.com/course

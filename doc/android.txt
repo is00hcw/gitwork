@@ -5,6 +5,18 @@ http://blog.jobbole.com/66606/
 https://github.com/excilys/androidannotations/wiki
 http://coolshell.info/blog/2014/10/android-opensource.html
 http://www.csdn.net/article/2015-08-20/2825506
+http://my.oschina.net/oneapmofficial/blog/535430  android studio 优化
+
+lua
+http://www.ibm.com/developerworks/cn/opensource/os-cn-LUAScript/index.html   Luajava 现在仅支持到 Lua5.1
+http://www.oschina.net/p/android-lua-run
+
+loader
+https://github.com/mmin18/AndroidDynamicLoader
+https://github.com/singwhatiwanna/dynamic-load-apk
+http://www.trinea.cn/android/android-plugin/
+http://www.zhihu.com/question/19981105
+https://github.com/Qihoo360/DroidPlugin
 
 arch
 http://www.zhihu.com/question/21406685
