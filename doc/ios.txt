@@ -11,6 +11,17 @@ http://pan.baidu.com/s/1mgIbCz2  ios8
 
 http://m.163.com/special/newsclient/ios_libraries.html  网易类库
 
+http://blog.ibireme.com/2013/09/23/ios-third-party-libs/  iOS 第三方开源库的吐槽和备忘
+http://blog.ibireme.com/2015/11/12/smooth_user_interfaces_for_ios/  iOS 保持界面流畅的技巧
+http://idlelife.org/archives/733    AsyncDisplayKit入门指南
+https://github.com/facebook/AsyncDisplayKit  
+https://github.com/Carthage/Carthage   库管理
+https://github.com/ibireme/YYKit
+https://github.com/ibireme/YYDispatchQueuePool
+http://blog.ibireme.com/2015/11/02/ios_image_tips/  图片处理
+http://blog.ibireme.com/2015/11/02/mobile_image_benchmark/  移动端图片格式调研
+http://blog.ibireme.com/2015/10/23/ios_model_framework_benchmark/  json
+
 build
 https://fastlane.tools/
 https://github.com/facebook/xctool

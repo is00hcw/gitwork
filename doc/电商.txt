@@ -1,0 +1,9 @@
+推荐系统
+http://www.ibm.com/developerworks/cn/web/1103_zhaoct_recommstudy1/
+http://www.ibm.com/developerworks/cn/web/1103_zhaoct_recommstudy2/index.html?ca=drs-
+http://www.ibm.com/developerworks/cn/web/1103_zhaoct_recommstudy3/index.html?ca=drs-
+http://www.ibm.com/developerworks/cn/opensource/os-recommender1/
+http://www.ibm.com/developerworks/cn/java/j-lo-mahout/
+
+
+http://segmentfault.com/a/1190000000352163  PredictionIO——如何创建一个博客推荐器

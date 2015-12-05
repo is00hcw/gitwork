@@ -84,3 +84,12 @@ phpMyAdmin的配置文件(路径：/etc/httpd/conf.d/phpMyAdmin.conf)，找出并注释掉"Deny
 当你连接phpMyAdmin页面时，你看见"The configuration file now needs a secret passphrase (blowfish_secret)."信息，并且你无法登录。
 要修复这种错误，你需要编辑 /usr/share/phpmyadmin/config.inc.php 这个文件来添加一个随机的blowfish密码，然后重启httpd，如下所示。
 $cfg['blowfish_secret']='kd5G}d33aXDc50
+
+安装pptp vpn
+http://latrell.me/wp-content/uploads/vpn_centos6.sh
+http://bbs.aliyun.com/read/162297.html
+http://www.zhihu.com/question/26992175
+sudo iptables -t nat -A POSTROUTING -s 192.168.0.0/24 -o eth1 -jMASQUERADE
+sudo /etc/init.d/iptables save
+sudo /etc/init.d/iptables restart
+sudo /etc/init.d/pptpd restart

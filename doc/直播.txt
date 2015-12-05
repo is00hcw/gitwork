@@ -1,0 +1,18 @@
+https://imququ.com/post/html5-live-player-1.html
+https://imququ.com/post/html5-live-player-2.html
+https://imququ.com/post/html5-live-player-3.html
+
+https://imququ.com/post/self-hosted-ngrokd.html  搭建 ngrok 服务实现内网穿透
+从 Nginx 1.9.5 开始，http_v2_module 已经替换了 ngx_http_spdy_module
+
+https://imququ.com/post/http2-and-wpo-1.html
+https://imququ.com/post/http2-and-wpo-2.html
+https://imququ.com/post/http2-and-wpo-3.html
+HTTP/2 的多路复用特性，使得可以在一个连接上同时打开多个流，双向传输数据。Server Push，意味着服务端可以在发送页面 HTML 时主动推送其它资源，而不用等到浏览器解析到相应位置，发起请求再响应。另外，服务端主动推送的资源不是被内联在页面里，它们有自己独立的 URL，可以被浏览器缓存，当然也可以给其他页面使用。
+异步接口合并（Batch Ajax Request）；
+图片合并，雪碧图（CSS Sprite）；
+CSS、JS 合并（Concatenation）；
+CSS、JS 内联（Inline）；
+图片、音频内联（Data URI）；
+
+HTTP/2

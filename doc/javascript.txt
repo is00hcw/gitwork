@@ -16,6 +16,9 @@ var t = document.createElement('img');
 var e_info=encodeURIComponent(msg+'|_|'+url+'|_|'+line+'|_|'+window.navigator.userAgent);
 t.src = 'http://badjs.qq.com/cgi-bin/js_report?bid=104&mid=195279&msg='+e_info+'&v='+Math.random();
 
+https://imququ.com/post/cross-origin-resource-sharing.html  跨域数据交互解决方案
+https://imququ.com/post/promises-when-js.html   异步编程：When.js快速上手
+
 apply([thisObj[,argArray]])
 bind的作用：改变了上下文的this   bind的返回值是函数
 call([thisObj[,arg1[, arg2[,   [,.argN]]]]])
@@ -181,3 +184,27 @@ http://blog.csdn.net/samxx8/article/details/30050513
 coffeescript
 http://coffee-script.org/
 https://coffeescript-cookbook.github.io/
+
+
+https://imququ.com/post/browser-doctor.html  一个浏览器诊断小工具
+
+画图工具
+http://www.devtalking.com/articles/gojs-simple-diagram/
+http://gojs.net/latest/samples/index.html
+http://c3js.org/examples.html
+
+颜色选择
+https://bgrins.github.io/spectrum/
+https://github.com/PitPik/colorPicker  http://www.dematte.at/colorPicker/
+http://raphaeljs.com/picker/
+http://mjolnic.com/bootstrap-colorpicker/
+http://johndyer.name/photoshop-like-javascript-color-picker/
+https://www.script-tutorials.com/html5-color-picker-canvas/     把图片画到canvas 然后取像素值
+http://www.bitrepository.com/color-pickers.html
+https://github.com/ambethia/hsl-color-picker
+https://github.com/DavidDurman/FlexiColorPicker
+
+
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
