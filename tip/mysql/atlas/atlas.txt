@@ -1,0 +1,21 @@
+rpm -i Atlas-2.2.1.el6.x86_64.rpm
+安装位置：   /usr/local/mysql-proxy
+配置文件：   /usr/local/mysql-proxy/conf/test.cnf
+测试强制读主库，若执行语句/*master*/ SELECT * FROM my_orders 
+密码使用bin目录下的加密程序encrypt加密，用户名与密码之间用冒号分隔。
+运行 mysql-proxyd test start   #test对应配置文件test.cnf
+
+http://www.0550go.com/database/mysql/mysql-atlas.html
+https://github.com/Qihoo360/Atlas/wiki/Atlas%E7%9A%84%E5%AE%89%E8%A3%85
+https://github.com/Qihoo360/Atlas/wiki/Atlas-Sharding
+https://github.com/chenzhe07/Atlas_auto_setline
+
+mysql -h127.0.0.1 -P2345 -uroot -proot  管理后台密码
+SELECT * FROM help;
+SELECT * FROM backends
+
+mysql -h127.0.0.1 -P1234 -uroot -pxxx    数据库密码 
+如果无法访问修改权限
+grant all privileges on *.* to 'root'@'127.0.0.1' identified by 'xxx'; 
+grant all privileges on *.* to 'root'@'localhost' identified by 'xxx'; 
+flush privileges;
