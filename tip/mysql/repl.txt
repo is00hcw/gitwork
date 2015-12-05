@@ -1,0 +1,62 @@
+
+
+http://www.cnblogs.com/luxh/p/4088420.html  主从配置
+http://www.cnblogs.com/luxh/archive/2013/06/15/3137375.html
+MySQL的同步是异步完成的，其中IO thread负责接收从主库dump的binlog到从库上生成relay log，然后SQL thead负责解析relay log后在从库上进行重放来完成同步。这个2步是完全异步的
+MySQL5.5之后增加了relication的heartbeat机制，可以在从库上通过执行show global status like 'Slave_received_heartbeats'进行查看。当主库没有写入的时候会按照间隔时间跳动，可以依据此进行一定的health-check。
+STOP SLAVE;
+CHANGE MASTER TO master_heartbeat_period= milliseconds;
+START SLAVE;
+SHOW STATUS like 'slave_heartbeat period'
+SHOW STATUS like 'slave_received_heartbeats'
+
+SHOW PROCESSLIST;
+SHOW BINARY LOGS;
+MySQL 5.6引入了GTID的概念，就是一个全局事务标示符。使用GTID时，每次事务提交都会在binlog里生成1个唯一的标示符，它由UUID和事务ID组成。首次提交的事务ID为1，第二次为2，第三次为3，以此例推。uuid是服务器的身份ID，在第一次启动MySQL时，会自动生成一个server_uuid, 并且默认写入到数据目录下的auto.cnf文件里。
+（1）在传统的复制里面，当发生故障，需要主从切换，需要找到binlog和pos点，然后change master to指向新的master，相对来说比较麻烦，也容易出错。在MySQL 5.6里面，不用再找binlog和pos点，我们只需要知道master的ip，端口，以及账号密码就行，因为复制是自动的，MySQL会通过内部机制GTID自动找点同步。
+（2）多线程复制（基于库）。在MySQL 5.6以前的版本，slave的复制是单线程的。一个事件一个事件的读取应用。而master是并发写入的，所以延时是避免不了的。唯一有效的方法是把多个库放在多台slave，这样又有点浪费服务器。在MySQL 5.6里面，我们可以把多个表放在多个库，这样就可以使用多线程复制，当只有1个库，多线程复制是没有用的。
+show variables like '%gtid%';
+http://www.cnblogs.com/gomysql/p/3816031.html
+http://blog.csdn.net/Celeste7777/article/details/48900101
+基于GTID的Replication的配置如下（最少配置选项，master和slave一样，server-id则需要不一样了，下面的参数只是针对于GTID，对于复制过滤选项和普通复制一样，因为GTID模式的复制也可以转换为普通模式的复制）
+binlog_format = row
+gtid-mode = ON
+enforce-gtid-consistency = ON
+log-bin=mysql-bin
+log-slave-updates
+
+多线程复制由参数slave-paralles-workers控制，设定从服务器的SQL线程数；0表示关闭多线程复制功能；默认为0，最大可以设置为1024个线程。在从库的配置文件[mysqld]段落添加配置：
+slave_parallel_workers = 6
+
+https://www.52os.net/articles/mysql-two-nodes-ha.html
+http://cenalulu.github.io/mysql/mysql-5-6-gtid-basic/
+使用GTID复制和传统主从复制的区别：
+不再需要指定传统复制中的 master_log_files和master_log_pos，使主从复制更简单可靠
+可以实现基于库的多线程复制
+减小主从复制的延迟
+
+
+http://www.cnblogs.com/gomysql/p/3675429.html   mha  https://github.com/yotoobo/linux/blob/master/mha/README.md
+http://www.cnblogs.com/gomysql/p/3671896.html   mmm
+http://www.cnblogs.com/gomysql/p/3674030.html   Heartbeat+DRBD+MySQL
+http://www.cnblogs.com/gomysql/p/3864970.html  Percona XtraDB Cluster
+MySQL Replication: 可用性和分区容忍性
+Percona XtraDB Cluster: 一致性和可用性
+TMHA   
+RDS采用热备架构，物理服务器出现故障后服务秒级完成切换。整个切换过程对应用透明。
+多副本冗余  RDS服务器中的数据构建于RAID之上，数据备份存储在OSS上。
+数据备份   提供自动备份的机制。用户可以自行选择备份周期，也可以根据自身业务特点随时发起临时备份。
+
+http://dinglin.iteye.com/blog/1672742  transfer
+http://dinglin.iteye.com/blog/1983541
+http://dinglin.iteye.com/blog/1581877
+主库必须开启binlog  Master和slave的server-id不能相同  Binlog_format最好相同。
+延迟原因    主库更新多线程    从库更新单线程
+MySQL的主从同步延迟，是指从库的更新性能低于主库的更新性能
+直接多线程存在的问题：   语句顺序无法保证
+
+
+https://github.com/alibaba/otter/wiki/Introduction
+https://github.com/alibaba/otter/wiki/QuickStart
+https://docs.google.com/presentation/d/1Yrc6CfHT1raWPqWQOENDT3pdTgVC0ADoNipbrmDm418/edit?pli=1#slide=id.gb0d10616_5_255
+https://docs.google.com/presentation/d/1FDrfVEoNV7AlPOrgXYKo2L_70NDizhwrMpfCG0vztf8/edit?pli=1#slide=id.p

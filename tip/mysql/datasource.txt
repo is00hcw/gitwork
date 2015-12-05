@@ -1,0 +1,158 @@
+﻿<dependency>
+	<groupId>com.alibaba</groupId>
+	<artifactId>fastjson</artifactId>
+	<version>1.2.7</version>
+</dependency>
+Fastjson的最主要的使用入口是com.alibaba.fastjson.JSON
+
+
+http://www.cnblogs.com/luxh/p/4088420.html  主从配置
+http://www.cnblogs.com/luxh/archive/2013/06/15/3137375.html
+MySQL的同步是异步完成的，其中IO thread负责接收从主库dump的binlog到从库上生成relay log，然后SQL thead负责解析relay log后在从库上进行重放来完成同步。这个2步是完全异步的
+MySQL5.5之后增加了relication的heartbeat机制，可以在从库上通过执行show global status like 'Slave_received_heartbeats'进行查看。当主库没有写入的时候会按照间隔时间跳动，可以依据此进行一定的health-check。
+STOP SLAVE;
+CHANGE MASTER TO master_heartbeat_period= milliseconds;
+START SLAVE;
+SHOW STATUS like 'slave_heartbeat period'
+SHOW STATUS like 'slave_received_heartbeats'
+
+SHOW PROCESSLIST;
+SHOW BINARY LOGS;
+MySQL 5.6引入了GTID的概念，就是一个全局事务标示符。使用GTID时，每次事务提交都会在binlog里生成1个唯一的标示符，它由UUID和事务ID组成。首次提交的事务ID为1，第二次为2，第三次为3，以此例推。uuid是服务器的身份ID，在第一次启动MySQL时，会自动生成一个server_uuid, 并且默认写入到数据目录下的auto.cnf文件里。
+（1）在传统的复制里面，当发生故障，需要主从切换，需要找到binlog和pos点，然后change master to指向新的master，相对来说比较麻烦，也容易出错。在MySQL 5.6里面，不用再找binlog和pos点，我们只需要知道master的ip，端口，以及账号密码就行，因为复制是自动的，MySQL会通过内部机制GTID自动找点同步。
+（2）多线程复制（基于库）。在MySQL 5.6以前的版本，slave的复制是单线程的。一个事件一个事件的读取应用。而master是并发写入的，所以延时是避免不了的。唯一有效的方法是把多个库放在多台slave，这样又有点浪费服务器。在MySQL 5.6里面，我们可以把多个表放在多个库，这样就可以使用多线程复制，当只有1个库，多线程复制是没有用的。
+show variables like '%gtid%';
+http://www.cnblogs.com/gomysql/p/3816031.html
+基于GTID的Replication的配置如下（最少配置选项，master和slave一样，server-id则需要不一样了，下面的参数只是针对于GTID，对于复制过滤选项和普通复制一样，因为GTID模式的复制也可以转换为普通模式的复制）
+binlog_format = row
+gtid-mode = ON
+enforce-gtid-consistency = ON
+log-bin=mysql-bin
+log-slave-updates
+
+
+<dependency>
+	<groupId>mysql</groupId>
+	<artifactId>mysql-connector-java</artifactId>
+	<version>5.1.31</version>
+</dependency>
+<dependency>
+	<groupId>com.alibaba</groupId>
+	<artifactId>druid</artifactId>
+	<version>1.0.12</version>
+</dependency>
+
+com.alibaba.druid.pool.DruidDataSource
+jdbc:mysql://ip:port/db?autoReconnect=true&amp;failOverReadOnly=false&amp;rewriteBatchedStatements=true&amp;socketTimeout=30000&amp;connectTimeout=3000&amp;useUnicode=true&amp;characterEncoding=utf8
+http://elf8848.iteye.com/blog/1684414
+
+http://help.aliyun.com/knowledge_detail/5989703.html
+http://dev.mysql.com/doc/connector-j/en/connector-j-master-slave-replication-connection.html?spm=5176.775989703.0.0.azZTcz
+com.mysql.jdbc.ReplicationDriver  用"jdbc:mysql:replication://"替换原来的"jdbc:mysql://"
+jdbc:mysql://master1,slave1,slave2/dlog?autoReconnect=true&roundRobinLoadBalance=true   
+ 
+org.springframework.jdbc.datasource.lookup.MapDataSourceLookup
+org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource
+http://www.databaseskill.com/4849114/
+
+<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
+		init-method="init" destroy-method="close">
+		<!-- 数据源驱动类可不写，Druid默认会自动根据URL识别DriverClass -->
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<!-- 基本属性 url、user、password -->
+		<property name="url" value="jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf-8" 
+		<property name="username" value="root" />  
+		<property name="password" value="root" />  
+
+		<!-- 配置初始化大小、最小、最大 -->
+		<property name="initialSize" value="3" />
+		<property name="minIdle" value="3" />
+		<property name="maxActive" value="20" />
+
+		<!-- 配置获取连接等待超时的时间 -->
+		<property name="maxWait" value="60000" />
+
+		<!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
+		<property name="timeBetweenEvictionRunsMillis" value="60000" />
+
+		<!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
+		<property name="minEvictableIdleTimeMillis" value="300000" />
+
+		<property name="validationQuery" value="SELECT 'x'" />
+		<property name="testWhileIdle" value="true" />
+		<property name="testOnBorrow" value="false" />
+		<property name="testOnReturn" value="false" />
+
+		<!-- 打开PSCache，并且指定每个连接上PSCache的大小（Oracle使用） <property name="poolPreparedStatements" 
+			value="true" /> <property name="maxPoolPreparedStatementPerConnectionSize" 
+			value="20" /> -->
+
+		<!-- 配置监控统计拦截的filters -->
+		<property name="filters" value="log4j" />
+		<property name="proxyFilters">
+			<list>
+				<ref bean="stat-filter" />
+			</list>
+		</property>
+	</bean>
+	<bean id="stat-filter" class="com.alibaba.druid.filter.stat.StatFilter">
+		<property name="slowSqlMillis" value="10000" />
+		<property name="logSlowSql" value="true" />
+	</bean>
+	
+<!-- Druid,监控数据库,以及WEB访问连接信息 -->
+	<!-- http://blog.csdn.net/renfufei/article/details/39553639 -->
+	<!-- 参考: https://github.com/alibaba/druid/wiki/%E9%85%8D%E7%BD%AE_%E9%85%8D%E7%BD%AEWebStatFilter -->
+	<filter>
+		<filter-name>DruidWebStatFilter</filter-name>
+		<filter-class>com.alibaba.druid.support.http.WebStatFilter</filter-class>
+		<init-param>
+			<param-name>exclusions</param-name>
+			<param-value>*.js,*.gif,*.jpg,*.png,*.css,*.ico,*.jsp,/druid/*,/download/*</param-value>
+		</init-param>
+		<init-param>
+			<param-name>sessionStatMaxCount</param-name>
+			<param-value>2000</param-value>
+		</init-param>
+		<init-param>
+	        <param-name>sessionStatEnable</param-name>
+	        <param-value>true</param-value>
+	    </init-param>
+		<init-param>
+	        <param-name>principalSessionName</param-name>
+	        <param-value>session_user_key</param-value>
+	    </init-param>
+	    <init-param>
+		    <param-name>profileEnable</param-name>
+		    <param-value>true</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>DruidWebStatFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<!-- 配置 Druid 监控信息显示页面 -->
+	<servlet>
+		<servlet-name>DruidStatView</servlet-name>
+		<servlet-class>com.alibaba.druid.support.http.StatViewServlet</servlet-class>
+		<init-param>
+			<!-- 允许清空统计数据 -->
+			<param-name>resetEnable</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		<init-param>
+			<!-- 用户名 -->
+			<param-name>loginUsername</param-name>
+			<param-value>druid</param-value>
+		</init-param>
+		<init-param>
+			<!-- 密码 -->
+			<param-name>loginPassword</param-name>
+			<param-value>druid</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DruidStatView</servlet-name>
+		<url-pattern>/druid/*</url-pattern>
+	</servlet-mapping>
+	

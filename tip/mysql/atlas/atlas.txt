@@ -1,3 +1,5 @@
+http://www.cnblogs.com/luxh/p/4104516.html
+
 rpm -i Atlas-2.2.1.el6.x86_64.rpm
 安装位置：   /usr/local/mysql-proxy
 配置文件：   /usr/local/mysql-proxy/conf/test.cnf

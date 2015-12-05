@@ -1,0 +1,10 @@
+https://www.52os.net/articles/mysql-reset-password.html  ÷ÿ÷√√‹¬Î
+/usr/bin/mysqld_safe --skip-grant-tables&(mysql safe mode)
+update mysql.user set password=password("new_pass") where user="root";
+
+grant all on *.* to root@192.168.0.130 identified by "root";
+flush privileges;
+mysql -uroot -proot -h192.168.0.129
+
+SHOW PROCESSLIST;
+SHOW BINARY LOGS;
