@@ -1,4 +1,4 @@
-
+﻿
 
 http://www.cnblogs.com/luxh/p/4088420.html  主从配置
 http://www.cnblogs.com/luxh/archive/2013/06/15/3137375.html
@@ -55,6 +55,13 @@ http://dinglin.iteye.com/blog/1581877
 MySQL的主从同步延迟，是指从库的更新性能低于主库的更新性能
 直接多线程存在的问题：   语句顺序无法保证
 
+双主
+http://m.blog.csdn.net/blog/zhu19774279/39345429
+http://www.2cto.com/database/201312/261880.html
+
+Galera Cluster
+http://www.cnblogs.com/ziyouchutuwenwu/p/4329535.html
+http://www.webmaster.me/server/install-galera-cluster-on-centos-6.html
 
 https://github.com/alibaba/otter/wiki/Introduction
 https://github.com/alibaba/otter/wiki/QuickStart
