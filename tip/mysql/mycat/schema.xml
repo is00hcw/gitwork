@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE mycat:schema SYSTEM "schema.dtd">
+<mycat:schema xmlns:mycat="http://org.opencloudb/">
+
+	<schema name="TESTDB" checkSQLschema="false" sqlMaxLimit="100">
+		<table name="user" dataNode="dn1" />
+		 
+	</schema>
+ 
+	<dataNode name="dn1" dataHost="localhost1" database="piwik" />
+    <!--  <dataNode name="dn2" dataHost="localhost1" database="piwik" />   -->
+ 
+	<dataHost name="localhost1" maxCon="1000" minCon="10" balance="2"
+		writeType="1" dbType="mysql" dbDriver="native" switchType="1"  slaveThreshold="100">
+		<heartbeat>select user()</heartbeat>
+		<!-- can have multi write hosts -->
+		 
+		<writeHost host="tel-web2" url="127.0.0.1:3306" user="root"	password="xxx">
+		</writeHost>   
+	 
+		
+		<writeHost host="tel-web1" url="10.144.240.200:3306" user="root" password="xxx"  > 
+		</writeHost>
+		
+	</dataHost>
+	<!--
+ 		url="sequoiadb://1426587161.dbaas.sequoialab.net:11920/SAMPLE"  
+	    url="jdbc:oracle:thin:@127.0.0.1:1521:nange" 
+		url="mongodb://192.168.0.99/test" 
+		url="jdbc:hive2://feng01:10000" 
+		url="jdbc:mysql://localhost:3306" -->
+ 
+</mycat:schema>
