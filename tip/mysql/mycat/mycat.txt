@@ -1,0 +1,51 @@
+﻿http://songwie.com/articlelist/44   mysql中间件研究  Atlas，cobar，TDDL，mycat，heisenberg,Oceanus,vitess,OneProxy
+https://github.com/flike/kingshard  https://github.com/is00hcw/kingshard/blob/master/README_ZH.md
+https://github.com/58code/Oceanus 
+http://blog.itpub.net/28944233/viewspace-1664439/  从平民官网下载最新版本的Oneproxy，官网下载地址http://www.onexsoft.com/download
+
+
+http://www.tuicool.com/articles/va2AFj  mycat读写分离
+http://m.blog.csdn.net/blog/Dreamcode/49511833  基于MYCAT的MYSQL主从与读写分离配置详解与示例
+切换间隔是5次心跳时间，默认是10 * 5=50秒（第一次10秒没响应，后面可能会变成15秒检测，然后20秒，最后真的没响应就认为挂了），心跳配置在server.xml，使用dataNodeHeartbeatPeriod参数：对后端所有读、写库发起心跳的间隔时间，默认是10秒。
+
+
+http://www.pythontip.com/bigdata/post/8452
+MyCAT的读写分离机制如下： 
+• 事务内的SQL，全部走写节点，除非某个select语句以注释/*balance*/开头 
+• 自动提交的select语句会走读节点，并在所有可用读节点中间随机负载均衡 
+• 当某个主节点宕机，则其全部读节点都不再被使用，因为此时，同步失败，数据已经不是最新的，MYCAT会采用另外一个主节点所对应的全部读节点来实现select负载均衡。 
+• 当所有主节点都失败，则为了系统高可用性，自动提交的所有select语句仍将提交到全部存活的读节点上执行，此时系统的很多页面还是能出来数据，只是用户修改或提交会失败。
+
+dataHost的balance属性设置为： 
+• 0，不开启读写分离机制 
+• 1，全部的readHost与备份writeHost参与select语句的负载均衡 
+• 2，所有的readHost与writeHost都参与select语句的负载均衡，也就是说，当系统的写操作压力不大的情况下，所有主机都可以承担负载均衡。 
+
+一个dataHost元素，表明进行了数据同步的一组数据库，DBA需要保证这一组数据库服务器是进行了数据同步复制的。writeHost相当于Master DB Server，而旗下的readHost则是与从数据库同步的Slave DB Server。当dataHost配置了多个writeHost的时候，任何一个writeHost宕机，Mycat 都会自动检测出来，并尝试切换到下一个可用的writeHost。
+当其中一个写节点（主节点）失败后，Mycat会侦测出来（心跳机制）并自动切换到下一个写节点，MyCAT在任何时候，只会往一个写节点写数据。
+
+http://www.songwie.com/articlelist/134   mycat分布式mysql中间件（Buffer机制）
+http://www.songwie.com/articlelist/128  mycat分布式mysql中间件（目录）
+
+http://www.songwie.com/articlelist/137
+MySQL的各种高可用方案，大多是基于以下几种基础来部署的：
+基于主从复制；
+基于Galera协议；
+基于NDB引擎；
+基于中间件/proxy；
+基于共享存储；
+基于主机高可用；
+把两个节点的auto_increment_increment（自增起始值）和auto_increment_offset（自增步长）设成不同值。
+如果对延迟问题很敏感的话，可考虑使用MariaDB分支版本，或者直接上线MySQL 5.7最新版本，利用多线程复制的方式可以很大程度降低复制延迟；
+对复制延迟特别敏感的另一个备选方案，是采用semi sync replication（就是所谓的半同步复制）或者后面会提到的PXC方案，基本上无延迟，不过事务并发性能会有不小程度的损失，需要综合评估再决定；
+多节点主从，可以采用一主多从，或者双主多从的模式。 这种模式下，可以采用MHA或MMM来管理整个集群，目前MHA应用的最多，优先推荐MHA，最新的MHA也已支持MySQL 5.6的GTID模式了，是个好消息
+
+Galera是Codership提供的多主数据同步复制机制，可以实现多个节点间的数据同步复制以及读写，并且可保障数据库的服务高可用及数据一致性。
+基于Galera的高可用方案主要有MariaDB Galera Cluster和Percona XtraDB Cluster（简称PXC），目前PXC用的会比较多一些。
+对于Galera,事务是在它们被提交之前被所有节点确认。如果一个事务在一个节点失败了，那个节点将立刻从群集中移除。换句话说，Galera主从复制是同步的。你 永远也不会丢失事务——没有延迟 (而且Galera的 基于行的复制大约要快5倍速)。
+
+
+MySQL MMM 是如何工作的：一台安装了MySQL MMM的服务器每十秒种（默认间隔）轮询一次MySQL节点， 来检查其状态。仅其中的一台服务器接收到写入器角色 - 其他的可以拥有阅读器角色。 MMM 维护了一个虚拟IP，这个IP指向拥有写入器角色的节点。
+主从复制怎样是运作的。对于标准版的MySQL，对master的写操作被记录于一个二进制的日志。Slave会在之后复制二进制日志中的查询。查询在写服务器上运行与在其它节点上运行时刻之间，总是会有一个延迟。它是异步的。
+MySQL异步复制有下面的问题：slave服务器的数据集总是落后于master服务器。MySQL复制很慢——它从二进制日志回访事务。
+
