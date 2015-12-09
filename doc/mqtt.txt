@@ -107,6 +107,12 @@ NettyAcceptor -> NettyMQTTHandler  -> SimpleMessaging.onEvent 通过反射annotation
 SubscriptionsStore 订阅树形结构， 根据topic的路径构建树
 
 
+http://www.cnblogs.com/yudar/p/4642412.html  websocket
+https://github.com/hasalex/mqtt-example
+http://jpmens.net/2014/07/03/the-mosquitto-mqtt-broker-gets-websockets-support/       https://github.com/jpmens/simple-mqtt-websocket-example/blob/master/index.html
+http://www.xappsoftware.com/wordpress/2015/05/18/six-steps-to-install-mosquitto-1-4-2-with-websockets-on-debian-wheezy/comment-page-1/
+http://www.element14.com/community/community/design-challenges/sci-fi-your-pi/blog/2015/06/22/pizzapi-mosquitto-websockets-success-tutorial    mosquitto websocket
+http://mitsuruog.github.io/what-mqtt/   mqtt websocket
 
 coap
 CoAP学习笔记——STM32平台上实现CoAP Server   http://blog.csdn.net/xukai871105/article/details/45670033/
@@ -114,6 +120,8 @@ http://www.ituring.com.cn/tupubarticle/3795
 CoAP是简化了HTTP协议的RESTful API，因而也只提供了REST的四个方法，即PUT,GET,POST和DELETE。 CoAP采用了二进制报头，而不是文本报头(text header)
 CoAP提供了资源发现机制。这就是的客户端理解哪些URI是被支持，并且客户端可以获知该URI的具体含义。CoAP协议建议，服务器端应该支持一个/.well-known/core，该URI可以被任何客户端访问。一个专门用于资源发现的服务器必须侦听默认的5683端口。
 当客户端请求该预先协商好的URI时，服务器返回一系列的URI。这些URI遵循CoRE链接标准。  http://blog.csdn.net/xukai871105/article/details/17765919
+Resource discovery  Based on Web Linking and Core Link Format RFC6690   GET /.well-known/core  
+DTLS (TLS/SSL for Datagrams)  Focus on Elliptic Curve Cryptography (ECC)
 
 https://www.phodal.com/blog/use-coap-block-send-data-on-iot-coap/
 http://mqtt.phodal.com/
@@ -151,3 +159,19 @@ https://community.arm.com/servlet/JiveServlet/previewBody/8633-102-2-15471/ARM%2
      <artifactId>californium-core</artifactId>
      <version>1.0.0-RC2</version>
 </dependency>
+
+https://projects.eclipse.org/projects/technology.californium  组播没实现
+http://www.eclipse.org/community/eclipse_newsletter/2014/february/article2.php
+http://www.doc88.com/p-3197961704940.html
+http://blog.csdn.net/lxl584685501/article/details/45152123?ref=myread
+http://people.inf.ethz.ch/mkovatsc/californium.php
+http://people.inf.ethz.ch/mkovatsc/resources/californium/cf-scalability.pdf
+
+http://watr.li/play2-californium.html  Californium meets the Play Framework
+
+
+websocket
+http://examples.javacodegeeks.com/enterprise-java/jetty/jetty-websocket-example/
+http://www.waylau.com/netty-websocket-chat/
+https://github.com/ticofab/simple-play-websocket-server
+https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API/Writing_WebSocket_servers

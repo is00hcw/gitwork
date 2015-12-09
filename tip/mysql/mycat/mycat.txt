@@ -1,7 +1,6 @@
 ﻿http://songwie.com/articlelist/44   mysql中间件研究  Atlas，cobar，TDDL，mycat，heisenberg,Oceanus,vitess,OneProxy
 https://github.com/flike/kingshard  https://github.com/is00hcw/kingshard/blob/master/README_ZH.md
 https://github.com/58code/Oceanus 
-http://blog.itpub.net/28944233/viewspace-1664439/  从平民官网下载最新版本的Oneproxy，官网下载地址http://www.onexsoft.com/download
 
 
 http://www.tuicool.com/articles/va2AFj  mycat读写分离
@@ -27,6 +26,7 @@ dataHost的balance属性设置为：
 http://www.songwie.com/articlelist/134   mycat分布式mysql中间件（Buffer机制）
 http://www.songwie.com/articlelist/128  mycat分布式mysql中间件（目录）
 
+
 http://www.songwie.com/articlelist/137
 MySQL的各种高可用方案，大多是基于以下几种基础来部署的：
 基于主从复制；
@@ -49,3 +49,54 @@ MySQL MMM 是如何工作的：一台安装了MySQL MMM的服务器每十秒种�
 主从复制怎样是运作的。对于标准版的MySQL，对master的写操作被记录于一个二进制的日志。Slave会在之后复制二进制日志中的查询。查询在写服务器上运行与在其它节点上运行时刻之间，总是会有一个延迟。它是异步的。
 MySQL异步复制有下面的问题：slave服务器的数据集总是落后于master服务器。MySQL复制很慢——它从二进制日志回访事务。
 
+http://www.tuicool.com/articles/EZZFVnQ   四条命令搞定mysql主从
+
+http://www.tuicool.com/articles/m2Unmeq   MySQL 5.7 并行复制实现原理与调优
+MySQL 5.7版本已经支持“真正”的并行复制功能，官方称为为enhanced multi-threaded slave（简称MTS）
+MySQL 5.6版本也支持所谓的并行复制，但是其并行只是基于schema的，也就是基于库的。如果用户的MySQL数据库实例中存在多个schema，对于从机复制的速度的确可以有比较大的帮助。
+在MySQL 5.6版本之前，Slave服务器上有两个线程I/O线程和SQL线程。I/O线程负责接收二进制日志（更准确的说是二进制日志的event），SQL线程进行回放二进制日志。如果在MySQL 5.6版本开启并行复制功能，那么SQL线程就变为了coordinator线程 但是所有可以并行的操作交付由worker线程完成。coordinator线程与worker是典型的生产者与消费者模型。
+MySQL 5.7并行复制的思想简单易懂，一言以蔽之： 一个组提交的事务都是可以并行回放 ，因为这些事务都已进入到事务的prepare阶段，则说明事务之间没有任何冲突（否则就不可能提交）。
+为了兼容MySQL 5.6基于库的并行复制，5.7引入了新的变量slave-parallel-type，其可以配置的值有：DATABASE：默认值，基于库的并行复制方式   LOGICAL_CLOCK：基于组提交的并行复制方式
+last_committed表示事务提交的时候，上次事务提交的编号，如果事务具有相同的last_committed，表示这些事务都在一组内，可以进行并行的回放。
+测试结果显示在16个线程下的性能最好，从机的QPS可以达到25000以上，进一步增加并行执行的线程至32并没有带来更高的提升。而原单线程回放的QPS仅在4000左右
+MySQL5.7.2中增加了一种新的并行模式：为同时进入COMMIT阶段的事务分配相同的序列号，这些拥有相同序列号的事务在备库是可以并发执行的。
+
+MariaDB 在10.0.5就已经支持了并行复制的功能，即从库多线程复制的功能。MySQL最先在5.6.3中支持。   
+MariaDB在配置文件的mysqld选项组中添加：slave-parallel-threads
+MySQL在配置文件的mysqld选项组中添加：slave_parallel_workers
+http://zhuanlan.zhihu.com/xiaowenfeng/20128873
+http://www.centoscn.com/CentosServer/sql/Mariadb/2015/0413/5173.html    Centos6.5基于MariaDB10.x 主从复制高可用简单详解
+http://www.linuxidc.com/Linux/2015-07/119512.htm   MariaDB Galera Cluster 部署
+MariaDB 支持多源复制，允许一个从库同时复制多个主库的数据。MariaDB 10.0对应于MySQL 5.6  http://www.ituring.com.cn/article/192989
+mariadb 10开始支持多源复制，一个slave可以有多个master，分别从各自的master复制不同的DB。这个特性可以用在OLAP环境中，传统电商DB都是拆了再拆，分库分表，sharding，而OLAP环境或者大数据平台环境，通常需要各种数据的聚合，多个平台多个DB数据的复合查询，而这些数据分散在各个库中
+http://segmentfault.com/a/1190000000607471
+From MariaDB 10.0.2, global transaction ID is enabled automatically. 默认自动启用GTID。
+
+http://www.luocs.com/archives/849.html  数据库高可用架构(MySQL、Oracle、MongoDB、Redis)
+
+
+http://mysql.taobao.org/index.php?title=MySQL%E5%86%85%E6%A0%B8%E6%9C%88%E6%8A%A5_2015.01#MySQL_.C2.B7_.E4.BC.98.E5.8C.96.E6.94.B9.E8.BF.9B.C2.B7_.E5.A4.8D.E5.88.B6.E6.80.A7.E8.83.BD.E6.94.B9.E8.BF.9B.E8.BF.87.E7.A8.8B   MySQL  优化改进 复制性能改进过程
+redo 日志同步属于物理同步方法，简单直接，将修改的物理部分传送到备库执行，主备共用一致的 LSN，只要保证 LSN 相同即可，同一时刻，只能主库或备库一方接受写请求； binlog的同步方法属于逻辑复制，分为statement 或 row 模式，其中statement记录的是SQL语句，Row 模式记录的是修改之前的记录与修改之后的记录，即前镜像与后镜像；备库通过binlog dump 协议拉取binlog,然后在备库执行。如果拉取的binlog是SQL语句，备库会走和主库相同的逻辑，如果是row 格式，则会调用存储引擎来执行相应的修改。
+io_thread: 根据binlog dump协议从主库拉取binlog, 并将binlog转存到本地的relaylog；sql_thread: 读取relaylog，根据位点的先后顺序执行binlog event，进而将主库的修改同步到备库，达到主备一致的效果；
+5.7中，并行复制的实现添加了另外一种并行的方式，即主库在 ordered_commit中的第二阶段的时候，将同一批commit的 binlog 打上一个相同的seqno标签，同一时间戳的事务在备库是可以同时执行的，因此大大简化了并行复制的逻辑，并打破了相同 DB 不能并行执行的限制。备库在执行时，具有同一seqno的事务在备库可以并行的执行，互不干扰，也不需要绑定信息，后一批seqno的事务需要等待前一批相同seqno的事务执行完后才可以执行。
+http://mysql.taobao.org/monthly/2015/08/09/   MySQL 5.6 并行复制实现分析
+http://mysql.taobao.org/monthly/  数据库内核
+MySQL在5.5.3引入了MDL锁(Metadata Locking)
+
+http://hidba.org/?p=1052  如何将RDS的数据同步到本地自建数据库
+RDS MySQL 使用开源软件 percona-Xtrabackup 对 MySQL 数据库进行备份。RDS for MySQL 5.6使用原生MySQL 5.6.16 ， 并融入了阿里巴巴DBA团队的MySQL补丁。
+http://help.aliyun.com/knowledge_detail/5973700.html?spm=5176.7114037.1996646101.1.7qe3ot&pos=1
+mysql  binlog日志需要通过mysqlbinlog命令查看，mysqlbinlog -vv --base64-output=decode-rows mysqlbinlog.0001
+http://help.aliyun.com/knowledge_detail/5973703.html   QPS：  表示每秒执行的SQL语句的次数包括select,insert,delete等。   
+http://blog.aliyun.com/525    RDS中的MYSQL备份恢复
+http://imysql.cn/2012/08/04/tpcc-for-mysql-manual.html   Tpcc-mysql是percona基于tpcc衍生出来的产品，专用于mysql基准测试，其源码放在bazaar
+在丛库配置文件里增加read-only该选项限制普通用户只有select权限。
+--read_only        Make all non-temporary tables read-only, with the exception for replication (slave) threads and users with the SUPER privilege
+
+如何在线动态抓取SQLtcpdump -i eth0 -s 0 -l -w - dst port 3306|strings
+如何执行在线热备mysqldump --single-transaction或Xtrabackup
+
+3.2版本扩展巩固了MongoDB在业界的效益。WiredTiger是现在MongoDB的默认存储引擎。WiredTiger可以提供7-10倍性能提升以及75%的磁盘压缩增益。与此同时，加密的存储引擎可以处理敏感的有效负载，内存存储引擎可满足需要更好的吞吐量和更少的延迟时间的应用程序
+
+http://zhuanlan.zhihu.com/xiaowenfeng/20091635 创业公司第三方服务精选（移动互联网版）
+http://zhuanlan.zhihu.com/xiaowenfeng/20130359  meeting

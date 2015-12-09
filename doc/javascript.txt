@@ -18,6 +18,7 @@ t.src = 'http://badjs.qq.com/cgi-bin/js_report?bid=104&mid=195279&msg='+e_info+'
 
 https://imququ.com/post/cross-origin-resource-sharing.html  跨域数据交互解决方案
 https://imququ.com/post/promises-when-js.html   异步编程：When.js快速上手
+http://isux.tencent.com/play-with-html5-optimize.html  玩转HTML5移动页面(优化篇)
 
 apply([thisObj[,argArray]])
 bind的作用：改变了上下文的this   bind的返回值是函数
