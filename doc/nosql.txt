@@ -1,0 +1,2 @@
+https://github.com/ideawu/ssdb  基于leveldb   A fast NoSQL database, an alternative to Redis http://ssdb.io    
+https://github.com/siddontang/ledisdb LedisDB是一个用Go语言编写的高性能NoSQL数据库，它支持多种高级数据结构，如kv、list、hash、zset、bitmap，也许可以作为Redis的替代方案。

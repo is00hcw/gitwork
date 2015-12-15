@@ -22,3 +22,15 @@ http://microservices-infrastructure.readthedocs.org/en/latest/
 http://www.leiphone.com/news/201406/diy-a-smart-router-topic-install-system.html
 http://www.leiphone.com/news/201406/diy-a-smart-router-topic-openwrt.html
 https://izhongchou.taobao.com/dreamdetail.htm?spm=a215p.1472805.0.0.xYoWWt&id=10045134#
+
+
+http://blog.csdn.net/xiangpt/article/details/45169863  LWM2M ¼ò½é
+http://iot.eclipse.org/getting-started
+http://embien.com/blog/lwm2m-for-iot-opportunities-challenges/
+http://technical.openmobilealliance.org/Technical/technical-information/omna/lightweight-m2m-lwm2m-object-registry
+
+
+liteos
+https://github.com/OIOTC/Liteos
+http://wiki.oiotc.cc/index.php?title=Liteos#Liteos_Kernel.E5.BC.80.E5.8F.91.E6.89.8B.E5.86.8C
+http://www.oiotc.cc/index.php?m=apps&a=appInfo&id=122

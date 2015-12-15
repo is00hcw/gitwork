@@ -14,6 +14,9 @@ git commit --verbose   git commit 命令的verbose参数，会列出 diff 的结果。
 第一行是不超过50个字的提要，然后空一行，罗列出改动原因、主要变动、以及需要注意的问题。最后，提供对应的网址（比如Bug ticket）。
 
 
+http://liuzhichao.com/p/1974.html   Phabricator 实践之安装
+http://pennchone.lofter.com/post/b6a79_13f5636
+
 http://blogs.endjin.com/2015/01/using-smartgit-to-follow-the-gitflow-branching-and-workflow-model/?utm_source=tuicool  smartgit and gitflow
 http://www.ituring.com.cn/article/56870    基于git的源代码管理模型——git flow
 http://www.jeffkit.info/2010/12/842/

@@ -6,6 +6,9 @@ https://github.com/excilys/androidannotations/wiki
 http://coolshell.info/blog/2014/10/android-opensource.html
 http://www.csdn.net/article/2015-08-20/2825506
 http://my.oschina.net/oneapmofficial/blog/535430  android studio 优化
+http://zkread.com/article/503904.html  Android应用开发编译框架流程
+http://lenciel.cn/2012/02/integration-of-proguard-and-maven-in-android-projects/   proguard
+
 
 lua
 http://www.ibm.com/developerworks/cn/opensource/os-cn-LUAScript/index.html   Luajava 现在仅支持到 Lua5.1

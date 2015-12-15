@@ -14,6 +14,18 @@ DRDS在执行limit offset, count语句时，实际上是依次将offset之前的
 可以考虑使用异构索引表，其本质就是利用异步触发器，将原表内的每一次更新，都换一个写入的维度，写入到新的表中。
 https://docs.aliyun.com/?spm=5176.7622920.9.5.9muujt#/pub/drds/user-guide/user_readonly_instances
 
+http://biancheng.dnbcw.info/mysql/412388.html   BlackHole ：黑洞引擎，写入的任何数据都会消失，用于记录binlog做复制的中继存储！
+http://wenku.baidu.com/view/85af4ccfbb4cf7ec4afed0ad.html  MYSQL性能调优工具介绍
+http://wenku.baidu.com/link?url=Fdj4HNXELJdJ7C4BJaPfIXyE88SaorbuidnnkqTEPM2LFEi4kqNNs94hJrcV73CBCai_UC2rVR5SR508Kbw-j_M_x7AqSMSbtRAX965SdjS###  捕获线上sql
+pt-query-digest是用于分析mysql慢查询的一个工具，它可以分析binlog、General log、slowlog，也可以通过SHOWPROCESSLIST或者通过tcpdump抓取的MySQL协议数据来进行分析。
+pt-query-digest是一个perl脚本，只需下载并赋权即可执行。
+wget percona.com/get/pt-query-digest 
+chmod u+x pt-query-digest
+http://blog.csdn.net/seteor/article/details/24017913
+https://github.com/box/Anemometer   Box SQL Slow Query Monitor
+yum install percona-toolkit -y
+https://github.com/ISADBA/anemometerAudit_SQL  sql审核
+
 START SLAVE  http://hunng.com/2014/06/18/centos-mysql-master-slave-replication/
 http://www.cnblogs.com/lyhabc/p/3838764.html
 http://www.178linux.com/archives/5261

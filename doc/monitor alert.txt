@@ -1,6 +1,7 @@
 http://blog.csdn.net/linlzk/article/details/47423423    服务端监控方案
 http://mp.weixin.qq.com/s?__biz=MzAwMDU1MTE1OQ==&mid=207497106&idx=1&sn=dcd2196078c40f0eec268638de2b0b0d&scene=5#rd   看大众点评如何通过实时监控系统CAT打造7*24服务
 http://www.infoq.com/cn/articles/oppo-monitor-platform?utm_campaign=rightbar_v2&utm_source=infoq&utm_medium=articles_link&utm_content=link_text   oppo监控
+Sigar（System Information Gatherer And Reporter），是一个开源的工具，提供了跨平台的系统信息收集的API
 
 cat
 http://www.infoq.com/cn/presentations/public-comments-monitoring-platform-analyse/

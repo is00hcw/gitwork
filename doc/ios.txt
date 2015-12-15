@@ -4,8 +4,8 @@ http://www.cnblogs.com/csharpstyle/articles/4176630.html    Ad Hoc 方式发布 APP
 
 http://www.cocoachina.com/cms/wap.php?action=article&id=7746  第三方开源库
 AFNetworking MKNetworkKit CocoaAsyncSocket  fmdb  MagicalRecord  MBProgressHUD GPUImage SVProgressHUD FLAnimatedImage
-
 NSJSONSerialization    http://blog.csdn.net/shouqiangwei/article/details/11557919?utm_source=tuicool
+http://objccn.io/
 
 http://pan.baidu.com/s/1mgIbCz2  ios8
 
@@ -21,6 +21,7 @@ https://github.com/ibireme/YYDispatchQueuePool
 http://blog.ibireme.com/2015/11/02/ios_image_tips/  图片处理
 http://blog.ibireme.com/2015/11/02/mobile_image_benchmark/  移动端图片格式调研
 http://blog.ibireme.com/2015/10/23/ios_model_framework_benchmark/  json
+http://mogu.io/ios-analytics-115   iOS 统计打点那些事
 
 build
 https://fastlane.tools/

@@ -42,8 +42,14 @@ go get github.com/go-sql-driver/mysql
 go get github.com/garyburd/redigo/redis
 
 类库
+https://github.com/eBay/fabio#installation   http负载均衡
+http://nsq.io/   消息
+https://github.com/coreos/etcd
+https://github.com/siddontang/ledisdb
+google推出的gRPC就是一个基于http/2的RPC实现 
 https://github.com/avelino/awesome-go
 https://github.com/is00hcw/gopkg
+https://github.com/mozilla-services/heka
 
 https://www.haiyun.me/archives/1114.html  go redis
 https://www.haiyun.me/archives/1051.html go httpclient
