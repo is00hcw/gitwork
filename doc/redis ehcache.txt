@@ -1,6 +1,6 @@
 http://www.cnblogs.com/gomysql/p/4395504.html  Redis Cluster 3.0搭建与使用
 http://www.cnblogs.com/gomysql/p/3617238.html  主从
-
+https://github.com/nicolasff/webdis  http接口
 
 http://www.ttlsa.com/redis/redis-keepalived-achieve-high-availability/
 http://www.ttlsa.com/python/redis-rdb-tools-analysis-of-reids-dump-file-and-memory-usage/

@@ -9,6 +9,18 @@ http://my.oschina.net/oneapmofficial/blog/535430  android studio 优化
 http://zkread.com/article/503904.html  Android应用开发编译框架流程
 http://lenciel.cn/2012/02/integration-of-proguard-and-maven-in-android-projects/   proguard
 
+AndFix
+http://www.oschina.net/p/andfix
+http://blog.csdn.net/qxs965266509/article/details/49816007
+http://blog.csdn.net/lmj623565791/article/details/49883661
+https://github.com/Qihoo360/DroidPlugin
+https://github.com/dodola/HotFix
+https://github.com/jasonross/Nuwa
+https://github.com/bunnyblue/DroidFix
+http://www.tuicool.com/articles/Fraqeab
+
+图片缓存目前的主要开源项目包括Imageloader，Picasso、Glide和Fresco
+http://logful.github.io/   
 
 lua
 http://www.ibm.com/developerworks/cn/opensource/os-cn-LUAScript/index.html   Luajava 现在仅支持到 Lua5.1

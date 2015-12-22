@@ -1,4 +1,6 @@
-﻿http://amazeui.org/getting-started/collections  开源方案
+﻿http://www.javascripture.com/Date     api参考
+http://www.ruanyifeng.com/blog/2012/09/xmlhttprequest_level_2.html  XMLHttpRequest Level 2 使用指南
+http://amazeui.org/getting-started/collections  开源方案
 https://github.com/amazeui/starter-kit  
 http://framework7.taobao.org/  
 http://www.idangero.us/template7/#.Vm6IxOx96_4  模板
@@ -23,6 +25,17 @@ t.src = 'http://badjs.qq.com/cgi-bin/js_report?bid=104&mid=195279&msg='+e_info+'
 https://imququ.com/post/cross-origin-resource-sharing.html  跨域数据交互解决方案
 https://imququ.com/post/promises-when-js.html   异步编程：When.js快速上手
 http://isux.tencent.com/play-with-html5-optimize.html  玩转HTML5移动页面(优化篇)
+http://web.jobbole.com/84285/#comment-95949   使用Flexible实现手淘H5页面的终端适配
+http://www.paintcodeapp.com/news/ultimate-guide-to-iphone-resolutions
+https://github.com/amfe/article/issues/5  写给前端面试者
+http://www.cnblogs.com/Wayou/p/html5_web_api_queryselector.html   HTML5向Web API新引入了document.querySelector以及document.querySelectorAll
+
+var foo = (12.4 / 4.13) | 0;//结果为3
+var bar = ~~(12.4 / 4.13);//结果为3
+!!将一个值方便快速转化为布尔值 !!window===true 
+http://www.cnblogs.com/Wayou/p/things_you_dont_know_about_frontend.html  前端不为人知的一面--前端冷知识集锦
+http://www.cnblogs.com/jscode/archive/2013/04/27/3572239.html   HTML5新特性之文件和二进制数据的操作
+
 
 apply([thisObj[,argArray]])
 bind的作用：改变了上下文的this   bind的返回值是函数
@@ -41,6 +54,13 @@ window.requestIdleCallback()它指定只有当一帧的末尾有空闲时间，�
 http://www.ruanyifeng.com/blog/2015/09/web-page-performance-in-depth.html
 http://www.mmtrix.com/evaluate/phone/testid/c197a02e111d7d859b9da1bc301c1056
 undefined和null在if语句中，都会被自动转为false，相等运算符甚至直接报告两者相等。  http://www.ruanyifeng.com/blog/2014/03/undefined-vs-null.html
+
+http://blog.csdn.net/accountwcx/article/details/23523851   Base64编码将3个Byte共24Bit从高到低重新拆分成4部分每部分6Bit，分别为0x0~0x3f，对应字符为A~Z和a~z和0-9和+/，共64个。
+Base64在谷歌、火狐浏览器都已经实现，调用方式很简单，window.atob是解码函数，把Base64编码转成字符串。window.btoa是编码函数，把字符串编码成Base64。不过谷歌和火狐浏览器实现的base64编码不支持中文
+在众多Base64编码实现中，CryptoJS是最高效和全面的，CryptosJS是一个标准和安全的JavaScript加密算法库，实现了MD5、SHA、AES、DES、Base64等加密，其代码放在Google上托管，项目地址是https://code.google.com/p/crypto-js/。当然CryptoJS的Base64对中文也没有很好的支持。
+http://qianduanblog.com/post/js-learning-34-en-decodeuri-en-decodeuricomponent-un-escape-btoa-atob.html
+http://segmentfault.com/a/1190000000425169    ArrayBuffer
+
 
 
 http://isux.tencent.com/css3/tools.html   css动画预览

@@ -6,7 +6,7 @@ http://www.cocoachina.com/cms/wap.php?action=article&id=7746  第三方开源库
 AFNetworking MKNetworkKit CocoaAsyncSocket  fmdb  MagicalRecord  MBProgressHUD GPUImage SVProgressHUD FLAnimatedImage
 NSJSONSerialization    http://blog.csdn.net/shouqiangwei/article/details/11557919?utm_source=tuicool
 http://objccn.io/
-
+http://www.jianshu.com/p/b0bf2368fb95   iOS最佳实践 
 http://pan.baidu.com/s/1mgIbCz2  ios8
 
 http://m.163.com/special/newsclient/ios_libraries.html  网易类库

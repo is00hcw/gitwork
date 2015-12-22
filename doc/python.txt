@@ -2,6 +2,12 @@
 http://blog.csdn.net/linhan8/article/details/8746110
 http://wechat-python-sdk.readthedocs.org/zh_CN/master/
 
+https://www.continuum.io/downloads
+https://github.com/ipython/ipython
+https://github.com/benoitc/gunicorn
+http://python.jobbole.com/83486/   Python后端相关技术/工具栈
+http://www.liaoxuefeng.com/article/00137760323922531a8582c08814fb09e9930cede45e3cc000   任务调度利器：Celery
+
 sudo apt-get install build-essential python-dev python-numpy python-setuptools python-scipy libatlas-dev libatlas3-base
 pip install -U scikit-learn
 from sklearn.utils import murmurhash3_32

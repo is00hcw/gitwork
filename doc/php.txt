@@ -9,6 +9,13 @@ https://github.com/raveren/kint/
 https://github.com/is00hcw/flight
 https://github.com/is00hcw/laravel
 https://github.com/lixuancn/LaneWeChat
+https://github.com/rmccue/Requests  代替curl
+https://github.com/meenie/munee  编译
+https://github.com/ratchetphp/Ratchet/  websocket服务器
+https://github.com/Sybio/ImageWorkshop  图片处理
+https://github.com/JosephLenton/PHP-Error
+https://github.com/khoaofgod/phpfastcache  cache
+
 
 http://www.thinkphp.cn/info/60.html
 http://www.thinkphp.cn/info/155.html

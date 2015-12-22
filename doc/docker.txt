@@ -9,3 +9,12 @@ http://cn.soulmachine.me/blog/20140122/ 在Centos 6.5上安装docker
 rpm -Uvh http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
 yum install docker-io --enablerepo=epel
 http://cn.soulmachine.me/blog/20131026/
+
+
+http://tech.meituan.com/docker_introduction.html
+
+Docker Machine - 让你轻松部署Docker实例到很多不同的平台。
+Docker Compose - Fig工具的替代品。
+Docker Swarm - Docker众实例的原生集群。
+
+http://www.tinylab.org/take-5-minutes-to-build-linux-0-11-experiment-envrionment/
