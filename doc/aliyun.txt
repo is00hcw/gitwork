@@ -1,3 +1,83 @@
+https://help.aliyun.com/knowledge_detail/5980325.html?spm=5176.788314850.2.10.kx0mlk  ECS Linux服务器配置yum源
+若使用阿里云服务器，可以通过内网地址：http://mirrors.aliyuncs.com/ 访问,不占用公网流量。
+https://help.aliyun.com/knowledge_detail/5975063.html?spm=5176.788314850.2.17.kx0mlk  vnc
+https://help.aliyun.com/knowledge_detail/6674726.html?spm=5176.788314855.2.4.g6UHr1  appdeploy
+https://help.aliyun.com/knowledge_detail/6708283.html?spm=5176.788314855.2.8.g6UHr1   yum -y install  screen
+Screen是一个可以在多个进程之间多路复用一个物理终端的窗口管理器，最重要的优点支持断点续传。
+screen会话有几个状态，分别是attache（连接）、detache（断开）、dead（会话被人为kill掉）、remove（使用screen -wipe清除会话后的状态）
+https://help.aliyun.com/knowledge_detail/6528515.html?spm=5176.788314855.2.3.Jek7PT   Mtr是 Linux中常用的网络连通性判断工具，它结合了ping、traceroute、nslookup 等工具特性。
+https://help.aliyun.com/knowledge_detail/6682513.html?spm=5176.788314855.2.5.Jek7PT   压力测试工具httperf
+https://help.aliyun.com/knowledge_detail/6702352.html?spm=5176.788314855.2.6.Jek7PT   抓包工具tcpdump的安装使用
+https://help.aliyun.com/knowledge_detail/6708522.html?spm=5176.788314855.2.8.Jek7PT   iptraf -d eth1  可以查看eth1网卡上面的详细信息，包含协议类型，进出的流量和速率，按 x 退出
+https://help.aliyun.com/knowledge_detail/6708678.html?spm=5176.788314855.2.16.Jek7PT  Webmin是目前功能最强大的基于Web的Unix系统管理工具。管理员通过浏览器访问Webmin的各种管理功能并完成相应的管理动作
+https://help.aliyun.com/knowledge_detail/6709201.html?spm=5176.788314855.2.18.Jek7PT  nethogs服务查看网络链接
+https://help.aliyun.com/knowledge_detail/6511977.html?spm=5176.788314851.2.5.DtUCPs   ECS Linux通过Xshell 配置密钥key免密码登录
+https://help.aliyun.com/knowledge_detail/5980344.html?spm=5176.788314853.2.14.1866Cl  ECS-linux授权mysql外网访问
+https://help.aliyun.com/knowledge_detail/5989620.html?spm=5176.788314853.2.15.0xBsth  ECS Linux设置定时任务crontab
+https://help.aliyun.com/knowledge_detail/7613703.html?spm=5176.788314853.2.5.LELYff   ECS Linux基于zabbix搭建企业级监控平台
+https://help.aliyun.com/knowledge_detail/7612710.html?spm=5176.788314853.2.14.LELYff  CentOS多线程下载工具Axel使用说明
+https://help.aliyun.com/knowledge_detail/7612657.html?spm=5176.788314853.2.20.LELYff  ss命令显示连接状态的使用说明
+https://help.aliyun.com/knowledge_detail/7608752.html?spm=5176.788314853.2.3.KGCOBX   htop监控负载
+https://help.aliyun.com/knowledge_detail/5989645.html?spm=5176.789005859.2.4.E3tsHJ   Linux服务器查找配置文件
+
+使用dmesg |grep oom 查看是否有相关进程被killed  或者out of  memory 等相关内存溢出的字样
+dsniff嗅探工具找回保存了连接的服务密码
+查看Linux下默认的DNS  cat /etc/resolv.conf
+使用chown可以修改权限：chown -R www.www /alidata/www/phpwind/即可将目录/alidata/www/phpwind下的所有文件和目录的拥有者拥有组都修改为www账户
+如下指令测试目标服务器UDP端口的连通性： nc -vuz 1.1.1.1 5555
+https://help.aliyun.com/knowledge_detail/5990384.html?spm=5176.789005859.2.15.qrwKJh   Linux如何查看端口状态
+https://help.aliyun.com/knowledge_detail/5973927.html?spm=5176.789005859.2.11.qrwKJh   死机或者卡顿现象分析
+boot loader 的主程序，这个主程序必须要被安装在启动区，亦即是MBR或者是boot sector   BIOS是透过硬件的INT 13 中断功能来读取MBR的 http://vbird.dic.ksu.edu.tw/linux_basic/0510osloader.php
+https://help.aliyun.com/knowledge_detail/6508072.html?spm=5176.789005859.2.4.ErIim0  Linux系统启动过程介绍
+Nohup的作用顾名思义，它使得后面的命令不会响应挂断（SIGHUP）信号，也就是说，在远程登录执行nohup后，即使退出登陆后，程序还是会正常执行。通常情况下，nohup命令最后会跟上“&”字符，表示将这个命令放至后台执行
+
+admin op
+sudo lsof -i:22 -n -P  其中，-n参数可以保留地址以IP形式显示；-P参数保留端口以数字形式显示端口号。
+sudo lsof -i -n -P | grep TCP检查所有已建立TCP连接的端口以及端口上绑定的进程
+netstat -an|grep CLOSE_WAIT|wc -l 查看当前服务器上处于CLOSE_WAIT状态的连接数  TCP连接断开时需要进行四次挥手，TCP连接的两端都可以发起关闭连接的请求，若对端发起了关闭连接，但本地没有进行后续的关闭连接操作，那么该链接就会处于CLOSE_WAIT状态。
+https://help.aliyun.com/knowledge_detail/6703003.html?spm=5176.789005859.2.14.kDQ5U6
+netstat -n | awk '/^tcp/ {++S[$NF]} END {for(a in S) print a, S[a]}'   TIME_WAIT
+https://help.aliyun.com/knowledge_detail/6699778.html?spm=5176.789005859.2.20.wNsGwg
+Linux中查看网卡流量工具有iptraf、iftop以及nethogs等，iftop可以用来监控网卡的实时流量(可以指定网段)、反向解析IP、显示端口信息等。
+测试网络的延迟可以使用ping，mtr，tracert等命令，但是测试TCP端口的访问延迟tcping工具
+df -lh，可以看到当前硬盘的分区信息，以及容量大小、已使用的空间和剩余空间大小，还可以查看每个分区的挂载点：
+fdisk -l可以查看磁盘的详细信息：
+top -Hp pid可以具体跟踪某个进程的具体内存和cpu的占用情况
+https://help.aliyun.com/knowledge_detail/6703673.html?spm=5176.789005859.2.9.xvB6gw  Linux系统中常见的日志文件介绍
+
+mysql
+wget http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm
+yum install mysql-community-server 
+set password for ‘root’@‘localhost’ = password('mypasswd');
+https://help.aliyun.com/knowledge_detail/5973952.html?spm=5176.788314853.2.8.r3LHdA   Mysql,phpmyadmin密码忘了怎么办
+https://help.aliyun.com/knowledge_detail/5993993.html?spm=5176.788314853.2.12.1866Cl  Mysql自动备份脚本的使用方法
+
+vnc
+https://help.aliyun.com/knowledge_detail/5974462.html?spm=5176.788314853.2.6.r3LHdA
+https://help.aliyun.com/knowledge_detail/5974461.html?spm=5176.788314853.2.3.r3LHdA
+yum groupinstall “GNOME Desktop Environment” 即可安装GNOME Desktop Environment
+http://helpcdn.aliyun.com/knowledge_detail/5989141.html  CentOS 6.3搭建PPTP VPN
+http://helpcdn.aliyun.com/knowledge_detail/6701559.html  Squid配置透明代理模式实现代理上网
+
+tengine
+yum -y install pcre-devel openssl openssl-devel
+http://my.oschina.net/boltwu/blog/491765
+http://my.oschina.net/boltwu/blog/490874
+http://my.oschina.net/boltwu/blog/492079  lua灰度发布
+nginx -l         #列出Tenginx所有支持的功能模块（包括静态与动态）
+Tenine动态加载了ngx_http_concat_module 将多个JS或CSS文件的内容通过一个http响应报文中返回给浏览器；以减少浏览器连接服务器的次数；
+https://help.aliyun.com/knowledge_detail/7607373.html?spm=5176.788314853.2.4.KGCOBX   Nginx对网站做限速
+https://help.aliyun.com/knowledge_detail/7603019.html?spm=5176.788314853.2.17.KGCOBX  tengine结合lua防御cc攻击案例
+nginx下常见的开源waf有mod_security、naxsi、ngx_lua_waf这三个，ngx_lua_waf性能高和易用性强，基本上零配置，而且常见的攻击类型都能防御，是比较省心的选择 https://github.com/loveshell/ngx_lua_waf
+https://help.aliyun.com/knowledge_detail/7596463.html?spm=5176.788314853.2.15.dsdch8  Apache、Nginx支持跨域访问
+https://help.aliyun.com/knowledge_detail/5989822.html?spm=5176.788314853.2.19.1866Cl  ECS Nginx+php中php-fpm参数配置
+https://help.aliyun.com/knowledge_detail/5990901.html?spm=5176.788314853.2.9.0xBsth   ECS Nginx中https的配置说明
+http://helpcdn.aliyun.com/knowledge_detail/6703521.html  编译安装nginx
+https://help.aliyun.com/knowledge_detail/6501561.html?spm=5176.788314853.2.20.r3LHdA  定位当前正在运行的Nginx的配置文件
+https://help.aliyun.com/knowledge_detail/5974693.html?spm=5176.788314853.2.18.r3LHdA  20步打造最安全的Nginx Web服务器
+https://help.aliyun.com/knowledge_detail/6707559.html?spm=5176.789005859.2.5.kDQ5U6   简单APACHE日志分析
+
+
 http://www.programmer.com.cn/12917/   阿里云oss
 http://www.programmer.com.cn/10021/
 
@@ -159,3 +239,27 @@ kvstore
 http://docs.aliyun.com/?spm=5176.7630237.9.6.Ya1GqE#/pub/kvstore/best-practice/redis-transcation
 http://docs.aliyun.com/?spm=5176.7630237.9.3.Ya1GqE#/pub/kvstore/quick-start/import-data-from-redis-to-kvstore
 redis-cli –pipe导入需要的redis Protocol数据格式
+
+
+https://help.aliyun.com/knowledge_detail/5974413.html?spm=5176.7618386.5.17.wGKS3a
+ECS云服务器带宽FAQ
+1)带宽是否独享
+是独享。
+2)带宽单线还是双线，电信还是网通？
+我们是多线BGP（中国电信、联通、移动、教育网等）接入，确保全国用户访问畅通。
+
+https://help.aliyun.com/knowledge_detail/6564245.html?spm=5176.7618386.5.1.wGKS3a
+BGP 机房的优点： 服务器只需要设置一个IP地址，最佳访问路由是由网络上的骨干路由器根据路由跳数与其它技术指标来确定的，不会占用服务器的任何系统资源。服务器的上行路由与下行路由都能选择最优的路径，所以能真正实现高速的单IP高速访问。
+
+而多可用区部署，是指多个数据库服务器会部署在不同的数据中心里面，这天然做到了任何物理组件坏掉不会影响另一边。不过这样的部署对底层网络的要求会很高，它要求多个机房的所有服务器都处于在同一个网络里面，每个IP都能够在不同机房路由可达，延时在2ms以下，IP规模可能多达10万台。
+https://help.aliyun.com/document_detail/rds/getting-started/RDS-MySQLManual/disaster-recovery.html
+在数据传输服务中创建数据同步链路，实现两地实例的数据实时同步。 https://help.aliyun.com/document_detail/dts/Getting-Started/data-synchronous.html
+
+下载并安装开源软件Xtrabackup RDS使用开源软件Xtrabackup对MySQL数据库进行全量物理备份，版本号为2.0.6。用户需要下载该软件，并使用该软件进行恢复。
+Xtrabackup官方网站为：http://www.percona.com/
+ 恢复数据文件 进入解压目录，执行如下命令：
+innobackupex --defaults-file=./backup-my.cnf --apply-log ./
+重装mysql系统库命令格式：mysql_install_db --user=mysql --datadir=/xxx/xxx/（备份文件所属目录）
+
+RDS for MySQL 5.6版本通过TokuDB引擎支持数据压缩功能。经过大量测试表明，数据从InnoDB表转到TokuDB表里面后数据空间可以减少80%到90%，即2T的数据量能压缩到400G甚至更低。
+TokuDB限制  TokuDB无法支持外键Foreign Key。TokuDB不适用于频繁大量读取的场景 。

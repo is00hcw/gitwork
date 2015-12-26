@@ -1,3 +1,30 @@
+http://www.tuicool.com/articles/rUvERv  升级内核
+https://help.aliyun.com/knowledge_detail/7594467.html?pos=6
+http://dev.aliyun.com/search.html?spm=5176.775974865.0.0.uRLsya
+
+https://discuss.csphere.cn/t/docker-java/2112
+https://discuss.csphere.cn/t/docker/1744
+https://discuss.csphere.cn/t/1-docker/1460
+
+http://www.open-open.com/lib/view/open1423703640748.html  非常详细的 Docker 学习笔记
+http://blog.saymagic.cn/2015/06/01/learning-docker.html
+http://docs.alauda.cn/feature/accelerator.html
+docker pull daocloud.io/library/centos:latest
+http://dockerpool.com/article/1419997003  使用“daocloud”代理加速下载官方镜像
+https://help.aliyun.com/knowledge_detail/5974865.html
+
+http://www.csdn.net/article/2015-07-21/2825266   Docker持续部署图文详解
+http://www.solinx.co/archives/152   创建docker镜像，初始化jdk8与tomcat环境
+http://dockerpool.com/static/books/docker_practice/index.html   Docker —— 从入门到实践
+绝大多数对 Docker 的网络使用模型可以汇总为三类：
+Bridge 模式（NAT）
+Bridge 模式（去 NAT）
+端口映射
+Docker 默认的桥接是用的第一种 NAT 方式，也即是把命名空间中的 veth 网卡绑定到自己的网桥 docker0。然后主机使用iptables来配置 NAT，并使用 DHCP 服务器 dnsmasq 来分配 IP 地址
+Docker 依赖于像 Linux Containers（LXC）这样的 Linux 技术，以及 cgroups 和命名空间功能
+Docker 的核心是 Linux cgroups（控制组），提供计算和限制容器使用 CPU、内存、网络、磁盘资源数量的方法。
+Docker 使用一个叫做 UnionFS 的层级文件系统进行镜像操作。容器对镜像文件的所有操作均是在虚拟出的“改动层”上进行的。
+
 sudo docker.io pull jmoger/gitblit
 <wait a while>
 sudo docker.io run -d --name gitblit -p 443:443 -p 80:80 -p 9418:9418 -p 29418:29418 jmoger/gitblit
@@ -18,3 +45,5 @@ Docker Compose - Fig工具的替代品。
 Docker Swarm - Docker众实例的原生集群。
 
 http://www.tinylab.org/take-5-minutes-to-build-linux-0-11-experiment-envrionment/
+
+GitBook 是一个基于 Node.js 的命令行工具，可使用 Github/Git 和 Markdown 来制作精美的电子书。

@@ -16,3 +16,11 @@ http://www.csdn.net/article/2015-04-10/2824454
 11月16日，微软宣布开源机器学习工具包“分布式机器学习工具（DMTK）
 今日，IBM宣布开源机器学习平台SystemML。
 加上Facebook早在今年一月便已逐渐开源的一组基于Torch的深度学习工具
+
+
+http://www.infoq.com/cn/articles/recommendation-algorithm-overview-part01?utm_campaign=rightbar_v2&utm_source=infoq&utm_medium=articles_link&utm_content=link_text
+推荐算法通常被分为四大类（1-4）：
+协同过滤推荐算法
+基于内容的推荐算法
+混合推荐算法
+流行度推荐算法

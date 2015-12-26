@@ -1,0 +1,163 @@
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>如何用HTML5的FileReader生成Data Url</title>
+<meta name="keywords" content="Data Url,HTML5,FileReader"/>
+<meta name="description" content="如何用HTML5的FileReader生成Data Url"/>
+	<style>
+	    img {
+			
+		}
+		#dropArea {
+            background-color: #DDDDDD;
+            border: 3px dashed #000000;
+            float: left;
+            font-size: 18px;
+            font-weight: bold;
+            height: 300px;
+            line-height: 300px;
+            margin: 20px;
+            position: relative;
+            text-align: center;
+            width: 200px;
+        }
+        #dropArea.hover {
+            background-color: #CCCCCC;
+        }
+	 </style>
+</head>
+
+<body>
+<p>生成Data Url</p><br/>
+<input type="file" value="" onchange="buildDataUrl(this)" style="border:1px solid #808080; width:300px;" /><br />
+ <img id="imgView" src="" style="width:300px;" />  <div id="dropArea">文件拖到这里</div><br/>
+<textarea id="txtBase64" cols="100" rows="50"></textarea><br/>
+
+
+<script type="text/javascript">
+// http://www.atool.org/img2base64.php
+
+//获取剪贴板数据方法
+function getClipboardText(event){
+	var clipboardData = event.clipboardData || window.clipboardData;
+	return clipboardData.getData("text");
+};
+
+//设置剪贴板数据
+function setClipboardText(event, value){
+	if(window.clipboardData){
+		return window.clipboardData.setData("text", value);
+	}else if(event && event.clipboardData){
+		return event.clipboardData.setData("text/plain", value);
+	}
+};
+
+function buildDataUrl(source) {
+	var file = source.files[0];
+	if(window.FileReader) {
+		var fr = new FileReader();
+		fr.onloadend = function(e) {
+			document.getElementById("txtBase64").value = e.target.result;
+			document.getElementById("imgView").src = e.target.result;
+			console.log( e.target.result);
+			setClipboardText(null, e.target.result);
+		};
+		fr.readAsDataURL(file);
+	}
+}
+</script>
+
+<script type="text/javascript">
+// variables
+var dropArea = document.getElementById('dropArea');
+
+// main initialization
+(function(){
+	// init handlers
+    function initHandlers() {
+        dropArea.addEventListener('drop', handleDrop, false);
+        dropArea.addEventListener('dragover', handleDragOver, false);
+    }
+ 
+  // drag over
+    function handleDragOver(event) {
+        event.stopPropagation();
+        event.preventDefault();
+ 
+        dropArea.className = 'hover';
+    }
+ 
+    // drag drop
+    function handleDrop(event) {
+        event.stopPropagation();
+        event.preventDefault();
+ 
+        processFiles(event.dataTransfer.files);
+    }
+ 
+    // process bunch of files
+    function processFiles(filelist) {
+        if (!filelist || !filelist.length ) return;
+		
+		var fr = new FileReader();
+		fr.onloadend = function(e) {
+			document.getElementById("txtBase64").value = e.target.result;
+			document.getElementById("imgView").src = e.target.result;
+			console.log( e.target.result);
+			setClipboardText(null, e.target.result);
+		};
+		fr.readAsDataURL(filelist[0]);
+
+    }
+	
+	initHandlers();
+})();
+</script>
+
+<script type="text/javascript">
+ // paste not working
+ /*
+	var body = document.getElementsByTagName('body')[0];
+	body.addEventListener('paste', function(e){
+		var clipboard = e.clipboardData;
+		if(clipboard.items.length === 0)
+			return;
+			
+		var type = clipboard.items[0].type;
+		if (type.match(/image/)) {
+			var blob = clipboard.items[0].getAsFile();
+			var file = new FileReader();
+			file.addEventListener('loadend', function(e){
+				document.getElementById('txtBase64').value = e.target.result;
+				document.getElementById("imgView").src = e.target.result;
+			});
+			file.readAsDataURL(blob);
+		} else {
+			document.getElementById('result').value = "not an image\ntype: " + type + "\n\n";
+		}
+	});
+	*/
+	
+	document.body.onpaste = function (e) {
+        var items = e.clipboardData.items;
+        for (var i = 0; i < items.length; ++i) {
+
+            if (items[i].kind == 'file' &&
+                items[i].type.indexOf('image/') !== -1) {
+
+                var blob = items[i].getAsFile();
+                window.URL = window.URL || window.webkitURL;
+                var blobUrl = window.URL.createObjectURL(blob);
+
+                var img = document.createElement('img');
+                img.src = blobUrl;
+				console.log(blobUrl)
+               // var logBox = document.getElementById('log-box');
+                //logBox.appendChild(img);
+            }
+
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,5 +1,10 @@
 ﻿logback-test.xml 
 
+grok
+http://chenlinux.com/2014/10/19/grokdebug-commandline/
+https://github.com/elastic/logstash/tree/v1.1.9/patterns
+https://github.com/elastic/logstash/blob/v1.1.9/patterns/grok-patterns
+http://grokdebug.herokuapp.com/
 
 log collect
 http://jasonwilder.com/blog/2012/01/03/centralized-logging/

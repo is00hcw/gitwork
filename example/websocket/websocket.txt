@@ -6,3 +6,8 @@ https://github.com/TooTallNate/Java-WebSocket
 https://github.com/cesanta/mongoose
 https://github.com/jeremyhahn/cwebsocket
 https://libwebsockets.org/index.html
+
+
+http://www.websocket.org/demos/echo/run/
+http://cache.kaazing.net/bower/kaazing-websocket-client-javascript/5.0.0-50/WebSocket-debug.js
+http://blog.csdn.net/ishallwin/article/details/10299815   tomcat7 

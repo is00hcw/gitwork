@@ -13,19 +13,32 @@ http://www.waylau.com/about-vpngate/   vpn
 http://opentalk.upyun.com/show/issues  会议ppt
 http://news.sina.com.cn/o/2015-11-06/doc-ifxknivr4224771.shtml   构建高可用、可扩展的IoT云服务
 http://www.leiphone.com/news/201510/ekGwTA7n2QXTo7cs.html   商用物联网系统的开源之路
+http://blog.qiniu.com/archives/4741   七牛CEO许式伟：服务端开发那些事儿
+http://blog.qiniu.com/archives/3928   七牛是如何搞定每天500亿条日志的
+http://blog.qiniu.com/archives/4499   七牛CEO许式伟分析GO语言发展现状
+http://blog.qiniu.com/archives/4791   携程异步消息系统实践
 
 
 图片优化
 http://segmentfault.com/a/1190000000658499
 http://cabbit.me/web-image-optimization/
+http://news.oneapm.com/java-web1/  前端高性能资源优化
+http://www.tuicool.com/articles/Ir6V3qr
+http://www.w3cplus.com/performance/build-fast-loading-mobile-website.html
+
 
 nginx lua
 https://www.gitbook.com/book/moonbingbing/openresty-best-practices/details
+http://my.oschina.net/eduosi/blog/169606   Tengine + Lua + GraphicsMagick 实现图片自动裁剪/缩放
 
 canal使用
 http://my.oschina.net/zmf/blog/366498
 http://blog.csdn.net/hackerwin7/article/details/37923607
 https://github.com/alibaba/canal/wiki/AdminGuide
+http://my.oschina.net/dxqr/blog/524795  otter
+可以利用zookeeper的observer特性构成读镜像来提升性能
+http://blog.csdn.net/bluerstar/article/details/50378597
+
 
 http://www.tuicool.com/articles/myEf6nI   weed-fs是用Go语言编写的一个分布式文件系统，主要用于存储大批量的小文件 
 http://www.tuicool.com/articles/uaiimu    weedfs是通过将多个小文件的二级制存储到一个大文件中，然后通过索引进行具体的位置的定位。
@@ -36,6 +49,23 @@ http://www.tuicool.com/articles/QZBV7j
 
 docker
 http://chuansong.me/n/1940810
+
+http://news.oneapm.com/statsdxi/  StatsD
+http://news.oneapm.com/7-java-performance-metrics-oneapm/  Java 应用发布后，需要关注的7个性能指标
+http://news.oneapm.com/high-performance-1215/
+Apdex 定义了 3 个用户满意区间：「满意」、「可容忍」、「失望」，通过响应时间数值 “T” 来划分。T 值代表着用户满意的响应时间界限，国际上一般默认为 2s，也就是说满意区间就是 0~2s；页面响应时间超过 T 值用户就有些不满了，下一个区间「容忍」的界限值是 T 和 4T，即 4-8 秒之间为容忍区间；响应时间再长用户就开始考虑放弃了，最后一个区间「失望」的响应时间则大于 4T，即多于 8 秒。
+Apdex 指数 = [ 满意数量 + （ 可容忍数量 / 2）] / 总样本数 
+
+
+配置管理
+https://github.com/melin/super-diamond
+http://my.oschina.net/orgsky/blog/498998
+https://github.com/knightliao/disconf
+http://www.tuicool.com/articles/QniqQn7
+https://github.com/knightliao/disconf/wiki/%E5%88%86%E5%B8%83%E5%BC%8F%E9%85%8D%E7%BD%AE%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0Disconf
+淘宝内部绝大多数系统的配置都采用diamond来进行统一管理。他将所有配置文件里的配置打散化进行存储，只支持KV结构，并且配置更新的推送是非实时的。百度内部的BJF配置中心服务[3]采用了类似淘宝diamond的实现，也是配置打散化、只支持KV和非实时推送。
+https://github.com/knightliao/disconf-demos-java/tree/master/disconf-standalone-dubbo-demo
+https://github.com/Qihoo360/QConf
 
 React Native
 https://github.com/tmallfe/tmallfe.github.io/issues/18

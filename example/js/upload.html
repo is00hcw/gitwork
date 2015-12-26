@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en" >
+    <head>
+        <meta charset="utf-8" />
+        <title>OSCTools JsBin在线演示-HTML5 Drag & Drop 多文件上传 from Script Tutorials</title>
+        <!-- <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script> -->
+      <style>
+        .container {
+            overflow:hidden;
+            width:960px;
+            margin:20px auto;
+        }
+        .contr {
+            background-color: #212121;
+            color: #FFFFFF;
+            padding: 10px 0;
+            text-align: center;
+         
+            border-radius:10px 10px 0 0;
+            -moz-border-radius:10px 10px 0 0;
+            -webkit-border-radius:10px 10px 0 0;
+        }
+        .upload_form_cont {
+            background: -moz-linear-gradient(#ffffff, #f2f2f2);
+            background: -ms-linear-gradient(#ffffff, #f2f2f2);
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(100%, #f2f2f2));
+            background: -webkit-linear-gradient(#ffffff, #f2f2f2);
+            background: -o-linear-gradient(#ffffff, #f2f2f2);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f2f2f2');
+            -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f2f2f2')";
+            background: linear-gradient(#ffffff, #f2f2f2);
+         
+            color: #000;
+            overflow: hidden;
+        }
+        .info {
+            background-color: #EEEEEE;
+            border: 1px solid #DDDDDD;
+            float: left;
+            font-weight: bold;
+            height: 530px;
+            margin: 20px;
+            position: relative;
+            width: 560px;
+        }
+        .info > div {
+            font-size: 14px;
+            font-weight: bold;
+            padding: 10px 15px 5px;
+        }
+        .info > h2 {
+            padding: 0 15px;
+        }
+        .info > canvas {
+            margin-left: 15px;
+            margin-bottom: 10px;
+        }
+        .info #url {
+            width: 400px;
+        }
+        #dropArea {
+            background-color: #DDDDDD;
+            border: 3px dashed #000000;
+            float: left;
+            font-size: 48px;
+            font-weight: bold;
+            height: 530px;
+            line-height: 530px;
+            margin: 20px;
+            position: relative;
+            text-align: center;
+            width: 300px;
+        }
+        #dropArea.hover {
+            background-color: #CCCCCC;
+        }
+        #dropArea.uploading {
+            background: #EEEEEE url(loading.gif) center 30% no-repeat;
+        }
+        #result .s, #result .f {
+            font-size: 12px;
+            margin-bottom: 10px;
+            padding: 10px;
+         
+            border-radius:10px;
+            -moz-border-radius:10px;
+            -webkit-border-radius:10px;
+        }
+        #result .s {
+            background-color: #77fc9f;
+        }
+        #result .f {
+            background-color: #fcc577;
+        }
+ 
+      </style>
+  </head>
+    <body>
+    <div class="container">
+      <div class="contr"><h2><a href='http://www.osctools.net/' target='_blank' style='color:white;'>osctools</a>: 将你的图片拖拽到“Drop区域”(一次最多上传五个, 文件大小小于256kb)</h2></div>
+        <div class="upload_form_cont">
+            <div id="dropArea">文件拖到这里</div>
+            <div class="info">
+                <div>上传文件剩余: <span id="count">0</span></div>
+                <div>上传目录: <input id="url" value="http://www.script-tutorials.com/demos/257/upload.php"/></div>
+                <h2>结果:</h2>
+                <div id="result"></div>
+                <canvas width="500" height="20"></canvas>
+            </div>
+        </div>
+    </div>
+<script>
+// variables
+var dropArea = document.getElementById('dropArea');
+var canvas = document.querySelector('canvas');
+var context = canvas.getContext('2d');
+var count = document.getElementById('count');
+var destinationUrl = document.getElementById('url');
+var result = document.getElementById('result');
+var list = [];
+var totalSize = 0;
+var totalProgress = 0;
+ 
+// main initialization
+(function(){
+ 
+    // init handlers
+    function initHandlers() {
+        dropArea.addEventListener('drop', handleDrop, false);
+        dropArea.addEventListener('dragover', handleDragOver, false);
+    }
+ 
+    // draw progress
+    function drawProgress(progress) {
+        context.clearRect(0, 0, canvas.width, canvas.height); // clear context
+ 
+        context.beginPath();
+        context.strokeStyle = '#4B9500';
+        context.fillStyle = '#4B9500';
+        context.fillRect(0, 0, progress * 500, 20);
+        context.closePath();
+ 
+        // draw progress (as text)
+        context.font = '16px Verdana';
+        context.fillStyle = '#000';
+        context.fillText('上传进度: ' + Math.floor(progress*100) + '%', 50, 15);
+    }
+ 
+    // drag over
+    function handleDragOver(event) {
+        event.stopPropagation();
+        event.preventDefault();
+ 
+        dropArea.className = 'hover';
+    }
+ 
+    // drag drop
+    function handleDrop(event) {
+        event.stopPropagation();
+        event.preventDefault();
+ 
+        processFiles(event.dataTransfer.files);
+    }
+ 
+    // process bunch of files
+    function processFiles(filelist) {
+        if (!filelist || !filelist.length || list.length) return;
+ 
+        totalSize = 0;
+        totalProgress = 0;
+        result.textContent = '';
+ 
+        for (var i = 0; i < filelist.length && i < 5; i++) {
+            list.push(filelist[i]);
+            totalSize += filelist[i].size;
+        }
+        uploadNext();
+    }
+ 
+    // on complete - start next file
+    function handleComplete(size) {
+        totalProgress += size;
+        drawProgress(totalProgress / totalSize);
+        uploadNext();
+    }
+ 
+    // update progress
+    function handleProgress(event) {
+        var progress = totalProgress + event.loaded;
+        drawProgress(progress / totalSize);
+    }
+ 
+    // upload file
+    function uploadFile(file, status) {
+ 
+        // prepare XMLHttpRequest
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', destinationUrl.value);
+        xhr.onload = function() {
+            result.innerHTML += this.responseText;
+            handleComplete(file.size);
+        };
+        xhr.onerror = function() {
+            result.textContent = this.responseText;
+            handleComplete(file.size);
+        };
+        xhr.upload.onprogress = function(event) {
+            handleProgress(event);
+        }
+        xhr.upload.onloadstart = function(event) {
+        }
+ 
+        // prepare FormData
+        var formData = new FormData();
+        formData.append('myfile', file);
+        xhr.send(formData);
+    }
+ 
+    // upload next file
+    function uploadNext() {
+        if (list.length) {
+            count.textContent = list.length - 1;
+            dropArea.className = 'uploading';
+ 
+            var nextFile = list.shift();
+            if (nextFile.size >= 262144) { // 256kb
+                result.innerHTML += '<div class="f">文件过大 (max filesize exceeded)</div>';
+                handleComplete(nextFile.size);
+            } else {
+                uploadFile(nextFile, status);
+            }
+        } else {
+            dropArea.className = '';
+        }
+    }
+ 
+    initHandlers();
+})();
+</script>
+    </body>
+</html>
