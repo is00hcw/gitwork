@@ -5,6 +5,44 @@ http://www.cnblogs.com/dudu/p/4597351.html   缓存
 https://www.nginx.com/blog/tuning-nginx/#gs.mpDnrLM  优化
 
 
+lua
+http://jinnianshilongnian.iteye.com/blog/2188113   Web开发实战1——HTTP服务
+https://www.gitbook.com/book/moonbingbing/openresty-best-practices/details
+http://my.oschina.net/eduosi/blog/169606   Tengine + Lua + GraphicsMagick 实现图片自动裁剪/缩放
+http://jinnianshilongnian.iteye.com/blog/2186270
+http://jinnianshilongnian.iteye.com/blog/2186448
+http://jinnianshilongnian.iteye.com/blog/2190343 把流量复制到其他服务器上，一种方式是使用如tcpcopy引流；另外我们还可以使用nginx的HttpLuaModule模块中的ngx.location.capture_multi进行并发执行来模拟复制。
+ngx_lua 模块对协程做了封装，我们可以直接调用ngx.thread API使用，虽然称其为“轻量级线程”，但其本质还是Lua协程。
+如果想在多个Worker进程间共享数据可以使用ngx.shared.DICT或如Redis之类的存储。
+ngx.location.capture_multi和lua-resty-redis、lua-resty-mysql等基于cosocket实现的都是支持的。
+http://jinnianshilongnian.iteye.com/blog/2190343
+http://jinnianshilongnian.iteye.com/blog/2187643  Lua开发库2-JSON库、编码转换、字符串处理
+http://jinnianshilongnian.iteye.com/blog/2187328  ngx.location.capture也可以用来完成http请求，但是它只能请求到相对于当前nginx服务器的路径，
+http://wiki.jikexueyuan.com/project/openresty-best-practice/   OpenResty 最佳实践
+OR 的应用场景可以是广泛的，可以用于实现 api server、路由控制、高并发入口、动态服务降级、动态负载均衡
+http://segmentfault.com/a/1190000003014393  nginx接收到客户端的请求之后，对请求的处理，是分阶段的，总共有11个
+http://www.stuq.org/page/detail/557?utm_source=tuicool&utm_medium=referral  基于OpenResty的Web服务框架Vanilla实战
+直接docker pull zhoujing/vanilla     https://github.com/idevz/vanilla
+luarocks install vanilla —verbose   https://idevz.gitbooks.io/vanilla-zh/content/overview.html
+http://my.oschina.net/idevz/blog/519598?fromerr=eFvC7UQU  luarocks 
+而 Lua 语言自身也有一些特别的地方：下标从 1 开始，这个是和其他编程语言很大的不同。不区分 array 和 dict ，会导致处理 json 的时候，无法区分 array 和 object。
+默认全局变量，需要在所有变量前加 local，忘记的话，可能导致各种难查的 bug。
+http://segmentfault.com/a/1190000004113020   OpenResty的现状、趋势、使用及学习方法
+Nginx_lua的设计指导思想：1、基于Nginx 快速开发高性能、大并发的网络服务。2、提供“同步非阻塞” 的I/O 访问接口简化I/O 多路复用体系中的业务逻辑开发：
+http://huoding.com/2012/08/31/156
+http://my.oschina.net/wangxuanyihaha/blog/186401   Lua中最强大的特性-coroutine（协程）
+http://www.qixing318.com/article/by-lua-adhesive-nginx-ecological-environment.html  由Lua 粘合的Nginx生态环境
+
+http://v5b7.com/webserver/nginx/nginx_lua_web_demoton.html   nginx+lua的web简单降级方案
+https://moonbingbing.gitbooks.io/openresty-best-practices/content/ngx_lua/lua-variable-scope.html
+https://github.com/iresty/nginx-lua-module-zh-wiki/blob/master/doc/ngxshareddict.md
+http://wiki.jikexueyuan.com/project/nginx-lua/development-environment.html   安装 Nginx+Lua 开发环境
+http://wiki.jikexueyuan.com/project/nginx-lua/introduction.html
+https://github.com/Centaur/Temp
+http://wiki.jikexueyuan.com/project/nginx-lua/http.html
+http://wiki.jikexueyuan.com/project/nginx-lua/product-details-page.html
+
+
 转发到外部服务器，注意设置头部
 proxy_pass_header Set-Cookie;
 proxy_set_header Host geci.me;
@@ -53,3 +91,8 @@ http://nolinux.blog.51cto.com/4824967/1594029?utm_source=tuicool
 
 http://blog.csdn.net/big1980/article/details/9812793  Pacemaker管理+heartbeat心跳
 
+https://github.com/arut/nginx-rtmp-module/wiki/Directives
+
+
+
+http://www.jianshu.com/p/ddf2714a199a  图片音视频应用开发的效率工具与服务大礼包

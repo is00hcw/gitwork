@@ -1,7 +1,15 @@
+http://yq.aliyun.com/articles/1830?utm_source=tuicool&utm_medium=referral  基于docker构建jenkins和svn服务
+http://yq.aliyun.com/articles/303?spm=5176.team11.teamshow1.17.PxpN4k  elk
+http://yq.aliyun.com/articles/243?spm=5176.team11.teamshow1.20.PxpN4k
+http://yq.aliyun.com/articles/138?spm=5176.100240.searchblog.35.ca2oKm   管理容器的数据
+http://dockerpool.com/static/books/docker_practice/index.html  Docker —— 从入门到实践
 http://www.tuicool.com/articles/rUvERv  升级内核
 https://help.aliyun.com/knowledge_detail/7594467.html?pos=6
 http://dev.aliyun.com/search.html?spm=5176.775974865.0.0.uRLsya
 
+https://github.com/prometheus/prometheus  监控  cloud insight
+http://special.csdncms.csdn.net/BeDocker/  docker资料集
+https://github.com/rancher/rancher
 https://discuss.csphere.cn/t/docker-java/2112
 https://discuss.csphere.cn/t/docker/1744
 https://discuss.csphere.cn/t/1-docker/1460
@@ -24,6 +32,10 @@ Docker 默认的桥接是用的第一种 NAT 方式，也即是把命名空间中的 veth 网卡绑定到自己
 Docker 依赖于像 Linux Containers（LXC）这样的 Linux 技术，以及 cgroups 和命名空间功能
 Docker 的核心是 Linux cgroups（控制组），提供计算和限制容器使用 CPU、内存、网络、磁盘资源数量的方法。
 Docker 使用一个叫做 UnionFS 的层级文件系统进行镜像操作。容器对镜像文件的所有操作均是在虚拟出的“改动层”上进行的。
+Docker 镜像层的内容一般在 Docker 根目录的 aufs 路径下，为 /var/lib/docker/aufs/diff/
+对于每一个镜像层，Docker 都会保存一份相应的 json 文件，json 文件的存储路径为 /var/lib/docker/graph  每一个镜像层还包含一个 layersize 文件，该文件主要记录镜像层内部文件内容的总大小。
+在一个Dockerfile中每个命令都会在原来的基础上生成一层镜像。
+Docker Machine是一个可以通过一个命令直接安装Docker引擎的工具。 Compose工具使用YAML文件来维护所有应用程序容器的逻辑定义以及它们之间的连接。
 
 sudo docker.io pull jmoger/gitblit
 <wait a while>

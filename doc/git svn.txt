@@ -16,6 +16,8 @@ git commit --verbose   git commit 命令的verbose参数，会列出 diff 的结果。
 
 
 http://liuzhichao.com/p/1974.html   Phabricator 实践之安装
+https://liuzhichao.com/p/1981.html
+https://liuzhichao.com/p/1992.html
 http://pennchone.lofter.com/post/b6a79_13f5636
 
 http://blogs.endjin.com/2015/01/using-smartgit-to-follow-the-gitflow-branching-and-workflow-model/?utm_source=tuicool  smartgit and gitflow

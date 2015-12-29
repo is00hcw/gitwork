@@ -27,10 +27,9 @@ http://www.tuicool.com/articles/Ir6V3qr
 http://www.w3cplus.com/performance/build-fast-loading-mobile-website.html
 
 
-nginx lua
-https://www.gitbook.com/book/moonbingbing/openresty-best-practices/details
-http://my.oschina.net/eduosi/blog/169606   Tengine + Lua + GraphicsMagick 实现图片自动裁剪/缩放
+http://songlisha.blog.51cto.com/6269280/1598922  CentOS之Phabricator的安装配置
 
+ 
 canal使用
 http://my.oschina.net/zmf/blog/366498
 http://blog.csdn.net/hackerwin7/article/details/37923607
@@ -61,6 +60,8 @@ Apdex 指数 = [ 满意数量 + （ 可容忍数量 / 2）] / 总样本数
 https://github.com/melin/super-diamond
 http://my.oschina.net/orgsky/blog/498998
 https://github.com/knightliao/disconf
+https://github.com/knightliao/disconf/tree/master/disconf-web 安装
+https://github.com/knightliao/disconf-demos-java
 http://www.tuicool.com/articles/QniqQn7
 https://github.com/knightliao/disconf/wiki/%E5%88%86%E5%B8%83%E5%BC%8F%E9%85%8D%E7%BD%AE%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0Disconf
 淘宝内部绝大多数系统的配置都采用diamond来进行统一管理。他将所有配置文件里的配置打散化进行存储，只支持KV结构，并且配置更新的推送是非实时的。百度内部的BJF配置中心服务[3]采用了类似淘宝diamond的实现，也是配置打散化、只支持KV和非实时推送。

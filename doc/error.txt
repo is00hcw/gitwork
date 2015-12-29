@@ -1,3 +1,6 @@
+nginx 访问403，修改目录权限，比如sudo chown -R nginx:nginx /var/www/html， 检查每一个父目录都具有执行权限x  http://stackoverflow.com/questions/6795350/nginx-403-forbidden-for-all-files
+To easily display all the permissions on a path, you can use namei -om /path/to/check
+
 yunba连接不上要打印log ，少上传jar导致Throwable错误，但没打印
 1024以下的端口只有用root才能进行一些操作，包括要启动一些程序，比如apache等，都需要有root的权限
 tomcat输出 日志乱码   -Dfile.encoding=UTF-8 -Dsun.jnu.encoding=UTF-8
