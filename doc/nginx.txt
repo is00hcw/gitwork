@@ -6,6 +6,12 @@ https://www.nginx.com/blog/tuning-nginx/#gs.mpDnrLM  优化
 
 
 lua
+http://www.londonlua.org/scripting_nginx_with_lua/slides.html
+http://io.upyun.com/2015/04/14/using-ngxlua-in-upyun/  
+http://io.upyun.com/2015/07/20/nginx-socket-sharding/  NGINX 1.9.1 新特性：套接字端口共享
+https://github.com/timebug/using-ngxlua-in-upyun
+http://alilua.com/docs.html
+http://www.fans1314.com/articles/http-lp.html    基于HTTP长连接的服务器推技术
 http://jinnianshilongnian.iteye.com/blog/2188113   Web开发实战1——HTTP服务
 https://www.gitbook.com/book/moonbingbing/openresty-best-practices/details
 http://my.oschina.net/eduosi/blog/169606   Tengine + Lua + GraphicsMagick 实现图片自动裁剪/缩放
@@ -41,6 +47,7 @@ http://wiki.jikexueyuan.com/project/nginx-lua/introduction.html
 https://github.com/Centaur/Temp
 http://wiki.jikexueyuan.com/project/nginx-lua/http.html
 http://wiki.jikexueyuan.com/project/nginx-lua/product-details-page.html
+http://www.pingan.im/201503/nginx-lua-redis/   使用Nginx+Lua+Redis构建灰度发布环境
 
 
 转发到外部服务器，注意设置头部

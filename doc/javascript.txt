@@ -1,6 +1,7 @@
 ﻿http://www.javascripture.com/Date     api参考
 http://www.ruanyifeng.com/blog/2012/09/xmlhttprequest_level_2.html  XMLHttpRequest Level 2 使用指南
 http://amazeui.org/getting-started/collections  开源方案
+http://z42.readthedocs.org/zh/latest/frontend/html.html#id4
 https://github.com/amazeui/starter-kit  
 http://framework7.taobao.org/  
 http://www.idangero.us/template7/#.Vm6IxOx96_4  模板
@@ -22,6 +23,10 @@ var t = document.createElement('img');
 var e_info=encodeURIComponent(msg+'|_|'+url+'|_|'+line+'|_|'+window.navigator.userAgent);
 t.src = 'http://badjs.qq.com/cgi-bin/js_report?bid=104&mid=195279&msg='+e_info+'&v='+Math.random();
 
+https://github.com/clappr/clappr  播放器
+http://layer.layui.com/  弹出层
+https://github.com/matthieua/WOW  动画
+https://github.com/flatiron/director#client-side-routing  director.js实现的前端路由 http://www.tuicool.com/articles/QBFfYjb
 https://imququ.com/post/cross-origin-resource-sharing.html  跨域数据交互解决方案
 https://imququ.com/post/promises-when-js.html   异步编程：When.js快速上手
 http://isux.tencent.com/play-with-html5-optimize.html  玩转HTML5移动页面(优化篇)

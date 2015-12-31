@@ -6,6 +6,20 @@ http://dockerpool.com/static/books/docker_practice/index.html  Docker ¡ª¡ª ´ÓÈëÃ
 http://www.tuicool.com/articles/rUvERv  Éı¼¶ÄÚºË
 https://help.aliyun.com/knowledge_detail/7594467.html?pos=6
 http://dev.aliyun.com/search.html?spm=5176.775974865.0.0.uRLsya
+http://www.infoq.com/cn/articles/the-apply-of-docker-in-coding-webide-project   DockerÔÚCoding WebIDEÏîÄ¿ÖĞµÄÔËÓÃ
+
+centos°²×°
+ĞŞ¸ÄgrubµÄÖ÷ÅäÖÃÎÄ¼ş/etc/grub.conf£¬ÉèÖÃdefault=0£¬±íÊ¾µÚÒ»¸ötitleÏÂµÄÄÚÈİÎªÄ¬ÈÏÆô¶¯µÄkernel
+grep aufs /proc/filesystems
+cat /var/log/docker
+https://github.com/CentOS/CentOS-Dockerfiles
+https://mos.meituan.com/library/26/how-to-install-docker-on-centos/
+docker -dÆô¶¯£¬»òtail -f /var/log/docker²é¿´ÈÕÖ¾
+http://blog.csdn.net/jiekechoo/article/details/48690841  °²×°¿ª·¢¹¤¾ßºÍPython2.7
+vi /usr/bin/yum ½«#!/usr/bin/python¸ÄÎª#!/usr/bin/python2.6.6
+»òÕßÊÇ sed -i 's/python/python2.6.6/' /usr/bin/yum
+http://www.tuicool.com/articles/rUvERv  Éı¼¶ÄÚºË
+
 
 https://github.com/prometheus/prometheus  ¼à¿Ø  cloud insight
 http://special.csdncms.csdn.net/BeDocker/  docker×ÊÁÏ¼¯
@@ -21,6 +35,7 @@ docker pull daocloud.io/library/centos:latest
 http://dockerpool.com/article/1419997003  Ê¹ÓÃ¡°daocloud¡±´úÀí¼ÓËÙÏÂÔØ¹Ù·½¾µÏñ
 https://help.aliyun.com/knowledge_detail/5974865.html
 
+http://www.sxt.cn/u/756/blog/5340   Docker±Ê¼Ç--¾µÏñÖĞ²¿ÊğÒ»¸ötomcat 
 http://www.csdn.net/article/2015-07-21/2825266   Docker³ÖĞø²¿ÊğÍ¼ÎÄÏê½â
 http://www.solinx.co/archives/152   ´´½¨docker¾µÏñ£¬³õÊ¼»¯jdk8Óëtomcat»·¾³
 http://dockerpool.com/static/books/docker_practice/index.html   Docker ¡ª¡ª ´ÓÈëÃÅµ½Êµ¼ù
@@ -36,6 +51,32 @@ Docker ¾µÏñ²ãµÄÄÚÈİÒ»°ãÔÚ Docker ¸ùÄ¿Â¼µÄ aufs Â·¾¶ÏÂ£¬Îª /var/lib/docker/aufs/d
 ¶ÔÓÚÃ¿Ò»¸ö¾µÏñ²ã£¬Docker ¶¼»á±£´æÒ»·İÏàÓ¦µÄ json ÎÄ¼ş£¬json ÎÄ¼şµÄ´æ´¢Â·¾¶Îª /var/lib/docker/graph  Ã¿Ò»¸ö¾µÏñ²ã»¹°üº¬Ò»¸ö layersize ÎÄ¼ş£¬¸ÃÎÄ¼şÖ÷Òª¼ÇÂ¼¾µÏñ²ãÄÚ²¿ÎÄ¼şÄÚÈİµÄ×Ü´óĞ¡¡£
 ÔÚÒ»¸öDockerfileÖĞÃ¿¸öÃüÁî¶¼»áÔÚÔ­À´µÄ»ù´¡ÉÏÉú³ÉÒ»²ã¾µÏñ¡£
 Docker MachineÊÇÒ»¸ö¿ÉÒÔÍ¨¹ıÒ»¸öÃüÁîÖ±½Ó°²×°DockerÒıÇæµÄ¹¤¾ß¡£ Compose¹¤¾ßÊ¹ÓÃYAMLÎÄ¼şÀ´Î¬»¤ËùÓĞÓ¦ÓÃ³ÌĞòÈİÆ÷µÄÂß¼­¶¨ÒåÒÔ¼°ËüÃÇÖ®¼äµÄÁ¬½Ó¡£
+ÏÔÊ¾ÈİÆ÷µÄ±ê×¼Êä³ö£ºdocker logs CONTAINERID
+	
+¼ÙÉèÎÒÃÇÒªµ¼³öµÄ¾µÏñÃûÎªtomcat:7.0.55    docker save -o ubuntu14.04_tomcat.tar.gz tomcat:7.0.55
+docker export 6c5563 > ./ubuntu_tomcat.tar.gz  µ¼³öÈİÆ÷£¬6c5563ÊÇÈİÆ÷µÄid£¬¿ÉÒÔÓÃdocer ps -a ÃüÁî²é¿´¡£
+export µ¼³öµÄÊÇÈİÆ÷µ±ÓÃËùÓÃµÄ¾µÏñÄÚÈİ.
+save ±£´æµÄÊÇËùÓĞÕâ¸ö¾µÏñµÄ°æ±¾¼ÇÂ¼£¬°üÀ¨Ò»Ğ©ÀúÊ·Êı¾İ.
+ÓÃÏÂÃæµÄÖ¸Áî¿ÉÒÔ²é¿´ËùÓĞ¾µÏñµÄÀúÊ·¹ı³Ì£ºdocker images --tree	
+ÔÚÄãµÄĞÂµÄ Docker ÊµÀıÖĞÔËĞĞ docker loadÃüÁî£¬²¢ÇÒÖ¸¶¨ tar ¾µÏñÎÄ¼şµÄÎ»ÖÃ  docker load < /tmp/mynewimage.tar
+¿ÉÒÔÊ¹ÓÃ docker rm $(docker ps -q -a) Ò»´ÎĞÔÉ¾³ıËùÓĞµÄÈİÆ÷£¬docker rmi $(docker images -q) Ò»´ÎĞÔÉ¾³ıËùÓĞµÄ¾µÏñ¡£
+docker-registryÊ¹ÓÃÁËegg´ò°ü·¢²¼£¬gunicorn×÷ÎªÓ¦ÓÃ·şÎñÆ÷£¨ÀàËÆtomcat£©£¬flask×÷Îªmvc¿ò¼Ü£¨ÀàËÆspring£©£¬ºóÃæ»¹ÓĞsqlalchemy×÷ÎªËÑË÷ºó¶Ë¡£
+http://www.sxt.cn/u/756/blog/5450  docker-hubºÍdocker-registry¿´ÓÅĞãµÄºó¶Ë·şÎñÉè¼ÆÊµÏÖ 
+
+docker-compose
+Í¨¹ıCompose£¬Äã¿ÉÒÔºÜÈİÒ×µØÊ¹ÓÃÒ»¸öÅäÖÃÎÄ¼ş¶¨ÒåÒ»¸ö¶àÈİÆ÷µÄÓ¦ÓÃ£¬È»ºóÊ¹ÓÃÒ»ÌõÖ¸Áî°²×°Õâ¸öÓ¦ÓÃµÄËùÓĞÒÀÀµ£¬Íê³É¹¹½¨¡£
+ĞèÒªÔÚdocker-compose.ymlÖĞÈ·¶¨ÄãµÄÓ¦ÓÃËùÊ¹ÓÃµÄ·şÎñ£¬Ö´ĞĞdocker-compose upÃüÁî£¬È»ºóCompose¾Í»áÆô¶¯²¢ÔËĞĞÄãµÄÕû¸öÓ¦ÓÃ¡£
+Èç¹ûÄãÏ£ÍûºóÌ¨ÔËĞĞÕâĞ©·şÎñ£¬¾ÍÔÚÖ´ĞĞdocker-compose upÊ±´«Èë-d ±êÖ¾£¬Ö´ĞĞ docker-compose ps ¾Í¿ÉÒÔ¿´µ½ÏÖÔÚÕıÔÚÔËĞĞµÄ·şÎñ
+http://cholerae.com/2015/04/13/-%E7%BF%BB%E8%AF%91-Docker-Compose%E5%B7%A5%E5%85%B7%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/
+http://debugo.com/docker-compose/
+http://ethanliu.org/post/Deploy_gitlab_gitlab-ci_with_docker/  gitlab
+https://phphub.org/topics/1010  ´î½¨×Ô¼ºµÄ»º´æ²Ö¿â
+
+Docker MachineÊÇÒ»¸ö¼ò»¯Docker°²×°µÄÃüÁîĞĞ¹¤¾ß£¬Í¨¹ıÒ»¸ö¼òµ¥µÄÃüÁîĞĞ¼´¿ÉÔÚÏàÓ¦µÄÆ½Ì¨ÉÏ°²×°Docker
+machine create -d virtualbox dev 
+http://dockone.io/article/275
+
+https://github.com/yanqiw/online-development-runtime-practices
 
 sudo docker.io pull jmoger/gitblit
 <wait a while>
