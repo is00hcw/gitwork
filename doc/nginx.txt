@@ -6,6 +6,7 @@ https://www.nginx.com/blog/tuning-nginx/#gs.mpDnrLM  优化
 
 
 lua
+https://www.scalescale.com/tips/nginx/how-to-install-openresty/  安装 openresty
 http://www.londonlua.org/scripting_nginx_with_lua/slides.html
 http://io.upyun.com/2015/04/14/using-ngxlua-in-upyun/  
 http://io.upyun.com/2015/07/20/nginx-socket-sharding/  NGINX 1.9.1 新特性：套接字端口共享
