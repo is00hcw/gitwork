@@ -6,6 +6,41 @@ Sigar£¨System Information Gatherer And Reporter£©£¬ÊÇÒ»¸ö¿ªÔ´µÄ¹¤¾ß£¬Ìá¹©ÁË¿çÆ½Ì
 https://github.com/jmxtrans/jmxtrans  jmx
 http://jerrypeng.me/2014/08/08/server-side-java-monitoring-java/
 New RelicÊÇÒ»¿î»ùÓÚ SaaS µÄÔÆ¶ËÓ¦ÓÃ¼à²âÓë¹ÜÀíÆ½Ì¨£¬¿ÉÒÔ¼à²âºÍ¹ÜÀíÔÆ¶Ë¡¢ÍøÂç¶Ë¼°ÒÆ¶¯¶ËµÄÓ¦ÓÃ£¬ÄÜÈÃ¿ª·¢ÕßÒÔÖÕ¶ËÓÃ»§¡¢·şÎñÆ÷¶Ë»òÓ¦ÓÃ´úÂë¶ËµÄÊÓ½ÇÀ´¼à¿Ø×Ô¼ºµÄÓ¦ÓÃ¡£
+ÇáÁ¿¼¶µÄÌ½Õë²É¼¯Êı¾İ£¨Statsd£©+ Ê±¼äĞòÁĞÊı¾İ¿â£¨ÔËËã£©+ Õ¹ÏÖ¶Ë£¨Grafanna£©
+Cloud Insight ¾ÍÊÇ¹úÄÚÀûÓÃ statsd ºÍ OpenTSDB ÊµÏÖµÄÒ»¸öÒ»Ìå»¯µÄ½â¾ö·½°¸£¨Ãâ·Ñµ«²»¿ªÔ´£©
+
+https://github.com/zhangqichuan/CheungSSH   web¹ÜÀí½çÃæ
+http://keichuen.blog.51cto.com/6321640/1684719
+http://dongweiming.github.io/blog/archives/shi-yong-grafanahe-diamondgou-jian-graphitejian-kong-xi-tong/   Ê¹ÓÃgrafanaºÍDiamond¹¹½¨Graphite¼à¿ØÏµÍ³
+http://graphite.readthedocs.org/en/1.0/tools.html
+Grafana ÊÇ´¿ Javascript ¿ª·¢µÄÇ°¶Ë¹¤¾ß£¬ÓÃÓÚ·ÃÎÊ InfluxDB£¬×Ô¶¨Òå±¨±í¡¢ÏÔÊ¾Í¼±íµÈ¡£  http://docs.grafana.org/datasources/elasticsearch/
+https://ruby-china.org/topics/23470
+http://www.vpsee.com/2015/03/a-modern-monitoring-system-built-with-grafana-collected-influxdb/
+http://skaka.me/blog/2015/07/21/kamon-statsd-graphite-grafana-introduction/   Ê¹ÓÃStatsD, Graphite, Grafana, Kamon´î½¨¿ÉÓÃÓÚJVMÏîÄ¿µÄ¿ÉÊÓ»¯ĞÔÄÜ¼à¿ØÏµÍ³
+https://github.com/lmenezes/elasticsearch-kopf   kopf web¹ÜÀí   ./plugin install lmenezes/elasticsearch-kopf/v1.6.1    http://localhost:9200/_plugin/kopf
+http://www.tuicool.com/articles/YFbuuu7  logstashµÄkafka²å¼şÊ¹ÓÃ
+http://www.tuicool.com/articles/IRZvIz
+heka ÊÇ Mozilla ¹«Ë¾·ÂÔì logstash Éè¼Æ£¬ÓÃ Golang ÖØĞ´µÄÒ»¸ö¿ªÔ´ÏîÄ¿¡£Í¬Ñù²ÉÓÃÁËinput -> decoder -> filter -> encoder -> output µÄÁ÷³Ì¸ÅÄî¡£ÆäÌØµãÔÚÓÚ£¬ÔÚÖĞ¼äµÄ decoder/filter/encoder ²¿·Ö£¬Éè¼ÆÁË sandbox ¸ÅÄî£¬¿ÉÒÔ²ÉÓÃÄÚÇ¶ lua ½Å±¾×öÕâÒ»²¿·ÖµÄ¹¤×÷
+http://my.oschina.net/abcfy2/blog/372138  logstashÈÕÖ¾ÊÕ¼¯ÏµÍ³
+
+https://zuoyun.me/fu-wu-hua-zhi-li/  ¼à¿Ø-Metrics¡¢JavaMelody
+https://github.com/naver/pinpoint
+https://github.com/python-diamond/Diamond
+https://github.com/prometheus/prometheus  ¿ªÔ´¼à¿Ø
+https://github.com/javamelody/javamelody
+http://www.jianshu.com/p/b2f77285266c  Ğ¡Ã×¼à¿Ø
+http://www.tuicool.com/articles/n2EnAvR  Ê®´óÔÆÔËÎ¬¼à¿Ø¹¤¾ßºáÆÀ
+http://developer.baidu.com/apm/ 
+
+https://github.com/Netflix/vector  VectorÊÇNetflix¿ªÔ´µÄÖ÷»úĞÔÄÜ¼à¿Ø¿ò¼Ü
+¿ªÔ´ÍøÕ¾·ÃÎÊÍ³¼ÆÏµÍ³Piwik
+http://pcp.io/download.html
+https://github.com/huanleguang/hlg-front/tree/master/%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E7%9B%91%E6%8E%A7 Ç°¶Ë¼à¿Ø
+https://github.com/sap1ens/javascript-error-logging/blob/master/js_logger.js
+http://www.zhihu.com/question/29953354
+https://github.com/sergeychernyshev/showslow
+http://fex.baidu.com/blog/2014/05/build-performance-monitor-in-7-days/  7 Ìì´òÔìÇ°¶ËĞÔÄÜ¼à¿ØÏµÍ³
+https://github.com/WPO-Foundation/webpagetest
 
 cat
 http://www.infoq.com/cn/presentations/public-comments-monitoring-platform-analyse/

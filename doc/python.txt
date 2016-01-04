@@ -7,6 +7,7 @@ https://github.com/ipython/ipython
 https://github.com/benoitc/gunicorn
 http://python.jobbole.com/83486/   Python后端相关技术/工具栈
 http://www.liaoxuefeng.com/article/00137760323922531a8582c08814fb09e9930cede45e3cc000   任务调度利器：Celery
+https://zuoyun.me/bu-shu/   部署-gunicorn
 
 sudo apt-get install build-essential python-dev python-numpy python-setuptools python-scipy libatlas-dev libatlas3-base
 pip install -U scikit-learn
