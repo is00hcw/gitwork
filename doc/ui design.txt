@@ -9,3 +9,7 @@ http://www.woshipm.com/ucd/157315.html
 http://www.mahaixiang.cn/App/1016.html
 
 https://www.behance.net/gallery/Samsung-Smart-Home-App-Concept/8532441  smarthome
+
+
+你项目中不太需要像一些大框架如Bootstrap、UIkit、Kube里的众多功能模块，及UI样式 ，那么Skeleton是你的明智之选
+最大宽度为960px的12列流体网格系统，自适应小屏设备浏览器

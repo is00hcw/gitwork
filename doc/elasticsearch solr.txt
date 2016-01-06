@@ -1,3 +1,4 @@
+http://shokunin.co/blog/2013/06/24/elasticsearch.html
 http://blog.csdn.net/july_2/article/details/24702243
 plugin -install lukas-vlcek/bigdesk
 http://localhost:9200/_plugin/bigdesk/ 

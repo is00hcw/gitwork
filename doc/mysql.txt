@@ -1,4 +1,5 @@
 ﻿https://www.52os.net/articles/mysql-reset-password.html  重置密码
+https://segmentfault.com/a/1190000000593398  Mysql在大型网站的应用架构演变
 
 https://docs.aliyun.com/?spm=5176.7622920.9.4.9muujt#/pub/drds/best-practice/best_connection_pool
 jdbc:mysql://ip:port/db?autoReconnect=true&amp;rewriteBatchedStatements=true&amp;socketTimeout=30000&amp;connectTimeout=3000"

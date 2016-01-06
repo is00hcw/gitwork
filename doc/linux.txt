@@ -139,3 +139,13 @@ http://blog.chinaunix.net/uid-26495963-id-3187362.html
 Windows远程桌面使用的是RDP协议，所以ubuntu上就要先安装Xrdp，终端命令行输入安装：
 sudo apt-get install xrdp vnc4server xbase-clients
 在/usr/share/applications目录下打开“桌面共享”选项，桌面共享选项中首先要开启共享
+
+
+web terminal
+https://github.com/krishnasrinivas/wetty
+https://github.com/chjj/tty.js/
+https://github.com/liftoff/GateOne  http://itnihao.blog.51cto.com/1741976/1311506
+https://github.com/chjj/term.js/
+http://segmentfault.com/a/1190000002666717   https://github.com/chemdemo/wts-monit
+https://github.com/krishnasrinivas/nuttyapp/
+https://github.com/jcubic/jquery.terminal

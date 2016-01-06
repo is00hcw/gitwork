@@ -6,3 +6,33 @@ http://os.51cto.com/art/201409/451927_all.htm
 
 http://www.csdn.net/article/1970-01-01/2823019  DevOps
 http://code.csdn.net/news/2823944
+
+
+
+安装Ansible:
+rpm -ivh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+yum install ansible
+
+安装saltstack:
+rpm -ivh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+yum install salt-master -y  //master
+yum install salt-minion     //clients
+
+
+1、centos6安装KVM
+yum groupinstall Virtualization ‘Virtualization Client’
+
+2、安装api支持
+yum install libvirt
+service libvirtd start
+
+3、验证是否已经载入KVM模块 $ lsmod | grep kvm
+kvm
+kvm_intel
+
+安装kvm虚拟化相关组件
+yum groupinstall Virtualization
+yum groupinstall “Virtualization Client”
+yum groupinstall “Virtualization Platform”
+yum groupinstall “Virtualization Tools”
+http://my.oschina.net/jk409/blog/297577

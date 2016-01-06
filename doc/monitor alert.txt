@@ -1,3 +1,5 @@
+http://blog.arganzheng.me/posts/tomcat-monitor.html  tomcat监控
+http://www.devopsbookmarks.com/monitoring
 http://blog.csdn.net/linlzk/article/details/47423423    服务端监控方案
 http://mp.weixin.qq.com/s?__biz=MzAwMDU1MTE1OQ==&mid=207497106&idx=1&sn=dcd2196078c40f0eec268638de2b0b0d&scene=5#rd   看大众点评如何通过实时监控系统CAT打造7*24服务
 http://www.infoq.com/cn/articles/oppo-monitor-platform?utm_campaign=rightbar_v2&utm_source=infoq&utm_medium=articles_link&utm_content=link_text   oppo监控
@@ -22,8 +24,14 @@ http://www.tuicool.com/articles/YFbuuu7  logstash的kafka插件使用
 http://www.tuicool.com/articles/IRZvIz
 heka 是 Mozilla 公司仿造 logstash 设计，用 Golang 重写的一个开源项目。同样采用了input -> decoder -> filter -> encoder -> output 的流程概念。其特点在于，在中间的 decoder/filter/encoder 部分，设计了 sandbox 概念，可以采用内嵌 lua 脚本做这一部分的工作
 http://my.oschina.net/abcfy2/blog/372138  logstash日志收集系统
+https://github.com/bosun-monitor/bosun  告警
+http://play.grafana.org/
+https://github.com/Yelp/elastalert  
 
+
+http://blog.arganzheng.me/posts/java-monitor-platform.html   java服务端监控平台设计
 https://zuoyun.me/fu-wu-hua-zhi-li/  监控-Metrics、JavaMelody
+https://github.com/anotheria/moskito
 https://github.com/naver/pinpoint
 https://github.com/python-diamond/Diamond
 https://github.com/prometheus/prometheus  开源监控
@@ -41,6 +49,18 @@ http://www.zhihu.com/question/29953354
 https://github.com/sergeychernyshev/showslow
 http://fex.baidu.com/blog/2014/05/build-performance-monitor-in-7-days/  7 天打造前端性能监控系统
 https://github.com/WPO-Foundation/webpagetest
+
+http://kibana.logstash.es/content/logstash/plugins/output/statsd.html
+Statsd 最早是 2008 年 Flickr 公司用 Perl 写的针对 Graphite、datadog 等监控数据后端存储开发的前端网络应用，2011 年 Etsy 公司用 node.js 重构。用于接收(默认 UDP)、写入、读取和聚合时间序列数据，包括即时值和累积值等。
+度量数据类型  COUNTERS：事件次数统计   TIMERS：事件耗时统计   GAUGES：精确值  SETS：唯一事件个数统计
+Graphite 是用 Python 模仿 RRDtools 写的时间序列数据库套件。包括三个部分：carbon: 是一个Twisted守护进程，监听处理数据；whisper: 存储时间序列的数据库；webapp: 一个用 Django 框架实现的网页应用。
+http://book.51cto.com/art/201512/499538.htm  statsd metric
+http://www.infoq.com/cn/articles/graphite-intro?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global
+http://www.topthink.com/topic/7475.html   开源的DevOps开发工具箱
+http://www.mageyoyo.com/?p=44  smokeping  http://dl528888.blog.51cto.com/2382721/1266598
+http://dl528888.blog.51cto.com/2382721/863701  linux单机监控Monitorix
+http://blog.csdn.net/cnweike/article/details/36862847  在CentOS6上，statsD和Graphite的部署过程
+http://news.oneapm.com/oneapm-servers-linux-zabbix-nagios/  Zabbix，Nagios，OneAPM Servers 安装部署大比拼
 
 cat
 http://www.infoq.com/cn/presentations/public-comments-monitoring-platform-analyse/

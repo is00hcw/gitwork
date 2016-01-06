@@ -98,6 +98,10 @@ spring xml <mvc:async-support default-timeout="3000"/>
 public DeferredResult<String> quotes() {   异步处理完成时返回org.springframework.web.context.request.async.DeferredResult
 返回java.util.concurrent.Callable来完成异步处理    org.springframework.web.context.request.async.WebAsyncTask 可设置超时
 
+websocket
+http://zhaozhiming.github.io/blog/2015/05/11/spring-websocket-config/
+http://kimrudolph.de/blog/spring-4-websockets-tutorial/
+http://syntx.io/using-websockets-in-java-using-spring-4/
 
 async mq
 http://yanyaner.com/blog/2014/04/09/async_message_architect2/

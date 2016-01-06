@@ -9,8 +9,10 @@ http://dev.aliyun.com/search.html?spm=5176.775974865.0.0.uRLsya
 http://www.infoq.com/cn/articles/the-apply-of-docker-in-coding-webide-project   Docker在Coding WebIDE项目中的运用
 
 centos安装
-http://blog.laisky.com/p/docker-centos/
+yum install device-mapper-event-libs
 修改grub的主配置文件/etc/grub.conf，设置default=0，表示第一个title下的内容为默认启动的kernel
+https://www.ijser.cn/docker-notes-2/
+http://blog.laisky.com/p/docker-centos/
 grep aufs /proc/filesystems
 cat /var/log/docker
 https://github.com/CentOS/CentOS-Dockerfiles
@@ -20,6 +22,7 @@ http://blog.csdn.net/jiekechoo/article/details/48690841  安装开发工具和Python2.7
 vi /usr/bin/yum 将#!/usr/bin/python改为#!/usr/bin/python2.6.6
 或者是 sed -i 's/python/python2.6.6/' /usr/bin/yum
 http://www.tuicool.com/articles/rUvERv  升级内核
+https://www.ijser.cn/install-nvm-on-docker/
 
 加速
 当用户的Docker设定了--registry-mirror参数后，用户的Docker下拉镜像时，首先去Docker Hub Mirror中查找镜像，若命中则说明该镜像已经在Docker Hub Mirror中缓存，用户直接从Docker Hub Mirror中下载；若没有命中，则说该镜像还没有被缓存，那么Docker Hub Mirror首先会被驱使去Docker Hub中下载该镜像，并进行缓存，最终让用户从Docker Hub Miorror中下载该镜像。

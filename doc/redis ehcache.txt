@@ -1,11 +1,47 @@
 http://www.cnblogs.com/gomysql/p/4395504.html  Redis Cluster 3.0搭建与使用
 http://www.cnblogs.com/gomysql/p/3617238.html  主从
 https://github.com/nicolasff/webdis  http接口
+http://shokunin.co/blog/2014/11/11/operational_redis.html    Running Redis in production
+http://blog.huangz.me/diary/2015/redis-geo.html    Redis 的 GEO 特性将在 Redis 3.2 版本释出， 这个功能可以将用户给定的地理位置信息储存起来， 并对这些信息进行操作。
+http://dumbee.net/archives/114  Redis 2.8 配置文件说明
+
+http://sumory.com/2014/08/15/spring-redis-sentinel/
+redis-server ./sentinel.conf --sentinel --port 26379
+redis.clients.jedis.JedisSentinelPool
+org.springframework.data.redis.connection.RedisSentinelConfiguration
+http://my.oschina.net/zhuguowei/blog/406807?fromerr=NeE61A48  Jedis returnResource使用注意事项
+https://segmentfault.com/a/1190000002690506  Jedis的JedisSentinelPool源代码分析
+redis sentinel 配合 jedis 进行主从热切换  http://blog.ganps.net/2015/12/08/redis%20sentinel%20%E9%85%8D%E5%90%88%20jedis%20%E8%BF%9B%E8%A1%8C%E4%B8%BB%E4%BB%8E%E7%83%AD%E5%88%87/
+http://www.360doc.com/content/15/0323/17/5054188_457454442.shtml
+单M-S结构适用于不同用户数据存在关联，但应用可以实现读写分离的业务模式。Master主要提供写操作，Slave主要提供读操作，充分利用硬件资源。
+双（多）M-S结构适用于用户间不存在或者存在较少的数据关联的业务模式，读写效率是单M-S的两（多）倍，但要求故障时单台服务器能够承担两个Mater Redis的资源需求。
+sentinel分片 http://warm-breeze.iteye.com/blog/2020413    
+http://segmentfault.com/a/1190000002680804   Redis Sentinel机制与用法
+http://segmentfault.com/a/1190000002685515
+每个sentinel通过向每个master和slave的发布/订阅频道__sentinel__:hello每秒发送一次消息，来宣布它的存在。
+snetinel的状态会被持久化地写入sentinel的配置文件中。
+min-slaves-to-write 1
+min-slaves-max-lag 10
+通过上面的配置，当一个redis是master时，如果它不能向至少一个slave写数据(上面的min-slaves-to-write指定了slave的数量)，它将会拒绝接受客户端的写请求。由于复制是异步的，master无法向slave写数据意味着slave要么断开连接了，要么不在指定时间内向master发送同步数据的请求了(上面的min-slaves-max-lag指定了这个时间)。
+master通过requirepass设置自身的密码，不提供密码无法连接到这个master。
+slave通过masterauth来设置访问master时的密码。
+Sentinel默认运行在26379端口上，sentinel支持redis协议，所以可以使用redis-cli客户端或者其他可用的客户端来与sentinel通信。
+另外一种是使用发布/订阅模式来订阅sentinel事件，比如说failover，或者某个redis实例运行出错，等等。
+SENTINEL masters 显示被监控的所有master以及它们的状态.
+SENTINEL failover <master name> 强制sentinel执行failover，并且不需要得到其他sentinel的同意。但是failover后会将最新的配置发送给其他sentinel。
+
+https://github.com/sreeix/redis-proxy
+https://github.com/wandoulabs/codis/blob/release3.0/doc/tutorial_zh.md   codis 3.0
+go get github.com/tools/godep
+which etcd &>/dev/null || go get github.com/coreos/etcd
+go get -u -d github.com/wandoulabs/codis
+
 
 http://www.ttlsa.com/redis/redis-keepalived-achieve-high-availability/
 http://www.ttlsa.com/python/redis-rdb-tools-analysis-of-reids-dump-file-and-memory-usage/
 http://my.oschina.net/guol/blog/182265
 Redis 监控最直接的方法就是使用系统提供的 info 命令，redis-cli info   http://www.cnblogs.com/kaituorensheng/p/3979298.html
+
 
 http://os.51cto.com/art/201301/379151.htm
 http://www.nkrode.com/article/real-time-dashboard-for-redis
@@ -100,7 +136,60 @@ http://www.oschina.net/p/codis      http://www.cnblogs.com/shanyou/p/4268896.htm
 http://engineering.xueqiu.com/blog/2014/12/26/redis-capacity-planning/?utm_source=tuicool
 
 
+
 Redis 3.0版本相对于2.8版本带来的主要新特性包括：
 实现了分布式的Redis即Redis Cluster，从而做到了对集群的支持；
 CONFIG SET能够接受不同单位的内存值，如CONFIG SET maxmemory 1gb
 http://www.infoq.com/cn/articles/effective-ops-part-03?utm_source=infoq&utm_medium=popular_widget&utm_content=presentation&utm_campaign=popular_content_list
+
+
+Redis的主从同步基本是采取Pull&Push搭配的方式：
+新增Redis从库时，从库采取Pull方式，发送SYNC信号从主库拉数据（第一次）
+主库有数据更新时，会遍历connected_slaves主动将数据Push到从库
+从库维持一个与主库的连接心跳，以此保证主库能实时将数据同步从库（repl-ping-slave-peroid配置，默认10s）
+
+运行时从进程获取配置
+config get XXXX
+
+运行时手动修改master-slave
+修改一台slave为master
+1、执行slaveof no one #执行该机不是一台slave了
+redis> slaveof no one
+2、修改readonly no #因为要转为master，所以要改成可以写的
+redis> config set slave-read-only no
+
+其他的slave再指向这台机器
+1、redis> slaveof IP PORT
+http://segmentfault.com/a/1190000003946562
+http://debugo.com/redis-sentinel/
+在redis 3.0.3中redsi-sentinel的二进制文件就是redis-server，只要在启时指定sentinel的配置文件，并加上--sentinel即可
+https://www.52os.net/articles/redis-two-nodes-failover.html
+https://dbarobin.com/2015/11/09/scale-out-of-redis-with-twemproxy/
+http://blog.lday.me/?p=163     服务化Cache系统–小米网Redis实践
+https://github.com/HunanTV/redis-cerberus
+http://m.oschina.net/blog/377568 
+http://op.baidu.com/2014/07/bdrp%E5%88%86%E5%B8%83%E5%BC%8Fredis%E9%9B%86%E7%BE%A4/
+http://zhuwanjun.com/?p=25
+http://mtydev.net/?p=402  codis
+
+https://www.zybuluo.com/SailorXiao/note/156551
+http://machen.cc/2015/01/23/redisdiao-shi-fang-fa-xiao-jie/
+redis的slowlog是redis用于记录记录慢查询执行时间的日志系统。由于slowlog只保存在内存中，因此slowlog的效率很高，完全不用担心会影响到redis的性能。
+在redis.conf中有关于slowlog的设置：
+slowlog-log-slower-than 0 记录执行时间超过一定数量微秒的命令，为负数时关闭慢日志，0时记录所有命令  
+slowlog-max-len 128 慢日志最大长度  
+配置成功后使用命令查看慢日志：slowlog get  或者 slowlog get 10  
+
+https://segmentfault.com/a/1190000003986299
+redis-cli info
+这条命令会显示当前redis运行时的全局的包括各种方面状态
+used_memory：使用了多少内存
+used_memory_peak：内存峰值
+rdb_last_save_time：最近一次dump数据操作的时间
+rdb_changes_since_last_save：对上一次持久化之后更新了多少数据；可以知道如果这时候出现故障，你会丢失多少数据。
+master_link_statu: 如果这个值是up，说明同步正常；如果是down，这时需要注意一下输出的其他一些诊断信息，
+
+https://www.v2ex.com/t/147948  Redis 的性能分析工具 Redis Faina
+https://github.com/DavidWittman/ansible-redis  ansible
+
+
