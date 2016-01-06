@@ -18,6 +18,7 @@ http://www.360doc.com/content/15/0323/17/5054188_457454442.shtml
 sentinel分片 http://warm-breeze.iteye.com/blog/2020413    
 http://segmentfault.com/a/1190000002680804   Redis Sentinel机制与用法
 http://segmentfault.com/a/1190000002685515
+https://seanmcgary.com/posts/how-to-build-a-fault-tolerant-redis-cluster-with-sentinel
 每个sentinel通过向每个master和slave的发布/订阅频道__sentinel__:hello每秒发送一次消息，来宣布它的存在。
 snetinel的状态会被持久化地写入sentinel的配置文件中。
 min-slaves-to-write 1
