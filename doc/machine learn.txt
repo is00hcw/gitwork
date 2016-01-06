@@ -24,3 +24,6 @@ http://www.infoq.com/cn/articles/recommendation-algorithm-overview-part01?utm_ca
 基于内容的推荐算法
 混合推荐算法
 流行度推荐算法
+
+
+https://medium.com/learning-new-stuff/how-to-learn-neural-networks-758b78f2736e#.20hej91el  Learning How To Code Neural Networks

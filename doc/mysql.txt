@@ -26,6 +26,8 @@ http://blog.csdn.net/seteor/article/details/24017913
 https://github.com/box/Anemometer   Box SQL Slow Query Monitor
 yum install percona-toolkit -y
 https://github.com/ISADBA/anemometerAudit_SQL  sql审核
+https://www.percona.com/blog/2013/01/09/how-does-mysql-replication-really-work/   How does MySQL Replication really work?
+
 
 START SLAVE  http://hunng.com/2014/06/18/centos-mysql-master-slave-replication/
 http://www.cnblogs.com/lyhabc/p/3838764.html
