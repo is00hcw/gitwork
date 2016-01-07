@@ -1,6 +1,13 @@
 下载后的mysql  binlog日志需要通过mysqlbinlog命令查看，具体参数如下：  https://help.aliyun.com/knowledge_detail/6526067.html
 mysqlbinlog -vv --base64-output=decode-rows mysqlbinlog.0001
 
+阿里云飞天平台是自己开发的,虚拟化用的是Xen.
+由于CDN节点在全国多地均有分布，所以与其他云产品间流量是通过公网传输。CDN流量与其他云产品流量是各自独立计费，之间并无关系。
+正确使用OSS 内网地址，一方面可以使用同区域OSS 到 ECS 流量之间的免费流量，另一方面ECS 内网访问OSS 的网络质量较好，能够有效的提升应用的上传和下载质量。 
+https://help.aliyun.com/document_detail/oss/practice/post_object_callback.html?spm=5176.7618386.5.15.JRfkMv   Web端直传实践
+https://help.aliyun.com/document_detail/oss/practice/cors_guide.html?spm=5176.docoss/practice/post_object_callback.6.149.tJhjBj
+https://help.aliyun.com/knowledge_detail/5974206.html?spm=5176.7618386.5.9.TBVFKi
+https://help.aliyun.com/knowledge_detail/7609473.html?spm=5176.7618386.5.1.TBVFKi  ECS上搭建反向代理通过内网访问OSS服务
 https://help.aliyun.com/knowledge_detail/5980325.html?spm=5176.788314850.2.10.kx0mlk  ECS Linux服务器配置yum源
 若使用阿里云服务器，可以通过内网地址：http://mirrors.aliyuncs.com/ 访问,不占用公网流量。
 https://help.aliyun.com/knowledge_detail/5975063.html?spm=5176.788314850.2.17.kx0mlk  vnc
@@ -266,3 +273,5 @@ innobackupex --defaults-file=./backup-my.cnf --apply-log ./
 
 RDS for MySQL 5.6版本通过TokuDB引擎支持数据压缩功能。经过大量测试表明，数据从InnoDB表转到TokuDB表里面后数据空间可以减少80%到90%，即2T的数据量能压缩到400G甚至更低。
 TokuDB限制  TokuDB无法支持外键Foreign Key。TokuDB不适用于频繁大量读取的场景 。
+
+运行namenode，resourcemanager的节点称之为master节点，而运行datanode，nodemanager的节点称之为slave节点。
