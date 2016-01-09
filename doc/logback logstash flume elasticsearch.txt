@@ -25,6 +25,12 @@ FileWatch 模块提供了一个稍微简单一点的写法：/path/to/**/*.log�
 start_position 仅在该文件从未被监听过的时候起作用。如果 sincedb 文件中已经有这个文件的 inode 记录了，那么 logstash 依然会从记录过的 pos 开始读取数据。  http://kibana.logstash.es/content/logstash/plugins/input/file.html
 filters/date 插件可以用来转换你的日志记录中的时间字符串，变成 LogStash::Timestamp 对象，然后转存到 @timestamp 字段里  Elasticsearch 内部，对时间类型字段，是统一采用 UTC 时间，存成 long 长整形数据的！对日志统一采用 UTC 时间存储
 
+filebeat
+http://udn.yyuap.com/doc/logstash-best-practice-cn/ecosystem/logstash_forwarder.html   Logstash Forwarder
+http://www.tuicool.com/articles/VFrE7nY
+https://www.elastic.co/guide/en/beats/filebeat/current/filebeat-configuration-details.html
+https://www.elastic.co/guide/en/beats/libbeat/1.0.1/getting-started.html#logstash-setup
+
 
 http://kibana.logstash.es/content/logstash/plugins/input/collectd.html
 http://yhz.me/blog/CentOS-Collectd.html

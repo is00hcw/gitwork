@@ -1,6 +1,7 @@
 下载后的mysql  binlog日志需要通过mysqlbinlog命令查看，具体参数如下：  https://help.aliyun.com/knowledge_detail/6526067.html
 mysqlbinlog -vv --base64-output=decode-rows mysqlbinlog.0001
 
+http://www.csdn.net/article/2014-10-21/2822201
 阿里云飞天平台是自己开发的,虚拟化用的是Xen.
 由于CDN节点在全国多地均有分布，所以与其他云产品间流量是通过公网传输。CDN流量与其他云产品流量是各自独立计费，之间并无关系。
 正确使用OSS 内网地址，一方面可以使用同区域OSS 到 ECS 流量之间的免费流量，另一方面ECS 内网访问OSS 的网络质量较好，能够有效的提升应用的上传和下载质量。 

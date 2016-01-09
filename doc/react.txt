@@ -1,2 +1,65 @@
 http://my.oschina.net/vczero/blog/597980
 http://my.oschina.net/vczero/blog/471945
+
+https://www.aswifter.com/2015/11/17/set-up-react-native-windows/  windows
+http://www.ruanyifeng.com/blog/2015/03/react  
+http://wiki.jikexueyuan.com/project/react-native/  教程
+http://reactnative.cn/docs/getting-started.html#content
+http://blog.cnbang.net/tech/2698/  通信机制
+http://www.csdn.net/article/2015-09-24/2825787-react-native
+http://www.zhihu.com/question/27852694
+http://zhuanlan.zhihu.com/FrontendMagazine/19996445
+http://www.cocoachina.com/ios/20150401/11458.html
+
+http://www.ghugo.com/react-native-to-web/?utm_source=tuicool
+http://www.ghugo.com/react-native-high-performance/   React Native 性能优化建议  
+http://www.ghugo.com/react-native-event-emitter/  React Native 自定义事件机制
+http://www.ghugo.com/react-native-communicate/  react-native 组件间通信
+http://www.nihaoshijie.com.cn/index.php/archives/550
+http://facebook.github.io/react-native/docs/embedded-app-android.html#content  native集成facebook react
+https://segmentfault.com/a/1190000004112878
+http://www.nihaoshijie.com.cn/index.php/archives/560  React Native IOS集成与原理简析
+
+http://top.css88.com/archives/724
+
+
+rpm -ivh https://www.softwarecollections.org/en/scls/rhscl/devtoolset-3/epel-6-x86_64/download/rhscl-devtoolset-3-epel-6-x86_64.noarch.rpm
+yum install devtoolset-3-gcc-c++
+scl enable devtoolset-3 bash
+http://www.tuicool.com/articles/a6JVZrr
+
+Run as root on RHEL, CentOS or Fedora, for Node.js v4 LTS Argon:
+curl --silent --location https://rpm.nodesource.com/setup_4.x | bash -
+
+Alternatively for Node.js v5:
+curl --silent --location https://rpm.nodesource.com/setup_5.x | bash -
+
+Alternatively for Node.js 0.10:
+curl --silent --location https://rpm.nodesource.com/setup | bash -
+
+Then install, as root:
+yum -y install nodejs
+
+wget  http://nodejs.org/dist/v4.2.4/node-v4.2.4-linux-x64.tar.gz
+
+
+把下载下来的 zip 文件复制到 C:\Documents and Settings\Administrator\.gradle\wrapper\dists\gradle-1.7-bin\2g3i7gan25uopmtc0lnjb1l9ff 目录下。
+把 zip 文件直接解压到当前目录。
+分别创建 gradle-1.7-bin.zip.lck 和 gradle-1.7-bin.zip.ok 两个文件。
+
+android
+emulator -help-keys
+http://blog.csdn.net/harry_helei/article/details/6709613
+http://www.cnblogs.com/beginor/archive/2013/01/13/2858228.html
+http://www.cnblogs.com/meteoric_cry/p/4874517.html   error
+http://www.cnblogs.com/meteoric_cry/p/4862314.html
+
+es6
+http://www.ghugo.com/react-native-es6/?utm_source=tuicool&utm_medium=referral
+https://github.com/lukehoban/es6features   summary
+http://es6.ruanyifeng.com/
+https://github.com/ruanyf/es6tutorial/
+如果使用let，声明的变量仅在块级作用域内有效
+立即执行匿名函数（IIFE）
+
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/

@@ -9,7 +9,9 @@ http://dev.aliyun.com/search.html?spm=5176.775974865.0.0.uRLsya
 http://www.infoq.com/cn/articles/the-apply-of-docker-in-coding-webide-project   Docker在Coding WebIDE项目中的运用
 
 centos安装
-yum install device-mapper-event-libs
+yum -y install docker-io
+yum -y install device-mapper-event-libs
+/etc/init.d/docker restart
 修改grub的主配置文件/etc/grub.conf，设置default=0，表示第一个title下的内容为默认启动的kernel
 https://www.ijser.cn/docker-notes-2/
 http://blog.laisky.com/p/docker-centos/

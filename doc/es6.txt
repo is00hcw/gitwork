@@ -1,7 +1,7 @@
 http://google.github.io/traceur-compiler/demo/repl.html
 http://babeljs.io/repl/
 
-https://es5.github.io/
+
 http://es6.ruanyifeng.com/
 https://github.com/xudafeng/xudafeng.github.com/blob/master/translation/startECMAScript6.md
 http://www.ido321.com/1634.html
@@ -12,9 +12,39 @@ http://code.tutsplus.com/articles/ecmascript-6-today--net-31582
 npm install -g traceur
 traceur --script calc.es6.js --out calc.es5.js --experimental
 
+npm install --global babel-cli
+npm install -g babel-core@5
+<script src="node_modules/babel-core/browser.js"></script>
 
 npm install -g broccoli-cli
 http://broccolijs.com/
 
+npm install -g typescript
 
 http://riotjs.com/zh/guide/application-design/
+
+
+
+
+es5
+Prototype(原型)是Javascript中实现对象继承的基础方式，使用方式为 [function].prototype = [object1]
+[function]可认为相当于type/class，这样可以使该类型的所有对象继承[object1]中所有Public的属性和方法。在这里public的意思是使用了this.xxx。
+http://www.cnblogs.com/hiteddy/archive/2011/12/16/Object_Oriented_javascript_prototype_inheritance.html
+
+function Child(age){
+    Parent.call(this,age);//对象冒充，给超类型传参
+}
+Child.prototype = new Parent();//原型链继承
+call([thisObj[,arg1[, arg2[, [,.argN]]]]])   // call()的用法：调用一个对象的一个方法，以另一个对象替换当前对象。
+
+function obj(o){  // 这种继承借助原型并基于已有的对象创建新对象，同时还不用创建自定义类型的方式称为原型式继承
+         function F(){}
+         F.prototype = o;
+         return new F();
+ }
+任何一个prototype对象都有一个constructor属性，指向它的构造函数。
+http://segmentfault.com/a/1190000002440502   ***
+http://www.ruanyifeng.com/blog/2011/06/designing_ideas_of_inheritance_mechanism_in_javascript.html
+http://www.zhangxinxu.com/wordpress/2012/01/introducing-ecmascript-5-1/
+https://es5.github.io/
+全局对象是最顶层的对象，在浏览器环境指的是window对象，在Node.js指的是global对象。

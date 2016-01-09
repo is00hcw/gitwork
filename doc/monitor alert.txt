@@ -27,7 +27,7 @@ http://my.oschina.net/abcfy2/blog/372138  logstash日志收集系统
 https://github.com/bosun-monitor/bosun  告警
 http://play.grafana.org/
 https://github.com/Yelp/elastalert  
-
+http://www.ghugo.com/10-web-clicktracks/   10 个强大的开源 Web 流量分析工具
 
 http://blog.arganzheng.me/posts/java-monitor-platform.html   java服务端监控平台设计
 https://zuoyun.me/fu-wu-hua-zhi-li/  监控-Metrics、JavaMelody
