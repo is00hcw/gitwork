@@ -8,6 +8,13 @@ http://www.ido321.com/1634.html
 https://github.com/frontnode/PPT/blob/master/ppts/ecmascript6-development.md
 http://wiki.jikexueyuan.com/project/es6/intro.html
 http://code.tutsplus.com/articles/ecmascript-6-today--net-31582
+子类必须在constructor方法中调用super方法，否则新建实例时会报错。这是因为子类没有自己的this对象，而是继承父类的this对象，然后对其进行加工。如果不调用super方法，子类就得不到this对象。
+ES5的继承，实质是先创造子类的实例对象this，然后再将父类的方法添加到this上面（Parent.apply(this)）。ES6的继承机制完全不同，实质是先创造父类的实例对象this（所以必须先调用super方法），然后再用子类的构造函数修改this。
+大多数浏览器的ES5实现之中，每一个对象都有__proto__属性，指向对应的构造函数的prototype属性。
+（1）子类的__proto__属性，表示构造函数的继承，总是指向父类。
+（2）子类prototype属性的__proto__属性，表示方法的继承，总是指向父类的prototype属性。
+B.__proto__ === A // true
+B.prototype.__proto__ === A.prototype // true
 
 npm install -g traceur
 traceur --script calc.es6.js --out calc.es5.js --experimental

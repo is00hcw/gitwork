@@ -11,6 +11,8 @@ New RelicÊÇÒ»¿î»ùÓÚ SaaS µÄÔÆ¶ËÓ¦ÓÃ¼à²âÓë¹ÜÀíÆ½Ì¨£¬¿ÉÒÔ¼à²âºÍ¹ÜÀíÔÆ¶Ë¡¢ÍøÂç¶Ë¼°Ò
 ÇáÁ¿¼¶µÄÌ½Õë²É¼¯Êı¾İ£¨Statsd£©+ Ê±¼äĞòÁĞÊı¾İ¿â£¨ÔËËã£©+ Õ¹ÏÖ¶Ë£¨Grafanna£©
 Cloud Insight ¾ÍÊÇ¹úÄÚÀûÓÃ statsd ºÍ OpenTSDB ÊµÏÖµÄÒ»¸öÒ»Ìå»¯µÄ½â¾ö·½°¸£¨Ãâ·Ñµ«²»¿ªÔ´£©
 
+
+http://www.thinkphp.cn/topic/34316.html  ÔÆÖÇ»ÛÍ¸ÊÓ±¦Java´úÂëĞÔÄÜ¼à¿ØÊµÏÖÔ­Àí
 https://github.com/zhangqichuan/CheungSSH   web¹ÜÀí½çÃæ
 http://keichuen.blog.51cto.com/6321640/1684719
 http://dongweiming.github.io/blog/archives/shi-yong-grafanahe-diamondgou-jian-graphitejian-kong-xi-tong/   Ê¹ÓÃgrafanaºÍDiamond¹¹½¨Graphite¼à¿ØÏµÍ³
