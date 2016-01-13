@@ -8,6 +8,8 @@ https://help.aliyun.com/knowledge_detail/7594467.html?pos=6
 http://dev.aliyun.com/search.html?spm=5176.775974865.0.0.uRLsya
 http://www.infoq.com/cn/articles/the-apply-of-docker-in-coding-webide-project   Docker在Coding WebIDE项目中的运用
 
+https://dashboard.daocloud.io/packages/89017ce9-1af2-489f-aadb-5cb9d53fe2da   kafka
+
 centos安装
 yum -y install docker-io
 yum -y install device-mapper-event-libs

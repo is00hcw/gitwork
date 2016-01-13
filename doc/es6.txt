@@ -15,6 +15,9 @@ ES5的继承，实质是先创造子类的实例对象this，然后再将父类的方法添加到this上面（Par
 （2）子类prototype属性的__proto__属性，表示方法的继承，总是指向父类的prototype属性。
 B.__proto__ === A // true
 B.prototype.__proto__ === A.prototype // true
+作为一个对象，子类（B）的原型（__proto__属性）是父类（A）；作为一个构造函数，子类（B）的原型（prototype属性）是父类的实例。
+B.prototype = new A();// 等同于 B.prototype.__proto__ = A.prototype;
+
 
 npm install -g traceur
 traceur --script calc.es6.js --out calc.es5.js --experimental

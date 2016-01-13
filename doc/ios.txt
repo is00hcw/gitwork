@@ -25,6 +25,7 @@ http://mogu.io/ios-analytics-115   iOS 统计打点那些事
 
 http://yq.aliyun.com/articles/1480
 https://github.com/alibaba/wax  lua
+http://segmentfault.com/a/1190000004268513  Android程序员 如何入门iOS
 
 build
 https://fastlane.tools/

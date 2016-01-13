@@ -26,6 +26,8 @@ t.src = 'http://badjs.qq.com/cgi-bin/js_report?bid=104&mid=195279&msg='+e_info+'
 https://github.com/clappr/clappr  播放器
 http://layer.layui.com/  弹出层
 https://github.com/matthieua/WOW  动画
+http://touch.code.baidu.com/    touch
+https://github.com/atom/electron  跨平台desktop
 https://github.com/flatiron/director#client-side-routing  director.js实现的前端路由 http://www.tuicool.com/articles/QBFfYjb
 https://imququ.com/post/cross-origin-resource-sharing.html  跨域数据交互解决方案
 https://imququ.com/post/promises-when-js.html   异步编程：When.js快速上手

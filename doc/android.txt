@@ -24,6 +24,12 @@ http://logful.github.io/
 
 http://www.cnblogs.com/bluelife/p/4001694.html   Duplicate files copied in APK META-INF/DEPENDENCIES
 
+播放器
+http://segmentfault.com/a/1190000002739762
+https://github.com/Bilibili/ijkplayer
+
+
+
 lua
 http://www.ibm.com/developerworks/cn/opensource/os-cn-LUAScript/index.html   Luajava 现在仅支持到 Lua5.1
 http://www.oschina.net/p/android-lua-run

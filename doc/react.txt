@@ -1,6 +1,18 @@
 http://my.oschina.net/vczero/blog/597980
 http://my.oschina.net/vczero/blog/471945
 
+https://github.com/fengjundev/React-Native-Remote-Update  热部署 
+http://richard-cao.github.io/2015/12/03/React-native-Android-%E7%83%AD%E6%9B%B4%E6%96%B0/
+http://taobaofed.org/blog/2015/11/25/react-native-android-debug/
+http://www.race604.com/rn-android-standalone-apk/
+https://github.com/ele828/react-native-guide#reactjs  资料收集
+https://github.com/vczero/react-native-lesson
+https://hulufei.gitbooks.io/react-tutorial/content/introduction.html
+http://reactnative.cn/
+http://www.ruanyifeng.com/blog/2015/03/react.html
+http://hahack.com/codes/learn-react-native-for-android-01/
+http://hahack.com/codes/learn-react-native-for-android-02/
+http://bbs.reactnative.cn/topic/11/react-native%E4%B8%AD%E6%96%87%E7%BD%91%E5%AE%98%E6%96%B9%E5%8F%91%E5%B8%83%E5%AE%8C%E6%95%B4%E6%96%B0%E9%A1%B9%E7%9B%AE%E5%8C%85-%E6%97%A0%E9%9C%80init%E7%9B%B4%E6%8E%A5%E8%BF%90%E8%A1%8C/4 
 https://www.aswifter.com/2015/11/17/set-up-react-native-windows/  windows
 http://www.ruanyifeng.com/blog/2015/03/react  
 http://wiki.jikexueyuan.com/project/react-native/  教程
@@ -11,6 +23,7 @@ http://www.zhihu.com/question/27852694
 http://zhuanlan.zhihu.com/FrontendMagazine/19996445
 http://www.cocoachina.com/ios/20150401/11458.html
 
+
 http://www.ghugo.com/react-native-to-web/?utm_source=tuicool
 http://www.ghugo.com/react-native-high-performance/   React Native 性能优化建议  
 http://www.ghugo.com/react-native-event-emitter/  React Native 自定义事件机制
@@ -19,10 +32,50 @@ http://www.nihaoshijie.com.cn/index.php/archives/550
 http://facebook.github.io/react-native/docs/embedded-app-android.html#content  native集成facebook react
 https://segmentfault.com/a/1190000004112878
 http://www.nihaoshijie.com.cn/index.php/archives/560  React Native IOS集成与原理简析
+http://blog.ilovejuly.com/2015/05/27/react-native-02.html
 
 http://top.css88.com/archives/724
+JSX 其实就是在 JS 的基础上加入了类 XML 的语法。HTML 的标签直接写在 JavaScript 代码中，不加任何引号，这就是 JSX 的语法。
+如果需要获取这个元素自身的真实 DOM 节点，可以使用 ReactDOM.findDOMNode 方法。该方法将在虚拟 DOM 插入文档以后才返回该元素实际的 DOM 节点。
+https://github.com/enaqx/awesome-react
+（1）多线程浏览器。每个网页应该由多个线程进行处理，主线程只负责布局和渲染，而且应该在16毫秒内完成，JavaScript由worker线程执行，这样就不会发生堵塞了。Mozilla正在开发的Servo就是这样一个项目。
+（2）DOM的异步操作。JavaScript对DOM的操作不再是同步的，而是触发后，交给Event Loop机制进行监听。
+Facebook的Web开发三板斧：React.js、Relay和GraphQL
+React 提供了两个方法 renderToString 和 renderToStaticMarkup 用来将组件（Virtual DOM）输出成 HTML 字符串，这是 React 服务器端渲染的基础
+在React中信息是单向的。我们维护了组件层次，在其中每个组件都仅依赖于它父母和自己的状态。通过属性（properties）我们将信息从上而下的从父母传递到子元素。如果一个祖先组件需要自己子孙的状态，推荐的方法是传递一个回调函数给对应的子元素。
+
+越来越多动态部署的方案被提了出来，比如iOS下的 JSPatch, waxPatch，Android下的Dexpose, AndFix, ClassLoader，都是比较成熟Hot Patch动态部署解决方案。
+React-Native则属于另一种动态部署的方案，其核心原理在于通过JavaScript来调用本地组件进行界面的渲染。
+
+demo
+https://github.com/fengjundev/DoubanMovie-React-Native
 
 
+http://blog.cnbang.net/works/2767/  jspatch
+http://www.liaohuqiu.net/cn/posts/react-native-android-package/
+http://imweb.io/topic/55e2c5b8771670e207a16bb8
+
+http://rackt.org/redux/
+http://segmentfault.com/a/1190000002793786?utm_source=tuicool
+https://github.com/reflux/refluxjs
+
+flexbox
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+http://tympanus.net/codrops/css_reference/flexbox/
+http://demo.agektmr.com/flexbox/
+http://zh.learnlayout.com/position.html
+
+winjs
+https://github.com/winjs/react-winjs
+WinJS 是一个开源 JavaScript 库，可帮助你针对 Windows 应用商店生成 HTML、CSS 和 JavaScript 应用程序
+https://dev.windows.com/zh-cn/develop/winjs
+http://try.buildwinjs.com/playground/
+npm install winjs
+http://winjs.azurewebsites.net/#listview
+
+vue.js
+http://www.csdn.net/article/1970-01-01/2825439
+http://zhuanlan.zhihu.com/evanyou/20302927
 rpm -ivh https://www.softwarecollections.org/en/scls/rhscl/devtoolset-3/epel-6-x86_64/download/rhscl-devtoolset-3-epel-6-x86_64.noarch.rpm
 yum install devtoolset-3-gcc-c++
 scl enable devtoolset-3 bash
