@@ -15,6 +15,14 @@ maven{ url 'http://maven.oschina.net/content/groups/public/'}
 mavenCentral()
 你需要进入gradle/wrapper/gradle-wrapper.properties,修改该文件，将其版本号修改为你本机的gradle版本号
 
+Setting-->搜索gradle-->Build Tools下的Gradle选项，右侧Gradle VM options-->改参数-Xmx2048m -XX:MaxPermSize=512m
+还一种就是在gradle.properites里加两行
+org.gradle.parallel=true
+org.gradle.daemon=true
+使用--offline，让它不去联网检查更新。
+http://mdsa.51cto.com/art/201503/469038.htm
+http://www.yrom.net/blog/2015/02/07/change-gradle-maven-repo-url/
+http://www.open-open.com/lib/view/open1439216256770.html
 
 
 https://www.zybuluo.com/mdeditor

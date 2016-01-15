@@ -188,3 +188,20 @@ http://tech.meituan.com/performance-framework-and-platform.html  js性能分析
 http://tech.meituan.com/solr-spatial-search.html   solr gps搜索
 http://blog.csdn.net/shootyou/article/details/6615051   CLOSE_WAIT
 netstat -n | awk '/^tcp/ {++S[$NF]} END {for(a in S) print a, S[a]}'  
+
+
+http://www.jianshu.com/p/b4390919a5b5  es6
+http://blog.allenice233.com/2014/06/23/webstorm%E9%82%A3%E4%BA%9B%E5%A5%BD%E7%94%A8%E7%9A%84%E7%89%B9%E6%80%A7/
+
+grunt gulp(pipeline stream)
+http://www.jianshu.com/p/3779f708f5d7
+http://segmentfault.com/a/1190000002491282
+http://my.oschina.net/blogshi/blog/272145?utm_source=tuicool&utm_medium=referral
+http://blog.jobbole.com/81007/
+Webpack 使用一个名为 webpack.config.js 的配置文件
+在webpack中JavaScript，CSS，LESS，TypeScript，JSX，CoffeeScript，图片等静态文件都是模块，不同模块的加载是通过模块加载器（webpack-loader）来统一管理的。loaders之间是可以串联的，一个加载器的输出可以作为下一个加载器的输入
+根据loader中的设置，webpack会将小于指点大小的文件转化成 base64 格式的 dataUrl，其他图片会做适当的压缩并存放在指定目录中。
+CommonJS和AMD是用于JavaScript模块管理的两大规范，前者定义的是模块的同步加载，主要用于NodeJS；而后者则是异步加载，通过requirejs等工具适用于前端。
+http://www.ido321.com/1646.html
+http://www.w3ctech.com/topic/1557
+https://medium.com/@dabit3/beginner-s-guide-to-webpack-b1f1a3638460#.a48j3tvpm

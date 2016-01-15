@@ -8,6 +8,20 @@ http://www.csdn.net/article/2015-08-20/2825506
 http://my.oschina.net/oneapmofficial/blog/535430  android studio 优化
 http://zkread.com/article/503904.html  Android应用开发编译框架流程
 http://lenciel.cn/2012/02/integration-of-proguard-and-maven-in-android-projects/   proguard
+https://buck.readthedocs.org/en/latest/quick_start.html  buck compile
+
+
+http://www.infoq.com/cn/articles/wechat-android-app-architecture?utm_source=infoq&utm_medium=popular_widget&utm_campaign=popular_content_list&utm_content=homepage
+两个问题，一是单dex 65535方法数限制，二是线性内存分配器（LinearAlloc）限制。今天的Android开发者看到这两个限制都不会陌生。前者是因为Android的早期设计中，对dex文件中方法id用16位整型标记，单个dex文件中的方法数无法超过65535，eclipse环境中生成不了未做过proguard的debug apk。后者则是dalvik虚拟机用来加载类的堆内存大小被硬编码了，2.3以下是5M，2.3以上是8M，微信无法安装的原因就是因为这个堆内存被耗尽导致dexopt失败。
+今天来看，Google已经给出了一些可靠的解决方案，辅以更加先进的gradle + Android Studio，开发者们可能根本不会再遇到这两个经典问题，。官方的MultiDex分dex机制解决了方法数限制的问题，其中main dex最小化原则，结合dalvik LinearAlloc heap size调整（修改到了16M），使得dexopt的失败几率大幅下降。而art的出现彻底不再存在LinearAlloc这样的限制官方的MultiDex分dex机制解决了方法数限制的问题，其中main dex最小化原则，结合dalvik LinearAlloc heap size调整（修改到了16M），使得dexopt的失败几率大幅下降。而art的出现彻底不再存在LinearAlloc这样的限制。
+Google看来也意识到了目前应用方法数爆棚的问题, 目前在已经在API 21中提供了通用的解决方案，那就是android-support-multidex.jar. 这个jar包最低可以支持到API 4的版本(Android L及以上版本会默认支持mutidex).
+http://blog.csdn.net/t12x3456/article/details/40837287
+http://segmentfault.com/a/1190000002910311
+http://www.alloyteam.com/2015/03/shi-yong-gradle-da-bao-zhi-ding-bao-ming-he-lei-di-jar/
+
+debug
+http://stormzhang.com/android/2015/03/05/android-debug-use-chrome/
+
 
 AndFix
 http://www.oschina.net/p/andfix
@@ -18,6 +32,8 @@ https://github.com/dodola/HotFix
 https://github.com/jasonross/Nuwa
 https://github.com/bunnyblue/DroidFix
 http://www.tuicool.com/articles/Fraqeab
+http://blog.csdn.net/t12x3456/article/details/39958755
+
 
 图片缓存目前的主要开源项目包括Imageloader，Picasso、Glide和Fresco
 http://logful.github.io/   
