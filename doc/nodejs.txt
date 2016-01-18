@@ -203,6 +203,7 @@ Webpack 使用一个名为 webpack.config.js 的配置文件
 在webpack中JavaScript，CSS，LESS，TypeScript，JSX，CoffeeScript，图片等静态文件都是模块，不同模块的加载是通过模块加载器（webpack-loader）来统一管理的。loaders之间是可以串联的，一个加载器的输出可以作为下一个加载器的输入
 根据loader中的设置，webpack会将小于指点大小的文件转化成 base64 格式的 dataUrl，其他图片会做适当的压缩并存放在指定目录中。
 CommonJS和AMD是用于JavaScript模块管理的两大规范，前者定义的是模块的同步加载，主要用于NodeJS；而后者则是异步加载，通过requirejs等工具适用于前端。
+http://blog.csdn.net/yczz/article/details/49251719
 http://www.ido321.com/1646.html
 http://www.w3ctech.com/topic/1557
 https://medium.com/@dabit3/beginner-s-guide-to-webpack-b1f1a3638460#.a48j3tvpm
@@ -211,3 +212,4 @@ http://segmentfault.com/a/1190000002551952
 http://www.cnblogs.com/Leo_wl/p/4793722.html
 http://www.cnblogs.com/Leo_wl/p/5134748.html
 npm install webpack jsx-loader babel-loader style-loader  css-loader url-loader  less-loader gulp gulp-webpack extract-text-webpack-plugin --save-dev
+http://yq.aliyun.com/articles/2913
