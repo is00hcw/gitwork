@@ -198,6 +198,7 @@ http://www.jianshu.com/p/3779f708f5d7
 http://segmentfault.com/a/1190000002491282
 http://my.oschina.net/blogshi/blog/272145?utm_source=tuicool&utm_medium=referral
 http://blog.jobbole.com/81007/
+
 Webpack Ê¹ÓÃÒ»¸öÃûÎª webpack.config.js µÄÅäÖÃÎÄ¼ş
 ÔÚwebpackÖĞJavaScript£¬CSS£¬LESS£¬TypeScript£¬JSX£¬CoffeeScript£¬Í¼Æ¬µÈ¾²Ì¬ÎÄ¼ş¶¼ÊÇÄ£¿é£¬²»Í¬Ä£¿éµÄ¼ÓÔØÊÇÍ¨¹ıÄ£¿é¼ÓÔØÆ÷£¨webpack-loader£©À´Í³Ò»¹ÜÀíµÄ¡£loadersÖ®¼äÊÇ¿ÉÒÔ´®ÁªµÄ£¬Ò»¸ö¼ÓÔØÆ÷µÄÊä³ö¿ÉÒÔ×÷ÎªÏÂÒ»¸ö¼ÓÔØÆ÷µÄÊäÈë
 ¸ù¾İloaderÖĞµÄÉèÖÃ£¬webpack»á½«Ğ¡ÓÚÖ¸µã´óĞ¡µÄÎÄ¼ş×ª»¯³É base64 ¸ñÊ½µÄ dataUrl£¬ÆäËûÍ¼Æ¬»á×öÊÊµ±µÄÑ¹Ëõ²¢´æ·ÅÔÚÖ¸¶¨Ä¿Â¼ÖĞ¡£
@@ -205,3 +206,8 @@ CommonJSºÍAMDÊÇÓÃÓÚJavaScriptÄ£¿é¹ÜÀíµÄÁ½´ó¹æ·¶£¬Ç°Õß¶¨ÒåµÄÊÇÄ£¿éµÄÍ¬²½¼ÓÔØ£¬Ö÷Ò
 http://www.ido321.com/1646.html
 http://www.w3ctech.com/topic/1557
 https://medium.com/@dabit3/beginner-s-guide-to-webpack-b1f1a3638460#.a48j3tvpm
+https://github.com/petehunt/webpack-howto
+http://segmentfault.com/a/1190000002551952
+http://www.cnblogs.com/Leo_wl/p/4793722.html
+http://www.cnblogs.com/Leo_wl/p/5134748.html
+npm install webpack jsx-loader babel-loader style-loader  css-loader url-loader  less-loader gulp gulp-webpack extract-text-webpack-plugin --save-dev

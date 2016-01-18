@@ -4,6 +4,7 @@ http://seanlook.com/2015/06/02/nginx-cache-check/  nginx×ö¸ºÔØ¾ùºâÆ÷ÒÔ¼°proxy»º´
 http://www.cnblogs.com/dudu/p/4597351.html   »º´æ
 https://www.nginx.com/blog/tuning-nginx/#gs.mpDnrLM  ÓÅ»¯
 
+http://blog.csdn.net/zdy0_2004/article/details/48878023  nginxscript
 
 lua
 https://www.scalescale.com/tips/nginx/how-to-install-openresty/  °²×° openresty

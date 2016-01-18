@@ -37,6 +37,12 @@ http://www.paintcodeapp.com/news/ultimate-guide-to-iphone-resolutions
 https://github.com/amfe/article/issues/5  写给前端面试者
 http://www.cnblogs.com/Wayou/p/html5_web_api_queryselector.html   HTML5向Web API新引入了document.querySelector以及document.querySelectorAll
 
+阿里
+http://thx.github.io/
+https://github.com/thx/chartx  https://github.com/canvax/canvax
+https://github.com/thx/RAP  可视化接口管理工具 通过分析接口结构，动态生成模拟数据，校验真实接口正确性
+http://d2forum.alibaba-inc.com/assets/ppt/%E6%8B%A5%E7%BF%A0%E5%B1%B1%E5%BA%84/%E9%9C%8D%E9%9B%8D-%E6%8E%A5%E5%8F%A3%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7RAP.pdf?spm=a26qs.7821685.0.0.suRWEQ&file=%E9%9C%8D%E9%9B%8D-%E6%8E%A5%E5%8F%A3%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7RAP.pdf
+
 <head>中要添加如下内容：<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 来保证页面会按照设备的宽度进行渲染而不是使用虚拟画布。然后便可以使用响应式设计的相关技术，弹性盒子、媒体查询等，让页面适应设备宽度显示。
 

@@ -10,6 +10,13 @@ http://www.mahaixiang.cn/App/1016.html
 
 https://www.behance.net/gallery/Samsung-Smart-Home-App-Concept/8532441  smarthome
 
+http://ant.design/docs/spec/introduce   阿里
+http://www.taobaofed.org/blog/2016/01/04/font-end-tech-inventory/
+手机淘宝推出的 Weex 框架，它吸收了 vue.js 的编程精华
+LESS、SASS 和 Stylus 等 CSS 预处理语言开始走俏  http://www.taobaofed.org/blog/2016/01/04/font-end-tech-inventory/
+Weex就是我们想要的杀手锏，开发者可以通过一套跨平台的代码构建iOS和Android的APP。在构建应用UI的时候，开发者可以使用我们的基础库，这个库抽象了不同平台之间的差异性。开发者面对的DSL是基于一个叫做Vue.js的轻量级js库，相对于React的JSX语法，这是一个更加面向组件的、脚本样式分离的语言
+http://i.wshang.com/Post/Default/Index/pid/41398.html
+程序开发三板斧：功能、测试和监控。
 
 你项目中不太需要像一些大框架如Bootstrap、UIkit、Kube里的众多功能模块，及UI样式 ，那么Skeleton是你的明智之选
 最大宽度为960px的12列流体网格系统，自适应小屏设备浏览器
