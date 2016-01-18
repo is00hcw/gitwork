@@ -34,6 +34,17 @@ https://github.com/bunnyblue/DroidFix
 http://www.tuicool.com/articles/Fraqeab
 http://blog.csdn.net/t12x3456/article/details/39958755
 
+decompile
+https://github.com/google/enjarify
+https://github.com/iBotPeaches/Apktool
+
+
+package
+https://github.com/umeng/umeng-muti-channel-build-tool
+buck
+
+http://hukai.me/android-training-course-in-chinese/index.html android training
+
 
 图片缓存目前的主要开源项目包括Imageloader，Picasso、Glide和Fresco
 http://logful.github.io/   
