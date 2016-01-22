@@ -1,3 +1,6 @@
+http://segmentfault.com/a/1190000004104493  linux 优化命令
+http://techblog.netflix.com/2015/08/netflix-at-velocity-2015-linux.html
+
 http://www.infoq.com/cn/news/2015/12/linux-performance?utm_source=infoq&utm_medium=popular_widget&utm_campaign=popular_content_list&utm_content=interview  用十条命令在一分钟内检查Linux服务器性能
 http://www.infoq.com/cn/articles/linux-networking-performance-analytics?utm_source=infoq&utm_medium=related_content_link&utm_campaign=relatedContent_news_clk
 http://www.360doc.com/content/14/0606/16/3300331_384326124.shtml

@@ -15,6 +15,24 @@ http://taobaofed.org/blog/2015/10/28/jstracker-how-to-collect-data/  JSTracker：
 http://www.taobaofed.org/blog/2015/11/06/jstracker-data-processing/
 
 
+http://www.jianshu.com/p/cdf777f13ff6
+http://blogread.cn/it/article/6967
+Phantom JS 是一个服务器端的 JavaScript API 的 WebKit，基于它可以轻松实现 web 自动化测试。官方文档中已经有一个完整的获取网页加载 har 文件的示例
+通过QT或者phantomJS等webkit打包工具获取HTTP请求数据流HAR文件（这里采用phantomJS）  pagespeed和yslow都是有开源sdk的
+http://www.webryan.net/2013/02/web-page-test-based-on-phontomjs/
+http://www.ispenn.com/2015/09/front-end-performance-monitoring-platform-and-its-application
+berserkJS（大名：狂暴JS / 昵称：疯子JS）是微博前端的开源工具之一。它主攻页面性能分析与测试自动化方向，可用 javascript 编写自己的检测、分析规则，并自动执行。
+http://www.oschina.net/question/12_77375
+https://github.com/pagespeed/ngx_pagespeed
+http://yslow.org/command-line-har/
+https://github.com/janodvarko/harviewer
+
+https://www.igvita.com/2012/08/28/web-performance-power-tool-http-archive-har/
+phantomjs examples/netsniff.js http://www.igvita.com/ > igvita.har
+npm install yslow -g
+yslow --info basic --format plain igvita.har
+yslow --info all --format json igvita.har
+
 http://www.thinkphp.cn/topic/34316.html  云智慧透视宝Java代码性能监控实现原理
 https://github.com/zhangqichuan/CheungSSH   web管理界面
 http://keichuen.blog.51cto.com/6321640/1684719

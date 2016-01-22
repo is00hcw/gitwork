@@ -276,3 +276,64 @@ RDS for MySQL 5.6版本通过TokuDB引擎支持数据压缩功能。经过大量测试表明，数据从Inn
 TokuDB限制  TokuDB无法支持外键Foreign Key。TokuDB不适用于频繁大量读取的场景 。
 
 运行namenode，resourcemanager的节点称之为master节点，而运行datanode，nodemanager的节点称之为slave节点。
+
+
+
+新版的Doceker1.8新增了对阿里云OSS的支持，阿里云开放存储服务(Open Storage Service，简称OSS)，，可以为Docker Registry提供一个支持海量数据，高可用，安全，低成本，无需运维的存储后端。
+https://help.aliyun.com/document_detail/oss/utilities/oss-import2/ossimport2_user_guide_for_linux.html?spm=5176.383663.13.15.ebooHM    【ossimport2】同步工具可以将您本地或第三方云存储服务上的文件同步到OSS上。
+https://help.aliyun.com/document_detail/oss/sdk/media-c-sdk/preface.html?spm=5176.383663.6.7.ebooHM    将摄像头拍摄的视频快速存储到云端（OSS）
+https://help.aliyun.com/document_detail/oss/sdk/java-sdk/upload_object.html?spm=5176.docoss/user_guide/upload_object/append_upload.2.9.qPzvTp  分片、追加上传
+
+
+https://help.aliyun.com/document_detail/get-started/rds/get-started/create-sheet.html?spm=5176.docget-started/rds/get-started/build.6.88.epNY6R  体验
+http://wanwang.aliyun.com/promotion/free-times/
+
+
+EDAS
+http://139.129.18.53/edasstudio/
+http://www.cnblogs.com/longshiyVip/p/4823305.html
+http://www.cnblogs.com/longshiyVip/p/4823147.html
+com.taobao.hsf.app.spring.util.HSFSpringProviderBean
+com.taobao.hsf.app.spring.util.HSFSpringConsumerBean
+set JAVA_OPTS=%JAVA_OPTS% -Dhsf.client.localcall=false
+com.taobao.csp.sentinel.entrypoint.entrance.CommonFilter
+com.taobao.eagleeye.EagleEyeFilter
+EDAS监控DRDS的访问量，只需要在原有使用方式下替换原来的数据库Driver为DRDS的com.taobao.tddl.driver.Driver
+com.alibaba.druid.pool.DruidDataSource
+目前EDAS只支持在一台服务器安装单个应用。建议通过调低机器配置的方式创建多个服务器实例，每台服务器只部署一个应用。
+基础监控可以提供的监控指标包括机器的cpu、内存、网络、磁盘空间占用、磁盘读写速度、磁盘iops
+
+
+https://help.aliyun.com/document_detail/drds/best-practice/best_sql_optimizer.html?spm=5176.docdrds/best-practice/best_data_import_export.6.91.QZRghr
+在mysql客户端（或代码驱动）产生的请求会首先到达DRDS服务器，DRDS即会对用户请求的sql进行解析并且根据分库策略对解析后的请求分发到对应的RDS上的分库上，然后RDS根据解析出的结果在对应的分库上执行sql得到结果经过DRDS服务器反馈至客户端。
+DRDS是分配对应的CPU和内存给用户，以保证用户DRDS可以处理用户请求的QPS。 因为所有的sql请求最终其实还是在RDS上执行，因此需要保证在能够满足DRDS的QPS的限制的同时还要满足RDS在内存/cpu/iops等限制。
+尽可能保证原来的所有SQL都物理上的在单机执行，这样可以保证效率，又不需要对结构做大的调整。要做到这点，那么就意味着针对ER中的一对多关系，一对一关系，全部按照“一”进行切分。例如一个用户有多个订单，那么将订单表和商品表，都按照用户ID切分
+如果涉及到分布式事务的场景。我们一般会采取最终一致的方式来解决问题，核心其实就是把锁去掉，从而降低延迟。一致性约束的是一个用户写入并提交数据之后，其他用户去去读这条记录的时候，要么看到的是事务开始之前的状态，要么就是事务结束后的状态，而在这两个状态之间的事务状态则不会被其他人看到。
+我们也允许您通过注释的方式，直接告知我们切分条件，这样就可以绕开我们的SQL解析器进行查询。同时可以有选择的将一些不经常更新的，数据量比较小的元数据表复制到全部的节点上。
+DRDS的主要目标提供了两个功能：读写分离和数据库切分。读写分离，能够允许您实现一台机器写入，多台机器读取，这对于读多写少的应用，能够以极低的成本解决系
+统的瓶颈.数据库切分是一个解决系统存储瓶颈的最终极解决方案，数据库切分的核心思想其实很简单，就是分而治之。
+一般情况下，建议单个分表的容量不要超过500W数据，可以提前预估您比如1-2年的数据增长量，用该量除以（分库数*500W）,便能得出您所需要的分表数。
+DRDS sequence功能的目标只是为了保证数据的全局唯一，虽然基本上是按时间序列获取的，但并不全局有序。
+强制SQL读写主库/*TDDL:MASTER*/select * from tddl5_users;
+强制读SQL走备库/*TDDL:SLAVE*/select * from tddl5_users;
+指定特定节点执行SQL /*TDDL:node in (0,2,3)*/delete from tddl5_users_0000;
+调整SQL的超时时间/*TDDL:socket_timeout=10000*/select count(*) from tddl5_users;
+查看所有广播表show broadcasts
+查看分区键show partitions from table_name
+查看一个表的拓扑show topology [from] table_name
+ /*TDDL:SLAVE and SQL_DELAY_CUTOFF=5*/ select * from your_table;这样的语句中， 查询请求默认走备库， 当出现主备复制时间达到或超过5秒时，走到主库。
+SQL的优化方向是先查SQL的ID集合，再通过in查询真正的记录内容，改写后的SQL，如下所示：
+SELECT * FROM t_order o
+WHERE o.id IN (  SELECT id  FROM t_order ORDER BY id  LIMIT 10000,2  )这样改写的目的是先用内存缓存ID（id数目不多），这样磁盘IO就减少。
+
+WebScaleSQL是基于MySQL 5.6 社区版本改编的MySQL通用分支，基于GPL开源协议发布。WebScaleSQL目前已经做了很多性能改进工作，包括：客户端异步协调、逻辑预读、查询限流、服务端线程池优化、InnoDB大页支持等等。
+WebScaleSQL基于Mariadb的线程池实现进行重写并优化，对读写队列进行分离，重新设计队列优先级策略，避免了饿死现象。
+WebScaleSQL引入了来自Twitter工程师的代码，可以设定单语句的执行时间，超时则自动放弃。对数据库起到保护的作用。
+GTID是Oracle官方版本5.6引入的新概念，在解决主备切换，尤其是级联主备架构的切换方面提供了很大的便利。阿里云RDS的只读实例就直接利用了这个特性
+
+
+DataX 是阿里巴巴集团内被广泛使用的离线数据同步工具/平台，实现包括 MySQL、SQL Server、Oracle、PostgreSQL、HDFS、Hive、OceanBase、HBase、OTS、ODPS 等各种异构数据源之间高效的数据同步功能。
+开放数据处理服务(Open Data Processing Service，简称ODPS)是阿里巴巴自主研发的海量数据处理平台。主要服务于批量结构化数据的存储和计算
+
+HTTPDNS使用HTTP协议进行域名解析，代替现有基于UDP的DNS协议，域名解析请求直接发送到阿里云的HTTPDNS服务器，从而绕过运营商的Local DNS，能够避免Local DNS造成的域名劫持问题和调度不精准问题。
+

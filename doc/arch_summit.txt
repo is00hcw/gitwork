@@ -18,6 +18,8 @@ http://blog.qiniu.com/archives/3928   七牛是如何搞定每天500亿条日志的
 http://blog.qiniu.com/archives/4499   七牛CEO许式伟分析GO语言发展现状
 http://blog.qiniu.com/archives/4791   携程异步消息系统实践
 http://www.wtoutiao.com/p/1599vLV.html  性能优化模式
+http://www.infoq.com/cn/articles/kugou-big-data-platform-restructure  酷狗
+http://www.infoq.com/cn/articles/scala-architecture-wacai  挖财
 
 图片优化
 http://segmentfault.com/a/1190000000658499

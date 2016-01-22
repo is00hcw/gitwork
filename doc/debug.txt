@@ -9,6 +9,9 @@ netstat -n | awk '/^tcp/ {++S[$NF]} END {for(a in S) print a, S[a]}'
 HTTP协议1.1版规定default行为是Keep-Alive，也就是会重用TCP连接传输多个 request/response
 
 移动
+http://blog.csdn.net/freshlover/article/details/42528643  调试WebView需要满足安卓系统版本为Android 4.4+已上。并且需要再你的APP内配置相应的代码，在WebView类中调用静态方法setWebContentsDebuggingEnabled   
+http://wiki.jikexueyuan.com/project/chrome-devtools/remote-debugging-on-android.html
+http://tid.tenpay.com/?p=6161
 http://www.alloyteam.com/2015/03/mobile-web-debug-tool-rosin/   rosin
 http://yanhaijing.com/mobile/2014/12/17/web-debug-for-mobile/
 http://js8.in/2013/11/20/%E4%BA%94%E4%B8%AA%E4%BD%A0%E5%BF%85%E9%A1%BB%E7%9F%A5%E9%81%93%E7%9A%84javascript%E5%92%8Cweb-debug%E6%8A%80%E6%9C%AF/
