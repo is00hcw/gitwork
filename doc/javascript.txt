@@ -7,6 +7,7 @@ http://framework7.taobao.org/
 http://www.idangero.us/template7/#.Vm6IxOx96_4  模板
 https://github.com/twbs/ratchet/     http://cnratchet.com/components/
 http://m.sui.taobao.org/getting-started/  http://m.sui.taobao.org/demos/
+http://dev.dcloud.net.cn/mui/
 
 http://www.sitepoint.com/jquery-custom-events/ http://blogs.sitepointstatic.com/examples/tech/custom-events/jquery.html
 $(document).on("newMessage", newMessageHandler);

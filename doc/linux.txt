@@ -149,3 +149,13 @@ https://github.com/chjj/term.js/
 http://segmentfault.com/a/1190000002666717   https://github.com/chemdemo/wts-monit
 https://github.com/krishnasrinivas/nuttyapp/
 https://github.com/jcubic/jquery.terminal
+
+nl 命令在 linux 系统中用来计算文件中行号。nl 可以将输出的文件内容自动的加上行号！其默认的结果与 cat -n 有点不太一样， nl 可以将行号做比较多的显示设计，包括位数与是否自动补齐 0 等等的功能。
+sed
+http://wiki.jikexueyuan.com/project/shell-learning/sed-search-and-replace.html
+http://www.2cto.com/os/201406/308604.html
+http://weizhifeng.net/learning-sed.html
+sed -i '/server/{s/server/hello/;s/local/world/}' sed.in    匹配一行后连续两次替换一行不同部分
+sed -i 's/hello/first/;s/world/second/'  sed.in     分别替换不同行
+sed -i  's/#.*\(server.*127.*\)/\1/;s/.*\(server.*10.*\)/#\1/'  sed.in  && cat sed.in
+cat sed.in |  sed -e  's/#.*\(server.*127.*\)/\1/;s/.*\(server.*10.*\)/#\1/'

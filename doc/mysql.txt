@@ -1,4 +1,18 @@
-﻿https://www.52os.net/articles/mysql-reset-password.html  重置密码
+﻿http://onexsoft.cn/?page_id=3896  oneproxy 
+
+http://yq.aliyun.com/articles/211?spm=5176.group25.0.0.VMhacj&commentId=64#comment-64   RDS MySQL参数调优最佳实践
+http://yq.aliyun.com/articles/3022  各版本MySQL并行复制的实现及优缺点
+http://www.csdn.net/article/2015-01-16/2823591   淘宝内部分享：怎么跳出MySQL的10个大坑
+http://h2ex.com/572  MySQL 5.7 新特性大全和未来展望
+http://h2ex.com/159  单表60亿记录等大数据场景的MySQL优化和运维之道
+MySQL 慢日志系统  基于 pt-query-digest logstash 和 Anemometer 实现，可以定期跟踪线上业务慢查询优化。
+http://www.gpfeng.com/?p=657  谈谈MySQL水平扩展
+http://www.gpfeng.com/?p=603  Galera replication for MySQL
+http://yq.aliyun.com/edu/lesson/27?spm=0.0.0.0.isZ8Ts 
+SOHU-DBProxy 是由搜狐数据库团队开发维护的一个基于MySQL协议的数据中间层项目。它在MySQL官方推出的 MySQL-Proxy 0.8.3版本的基础上， 修改了大量bug，添加了很多功能特性。
+
+
+https://www.52os.net/articles/mysql-reset-password.html  重置密码
 https://segmentfault.com/a/1190000000593398  Mysql在大型网站的应用架构演变
 
 https://docs.aliyun.com/?spm=5176.7622920.9.4.9muujt#/pub/drds/best-practice/best_connection_pool

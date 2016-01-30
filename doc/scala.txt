@@ -257,3 +257,10 @@ def this() = this("127.0.0.1", 27017)3
 def age_=(newAge: Int) = _age = newAge
 To specify a top-level package you have to use _root_
 put your package object in a separate file, called package.scala
+
+
+spring
+http://www.typesafe.com/activator/template/akka-scala-spring
+https://github.com/ouertani/akka-scala-spring
+http://www.tuicool.com/articles/uMZn6fI
+http://my.oschina.net/fir01/blog/509893?fromerr=6PFUPJO6

@@ -1,0 +1,9 @@
+http://efe.baidu.com/blog/whats-new-in-ec3/
+http://echarts.baidu.com/gallery/index.html
+http://ecomfe.github.io/echarts-builder-web/echarts3.html
+http://tushuo.baidu.com/  web图表制作
+
+https://github.com/masayuki0812/c3
+
+Kylin 是一个开源的分布式的 OLAP 分析引擎，来自 eBay 公司开发，基于 Hadoop 提供 SQL 接口和 OLAP 接口，支持 TB 到 PB 级别的数据量。
+http://www.csdn.net/article/2016-01-08/2826586/1   2015开发工具及服务年度大奖评选获奖名单出炉

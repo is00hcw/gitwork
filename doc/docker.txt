@@ -1,3 +1,20 @@
+http://www.oschina.net/news/70161/docker-architecture  问题
+https://mos.meituan.com/library/26/how-to-install-docker-on-centos/  在CentOS上安装Docker
+
+https://github.com/amplab/docker-scripts
+https://github.com/sequenceiq/hadoop-docker    https://hub.docker.com/r/sequenceiq/hadoop-docker/
+https://github.com/sequenceiq/docker-spark    https://hub.docker.com/r/sequenceiq/spark/
+http://blog.csdn.net/stark_summer/article/details/47343113  http://nanxiao.me/install-spark/
+http://nanxiao.me/gitlab-docker-image/  gitlab
+
+https://github.com/google/cadvisor  监控
+http://dockone.io/article/397  五个Docker监控工具的对比
+docker info命令来获取docker系统信息，这些信息包含了非常有用的数据，如： Containers, Images, Name, CPUs, Data Space Used, Data Space Total, Total Memory。
+https://mesosphere.github.io/marathon/   Marathon is an Apache Mesos framework for long-running applications. Given that you have Mesos running as the kernel for your datacenter, Marathon is the init or upstart daemon.
+https://github.com/mesos/chronos   Chronos is a replacement for cron. It is a distributed and fault-tolerant scheduler that runs on top of Apache Mesos that can be used for job orchestration.
+http://dockone.io/article/932   Kubernetes核心概念
+
+
 http://yq.aliyun.com/articles/1830?utm_source=tuicool&utm_medium=referral  基于docker构建jenkins和svn服务
 http://yq.aliyun.com/articles/303?spm=5176.team11.teamshow1.17.PxpN4k  elk
 http://yq.aliyun.com/articles/243?spm=5176.team11.teamshow1.20.PxpN4k
@@ -9,6 +26,8 @@ http://dev.aliyun.com/search.html?spm=5176.775974865.0.0.uRLsya
 http://www.infoq.com/cn/articles/the-apply-of-docker-in-coding-webide-project   Docker在Coding WebIDE项目中的运用
 
 https://dashboard.daocloud.io/packages/89017ce9-1af2-489f-aadb-5cb9d53fe2da   kafka
+
+http://www.csdn.net/article/2014-12-24/2823292-Docker-Kubernetes  基于Kubernetes构建Docker集群管理详解
 
 centos安装
 yum -y install docker-io

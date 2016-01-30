@@ -1,3 +1,13 @@
+http://www.bugclose.com/blog/20160111.html
+ssi on;
+ssi_silent_errors on;
+<!—#include virtual=“/tpl/header.html”—>
+这套沉淀多年的企业级互联网架构由EDAS应用框架、MQ消息队列、DRDS分布式数据库这三剑客组成。
+
+http://yq.aliyun.com/articles/2779?spm=5176.team22.teamshow1.28.e6HPJz    tomcat能支持最大连接数由maxConnections加上acceptCount来决定。
+http://yq.aliyun.com/articles/2930?spm=5176.blog3185.yqblogcon1.14.WtcEqw   在阿里云容器服务上创建一个spring boot应用
+
+
 下载后的mysql  binlog日志需要通过mysqlbinlog命令查看，具体参数如下：  https://help.aliyun.com/knowledge_detail/6526067.html
 mysqlbinlog -vv --base64-output=decode-rows mysqlbinlog.0001
 
@@ -337,3 +347,27 @@ DataX 是阿里巴巴集团内被广泛使用的离线数据同步工具/平台，实现包括 MySQL、SQL Ser
 
 HTTPDNS使用HTTP协议进行域名解析，代替现有基于UDP的DNS协议，域名解析请求直接发送到阿里云的HTTPDNS服务器，从而绕过运营商的Local DNS，能够避免Local DNS造成的域名劫持问题和调度不精准问题。
 
+
+在ECS上使用mongo命令进行连接，命令样例如下：
+mongo --host dds-xxxx.mongodb.rds.aliyuncs.com:3717 -u root -p 123456 --authenticationDatabase admin
+执行以下语句导出所有数据库,默认生成文件名为dump的备份文件
+mongodump --host xxx-port 27017 --authenticationDatabase  admin -u xxx -p xxx
+执行以下语句将数据库全部导入
+mongorestore --host xxx --port xxx --authenticationDatabase  admin -u root -p xxx dump
+执行以下命令进行数据导入：
+cat xx.ar（控制台下载的文件） | mongorestore  -h xxx --port xxx -u[root user] -p[root password] --drop --gzip --archive -vvvv --stopOnError
+
+
+ODPS只能以表的形式存储数据，并对外提供了SQL查询功能。用户可以将ODPS作为传统的数据库软件操作，但其却能处理TB、PB级别的海量数据。需要注意的是，ODPS SQL不支持事务、索引及Update/Delete等操作
+ODPS SQL就是用于查询和分析ODPS中的大规模数据。ODPS Datahub服务是ODPS提供的流式数据管理服务，它提供了对流式数据进行Pub/Sub的服务，所有的数据流都以ODPS表作为载体。
+ODPS Datahub是ODPS Stream SQL的数据源，用户只要把数据写入Datahub服务就可以使用Stream SQL对流数据进行计算
+BigQuery基于Google自研的Dremel引擎，而ODPS则基于阿里云自研的飞天系统，两者在存储、任务调度、任务优化上有很多细节都不一样。
+一个典型的企业数据仓库通常包含数据采集、数据加工和存储、数据展现等几个过程
+http://www.csdn.net/article/2015-12-17/2826506
+
+
+JStorm处理数据的方式是基于消息的流水线处理， 因此特别适合无状态计算，也就是计算单元的依赖的数据全部在接受的消息中可以找到， 并且最好一个数据流不依赖另外一个数据流。
+日志分析，从日志中分析出特定的数据，并将分析的结果存入外部存储器如数据库。目前，主流日志分析技术就使用JStorm或Storm
+管道系统， 将一个数据从一个系统传输到另外一个系统， 比如将数据库同步到Hadoop
+消息转化器， 将接受到的消息按照某种格式进行转化，存储到另外一个系统如消息中间件
+统计分析器， 从日志或消息中，提炼出某个字段，然后做count或sum计算，最后将统计值存入外部存储器。

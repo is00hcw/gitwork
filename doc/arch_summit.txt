@@ -20,6 +20,68 @@ http://blog.qiniu.com/archives/4791   携程异步消息系统实践
 http://www.wtoutiao.com/p/1599vLV.html  性能优化模式
 http://www.infoq.com/cn/articles/kugou-big-data-platform-restructure  酷狗
 http://www.infoq.com/cn/articles/scala-architecture-wacai  挖财
+数据分析这块，Canal会把binlog数据丢到Kafka然后同步到其他系统。在线分析主要通过Storm进行，数据分析过程中缓存用了豌豆荚的Codis。离线分析目前用Hadoop/Spark的方式，数据分析之后，一部分存到Hbase，另一部分在通过Cobar存储到MySQL里面。
+Scala的优点体现在，原来Java里的设计模式，现在在Scala的语言层面就提供了。比如说Java里的单例，Scala直接对应的就是object；访问者模式我们可以用更优雅直观的模式去匹配；还有构造器模式；依赖注入在Scala里面有蛋糕模式。不可变的模式主要是在并发编程里面的
+Scala里面以隐式参数或者隐式转换的方式实现动态语言的等价效果，只不过这种方式在编译器能够更好的检测
+他的类型系统是从ML系语言以及Hashkell过来的，在类型方面有很多高阶特性. 甚至他的类型系统本身也是图灵完备的，可以用类型系统解决SKI组合子问题，我推荐大家去搜一下用Scala的类型系统来解决汉诺塔的程序，依赖类型来解决问题思路是这样的：编译即运算。
+SKI 组合子演算是一个计算系统，它是对无类型版本的 Lambda 演算的简约。这个系统声称在 Lambda 演算中所有运算都可以用三个组合子S、K和I来表达。
+Akka系统中所有的actor创建都由其父actor掌管，当把actor也当作spring中的一个bean时，Akka需要做一点”妥协”，它提供了Indirect的Producer，可以包装到一个Akka的Extension里来简化actor在spring中的构造。
+no-adapted-args这个参数告诉编译器我们不要去做适配的事情。
+
+http://www.tuicool.com/articles/BZ7rim
+ZooKeeper 默认不会自动清理 tx log，所以总会有一天你会收到磁盘报警（如果你有磁盘监控的话）。开启自动清理机制后，就不用担心了，我的配置如下：
+autopurge.snapRetainCount=500
+autopurge.purgeInterval=24
+echo srvr | nc 192.168.12.4 2181
+https://github.com/ireaderlab/zkdash
+Zookeeper升级采用逐台重启，并且先Follower最后Leader的方式升级。重启Follower时，其上的连接经过CONNECTION_LOSS后会重新连上Zookeeper集群，到最后重启Leader时，集群将重新选主，期间服务不可用，最坏情况的选主时间按1MIN/GB来计算。
+目前Zookeeper不支持动态扩容，扩容需要重启服务。需要注意的是扩容能提高集群的读能力，但是会降低集群的写能力。通常从稳定性的角度考虑集群大小，线上通常采用5台机器搭建集群，最多能容仍2台机器异常。
+我们都知道zookeeper可用的前提是过半的node是正常work的，那么3台机器只允许当掉一台，5台机器就允许当掉两台，以此类推。因此如果希望能在当掉N台机器仍然保证集群可用，那就必须部署一个2N+1的集群。
+
+主要在于增加机器之后，数据需要rebalance到新增的空闲节点，即把partitions迁移到空闲机器上。kafka提供了bin/kafka-reassign-partitions.sh工具，完成parttition的迁移。
+http://mdba.cn/?p=945
+
+1、Setinel的参数配置
+1） 主观下线时间（down-after-milliseconds）：20s，20s没有收到redis的任何回复，sentinel认为redis已经下线。
+2） 客观下线：sentinel集群中一半以上的节点都确认了主观下线，redis将进入客观下线状态。O_DOWN将会触发sentinel leader执行failover。
+3） fail-over timeout：在leader节点执行了failover之后，其他节点将重新尝试failover，避免之前的failover失败。
+http://mdba.cn/?p=869
+
+推荐使用 kafka-manager 工具，可以实时查看kafka同步状态，broker实时读写流量，topic分区情况等信息，提供重选最优leader等操作。
+http://blog.csdn.net/lsshlsw/article/details/47300145
+http://www.ibm.com/developerworks/cn/opensource/os-cn-kafka-distributed/
+http://www.lujinhong.com/kafka%E9%9B%86%E7%BE%A4%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97.html
+
+Apache Crunch是一个 Java 类库，它用于简化 MapReduce 作业的编写和执行，并且可以用于简化连接和数据聚合任务API的Java类库。
+https://github.com/cloudera/crunch
+
+
+Vagrant就是为了方便的实现虚拟化环境而设计的，它使用Ruby开发，基于VirtualBox等虚拟机管理软件的接口，提供了一个可配置、轻量级的便携式虚拟开发环境。使用Vagrant可以很方便的就建立起来一个虚拟环境，而且可以模拟多台虚拟机，这样我们平时还可以在开发机模拟分布式系统。
+Vagrant 是一个虚拟机管理工具，非常适合用于搭建开发环境。Vagrant 默认已经内置了 VirtualBox Provider 用来跟 VirtualBox 交互.  它的下层是VirtualBox, VMware, AWS或者其他provider. 如果你或者你的伙伴创建了一个Vagrantfile，那么你只需要执行vagrant up就行了，所有的软件都会安装并且配置好。
+vagrant init hashicorp/precise32
+vagrant up
+执行以上命令之后，你已经拥有了一个Ubuntu 12.04 LTS 32-bit系统运行在VirtualBox中。 你可以通过vagrant ssh登录到这个虚拟机中，如果你不需要它了，可以通过vagrant destroy来销毁。
+http://weizhifeng.net/learn-vagrant-01.html
+https://imququ.com/post/vagrantup.html
+如果你要其他系统的镜像，可以来这里下载：http://www.vagrantbox.es/
+添加镜像到 Vagrant  假设我们下载的镜像存放路径是 ~/box/precise64.box，在终端里输入：vagrant box add hahaha ~/box/precise64.box
+https://mos.meituan.com/library/4/how-to-use-vagrant-with-mos/
+http://www.dreamxu.com/vagrant/
+http://doc.shurenyun.com/practice/vagrant.html
+前面讲的 box 实际上它是一个zip包，包含了 Vagrant 的配置信息和 VirtualBox 的虚拟机镜像文件.
+box中的镜像文件被放到了：/Users/mymac/.vagrant.d/boxes/，如果在 Windows 系统中应该是放到了： C:\Users\当前用户名\.vagrant.d\boxes\ 目录下。
+http://open.shurenyun.com/article/6
+http://www.ituring.com.cn/Article/131438
+将 c:\User\<username>\.vagrant.d 目录移动到新的位置   设置 VAGRANT_HOME 环境变量指向新的位置即可。
+https://github.com/jose-lpa/packer-ubuntu_14.04/releases/download/v2.0/ubuntu-14.04.box
+
+beats有三个典型的例子：Filebeat、Topbeat、Packetbeat。Filebeat用来收集日志，Topbeat用来收集系统基础设置数据如cpu、内存、每个进程的统计信息，Packetbeat是一个网络包分析工具，统计收集网络信息。
+
+akka.util.internal.HashedWheelTimer
+org.jgroups.util.HashedTimingWheel
+https://projectreactor.io/docs/api/reactor/fn/timer/HashWheelTimer.html
+http://novoland.github.io/%E5%B9%B6%E5%8F%91/2014/07/26/%E5%AE%9A%E6%97%B6%E5%99%A8%EF%BC%88Timer%EF%BC%89%E7%9A%84%E5%AE%9E%E7%8E%B0.html
+
 
 图片优化
 http://segmentfault.com/a/1190000000658499
@@ -28,7 +90,7 @@ http://news.oneapm.com/java-web1/  前端高性能资源优化
 http://www.tuicool.com/articles/Ir6V3qr
 http://www.w3cplus.com/performance/build-fast-loading-mobile-website.html
 
-
+https://mos.meituan.com/library/30/how-to-optimize-nginx/   Nginx性能优化
 http://songlisha.blog.51cto.com/6269280/1598922  CentOS之Phabricator的安装配置
 
  
@@ -95,3 +157,13 @@ http://www.csdn.net/article/2014-10-21/2822218
 http://www.csdn.net/article/2014-10-24/2822278-how-to-bulida-spark-and-cassandra-based-high-performance-data-pipeline    使用Spark+Cassandra打造高性能数据分析平台
 
 
+ffmpeg
+https://github.com/sameersbn/docker-ffmpeg
+https://lukasklein.com/docker/ffmpeg/python/2015/06/12/on-demand-transcoder/
+http://fubuki.github.io/blog/2014/12/20/docker-ffmpeg/
+http://www.aaronliu.me/posts/347375-install-ffmpeg-in-dockerlized-utuntu-14-4
+https://github.com/jrottenberg/ffmpeg
+
+挖财
+https://github.com/CSUG/real_world_scala
+http://afoo.me/references/cobarclient/zh/index.html

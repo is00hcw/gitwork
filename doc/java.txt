@@ -54,3 +54,14 @@ http://ifeve.com/stream/
 http://www.cnblogs.com/figure9/archive/2014/10/24/4048421.html
 Java8里接口可以带静态方法, Default method，也是Java8中的一个新特性，就是接口中的一个带有实现的方法  默认方法使您能够添加新的功能到你现有库的接口中，并确保与采用老版本接口编写的代码的二进制兼容性。  目的是为了解决接口的修改与现有的实现不兼容的问题 
 1.抽象类不可以多重继承，接口可以   抽象类表示的是"is-a"关系，接口表示的是"like-a"关系;
+
+
+http://jnb.ociweb.com/jnb/jnbJan2010.html
+https://projectlombok.org/features/index.html
+Lombok的特色是根据annotation创建一些代码，以减少重复代码的数量，它提供了以下几个annotation：
+@Getter和@Setter：为属性创建getter和setter
+@EqualsAndHashCode：实现equals()方法和hashCode()方法
+@ToString：实现toString()方法
+@Data：上述3个annotation的和，会创建getter setter equals hashCode和toString，正如你上面看到的那样
+@Cleanup：关闭流
+@Synchronized：对象同步
