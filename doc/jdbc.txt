@@ -1,0 +1,31 @@
+https://help.aliyun.com/knowledge_detail/5989703.html  基于MySQL Connector/J 中 com.mysql.jdbc.ReplicationDriver 驱动的应用侧配置读写分离
+jdbc:mysql://master1,slave1,slave2/dlog?autoReconnect=true&roundRobinLoadBalance=true
+ReplicationDriver 是通过Connection对象的readOnly属性来判断该操作是否为更新操作。因此我们在执行一个sql语句的时候必须调用一下 setReadOnly告诉驱动程序当前执行的操作是否是只读。如果你是使用hibernate操作数据库的，那可以调用 Query.setReadOnly方法。
+http://mysqlblog.fivefarmers.com/2013/11/04/multi-master-support-in-mysql-connectorjava/
+ 配合Spring, 我们可以使用@Transactional(readOnly = true)注解。
+
+
+jdbc:mysql:fabric://localhost/test?user=simon&password=secret&fabricUsername=app01&fabricPassword=secret&fabricServerGroup=mygroup
+com.mysql.fabric.jdbc.FabricMySQLConnection
+https://blogs.oracle.com/jbalint/entry/accessing_fabric_ha_groups_from
+http://my.oschina.net/penngo/blog/549282?fromerr=DXWtF6xn
+
+
+http://neoremind.net/2011/06/spring%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%BB%E5%86%99%E5%88%86%E7%A6%BB/   AbstractRoutingDataSource可以实现动态的选择数据源datasource
+http://www.bridgeli.cn/archives/166  Spring加Mybatis实现MySQL数据库主从读写分离
+http://blog.csdn.net/isea533/article/details/46815385
+
+大多数连接池均包含链接有效性探测，适当配置后即可消除连接闪断对应用的影响。 
+<property value=”SELECT 1″ name=”validationQuery”></property><property value=”true” name=”testWhileIdle”></property> 
+<property value=”true” name=”testOnBorrow”></property> 
+<property value=”true” name=”testOnReturn”></property> 
+https://bbs.aliyun.com/read/177496.html
+
+
+http://lpyyn.iteye.com/blog/2271952  Druid中sql解析
+
+https://github.com/ha-jdbc/ha-jdbc
+
+http://www.bridgeli.cn/archives/236  maven打包dubbo接口之最佳实践
+
+http://www.bridgeli.cn/archives/208  Git服务器之Gerrit的搭建及第一次使用注意事项
