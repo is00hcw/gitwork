@@ -22,3 +22,26 @@ https://github.com/ouvens/frontend-system-map  前端知识体系
 http://fex.baidu.com/blog/2014/05/front_end-data/  js统计
 https://github.com/fex-team/alogs
 https://github.com/BetterJS/badjs-report
+
+http://www.stuq.org/subject/skill-map/  图谱
+http://www.stuq.org/ppt/qcon2015/2a5d9377caceed899f1c2d14097285fc/1  
+
+
+https://linux.cn/article-3205-1.html  nginxtop
+http://www.oschina.net/p/kong   api gateway
+
+百川
+http://baichuan.taobao.com/doc2/detail?spm=0.0.0.0.81zoMc&treeId=39&articleId=103062&docType=1
+http://baichuan.taobao.com/doc2/detail.htm?spm=0.0.0.0.vjFoxi&treeId=39&articleId=103049&docType=1
+ 
+http://hxijudtz.mirror.aliyun.com
+http://tae.taobao.com/mirror/index.html#/docker/speed/stat
+sudo sed -i 's|OPTIONS=|OPTIONS=--registry-mirror=http://hxijudtz.mirror.aliyun.com |g' /etc/sysconfig/docker
+echo "EXTRA_ARGS=\"--registry-mirror=http://hxijudtz.mirror.aliyun.com\"" >> /var/lib/boot2docker/profile && exit
+echo "DOCKER_OPTS=\"\$DOCKER_OPTS --registry-mirror=http://hxijudtz.mirror.aliyun.com\"" | sudo tee -a /etc/default/docker
+
+
+rest doc
+http://rap.taobao.org/platform/home.do
+http://my.oschina.net/ekc/blog/83281
+http://blog.sina.com.cn/s/blog_72ef7bea0102vpu7.html
