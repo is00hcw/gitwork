@@ -65,3 +65,6 @@ Lombok的特色是根据annotation创建一些代码，以减少重复代码的数量，它提供了以下几个
 @Data：上述3个annotation的和，会创建getter setter equals hashCode和toString，正如你上面看到的那样
 @Cleanup：关闭流
 @Synchronized：对象同步
+
+
+http://www.jianshu.com/p/be4a2e7f60af    用 yEd Graph Editor 绘制流程图

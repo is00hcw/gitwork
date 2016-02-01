@@ -9,8 +9,27 @@ http://pan.baidu.com/share/home?uk=387674681&view=share#category/type=0
 
 
 http://www.waylau.com/about-vpngate/   vpn
-
 http://opentalk.upyun.com/show/issues  会议ppt
+http://www.stuq.org/ppt/qcon2015/2a5d9377caceed899f1c2d14097285fc
+
+kopf 管理Elasticsearch 集群真心方便
+http://www.jianshu.com/p/3efbbf265f15  创业可以用到的一些第三方服务
+http://data.qq.com/article?id=2835   腾讯大数据套件带你玩转大数据
+https://github.com/coreos/etcd/blob/master/Documentation/libraries-and-tools.md  etcd
+http://debugo.com/hbase-access-control/  HBase 权限控制
+
+Solr集群与常规集群本质上没有什么不同。也是前端是负载均衡器，后端是一台台Solr服务器。此时各个Solr服务器上的数据是完全相同的。当有数据更新时(比如Client端提交了一个新的文档),需要将数据复制到其他各个节点.
+SolrCloud是基于ZooKeeper和Solr的分布式解决方案，为Solr添加分布式功能，用于建立高可用、高伸缩、自动容错、分布式索引、分布式查询的Solr服务器集群。
+http://blog.cheyo.net/130.html
+http://tech.uc.cn/?p=2387
+http://blog.163.com/xiangfei209@126/blog/static/98695674201393024742225
+
+http://www.infoq.com/cn/articles/etcd-interpretation-application-scenario-implement-principle   etcd：从应用场景到实现原理的全方位解读
+http://data.qq.com/article?id=2863    zookeeper运营经验分享
+http://vernonzheng.com/2015/02/09/%E5%BC%80%E6%BA%90%E5%88%86%E5%B8%83%E5%BC%8F%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83%E9%80%89%E5%9E%8B/   开源分布式配置中心选型
+http://www.wtoutiao.com/p/W60ga7.html  软件定义网络（Software Defined Network, SDN ）
+http://www.wtoutiao.com/p/1b7mzPR.html  短视频社区 “美拍” 的架构实战
+http://www.infoq.com/cn/articles/e-commerce-web-tech-stack    电商网站的初期技术选型
 http://news.sina.com.cn/o/2015-11-06/doc-ifxknivr4224771.shtml   构建高可用、可扩展的IoT云服务
 http://www.leiphone.com/news/201510/ekGwTA7n2QXTo7cs.html   商用物联网系统的开源之路
 http://blog.qiniu.com/archives/4741   七牛CEO许式伟：服务端开发那些事儿
@@ -81,6 +100,9 @@ akka.util.internal.HashedWheelTimer
 org.jgroups.util.HashedTimingWheel
 https://projectreactor.io/docs/api/reactor/fn/timer/HashWheelTimer.html
 http://novoland.github.io/%E5%B9%B6%E5%8F%91/2014/07/26/%E5%AE%9A%E6%97%B6%E5%99%A8%EF%BC%88Timer%EF%BC%89%E7%9A%84%E5%AE%9E%E7%8E%B0.html
+
+
+https://www.linkedin.com/pulse/100-open-source-big-data-architecture-papers-anil-madan
 
 
 图片优化

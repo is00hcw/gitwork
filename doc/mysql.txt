@@ -166,3 +166,28 @@ sequnceHandlerType配置为0，表示使用文件形式；  sequnceHandlerType�
 查询SQL语句以/*balance*/注解来确定其是走读节点还是写节点。
 switchType 目前有三种选择： -1 表示不自动切换  1 默认值，自动切换  2 基于MySQL主从同步的状态决定是否切换
 Mycat心跳机制通过检测 show slave status 中的 "Seconds_Behind_Master", "Slave_IO_Running", "Slave_SQL_Running" 三个字段来确定当前主从同步的状态以及Seconds_Behind_Master主从复制时延
+
+
+http://www.wtoutiao.com/p/10913Vm.html   单表60亿记录等大数据场景的MySQL优化和运维之道
+MySQL历史
+1979年，Monty Widenius写了最初的版本，96年发布1.0
+1995-2000年，MySQL AB成立，引入BDB
+2000年4月，集成MyISAM和replication
+2001年，Heikki Tuuri向MySQL建议集成InnoDB
+2003发布5.0，提供了视图、存储过程等功能
+2008年，MySQL AB被Sun收购，09年推出5.1
+2009年4月，Oracle收购Sun，2010年12月推出5.5
+2013年2月推出5.6 GA，5.7开发中
+
+MySQL存在的问题
+优化器对复杂SQL支持不好
+对SQL标准支持不好
+大规模集群方案不成熟，主要指中间件
+ID生成器，全局自增ID
+异步逻辑复制，数据安全性问题
+Online DDL
+HA方案不完善
+备份和恢复方案还是比较复杂，需要依赖外部组件
+展现给用户信息过少，排查问题困难
+众多分支，让人难以选择
+
