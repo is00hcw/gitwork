@@ -10,6 +10,7 @@ http://zkread.com/article/503904.html  Android应用开发编译框架流程
 http://lenciel.cn/2012/02/integration-of-proguard-and-maven-in-android-projects/   proguard
 https://buck.readthedocs.org/en/latest/quick_start.html  buck compile
 
+https://oneapm.kf5.com/posts/view/45662/?_ga=1.104812352.1380946664.1448242701   oneapm监控
 https://yq.aliyun.com/articles/3005?spm=5176.2020520130.105.27.bSTxEe&msctype=pmsg&mscmsgid=109716012601312875&   Android绘制流程
 
 http://www.infoq.com/cn/articles/wechat-android-app-architecture?utm_source=infoq&utm_medium=popular_widget&utm_campaign=popular_content_list&utm_content=homepage

@@ -1,5 +1,7 @@
 smartgit 没响应  git config --global http.postBuffer 1048576000
 
+android模拟器没有图片 adb shell am broadcast android.intent.action.MEDIA_MOUNTED   http://stackoverflow.com/questions/17928576/refresh-android-mediastore-using-adb
+
 Origin 'null' is therefore not allowed access. 这是因为Chrome默认不允许本地调用ajax请求，但手机上运行却没问题。 解决方案：在Chrome的启动参数中添加如下 --allow-file-access-from-files 
 
 http://www.cnblogs.com/janken/archive/2012/04/05/2432930.html  android采用DES-CBC-PKCS5Padding这种算法，IOS那边中PKCS7Padding填充算法

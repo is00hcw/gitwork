@@ -11,6 +11,40 @@ http://yq.aliyun.com/articles/2930?spm=5176.blog3185.yqblogcon1.14.WtcEqw   在阿
 下载后的mysql  binlog日志需要通过mysqlbinlog命令查看，具体参数如下：  https://help.aliyun.com/knowledge_detail/6526067.html
 mysqlbinlog -vv --base64-output=decode-rows mysqlbinlog.0001
 
+作为阿里云内存数据库代表，Memcache提供了业内最大的256G缓存配置，单实例最大可提供峰值72万的QPS（每秒处理请求数）和512MB/s的吞吐量，可有效减轻App、Web等对数据库的压力，从而提高网站整体的响应速度。
+云数据库Memcache支持的单条缓存数据的Key最大不超过1KB，Value最大不超过1MB，过大的数据不适合存储  Java: Spymemcached
+即将公测的云数据库PetaData版
+https://github.com/facebook/mcrouter   twemproxy,也叫nutcracker,是twtter开源的Redis和Memcache代理服务器
+
+
+curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+sudo apt-get install -y nodejs
+sudo apt-get install apache2  php5  python-pip
+sudo apt-get install python-software-properties  software-properties-common
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+sudo apt-get install oracle-java7-installer
+sudo apt-get install oracle-java8-installer
+sudo vim /etc/environment
+在文件最后添加上：JAVA_HOME="/usr/lib/jvm/java-8-oracle"
+ 
+您可以通过阿里云的镜像仓库下载： mirrors.aliyun.com/help/docker-engine
+curl -sSL http://acs-public-mirror.oss-cn-hangzhou.aliyuncs.com/docker-engine/internet | sh -
+配置Docker加速器  您可以使用如下的脚本将mirror的配置添加到docker daemon的启动参数中。
+echo "DOCKER_OPTS=\"--registry-mirror=https://m09w2ldy.mirror.aliyuncs.com\"" | sudo tee -a /etc/default/docker
+sudo service docker restart
+验证Docker是否安装成功 sudo docker run hello-world
+您的专属加速器地址：https://m09w2ldy.mirror.aliyuncs.com
+/etc/apt/sources.list.d
+sudo apt-get install linux-image-generic-lts-trusty  这是个通用linux 内核影像，这个内核内置了AUFS文件系统，是安装Docker所必需的
+
+
+unix time的形式展示的。 例如：Expires=1448991693，可以将这个时间转换成本地时间。在Linux下的命令为date -d@1448991693
+
+https://help.aliyun.com/document_detail/oss/practice/app_server/sts_server.html?spm=5176.docoss/practice/oss_android_sdk_start/overview.2.3.bSGW62   oss sts
+https://help.aliyun.com/document_detail/oss/sdk/java-sdk/upload_object.html?spm=5176.docoss/user_guide/upload_object/append_upload.2.9.nCVd7V#追加文件示例
+
+
 http://www.csdn.net/article/2014-10-21/2822201
 阿里云飞天平台是自己开发的,虚拟化用的是Xen.
 由于CDN节点在全国多地均有分布，所以与其他云产品间流量是通过公网传输。CDN流量与其他云产品流量是各自独立计费，之间并无关系。

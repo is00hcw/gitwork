@@ -12,6 +12,7 @@ http://www.waylau.com/about-vpngate/   vpn
 http://opentalk.upyun.com/show/issues  会议ppt
 http://www.stuq.org/ppt/qcon2015/2a5d9377caceed899f1c2d14097285fc
 
+
 kopf 管理Elasticsearch 集群真心方便
 http://www.jianshu.com/p/3efbbf265f15  创业可以用到的一些第三方服务
 http://data.qq.com/article?id=2835   腾讯大数据套件带你玩转大数据
@@ -73,6 +74,14 @@ http://www.lujinhong.com/kafka%E9%9B%86%E7%BE%A4%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8
 
 Apache Crunch是一个 Java 类库，它用于简化 MapReduce 作业的编写和执行，并且可以用于简化连接和数据聚合任务API的Java类库。
 https://github.com/cloudera/crunch
+
+
+如空间和时间复杂度都较为均衡的双数组Trie树算法来实现。Trie树也称为字典树或者是单词查找树，它的好处在于可以利用字符串的公共前缀以减少查询时间，最大限度的减少字符串比较次数，降低关键词在内存中占用的存储空间。
+Trie本质上是一个有限状态机，根据输入的数据进行状态转移。可能会在文本当中夹杂一些干扰字符来绕过敏感词检查，如“美*利*坚”，这就需要我们对输入的文本做降噪处理，过滤掉其中的干扰字符，再进行匹配。
+分类实际上就是按照某种标准来给对象贴标签，然后再根据标签进行区分，基于概率统计的贝叶斯分类算法[5]是最常见的分类算法，也是目前垃圾文本识别领域应用最广泛的算法。
+Bloom Filter是一个m位的数组，初始状态下数组所有位被置0，需要设置黑名单时，通过一系列不同的hash函数，每个hash函数将对应的输入元素映射到数组中的一位上，通过hash函数得到数组的索引，将数组对应位置1，在查询的时候，通过相同的hash函数，找到对应的位，如果对应的位不都为1的话，则表示用户不在黑名单中，那么，当所有的位都为1的情况，就表示用户一定黑名单中么？也不一定
+基本的Bloom Filter是不支持删除操作的，Counting Bloom Filter的出现解决了这个问题，它将标准Bloom Filter位数组的每一位扩展为一个小的计数器（Counter），在插入元素时给对应的k（k为哈希函数个数）个Counter的值分别加1，删除元素时给对应的k个Counter的值分别减1
+http://www.infoq.com/cn/articles/alibaba-broadcast-platform-technology-challenges    鏖战双十一-阿里直播平台面临的技术挑战
 
 
 Vagrant就是为了方便的实现虚拟化环境而设计的，它使用Ruby开发，基于VirtualBox等虚拟机管理软件的接口，提供了一个可配置、轻量级的便携式虚拟开发环境。使用Vagrant可以很方便的就建立起来一个虚拟环境，而且可以模拟多台虚拟机，这样我们平时还可以在开发机模拟分布式系统。
