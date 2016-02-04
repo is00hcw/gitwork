@@ -14,6 +14,10 @@ debug reload   saveµ±Ç°µÄrdbÎÄ¼ş£¬²¢Çå¿Õµ±Ç°Êı¾İ¿â£¬ÖØĞÂ¼ÓÔØrdb£¬¼ÓÔØÓëÆô¶¯Ê±¼ÓÔ
 debug loadaof  Çå¿Õµ±Ç°Êı¾İ¿â£¬ÖØĞÂ´ÓaofÎÄ¼şÀï¼ÓÔØÊı¾İ¿â
 docker pull dl.dockerpool.com:5000/ubuntu:14.04
 
+
+MPM£¬È«³Æmysql performance monitor£¬ÊÇÓÃÓÚ¼à¿ØmysqlµÄ¸÷ÖÖ²ÎÊı¼°ĞÔÄÜÖ¸±êµÄÌØ¶¨Ä£°å
+
+
 http://blog.arganzheng.me/posts/tomcat-monitor.html  tomcat¼à¿Ø
 http://www.devopsbookmarks.com/monitoring
 http://blog.csdn.net/linlzk/article/details/47423423    ·şÎñ¶Ë¼à¿Ø·½°¸
