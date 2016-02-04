@@ -17,6 +17,11 @@ mysqlbinlog -vv --base64-output=decode-rows mysqlbinlog.0001
 https://github.com/facebook/mcrouter   twemproxy,也叫nutcracker,是twtter开源的Redis和Memcache代理服务器
 
 
+rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
+yum --enablerepo=elrepo-kernel install kernel-lt -y
+yum install http://mirrors.yun-idc.com/epel/6/i386/epel-release-6-8.noarch.rpm
+yum install docker-io
+
 curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
 sudo apt-get install -y nodejs
 sudo apt-get install apache2  php5  python-pip
@@ -37,6 +42,7 @@ sudo service docker restart
 您的专属加速器地址：https://m09w2ldy.mirror.aliyuncs.com
 /etc/apt/sources.list.d
 sudo apt-get install linux-image-generic-lts-trusty  这是个通用linux 内核影像，这个内核内置了AUFS文件系统，是安装Docker所必需的
+http://blog.csdn.net/opensure/article/details/46490749
 
 
 unix time的形式展示的。 例如：Expires=1448991693，可以将这个时间转换成本地时间。在Linux下的命令为date -d@1448991693

@@ -1,3 +1,19 @@
+echo stat|nc 127.0.0.1 2181 来查看哪个节点被选择作为follower或者leader
+echo conf | nc 127.0.0.1 2181 ,输出相关服务配置的详细信息。
+echo ruok|nc 127.0.0.1 2181 测试是否启动了该Server，若回复imok表示已经启动。
+
+taskset是LINUX提供的一个命令(ubuntu系统可能需要自行安装，schedutils package)。他可以让某个程序运行在某个（或）某些CPU上。
+进程启动时指定CPU  taskset -c 1 ./redis-server ../redis.conf
+mpstat -P ALL 1  检查cpu
+http://wiki.jikexueyuan.com/project/all-about-redis/Testing/hang.html
+redis-cli debug oom
+redis-cli debug segfault
+redis-cli -p 6379 DEBUG sleep 30
+debug populate 10000  快速产生大量的key
+debug reload   save当前的rdb文件，并清空当前数据库，重新加载rdb，加载与启动时加载类似，加载过程中只能服务部分只读请求
+debug loadaof  清空当前数据库，重新从aof文件里加载数据库
+docker pull dl.dockerpool.com:5000/ubuntu:14.04
+
 http://blog.arganzheng.me/posts/tomcat-monitor.html  tomcat监控
 http://www.devopsbookmarks.com/monitoring
 http://blog.csdn.net/linlzk/article/details/47423423    服务端监控方案
