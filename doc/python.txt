@@ -1,6 +1,11 @@
 简单而直接的Python web 框架：web.py  flask
 http://blog.csdn.net/linhan8/article/details/8746110
 http://wechat-python-sdk.readthedocs.org/zh_CN/master/
+http://codingpy.com/article/pocoo-internal-style-guide-cn/
+
+相信各位对堡垒机(跳板机)不陌生，为了保证服务器安全，前面加个堡垒机，所有ssh连接都通过堡垒机来完成，堡垒机也需要有 身份认证，授权，访问控制，审计等功能
+http://demo.jumpserver.org/
+http://blog.csdn.net/mdl13412/article/details/8986412
 
 https://www.continuum.io/downloads
 https://github.com/ipython/ipython

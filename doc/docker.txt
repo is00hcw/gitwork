@@ -29,6 +29,13 @@ https://dashboard.daocloud.io/packages/89017ce9-1af2-489f-aadb-5cb9d53fe2da   ka
 
 http://www.csdn.net/article/2014-12-24/2823292-Docker-Kubernetes  基于Kubernetes构建Docker集群管理详解
 
+
+安装 Docker 版本必须在1.7.1以上(强烈建议1.8.2)，并确保 Docker Daemon 运行；
+使用64位 Linux 系统，已经通过测试的操作系统： CentOS 7+ 和 Ubuntu 14.04+；
+推荐 Ubuntu 使用 AUFS 或 CentOS 使用 Device Mapper 作为 Docker 文件系统(生产环境使用 Device Mapper)；
+CentOS 关闭 selinux；
+开启 iptables-nat。
+
 centos安装
 yum -y install docker-io
 yum -y install device-mapper-event-libs

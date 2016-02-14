@@ -1,4 +1,17 @@
 kafka
+http://www.oneapm.com/ci/kafka.html  jmx监控
+镜像地址: testregistry.dataman.io/centos7/jdk7-scala2.11-kafka0.8.22
+Yahoo 构建了一个基于 Web 的管理工具，称为 Kafka Manager
+镜像地址: testregistry.dataman.io/centos7/jdk8-kafka-0.8.x-manager
+http://blog.dataman-inc.com/20151218-kafka-shurenyun/
+https://docs.qingcloud.com/guide/queue.html#id8  常用配置项
+http://colobu.com/2014/08/06/kafka-quickstart/
+https://www.mapr.com/blog/getting-started-sample-programs-apache-kafka-09
+http://www.confluent.io/blog/tutorial-getting-started-with-the-new-apache-kafka-0.9-consumer-client
+http://colobu.com/2015/12/04/Kafka-0-9-is-released/  安全 Kafka Connect 新的Consumer
+
+
+http://bupt.io/?p=765
 http://www.aboutyun.com/thread-9906-1-1.html   kafka客户端开发-java
 http://blog.csdn.net/honglei915/article/details/37563647
 http://doc.okbase.net/QING____/archive/19447.html
@@ -25,12 +38,31 @@ broker change是由BrokerChangeListener监听类，监听/brokers/ids下得brokerid
 http://sookocheff.com/post/kafka/kafka-in-a-nutshell/
 http://www.tuicool.com/articles/R3A3Y3    Producer端使用zookeeper用来"发现"broker列表,以及和Topic下每个partition leader建立socket连接并发送消息.
 http://www.infoq.com/cn/articles/kafka-analysis-part-4   Kafka设计解析（四）：Kafka Consumer解析
+http://www.infoq.com/cn/author/%E9%83%AD%E4%BF%8A#文章
+
+http://ju.outofmemory.cn/entry/205022
+http://ju.outofmemory.cn/entry/119495
+http://blog.csdn.net/kisimple/article/details/42342459
+https://github.com/apache/zookeeper/blob/trunk/src/java/main/org/apache/zookeeper/server/SnapshotFormatter.java
+每一个topic会有几个partition目录，partition下面的就是message文件，称为log文件，log文件是以它所保存的第一条message的offset命名。每一条message就是一个log entry
+
+
  
 http://queues.io/
 https://github.com/huanghua581/notes/blob/master/PHP/%E5%B8%B8%E8%A7%81%E5%BC%80%E6%BA%90%E6%B6%88%E6%81%AF%E7%B3%BB%E7%BB%9F.md
 
 https://github.com/antirez/disque  alpha
  
+replication factor控制有多少个server将会复制各条被写入Topic的消息。如果该值为3，那么可以有2台server停止工作的情况下，消费端以访问到消息。我们建议你设置该值为2或者3，这样就可以在重启服务时而不影响消费端消费数据。
+默认情况下是不能删除Topic，如果需要删除Topic的话，请在配置文件里设置如下属性delete.topic.enable=true
+
+Kafka备份的数据单元是partition，每个partition有一个leader和若干follower。replica的总数取决于所有broker的数量（包括leader）。broker作为工作单元（服务器），一个partition可以有多个broker，反之一个broker下也有多个partition（partition可能是不同topic的）。
+follower同步从leader同步数据的方式与正常的Consumer相同，从leader读取数据然后存入自己的log队列。一条新的数据进入后，在所有“in sync”的replica成功将其放入自己的队列后，这条数据才能被正常的Consumer读取。这个过程在Kafka中被称为“committed”。
+而“in sync”是指，leader会维护一个满足以下两个条件的replica节点集合：节点必须能与zookeeper保持正常通信   它必须保证从leader同步的数据不能掉队太多
+http://www.xmuyoo.com/2015/10/16/KafkaReplication/
+
+Kafka默认的消息大小为1000012,参数的名称为message.max.bytes.  但是对于topic来说，这个参数的名称却叫max.message.bytes，和前面的参数的名称很容易弄混。
+http://colobu.com/2015/05/14/one-config-parameter-in-kafka/
 
 
 activemq

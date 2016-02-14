@@ -2,14 +2,6 @@ http://shiyanjun.cn/archives/1168.html
 http://shiyanjun.cn/archives/1178.html
 http://shiyanjun.cn/archives/1186.html
 
-
-
-kafka
-http://ju.outofmemory.cn/entry/205022
-http://ju.outofmemory.cn/entry/119495
-http://blog.csdn.net/kisimple/article/details/42342459
-https://github.com/apache/zookeeper/blob/trunk/src/java/main/org/apache/zookeeper/server/SnapshotFormatter.java
-，每一个topic会有几个partition目录，partition下面的就是message文件，称为log文件，log文件是以它所保存的第一条message的offset命名。每一条message就是一个log entry
-
+ 
 colossus
 http://tumblr.github.io/colossus/docs/quickstart/
