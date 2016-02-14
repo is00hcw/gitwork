@@ -39,13 +39,19 @@ http://sookocheff.com/post/kafka/kafka-in-a-nutshell/
 http://www.tuicool.com/articles/R3A3Y3    Producer端使用zookeeper用来"发现"broker列表,以及和Topic下每个partition leader建立socket连接并发送消息.
 http://www.infoq.com/cn/articles/kafka-analysis-part-4   Kafka设计解析（四）：Kafka Consumer解析
 http://www.infoq.com/cn/author/%E9%83%AD%E4%BF%8A#文章
+https://github.com/wurstmeister/storm-kafka-0.8-plus
+
+http://www.michael-noll.com/blog/2014/05/27/kafka-storm-integration-example-tutorial/
+https://github.com/linkedin/gobblin/wiki/Kafka-HDFS-Ingestion  导入hdfs
+https://github.com/linkedin/camus
+
 
 http://ju.outofmemory.cn/entry/205022
 http://ju.outofmemory.cn/entry/119495
 http://blog.csdn.net/kisimple/article/details/42342459
 https://github.com/apache/zookeeper/blob/trunk/src/java/main/org/apache/zookeeper/server/SnapshotFormatter.java
 每一个topic会有几个partition目录，partition下面的就是message文件，称为log文件，log文件是以它所保存的第一条message的offset命名。每一条message就是一个log entry
-
+Kafka使用Yammer Metrics来报告服务端和客户端的Metric信息。
 
  
 http://queues.io/

@@ -3,6 +3,13 @@ http://seanlook.com/2015/05/18/nginx-keepalived-ha/  Nginx+KeepalivedÊµÏÖÕ¾µã¸ß¿
 http://seanlook.com/2015/06/02/nginx-cache-check/  nginx×ö¸ºÔØ¾ùºâÆ÷ÒÔ¼°proxy»º´æÅäÖÃ
 http://www.cnblogs.com/dudu/p/4597351.html   »º´æ
 https://www.nginx.com/blog/tuning-nginx/#gs.mpDnrLM  ÓÅ»¯
+http://www.infoq.com/cn/news/2016/01/Nginx-AntiDDoS  Í¨¹ıNginxºÍNginx Plus×èÖ¹DDoS¹¥»÷
+limit_req_zone $binary_remote_addr zone=one:10m rate=30r/m;
+limit_conn_zone $binary_remote_addr zone=addr:10m;
+¿ÉÒÔÍ¨¹ıclient_body_timeoutºÍclient_header_timeoutÖ¸Áî¿ØÖÆÇëÇóÌå»òÕßÇëÇóÍ·µÄ³¬Ê±Ê±¼ä
+Í¨¹ıproxy_cache_use_staleÖ¸ÁîµÄupdating²ÎÊı¸æËßNginxºÎÊ±ĞèÒª¸üĞÂ¹ıÆÚµÄ»º´æ¶ÔÏó£¬±ÜÃâÒòÖØ¸´·¢ËÍ¸üĞÂÇëÇó¶Ôºó¶Ë·şÎñÆ÷²úÉúÑ¹Á¦¡£
+server 192.168.100.2:80 max_conns=200;
+queue 10 timeout=30s;
 
 http://blog.csdn.net/zdy0_2004/article/details/48878023  nginxscript
 
