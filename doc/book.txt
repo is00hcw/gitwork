@@ -1,0 +1,13 @@
+http://calvin1978.blogcn.com/articles/bookshelf.html 
+http://calvin1978.blogcn.com/articles/dailysites.html
+http://vdisk.weibo.com/s/y_rYA85Bi8MZU?from=page_100505_profile&wvr=6   linux内核
+SpringSide发起人肖桦（网名江南白衣） http://calvin1978.blogcn.com/articles/csdnjava20.html
+
+架构
+http://calvin1978.blogcn.com/articles/architecture.html
+http://www.colobu.com/2015/04/08/software-architecture-patterns/
+http://zhuanlan.zhihu.com/prattle/20005177
+
+优化
+http://calvin1978.blogcn.com/articles/perf-tunning-1.html
+http://calvin1978.blogcn.com/articles/jvmoption-2.html
