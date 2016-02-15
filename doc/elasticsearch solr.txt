@@ -1,3 +1,26 @@
+http://blog.sctux.com/?p=445 
+http://blog.sctux.com/?p=451  ELK+Kafka 企业日志收集平台
+curl -XDELETE 'http://localhost:9200/logstash-*'   清理掉了所有的索引文件
+
+http://blog.zhenchuan.me/set-up-elk-elasticsearch/
+http://kibana.logstash.es/content/elasticsearch/performance/curator.html
+为了更加方便的做清除数据，合并 segment，备份恢复等管理任务，Elasticsearch 在提供相关 API 的同时，另外准备了一个命令行工具，叫 curator 。curator 是 Python 程序，可以直接通过 pypi 库安装：
+wget --no-check-certificate https://bootstrap.pypa.io/get-pip.py
+python get-pip.py
+pip install elasticsearch-curator
+
+http://elasticsearch.cn/article/17
+用 Logstash 接收 Kafka 里的业务日志再写入 Elasticsearch 已经成为一个常见的选择。但是大多数人随后就会碰到一个问题：logstash-input-kafka 的性能上不去！这个问题，主要是由于 Logstash 用 JRuby 实现
+从 logstash-1.5.1 版开始，新发布了一个 logstash-input-heartbeat 插件，实现了一个最基本的队列堵塞状态监控。
+Logstash 是一个运行在 JVM 上的软件，也就意味着 JMX 这种对 JVM 的通用监控方式对 Logstash 也是一样有效果的。甚至 logstash 自己也有插件 logstash-input-jmx 来读取远程 JMX 数据。
+注意，zabbix-server 本身并不直接对 JMX 发起请求，而是单独有一个 Java Gateway 作为中间代理层角色。zabbix-server 的 java poller 连接 zabbix-java-gateway，由 zabbix-java-gateway 去获取远程 JMX 信息。
+https://www.elastic.co/blog/logstash-kafka-intro
+bin/logstash -e "input { stdin {} } output { kafka { topic_id => 'logstash_logs' } }"
+bin/logtash -e "input { kafka { topic_id => 'logstash_logs' } } output { elasticsearch { protocol => http } }"
+
+
+http://www.ashishpaliwal.com/blog/2015/04/geospatial-indexing-with-elasticsearch/  位置搜索
+http://blog.zhenchuan.me/deep-into-elasticsearch/   深入理解 elasticsearch
 http://shokunin.co/blog/2013/06/24/elasticsearch.html
 http://blog.csdn.net/july_2/article/details/24702243
 plugin -install lukas-vlcek/bigdesk
@@ -15,6 +38,7 @@ http://localhost:5601/app/marvel
 http://www.vpsee.com/2014/05/install-and-play-with-elasticsearch/
 plugin -i elasticsearch/marvel/latest
 
+https://github.com/lmenezes/elasticsearch-kopf
 
 plugin -install mobz/elasticsearch-head
 http://localhost:9200/_plugin/head/

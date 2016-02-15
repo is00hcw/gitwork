@@ -17,6 +17,10 @@ http://tech.meituan.com/lucene-distance.html
 http://tech.meituan.com/solr-spatial-search.html
 
 logstash
+bin/logstash -f logstash.conf --configtest --verbose
+http://bigbo.github.io/pages/2015/08/07/logstash_kafka_new/  logstash的kafka插件使用
+http://blog.mmlac.com/how-to-pre-process-logs-with-logstash/
+http://blog.zhenchuan.me/elk-logstach-usage/ 
 Logstash 使用一个名叫 FileWatch 的 Ruby Gem 库来监听文件变化。这个库支持 glob 展开文件路径，而且会记录一个叫 .sincedb 的数据库文件来跟踪被监听的日志文件的当前读取位置。所以，不要担心 logstash 会漏过你的数据。+
 sincedb 文件中记录了每个被监听的文件的 inode, major number, minor number 和 pos。
 通常你要导入原有数据进 Elasticsearch 的话，你还需要 filter/date 插件来修改默认的"@timestamp" 字段值。
@@ -24,6 +28,18 @@ FileWatch 只支持文件的绝对路径，而且会不自动递归目录。所�
 FileWatch 模块提供了一个稍微简单一点的写法：/path/to/**/*.log，用 ** 来缩写表示递归全部子目录。
 start_position 仅在该文件从未被监听过的时候起作用。如果 sincedb 文件中已经有这个文件的 inode 记录了，那么 logstash 依然会从记录过的 pos 开始读取数据。  http://kibana.logstash.es/content/logstash/plugins/input/file.html
 filters/date 插件可以用来转换你的日志记录中的时间字符串，变成 LogStash::Timestamp 对象，然后转存到 @timestamp 字段里  Elasticsearch 内部，对时间类型字段，是统一采用 UTC 时间，存成 long 长整形数据的！对日志统一采用 UTC 时间存储
+logstash 从 1.5 版本开始才集成了 Kafka 支持。1.5 版本开始所有插件的目录和命名都发生了改变，插件发布地址见：https://github.com/logstash-plugins。 
+
+
+http://bigbo.github.io/pages/2015/05/23/mozilla_heka/  对日志处理流程如下:
+[input] -> [splitter] -> [decoder] -> [filter] -> [encoder] -> [output]
+[input]: 输入插件从外部获得数据,并将其读入Heka管道进行处理,支持数据读取方式包含:网络传输(tcp/udp),消息队列支持(AMQP/KAFKA),文件监听等多种方式.
+[splitter]: 对数据流进行分流,以区分不同来源日志.
+[decoder]: 对数据流进行编码,把 message 的结构各个属性解析出来,支持 Lua 对数据进行编码处理.
+[filter]: Heka的处理引擎,可以对数据流进行过滤逻辑,包含统计/聚合甚至做些统计等操作.
+[encoder] 相对[decoder]来说是互逆操作,重新把消息内容编码为一定的格式,格式化输出.
+[output] 根据指定的匹配规则把某类型的消息输出到外部系统,支持多种协议和方式.
+ 
 
 filebeat
 http://udn.yyuap.com/doc/logstash-best-practice-cn/ecosystem/logstash_forwarder.html   Logstash Forwarder

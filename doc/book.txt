@@ -7,6 +7,7 @@ SpringSide发起人肖桦（网名江南白衣） http://calvin1978.blogcn.com/articles/csdnj
 http://calvin1978.blogcn.com/articles/architecture.html
 http://www.colobu.com/2015/04/08/software-architecture-patterns/
 http://zhuanlan.zhihu.com/prattle/20005177
+http://blog.sctux.com/?p=131  LVS+Keepalived
 
 优化
 http://calvin1978.blogcn.com/articles/perf-tunning-1.html

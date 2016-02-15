@@ -7,6 +7,7 @@ http://codingpy.com/article/pocoo-internal-style-guide-cn/
 http://demo.jumpserver.org/
 http://blog.csdn.net/mdl13412/article/details/8986412
 
+http://blog.javachen.com/2014/02/22/python-introduction-of-basics.html
 https://www.continuum.io/downloads
 https://github.com/ipython/ipython
 https://github.com/benoitc/gunicorn

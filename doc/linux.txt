@@ -1,5 +1,17 @@
 ﻿检查连接  netstat -tan | awk '{print $6}' | sort | uniq -c 
 ss -s 
+netstat -napt | grep -i LISTEN
+
+AWK是针对文件或管道中每行输入的处理语言。所以也可以从管道输入:
+grep “xxx” access.log | awk '{print $1}’
+$0代表整行所有数据，$1代表第一列(终于不是程序员数数从0开始了)。
+NF是个代表总列数的系统变量，所以$NF代表最后一列，还支持$(NF-1)来表示倒数第二列。
+默认以空格做分割符，也可以重新指定，下例指定了':'
+ awk -F ':' '{print $1,$2}’ access.log
+也可以正则表达式定义多个分割符，下例指定了 '-' 和 ':'
+ awk -F '[-:]' '{print $1,$2}’ access.log
+http://calvin1978.blogcn.com/articles/awk_accesslog.html
+
 
 ﻿# mac下的配置文件
 ./etc/profile 文件   全局共有配置，无论哪个用户登录，都会读取此文件

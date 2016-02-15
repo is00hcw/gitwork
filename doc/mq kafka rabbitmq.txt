@@ -1,5 +1,72 @@
 kafka
-http://www.oneapm.com/ci/kafka.html  jmx监控
+/kafka-topics.sh --list --zookeeper 192.168.2.22:2181   #列出集群中所有的topic
+kafka-topics.sh --describe --zookeeper 192.168.2.22:2181 --topic summer  #查看topic的状态
+http://blog.sctux.com/?p=445 
+http://blog.sctux.com/?p=451  ELK+Kafka 企业日志收集平台
+http://calvin1978.blogcn.com/articles/kafkaio.html   重温文件高效读写
+http://tech.meituan.com/kafka-fs-design-theory.html  Kafka文件存储机制那些事
+http://www.jasongj.com/2015/01/02/Kafka%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90/  Kafka深度解析
+
+http://blog.csdn.net/suifeng3051/article/details/38657465?utm_source=tuicool&utm_medium=referral   底层API- SimpleConsumer
+http://blog.csdn.net/suifeng3051/article/details/38321043  如何配置Kafka集群
+http://blog.csdn.net/suifeng3051/article/details/48053965  Kafka 设计与原理详解
+https://segmentfault.com/a/1190000003985468  Kafka 高性能吞吐揭秘
+http://my.oschina.net/frankwu/blog/305010   Kafka中级
+http://www.cnblogs.com/w1991/p/5161625.html  运维
+http://blog.javachen.com/2015/03/17/install-and-test-kafka.html  安装和测试Kafka
+https://m.oschina.net/blog/547107  Kafka 0.9 java接口实例
+http://blog.csdn.net/fighting_one_piece/article/details/46486001  Java简单操作
+http://xuwenqiang.org/?p=406  Kafka的Java实例
+
+http://blog.rocana.com/kafkas-defaultpartitioner-and-byte-arrays
+The new producer (org.apache.kafka.clients.producer.KafkaProducer), uses org.apache.kafka.clients.producer.internal.Partitioner as the default partitioner. The partitioning method:
+return Utils.abs(Utils.murmur2(record.key())) % numPartitions;
+What about the old API? kafka.producer.Producer uses kafka.producer.DefaultPartitioner as the default partitioner. How does the partitioning method work? A little bit of Scala:
+Utils.abs(key.hashCode) % numPartitions
+
+
+https://github.com/SOHU-Co/kafka-node
+consumer group：各个consumer可以组成一个组，每个消息只能被组中的一个consumer消费，如果一个消息可以被多个consumer消费的话，那么这些consumer必须在不同的组。
+消息状态：在Kafka中，消息的状态被保存在consumer中，broker不会关心哪个消息被消费了被谁消费了，只记录一个offset值（指向partition中下一个要被消费的消息位置）
+同步异步：Producer采用异步push方式，极大提高Kafka系统的吞吐率（可以通过参数控制是采用同步还是异步方式）。
+负载均衡方面：Kafka提供了一个 metadata API来管理broker之间的负载
+分区机制partition：Kafka的broker端支持消息分区，Producer可以决定把消息发到哪个分区，在一个分区中消息的顺序就是Producer发送消息的顺序，一个主题中可以有多个分区，具体分区的数量是可配置的。
+从Producer端看：Kafka是这么处理的，当一个消息被发送后，Producer会等待broker成功接收到消息的反馈（可通过参数控制等待时间），如果消息在途中丢失或是其中一个broker挂掉，Producer会重新发送（我们知道Kafka有备份机制，可以通过参数控制是否等待所有备份节点都收到消息）。
+从Consumer端看：前面讲到过partition，broker端记录了partition中的一个offset值，这个值指向Consumer下一个即将消费message。当Consumer收到了消息，但却在处理过程中挂掉，此时Consumer可以通过这个offset值重新找到上一个消息再进行处理。Consumer还有权限控制这个offset值，对持久化到broker端的消息做任意处理。
+备份机制是Kafka0.8版本的新特性，备份机制的出现大大提高了Kafka集群的可靠性、稳定性。有了备份机制后，Kafka允许集群中的节点挂掉后而不影响整个集群工作。一个备份数量为n的集群允许n-1个节点失败。在所有备份节点中，有一个节点作为lead节点，这个节点保存了其它备份节点列表，并维持各个备份间的状体同步。
+http://blog.csdn.net/suifeng3051/article/details/37606001
+http://leaver.me/2015/09/08/kafka%E5%BF%AB%E9%80%9F%E5%BC%80%E5%8F%91demo/   kafka快速开发demo
+
+消息发送时都被发送到一个topic，其本质就是一个目录，而topic由是由一些Partition Logs(分区日志)组成，每个Partition中的消息都是有序的，生产的消息被不断追加到Partition log上，其中的每一个消息都被赋予了一个唯一的offset值。 
+Kafka集群会保存所有的消息，不管消息有没有被消费；我们可以设定消息的过期时间，只有过期的数据才会被自动清除以释放磁盘空间。
+Kafka需要维持的元数据只有一个–消费消息在Partition中的offset值，Consumer每消费一个消息，offset就会加1。其实消息的状态完全是由Consumer控制的，Consumer可以跟踪和重设这个offset值，这样的话Consumer就可以读取任意位置的消息。 
+把消息日志以Partition的形式存放有多重考虑，第一，方便在集群中扩展，每个Partition可以通过调整以适应它所在的机器，而一个topic又可以有多个Partition组成，因此整个集群就可以适应任意大小的数据了；第二就是可以提高并发，因为可以以Partition为单位读写了。
+kafka集群中的每个broker都可以响应producer的请求，并返回topic的一些元信息，这些元信息包括哪些机器是存活的，topic的leader partition都在哪，现阶段哪些leader partition是可以直接被访问的。 
+Kafka提供了接口供用户实现自定义的分区，用户可以为每个消息指定一个partitionKey，通过这个key来实现一些hash分区算法。比如，把userid作为partitionkey的话，相同userid的消息将会被推送到同一个分区。 
+如果consumers有同一个组名，那么kafka就相当于一个队列消息服务，而各个consumer均衡的消费相应partition中的数据。若consumers有不同的组名，那么此时kafka就相当与一个广播服务，会把topic中的所有消息广播到每个consumer。 
+线性写的速度远远大于随机写。比如：在一个6 7200rpm SATA RAID-5 的磁盘阵列上线性写的速度大概是600M/秒，但是随机写的速度只有100K/秒，两者相差将近6000倍。线性读写在大多数应用场景下是可以预测的，因此，操作系统利用read-ahead和write-behind技术来从大的数据块中预取数据，或者将多个逻辑上的写操作组合成一个大写物理写操作中。
+熟悉java内存应用管理的人应该清楚以下两件事情：一个对象的内存消耗是非常高的，经常是所存数据的两倍或者更多。随着堆内数据的增多，Java的垃圾回收会变得非常昂贵。
+不同于维护尽可能多的内存缓存并且在需要的时候刷新到文件系统中，我们换一种思路。所有的数据不需要调用刷新程序，而是立刻将它写到一个持久化的日志中。事实上，这仅仅意味着，数据将被传输到内核页缓存中并稍后被刷新。我们可以增加一个配置项以让系统的用户来控制数据在什么时候被刷新到物理硬盘上。
+为了理解sendfile的影响，需要理解一般的将数据从文件传到socket的路径：
+1 操作系统将数据从磁盘读到内核空间的页缓存中 2 应用将数据从内核空间读到用户空间的缓存中  3 应用将数据写回内核空间的socket缓存中  4 操作系统将数据从socket缓存写到网卡缓存中，以便将数据经网络发出
+这种操作方式明显是非常低效的，这里有四次拷贝，两次系统调用。如果使用sendfile，就可以避免两次拷贝：操作系统将数据直接从页缓存发送到网络上。所以在这个优化的路径中，只有最后一步将数据拷贝到网卡缓存中是需要的。 
+通过页面缓存和sendfile的结合使用，整个kafka集群几乎都已以缓存的方式提供服务，推荐采用专用的服务器来部署kafka集群，尽量与hadoop集群分开，因为kafka依赖磁盘读写和大的页面缓存，如果和hadoop共享节点的话会影响其使用页面缓存的性能。 
+Kafka集群的大小需要根据硬件的配置、生产者消费者的并发数量、数据的副本个数、数据的保存时长综合确定。 磁盘的吞吐量尤为重要，因为通常kafka的瓶颈就在磁盘上。 一般的来说，kafka集群瓶颈在于网络和磁盘吞吐量，所以我们先评估一下集群的网络和磁盘需求。 
+注意zookeeper集群越大其读写性能越慢，因为zookeeper需要在节点之间同步数据。一个3节点的zookeeper集群允许一个节点失败，一个5节点集群允许2个几点失败。
+http://blog.csdn.net/suifeng3051/article/details/48053965
+https://cwiki.apache.org/confluence/display/KAFKA/Kafka+data+structures+in+Zookeeper   zookeeper保存数据
+http://my.oschina.net/infiniteSpace/blog/312890?fromerr=Kr3D0l4e  系统配置说明 - server.properties
+http://blog.csdn.net/stark_summer/article/details/50203133  压力测试
+
+docker run --name zookeeper -p 2181 -t wurstmeister/zookeeper
+docker run --name kafka -e HOST_IP=localhost -e KAFKA_ADVERTISED_PORT=9092 -e KAFKA_BROKER_ID=1 -e ZK=zk -p 9092 --link zookeeper:zk -t wurstmeister/kafka
+http://blog.jaceklaskowski.pl/2015/07/14/apache-kafka-on-docker.html
+
+http://blog.csdn.net/amghost/article/details/44258817   Camus是Linkedin开源的一个从Kafka到HDFS的数据管道，实际上它是一个MapReduce作业。
+http://blog.csdn.net/amghost/article/details/44258841
+https://anturis.com/blog/apache-kafka-an-essential-overview/  Camus is another open source product from LinkedIn. It is used to dump Kafka data to Hadoop.
+
+http://www.oneapm.com/ci/kafka.html   jmx监控
 镜像地址: testregistry.dataman.io/centos7/jdk7-scala2.11-kafka0.8.22
 Yahoo 构建了一个基于 Web 的管理工具，称为 Kafka Manager
 镜像地址: testregistry.dataman.io/centos7/jdk8-kafka-0.8.x-manager
@@ -9,8 +76,18 @@ http://colobu.com/2014/08/06/kafka-quickstart/
 https://www.mapr.com/blog/getting-started-sample-programs-apache-kafka-09
 http://www.confluent.io/blog/tutorial-getting-started-with-the-new-apache-kafka-0.9-consumer-client
 http://colobu.com/2015/12/04/Kafka-0-9-is-released/  安全 Kafka Connect 新的Consumer
+http://www.infoq.com/cn/articles/kafka-analysis-part-4   Kafka设计解析（四）：Kafka Consumer解析
+http://www.infoq.com/cn/author/%E9%83%AD%E4%BF%8A#文章
+https://github.com/wurstmeister/storm-kafka-0.8-plus
 
+http://www.cnblogs.com/w1991/p/5155202.html  Storm集成Kafka
+https://www.ibm.com/developerworks/cn/opensource/os-cn-spark-practice2/  使用 Kafka 和 Spark Streaming 构建实时数据处理系统
 
+http://www.michael-noll.com/blog/2014/05/27/kafka-storm-integration-example-tutorial/
+https://github.com/linkedin/gobblin/wiki/Kafka-HDFS-Ingestion  导入hdfs
+https://github.com/linkedin/camus
+
+http://www.jianshu.com/p/aae489f10c1c  Kafka整体结构以及模块分析
 http://bupt.io/?p=765
 http://www.aboutyun.com/thread-9906-1-1.html   kafka客户端开发-java
 http://blog.csdn.net/honglei915/article/details/37563647
@@ -37,13 +114,7 @@ broker change是由BrokerChangeListener监听类，监听/brokers/ids下得brokerid
 对于一个topic,同一个group中不能有多于partitions个数的consumer同时消费  Kafka保证的是稳定状态下每一个Consumer实例只会消费某一个或多个特定 Partition的数据，而某个Partition的数据只会被某一个特定的Consumer实例所消费。也就是说Kafka对消息的分配是以 Partition为单位分配的，而非以每一条消息作为分配单元。这样设计的劣势是无法保证同一个Consumer Group里的Consumer均匀消费数据
 http://sookocheff.com/post/kafka/kafka-in-a-nutshell/
 http://www.tuicool.com/articles/R3A3Y3    Producer端使用zookeeper用来"发现"broker列表,以及和Topic下每个partition leader建立socket连接并发送消息.
-http://www.infoq.com/cn/articles/kafka-analysis-part-4   Kafka设计解析（四）：Kafka Consumer解析
-http://www.infoq.com/cn/author/%E9%83%AD%E4%BF%8A#文章
-https://github.com/wurstmeister/storm-kafka-0.8-plus
 
-http://www.michael-noll.com/blog/2014/05/27/kafka-storm-integration-example-tutorial/
-https://github.com/linkedin/gobblin/wiki/Kafka-HDFS-Ingestion  导入hdfs
-https://github.com/linkedin/camus
 
 
 http://ju.outofmemory.cn/entry/205022

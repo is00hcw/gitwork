@@ -11,9 +11,11 @@ http://www.gpfeng.com/?p=603  Galera replication for MySQL
 http://yq.aliyun.com/edu/lesson/27?spm=0.0.0.0.isZ8Ts 
 SOHU-DBProxy 是由搜狐数据库团队开发维护的一个基于MySQL协议的数据中间层项目。它在MySQL官方推出的 MySQL-Proxy 0.8.3版本的基础上， 修改了大量bug，添加了很多功能特性。
 
-
 https://www.52os.net/articles/mysql-reset-password.html  重置密码
 https://segmentfault.com/a/1190000000593398  Mysql在大型网站的应用架构演变
+
+常规做法是slave上show slave status\G中的两个变量的差值（Read_Master_Log_Pos，Exec_Master_Log_Pos),也可以使用percona提供的工具包pt-heartbeat。
+http://blog.javachen.com/2014/04/06/mysql-config-for-master-slave-replication.html
 
 https://docs.aliyun.com/?spm=5176.7622920.9.4.9muujt#/pub/drds/best-practice/best_connection_pool
 jdbc:mysql://ip:port/db?autoReconnect=true&amp;rewriteBatchedStatements=true&amp;socketTimeout=30000&amp;connectTimeout=3000"

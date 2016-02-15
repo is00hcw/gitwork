@@ -27,6 +27,11 @@ http://yq.aliyun.com/articles/1480
 https://github.com/alibaba/wax  lua
 http://segmentfault.com/a/1190000004268513  Android程序员 如何入门iOS
 
+https://github.com/IFTTT/jot  adding drawings and text to images. 
+https://github.com/IFTTT/FastttCamera   Fasttt and easy camera framework for iOS with customizable filters 
+https://github.com/IFTTT/JazzHands simple keyframe-based animation framework for UIKit. Perfect for scrolling app intros
+https://github.com/IFTTT/IFTTTLaunchImage
+
 build
 https://fastlane.tools/
 https://github.com/facebook/xctool
