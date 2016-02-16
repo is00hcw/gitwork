@@ -1,0 +1,8 @@
+http://blog.cloudera.com/blog/2015/11/how-to-build-a-complex-event-processing-app-on-apache-spark-and-drools/
+
+
+http://download.jboss.org/drools/release/6.3.0.Final/org.drools.updatesite/
+http://blog.csdn.net/sadfishsc/article/details/23456713
+http://blog.csdn.net/cloud_ll/article/details/26979355?utm_source=tuicool&utm_medium=referral
+http://www.tuicool.com/articles/ememuq
+src/main/resources/META-INF/kmodule.xml
