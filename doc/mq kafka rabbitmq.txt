@@ -1,5 +1,7 @@
 kafka
-/kafka-topics.sh --list --zookeeper 192.168.2.22:2181   #列出集群中所有的topic
+https://dzone.com/articles/kafka-clients-at-most-once-at-least-once-exactly-o    Kafka Clients (At-most-once, At-least-once, Exactly-once, and Avro Client)
+http://www.inter12.org/archives/834   old api  Consumer是ConsumerConnector的静态工厂类
+kafka-topics.sh --list --zookeeper 192.168.2.22:2181   #列出集群中所有的topic
 kafka-topics.sh --describe --zookeeper 192.168.2.22:2181 --topic summer  #查看topic的状态
 http://blog.sctux.com/?p=445 
 http://blog.sctux.com/?p=451  ELK+Kafka 企业日志收集平台
@@ -7,7 +9,7 @@ http://calvin1978.blogcn.com/articles/kafkaio.html   重温文件高效读写
 http://tech.meituan.com/kafka-fs-design-theory.html  Kafka文件存储机制那些事
 http://www.jasongj.com/2015/01/02/Kafka%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90/  Kafka深度解析
 
-http://blog.csdn.net/suifeng3051/article/details/38657465?utm_source=tuicool&utm_medium=referral   底层API- SimpleConsumer
+http://blog.csdn.net/suifeng3051/article/details/38657465   底层API- SimpleConsumer
 http://blog.csdn.net/suifeng3051/article/details/38321043  如何配置Kafka集群
 http://blog.csdn.net/suifeng3051/article/details/48053965  Kafka 设计与原理详解
 https://segmentfault.com/a/1190000003985468  Kafka 高性能吞吐揭秘
@@ -25,6 +27,7 @@ What about the old API? kafka.producer.Producer uses kafka.producer.DefaultParti
 Utils.abs(key.hashCode) % numPartitions
 
 
+https://github.com/edenhill/librdkafka   Apache Kafka C/C++ library
 https://github.com/SOHU-Co/kafka-node
 consumer group：各个consumer可以组成一个组，每个消息只能被组中的一个consumer消费，如果一个消息可以被多个consumer消费的话，那么这些consumer必须在不同的组。
 消息状态：在Kafka中，消息的状态被保存在consumer中，broker不会关心哪个消息被消费了被谁消费了，只记录一个offset值（指向partition中下一个要被消费的消息位置）
@@ -163,3 +166,14 @@ zk
 http://blog.csdn.net/xiaolang85/article/details/13021339
 http://www.cnblogs.com/ggjucheng/p/3352591.html
 http://www.coder4.com/archives/3122
+
+
+avro
+http://blog.javachen.com/2015/03/20/about-avro.html
+http://blog.jqian.net/post/avro.html
+http://avro.apache.org/docs/current/gettingstartedjava.html
+http://my.oschina.net/pengqiang/blog/531657   http://www.iteblog.com/archives/1008
+http://www.cnblogs.com/agoodegg/p/3309041.html  rpc
+http://tech.meituan.com/serialization_vs_deserialization.html
+4、当对性能和简洁性有极高要求的场景，Protobuf，Thrift，Avro之间具有一定的竞争关系。
+5、对于T级别的数据的持久化应用场景，Protobuf和Avro是首要选择。如果持久化后的数据存储在Hadoop子项目里，Avro会是更好的选择。

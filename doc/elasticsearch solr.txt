@@ -2,12 +2,30 @@ http://blog.sctux.com/?p=445
 http://blog.sctux.com/?p=451  ELK+Kafka 企业日志收集平台
 curl -XDELETE 'http://localhost:9200/logstash-*'   清理掉了所有的索引文件
 
+http://ylw6006.blog.51cto.com/470441/1722905  packetbeat
+packetbeat -e -d "*"    https://www.elastic.co/guide/en/beats/packetbeat/1.1/enable-packetbeat-debugging.html
+http://www.tuicool.com/articles/ZR7vIfu
+topbeat -e    https://www.elastic.co/guide/en/beats/topbeat/1.1/enable-topbeat-debugging.html
+http://www.tuicool.com/articles/VFrE7nY
+http://www.ttlsa.com/elk/migration-logtash-forwarder-to-filebeat/
+
 http://blog.zhenchuan.me/set-up-elk-elasticsearch/
 http://kibana.logstash.es/content/elasticsearch/performance/curator.html
 为了更加方便的做清除数据，合并 segment，备份恢复等管理任务，Elasticsearch 在提供相关 API 的同时，另外准备了一个命令行工具，叫 curator 。curator 是 Python 程序，可以直接通过 pypi 库安装：
 wget --no-check-certificate https://bootstrap.pypa.io/get-pip.py
 python get-pip.py
 pip install elasticsearch-curator
+
+ES 是一个 P2P 类型(使用 gossip 协议)的分布式系统，除了集群状态管理以外，其他所有的请求都可以发送到集群内任意一台节点上，这个节点可以自己找到需要转发给哪些节点，并且直接跟这些节点通信。
+只配置 cluster.name 的集群，其实就是采用了默认的自动发现协议，即组播(multicast)方式。节点会在本机所有网卡接口上，使用组播地址 224.2.2.4 ，以 54328 端口建立组播组发送 clustername 信息。
+只有在同一个交换机下的节点，能自动发现，跨交换机的节点，是无法收到组播信息的。
+Elasticsearch 2.0 开始，为安全考虑，默认不分发 multicast 功能。依然希望使用 multicast 自动发现的用户，需要单独安装:
+bin/plugin install discovery-multicast
+除了组播方式，ES 还支持单播(unicast)方式。配置里提供几台节点的地址，ES 将其视作 gossip router 角色，借以完成集群的发现。
+ElastAlert 是 Yelp 公司开源的一套用 Python2.6 写的报警框架。属于后来 Elastic.co 公司出品的 Watcher 同类产品
+为了更加方便的做清除数据，合并 segment，备份恢复等管理任务，Elasticsearch 在提供相关 API 的同时，另外准备了一个命令行工具，叫 curator 。curator 是 Python 程序，可以直接通过 pypi 库安装：
+pip install elasticsearch-curator
+curl -X GET 127.0.0.1:9200/_cluster/health?pretty
 
 http://elasticsearch.cn/article/17
 用 Logstash 接收 Kafka 里的业务日志再写入 Elasticsearch 已经成为一个常见的选择。但是大多数人随后就会碰到一个问题：logstash-input-kafka 的性能上不去！这个问题，主要是由于 Logstash 用 JRuby 实现

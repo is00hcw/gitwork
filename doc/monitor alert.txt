@@ -17,7 +17,8 @@ docker pull dl.dockerpool.com:5000/ubuntu:14.04
 
 MPM，全称mysql performance monitor，是用于监控mysql的各种参数及性能指标的特定模板
 
-
+http://blog.jobbole.com/80879/   收集整理的 DevOps 工具和资源
+http://www.devopsbookmarks.com/   DevOps方方面面的工具
 http://blog.arganzheng.me/posts/tomcat-monitor.html  tomcat监控
 http://www.devopsbookmarks.com/monitoring
 http://blog.csdn.net/linlzk/article/details/47423423    服务端监控方案

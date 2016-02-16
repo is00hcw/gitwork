@@ -16,6 +16,7 @@ https://segmentfault.com/a/1190000000593398  Mysql在大型网站的应用架构
 
 常规做法是slave上show slave status\G中的两个变量的差值（Read_Master_Log_Pos，Exec_Master_Log_Pos),也可以使用percona提供的工具包pt-heartbeat。
 http://blog.javachen.com/2014/04/06/mysql-config-for-master-slave-replication.html
+http://sharelinux.blog.51cto.com/11163444/1740513   Mysql热备xtrabackup的使用
 
 https://docs.aliyun.com/?spm=5176.7622920.9.4.9muujt#/pub/drds/best-practice/best_connection_pool
 jdbc:mysql://ip:port/db?autoReconnect=true&amp;rewriteBatchedStatements=true&amp;socketTimeout=30000&amp;connectTimeout=3000"
