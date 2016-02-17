@@ -1,5 +1,20 @@
+zookeeper
+http://blog.csdn.net/hengyunabc/article/details/19006911
+https://github.com/Netflix/exhibitor
+https://github.com/phunt/zkconf
+https://github.com/phunt/zk-smoketest
+https://github.com/phunt/zookeeper_dashboard
+从3.4.0开始，zookeeper提供了自动清理snapshot和事务日志的功能，通过配置 autopurge.snapRetainCount 和 autopurge.purgeInterval 这两个参数能够实现定时清理了。这两个参数都是在zoo.cfg中配置的：
+autopurge.purgeInterval  这个参数指定了清理频率，单位是小时，需要填写一个1或更大的整数，默认是0，表示不开启自己清理功能。
+autopurge.snapRetainCount 这个参数和上面的参数搭配使用，这个参数指定了需要保留的文件数目。默认是保留3个。
+zkCleanup.sh 用于清除旧的事务日志及快照
+
+
+
 kafka
 https://dzone.com/articles/kafka-clients-at-most-once-at-least-once-exactly-o    Kafka Clients (At-most-once, At-least-once, Exactly-once, and Avro Client)
+http://colobu.com/2015/03/13/kafka-example-in-scala/   scala
+http://top.jobbole.com/31018/  0.9 新特性
 http://www.inter12.org/archives/834   old api  Consumer是ConsumerConnector的静态工厂类
 kafka-topics.sh --list --zookeeper 192.168.2.22:2181   #列出集群中所有的topic
 kafka-topics.sh --describe --zookeeper 192.168.2.22:2181 --topic summer  #查看topic的状态
@@ -167,6 +182,19 @@ http://blog.csdn.net/xiaolang85/article/details/13021339
 http://www.cnblogs.com/ggjucheng/p/3352591.html
 http://www.coder4.com/archives/3122
 
+https://github.com/pinterest/secor  Secor is a service persisting Kafka logs to Amazon S3, Google Cloud Storage and Openstack Swift.
+https://github.com/confluentinc/kafka-rest/
+https://github.com/confluentinc/bottledwater-pg
+https://github.com/confluentinc/schema-registry
+https://github.com/wushujames/kafka-connector-skeleton
+http://www.michael-noll.com/blog/2014/10/01/kafka-spark-streaming-integration-example-tutorial/
+https://github.com/twitter/bijection
+https://github.com/miguno/kafka-storm-starter
+
+monitor
+http://www.opscoder.info/kafka_monitor.html
+http://www.zlinking.com/java-%E7%9B%91%E6%8E%A7%E5%86%85%E5%AE%B9%E6%94%B6%E9%9B%86%E4%B9%8B-jmxtrans-agent.html
+http://www.tnkyou.com/wk/doku.php?id=jmxtrans
 
 avro
 http://blog.javachen.com/2015/03/20/about-avro.html
@@ -177,3 +205,4 @@ http://www.cnblogs.com/agoodegg/p/3309041.html  rpc
 http://tech.meituan.com/serialization_vs_deserialization.html
 4、当对性能和简洁性有极高要求的场景，Protobuf，Thrift，Avro之间具有一定的竞争关系。
 5、对于T级别的数据的持久化应用场景，Protobuf和Avro是首要选择。如果持久化后的数据存储在Hadoop子项目里，Avro会是更好的选择。
+https://github.com/miguno/avro-hadoop-starter

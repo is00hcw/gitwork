@@ -5,6 +5,27 @@ http://blog.javachen.com/2013/04/06/install-cloudera-cdh-by-yum/   使用yum安�
 http://blog.csdn.net/sweetvvck/article/details/38842665?utm_source=tuicool
 wget http://mirror.bit.edu.cn/apache/zookeeper/zookeeper-3.4.6/zookeeper-3.4.6.tar.gz 
 
+eBay宣布正式向开源业界推出实时分布式Hadoop数据安全方案Apache Eagle——一套旨在提供高效分布式的流式策略引擎，并集成机器学习对用户行为建立Profile以实时智能保护Hadoop生态系统中大数据安全解决方案。
+Apache Kylin是一个分布式分析引擎，在Hadoop之上提供SQL接口及OLAP在线多维分析以支持超大规模数据集。
+pache Zeppelin是一个类似Spark Notebook的基于web的交互式数据分析工具
+cascading  http://docs.cascading.org/tutorials/etl-log/part1.html
+http://bd.memect.com/
+http://web.memect.com/
+
+Apache Ignite是一个通用的数据库缓存系统，它不仅支持所有的底层数据库系统，比如RDBMS、NoSQL和HDFS，还支持Write-Through和Read-Through、Write-Behind Caching等可选功能。
+Apache Drill是一个低延迟的分布式海量数据（涵盖结构化、半结构化以及嵌套数据）交互式查询引擎，使用ANSI SQL兼容语法，支持本地文件、HDFS、HBase、MongoDB等后端存储，支持Parquet、JSON、CSV、TSV、PSV等数据格式。受Google的Dremel启发，Drill满足上千节点的PB级别数据的交互式商业智能分析场景。
+MapR，Apache Drill项目的创建者，Drill最初公布是在 2012年8月，专注于SQL on Hadoop，Cloudera的Impala、Hortonworks的Hive迭代
+https://segmentfault.com/a/1190000002652348
+http://book.dengjie.org/4.%E5%AE%89%E8%A3%85%20Drill/3.%E5%AE%89%E8%A3%85%20Drill%20%E5%88%B0%E5%B5%8C%E5%85%A5%E6%A8%A1%E5%BC%8F/4.%E5%9C%A8%20Windows%20%E4%B8%8A%E5%AE%89%E8%A3%85%20Drill.html
+
+Optiq SQL parser ->  Apache Calcite
+http://www.infoq.com/cn/articles/new-big-data-hadoop-query-engine-apache-calcite
+http://blog.csdn.net/yunlong34574/article/details/46375733
+
+https://github.com/NGDATA/hbase-indexer
+Lily HBase Indexer使用SolrCloud来存储HBase的索引数据，当HBase执行写入、更新或删除操作时，Indexer通过HBase的replication功能来把这些操作抽象成一系列的Event事件，并用来保证写入Solr中的HBase索引数据的一致性。并且Indexer支持用户自定义的抽取，转换规则来索引HBase列数据。Solr搜索结果会包含用户自定义的columnfamily:qualifier字段结果，这样应用程序就可以直接访问HBase的列数据。
+http://blog.csdn.net/kissmelove01/article/details/45196941
+
 redis  Twemproxy 
 https://github.com/springside/springside4/wiki/redis
 http://www.cnblogs.com/edwinchen/p/3816938.html

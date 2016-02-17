@@ -4,6 +4,9 @@ http://vdisk.weibo.com/s/y_rYA85Bi8MZU?from=page_100505_profile&wvr=6   linuxÄÚº
 SpringSide·¢ÆğÈËĞ¤èë£¨ÍøÃû½­ÄÏ°×ÒÂ£© http://calvin1978.blogcn.com/articles/csdnjava20.html
 
 ¼Ü¹¹
+http://blog.jobbole.com/88301/?utm_source=top.jobbole.com&utm_medium=relatedArticles   the log
+http://www.infoq.com/cn/news/2013/02/twitter-stack   twitter
+http://blog.csdn.net/xlgen157387/article/details/50556982  ¸÷´ó»¥ÁªÍø¹«Ë¾¼Ü¹¹Ñİ½øÖ®Â·»ã×Ü
 http://calvin1978.blogcn.com/articles/architecture.html
 http://www.colobu.com/2015/04/08/software-architecture-patterns/
 http://zhuanlan.zhihu.com/prattle/20005177
@@ -12,3 +15,10 @@ http://blog.sctux.com/?p=131  LVS+Keepalived
 ÓÅ»¯
 http://calvin1978.blogcn.com/articles/perf-tunning-1.html
 http://calvin1978.blogcn.com/articles/jvmoption-2.html
+
+
+cpu
+http://tech.china.com/zh_cn/hardware/diy/mydiy/873/20060220/13107785.html
+
+
+ÆäËû´ÖÂÔµØ¿´ÁË¡¶´´ÒµÎ¬¼è¡·£¬¡¶´Ó0µ½1¡·£¬¡¶ÆóÒµ¹ÀÖµ¾ÍÊÇ½²¹ÊÊÂ¡·£¬¡¶¾­¼ÃÑ§Ô­Àí¡·£¬¡¶´ÏÃ÷µÄÍ¶×ÊÕß¡·£¬¡¶ÔõÑùÑ¡Ôñ³É³¤¹É¡·
