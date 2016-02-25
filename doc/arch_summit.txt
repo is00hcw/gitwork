@@ -11,6 +11,7 @@ http://pan.baidu.com/share/home?uk=387674681&view=share#category/type=0
 http://www.waylau.com/about-vpngate/   vpn
 http://opentalk.upyun.com/show/issues  会议ppt
 http://www.stuq.org/ppt/qcon2015/2a5d9377caceed899f1c2d14097285fc
+http://news.oneapm.com/author/fan/  oneapm公开课
 
 
 kopf 管理Elasticsearch 集群真心方便
@@ -39,6 +40,8 @@ http://blog.qiniu.com/archives/3928   七牛是如何搞定每天500亿条日志的
 http://blog.qiniu.com/archives/4499   七牛CEO许式伟分析GO语言发展现状
 http://blog.qiniu.com/archives/4791   携程异步消息系统实践
 http://www.wtoutiao.com/p/1599vLV.html  性能优化模式
+http://www.infoq.com/cn/articles/hbase-second-index-engine/   HBase高性能复杂条件查询引擎
+http://www.csdn.net/article/2015-10-24/2826028   58同城沈剑：好的架构源于不停地衍变，而非设计
 http://www.infoq.com/cn/articles/kugou-big-data-platform-restructure  酷狗
 http://www.infoq.com/cn/articles/scala-architecture-wacai  挖财
 数据分析这块，Canal会把binlog数据丢到Kafka然后同步到其他系统。在线分析主要通过Storm进行，数据分析过程中缓存用了豌豆荚的Codis。离线分析目前用Hadoop/Spark的方式，数据分析之后，一部分存到Hbase，另一部分在通过Cobar存储到MySQL里面。

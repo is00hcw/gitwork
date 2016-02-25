@@ -1,4 +1,7 @@
 ﻿http://onexsoft.cn/?page_id=3896  oneproxy 
+https://yq.aliyun.com/edu/lesson/48?spm=5176.100238.yqhn2.27.2Imdy7#tab2    淘宝丁奇：如何解决影响MySQL使用的9大问题
+性能分析工具介绍 （mytop,innotop,orzdba,tcpdump,pt-query-digest,tbdba-slowpicker.pl,iotop,ioprofile,nicstat,mpstat,iostat,vmstat,tcprstat,dstat,oprofile,vmtouch）
+orzdba 的主要功能： 将MySQL性能元数据进行计算，统计MySQL/INNODB层面的各种指标（QPS/TPS/thread/buffer/log等）和性能阀值展现。 将Linux和MySQL性能指标结合在一起
 
 http://yq.aliyun.com/articles/211?spm=5176.group25.0.0.VMhacj&commentId=64#comment-64   RDS MySQL参数调优最佳实践
 http://yq.aliyun.com/articles/3022  各版本MySQL并行复制的实现及优缺点
@@ -17,6 +20,8 @@ https://segmentfault.com/a/1190000000593398  Mysql在大型网站的应用架构
 常规做法是slave上show slave status\G中的两个变量的差值（Read_Master_Log_Pos，Exec_Master_Log_Pos),也可以使用percona提供的工具包pt-heartbeat。
 http://blog.javachen.com/2014/04/06/mysql-config-for-master-slave-replication.html
 http://sharelinux.blog.51cto.com/11163444/1740513   Mysql热备xtrabackup的使用
+
+Infobright是开源的MySQL数据仓库解决方案，引入了列存储方案，高强度的数据压缩，优化的统计计算(类似sum/avg/group by之类)
 
 https://docs.aliyun.com/?spm=5176.7622920.9.4.9muujt#/pub/drds/best-practice/best_connection_pool
 jdbc:mysql://ip:port/db?autoReconnect=true&amp;rewriteBatchedStatements=true&amp;socketTimeout=30000&amp;connectTimeout=3000"

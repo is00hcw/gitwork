@@ -16,7 +16,8 @@ docker pull dl.dockerpool.com:5000/ubuntu:14.04
 
 
 MPM，全称mysql performance monitor，是用于监控mysql的各种参数及性能指标的特定模板
-
+http://my.oschina.net/oneapmofficial/blog/609869   开源监控项目
+https://github.com/HubSpot/BuckyServer    https://github.com/HubSpot/BuckyClient  测量来自最终用户的浏览器 web 应用程序的性能，并发送该数据回服务器。
 http://blog.jobbole.com/80879/   收集整理的 DevOps 工具和资源
 http://www.devopsbookmarks.com/   DevOps方方面面的工具
 http://www.michael-noll.com/blog/2013/06/06/installing-and-running-graphite-via-rpm-and-supervisord/
@@ -36,7 +37,7 @@ Cloud Insight 就是国内利用 statsd 和 OpenTSDB 实现的一个一体化的解决方案（免费但
 http://taobaofed.org/blog/2015/10/28/jstracker-how-to-collect-data/  JSTracker：前端异常数据采集
 http://www.taobaofed.org/blog/2015/11/06/jstracker-data-processing/
 
-
+http://my.oschina.net/oneapmofficial/blog/611054   如何监控 Apache
 http://www.jianshu.com/p/cdf777f13ff6
 http://blogread.cn/it/article/6967
 Phantom JS 是一个服务器端的 JavaScript API 的 WebKit，基于它可以轻松实现 web 自动化测试。官方文档中已经有一个完整的获取网页加载 har 文件的示例

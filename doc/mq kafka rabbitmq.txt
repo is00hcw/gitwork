@@ -1,4 +1,4 @@
-zookeeper
+zookeeper  linkedin 5台，twitter 13台
 http://blog.csdn.net/hengyunabc/article/details/19006911
 https://github.com/Netflix/exhibitor
 https://github.com/phunt/zkconf
@@ -9,7 +9,13 @@ autopurge.purgeInterval  这个参数指定了清理频率，单位是小时，需要填写一个1或更大
 autopurge.snapRetainCount 这个参数和上面的参数搭配使用，这个参数指定了需要保留的文件数目。默认是保留3个。
 zkCleanup.sh 用于清除旧的事务日志及快照
 
+redis-cli keys '*' | xargs redis-cli del
+ps -ef | grep stream.py | grep -v grep | awk '{print $2}'| xargs kill -9
+https://sensuapp.org/docs/latest/install-rabbitmq   erlang rabbitmq
 
+http://www.cnblogs.com/milkmap/p/3727842.html  AMap.MarkerClusterer  聚合marker
+http://lbs.amap.com/api/javascript-api/reference/plugin/#AMap.MarkerClusterer
+http://developer.baidu.com/map/library.htm
 
 kafka
 https://dzone.com/articles/kafka-clients-at-most-once-at-least-once-exactly-o    Kafka Clients (At-most-once, At-least-once, Exactly-once, and Avro Client)

@@ -1,6 +1,8 @@
 http://www.oschina.net/news/70161/docker-architecture  问题
 https://mos.meituan.com/library/26/how-to-install-docker-on-centos/  在CentOS上安装Docker
 
+http://www.lxy520.net/2015/10/20/docker/   redis
+http://www.lxy520.net/2015/07/16/docke/    oracle
 https://github.com/amplab/docker-scripts
 https://github.com/sequenceiq/hadoop-docker    https://hub.docker.com/r/sequenceiq/hadoop-docker/
 https://github.com/sequenceiq/docker-spark    https://hub.docker.com/r/sequenceiq/spark/

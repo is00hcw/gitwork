@@ -2,6 +2,24 @@ http://blog.sctux.com/?p=445
 http://blog.sctux.com/?p=451  ELK+Kafka 企业日志收集平台
 curl -XDELETE 'http://localhost:9200/logstash-*'   清理掉了所有的索引文件
 
+Elastic 官方文档建议：一个 Node 最好不要多于三个 shards。若是 "more shards”，除了增加更多的机器，是没办法做到这一点的。分索引，虽然一个 Node 总的shards 还是挺多的，但是一个索引可以保持3个以内的shards。
+记得 threadpool.index.queue_size ++，不然会出现索引时队列不够用的情况。
+indices.memory.index_buffer_size:10% 这个参数可以进行适当调整。
+调整如下参数也可以提高索引速度：index.translog.flush_threshold_ops:50000 和 refresh_interval。
+建议在最热的查询中避免使用 Range 查询。 每天优化是有好处的，可以大大改善查询性能。max_num_segments 建议配置为1。
+hreadpool.search.queue_size 这个配置是很重要的，一般默认是够用了，可以尝试提高。
+JVM 还有一个配置 bootstrap.mlockall: true，比较重要。这是让 JVM 启动的时候就 锁定 heap 内存。
+http://mp.weixin.qq.com/s?__biz=MzAwMDU1MTE1OQ==&mid=209488723&idx=1&sn=d60c0637d7a9f4a4b981a69f10c6b90a&scene=0#rd   亿级规模的Elasticsearch优化实战
+
+可以执行以下命令来关掉整个集群：curl -XPOST http://localhost:9200/_cluster/nodes/_shutdown 
+GET http://localhost:9200/_cluster/state/nodes/：这个命令获取集群中节点的信息。
+也可对这两个索引执行一个查询：curl -XGET 'localhost:9200/books,clients/_search?pretty' 如果要寻找任意索引，只需要设置星号（*）为索引名称，或忽略索引名称。
+还可以省略索引和类型来搜索所有索引。例如，以下命令将搜索集群中的所有数据：curl -XGET 'localhost:9200/_search?pretty' 
+如果在自定义排序的同时还想保持追踪每个文档的得分，你应该把track_scores=true添加到你的查询。size参数默认为10，它定义了返回结果的最大数量。from参数的默认值为0，它指定结果应该从哪个记录开始返回。
+
+
+https://yq.aliyun.com/articles/4266?utm_source=tuicool&utm_medium=referral   OpenSearch：轻松构建大数据搜索服务
+
 http://ylw6006.blog.51cto.com/470441/1722905  packetbeat
 packetbeat -e -d "*"    https://www.elastic.co/guide/en/beats/packetbeat/1.1/enable-packetbeat-debugging.html
 http://www.tuicool.com/articles/ZR7vIfu
@@ -15,6 +33,15 @@ http://kibana.logstash.es/content/elasticsearch/performance/curator.html
 wget --no-check-certificate https://bootstrap.pypa.io/get-pip.py
 python get-pip.py
 pip install elasticsearch-curator
+
+
+HBase的Relication机制，其实和Mysql的同步机制很像，HBase的每个Region Server都会有WAL Log，当Put/Delete时，都会先写入到WAL Log里。然后后台有线程会把WAL Log随机发给Slave的Region Server。而Slave的Region Server会在zookeeper上记录自己同步到的位置。
+http://blog.csdn.net/hengyunabc/article/details/41146115
+
+类型（Type）是索引内部的一个逻辑划分，在一个索引内部可以定义多个类型（Type），类型将一个索引在逻辑上划分为多个集合，每个类型包含多个属性（字段）。ElasticSearch中类型，与HBase中列簇（Column Family）的概念很相似。
+一个索引是很多文档的集合，将一个索引进行分割，分成多个片段（一个索引的子集），每一个片段称为一个分片（Shard），这样划分可以很好地管理索引，跨节点存储，为分布式存储于搜索提供了便利。副本（Replica）是为了保证一个分片（Shard）的可用性，冗余复制存储，当一个分片对应的数据无法读取时，可以读取其副本，正常提供搜索服务。
+http://shiyanjun.cn/archives/1371.html   ElasticSearch-2.0.0集群安装配置与API使用实践
+
 
 ES 是一个 P2P 类型(使用 gossip 协议)的分布式系统，除了集群状态管理以外，其他所有的请求都可以发送到集群内任意一台节点上，这个节点可以自己找到需要转发给哪些节点，并且直接跟这些节点通信。
 只配置 cluster.name 的集群，其实就是采用了默认的自动发现协议，即组播(multicast)方式。节点会在本机所有网卡接口上，使用组播地址 224.2.2.4 ，以 54328 端口建立组播组发送 clustername 信息。
@@ -87,6 +114,9 @@ http://zhaoyanblog.com/archives/319.html  elasticsearch三个重要的优化   配置inde
 此处可以根据机器硬件配置情况作出适当的调整，一般情况下，此处的内存分配大小为机器物理内存的一半，同时将 ES_MIN_MEM 与 ES_MAX_MEM 配置成相同的值
 由于ES集群一般都是在内部网络环境中，且节点之间相互通信使用的是 TCP 9300端口，节点与客户端通信则是通过 TCP 9200端口。因此检查 iptalbes 以及SElinux 中是否开启，以及确定这些端口是否被绑定安全策略等等。
 可以在最后的上线之前可以再做一次最后的测试，在测试之前，先修改Elasticsearch 中的配置文件，即是elasticsearch.yml 中的 cluster.name 参数的名称，避免加入了线上集群中。并利用 curl -X GET localhost:9200  来测试新版本的 Elasticsearch 进程是否正常。　　
+系统不能限制打开的文件描述符小于32 000个。在Linux上，一般在/etc/security/limits.conf中修改，当前的值可以用ulimit命令来查看。如果达到极限，Elasticsearch将无法创建新的文件，所以合并会失败，索引会失败，新的索引无法创建。
+
+
 http://my.oschina.net/galenz/blog/422189   Elasticsearch 分片交互过程分析
 
 备份恢复
@@ -95,6 +125,16 @@ http://keenwon.com/1393.html
 http://m.blog.csdn.net/blog/huwei2003/41577017
 http://segmentfault.com/q/1010000002406786
 
+同义词
+http://blog.csdn.net/yusewuhen/article/details/50685685   Elasticsearch 自带一个名为 synonym 的同义词 filter
+http://www.ifunit.com/29/elasticsearch%E9%85%8D%E7%BD%AE%E5%90%8C%E4%B9%89%E8%AF%8D
+http://www.cnblogs.com/buzzlight/p/elasticsearch_analysis.html  
+全文搜索引擎会用某种算法对要建索引的文档进行分析， 从文档中提取出若干Token(词元)， 这些算法称为Tokenizer(分词器)， 这些Token会被进一步处理， 比如转成小写等， 这些处理算法被称为Token Filter(词元处理器), 被处理后的结果被称为Term(词)， 文档中包含了几个这样的Term被称为Frequency(词频)。 引擎会建立Term和原文档的Inverted Index(倒排索引)， 这样就能根据Term很快到找到源文档了。 文本被Tokenizer处理前可能要做一些预处理， 比如去掉里面的HTML标记， 这些处理的算法被称为Character Filter(字符过滤器)， 这整个的分析算法被称为Analyzer(分析器)。
+
+分析的工作由分析器完成，它由一个分词器（tokenizer）和零个或多个标记过滤器（token filter）组成，也可以有零个或多个字符映射器（character mapper）。
+Lucene中的分词器把文本分割成多个标记，基本就是词加上一些额外信息，比如该词在原始文本中的位置和长度。默认情况下，Apache Lucene使用TF/IDF（term frequency/inverse document frequency，词频/逆向文档频率）评分机制
+收到查询请求的节点会把查询转发给保存了属于给定索引的分片的所有节点，并要求与查询匹配的文档的最少信息（默认情况下是标识符和得分）。这个过程称为发散阶段（scatter phase）。收到这些信息后，该聚合节点（收到客户端请求的节点）对结果排序，并发送第2个请求来获取结果列表所需的文档（除了标识符和
+得分以外的所有信息）。这个阶段称为收集阶段（gather phase）。这个阶段执行完毕后，结果返回到客户端。
 
 http://my.oschina.net/galenz/blog/333070  Zabbix的安装与部署
 

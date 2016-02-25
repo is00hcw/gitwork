@@ -15,10 +15,17 @@ http://blog.sctux.com/?p=131  LVS+Keepalived
 优化
 http://calvin1978.blogcn.com/articles/perf-tunning-1.html
 http://calvin1978.blogcn.com/articles/jvmoption-2.html
-
+在最近的64位JVM中，默认的栈大小是1024KB。如果服务器收到大量请求，或者handleRequest方法执行很慢，服务器可能因为创建了大量线程而崩溃。例如有1000个并行的请求，创建出来的1000个线程需要使用1GB的JVM内存作为线程栈空间。
+由于线程栈大小引发的内存问题，可以通过-Xss开关来调整栈大小。缩小线程栈大小之后，可以减少每个线程的开销，但是可能会引发栈溢出（StackOverflowErrors）。对于一般应用程序而言，默认的1024KB过于富裕，调小为256KB或者512KB可能更为合适。Java允许的最小值是160KB。
 
 cpu
 http://tech.china.com/zh_cn/hardware/diy/mydiy/873/20060220/13107785.html
 
+
+spring session
+http://www.jayway.com/2015/05/31/scaling-out-with-spring-session/
+http://www.infoq.com/cn/articles/Next-Generation-Session-Management-with-Spring-Session
+http://dreamer-yzy.github.io/2015/01/14/%E9%9B%86%E7%BE%A4%E4%B8%ADSession%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%B9%8BSpring-Session/
+http://www.lxy520.net/2015/10/29/springshi-yong-rediscun-chu-session/
 
 其他粗略地看了《创业维艰》，《从0到1》，《企业估值就是讲故事》，《经济学原理》，《聪明的投资者》，《怎样选择成长股》

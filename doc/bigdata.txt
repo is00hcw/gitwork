@@ -5,6 +5,22 @@ http://blog.javachen.com/2013/04/06/install-cloudera-cdh-by-yum/   使用yum安�
 http://blog.csdn.net/sweetvvck/article/details/38842665?utm_source=tuicool
 wget http://mirror.bit.edu.cn/apache/zookeeper/zookeeper-3.4.6/zookeeper-3.4.6.tar.gz 
 
+http://www.infoq.com/cn/news/2014/06/sql-on-hadoop   8个值得关注的SQL-on-Hadoop框架
+Hive是原始的SQL-on-Hadoop解决方案。它是一个开源的Java项目，能够将SQL转换成一系列可以在标准的Hadoop TaskTrackers上运行的MapReduce任务。Hive通过一个metastore（本身就是一个数据库）存储表模式、分区和位置  
+Impala是一个针对Hadoop的开源的“交互式”SQL查询引擎。它由Cloudera构建，与Hive不同的是它并没有使用MapReduce执行查询，而是使用了自己的执行守护进程集合，这些进程需要与Hadoop数据节点安装在一起。
+Hive适合于长时间的批处理查询分析，而Impala适合于实时交互式SQL查询，Impala给数据分析人员提供了快速实验、验证想法的大数据分析工具。
+Presto是一个用Java语言开发的、开源的“交互式”SQL查询引擎。它由Facebook构建，即Hive最初的创建者。
+Shark是由UC Berkeley大学使用Scala语言开发的一个开源SQL查询引擎。与Impala和Presto不同的是Shark构建在已有的 Apache Spark数据处理引擎之上。
+Apache Drill是一个针对Hadoop的、开源的“交互式”SQL查询引擎。Drill现在由MapR推动，不同的是Drill旨在支持多种后端存储（HDFS、HBase、MongoDB），同时它的一个重点是复杂的嵌套数据集（例如JSON）。
+Apache Phoenix是一个用于Apache HBase的开源SQL引擎。它的目标是通过一个嵌入的JDBC驱动对存储在HBase中的数据提供低延迟查询。与之前介绍的其他引擎不同的是，Phoenix提供了HBase数据的读、写操作。
+Geode项目开发始于2002年，开始是商业产品GemFire，在2015年4月发布其开源版本Geode。Pivotal Software是GemFire背后的商业公司
+
+Hue是一个开源的Apache Hadoop UI系统，最早是由Cloudera Desktop演化而来，由Cloudera贡献给开源社区，它是基于Python Web框架Django实现的。  http://www.tuicool.com/articles/zIrqemB   http://demo.gethue.com/#
+http://shiyanjun.cn/archives/1002.html
+http://demo.gethue.com/
+http://play.grafana.org/
+
+
 eBay宣布正式向开源业界推出实时分布式Hadoop数据安全方案Apache Eagle——一套旨在提供高效分布式的流式策略引擎，并集成机器学习对用户行为建立Profile以实时智能保护Hadoop生态系统中大数据安全解决方案。
 Apache Kylin是一个分布式分析引擎，在Hadoop之上提供SQL接口及OLAP在线多维分析以支持超大规模数据集。
 pache Zeppelin是一个类似Spark Notebook的基于web的交互式数据分析工具
@@ -21,6 +37,8 @@ http://book.dengjie.org/4.%E5%AE%89%E8%A3%85%20Drill/3.%E5%AE%89%E8%A3%85%20Dril
 Optiq SQL parser ->  Apache Calcite
 http://www.infoq.com/cn/articles/new-big-data-hadoop-query-engine-apache-calcite
 http://blog.csdn.net/yunlong34574/article/details/46375733
+Apache Calcite是面向Hadoop新的查询引擎，它提供了标准的SQL语言、多种查询优化和连接各种数据源的能力，除此之外，Calcite还提供了OLAP和流处理的查询引擎。
+http://www.infoq.com/cn/articles/new-big-data-hadoop-query-engine-apache-calcite?utm_campaign=rightbar_v2&utm_source=infoq&utm_medium=articles_link&utm_content=link_text
 
 https://github.com/NGDATA/hbase-indexer
 Lily HBase Indexer使用SolrCloud来存储HBase的索引数据，当HBase执行写入、更新或删除操作时，Indexer通过HBase的replication功能来把这些操作抽象成一系列的Event事件，并用来保证写入Solr中的HBase索引数据的一致性。并且Indexer支持用户自定义的抽取，转换规则来索引HBase列数据。Solr搜索结果会包含用户自定义的columnfamily:qualifier字段结果，这样应用程序就可以直接访问HBase的列数据。

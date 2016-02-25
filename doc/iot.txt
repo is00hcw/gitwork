@@ -23,6 +23,9 @@ http://www.leiphone.com/news/201406/diy-a-smart-router-topic-install-system.html
 http://www.leiphone.com/news/201406/diy-a-smart-router-topic-openwrt.html
 https://izhongchou.taobao.com/dreamdetail.htm?spm=a215p.1472805.0.0.xYoWWt&id=10045134#
 
+https://github.com/Samsung/jerryscript  «·¡øº∂js“˝«Ê
+https://github.com/Samsung/iotjs
+
 
 http://blog.csdn.net/xiangpt/article/details/45169863  LWM2M ºÚΩÈ
 http://iot.eclipse.org/getting-started
