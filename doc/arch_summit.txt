@@ -27,6 +27,7 @@ http://tech.uc.cn/?p=2387
 http://blog.163.com/xiangfei209@126/blog/static/98695674201393024742225
 
 http://data.qq.com/article?id=2863    zookeeper运营经验分享
+http://h2ex.com/820   支撑微博千亿调用的轻量级RPC框架：Motan
 http://www.infoq.com/cn/articles/etcd-interpretation-application-scenario-implement-principle   etcd：从应用场景到实现原理的全方位解读
 http://vernonzheng.com/2015/02/09/%E5%BC%80%E6%BA%90%E5%88%86%E5%B8%83%E5%BC%8F%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83%E9%80%89%E5%9E%8B/   开源分布式配置中心选型
 http://www.wtoutiao.com/p/W60ga7.html  软件定义网络（Software Defined Network, SDN ）
@@ -40,6 +41,7 @@ http://blog.qiniu.com/archives/3928   七牛是如何搞定每天500亿条日志的
 http://blog.qiniu.com/archives/4499   七牛CEO许式伟分析GO语言发展现状
 http://blog.qiniu.com/archives/4791   携程异步消息系统实践
 http://www.wtoutiao.com/p/1599vLV.html  性能优化模式
+https://yq.aliyun.com/articles/4226?spm=5176.team22.teamshow1.9.FnsioV   弹性伸缩部署
 http://www.infoq.com/cn/articles/hbase-second-index-engine/   HBase高性能复杂条件查询引擎
 http://www.csdn.net/article/2015-10-24/2826028   58同城沈剑：好的架构源于不停地衍变，而非设计
 http://www.infoq.com/cn/articles/kugou-big-data-platform-restructure  酷狗

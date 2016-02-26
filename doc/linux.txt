@@ -13,6 +13,18 @@ NF是个代表总列数的系统变量，所以$NF代表最后一列，还支持
 http://calvin1978.blogcn.com/articles/awk_accesslog.html
 
 
+supervisor
+http://www.ttlsa.com/linux/supervisor-linux-process-control-management/
+http://my.oschina.net/crooner/blog/395069?fromerr=yV46aj4d
+monit
+http://www.goywzl.com/server/monit-server/
+http://blog.rimuhosting.com/2011/01/27/setting-up-monit-with-tomcat/
+http://xiaorui.cc/2014/07/13/%E4%BD%BF%E7%94%A8monit%E5%AE%9E%E7%8E%B0%E8%BF%9B%E7%A8%8B%E7%9B%91%E6%8E%A7%E7%AE%A1%E7%90%86/
+http://lpp1314.lofter.com/post/1d260c9c_73b7c5f
+
+Bond是将多块网卡虚拟成为一块网卡的技术，通过 bond 技术让多块网卡看起来是一个单独的以太网接口设备并具有相同的 IP 地址。
+http://www.goywzl.com/linux/Bond/
+
 ﻿# mac下的配置文件
 ./etc/profile 文件   全局共有配置，无论哪个用户登录，都会读取此文件
 /etc/bashrc    （一般在这个文件中添加系统级环境变量）全局（公有）配置，bash shell执行时，不管是何种方式，都会读取此文件。

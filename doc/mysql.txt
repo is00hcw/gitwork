@@ -3,6 +3,12 @@ https://yq.aliyun.com/edu/lesson/48?spm=5176.100238.yqhn2.27.2Imdy7#tab2    淘�
 性能分析工具介绍 （mytop,innotop,orzdba,tcpdump,pt-query-digest,tbdba-slowpicker.pl,iotop,ioprofile,nicstat,mpstat,iostat,vmstat,tcprstat,dstat,oprofile,vmtouch）
 orzdba 的主要功能： 将MySQL性能元数据进行计算，统计MySQL/INNODB层面的各种指标（QPS/TPS/thread/buffer/log等）和性能阀值展现。 将Linux和MySQL性能指标结合在一起
 
+分库分表的mysql proxy服务kingshard   
+http://xiaorui.cc/2016/02/22/%E5%B0%8F%E8%AF%95%E6%94%AF%E6%8C%81%E5%88%86%E5%BA%93%E5%88%86%E8%A1%A8%E7%9A%84mysql-proxy%E6%9C%8D%E5%8A%A1kingshard/
+https://github.com/flike/kingshard/blob/master/README_ZH.md
+https://www.v2ex.com/t/213929
+http://os.51cto.com/art/201508/487409.htm
+
 http://yq.aliyun.com/articles/211?spm=5176.group25.0.0.VMhacj&commentId=64#comment-64   RDS MySQL参数调优最佳实践
 http://yq.aliyun.com/articles/3022  各版本MySQL并行复制的实现及优缺点
 http://www.csdn.net/article/2015-01-16/2823591   淘宝内部分享：怎么跳出MySQL的10个大坑

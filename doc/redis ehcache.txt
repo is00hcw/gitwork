@@ -5,6 +5,20 @@ http://shokunin.co/blog/2014/11/11/operational_redis.html    Running Redis in pr
 http://blog.huangz.me/diary/2015/redis-geo.html    Redis 的 GEO 特性将在 Redis 3.2 版本释出， 这个功能可以将用户给定的地理位置信息储存起来， 并对这些信息进行操作。
 http://dumbee.net/archives/114  Redis 2.8 配置文件说明
 
+http://www.kaka200.com/21.html  禁用rdb和aof模式在不生成rdb文件的情况下也可以实现主从同步，前提是master,slave服务器都在运行中的时候，这个种情况下master只是把缓冲区中的set 操作传输到slae端，slave端再执行set命令实现主从同步。
+http://www.kaka200.com/26.html  你可以通过 info 命令对used_memory和used_memory_peak进行监控，为使用内存量设定阀值，并设定相应的报警机制。
+你可以通过对rdb_last_save_time进行监控，了解你最近一次 dump 数据操作的时间，还可以通过对rdb_changes_since_last_save进行监控来知识如果这时候出现故障，你会丢失多少数据。
+主要是对 info 输出中的master_link_status进行监控，如果这个值是 up，那么说明同步正常
+虚拟内存表是在 fork 的瞬间就需要分配，所以 fork 会造成主线程短时间的卡顿（停止所有读写操作）， 你可以通过对 info 输出的latest_fork_usec进行监控来了解最近一次 fork 操作导致了多少时间的卡顿。
+Redis 提供了SLOWLOG指令来获取最近的慢日志，Redis 的慢日志是直接存在内存中的
+Sentinel是 Redis 自带的工具，它可以对 Redis 主从复制进行监控，并实现主挂掉之后的自动故障转移。在转移的过程中，它还可以被配置去执行一个用户自定义的脚本，在脚本中我们就能够实现报警通知等功能。
+Redis Faina是由著名的图片分享应用 instagram 开发的 Redis 监控服务  https://github.com/facebookarchive/redis-faina
+配置文件中 timeout = 0，这表明 Redis 默认不会断开客户端的连接，这造成的问题：已经无效的连接会造成网络 IO 的浪费！
+
+
+redis有7种数据类型：Strings,Lists,Sets,Hashes,Sorted sets,Bitmaps,HyperLogLogs
+http://calvin1978.blogcn.com/articles/continueredis.html
+
 http://sumory.com/2014/08/15/spring-redis-sentinel/
 redis-server ./sentinel.conf --sentinel --port 26379
 redis.clients.jedis.JedisSentinelPool
@@ -42,6 +56,9 @@ http://www.ttlsa.com/redis/redis-keepalived-achieve-high-availability/
 http://www.ttlsa.com/python/redis-rdb-tools-analysis-of-reids-dump-file-and-memory-usage/
 http://my.oschina.net/guol/blog/182265
 Redis 监控最直接的方法就是使用系统提供的 info 命令，redis-cli info   http://www.cnblogs.com/kaituorensheng/p/3979298.html
+
+https://www.techandme.se/performance-tips-for-redis-cache-server/  tip
+https://www.techandme.se/webmin/  webmin
 
 
 http://os.51cto.com/art/201301/379151.htm

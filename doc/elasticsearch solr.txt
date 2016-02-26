@@ -2,6 +2,10 @@ http://blog.sctux.com/?p=445
 http://blog.sctux.com/?p=451  ELK+Kafka 企业日志收集平台
 curl -XDELETE 'http://localhost:9200/logstash-*'   清理掉了所有的索引文件
 
+sudo docker run -d -p 9200:9200 -p 9300:9300 elasticsearch
+curl localhost:9200
+http://h2ex.com/191
+
 Elastic 官方文档建议：一个 Node 最好不要多于三个 shards。若是 "more shards”，除了增加更多的机器，是没办法做到这一点的。分索引，虽然一个 Node 总的shards 还是挺多的，但是一个索引可以保持3个以内的shards。
 记得 threadpool.index.queue_size ++，不然会出现索引时队列不够用的情况。
 indices.memory.index_buffer_size:10% 这个参数可以进行适当调整。
@@ -16,8 +20,15 @@ GET http://localhost:9200/_cluster/state/nodes/：这个命令获取集群中节点的信息。
 也可对这两个索引执行一个查询：curl -XGET 'localhost:9200/books,clients/_search?pretty' 如果要寻找任意索引，只需要设置星号（*）为索引名称，或忽略索引名称。
 还可以省略索引和类型来搜索所有索引。例如，以下命令将搜索集群中的所有数据：curl -XGET 'localhost:9200/_search?pretty' 
 如果在自定义排序的同时还想保持追踪每个文档的得分，你应该把track_scores=true添加到你的查询。size参数默认为10，它定义了返回结果的最大数量。from参数的默认值为0，它指定结果应该从哪个记录开始返回。
+索引使用的磁盘空间和资源，例如文件描述符。如果从索引中删除许多文档，直到合并发生，则这些文档只是被标记为已删除，而没有在物理上删除。
+可使用index.merge.policy.type属性来设置想使用的合并策略，如下所示：index.merge.policy.type: tiered 
+可以在Elasticsearch中返回脚本计算字段：在JSON的查询对象中加上script_fields部分  "script" : "doc['year'].value - 1800"    "script" : "_source.year - 1800" 
+发散阶段每个查询的分片将只返回文档的标识符和得分。发送分散查询的节点将等待所有的分片完成它们的任务，收集结果并适当排序
+在任何搜索中使用过滤器，只需在于query节点相同级别上添加一个filter节点。在第一种情况下，过滤器应用到查询所发现的所有文档上。第二种情况下，过滤发生在在运行查询之前，性能更好。
 
 
+
+http://news.oneapm.com/dangdang-oneapm/   电商搜索引擎的架构设计和性能优化
 https://yq.aliyun.com/articles/4266?utm_source=tuicool&utm_medium=referral   OpenSearch：轻松构建大数据搜索服务
 
 http://ylw6006.blog.51cto.com/470441/1722905  packetbeat
@@ -116,8 +127,8 @@ http://zhaoyanblog.com/archives/319.html  elasticsearch三个重要的优化   配置inde
 可以在最后的上线之前可以再做一次最后的测试，在测试之前，先修改Elasticsearch 中的配置文件，即是elasticsearch.yml 中的 cluster.name 参数的名称，避免加入了线上集群中。并利用 curl -X GET localhost:9200  来测试新版本的 Elasticsearch 进程是否正常。　　
 系统不能限制打开的文件描述符小于32 000个。在Linux上，一般在/etc/security/limits.conf中修改，当前的值可以用ulimit命令来查看。如果达到极限，Elasticsearch将无法创建新的文件，所以合并会失败，索引会失败，新的索引无法创建。
 
-
 http://my.oschina.net/galenz/blog/422189   Elasticsearch 分片交互过程分析
+http://www.cnblogs.com/xing901022/p/4967796.html  Elasticsearch 数据搜索篇 【入门级干货】
 
 备份恢复
 在浏览器中运行http://ipaddress:9200/_flush，这样确保索引数据能保存到硬盘中。
@@ -131,10 +142,23 @@ http://www.ifunit.com/29/elasticsearch%E9%85%8D%E7%BD%AE%E5%90%8C%E4%B9%89%E8%AF
 http://www.cnblogs.com/buzzlight/p/elasticsearch_analysis.html  
 全文搜索引擎会用某种算法对要建索引的文档进行分析， 从文档中提取出若干Token(词元)， 这些算法称为Tokenizer(分词器)， 这些Token会被进一步处理， 比如转成小写等， 这些处理算法被称为Token Filter(词元处理器), 被处理后的结果被称为Term(词)， 文档中包含了几个这样的Term被称为Frequency(词频)。 引擎会建立Term和原文档的Inverted Index(倒排索引)， 这样就能根据Term很快到找到源文档了。 文本被Tokenizer处理前可能要做一些预处理， 比如去掉里面的HTML标记， 这些处理的算法被称为Character Filter(字符过滤器)， 这整个的分析算法被称为Analyzer(分析器)。
 
+http://www.infoq.com/cn/news/2015/02/apache-lucene5-release
+http://www.cnblogs.com/ibook360/archive/2012/12/29/2839094.html
+http://itindex.net/detail/49374-lucene-4.8.0-%E5%8F%98%E5%8C%96
+提供了针对第一次搜索结果集合的重打分（权重调整）API；相当于对搜索结果的二次自定义排序。 
+AnalyzingInfixSuggester 类提供了支持NRT的自动建议功能。 
+
+
 分析的工作由分析器完成，它由一个分词器（tokenizer）和零个或多个标记过滤器（token filter）组成，也可以有零个或多个字符映射器（character mapper）。
 Lucene中的分词器把文本分割成多个标记，基本就是词加上一些额外信息，比如该词在原始文本中的位置和长度。默认情况下，Apache Lucene使用TF/IDF（term frequency/inverse document frequency，词频/逆向文档频率）评分机制
 收到查询请求的节点会把查询转发给保存了属于给定索引的分片的所有节点，并要求与查询匹配的文档的最少信息（默认情况下是标识符和得分）。这个过程称为发散阶段（scatter phase）。收到这些信息后，该聚合节点（收到客户端请求的节点）对结果排序，并发送第2个请求来获取结果列表所需的文档（除了标识符和
 得分以外的所有信息）。这个阶段称为收集阶段（gather phase）。这个阶段执行完毕后，结果返回到客户端。
+
+index_options：该属性定义了信息列表（postings list）的索引选项（2.2.4节将详细讨论）。可能的值是docs（仅对文档编号建立索引）， freqs（对文档编号和词频建立索引），positions（对文档编号、词频和它们的位置建立索引）， offsets（对文档编号、词频、它们的位置和偏移量建立索引）。对于经分析的字段，此属性的默认值是positions，对于未经分析的字段，默认值为docs。
+例如，对cars和car这两个单词，词干提取器（stemmer，词干提取算法的一种实现）产生一个词干car。
+2012年发布Apache Lucene 4.0后，该全文检索库的所有用户便可以修改默认的基于TF/IDF的算法。 Lucene 4.0还附加了相似度模型（similarity model），允许在文档中使用不同的评分公式  BM25相似度模型
+Okapi BM25模型：这种相似度模型基于概率模型，概率模型估算根据指定查询找到指定文档的概率。
+
 
 http://my.oschina.net/galenz/blog/333070  Zabbix的安装与部署
 
