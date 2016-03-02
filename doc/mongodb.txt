@@ -5,6 +5,8 @@ mongos配置信息 db.runCommand( { addshard : "shard1/192.168.0.136:22001,192.168.0
 指定testdb分片生效 db.runCommand( { enablesharding :"testdb"});
 指定数据库里需要分片的集合和片键  db.runCommand( { shardcollection : "testdb.table1",key : {id: 1} } )
 
+https://cnodejs.org/topic/55c97a997a5d91fa63fe9ce7  Mongodb线上真实事故案例
+http://snoopyxdy.blog.163.com/blog/static/6011744020157511536993/
 
 http://www.lanceyan.com/tech/mongodb_repset2.html
 MongDB副本集故障转移功能得益于它的选举机制。选举机制采用了Bully算法，可以很方便从分布式节点中选出主节点。

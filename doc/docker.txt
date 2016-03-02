@@ -31,6 +31,8 @@ https://dashboard.daocloud.io/packages/89017ce9-1af2-489f-aadb-5cb9d53fe2da   ka
 
 http://www.csdn.net/article/2014-12-24/2823292-Docker-Kubernetes  基于Kubernetes构建Docker集群管理详解
 
+https://github.com/tobegit3hub/seagull  一款为 Docker 提供 Web 监控和管理界面的工具  http://www.tuicool.com/articles/NVVbIbM
+
 
 安装 Docker 版本必须在1.7.1以上(强烈建议1.8.2)，并确保 Docker Daemon 运行；
 使用64位 Linux 系统，已经通过测试的操作系统： CentOS 7+ 和 Ubuntu 14.04+；

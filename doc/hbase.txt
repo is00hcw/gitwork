@@ -4,6 +4,15 @@ HBase在0.92之后引入了coprocessors，提供了一系列的钩子，让我�
 在分布式系统中，需要生成全局UID的场合还是比较多的，twitter的snowflake解决了这种需求，实现也还是很简单的，除去配置信息，核心代码就是毫秒级时间41位+机器ID 10位+毫秒内序列12位。
 该项目地址为：https://github.com/twitter/snowflake是用Scala实现的。     http://www.dengchuanhua.com/132.html
  
+http://my.oschina.net/leejun2005/blog/543048?fromerr=4jqPCSkc  HBase 原理、设计与优化实践
+http://www.bitstech.net/2015/12/04/hbase-optmization/?utm_source=tuicool&utm_medium=referral  HBase优化实战
+比较像MongoDB的sharding模式，能根据键值的大小，把数据分布到不同的存储节点上，MongoDB根据configserver来定位数据落在哪个分区上，HBase通过访问Zookeeper来获取-ROOT-表所在地址，通过-ROOT-表得到相应.META.表信息，从而获取数据存储的region位置。
+http://my.oschina.net/leejun2005/blog/92776  HBase性能优化方法总结
+
+
+http://www.rowkey.me/blog/2015/06/10/hbase-about/
+http://songlee24.github.io/2015/07/24/hbase-introduction/
+
 
 进入命令：hbase shell
 查看有多少表：list
@@ -21,10 +30,73 @@ bin/hbase org.apache.hadoop.hbase.mapreduce.Import testtable  /user/testtable
 首先拷贝hdfs文件，如bin/hadoop distcp hdfs://srcnamenode:9000/hbase/testtable/ hdfs://distnamenode:9000/hbase/testtable/
 然后在目的hbase上执行bin/hbase org.jruby.Main bin/add_table.rb /hbase/testtable
 
+
+http://www.oschina.net/news/69616/review-and-development-of-apache-hbase     Apache HBase 2015 年发展回顾与未来展望
+https://github.com/yahoo/omid    Omid 项目来自 Yahoo，用于给使用快照隔离的键值存储提供事务支持。    http://tephra.io/
+https://github.com/HuaweiBigData/astro    Spark SQL on HBase package 项目又名 Astro，端到端整合了 Spark，Spark SQL和HBase的能力
+
+https://github.com/ndimiduk/hbase-1.0-api-examples  hbase 1.0
+http://wuchong.me/blog/2015/04/06/spark-on-hbase-new-api/
+http://wuchong.me/blog/2015/08/01/getting-started-with-metrics/  metrics
+
 http://phoenix.apache.org/   Apache Phoenix is a relational database layer over HBase delivered as a client-embedded JDBC driver targeting low latency queries over HBase data. 
 针对HBase上SQL解决方案，目前社区内比较热门的有Cloudera的Impala，Horntworks的Drill，以及Hive
 
+http://blog.csdn.net/yaoyasong/article/details/39400829  应用Flume+HBase采集和存储日志数据
+http://m.csdn.net/article/2015-02-10/2823915  结合美团下单率预测详解机器学习中的数据清洗与特征处理
+http://m.csdn.net/article/a/2015-01-29/15822434
+
+
 http://blog.csdn.net/u010967382/article/details/37878701?utm_source=tuicool  HBase基本数据操作详解
+http://xstarcd.github.io/wiki/Cloud/hbase_tips.html   hbase日常操作收集
+
+docker
+http://bigdata-blog.net/2014/10/14/hfile%E5%92%8Chlog%E7%9A%84%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/  HFile和HLog的回收机制
+http://bigdata-blog.net/2014/12/03/%E5%8D%81%E5%88%86%E9%92%9F%E5%BC%80%E5%8F%91hbase%E5%BA%94%E7%94%A8/#more-216   十分钟开发HBase应用
+docker run -d --net=host tobegit3hub/standalone-hbase-0.94
+docker run -i -t --net=host tobegit3hub/smoke-hbase
+https://github.com/nerdammer/dockers
+docker run -it --rm --name dockerbase-devbase-hbase dockerbase/devbase-hbase
+http://lifuzu.com/blog/2015/02/03/getting-familiar-with-hbase-on-dockerbase/
+docker run -it --rm --name dockerbase-devbase-hadoop dockerbase/devbase-hadoop
+http://lifuzu.com/blog/2015/02/03/playing-with-hadoop-on-dockerbase/
+
+
+coprocessor
+Using HBase coprocessors, custom features such as secondary indexing, complex filtering and access control features can be developed.
+RegionObserver provides a hook for data manipulation operations such as Get, Put, Delete, Scan, and so on.The configuration property, hbase.coprocessor.region.classes, can be set to register the region observer.
+RegionServerObserver: This observer provides the pre and post hooks for the merge, commits, and rollback operations and runs within the context of the HBase region server. This coprocessor can be registered using the hbase.coprocessor.regionserver.classes configuration property.
+WALObserver: This observer provides hooks for the write-ahead log (WAL) and support for the pre and post WAL write events. can be registered by setting the hbase.coprocessor.wal.classes
+configuration property.
+MasterObserver: This observer provides hooks for data definition type operations such as table creation, deletion, schema modification, and so on. The MasterObserver coprocessor runs within the context of HBase Master and can be registered by setting the hbase.coprocessor.master.classes configuration property.
+
+
+hbase.replication  add_peer   start_replication   异步集群之间复制
+<name>hbase.client.scanner.caching</name>  
+SASL  hbase.security.authentication    hadoop.security.authentication
+Region迁移的时候不能简单开启自动balance，因为balance主要的问题是不会根据表来进行balance，HBase的自动balance只会根据每个RegionServer上的Region数量来进行balance，
+可以通过切分的方法生成多个小region后均匀分布(注意：region切分会触发major compact操作，会带来较大的I/O请求，请务必在业务低峰期进行)
+一般地，HBase客户端的写入到RegionServer下某个region的memstore后就返回，除了网络外，其他都是内存操作
+
+在HBase中，数据在更新时首先写入WAL 日志(HLog)和内存(MemStore)中，MemStore中的数据是排序的，当MemStore累计到一定阈值时，就会创建一个新的MemStore，并且将老的MemStore添加到flush队列，由单独的线程flush到磁盘上，成为一个StoreFile。于此同时， 系统会在zookeeper中记录一个redo point，表示这个时刻之前的变更已经持久化了(minor compact)。
+StoreFile是只读的，一旦创建后就不可以再修改。因此Hbase的更新其实是不断追加的操作。当一个Store中的StoreFile达到一定的阈值后，就会进行一次合并(major compact)，将对同一个key的修改合并到一起，形成一个大的StoreFile，当StoreFile的大小达到一定阈值后，又会对 StoreFile进行分割(split)，等分为两个StoreFile。
+
+
+
+HBase 0.92引入了Coprocessor这项特性，可以很方便地在RegionServer端实现各类聚集操作，通过AggregationClient#rowCount这个接口就可以相对高效地统计表的行数了。
+Coprocessor提供了Observer和Endpoint两项特性，前者允许通过重写函数在RegionServer端注入用户代码，后者则相当于数据库中的触发器
+http://bigdata-blog.net/2013/11/15/hbase%E8%A1%8C%E6%95%B0%E7%BB%9F%E8%AE%A1/
+<name>hbase.coprocessor.user.region.classes</name>
+<value>org.apache.hadoop.hbase.coprocessor.AggregateImplementation</value>
+hbase> alter 'mytable', METHOD => 'table_att','coprocessor'=>'|org.apache.hadoop.hbase.coprocessor.AggregateImplementation||'
+http://michaelmorello.blogspot.tw/2012/01/row-count-hbase-aggregation-example.html
+
+
+如果HBase单个节点出现故障，Zookeeper会通知master主进程，master会将HLog日志进行拆分，分发到其他RegionServer上进行数据恢复。HBase对于单点故障的容错能力还是不错的
+HBase 0.90以后开始支持Replication机制，该机制设计的主导思想是基于操作日志(put/get/delete)做数据同步，这点很像MySQL基于Binary Log做statement-based replication
+客户端的put/delete操作会被RegionServer写入本地的HLog中去，与此同时每个RegionServer会将Hlog放入对应znode上的Replication队列，HBase集群会有一个独立的线程，根据固定大小的buffer值，将HLog内容推送到Slave Cluster集群中的某个RegionServer上(当前版本只支持单个Slave Cluster复制)，并在将当前复制的偏移量保存在ZooKeeper上，整个过程是异步完成的。
+http://www.infoq.com/cn/articles/lp-hbase-data-disaster-recovery
+
 
 通过Cloudera Manager安装CDH   http://blog.javachen.com/2013/06/24/install-cdh-by-cloudera-manager/
 http://www.micmiu.com/bigdata/hbase/hbase-setup-standalone/   hbase安装

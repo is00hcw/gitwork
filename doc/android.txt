@@ -36,6 +36,9 @@ http://pre.im/
 debug
 http://stormzhang.com/android/2015/03/05/android-debug-use-chrome/
 
+test
+http://mqc.aliyun.com/doc.htm?id=8  Robotium编写登录APP的自动化脚本
+http://mqc.aliyun.com/doc.htm?id=44  Appium
 
 AndFix
 http://www.oschina.net/p/andfix

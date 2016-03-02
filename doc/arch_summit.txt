@@ -26,6 +26,8 @@ http://blog.cheyo.net/130.html
 http://tech.uc.cn/?p=2387
 http://blog.163.com/xiangfei209@126/blog/static/98695674201393024742225
 
+http://wuchong.me/blog/2014/08/07/distributed-storage-system-knowledge/  分布式存储系统 知识体系
+http://wuchong.me/blog/2014/04/19/recsys-cf-study/   推荐系统学习：协同过滤实现
 http://data.qq.com/article?id=2863    zookeeper运营经验分享
 http://h2ex.com/820   支撑微博千亿调用的轻量级RPC框架：Motan
 http://www.infoq.com/cn/articles/etcd-interpretation-application-scenario-implement-principle   etcd：从应用场景到实现原理的全方位解读

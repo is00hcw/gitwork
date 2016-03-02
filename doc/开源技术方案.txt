@@ -19,6 +19,8 @@ oneapm
 buggly
 蒲公英内测
 
+http://www.oschina.net/news/71132/nosql-use-case  全面梳理关系型数据库和 NoSQL 的使用情景
+
 
 https://github.com/HubSpot/BuckyServer    https://github.com/HubSpot/BuckyClient  测量来自最终用户的浏览器 web 应用程序的性能，并发送该数据回服务器。
 https://github.com/BetterJS/badjs-report    js上报

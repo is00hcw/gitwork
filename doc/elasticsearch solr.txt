@@ -25,6 +25,22 @@ GET http://localhost:9200/_cluster/state/nodes/：这个命令获取集群中节点的信息。
 可以在Elasticsearch中返回脚本计算字段：在JSON的查询对象中加上script_fields部分  "script" : "doc['year'].value - 1800"    "script" : "_source.year - 1800" 
 发散阶段每个查询的分片将只返回文档的标识符和得分。发送分散查询的节点将等待所有的分片完成它们的任务，收集结果并适当排序
 在任何搜索中使用过滤器，只需在于query节点相同级别上添加一个filter节点。在第一种情况下，过滤器应用到查询所发现的所有文档上。第二种情况下，过滤发生在在运行查询之前，性能更好。
+验证查询 curl -XGET 'localhost:9200/library/_validate/query?pretty&explain' --data-binary @query.json 
+如果能忍受低精度（但性能更好），使用top N重写方法。如果需要高精度（但性能较低），选择布尔方法。
+需要记住的第一件事是父子文档需要存储在相同的分片中，查询才能够工作。   执行has_child等查询时，Elasticsearch需要预加载并缓存文档
+标识符。这些标识符将存储在内存中，必须确保Elasticsearch有足够的内存。   
+可以直接在映射文件中定义字段的加权   "author" : { "type" : "string", "boost" : 10.0 } 
+synonyms_path属性应该设成含有同义词定义的文件名，文件路径应该相对于Elasticsearch的config目录
+curl -X GET 'localhost:9200/_analyze?pretty' -d 'Crime and Punishment'
+curl -X GET 'localhost:9200/library/book/1/_explain?pretty&q=quiet'  
+term建议器基于字符串编辑距离（string edit distance）工作。这意味着，通过更少字符的更改、添加或删除就可以让建议单词和原始单词一样，那么这样的建议最好。
+形成集群和寻找节点的过程称为发现。负责发现的模块有两个主要目的：选出一个主节点和发现集群中的新节点。默认在没有安装额外插件的情况下，Elasticsearch允许使用zen发现，它提供了多播和单播发现。
+当脑裂发生时，你有两个（或更多）不会互相连接的集群，直到网络（或其他任何）问题得到修复。为了防止脑裂发生，Elasticsearch提供了discovery.zen.minimum_master_nodes属性。
+该属性定义的是为了形成一个集群，有主节点资格并互相连接的节点的最小数目。
+线程池的配置可以使用集群的更新API来更新，如下所示：curl -XPUT 'localhost:9200/_cluster/settings' -d 
+curl -X PUT localhost:9200/_snapshot/backup
+预热查询跟普通查询没什么区别，只是它存储在Elasticsearch一个特殊的名为_warmer的索引中。
+index.search.slowlog: TRACE, index_search_slow_log_file 日志文件由logging.yml配置文件中的index_search_slow_log_file节点指定
 
 
 
