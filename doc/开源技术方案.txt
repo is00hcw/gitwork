@@ -13,7 +13,7 @@ Sigar£¨System Information Gatherer And Reporter£©£¬ÊÇÒ»¸ö¿ªÔ´µÄ¹¤¾ß£¬Ìá¹©ÁË¿çÆ½Ì
 ·Ö¿â·Ö±íµÄÊı¾İ¿âÖĞ¼ä²ã·½Ãæ£¬ËäÈ»ÓĞ cobar¡¢tddl¡¢mycat¡¢compass¡¢oceanus¡¢kingshard¡¢atlas µÈÒ»ÏµÁĞ¿ªÔ´²úÆ·
 µ±µ±ÔÚ 2015 Äê 9 ÔÂ¿ªÊ¼¿ªÔ´ÁËÄÚ²¿Ê¹ÓÃµÄ·Ö²¼Ê½×÷Òµµ÷¶È¿ò¼Ü¡ª¡ªelastic-job£¬È»ºóÓÖÓÚ 2016 Äê 1 ÔÂ 18 ÈÕ¿ªÔ´ÁËÊı¾İ¿â·Ö¿â·Ö±íÖĞ¼ä¼ş¡ª¡ªsharding-jdbc
 
-
+SQL Parser²¿·Ö²ÉÓÃµÄÊÇApache Calcite
 
 oneapm
 buggly

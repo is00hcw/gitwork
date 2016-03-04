@@ -6,6 +6,8 @@ sudo docker run -d -p 9200:9200 -p 9300:9300 elasticsearch
 curl localhost:9200
 http://h2ex.com/191
 
+http://songlee24.github.io/2016/02/24/hello-Elasticsearch/  初识Elasticsearch
+
 Elastic 官方文档建议：一个 Node 最好不要多于三个 shards。若是 "more shards”，除了增加更多的机器，是没办法做到这一点的。分索引，虽然一个 Node 总的shards 还是挺多的，但是一个索引可以保持3个以内的shards。
 记得 threadpool.index.queue_size ++，不然会出现索引时队列不够用的情况。
 indices.memory.index_buffer_size:10% 这个参数可以进行适当调整。

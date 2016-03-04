@@ -8,10 +8,46 @@ http://my.oschina.net/leejun2005/blog/543048?fromerr=4jqPCSkc  HBase 原理、�
 http://www.bitstech.net/2015/12/04/hbase-optmization/?utm_source=tuicool&utm_medium=referral  HBase优化实战
 比较像MongoDB的sharding模式，能根据键值的大小，把数据分布到不同的存储节点上，MongoDB根据configserver来定位数据落在哪个分区上，HBase通过访问Zookeeper来获取-ROOT-表所在地址，通过-ROOT-表得到相应.META.表信息，从而获取数据存储的region位置。
 http://my.oschina.net/leejun2005/blog/92776  HBase性能优化方法总结
+http://navigating.github.io/2015/%E5%AD%A6%E4%B9%A0%E3%80%8AHadoop%E7%94%9F%E6%80%81%E6%8A%80%E6%9C%AF%E5%9C%A8%E9%98%BF%E9%87%8C%E5%85%A8%E7%BD%91%E5%95%86%E5%93%81%E6%90%9C%E7%B4%A2%E5%AE%9E%E6%88%98%E3%80%8B/     Hadoop生态技术在阿里全网商品搜索实战
+ 
+hbase集群复制 ， 多master ha ， incr计数器 ， coprocessor      mysql 单表一般500w，能使用mysql的场景
+Trafodion是HP公司资助的一个开源项目。它提供了一个成熟的企业级SQL on HBase解决方案。
+HDFS是大数据时代文件系统的事实标准的话，Parquet就是大数据时代存储格式的事实标准。
+Phoenix缺乏Join能力，eBay提出的kylin还不够简洁，facebook Presto的HBase连接器还没公开。
+http://tephra.io/   Tephra™ provides globally-consistent transactions on top of Apache HBase. 
+https://github.com/Huawei-Spark/Spark-SQL-on-HBase   
+https://github.com/cloudera-labs/SparkOnHBase   http://navigating.github.io/2015/SparkOnHBase-Cloudera/
+https://github.com/NGDATA/hbase-indexer/tree/master/hbase-sep
+http://www.oschina.net/news/69616/review-and-development-of-apache-hbase     Apache HBase 2015 年发展回顾与未来展望
+https://github.com/yahoo/omid    Omid 项目来自 Yahoo，用于给使用快照隔离的键值存储提供事务支持。    http://tephra.io/
+https://github.com/HuaweiBigData/astro    Spark SQL on HBase package 项目又名 Astro，端到端整合了 Spark，Spark SQL和HBase的能力
 
+数据存储格式Parquet和ORCfile,分别是impala和Hive推荐使用的数据格式
+
+YCSB的全称是Yahoo! Cloud Serving Benchmark，这是一个用于测试cloud serving/NoSQL/Key-Value Store的benchmark 
+http://support.huawei.com/ecommunity/bbs/10242857.html
+https://github.com/brianfrankcooper/YCSB
+
+
+http://developer.huawei.com/cn/ict/Products/BigData/FusionInsightHD/HBase/SDK#section-4-12    华为hbase
+HBase 1.0 建议不要使用org.apache.hadoop.hbase.mapred, 建议使用org.apache.hadoop.hbase.mapreduce
+http://www.csdn.net/article/2014-01-15/2818147-hbase-in-2013   回顾2013：HBase的提升与挑战
+http://www.tuicool.com/articles/EvaqEb   HBase单机环境搭建
+http://ju.outofmemory.cn/entry/234703    hbase standalone模式部署和API测试
 
 http://www.rowkey.me/blog/2015/06/10/hbase-about/
 http://songlee24.github.io/2015/07/24/hbase-introduction/
+
+http://www.cnblogs.com/kxdblog/p/4328699.html   rowkey设计
+http://blog.chedushi.com/archives/9720
+http://www.bcmeng.com/hbase-rowkey/
+http://blog.kissdata.com/2014/07/30/hbase-scheme-tips.html
+<userid><max - timestamp><productid>
+
+
+http://www.infoq.com/cn/articles/hbase-second-index-engine
+https://www.ibm.com/developerworks/cn/java/j-lo-HBase/
+https://www.mapr.com/blog/in-depth-look-hbase-architecture
 
 
 进入命令：hbase shell
@@ -30,10 +66,13 @@ bin/hbase org.apache.hadoop.hbase.mapreduce.Import testtable  /user/testtable
 首先拷贝hdfs文件，如bin/hadoop distcp hdfs://srcnamenode:9000/hbase/testtable/ hdfs://distnamenode:9000/hbase/testtable/
 然后在目的hbase上执行bin/hbase org.jruby.Main bin/add_table.rb /hbase/testtable
 
+备份或者拷贝一个表只能用copy/export表，或者disable表后，从hdfs中拷贝出所有hfile。copy/export表用的是MapReduce来scan和copy表，这会对Region Server产生直接的性能影响，而用disable后拷贝文件则是直接不能访问了。
+snapshot并不是一份拷贝，它只是一个文件名的列表，并不拷贝数据。一个全的snapshot恢复以为着你可以回滚到原来的表schema和创建snapshot之前的数据。
+Hbase一个重要的设计就是一旦写到一个文件就不会修改了。有不可修改的文件意味着一个snapshot仅需保持当前文件的使用相关信息就可以了, 并且，当compaction发生的时候，snapshot通知hbase系统仅把这些文件归档而不要删除它。
+同样，当克隆或者恢复操作发生的时候，由于这些不变的文件，当用snapshot创建新表的时候仅需链接向这些不变的文件就行了。导出snapshot是唯一需要拷贝数据的操作，这是因为其它的集群并没有这些数据文件。
+http://ju.outofmemory.cn/entry/50611
 
-http://www.oschina.net/news/69616/review-and-development-of-apache-hbase     Apache HBase 2015 年发展回顾与未来展望
-https://github.com/yahoo/omid    Omid 项目来自 Yahoo，用于给使用快照隔离的键值存储提供事务支持。    http://tephra.io/
-https://github.com/HuaweiBigData/astro    Spark SQL on HBase package 项目又名 Astro，端到端整合了 Spark，Spark SQL和HBase的能力
+https://lessc0de.github.io/connecting_hbase_to_elasticsearch.html  
 
 https://github.com/ndimiduk/hbase-1.0-api-examples  hbase 1.0
 http://wuchong.me/blog/2015/04/06/spark-on-hbase-new-api/
@@ -50,6 +89,43 @@ http://m.csdn.net/article/a/2015-01-29/15822434
 http://blog.csdn.net/u010967382/article/details/37878701?utm_source=tuicool  HBase基本数据操作详解
 http://xstarcd.github.io/wiki/Cloud/hbase_tips.html   hbase日常操作收集
 
+查看Zookeeper内部HBase相关数据，有两个主要的渠道：一、通过Hbase shell命令zk_dump查看  二、通过zk_cli.sh查看； ls /hbase
+add_peer  list_peers  start_replication
+
+
+多租户 命令空间
+http://liyonghui160com.iteye.com/blog/2186479
+http://blog.cheyo.net/62.html
+http://www.bkjia.com/yjs/1015585.html
+http://www.ibm.com/developerworks/cn/java/j-lo-dataMultitenant/
+http://www.netnic.com.cn/news-qishang.htm/xingyejujiao/2015/0813/4110.html
+<name>hbase.security.authorization</name>
+<name>hbase.coprocessor.master.classes</name>
+<value>org.apache.hadoop.hbase.security.access.AccessController</value>
+<name>hbase.coprocessor.region.classes</name>
+<value>org.apache.hadoop.hbase.security.token.TokenProvider,org.apache.hadoop.hbase.security.access.AccessController</value>
+HBase提供的五个权限标识符：RWXCA,分别对应着 READ('R') , WRITE('W') , EXEC('X') , CREATE('C') , ADMIN('A')
+HBase提供的安全管控级别包括：
+Superuser：拥有所有权限的超级管理员用户。通过hbase.superuser参数配置
+Global：全局权限可以作用在集群所有的表上。
+Namespace：命名空间级。
+Table：表级。
+ColumnFamily：列簇级权限。
+Cell：单元级。
+和关系数据库一样，权限的授予和回收都使用grant和revoke
+grant user permissions table column_family column_qualifier
+revoke user table column family column qualifier
+然后通过user_permission来查看权限
+http://ju.outofmemory.cn/entry/119274
+
+
+事务
+http://blog.csdn.net/pirateleo/article/details/8592622
+[HBASE-3584] - Allow atomic put/delete in one call.
+[HBASE-5229] - Provide basic building blocks for "multi-row" local transactions.
+
+http://riak.com.cn/riak/1.4.2/theory/comparisons/hbase/    Riak 和 HBase 比较
+
 docker
 http://bigdata-blog.net/2014/10/14/hfile%E5%92%8Chlog%E7%9A%84%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/  HFile和HLog的回收机制
 http://bigdata-blog.net/2014/12/03/%E5%8D%81%E5%88%86%E9%92%9F%E5%BC%80%E5%8F%91hbase%E5%BA%94%E7%94%A8/#more-216   十分钟开发HBase应用
@@ -62,16 +138,71 @@ docker run -it --rm --name dockerbase-devbase-hadoop dockerbase/devbase-hadoop
 http://lifuzu.com/blog/2015/02/03/playing-with-hadoop-on-dockerbase/
 
 
+//自创建cf=f1的test_table表,并使用 SplitAlgorithm. HexStringSplit算法进行pre-splitting,或UniformSplit算法 
+// -c 指定预先分区分区个数
+hbase org.apache.hadoop.hbase.util.RegionSplitter test_table HexStringSplit -c 10 -f f1
+在hbase-0.98+就支持了这个顺序反转的功能，  Scan.setReversed(true)
+
+<name>hbase.coprocessor.user.region.classes</name>
+<value>org.apache.hadoop.hbase.coprocessor.AggregateImplementation</value>
+添加aggregation hbase> alter 'mytable', METHOD => 'table_att','coprocessor'=>'|org.apache.hadoop.hbase.coprocessor.AggregateImplementation||'
+The start row is always inclusive, while the end row is exclusive. This is often expressed as [startRow, stopRow) in the interval notation.
+setting the scan to use setBatch(5) would return five cells per Result instance  一次取多少列
+−   Batch  使用scan调用next接口每次最大返回的记录数，与一次读取的列数有关。
+−   Caching  一个RPC查询请求最大的返回的next数目，与一次RPC获取的行数有关。
+HBase提供基于单行数据操作的原子性保证 即：对同一行的变更操作（包括针对一列/多列/多column family的操作），要么完全成功，要么完全失败，不会有其他状态
+HBase提供的checkAndPut接口，checkAndPut提供了Compare And Set（CAS）的方式，确保了一行数据的原子性。    http://www.batchfile.cn/?p=77
+
+HBASE-8015： 在0.96中，ROOT表已经改名为hbase:namespace，META则是hbase:meta。   
+http://www.thebigdata.cn/wap.aspx?nid=8161&p=1&cp=3&cid=53
+
+http://xn--jlq582ax31c.xn--fiqs8s/post/106
+常见的二级索引方案有以下几种： 
+1.MapReduce方案 
+2.ITHBASE方案 
+3.IHBASE方案 
+4.Coprocessor方案 
+5.Solr+hbase方案
+
+https://github.com/ColZer/DigAndBuried/blob/master/hbase/hbase-filter.md
+按照调用顺序来解释每个接口的功能.
+filterRowKey:对rowKey进行过滤,如果rowKey被过滤了,那么后面的那些操作都不需要进行了
+针对Row中cell进行过滤,由于一个row含有多个cell,因此这是一个循环过程
+filterAllRemaining:是否需要结束对这条记录的filter操作
+filterKeyValue:对每个cell进行过滤
+transformCell:如果一个cell通过过滤,我们可以对过滤后的cell进行改写/转变
+filterRowCells:对通过cell过滤后的所有cell列表进行修改
+filterRow:站在row整体角度来进行过滤
+
 coprocessor
+http://saurzcode.in/2015/01/write-coprocessor-hbase/  
+http://blog.selfup.cn/466.html
+http://guoze.me/2015/04/23/hbase-observer-sync-elasticsearch/   导入elasticsearch
 Using HBase coprocessors, custom features such as secondary indexing, complex filtering and access control features can be developed.
 RegionObserver provides a hook for data manipulation operations such as Get, Put, Delete, Scan, and so on.The configuration property, hbase.coprocessor.region.classes, can be set to register the region observer.
 RegionServerObserver: This observer provides the pre and post hooks for the merge, commits, and rollback operations and runs within the context of the HBase region server. This coprocessor can be registered using the hbase.coprocessor.regionserver.classes configuration property.
 WALObserver: This observer provides hooks for the write-ahead log (WAL) and support for the pre and post WAL write events. can be registered by setting the hbase.coprocessor.wal.classes
 configuration property.
 MasterObserver: This observer provides hooks for data definition type operations such as table creation, deletion, schema modification, and so on. The MasterObserver coprocessor runs within the context of HBase Master and can be registered by setting the hbase.coprocessor.master.classes configuration property.
-
+http://www.infoq.com/cn/articles/hbase-second-index-engine/
+http://www.oschina.net/question/12_32573
 
 hbase.replication  add_peer   start_replication   异步集群之间复制
+让Hbase使用一个现有的不被Hbase托管的Zookeep集群，需要设置 HBASE_MANAGES_ZK 属性为 false
+在某regionserver上启动Hmaster   hbase-daemon.sh start master
+http://www.cnblogs.com/captainlucky/p/4710642.html
+$HBASE_HOME/conf/ 目录下新增文件配置backup-masters，在其内添加要用做Backup Master的节点hostname。配置backup master的方式是在hbase的conf下增加文件backup-masters，在该文件里面增加backup master的机器列表，每台机器一条记录。
+http://xstarcd.github.io/wiki/Cloud/hbase_backupmaster.html
+http://xstarcd.github.io/wiki/Cloud/manual_start_hadoop_hbase.html  脚本说明
+
+
+http://www.billstudy.com/2016/01/24/6ccb01cb7831473a45fa2b2d28c1d8a9/
+Hbase里面有两张特殊的表：
+.META.  记录了用户表的Region信息，.META.可以有多个regoin
+-ROOT-  记录了.META.表的Region信息，-ROOT-只有一个region
+Zookeeper中记录了-ROOT-表的location
+
+
 <name>hbase.client.scanner.caching</name>  
 SASL  hbase.security.authentication    hadoop.security.authentication
 Region迁移的时候不能简单开启自动balance，因为balance主要的问题是不会根据表来进行balance，HBase的自动balance只会根据每个RegionServer上的Region数量来进行balance，

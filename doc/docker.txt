@@ -32,7 +32,8 @@ https://dashboard.daocloud.io/packages/89017ce9-1af2-489f-aadb-5cb9d53fe2da   ka
 http://www.csdn.net/article/2014-12-24/2823292-Docker-Kubernetes  基于Kubernetes构建Docker集群管理详解
 
 https://github.com/tobegit3hub/seagull  一款为 Docker 提供 Web 监控和管理界面的工具  http://www.tuicool.com/articles/NVVbIbM
-
+http://www.tuicool.com/articles/zuYrAjV
+https://segmentfault.com/a/1190000002464365
 
 安装 Docker 版本必须在1.7.1以上(强烈建议1.8.2)，并确保 Docker Daemon 运行；
 使用64位 Linux 系统，已经通过测试的操作系统： CentOS 7+ 和 Ubuntu 14.04+；
@@ -57,6 +58,11 @@ vi /usr/bin/yum 将#!/usr/bin/python改为#!/usr/bin/python2.6.6
 或者是 sed -i 's/python/python2.6.6/' /usr/bin/yum
 http://www.tuicool.com/articles/rUvERv  升级内核
 https://www.ijser.cn/install-nvm-on-docker/
+
+image
+https://hub.docker.com/r/laoyumi/rocketmq/~/dockerfile/
+https://blog.sectong.com/blog/storm_log_stat_openfire.html
+http://www.tnidea.com/deploy-storm-by-docker.html
 
 加速
 当用户的Docker设定了--registry-mirror参数后，用户的Docker下拉镜像时，首先去Docker Hub Mirror中查找镜像，若命中则说明该镜像已经在Docker Hub Mirror中缓存，用户直接从Docker Hub Mirror中下载；若没有命中，则说该镜像还没有被缓存，那么Docker Hub Mirror首先会被驱使去Docker Hub中下载该镜像，并进行缓存，最终让用户从Docker Hub Miorror中下载该镜像。

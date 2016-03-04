@@ -1,5 +1,9 @@
 ﻿logback-test.xml 
 
+mdc
+http://www.zhnhao.com/coding/2015/10/16/Spring%E9%85%8D%E7%BD%AE%E6%97%A5%E8%AE%B0%E2%80%94%E2%80%94%E6%97%A5%E5%BF%97%E4%B8%8E%E5%9B%BD%E9%99%85%E5%8C%96/
+http://ketao1989.github.io/posts/LogBack-Implemention-And-Slf4j-Mdc.html
+
 grok
 http://chenlinux.com/2014/10/19/grokdebug-commandline/
 https://github.com/elastic/logstash/tree/v1.1.9/patterns
@@ -134,6 +138,7 @@ http://eventlog.me/fluentd%E6%97%A5%E5%BF%97%E6%94%B6%E9%9B%86%E5%B7%A5%E5%85%B7
 
 
 flume
+http://phoenix.apache.org/flume.html   flume hbase phoenix
 http://shiyanjun.cn/archives/915.html  flume
 wget http://mirrors.hust.edu.cn/apache/flume/1.5.0/apache-flume-1.5.0-bin.tar.gz
 /home/flume/bin/flume-ng agent --conf /home/flume/conf --conf-file /home/flume/conf/netcat.conf --name agent2 -Dflume.monitoring.type=http -Dflume.monitoring.port=34545   -Dflume.root.logger=DEBUG,console
