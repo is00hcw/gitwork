@@ -16,6 +16,15 @@ https://mesosphere.github.io/marathon/   Marathon is an Apache Mesos framework f
 https://github.com/mesos/chronos   Chronos is a replacement for cron. It is a distributed and fault-tolerant scheduler that runs on top of Apache Mesos that can be used for job orchestration.
 http://dockone.io/article/932   Kubernetes核心概念
 
+“cAdvisor + InfluxDB + Grafana”是一个简单而又强大的组合，可以满足Docker监控的基本需求。
+Docker容器通过namespace做资源隔离，通过cgroup来做资源限制。对容器资源的监控，其实就是在宿主机上查看对应容器的cgroup stats，这是所有Docker监控工具的技术基础。
+Docker本身提供了Docker stats命令和stats API。我们可以通过docker stats [CONTAINER] 或 docker stats -a列出指定容器或所有容器的性能信息
+Google的cAdvisor是另一个知名的开源容器监控工具。只需在宿主机上部署cAdvisor容器，用户就可通过Web界面或REST服务访问当前节点和容器的性能数据(CPU、内存、网络、磁盘、文件系统等等)
+https://yq.aliyun.com/articles/5065?spm=5176.team11.teamshow1.13.Qgi5ea
+https://yq.aliyun.com/articles/6894?spm=5176.team11.teamshow1.21.Qgi5ea   使用Docker运行Java Web应用
+https://yq.aliyun.com/articles/4041?spm=5176.blog6894.yqblogcon1.18.cF4YSY    docker 的理念与场景
+https://yq.aliyun.com/articles/1830?spm=5176.team11.teamshow1.58.Qgi5ea   基于docker构建jenkins和svn服务
+
 
 http://yq.aliyun.com/articles/1830?utm_source=tuicool&utm_medium=referral  基于docker构建jenkins和svn服务
 http://yq.aliyun.com/articles/303?spm=5176.team11.teamshow1.17.PxpN4k  elk
@@ -63,6 +72,7 @@ image
 https://hub.docker.com/r/laoyumi/rocketmq/~/dockerfile/
 https://blog.sectong.com/blog/storm_log_stat_openfire.html
 http://www.tnidea.com/deploy-storm-by-docker.html
+docker run -d --name my-php-webserver -p 8080:80 -v /path/to/your/php/files:/var/www/html/ php:apache
 
 加速
 当用户的Docker设定了--registry-mirror参数后，用户的Docker下拉镜像时，首先去Docker Hub Mirror中查找镜像，若命中则说明该镜像已经在Docker Hub Mirror中缓存，用户直接从Docker Hub Mirror中下载；若没有命中，则说该镜像还没有被缓存，那么Docker Hub Mirror首先会被驱使去Docker Hub中下载该镜像，并进行缓存，最终让用户从Docker Hub Miorror中下载该镜像。

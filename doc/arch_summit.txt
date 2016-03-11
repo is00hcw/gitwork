@@ -26,11 +26,23 @@ http://blog.cheyo.net/130.html
 http://tech.uc.cn/?p=2387
 http://blog.163.com/xiangfei209@126/blog/static/98695674201393024742225
 
+
+
+http://news.oneapm.com/docker-monitoring/   Docker 监控实战
+http://www.infoq.com/cn/articles/diffy-twitter-open-source-automation-testing-tool  Diffy是一个开源的自动化测试工具，它能够自动检测基于Apache Thrift或者基于HTTP的服务。使用Diffy，只需要进行简单的配置，之后不需要再编写测试代码。
+https://yq.aliyun.com/articles/45?spm=5176.100240.searchblog.101.1KrXg6   阿里通信基础技术框架介绍
+https://yq.aliyun.com/articles/2764?spm=5176.team25.teamshow1.21.UCfwgH   微服务（Microservice）那点事
+https://yq.aliyun.com/articles/9?spm=5176.team25.teamshow1.12.UCfwgH   如何健壮你的后端服务
+https://yq.aliyun.com/articles/3215?spm=0.0.0.0.dBgmd9  古谦在演讲中总结了6个原则：尽可能拆分   服务架构“去中心化”异步化  数据化运营  尽可能使用成熟组件  尽可能自动化
+http://www.infoq.com/cn/news/2016/03/Stack-Overflow-architecture-insi    Stack Overflow 2016最新架构探秘
 http://wuchong.me/blog/2014/08/07/distributed-storage-system-knowledge/  分布式存储系统 知识体系
 http://wuchong.me/blog/2014/04/19/recsys-cf-study/   推荐系统学习：协同过滤实现
 http://data.qq.com/article?id=2863    zookeeper运营经验分享
 http://h2ex.com/820   支撑微博千亿调用的轻量级RPC框架：Motan
 http://geek.csdn.net/news/detail/49447   快的打车架构实践
+http://mp.weixin.qq.com/s?__biz=MzAwMDU1MTE1OQ==&mid=207036840&idx=1&sn=c99efd40a32e61e6e330f31d7e55e34e#rd   解析Docker在芒果TV的实践之路
+http://colobu.com/2015/11/09/The-Stack-of-uriDB/   uriDB网站的可扩展的技术栈
+http://colobu.com/2015/07/27/architecture-evolution-of-large-sites/  常用的负载均衡技术硬件的有F5，价格比较贵，软件的有LVS、Nginx、HAProxy。LVS是四层负载均衡，根据目标地址和端口选择内部服务器，Nginx是七层负载均衡和HAProxy支持四层、七层负载均衡
 http://www.infoq.com/cn/articles/etcd-interpretation-application-scenario-implement-principle   etcd：从应用场景到实现原理的全方位解读
 http://vernonzheng.com/2015/02/09/%E5%BC%80%E6%BA%90%E5%88%86%E5%B8%83%E5%BC%8F%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83%E9%80%89%E5%9E%8B/   开源分布式配置中心选型
 http://www.wtoutiao.com/p/W60ga7.html  软件定义网络（Software Defined Network, SDN ）

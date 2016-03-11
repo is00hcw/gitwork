@@ -2,6 +2,7 @@ http://www.cnblogs.com/kenshincui/p/3985090.html
 http://www.cnblogs.com/kenshincui/p/3890880.html  IOS程序开发概览
 http://www.cnblogs.com/csharpstyle/articles/4176630.html    Ad Hoc 方式发布 APP
 
+https://github.com/Tim9Liu9/TimLiu-iOS  开源库
 http://www.cocoachina.com/cms/wap.php?action=article&id=7746  第三方开源库
 AFNetworking MKNetworkKit CocoaAsyncSocket  fmdb  MagicalRecord  MBProgressHUD GPUImage SVProgressHUD FLAnimatedImage
 NSJSONSerialization    http://blog.csdn.net/shouqiangwei/article/details/11557919?utm_source=tuicool
@@ -31,6 +32,29 @@ https://github.com/IFTTT/jot  adding drawings and text to images.
 https://github.com/IFTTT/FastttCamera   Fasttt and easy camera framework for iOS with customizable filters 
 https://github.com/IFTTT/JazzHands simple keyframe-based animation framework for UIKit. Perfect for scrolling app intros
 https://github.com/IFTTT/IFTTTLaunchImage
+
+升级
+http://www.infoq.com/cn/articles/wechat-ios9-adaptation  微信iOS 9适配总结
+
+test
+http://www.infoq.com/cn/news/2016/02/earlgrey-ios-functional-ui-test Google推出iOS功能性UI测试框架EarlGrey
+http://houlianpi.github.io/blog/ios-testframework.html?utm_source=tuicool&utm_medium=referral
+http://www.secbox.cn/hacker/8235.html
+Appecker是一款用于iOS系列系统的自动化测试框架。 Appecker采用Objective C为测试用例的开发语言, 完整支持iOS上的UI功能测试、单元测试并且可以良好地支持自动化运行
+
+hybrid
+http://www.infoq.com/cn/news/2016/03/React-Native-develop-iOS    用React Native开发第一个iOS应用
+https://github.com/marcuswestin/WebViewJavascriptBridge
+http://www.tuicool.com/articles/ea2An2Q
+- (BOOL)webView:(KCWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
+
+stringByEvaluatingJavaScriptFromString
+[NSURLProtocol registerClass:[KCWebViewURLProtocol class]];
+SEL method = NSSelectorFromString(methodName);
+if(clz && [clz respondsToSelector:method])
+    
+	[clz performSelector:method withObject:webView withObject:argList];
+
 
 build
 https://fastlane.tools/

@@ -19,6 +19,18 @@ http://noahlz.roughdraft.io/865cc30e0fd93ad48369-troubleshooting-production-jvms
 http://itindex.net/detail/38172-housemd-btrace-java
 housemd>  trace -d -s DeviceController+
 
+http://xiaobaoqiu.github.io/blog/2016/02/03/strace/ strace用来跟踪进程执行时的系统调用和所接收的信号
+http://xiaobaoqiu.github.io/blog/2015/08/27/zai-xian-zhen-duan-gong-ju/ 常用包括几个诊断工具包括,这里做一个简单的介绍:  1.BTrace  2.HouseMD  3.Greys-Anatomy
+
+
+https://yq.aliyun.com/articles/2390   Greys Java在线问题诊断工具 , Greys的原理和Btrace一样，依赖了JDK6+提供的Instumentation特性，所以必须要求目标的JDK环境是JDK6及其以上的版本。
+http://dbaplus.cn/news-21-173-1.html  听阿里巴巴JVM工程师为你分析常见Java故障案例
+http://www.tuicool.com/articles/fABfMvQ  javOSize:新一代java分析工具
+https://yq.aliyun.com/articles/56?spm=5176.100240.searchblog.88.1KrXg6  Java调试那点事
+jstack分析哪些线程阻塞了，阻塞在哪里
+jstat看看FullGC频率
+jmap看看有没有内存泄露
+http://www.open-open.com/lib/view/open1381564920177.html
 
 http://www.csdn.net/article/2014-11-20/2822750-5-JDK-To   每个Java开发者都应该知道的5个JDK工具
 jmap -dump:format=b,file=heap.bin 3344

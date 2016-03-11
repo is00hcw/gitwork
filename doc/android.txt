@@ -1,3 +1,6 @@
+http://dev.xiaomi.com/doc/p=6298/index.html    MIUI系统音乐控件标准化方案,第三方APP接入指南
+https://github.com/googlesamples/
+
 https://github.com/excilys/androidannotations/wiki/AvailableAnnotations
 https://github.com/excilys/androidannotations/wiki/WorkingWithThreads  后台线程@Background和UI线程@UiThread  http://zhenhappy.github.io/2015/11/29/Android-Annotations-7-Threading.html
 http://zhenhappy.github.io/2015/11/05/JRebel-for-Android-Studio.html   JRebel for Android实战用法
@@ -29,16 +32,39 @@ http://www.alloyteam.com/2015/03/shi-yong-gradle-da-bao-zhi-ding-bao-ming-he-lei
 当 Android 系统安装一个应用的时候，有一步是对 Dex 进行优化，这个过程有一个专门的工具来处理，叫 DexOpt。DexOpt 是在第一次加载 Dex 文件的时候执行的。这个过程会生成一个 ODEX 文件，即 Optimised Dex。执行 ODEX 的效率会比直接执行 Dex 文件的效率要高很多。
 https://segmentfault.com/a/1190000004053072
 
+hybrid
+https://github.com/kercer/kerkee_android   搜狐
+ApiBridge.bridgeIframe.src = "kcnative://go";   // ios里 js调用native，使用隐藏的iframe
+prompt(JSON.stringify(msgJson));  // android里   js调用native ，使用prompt弹出
+
+http://www.tuicool.com/articles/m6RVFfA
+http://www.jianshu.com/p/22fa205b9a3b
+document.getElementsByTagName('head')[0].appendChild(scriptBlock);
+WebView可以设置一个 WebChromeClient 对象，它可以处理js的3个方法
+onJsAlert
+onJsConfirm
+onJsPrompt
+这3个方法分别对应js的 alert 、 confirm 、 prompt 方法，因为只有 prompt 接收返回值，所以js调用一个Native方法后可以等待Native返回一个参数。
+
+对于传统 Java<>Js 通信而言，Js 调用 Java 通不外乎 Jsbridge、onprompt、log 及 addjavascriptinterface 四种方式，在 Java 调用 Js 只有 loadurl 及高版本才支持的 evaluateJavaScript 两种。
+但在 ReactNative 中没有采用了传统 Java 与 Js 之间的通信机制，而是借助 MessageQueue 及模块配置表，将调用转化为{moduleID, methodID，callbackID，args}，处理端在模块配置表里查找注册的模块与方法并调用。
+http://mp.weixin.qq.com/s?__biz=MzA3NTYzODYzMg==&mid=404402192&idx=1&sn=de06f8c41a4c4bba601b8a7fd92ad657&scene=0#wechat_redirect
+
 三方工具
 http://apm.testin.cn/task/4594/demo/report
 http://pre.im/
 
 debug
 http://stormzhang.com/android/2015/03/05/android-debug-use-chrome/
+http://mp.weixin.qq.com/s?__biz=MzA3ODg4MDk0Ng==&mid=401955288&idx=1&sn=cd6e26f8ccecdde318f873b681e33526#rd
+Facebook的插桩方法，他们在考察了Android内建的Debug以及另一些方法后，选择了字节码重写技术，避免了手工插桩的劳动，且性能损失降到最低。
+Stetho 是 Facebook 开源的一个 Android 调试工具。是一个 Chrome Developer Tools 的扩展，可用来检测应用的网络、数据库、WebKit 等方面的功能。开发者也可通过它的 dumpapp 工具提供强大的命令行接口来访问应用内部。
 
+官网地址：http://facebook.github.io/stetho/
 test
 http://mqc.aliyun.com/doc.htm?id=8  Robotium编写登录APP的自动化脚本
 http://mqc.aliyun.com/doc.htm?id=44  Appium
+Google 开源了 Espresso，这是一种Android自动化测试框架，使测试人员可以在云中x86机器的多线程环境里运行测试
 
 AndFix
 http://www.oschina.net/p/andfix

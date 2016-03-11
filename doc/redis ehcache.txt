@@ -5,6 +5,12 @@ http://shokunin.co/blog/2014/11/11/operational_redis.html    Running Redis in pr
 http://blog.huangz.me/diary/2015/redis-geo.html    Redis 的 GEO 特性将在 Redis 3.2 版本释出， 这个功能可以将用户给定的地理位置信息储存起来， 并对这些信息进行操作。
 http://dumbee.net/archives/114  Redis 2.8 配置文件说明
 
+https://github.com/HunanTV/redis-ctl
+https://github.com/HunanTV/redis-cerberus   
+https://github.com/HunanTV/redis-cerberus/wiki/Redis-%E9%9B%86%E7%BE%A4%E4%BB%A3%E7%90%86%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E4%B8%8E%E4%BD%BF%E7%94%A8
+通过代理方式, 所有应用程序以传统 Redis 连接方式连至代理, 然后代理计算槽位, 分发和重试.
+SkyDNS是kubernetes用于服务发现的默认的开源DNS服务。
+
 http://www.kaka200.com/21.html  禁用rdb和aof模式在不生成rdb文件的情况下也可以实现主从同步，前提是master,slave服务器都在运行中的时候，这个种情况下master只是把缓冲区中的set 操作传输到slae端，slave端再执行set命令实现主从同步。
 http://www.kaka200.com/26.html  你可以通过 info 命令对used_memory和used_memory_peak进行监控，为使用内存量设定阀值，并设定相应的报警机制。
 你可以通过对rdb_last_save_time进行监控，了解你最近一次 dump 数据操作的时间，还可以通过对rdb_changes_since_last_save进行监控来知识如果这时候出现故障，你会丢失多少数据。

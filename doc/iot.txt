@@ -1,3 +1,42 @@
+http://ideatouch.github.io/IoTNotes/
+https://github.com/surgemq/surgemq
+https://software.intel.com/zh-cn/iot/hardware/devkit
+
+物联网的平台目前三种： 低端弱功能的芯片+嵌入式os，中端的紧凑型芯片+linux， 高端一点的android平台和芯片。
+一个流程大概是这样的， 市场分析 -> 产品定义(包括成本和功能) -> 选择平台方案 -> 硬件设计/ID结构 -> 软件设计 -> 原型机演示 -> 硬件软件迭代，供应商选择 -> 完整机器评估 -> 小批量 -> 量产 
+
+http://www.csdn.net/article/2015-12-29/2826575-javascript-beyond-the-web-in-2015
+http://www.codeceo.com/article/why-we-pay-attention-to-javascript.html
+最近三星开源了IoT.js和JerryScript。IoT.js是一个使用JavaScript语言编写的物联网应用平台；JerryScript是一个适用于嵌入式设备的小型JavaScript引擎。
+三星创建这两个项目的目的，是为了让JavaScript开发者能够构建物联网应用。物联网设备在CPU性能和内存空间上都有着严重的制约。因此，三星设计了JerryScript引擎，它能够运行在小于64KB内存上，且全部代码能够存储在不足200KB的只读存储（ROM）上。
+http://www.infoq.com/cn/news/2015/08/iotjs-jerryscript-samsung
+
+Marvell在开源KinomaJS应用框架中全面采用JavaScript第六版，使JavaScript能够用在迄今为止最小型的设备上
+http://www.marvell.com.cn/company/news/pressDetail.do?releaseID=6676
+https://github.com/rwaldron/johnny-five
+https://github.com/cesanta/v7
+http://node-ardx.org/
+
+SurgeMQ 是一个高性能的MQTT代理和客户端库，旨在完全兼容MQTT 3.1和3.1.1规范。它与包的形式提供了MQTT服务器和客户端服务。
+
+三星在SamsungTomorrow博客中指出：JavaScript是一种web脚本语言，而Node.js是一个服务器端的JavaScript解释器和运行环境，而IoT.js是一个轻量级的JavaScript和Node.js平台，因此能够增加设备间的互操作性。
+三星并非唯一一个押宝Node.js的厂商，微软近日也公布了采用Windows10中的Chakra JavaScript引擎作为物联网开发平台的计划，意在让运行在ARM架构上的Windows也能支持Node.js。
+总之，在物联网开发技术路线的选择上，三星押宝JavaScript最主要的原因，就是看中了JavaScript的兼容性和互操作性。
+AllJoyn.js combines the AllJoyn Thin Core Library (AJTCL) and base services with “duktape” an open source small-footprint ECMAScript 5.0-compliant runtime engine.
+https://wiki.allseenalliance.org/_media/training/programming_alljoyn.js.pdf
+https://ms-iot.github.io/content/en-US/win10/AllJoyn.htm#AllJoynExplorer
+https://hoolev.github.io/%E7%89%A9%E8%81%94%E7%BD%91/2015/08/27/why-use-javascrit-to-develop-iot/
+微软开放技术再度推出物联网跨平台应用插件 Cordova plug-in for AllJoyn for Windows 10，让各式各样基于JavaScript的物联网设备管理应用都能够透过这个插件，直接而便捷地在强大的Windows 10上运行。
+“互操作性是物联网成功的关键”，AllSeen联盟总裁薛国栋博士（海尔集团标准专利部部长）
+
+http://www.zettajs.org/ 服务端
+http://macchina.io/
+
+mqtt
+http://dataguild.org/?p=6817    QOS 0可丢失 1可重复 2 仅有一次
+http://dataguild.org/?p=6846
+http://dataguild.org/?p=6866
+
 http://blog.pandocloud.com/?p=843
 http://36kr.com/p/5038505.html
 https://github.com/PandoCloud

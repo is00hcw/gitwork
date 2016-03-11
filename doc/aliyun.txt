@@ -17,6 +17,9 @@ mysqlbinlog -vv --base64-output=decode-rows mysqlbinlog.0001
 https://github.com/facebook/mcrouter   twemproxy,也叫nutcracker,是twtter开源的Redis和Memcache代理服务器
 
 
+VPC是指专有网络，可以在公共云当中隔离网络环境，完全掌控自己的虚拟网络，包括选择自有 IP 地址范围、划分网段、配置路由表和网关等。此外通过专线/VPN等连接方式可将VPC与传统数据中心组成一个按需定制的网络环境，实现应用的平滑迁移上云。
+基于合规、容灾以及运维因素考虑，政企、金融等行业客户普遍需要更为私密的网络环境，但同时还需要公共云强大的弹性扩展等优势。
+
 rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
 yum --enablerepo=elrepo-kernel install kernel-lt -y
 yum install http://mirrors.yun-idc.com/epel/6/i386/epel-release-6-8.noarch.rpm
@@ -44,13 +47,33 @@ sudo service docker restart
 sudo apt-get install linux-image-generic-lts-trusty  这是个通用linux 内核影像，这个内核内置了AUFS文件系统，是安装Docker所必需的
 http://blog.csdn.net/opensure/article/details/46490749
 
-
 unix time的形式展示的。 例如：Expires=1448991693，可以将这个时间转换成本地时间。在Linux下的命令为date -d@1448991693
 
 https://help.aliyun.com/document_detail/oss/practice/app_server/sts_server.html?spm=5176.docoss/practice/oss_android_sdk_start/overview.2.3.bSGW62   oss sts
 https://help.aliyun.com/document_detail/oss/sdk/java-sdk/upload_object.html?spm=5176.docoss/user_guide/upload_object/append_upload.2.9.nCVd7V#追加文件示例
 
+传说中的云计算四件套：
+云服务器，阿里云叫ECS，亚马逊叫EC2
+云数据库，阿里云叫RDS，亚马逊也叫RDS
+负载均衡，阿里云叫SLB，亚马逊叫ELB
+对象存储，阿里云叫OSS，亚马逊叫S3
 
+ /*TDDL:SLAVE and SQL_DELAY_CUTOFF=5*/ select * from your_table;
+这样的语句中， 查询请求默认走备库， 当出现主备复制时间达到或超过5秒时，走到主库。
+
+<bean class="com.mongodb.MongoURI" id="mongoURI">
+    <constructor-arg value="mongodb://root:password@dds-xxxx1.mongodb.rds.aliyuncs.com:3717,dds-xxx2.mongodb.rds.aliyuncs.com:3717/admin?replicaSet=mgset-xxxx"  />
+</bean>
+
+
+https://yq.aliyun.com/articles/7178?spm=5176.blog7450.yqblogcon1.6.XGaOog   一分钟系列：详解阿里云68款产品
+https://yq.aliyun.com/articles/6635?spm=5176.team5.teamshow1.44.pwsb4p    PostgreSQL 9.5 新特性之 - 水平分片架构与实践
+https://yq.aliyun.com/articles/7255?spm=5176.team5.teamshow1.23.pwsb4p  搭建阿里云RDS PostgreSQL数据库的物理备库
+https://yq.aliyun.com/articles/5588?spm=5176.team6.teamshow1.11.81S2Pi   使用 odps-jdbc 接入 ODPS    https://github.com/aliyun/aliyun-odps-jdbc?spm=5176.blog5588.yqblogcon1.10.U8HYDR
+http://notebook.odps.online/?spm=5176.blog6905.yqblogcon1.7.ReoK1P
+https://yq.aliyun.com/articles/3228?spm=5176.team4.teamshow1.51.VWadJB   logtail
+https://yq.aliyun.com/articles/6818?spm=5176.group50.0.0.0ZXvRH&commentId=597#comment-597   logshipper
+https://yq.aliyun.com/articles/2920?spm=5176.blog3185.yqblogcon1.13.1L41jN    写日志的那些事儿
 http://www.csdn.net/article/2014-10-21/2822201
 阿里云飞天平台是自己开发的,虚拟化用的是Xen.
 由于CDN节点在全国多地均有分布，所以与其他云产品间流量是通过公网传输。CDN流量与其他云产品流量是各自独立计费，之间并无关系。

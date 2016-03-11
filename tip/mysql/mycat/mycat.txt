@@ -1,4 +1,48 @@
-﻿http://songwie.com/articlelist/44   mysql中间件研究  Atlas，cobar，TDDL，mycat，heisenberg,Oceanus,vitess,OneProxy
+﻿datanode=database@datahost 
+分片字段（sharding column)+分片函数(rule function)
+表分组，子表和父表在同一个数据分片上
+字典表  全局表  数据冗余
+获得自增主键，插入记录后执行 select last_insert_id()
+readhost不会自动切换，多个writehost才能按顺序切换
+
+1.6 强制指定库
+强制走从：
+/*!mycat:db_type=slave*/ select * from travelrecord
+/*#mycat:db_type=slave*/ select * from travelrecord
+强制走写：
+/*#mycat:db_type=master*/ select * from travelrecord
+/*!mycat:db_type=master*/ select * from travelrecord
+
+Mycat 心跳检测 show slave status 中 "Seconds_Behind_Master", "Slave_IO_Running","Slave_SQL_Running" 三个字段来确定主从复制延时， 主节点宕机后 Seconds_Behind_Master 为 0，则表示同步，可以安全切换
+集群模式 show status like ‘wsrep%’ 
+
+<property name="sqlInterceptor">org.opencloudb.interceptor.impl.StatisticsSqlInterceptor</property>
+/*balance*/ select a.* from customer a where a.company_id=1;
+
+select * from ( select row_.*, rownum rownum_ from ( select sid from test where sts<>'N' order by sid desc ) row_ where rownum <= 15) where rownum_ > 5;
+select sid from test order by sid desc limit 5,10;
+
+<property name="serverPort">8066</property>
+<property name="managerPort">9066</property>
+show @@help; 可查看所有命令
+reload @@config   更新配置文件
+show @@datanode   显示节点列表
+show @@datanode where schema = mycat;
+show @@connection;
+show @@backend;
+show @@datasource;
+switch @@datasource name:index   切换数据源
+
+9066
+show @@sql ;
+show @@sql.slow ;
+reload @@sqlslow=0  设定时间阀值
+show @@syslog limit=50
+
+JVM 监控中的监控图是基于 jrds 实现；
+为了减少主从复制时延，建议采用 MySQL 5.6+版本，用 GTID 同步复制减少复制时延
+
+http://songwie.com/articlelist/44   mysql中间件研究  Atlas，cobar，TDDL，mycat，heisenberg,Oceanus,vitess,OneProxy
 https://github.com/flike/kingshard  https://github.com/is00hcw/kingshard/blob/master/README_ZH.md
 https://github.com/58code/Oceanus 
 

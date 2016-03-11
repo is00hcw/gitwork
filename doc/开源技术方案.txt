@@ -8,19 +8,46 @@ kopf 管理Elasticsearch 集群
 Sigar（System Information Gatherer And Reporter），是一个开源的工具，提供了跨平台的系统信息收集的API
 大众点评CAT
 
+MySQL Router 是轻量级 MySQL 中间件，提供应用与任意 MySQL 服务器后端的透明路由。  MySQL Router 最好和 MySQL Fabric 一起用  
 58同城服务框架 https://github.com/58code/Gaea
 数据库中间件  https://github.com/58code/Oceanus
 分库分表的数据库中间层方面，虽然有 cobar、tddl、mycat、compass、oceanus、kingshard、atlas 等一系列开源产品
 当当在 2015 年 9 月开始开源了内部使用的分布式作业调度框架——elastic-job，然后又于 2016 年 1 月 18 日开源了数据库分库分表中间件——sharding-jdbc
-
+Sharding-JDBC直接封装JDBC API，可以理解为增强版的JDBC驱动，旧代码迁移成本几乎为零：  https://github.com/dangdangdotcom/sharding-jdbc
+简化从本地配置文件到zookeeper的迁移  https://github.com/dangdangdotcom/config-toolkit
 SQL Parser部分采用的是Apache Calcite
+在系统的开发过程中，我们使用典型的百度查询来衡量其性能。使用原来的Hive 系统，需要花1000多秒完成一个典型的查询；使用Spark SQL—only系统，需要花300秒；但使用我们新的Alluxio 和Spark SQL系统，只需要花10秒。我们实现了速度的100倍提升，并满足了我们在设置这个项目时的提出交互式查询要求。
 
+https://github.com/alibaba/anyproxy  浏览器http代理，类似fiddler   http://anyproxy.io/cn/   
+https://github.com/alibaba/transmittable-thread-local#notebook-user-guide    跨线程池传递threadlocal
+https://github.com/alibaba/yugong   Oracle数据迁移同步工具(全量+增量,目标支持MySQL/DRDS)
+http://www.oschina.net/p/kerkee  搜狐hybrid
+https://github.com/58code/Oceanus   58同城数据库中间件
+https://github.com/mysql-inception/inception  Inception —— 集审核、执行、备份及生成回滚语句于一身的MySQL自动化运维工具
+Lepus数据库企业监控系统
+
+http://www.oschina.net/news/69808/2015-annual-ranking-top-100-new-open-source-software?p=3   2015 年度新增开源软件排名 TOP 100 
+
+https://github.com/knightliao/disconf  Disconf 可以为各种业务平台提供统一的配置管理服务。
+keepalived的使用中，仅需关心两点：配置文件（/etc/keepalived/keepalived.conf）和服务脚本（/etc/rc.d/init.d/keepalived）
+
+libPhenom 是 Facebook 发布的一个高性能的C语言并发编程框架，支持事件驱动，支持多线程，还提供了内存管理和常用数据结构，甚至是json处理。
+http://blog.paralleluniverse.co/2015/05/21/quasar-vs-akka/   quasar  Quasar 是一个 Java 库，提供了高性能、轻量级的线程，类似 Go 语言的 Channel，Erlang 语言的 Actor 和其他异步编程工具。
+https://github.com/naver/pinpoint  Pinpoint is an open source APM
+http://www.tuicool.com/articles/fABfMvQ  javOSize:新一代java分析工具
+https://dzone.com/articles/ratelimiter-discovering-google   RateLimiter
+https://yq.aliyun.com/articles/6822?spm=5176.blog3196.yqblogcon1.32.fNGhNt    Java 开发者不容错过的 12 种高效工具
+twitter fabric监控  https://realm.io/cn/news/oredev-ty-smith-building-android-sdks-fabric/
+https://yq.aliyun.com/articles/7569?spm=5176.100240.searchblog.8.zhB0mq  btrace
+http://xiaobaoqiu.github.io/blog/2015/08/27/zai-xian-zhen-duan-gong-ju/ 常用包括几个诊断工具包括,这里做一个简单的介绍:  1.BTrace  2.HouseMD  3.Greys-Anatomy
 oneapm
 buggly
 蒲公英内测
+百度开源首页发布：oss.baidu.com，主要整合了百度已经对外开源的项目。
+腾讯开源 http://code.tencent.com/keynvalue.html
 
 http://www.oschina.net/news/71132/nosql-use-case  全面梳理关系型数据库和 NoSQL 的使用情景
-
+https://yq.aliyun.com/articles/4265?spm=5176.blog5528.yqblogcon1.12.Be4f44   史上最全开源大数据工具汇总
 
 https://github.com/HubSpot/BuckyServer    https://github.com/HubSpot/BuckyClient  测量来自最终用户的浏览器 web 应用程序的性能，并发送该数据回服务器。
 https://github.com/BetterJS/badjs-report    js上报

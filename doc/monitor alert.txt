@@ -14,7 +14,7 @@ debug reload   saveµ±Ç°µÄrdbÎÄ¼ş£¬²¢Çå¿Õµ±Ç°Êı¾İ¿â£¬ÖØĞÂ¼ÓÔØrdb£¬¼ÓÔØÓëÆô¶¯Ê±¼ÓÔ
 debug loadaof  Çå¿Õµ±Ç°Êı¾İ¿â£¬ÖØĞÂ´ÓaofÎÄ¼şÀï¼ÓÔØÊı¾İ¿â
 docker pull dl.dockerpool.com:5000/ubuntu:14.04
 
-
+http://codethoughts.info/linux/2015/12/09/linux-performance-tuning-tools/   Linux ³£¼ûĞÔÄÜµ÷ÓÅ¹¤¾ß
 MPM£¬È«³Æmysql performance monitor£¬ÊÇÓÃÓÚ¼à¿ØmysqlµÄ¸÷ÖÖ²ÎÊı¼°ĞÔÄÜÖ¸±êµÄÌØ¶¨Ä£°å
 http://my.oschina.net/oneapmofficial/blog/609869   ¿ªÔ´¼à¿ØÏîÄ¿
 https://github.com/HubSpot/BuckyServer    https://github.com/HubSpot/BuckyClient  ²âÁ¿À´×Ô×îÖÕÓÃ»§µÄä¯ÀÀÆ÷ web Ó¦ÓÃ³ÌĞòµÄĞÔÄÜ£¬²¢·¢ËÍ¸ÃÊı¾İ»Ø·şÎñÆ÷¡£

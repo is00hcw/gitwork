@@ -16,6 +16,18 @@ https://github.com/Sybio/ImageWorkshop  图片处理
 https://github.com/JosephLenton/PHP-Error
 https://github.com/khoaofgod/phpfastcache  cache
 
+http://code.phpedia.net/#8mjt1crw
+http://www.phpedia.net/books
+https://www.shiyanlou.com/jobs/php
+
+ 
+http://laravel-china.github.io/php-the-right-way/#use_the_current_stable_version
+PHP 5.4 之后, 你可以不用安装和配置功能齐全的 Web 服务器，就可以开始学习 PHP。 要启动内置的 Web 服务器，需要从你的命令行终端进入项目的 Web 根目录，执行下面的命令:
+> php -S localhost:8000
+curl -s https://getcomposer.org/installer | php
+下面的命令, 会下载一个功能齐全的 Apache 和 最新版本的 PHP, 并会设置 WEB 目录 /path/to/your/php/files 运行在 http://localhost:8080:
+docker run -d --name my-php-webserver -p 8080:80 -v /path/to/your/php/files:/var/www/html/ php:apache
+
 
 http://www.thinkphp.cn/info/60.html
 http://www.thinkphp.cn/info/155.html

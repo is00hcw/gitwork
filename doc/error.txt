@@ -1,3 +1,5 @@
+start greys failed, because : com.sun.tools.attach.VirtualMachineDescriptor 没找到tools.jar https://github.com/oldmanpushcart/greys-anatomy/issues/103   ../bin/unpack200 tools.pack tools.jar
+
 smartgit 没响应  git config --global http.postBuffer 1048576000
 
 android模拟器没有图片 adb shell am broadcast android.intent.action.MEDIA_MOUNTED   http://stackoverflow.com/questions/17928576/refresh-android-mediastore-using-adb

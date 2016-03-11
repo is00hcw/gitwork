@@ -17,3 +17,46 @@ http://localhost:4567/hello
 https://github.com/ImaginateWayne/sparkjava-archetypes/tree/master/sparkjava-helloworld-archetype
 http://www.taywils.me/2013/11/05/javasparkframeworktutorial.html
 http://www.boxuk.com/blog/creating-rest-api-quickly-using-pure-java/
+
+
+http://codethoughts.info/java/2015/04/25/play-framework-overview/
+http://skaka.me/blog/2015/07/27/play1/
+http://skaka.me/blog/2015/08/17/play2/  https://github.com/sunnykaka/awesome-play
+http://skaka.me/blog/2015/09/13/play3/
+export SBT_OPTS="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=9999"
+http://www.ybrikman.com/writing/2014/03/10/the-ultimate-guide-to-getting-started/
+http://stackoverflow.com/questions/20772841/play-framework-handling-session-state   状态保存到cookie
+The default name for the cookie is PLAY_SESSION. This can be changed by configuring the key session.cookieName in application.conf. 
+http://hipfinger.net/posts/nginx_play_frontend_proxy/  nginx play
+http://spring-webservice-2-step-by-step.blogspot.tw/2013/12/spring-framework-integration-with-play.html   spring play
+http://www.bernhardwenzel.com/blog/2014/02/24/using-spring-with-play-framework
+https://www.playframework.com/documentation/2.1.x/ScalaDependencyInjection
+http://blog.shinetech.com/2015/04/21/playing-with-play-framework-2-3-x-rest-pipelines-and-scala/
+http://blog.jaceklaskowski.pl/2015/07/24/docker-your-scala-web-application-play-framework.html   docker  sbt-native-packager 插件  sbt docker:publishLocal
+addSbtPlugin("com.typesafe.sbt" % "sbt-native-packager" % "1.0.1")   http://blog.codacy.com/2015/07/16/dockerizing-scala/
+https://github.com/sbt/sbt-native-packager  
+http://news.oneapm.com/docker-play-framework-scala-web/
+http://pdf.th7.cn/down/files/1312/Learning%20Play!%20Framework%202.pdf
+http://colobu.com/2015/11/15/best-available-java-restful-micro-frameworks/
+近几年出现了一些相当优秀的框架，如Dropwizard，Play，Vert.x。 这篇系列要介绍的Play，通过ClassLoader在源代码修改的时候动态加载类，解决了修改代码需要重启服务器的问题，完全抛弃了Servlet技术栈，基于Netty实现了自己的 请求响应接口（Request/Result），基于Play的应用就是无状态的，另外Play处理请求的方式是无阻塞的（Non-Blocking）。
+当然在 Play! 里也有 session 的概念，也有一个方法 session()可以存取 session，但是这里只不过是浏览器端的 cookie，你调用 session()方法也只能存取 String 类型的值。
+Play! 2的模板就是可编译的 Scala 代码   LinkedIn最近采用了Play作为UI开发的Web框架。不过随着与Play的集成规模越来越大，LinkedIn正在计划用Gradle构建Play应用。
+the sbt-native-packager plugin (refer to http://www.scala-sbt.org/sbtnative-packager/). The plugin can be used to create the .msi (Windows), .deb(Debian), .rpm (Red Hat Package Manager), and .zip (universal) files, as well as the Docker images of our application. 
+
+docker run -d -p 9200:9200 -p 9300:9300 dockerfile/elasticsearch
+http://blog.xebia.com/monitoring-akka-with-kamon/  Essentially, Kamon introduces a TraceContext that is maintained across asynchronous calls: it uses AOP to pass the context along with messages. None of your own code needs to change.
+http://kamon.io/integrations/logback/trace-token-converter/    conversionRule    kamon.trace.logging.LogbackTraceTokenConverter
+http://skaka.me/blog/2015/07/21/kamon-statsd-graphite-grafana-introduction/
+https://github.com/kamon-io/Kamon  监控
+https://github.com/kamon-io/docker-grafana-graphite
+https://github.com/kamon-io/docker-grafana-influxdb
+docker run -d -p 80:80 -p 81:81 -p 8125:8125/udp -p 8126:8126 --name kamon-grafana-dashboard kamon/grafana_graphite
+80: the Grafana web interface.
+81: the Graphite web port
+8125: the StatsD port.
+8126: the StatsD administrative port.
+docker run -d -p 80:80 -p 8083:8083 -p 8084:8084 -p 8086:8086 --name grafana-influxdb_con grafana_influxdb
+80: Grafana web interface.
+8083: InfluxDB Admin web interface.
+8084: InfluxDB HTTPS API (not usable by default).
+8086: InfluxDB HTTP API.
