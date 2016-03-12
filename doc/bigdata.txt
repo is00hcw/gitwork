@@ -47,6 +47,13 @@ https://github.com/NGDATA/hbase-indexer
 Lily HBase Indexer使用SolrCloud来存储HBase的索引数据，当HBase执行写入、更新或删除操作时，Indexer通过HBase的replication功能来把这些操作抽象成一系列的Event事件，并用来保证写入Solr中的HBase索引数据的一致性。并且Indexer支持用户自定义的抽取，转换规则来索引HBase列数据。Solr搜索结果会包含用户自定义的columnfamily:qualifier字段结果，这样应用程序就可以直接访问HBase的列数据。
 http://blog.csdn.net/kissmelove01/article/details/45196941
 
+Alluxio  
+http://www.alluxio.org/documentation/cn/Running-Hadoop-MapReduce-on-Alluxio.html  在Alluxio上运行Hadoop MapReduce
+http://www.alluxio.org/documentation/cn/Running-Alluxio-Locally.html
+http://www.alluxio.org/documentation/cn/Building-Alluxio-Master-Branch.html#distro-support
+Alluxio提供了UnderFileSystem接口来将各种底层存储与Alluxio整合到一起。
+
+
 redis  Twemproxy 
 https://github.com/springside/springside4/wiki/redis
 http://www.cnblogs.com/edwinchen/p/3816938.html

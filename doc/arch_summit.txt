@@ -26,8 +26,7 @@ http://blog.cheyo.net/130.html
 http://tech.uc.cn/?p=2387
 http://blog.163.com/xiangfei209@126/blog/static/98695674201393024742225
 
-
-
+https://github.com/is00hcw/translations/blob/master/log-what-every-software-engineer-should-know-about-real-time-datas-unifying/README.md    日志：每个软件工程师都应该知道的有关实时数据的统一抽象
 http://news.oneapm.com/docker-monitoring/   Docker 监控实战
 http://www.infoq.com/cn/articles/diffy-twitter-open-source-automation-testing-tool  Diffy是一个开源的自动化测试工具，它能够自动检测基于Apache Thrift或者基于HTTP的服务。使用Diffy，只需要进行简单的配置，之后不需要再编写测试代码。
 https://yq.aliyun.com/articles/45?spm=5176.100240.searchblog.101.1KrXg6   阿里通信基础技术框架介绍

@@ -15,6 +15,10 @@ git commit --verbose   git commit 命令的verbose参数，会列出 diff 的结果。
 第一行是不超过50个字的提要，然后空一行，罗列出改动原因、主要变动、以及需要注意的问题。最后，提供对应的网址（比如Bug ticket）。
 
 
+http://www.cnblogs.com/linjiqin/p/3772681.html   Git和Code Review流程
+https://github.com/oldratlee/translations/blob/master/git-workflows-and-tutorials/workflow-feature-branch.md   git功能分支工作流
+
+
 http://liuzhichao.com/p/1974.html   Phabricator 实践之安装
 https://liuzhichao.com/p/1981.html
 https://liuzhichao.com/p/1992.html

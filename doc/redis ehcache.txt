@@ -5,6 +5,7 @@ http://shokunin.co/blog/2014/11/11/operational_redis.html    Running Redis in pr
 http://blog.huangz.me/diary/2015/redis-geo.html    Redis 的 GEO 特性将在 Redis 3.2 版本释出， 这个功能可以将用户给定的地理位置信息储存起来， 并对这些信息进行操作。
 http://dumbee.net/archives/114  Redis 2.8 配置文件说明
 
+https://github.com/onexsoft/onecache
 https://github.com/HunanTV/redis-ctl
 https://github.com/HunanTV/redis-cerberus   
 https://github.com/HunanTV/redis-cerberus/wiki/Redis-%E9%9B%86%E7%BE%A4%E4%BB%A3%E7%90%86%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E4%B8%8E%E4%BD%BF%E7%94%A8
@@ -25,7 +26,13 @@ Redis Faina是由著名的图片分享应用 instagram 开发的 Redis 监控服务  https://githu
 redis有7种数据类型：Strings,Lists,Sets,Hashes,Sorted sets,Bitmaps,HyperLogLogs
 http://calvin1978.blogcn.com/articles/continueredis.html
 
-http://sumory.com/2014/08/15/spring-redis-sentinel/
+http://lpyyn.iteye.com/blog/2238196   redis HA策略
+https://support.pivotal.io/hc/en-us/articles/205309388-How-to-setup-HAProxy-and-Redis-Sentinel-for-automatic-failover-between-Redis-Master-and-Slave-servers
+http://blog.csdn.net/wilbertzhou/article/details/45443261
+https://jambr.co.uk/2015/07/23/redis-sentinel-behind-haproxy/
+http://sumory.com/2014/08/15/spring-redis-sentinel/  Redis的sentinel使用及spring集成
+https://sensuapp.org/docs/latest/redis   haproxy  sentinel
+https://github.com/falsecz/haredis 
 redis-server ./sentinel.conf --sentinel --port 26379
 redis.clients.jedis.JedisSentinelPool
 org.springframework.data.redis.connection.RedisSentinelConfiguration

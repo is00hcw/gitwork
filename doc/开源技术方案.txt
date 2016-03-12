@@ -8,6 +8,7 @@ kopf 管理Elasticsearch 集群
 Sigar（System Information Gatherer And Reporter），是一个开源的工具，提供了跨平台的系统信息收集的API
 大众点评CAT
 
+gis处理： redis， mongodb， postgresql，elasticsearch， mysql 5.7
 MySQL Router 是轻量级 MySQL 中间件，提供应用与任意 MySQL 服务器后端的透明路由。  MySQL Router 最好和 MySQL Fabric 一起用  
 58同城服务框架 https://github.com/58code/Gaea
 数据库中间件  https://github.com/58code/Oceanus
