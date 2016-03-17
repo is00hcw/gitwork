@@ -13,6 +13,7 @@ http://opentalk.upyun.com/show/issues  »áÒéppt
 http://www.stuq.org/ppt/qcon2015/2a5d9377caceed899f1c2d14097285fc
 http://news.oneapm.com/author/fan/  oneapm¹«¿ª¿Î
 
+BaaS(Backend as a Service)£¬ºó¶Ë¼´·şÎñ£¬ÎªÒÆ¶¯Ó¦ÓÃºÍÓÎÏ·¿ª·¢ÕßÌá¹©ºó¶Ë·şÎñ£¬·şÎñ°üÀ¨½á¹¹»¯µÄÊı¾İ´æ´¢¡¢ÓÃ»§ºÍÈ¨ÏŞ¹ÜÀí¡¢ÎÄ¼ş´æ´¢¡¢ÔÆ²ÎÊı¡¢ÔÆ´úÂë¡¢ÍÆËÍ¡¢Ö§¸¶¡¢ÊµÊ±Í¨ĞÅµÈ¡£
 
 kopf ¹ÜÀíElasticsearch ¼¯ÈºÕæĞÄ·½±ã
 http://www.jianshu.com/p/3efbbf265f15  ´´Òµ¿ÉÒÔÓÃµ½µÄÒ»Ğ©µÚÈı·½·şÎñ
@@ -26,6 +27,8 @@ http://blog.cheyo.net/130.html
 http://tech.uc.cn/?p=2387
 http://blog.163.com/xiangfei209@126/blog/static/98695674201393024742225
 
+http://www.hollischuang.com/archives/1036   ¸÷´ó»¥ÁªÍø¹«Ë¾¼Ü¹¹Ñİ½øÖ®Â·»ã×Ü
+https://github.com/ty4z2008/Qix/blob/master/ds.md?spm=5176.blog8069.yqblogcon1.8.sMZNTk&file=ds.md   ·Ö²¼Ê½ÏµÍ³(Distributed System)×ÊÁÏ
 https://github.com/is00hcw/translations/blob/master/log-what-every-software-engineer-should-know-about-real-time-datas-unifying/README.md    ÈÕÖ¾£ºÃ¿¸öÈí¼ş¹¤³ÌÊ¦¶¼Ó¦¸ÃÖªµÀµÄÓĞ¹ØÊµÊ±Êı¾İµÄÍ³Ò»³éÏó
 http://news.oneapm.com/docker-monitoring/   Docker ¼à¿ØÊµÕ½
 http://www.infoq.com/cn/articles/diffy-twitter-open-source-automation-testing-tool  DiffyÊÇÒ»¸ö¿ªÔ´µÄ×Ô¶¯»¯²âÊÔ¹¤¾ß£¬ËüÄÜ¹»×Ô¶¯¼ì²â»ùÓÚApache Thrift»òÕß»ùÓÚHTTPµÄ·şÎñ¡£Ê¹ÓÃDiffy£¬Ö»ĞèÒª½øĞĞ¼òµ¥µÄÅäÖÃ£¬Ö®ºó²»ĞèÒªÔÙ±àĞ´²âÊÔ´úÂë¡£
@@ -38,6 +41,7 @@ http://wuchong.me/blog/2014/08/07/distributed-storage-system-knowledge/  ·Ö²¼Ê½´
 http://wuchong.me/blog/2014/04/19/recsys-cf-study/   ÍÆ¼öÏµÍ³Ñ§Ï°£ºĞ­Í¬¹ıÂËÊµÏÖ
 http://data.qq.com/article?id=2863    zookeeperÔËÓª¾­Ñé·ÖÏí
 http://h2ex.com/820   Ö§³ÅÎ¢²©Ç§ÒÚµ÷ÓÃµÄÇáÁ¿¼¶RPC¿ò¼Ü£ºMotan
+https://yq.aliyun.com/articles/7443?spm=5176.blog773.yqblogcon1.28.Pp9rK1   Î¢·şÎñÈÛ¶ÏÓë¸ôÀë
 http://geek.csdn.net/news/detail/49447   ¿ìµÄ´ò³µ¼Ü¹¹Êµ¼ù
 http://mp.weixin.qq.com/s?__biz=MzAwMDU1MTE1OQ==&mid=207036840&idx=1&sn=c99efd40a32e61e6e330f31d7e55e34e#rd   ½âÎöDockerÔÚÃ¢¹ûTVµÄÊµ¼ùÖ®Â·
 http://colobu.com/2015/11/09/The-Stack-of-uriDB/   uriDBÍøÕ¾µÄ¿ÉÀ©Õ¹µÄ¼¼ÊõÕ»

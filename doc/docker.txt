@@ -15,6 +15,7 @@ docker info命令来获取docker系统信息，这些信息包含了非常有用的数据，如： Containe
 https://mesosphere.github.io/marathon/   Marathon is an Apache Mesos framework for long-running applications. Given that you have Mesos running as the kernel for your datacenter, Marathon is the init or upstart daemon.
 https://github.com/mesos/chronos   Chronos is a replacement for cron. It is a distributed and fault-tolerant scheduler that runs on top of Apache Mesos that can be used for job orchestration.
 http://dockone.io/article/932   Kubernetes核心概念
+http://my.oschina.net/jayqqaa12/blog/633683?fromerr=GT3klbZS   使用Docker构建持续集成与自动部署的Docker集群
 
 “cAdvisor + InfluxDB + Grafana”是一个简单而又强大的组合，可以满足Docker监控的基本需求。
 Docker容器通过namespace做资源隔离，通过cgroup来做资源限制。对容器资源的监控，其实就是在宿主机上查看对应容器的cgroup stats，这是所有Docker监控工具的技术基础。
@@ -25,8 +26,13 @@ https://yq.aliyun.com/articles/6894?spm=5176.team11.teamshow1.21.Qgi5ea   使用Do
 https://yq.aliyun.com/articles/4041?spm=5176.blog6894.yqblogcon1.18.cF4YSY    docker 的理念与场景
 https://yq.aliyun.com/articles/1830?spm=5176.team11.teamshow1.58.Qgi5ea   基于docker构建jenkins和svn服务
 
+https://yq.aliyun.com/articles/7581?spm=5176.blog6809.yqblogcon1.30.zU8zNo   使用OSS数据卷(Volume)
+https://yq.aliyun.com/articles/7695?spm=5176.blog6809.yqblogcon1.29.zU8zNo   Docker Engine 镜像源站
+https://yq.aliyun.com/articles/7697?spm=5176.blog6809.yqblogcon1.28.zU8zNo   Docker Toolbox 镜像源站
+https://yq.aliyun.com/articles/7585?&utm_campaign=sys&utm_medium=market&utm_source=edm_email&msctype=email&mscmsgid=114616031401346337&    基于OSS搭建跨区域部署的分布式Docker镜像仓库
+docker-machine ssh登录到ECS，执行 apt-get install -qy linux-image-generic-lts-wily && reboot来升级内核
+https://yq.aliyun.com/articles/6809?spm=5176.blog7585.yqblogcon1.11.YQJpON   阿里云ECS Docker Machine Driver入门指南
 
-http://yq.aliyun.com/articles/1830?utm_source=tuicool&utm_medium=referral  基于docker构建jenkins和svn服务
 http://yq.aliyun.com/articles/303?spm=5176.team11.teamshow1.17.PxpN4k  elk
 http://yq.aliyun.com/articles/243?spm=5176.team11.teamshow1.20.PxpN4k
 http://yq.aliyun.com/articles/138?spm=5176.100240.searchblog.35.ca2oKm   管理容器的数据

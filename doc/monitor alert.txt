@@ -14,6 +14,20 @@ debug reload   saveµ±Ç°µÄrdbÎÄ¼ş£¬²¢Çå¿Õµ±Ç°Êı¾İ¿â£¬ÖØĞÂ¼ÓÔØrdb£¬¼ÓÔØÓëÆô¶¯Ê±¼ÓÔ
 debug loadaof  Çå¿Õµ±Ç°Êı¾İ¿â£¬ÖØĞÂ´ÓaofÎÄ¼şÀï¼ÓÔØÊı¾İ¿â
 docker pull dl.dockerpool.com:5000/ubuntu:14.04
 
+https://github.com/frostynova/open-falcon-docker  Ğ¡Ã×¼à¿Ø
+https://github.com/open-falcon/of-release
+https://github.com/openzipkin/zipkin   twitter
+https://github.com/openzipkin/docker-zipkin
+http://nezhazheng.com/2014/01/14/try-zipkin.html
+https://github.com/openzipkin/brave   java °æ
+https://github.com/sourcegraph/appdash  golang °æ
+https://github.com/levkhomich/akka-tracing   akka   http://www.lightbend.com/activator/template/activator-akka-tracing
+http://tonybai.com/2015/06/17/appdash-distributed-systems-tracing-in-go/
+http://twitter.github.io/zipkin/Quickstart.html
+http://qiuqingyu.coding.io/2015/12/11/CentOS%E4%B8%8Bzipkin%E9%83%A8%E7%BD%B2/
+http://www.jianshu.com/p/c14d0595b5f9
+http://bigbully.github.io/Dapper-translation/   ÂÛÎÄ
+
 http://codethoughts.info/linux/2015/12/09/linux-performance-tuning-tools/   Linux ³£¼ûĞÔÄÜµ÷ÓÅ¹¤¾ß
 MPM£¬È«³Æmysql performance monitor£¬ÊÇÓÃÓÚ¼à¿ØmysqlµÄ¸÷ÖÖ²ÎÊı¼°ĞÔÄÜÖ¸±êµÄÌØ¶¨Ä£°å
 http://my.oschina.net/oneapmofficial/blog/609869   ¿ªÔ´¼à¿ØÏîÄ¿

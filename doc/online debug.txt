@@ -22,6 +22,9 @@ housemd>  trace -d -s DeviceController+
 http://xiaobaoqiu.github.io/blog/2016/02/03/strace/ strace用来跟踪进程执行时的系统调用和所接收的信号
 http://xiaobaoqiu.github.io/blog/2015/08/27/zai-xian-zhen-duan-gong-ju/ 常用包括几个诊断工具包括,这里做一个简单的介绍:  1.BTrace  2.HouseMD  3.Greys-Anatomy
 
+
+http://www.infoq.com/cn/articles/Easily-Create-Java-Agents-with-ByteBuddy  通过使用Byte Buddy，便捷地创建Java Agent
+https://yq.aliyun.com/articles/7569?spm=5176.blog5837.yqblogcon1.14.5HIQZZ  Btrace详细指南
 https://github.com/aragozin/jvm-tools
 https://yq.aliyun.com/articles/2390   Greys Java在线问题诊断工具 , Greys的原理和Btrace一样，依赖了JDK6+提供的Instumentation特性，所以必须要求目标的JDK环境是JDK6及其以上的版本。
 http://dbaplus.cn/news-21-173-1.html  听阿里巴巴JVM工程师为你分析常见Java故障案例

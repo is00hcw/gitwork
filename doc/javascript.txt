@@ -1,6 +1,7 @@
 ﻿当浏览器遇到 JavaScript 时，它可能不知道这里的 JS 是否要改变 DOM。因此，它不得不假定它会改变，然后它阻止渲染，直到 JavaScript 完成了执行过程。如果增加了 async 标签，相当于向浏览器保证，该 JS 对于页面不是关键的，因此浏览器可以继续渲染，而不必等待 JS 执行完成。
 这就是 TTFB (Time To First Byte) 注1 的由来。当浏览器发起一个页面请求时，它就处于等待响应的状态。TTFB 代表了它需要多长时间才能收到第一个响应的字节。这个时间不但代表了你的服务器产生响应所需要的时间，而且意味着经过线缆传输所需要的时间。
 
+http://amazeui.org/getting-started/collections  开源方案
 https://imququ.com/post/letsencrypt-certificate.html  Let's Encrypt，免费好用的 HTTPS 证书
 http://www.jianshu.com/p/b3cc964c983d   Apache 中启用 HTTP/2
 https://imququ.com/post/intro-to-nghttp2.html  使用 nghttp2 调试 HTTP/2 流量
@@ -9,10 +10,12 @@ http://codethoughts.info/javascript/2015/08/23/react-js-hands-on/   React.js 初
 http://codethoughts.info/javascript/2015/07/18/javascript-bdd-with-mocha-chai-sinon/   用 Mocha/Chai/Sinon 测试 JavaScript 代码
 另外一个比较流行的 JavaScript BDD测试框架是Jasmine。它的思路和 Mocha 不同，是一个完备的测试框架，内置了断言库，Mock/Stub 等高级功能
 
+http://www.alloyteam.com/2016/03/es6-front-end-developers-will-have-to-know-the-top-ten-properties/   前端开发者不得不知的ES6十大特性  
+https://github.com/azat-co/cheatsheets/tree/master/es6
 
 http://www.javascripture.com/Date     api参考
 http://www.ruanyifeng.com/blog/2012/09/xmlhttprequest_level_2.html  XMLHttpRequest Level 2 使用指南
-http://amazeui.org/getting-started/collections  开源方案
+
 http://z42.readthedocs.org/zh/latest/frontend/html.html#id4
 https://github.com/amazeui/starter-kit  
 http://framework7.taobao.org/  
@@ -23,6 +26,13 @@ http://dev.dcloud.net.cn/mui/
 
 test
 http://www.oschina.net/p/dagger  Dagger是网易杭州研究院QA团队开发的一个轻量级、运行稳定的WebUI自动化测试框架，主要基于Selenium及TestNg可以认为是对Selenium进行二次封装的一个框架
+
+zepto  zepto中并没有fadeIn和fadeOut
+http://www.cnblogs.com/yexiaochai/p/4219523.html
+http://github.e-sites.nl/zeptobuilder/
+http://blog.csdn.net/whu_zhangmin/article/details/41863905   npm编译打包自定义的zepto模块
+http://blog.csdn.net/whu_zhangmin/article/details/41845343  click 事件有 200~300 ms 的延迟，为了更快的响应，最好用 Zepto 提供的 tap 事件
+:text :checkbox :first 等等在 jQuery 里面很常用的选择器，Zepto 不支持！原因很简单，jQuery 通过自己编写的 sizzle 引擎来支持 CSS 选择器，而 Zepto 是直接通过浏览器提供的document.querySelectorAll 接口
 
 
 http://www.sitepoint.com/jquery-custom-events/ http://blogs.sitepointstatic.com/examples/tech/custom-events/jquery.html

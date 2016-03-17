@@ -4,6 +4,10 @@ http://sock.yunba.io:3000/examples/yunba_javascript_demo.html
 http://dataguild.org/?p=6817
 http://mitsuruog.github.io/what-mqtt/
 
+VerneMQ 是一个分布式的MQTT消息代理。它兼容MQTT 3.1和3.1.1规范，并且正在整合MQTT-SN协议。
+https://github.com/mqtt/mqtt.github.io/wiki/servers
+https://github.com/mqtt/mqtt.github.io/wiki/libraries
+
 var yunba = new Yunba({server:'sock.yunba.io', port:3000, appkey:'52fcc04c4dc903d66d6f8f92'});
 socket.emit("connect", new JSONObject("{'appkey': '" + APPKEY + "'}"));
 

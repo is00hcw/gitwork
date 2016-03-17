@@ -56,6 +56,13 @@ http://www.sebastien-han.fr/blog/2012/04/08/mysql-galera-cluster-with-haproxy/
 http://www.sebastien-han.fr/blog/2012/04/01/mysql-multi-master-replication-with-galera/
 http://www.sebastien-han.fr/blog/2012/08/06/multi-mysql-instances-with-galera/
 
+双主复制
+https://www.digitalocean.com/community/tutorials/how-to-set-up-mysql-master-master-replication
+https://support.rackspace.com/how-to/mysql-master-master-replication/
+
+http://nezhazheng.com/database/2014/02/18/mysql-replication.html    如果想限制只复制一部分数据，可以使用复制过滤器 replicate_wild_do_table: db1.%
+
+
 百度mysql分库分表中间件服务器heisenberg
 
 https://github.com/youtube/vitess
@@ -225,7 +232,9 @@ http://blog.jobbole.com/87450/  运维角度浅谈MySQL数据库优化
 
 http://segmentfault.com/a/1190000003063874  XtraBackup
 http://agapple.iteye.com/blog/1796633  canal
-
+http://liyonghui160com.iteye.com/blog/2176066
+http://maxwells-daemon.io/  Maxwell = Mysql + Kafka , an application that reads MySQL binlogs and writes row updates to Kafka as JSON. It's playing in the same space as mypipe and databus
+https://github.com/zendesk/maxwell
 
 http://www.csdn.net/article/2015-01-16/2823591
 redo 日志同步属于物理同步方法，简单直接，将修改的物理部分传送到备库执行，主备共用一致的 LSN，只要保证 LSN 相同即可，同一时刻，只能主库或备库一方接受写请求； binlog的同步方法属于逻辑复制，分为statement 或 row 模式，其中statement记录的是SQL语句，Row 模式记录的是修改之前的记录与修改之后的记录，即前镜像与后镜像；备库通过binlog dump 协议拉取binlog,然后在备库执行。

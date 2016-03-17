@@ -4,6 +4,26 @@ mdc
 http://www.zhnhao.com/coding/2015/10/16/Spring%E9%85%8D%E7%BD%AE%E6%97%A5%E8%AE%B0%E2%80%94%E2%80%94%E6%97%A5%E5%BF%97%E4%B8%8E%E5%9B%BD%E9%99%85%E5%8C%96/
 http://ketao1989.github.io/posts/LogBack-Implemention-And-Slf4j-Mdc.html
 
+日志优化
+<appender name="ASYNC500" class="ch.qos.logback.classic.AsyncAppender">
+    <queueSize>500</queueSize>
+    <discardingThreshold>0</discardingThreshold>
+    <appender-ref ref="FILE" />
+</appender>
+http://blog.takipi.com/how-to-instantly-improve-your-java-logging-with-7-logback-tweaks/
+http://highscalability.com/blog/2015/1/7/the-ultimate-guide-5-methods-for-debugging-production-server.html
+在分布式系统中，一个请求可能会经过多个不同的子系统，这时最好生成一个UUID附在请求中，每个子系统在打印日志时都将该UUID放在MDC里，便于后续查询相关的日志。
+
+Elasticsearch - 一个基于Lucene的文档存储，主要用于日志索引、存储和分析。
+Fluentd - 日志收集和发出
+Flume -分布式日志收集和聚合系统
+Graylog2 -具有报警选项的可插入日志和事件分析服务器
+Heka -流处理系统，可用于日志聚合
+Kibana - 可视化日志和时间戳数据
+Logstash -管理事件和日志的工具
+Octopussy -日志管理解决方案（可视化/报警/报告）
+https://testerhome.com/topics/3026
+
 grok
 http://chenlinux.com/2014/10/19/grokdebug-commandline/
 https://github.com/elastic/logstash/tree/v1.1.9/patterns

@@ -18,6 +18,7 @@ http://lbs.amap.com/api/javascript-api/reference/plugin/#AMap.MarkerClusterer
 http://developer.baidu.com/map/library.htm
 
 kafka
+https://yq.aliyun.com/articles/5914?spm=5176.blog8069.yqblogcon1.235.sMZNTk     Kafka 设计与原理详解
 http://colobu.com/2016/02/24/kafka-connect/    kafka connect
 https://github.com/wushujames/kafka-mysql-connector      https://github.com/zendesk/maxwell   解析mysql binlog 导入kafka
 https://dzone.com/articles/kafka-clients-at-most-once-at-least-once-exactly-o    Kafka Clients (At-most-once, At-least-once, Exactly-once, and Avro Client)
