@@ -43,6 +43,22 @@ jhat heap.bin
 还可以在http://localhost:7000/histo/查看堆内存柱状图。
 目前，JRockit Mission Control在标准版Java SE中已经可以使用。Java Mission Control（JMC）与Java Flight Recorder一起工作，适用于HotSpot JVM，用来记录核心数据和事件。
 
+http://xstarcd.github.io/wiki/Java/JVM_GC.html  JVM gc参数设置与分析
+http://www.importnew.com/15722.html  在运行时开启GC日志
+java -XX:+PrintFlagsFinal -version|grep manageable  这些flag可通过JDK management interface（-XX:+PrintFlagsFinal）动态修改。
+jinfo -flag +PrintGCDetails 12278  
+jinfo -flag +PrintGC 12278
+
+https://github.com/ColZer/DigAndBuried/blob/master/system/java-memory.md  进程分析之JAVA内存
+http://www.infoq.com/cn/articles/Visualizing-Java-Garbage-Collection
+https://github.com/chewiebug/GCViewer
+http://www.ibm.com/developerworks/java/jdk/tools/gcmv/#download
+http://www.pingan.im/201407/java-performance-tuning/   Java性能问题分析及调优总结
+http://www.ateam-oracle.com/valuable-tools-for-diagnostics-gathering-and-troubleshooting/ 
+
+在最近的64位JVM中，默认的栈大小是1024KB。如果服务器收到大量请求，或者handleRequest方法执行很慢，服务器可能因为创建了大量线程而崩溃。例如有1000个并行的请求，创建出来的1000个线程需要使用1GB的JVM内存作为线程栈空间。
+由于线程栈大小引发的内存问题，可以通过-Xss开关来调整栈大小。缩小线程栈大小之后，可以减少每个线程的开销，但是可能会引发栈溢出（StackOverflowErrors）。对于一般应用程序而言，默认的1024KB过于富裕，调小为256KB或者512KB可能更为合适。Java允许的最小值是160KB。
+
 
 http://blog.csdn.net/qyongkang/article/details/6090497   btrace
 http://blog.csdn.net/qyongkang/article/details/6091931

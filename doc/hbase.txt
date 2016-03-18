@@ -1,4 +1,20 @@
-﻿http://blog.csdn.net/u011491148/article/details/45749807    利用Phoenix为HBase创建二级索引
+﻿http://www.ibm.com/developerworks/cn/java/j-lo-HBase/   HBase 数据库检索性能优化策略
+http://www.aliog.com/70845.html  HBase性能优化完全版
+http://dailidong.blog.51cto.com/4183991/1735157   Hbase万亿级存储性能优化总结
+http://jxy.me/2015/07/06/hbase-tips/  HBase豆知识
+http://hbase.apache.org/book.html#performance
+http://www.chinastor.com/a/hbase/0G3U922014.html   HBase应用性能测试方法
+
+HBase的Relication机制，事实上和Mysql的同步机制非常像。HBase的每一个Region Server都会有WAL Log，当Put/Delete时。都会先写入到WAL Log里。
+然后后台有线程会把WAL Log随机发给Slave的Region Server。而Slave的Region Server会在zookeeper上记录自己同步到的位置。
+ 
+当region在进行compact或者split会出现短暂的读写堵塞。如果Row-Key的区分度不高，性能也不行。
+https://www.mapr.com/blog/in-depth-look-hbase-architecture
+hbase返回的结果按照rowkey,CF,qualifiers,timestamp的次序进行排序  HBase在进行数据存储时，新数据不会直接覆盖旧的数据，而是进行追加操作，不同的数据通过时间戳进行区分.默认每行数据存储三个版本.
+hbase org.apache.hadoop.hbase.util.RegionSplitter test_table HexStringSplit -c 10 -f f1
+
+
+http://blog.csdn.net/u011491148/article/details/45749807    利用Phoenix为HBase创建二级索引
 其核心思想是保证索引表和主表在同一个region server上。详见：https://github.com/Huawei-Hadoop/hindex    http://www.dengchuanhua.com/167.html   http://www.thebigdata.cn/upload/2013-10/13101415173453.pdf
 HBase在0.92之后引入了coprocessors，提供了一系列的钩子，让我们能够轻易实现访问控制和二级索引的特性。   http://www.dengchuanhua.com/149.html  
 在分布式系统中，需要生成全局UID的场合还是比较多的，twitter的snowflake解决了这种需求，实现也还是很简单的，除去配置信息，核心代码就是毫秒级时间41位+机器ID 10位+毫秒内序列12位。

@@ -14,6 +14,7 @@ http://www.stuq.org/ppt/qcon2015/2a5d9377caceed899f1c2d14097285fc
 http://news.oneapm.com/author/fan/  oneapm公开课
 
 BaaS(Backend as a Service)，后端即服务，为移动应用和游戏开发者提供后端服务，服务包括结构化的数据存储、用户和权限管理、文件存储、云参数、云代码、推送、支付、实时通信等。
+Google在NSDI '16会议上公开了它的软件网络负载均衡器Maglev
 
 kopf 管理Elasticsearch 集群真心方便
 http://www.jianshu.com/p/3efbbf265f15  创业可以用到的一些第三方服务
@@ -27,6 +28,7 @@ http://blog.cheyo.net/130.html
 http://tech.uc.cn/?p=2387
 http://blog.163.com/xiangfei209@126/blog/static/98695674201393024742225
 
+http://chuansong.me/n/1208635   天机镜—优土大数据平台应用级别监控神器
 http://www.hollischuang.com/archives/1036   各大互联网公司架构演进之路汇总
 https://github.com/ty4z2008/Qix/blob/master/ds.md?spm=5176.blog8069.yqblogcon1.8.sMZNTk&file=ds.md   分布式系统(Distributed System)资料
 https://github.com/is00hcw/translations/blob/master/log-what-every-software-engineer-should-know-about-real-time-datas-unifying/README.md    日志：每个软件工程师都应该知道的有关实时数据的统一抽象

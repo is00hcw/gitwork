@@ -1,6 +1,11 @@
 http://dev.xiaomi.com/doc/p=6298/index.html    MIUI系统音乐控件标准化方案,第三方APP接入指南
 https://github.com/googlesamples/
 
+https://segmentfault.com/q/1010000004253063/a-1020000004333459  开源库
+https://github.com/JStumpp/awesome-android
+https://github.com/ruijun/Android-Dev-Favorites
+http://www.infoq.com/cn/news/2015/06/mobile-testing-service?utm_source=tuicool  测试工具
+
 https://github.com/excilys/androidannotations/wiki/AvailableAnnotations
 https://github.com/excilys/androidannotations/wiki/WorkingWithThreads  后台线程@Background和UI线程@UiThread  http://zhenhappy.github.io/2015/11/29/Android-Annotations-7-Threading.html
 http://zhenhappy.github.io/2015/11/05/JRebel-for-Android-Studio.html   JRebel for Android实战用法

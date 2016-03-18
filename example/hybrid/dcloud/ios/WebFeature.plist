@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Geolocation</key>
+	<string>PGGeolocation</string>
+	<key>Orientation</key>
+	<string>PGOrientation</string>
+	<key>Maps</key>
+	<string>PGMap</string>
+	<key>Device</key>
+	<string>PGDeviceStatus</string>
+	<key>File</key>
+	<string>PGFile</string>
+	<key>Cache</key>
+	<string>PGCache</string>
+	<key>Zip</key>
+	<string>PGZip</string>
+	<key>Runtime</key>
+	<string>PGRuntime</string>
+	<key>Audio</key>
+	<string>PGAudio</string>
+	<key>Accelerometer</key>
+	<string>PGAccelerometer</string>
+	<key>Push</key>
+	<string>PGPush</string>
+	<key>barcode</key>
+	<string>PGBarcode</string>
+	<key>XMLHttpRequest</key>
+	<string>PGXHR</string>
+	<key>UI</key>
+	<dict>
+		<key>name</key>
+		<string>PGUI</string>
+		<key>imp</key>
+		<dict>
+			<key>Navigator</key>
+			<string>PG_Navigate</string>
+			<key>WebNavigator</key>
+			<string>PGWebNavi</string>
+		</dict>
+	</dict>
+	<key>Contacts</key>
+	<string>PGContacts</string>
+	<key>Proximity</key>
+	<string>PGProximity</string>
+	<key>Invocation</key>
+	<string>PGInvocation</string>
+	<key>plugintest</key>
+	<string>PGPluginTest</string>
+</dict>
+</plist>

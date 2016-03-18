@@ -8,7 +8,21 @@ http://yq.aliyun.com/articles/2779?spm=5176.team22.teamshow1.28.e6HPJz    tomcat
 http://yq.aliyun.com/articles/2930?spm=5176.blog3185.yqblogcon1.14.WtcEqw   在阿里云容器服务上创建一个spring boot应用
 https://buy.aliyun.com/calculator?spm=5176.bbsr273622.0.0.aBpj4j#/ecs    价格计算器
 http://bluereader.org/article/139433954  使用ossfs工具将OSS挂载到linux系统目录   https://bbs.aliyun.com/read/267052.html?spm=0.0.0.0.9ZZBWm
+https://help.aliyun.com/document_detail/emr/trouble-shooting/ssh.html?spm=5176.2052073.9.6.RxjdDm  SSH登陆集群  SSH隧道
 
+通过AOF文件将数据导入到新的AliCloudDB for Redis实例 (假定生成的AOF文件名为append.aof)
+# redis-cli -h aliyun_redis_instance_ip -p 6379 -a instance_id:password --pipe < appendonly.aof
+目前每个AliCloudDB for Redis均为1主1从的架构，暂时不能配置1主N从。目前128G及以上的AliCloudDB for Redis实例是分布式集群实例。
+RDS的 mysql5.6主备一致性是基于gtid的多线程复制来保证的。RDS产品是主备架构，但是备库不支持读写请求，只作高可用存在，RDS目前已经推出只读实例，您可以到官网购买RDS只读实例做读写分离。阿里云RDS使用 MySQL 的原生复制功能，将源数据库实例(以下简称主实例)的更改传播到所有相关的只读节点。
+通过 mysqlbinlog 查看 binlog 日志时添加参数进行解码，如下：
+mysqlbinlog -vv --base64-output=decode-rows mysql-bin.000110
+标准访问模式下，RDS使用负载均衡屏蔽了数据库引擎HA切换对应用层的影响。异地灾备实例通过数据传输DTS实现两地间实例的实时同步， 灾备实例本身也是主从高可用架构
+RDS for MySQL 5.6版本通过TokuDB引擎支持数据压缩功能。经过大量测试表明，数据从InnoDB表转到TokuDB表里面后数据空间可以减少80%到90%，即2T的数据量能压缩到400G甚至更低。 除了压缩外，TokuDB还支持事务和在线DDL操作
+只读节点的数据为了和主节点保持同步，采用了MySQL原生的binlog复制技术，由一个IO线程和一个SQL线程来完成。IO线程负责将主库的binlog拉取到只读节点，SQL线程负责消费这些binlog日志应用到只读实例。这两个线程会消耗只读节点的IO资源，所以当只读节点IOPS配置不够的时候，则会导致只读节点的数据出现延迟。
+https://help.aliyun.com/document_detail/rds/OpenAPI-manual/RDS-OpenAPI-InstanceManagement/ModifyDBInstanceHAConfig.html   修改RDS实例数据复制和高可用策略  Sync：强同步；Semi-sync：半同步；Async：异步
+https://help.aliyun.com/document_detail/rds/OpenAPI-manual/RDS-OpenAPI-InstanceManagement/SwitchDBInstanceHA.html    切换RDS实例的主备
+https://help.aliyun.com/knowledge_detail/6698414.html?spm=5176.788314909.2.9.5zuNml   RDS mysql恢复数据到本地自建库
+https://help.aliyun.com/knowledge_detail/6698406.html?spm=5176.788314909.2.7.5zuNml   RDS for mysql的内存大体可以分为两部分：共享内存和session私有内存
 
 下载后的mysql  binlog日志需要通过mysqlbinlog命令查看，具体参数如下：  https://help.aliyun.com/knowledge_detail/6526067.html
 mysqlbinlog -vv --base64-output=decode-rows mysqlbinlog.0001
@@ -18,6 +32,10 @@ mysqlbinlog -vv --base64-output=decode-rows mysqlbinlog.0001
 即将公测的云数据库PetaData版
 https://github.com/facebook/mcrouter   twemproxy,也叫nutcracker,是twtter开源的Redis和Memcache代理服务器
 
+云盘为 ECS 实例提供数据块级别的数据存储，采用三副本的分布式机制，为 ECS 实例提供 99.9999999%的数据可靠性保证。
+根据性能的不同，云盘又可以分为普通云盘、高效云盘和 SSD 云盘等类型。普通云盘面向低 I/O 负载的应用场景，为 ECS 实例提供数百 IOPS 的 I/O 性能。高效云盘面向中度 I/O 负载的应用，为 ECS 实例提供最高 3000 随机 IOPS 的存储性能。SSD 云盘为 I/O 密集型应用，提供稳定的高随机 IOPS 性能。
+本地SSD盘“本地”是指？本地是相对于普通云盘讲的，不同于普通云盘的三份数据副本机制，本地SSD盘采用RAID技术，无法避免单台物理机宕机导致的数据丢失风险；如果您对数据可靠性要求高，则建议在应用层做数据冗余保证数据的可靠性。本地的意思就是没有像普通云磁盘一样的三重备份，采用了RAID技术。
+https://help.aliyun.com/knowledge_detail/5974935.html
 
 VPC是指专有网络，可以在公共云当中隔离网络环境，完全掌控自己的虚拟网络，包括选择自有 IP 地址范围、划分网段、配置路由表和网关等。此外通过专线/VPN等连接方式可将VPC与传统数据中心组成一个按需定制的网络环境，实现应用的平滑迁移上云。
 基于合规、容灾以及运维因素考虑，政企、金融等行业客户普遍需要更为私密的网络环境，但同时还需要公共云强大的弹性扩展等优势。

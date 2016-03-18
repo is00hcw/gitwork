@@ -5,6 +5,14 @@ http://shokunin.co/blog/2014/11/11/operational_redis.html    Running Redis in pr
 http://blog.huangz.me/diary/2015/redis-geo.html    Redis µÄ GEO ÌØĞÔ½«ÔÚ Redis 3.2 °æ±¾ÊÍ³ö£¬ Õâ¸ö¹¦ÄÜ¿ÉÒÔ½«ÓÃ»§¸ø¶¨µÄµØÀíÎ»ÖÃĞÅÏ¢´¢´æÆğÀ´£¬ ²¢¶ÔÕâĞ©ĞÅÏ¢½øĞĞ²Ù×÷¡£
 http://dumbee.net/archives/114  Redis 2.8 ÅäÖÃÎÄ¼şËµÃ÷
 
+https://github.com/sreeix/redis-proxy
+https://github.com/wandoulabs/codis/blob/release3.0/doc/tutorial_zh.md   codis 3.0
+http://my.oschina.net/vampire/blog/639329
+go get github.com/tools/godep
+which etcd &>/dev/null || go get github.com/coreos/etcd
+go get -u -d github.com/wandoulabs/codis
+
+http://www.oschina.net/p/cachecloud-Redis
 https://github.com/onexsoft/onecache
 https://github.com/HunanTV/redis-ctl
 https://github.com/HunanTV/redis-cerberus   
@@ -57,12 +65,6 @@ SentinelÄ¬ÈÏÔËĞĞÔÚ26379¶Ë¿ÚÉÏ£¬sentinelÖ§³ÖredisĞ­Òé£¬ËùÒÔ¿ÉÒÔÊ¹ÓÃredis-cli¿Í»§¶
 ÁíÍâÒ»ÖÖÊÇÊ¹ÓÃ·¢²¼/¶©ÔÄÄ£Ê½À´¶©ÔÄsentinelÊÂ¼ş£¬±ÈÈçËµfailover£¬»òÕßÄ³¸öredisÊµÀıÔËĞĞ³ö´í£¬µÈµÈ¡£
 SENTINEL masters ÏÔÊ¾±»¼à¿ØµÄËùÓĞmasterÒÔ¼°ËüÃÇµÄ×´Ì¬.
 SENTINEL failover <master name> Ç¿ÖÆsentinelÖ´ĞĞfailover£¬²¢ÇÒ²»ĞèÒªµÃµ½ÆäËûsentinelµÄÍ¬Òâ¡£µ«ÊÇfailoverºó»á½«×îĞÂµÄÅäÖÃ·¢ËÍ¸øÆäËûsentinel¡£
-
-https://github.com/sreeix/redis-proxy
-https://github.com/wandoulabs/codis/blob/release3.0/doc/tutorial_zh.md   codis 3.0
-go get github.com/tools/godep
-which etcd &>/dev/null || go get github.com/coreos/etcd
-go get -u -d github.com/wandoulabs/codis
 
 
 http://www.ttlsa.com/redis/redis-keepalived-achieve-high-availability/
@@ -197,7 +199,6 @@ http://debugo.com/redis-sentinel/
 https://www.52os.net/articles/redis-two-nodes-failover.html
 https://dbarobin.com/2015/11/09/scale-out-of-redis-with-twemproxy/
 http://blog.lday.me/?p=163     ·şÎñ»¯CacheÏµÍ³¨CĞ¡Ã×ÍøRedisÊµ¼ù
-https://github.com/HunanTV/redis-cerberus
 http://m.oschina.net/blog/377568 
 http://op.baidu.com/2014/07/bdrp%E5%88%86%E5%B8%83%E5%BC%8Fredis%E9%9B%86%E7%BE%A4/
 http://zhuwanjun.com/?p=25

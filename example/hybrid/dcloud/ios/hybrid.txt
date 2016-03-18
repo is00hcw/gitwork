@@ -1,0 +1,96 @@
+http://ask.dcloud.net.cn/article/66
+http://ask.dcloud.net.cn/article/67
+http://edu.yuantuan.com/classroom/5/courses
+
+
+http://casatwy.com/iosying-yong-jia-gou-tan-ben-di-chi-jiu-hua-fang-an-ji-dong-tai-bu-shu.html  iOS动态部署方案 
+https://github.com/casatwy/CTJSBridge
+https://github.com/mmin18/WaxPatch
+https://github.com/bang590/JSPatch
+
+http://johnwong.github.io/mobile/2015/04/20/cross-platform-and-hybrid.html
+https://github.com/marcuswestin/WebViewJavascriptBridge
+Native Bridge给JS Bridge发消息的关键方法是UIWebView的stringByEvaluatingJavaScriptFromString：
+- (NSString *)stringByEvaluatingJavaScriptFromString:(NSString *)script;
+JS Bridge给Native发消息时，将消息先保存，然后通过iframe加载一个特殊的url。Native Bridge拦截到这个url后，通过调用上面的stringByEvaluatingJavaScriptFromString方法来拿到消息。
+
+
+http://ued.qunar.com/mobile/blog/2015/12/21/2015%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4D2%E5%89%8D%E7%AB%AF%E8%AE%BA%E5%9D%9B-%E5%8F%82%E4%BC%9A%E6%80%BB%E7%BB%93/
+https://github.com/taobaofed/react-web
+手淘分享了他们的方案，他们的方案是 将Native覆盖在WebView上，提供 TableView、TabBar、Slider、SideBar四个Native组件，通过引擎将模板渲染成Native和Webview混合的UI，比较固定或者高性能的部分用native，动态内容用web，一起拼装。
+
+http://bxbxbai.gitcafe.io/2015/08/16/talk-about-bybird-app/   谈谈App混合开发
+
+http://clouda.baidu.com/  百度混合方案
+http://clouda.baidu.com/blend2
+http://clouda.baidu.com/blendui/get_started/test
+
+
+http://www.oschina.net/p/samurai-native?fromerr=YG5gXnUx
+Samurai-Native 是一个基于浏览器内核通过 HTML+CSS 开发原生移动应用，目前支持 iOS ，很快会支持 Android。
+https://github.com/hackers-painters/samurai-native
+
+http://www.infoq.com/cn/articles/hybrid-app
+
+upnp
+UPnP消息都被封装在HTTP协议及其变种中。HTTP协议的变种是HTTPU和HTTPMU，这些协议的格式沿袭了HTTP协议，只不过与HTTP不同的是他们通过UDP而非TCP来承载的，并且可用于组播进行通信。
+http://www.h3c.com.cn/MiniSite/Technology_Circle/Net_Reptile/The_Five/Home/Catalog/201206/747039_97665_0.htm
+http://www.tuicool.com/articles/nUjmMf
+
+http://www.wtoutiao.com/p/h27ist.html    漫谈 iOS Crash 收集框架
+
+安全密码 加壳
+http://openwares.net/misc/restful_api_security.html   Restful API 安全
+https://support.qiniu.com/hc/kb/article/112814/
+http://tanqisen.github.io/blog/2014/06/06/how-to-prevent-app-crack/
+http://www.jianshu.com/p/856bf5b437aa
+http://www.freebuf.com/articles/web/82315.html
+Top 10 Risks给我们指引了方向：
+M1: 不安全的服务器端访问控制
+M2: 不安全的数据存储
+M3: 传输层保护不足
+M4: 非预期的数据泄露
+M5: 脆弱的认证和授权
+M6: 已知的弱加密算法
+M7: 客户端注入
+M8: 通过不被信任的输入改变安全设定
+M9: 会话处理不当
+M10: 缺乏二进制保护
+http://www.tuicool.com/articles/riYzA3Y
+http://www.jianshu.com/p/65c2f447946e   jadx
+http://limboy.me/ios/2014/12/31/learning-ios.html
+
+架构
+http://www.zhihu.com/question/30976423
+http://www.infoq.com/cn/news/2016/03/lixianhui-interview  滴滴采用了 Lua 和 JSPatch 两种热修复技术，由于 JSPatch 更加被苹果官方认可，目前在线上主要使用 JSPatch。
+http://rocko.xyz/2015/11/07/MVVM_Android-CleanArchitecture/
+https://github.com/android10/Android-CleanArchitecture
+https://msdn.microsoft.com/en-us/library/hh848246.aspx
+ViewModel，binder 所在之处，是 View 的抽象，对外暴露出公共属性和命令，是 View 与 Model 的（绑定）连接器
+此外还有必不可少的一部分：Binder，Android 中也就是 Data binding 了，提供 View 与 Model 的绑定功能，所以 Model-View-ViewModel 又称为 Model-View-Binder。
+与Controller不同的是Presenter会反作用于View，Model的变更通知首先被Presenter获得，然后Presenter再去更新View。
+所谓View的Model就是包含View的一些数据属性和操作的这么一个东东，这种模式的关键技术就是数据绑定（data binding），View的变化会直接影响ViewModel，ViewModel的变化或者内容也会直接体现在View上。
+http://m.blog.csdn.net/article/details?id=43085409
+UI层一般包括Activity，Fragment，Adapter等直接和UI相关的类，UI层的Activity在启动之后实例化相应的Presenter，App的控制权后移，由UI转移到Presenter，两者之间的通信通过BroadCast、Handler或者接口完成，只传递事件和结果。举个简单的例子，UI层通知逻辑层（Presenter）用户点击了一个Button，逻辑层（Presenter）自己决定应该用什么行为进行响应，该找哪个模型（Model）去做这件事，最后逻辑层（Presenter）将完成的结果更新到UI层。
+转移逻辑操作之后可能部分较为复杂的Activity内代码量还是不少，于是在分层的基础上再加入模板方法（Template Method）。具体做法是在Activity内部分层。其中最顶层为BaseActivity，不做具体显示，而是提供一些基础样式，Dialog，ActionBar在内的内容，展现给用户的Activity继承BaseActivity，重写BaseActivity预留的方法。如有必要再进行二次继承，App中Activity之间的继承次数最多不超过3次。
+
+
+nodejs
+https://github.com/node-modules/cfork
+https://github.com/node-modules/graceful
+http://frontenddev.org/article/nodejs-in-a-production-environment-1-deploy-alinode-for-performance-monitoring.html
+tnvm（taobao node version manage）是淘宝使用的 node 版本管理，可以管理 nodejs、alinode 的版本，使用简单快捷，比其他同类工具方便很多。
+wget -qO- https://raw.githubusercontent.com/aliyun-node/tnvm/master/install.sh | bash
+https://github.com/aliyun-node/alinode-docker
+https://github.com/aliyun-node/agentx
+https://github.com/aliyun-node/tnvm
+Master 只做进程管理，Worker 异常退出后自动重启逻辑使用的模块 cfork，Http 服务优雅退出的模块 graceful 等等。
+
+http://alinode.aliyun.com/blog/23  Node.js 调优利器
+http://alinode.aliyun.com/blog/21
+http://alinode.aliyun.com/blog/4
+http://alinode.aliyun.com/doc/deploy
+http://profiler.alinode.aliyun.com/  Node Profiler
+http://www.jianshu.com/p/16e3813ae620
+
+

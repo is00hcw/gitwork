@@ -6,7 +6,7 @@ orzdba 的主要功能： 将MySQL性能元数据进行计算，统计MySQL/INNO
 http://openinx.github.io/2014/05/21/mysql-relatives/  MySQL相关总结
 
 https://www.percona.com/blog/2016/02/29/graphing-mysql-performance-with-prometheus-and-grafana/  prometheus grafana监控
-https://github.com/percona/grafana-dashboards
+https://github.com/percona/grafana-dashboards  监控
 https://github.com/outbrain/orchestrator   可视化复制拓扑 
 https://www.percona.com/blog/2016/02/15/mysql-mariadb-with-mariadb-auditing-plugin/  审计
 MySQL Utilities 提供的工具可以帮助简化和自动化，甚至一些复制相关的任务。
@@ -19,6 +19,12 @@ https://github.com/mysql/mysql-utilities
 https://github.com/yoshinorim/mha4mysql-manager
 https://github.com/percona/percona-pacemaker-agents
 https://github.com/mariadb-corporation/replication-manager
+https://github.com/tumblr/jetpants    https://www.percona.com/live/mysql-conference-2013/sites/default/files/slides/Elias_percona_live_sc_2013.pdf
+百度mysql分库分表中间件服务器heisenberg
+
+https://github.com/youtube/vitess
+http://www.chinaxing.org/articles/Distribute/2015/09/30/2015-09-29-vitess.html
+http://openinx.github.io/2015/02/02/vitess-analysis/
 
 http://dockone.io/article/1106  
 优化慢查有三宝：
@@ -49,6 +55,14 @@ http://m.blog.itpub.net/29254281/viewspace-1847415/   开始学习调试MySQL
 http://www.netkiller.cn/mysql/index.html  Netkiller MySQL 手札
 http://www.chinaxing.org/articles/Database/2015/10/23/2015-10-22-mysql-5.7.html   http://www.techug.com/whats-new-in-mysql  MySQL 5.7 新特性详解
 
+Vitess就是一个例子，它是由谷歌公司贡献的。另一个例子是JetPants，是由 Tumblr公司贡献的。
+http://fishblue.github.io/2015/09/08/%E5%88%86%E5%B8%83%E5%BC%8F%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/   分布式关系型数据库解决方案
+http://www.gpfeng.com/?p=657    谈谈MySQL水平扩展
+http://database.51cto.com/art/201504/474294.htm    数据库专家：MySQL分片水很深
+http://mysql.taobao.org/monthly/2015/12/10/  MySQL · 特性分析 · 企业版特性一览
+1. mysql fabric 在 Master<–>Slave 的基础上，通过故障检测，进行实例角色变化，完成主备切换;
+2. MySQL Fabric-aware connector 根据 fabric 的路由信息，来完成应用的切换。connector根据应用提供的分片规则，来完成路由功能。
+
 galera  haproxy xinetd
 https://github.com/olafz/percona-clustercheck
 https://www.percona.com/doc/percona-xtradb-cluster/5.6/howtos/haproxy.html
@@ -63,18 +77,11 @@ https://support.rackspace.com/how-to/mysql-master-master-replication/
 http://nezhazheng.com/database/2014/02/18/mysql-replication.html    如果想限制只复制一部分数据，可以使用复制过滤器 replicate_wild_do_table: db1.%
 
 
-百度mysql分库分表中间件服务器heisenberg
-
-https://github.com/youtube/vitess
-http://www.chinaxing.org/articles/Distribute/2015/09/30/2015-09-29-vitess.html
-http://openinx.github.io/2015/02/02/vitess-analysis/
-
 分库分表的mysql proxy服务kingshard   Kingshard是一个由Go开发高性能MySQL Proxy项目，kingshard在满足基本的读写分离的功能上，致力于简化MySQL分库分表操作 
 http://xiaorui.cc/2016/02/22/%E5%B0%8F%E8%AF%95%E6%94%AF%E6%8C%81%E5%88%86%E5%BA%93%E5%88%86%E8%A1%A8%E7%9A%84mysql-proxy%E6%9C%8D%E5%8A%A1kingshard/
 https://github.com/flike/kingshard/blob/master/README_ZH.md
 https://www.v2ex.com/t/213929
 http://os.51cto.com/art/201508/487409.htm
-
 
 mysql router, fabric, proxysql,MaxScale     MySQL Proxy采用使用lua脚本语言
 http://highdb.com/mysql-router-%E6%B5%8B%E8%AF%95%E4%BD%BF%E7%94%A8/

@@ -23,6 +23,11 @@ http://play.grafana.org/
 ODPS的计算调度逻辑可以支持更复杂编程模型， 针对上面的那种情况，可以在Reduce后面直接执行下一次的Reduce操作，而不需要中间插入一个Map操作。 基于此，ODPS提供了扩展的MapReduce模型，即可以支持Map后连接任意多个Reduce操作，比如Map-Reduce-Reduce。
 Hadoop Chain Mappper/Reducer也支持类似的串行化Map或Reduce操作，但和ODPS的扩展MapReduce(MR2)模型有本质的区别， 因为Chain Mapper/Reducer还是基于传统的MapReduce模型，只是可以在原有的Mapper或Reducer后面在增加一个或多个Mapper操作(不允许增加Reducer)。 这带来的好处是用户可以复用之前的Mapper业务逻辑，可以把一个Map或Reduce拆成多个Mapper阶段，但本质上并没有改变底层的调度和IO模型。
 
+Avi Kivity、Dor Laor 和 Benny Schnaider 宣布推出 ScyllaDB，宣称是用 C++ 重写后的 Cassandra，性能提高 10 倍，并且延迟极低。新的 ScyllaDB 每个节点每秒能处理 1 百万交易。
+ScyllaDB 和 Seastar 都已经在 GitHub 上开源了。
+https://github.com/scylladb/scylla
+https://github.com/scylladb/seastar
+
 
 eBay宣布正式向开源业界推出实时分布式Hadoop数据安全方案Apache Eagle——一套旨在提供高效分布式的流式策略引擎，并集成机器学习对用户行为建立Profile以实时智能保护Hadoop生态系统中大数据安全解决方案。
 Apache Kylin是一个分布式分析引擎，在Hadoop之上提供SQL接口及OLAP在线多维分析以支持超大规模数据集。

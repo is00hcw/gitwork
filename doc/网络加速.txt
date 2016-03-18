@@ -7,6 +7,9 @@ npm config set disturl https://npm.taobao.org/dist
 
 http://androiddevtools.cn/   android mirror
 
+https://mirror.tuna.tsinghua.edu.cn/help/gitlab-ce/
+http://mirrors.lifetoy.org/gitlab-ce/
+
 https://glot.io/  ÔÚÏß±à³Ì
 
 http://segmentfault.com/a/1190000004274095
