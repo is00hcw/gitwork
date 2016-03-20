@@ -1,0 +1,48 @@
+https://github.com/cloudera/htrace
+https://github.com/Netflix/ribbon
+https://github.com/Netflix/exhibitor
+http://www.infoq.com/cn/news/2013/02/netflix-opensource
+http://netflix.github.io/
+http://cloud.spring.io/spring-cloud-sleuth/
+
+Hadoop 2.6的新特性包含了Trace功能，一个类似于Google Dapper的分布式跟踪工具，为Hadoop系列应用提供请求跟踪和性能分析。在2.7中支持了Apache version of HTrace。并且，HTrace也集成到了HBase中，HBase 1.0.0使用Apache 3.1.0 release。
+http://blog.csdn.net/hustsselbj/article/details/46603809
+ 
+
+
+
+
+http://start.spring.io/
+https://spring.io/blog/2014/03/07/deploying-spring-boot-applications
+http://www.tianmaying.com/tutorial/deploy-spring-boot-application
+https://qbgbook.gitbooks.io/spring-boot-reference-guide-zh/content/IX.%20%E2%80%98How-to%E2%80%99%20guides/74.1.%20Create%20a%20deployable%20war%20file.html    创建一个可部署的war文件
+http://docs.daocloud.io/java-docker/docker-java-spring-boot
+http://www.infoq.com/cn/news/2015/03/develop-tool-spring-cloud
+http://blog.javachen.com/2016/02/22/devtools-in-spring-boot.html
+http://blog.csdn.net/wh_ouyangshuang/article/details/48174963    Spring Boot热启动
+http://blog.csdn.net/wh_ouyangshuang/article/details/48048111    监控和管理生产环境spring boot actuator 
+http://blog.csdn.net/wh_ouyangshuang/article/details/48031063    spring cloud config
+http://www.infoq.com/cn/articles/Next-Generation-Session-Management-with-Spring-Session
+
+@EnableRedisHttpSession
+application.properties中可以对redis的参数进行控制：
+spring.redis.host=localhost
+#spring.redis.password=secret
+spring.redis.port=6379
+
+@Retryable(maxAttempts=10,value=RuntimeException.class,backoff = @Backoff(delay = 10000,multiplier=2))
+ 
+
+
+http://blog.csdn.net/hengyunabc/article/details/19006911
+https://zookeeper.apache.org/doc/trunk/zookeeperReconfig.html   zookeeper 3.5.0 reload config
+https://github.com/Netflix/exhibitor/wiki/Configuration-UI
+
+
+http://samchu.logdown.com/posts/617636-akka-cluster-example  akka cluster
+
+http://bbs.chinaunix.net/thread-4175287-1-1.html
+HBase 如果是采用默认参数，那么对于大批量的随机读性能是完全不够的，需要对随机读进行针对性优化才能有很大的性能提升。例如 HBase 参数调优，在 MR 中通过采取全局排序的方式变随机读为顺序读、数据聚合、RowKey 设计、表预先切分、客户端使用参数调优、大批写使用 Bulk Load 、中间数据和小表使用文件替代等多种具体的优化手段。
+在 HBase 使用过程中，为了避免踩坑，吴磊提醒大家注意三点：第一，重视运维；第二，及时关注官方动态；第三，在使用一些新特性时需要谨慎对待。
+每个 MapReduce 任务内部，Shuffle 两端的数据都要在本地磁盘上暂存， IO 开销比较大，这也是为什么 MapReduce 任务设计中，有效的利用 Combiner 能够大幅度提高任务运行速度的一个原因 (另一个更重要的原因是 Combiner 减少了需要 Shuffle 的数据量， 从而大大减少了网络 IO)。
+http://mp.weixin.qq.com/s?__biz=MjM5NDQ4MTcwMA==&mid=400019663&idx=2&sn=fcabbc79aa73bf1f1661317e323ebe90&3rd=MzA3MDU4NTYzMw==&scene=6#rd

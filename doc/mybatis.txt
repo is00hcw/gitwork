@@ -1,0 +1,12 @@
+http://zacard.net/2015/09/09/mybatis-generator/
+http://blog.csdn.net/isea533/article/details/50359390
+http://samchu.logdown.com/posts/280094-mybatis-and-springboot-integration
+https://yq.aliyun.com/articles/5831  Spring Boot MyBatis 通用Mapper插件集成
+http://7player.cn/2015/08/30/%E3%80%90%E5%8E%9F%E5%88%9B%E3%80%91%E5%9F%BA%E4%BA%8Espringboot-mybatis%E5%AE%9E%E7%8E%B0springmvc-web%E9%A1%B9%E7%9B%AE/
+https://segmentfault.com/a/1190000004275305
+http://wuyishch.github.io/2016/01/14/SpringBoot%E5%BF%AB%E9%80%9F%E6%9E%84%E5%BB%BASpring%E5%BA%94%E7%94%A8/
+https://github.com/abelmyba533/Mapper
+https://github.com/pagehelper/Mybatis-PageHelper
+
+
+http://www.jayway.com/2015/05/31/scaling-out-with-spring-session/  
