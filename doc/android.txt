@@ -1,4 +1,8 @@
 http://dev.xiaomi.com/doc/p=6298/index.html    MIUI系统音乐控件标准化方案,第三方APP接入指南
+https://yq.aliyun.com/articles/7568?spm=5176.blog8523.yqblogcon1.22.160o9n  Android常见的Event-driven方案
+应用内通过UncaughtExceptionHandler检测到全局崩溃时，上传ANR　Trace文件到后台服务器，归类分析。ANR Trace文件的路径通常是：data/anr/traces.txt 但是文件名可能稍有不同。因此，建议上传data/anr/下所有文件。
+通过BlockCanary检测耗时操作，通过优化算法，放进子线程等方法进行优化。
+http://blog.csdn.net/jdsjlzx/article/details/7606423?spm=5176.blog6847.yqblogcon1.6.1BB66k  Android自定义捕获Application全局异常
 https://github.com/googlesamples/
 
 https://segmentfault.com/q/1010000004253063/a-1020000004333459  开源库

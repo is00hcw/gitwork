@@ -43,6 +43,7 @@ jhat heap.bin
 还可以在http://localhost:7000/histo/查看堆内存柱状图。
 目前，JRockit Mission Control在标准版Java SE中已经可以使用。Java Mission Control（JMC）与Java Flight Recorder一起工作，适用于HotSpot JVM，用来记录核心数据和事件。
 
+http://dbaplus.cn/news-21-173-1.html   听阿里巴巴JVM工程师为你分析常见Java故障案例
 http://xstarcd.github.io/wiki/Java/JVM_GC.html  JVM gc参数设置与分析
 http://www.importnew.com/15722.html  在运行时开启GC日志
 java -XX:+PrintFlagsFinal -version|grep manageable  这些flag可通过JDK management interface（-XX:+PrintFlagsFinal）动态修改。

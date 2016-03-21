@@ -11,11 +11,18 @@ http://blog.csdn.net/hustsselbj/article/details/46603809
 
 
 
-
+brew tap pivotal/tap切换到Pivotal仓库中，然后执行brew install springboot命令
+注意：使用.yml时，属性名的值和冒号中间必须有空格，如name: Isea533正确，name:Isea533就是错的。
+spring会从classpath下的/config目录或者classpath的根目录查找application.properties或application.yml。
+http://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#using-boot-importing-xml-configuration  @Configuration  @ImportResource
+http://blog.csdn.net/isea533/article/details/50449907    Spring MVC 从4.2版本开始增加了对CORS的支持，可以配置全局的规则，也可以使用@CrossOrigin注解进行细粒度的配置。
 http://start.spring.io/
 https://spring.io/blog/2014/03/07/deploying-spring-boot-applications
 http://www.tianmaying.com/tutorial/deploy-spring-boot-application
 https://qbgbook.gitbooks.io/spring-boot-reference-guide-zh/content/IX.%20%E2%80%98How-to%E2%80%99%20guides/74.1.%20Create%20a%20deployable%20war%20file.html    创建一个可部署的war文件
+http://geowarin.github.io/understanding-spring-boot.html
+https://blog.coding.net/blog/Spring-Boot
+http://9leg.com/spring/2015/02/12/spring-propertysource-value-annotations-example.html  Spring的@PropertySource和@Value注解例子
 http://docs.daocloud.io/java-docker/docker-java-spring-boot
 http://www.infoq.com/cn/news/2015/03/develop-tool-spring-cloud
 http://blog.javachen.com/2016/02/22/devtools-in-spring-boot.html
@@ -23,7 +30,7 @@ http://blog.csdn.net/wh_ouyangshuang/article/details/48174963    Spring Boot热启
 http://blog.csdn.net/wh_ouyangshuang/article/details/48048111    监控和管理生产环境spring boot actuator 
 http://blog.csdn.net/wh_ouyangshuang/article/details/48031063    spring cloud config
 http://www.infoq.com/cn/articles/Next-Generation-Session-Management-with-Spring-Session
-
+http://www.jayway.com/2015/05/31/scaling-out-with-spring-session/  
 @EnableRedisHttpSession
 application.properties中可以对redis的参数进行控制：
 spring.redis.host=localhost

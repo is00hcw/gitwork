@@ -25,6 +25,7 @@ https://github.com/openzipkin/brave   java 版
 https://github.com/sourcegraph/appdash  golang 版
 http://hot66hot.iteye.com/blog/2155036  Hystrix 使用与分析
 
+http://dbaplus.cn/news-21-288-1.html   Hadoop：风雨十年，未来何去何从
 http://www.oschina.net/project/alibaba  阿里开源项目
 https://github.com/alibaba/f2etest   多浏览器测试
 http://mqc.aliyun.com/compatibility.htm  手机兼容性测试   http://fts.aliyun.com/pic/add.htm?spm=0.0.0.0.k5b9st

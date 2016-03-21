@@ -1,3 +1,4 @@
+http://wiki.jikexueyuan.com/project/mybatis-in-action/code-generation-tool.html
 http://zacard.net/2015/09/09/mybatis-generator/
 http://blog.csdn.net/isea533/article/details/50359390
 http://samchu.logdown.com/posts/280094-mybatis-and-springboot-integration
@@ -9,4 +10,4 @@ https://github.com/abelmyba533/Mapper
 https://github.com/pagehelper/Mybatis-PageHelper
 
 
-http://www.jayway.com/2015/05/31/scaling-out-with-spring-session/  
+ @Transactional(propagation = Propagation.REQUIRED, readOnly = false, rollbackFor = Exception.class)

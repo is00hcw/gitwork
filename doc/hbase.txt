@@ -13,6 +13,10 @@ https://www.mapr.com/blog/in-depth-look-hbase-architecture
 hbase返回的结果按照rowkey,CF,qualifiers,timestamp的次序进行排序  HBase在进行数据存储时，新数据不会直接覆盖旧的数据，而是进行追加操作，不同的数据通过时间戳进行区分.默认每行数据存储三个版本.
 hbase org.apache.hadoop.hbase.util.RegionSplitter test_table HexStringSplit -c 10 -f f1
 
+ ./bin/hbase org.apache.hadoop.hbase.regionserver.CompactionTool
+Hbase系统自身提供了性能测试工具：./bin/hbase  org.apache.hadoop.hbase.PerformanceEvaluation，该工具提供了随机读写、多客户端读写等性能测试功能。
+hbase org.apache.hadoop.hbase.PerformanceEvaluation randomWrite 1
+hbase org.apache.hadoop.hbase.PerformanceEvaluation randomRead 1
 
 http://blog.csdn.net/u011491148/article/details/45749807    利用Phoenix为HBase创建二级索引
 其核心思想是保证索引表和主表在同一个region server上。详见：https://github.com/Huawei-Hadoop/hindex    http://www.dengchuanhua.com/167.html   http://www.thebigdata.cn/upload/2013-10/13101415173453.pdf

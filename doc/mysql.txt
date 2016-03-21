@@ -2,8 +2,9 @@
 https://yq.aliyun.com/edu/lesson/48?spm=5176.100238.yqhn2.27.2Imdy7#tab2    淘宝丁奇：如何解决影响MySQL使用的9大问题
 性能分析工具介绍 （mytop,innotop,orzdba,tcpdump,pt-query-digest,tbdba-slowpicker.pl,iotop,ioprofile,nicstat,mpstat,iostat,vmstat,tcprstat,dstat,oprofile,vmtouch）
 orzdba 的主要功能： 将MySQL性能元数据进行计算，统计MySQL/INNODB层面的各种指标（QPS/TPS/thread/buffer/log等）和性能阀值展现。 将Linux和MySQL性能指标结合在一起
-
+http://dbaplus.cn/news-11-186-1.html  美图秀秀DBA谈MySQL运维及优化
 http://openinx.github.io/2014/05/21/mysql-relatives/  MySQL相关总结
+binary log (MySQL) or Oracle Change Data Capture (CDC)
 
 https://www.percona.com/blog/2016/02/29/graphing-mysql-performance-with-prometheus-and-grafana/  prometheus grafana监控
 https://github.com/percona/grafana-dashboards  监控
@@ -42,7 +43,8 @@ http://www.hudings.com/mysql_online_ddl/  mysql在实际业务中，当表容量
 http://ruiaylin.github.io/2014/05/13/XtraBackup-slave/  使用Percona XtraBackup热备搭建slave数据库   
 http://ruiaylin.github.io/2014/05/22/xtrabackup/
 innobase官方有一套针对innodb备份的商业软件InnoDB Hot Backup,可以提供在线备份。percona官方提供了一个与之对应的开源版本的备份工具 —- xtrabackup。 Percona XtraBackup 是一款开源的 MYSQL 热备份工具 ，可以不阻塞的备份innodb和Xtradb的数据库，xtrabackup的优点：可靠高效的备份DB;备份过程中不中断事务处理;快速进行恢复等。
-
+http://www.hello-code.com/blog/mysql/201403/3119.html  pt-online-schema-change模拟了MySQL内部alter table的方式，但是其操作所更新的是复制表，所以原表不会被锁住
+https://github.com/vmware/tungsten-replicator  Tungsten Replicator 是一个高性能、开源的数据复制引擎，用于 MySQL、Postgres 和 Oracle 数据库。
 
 在mysql 5.6以后，可以利用本身的mysqlbinlog工具，可以将远端的binlog拉取到本地机器，不再需要写另外的脚本来做这个工作了。
 Mariadb开发的MaxScale（1.2.0版本）中就集成了binlog server功能。此时的结构变成如下模式： master-->maxscale-->slave   http://www.hudings.com/mysql-binlog-server/
