@@ -18,7 +18,8 @@ http://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#us
 http://blog.csdn.net/isea533/article/details/50449907    Spring MVC 从4.2版本开始增加了对CORS的支持，可以配置全局的规则，也可以使用@CrossOrigin注解进行细粒度的配置。
 http://start.spring.io/
 https://spring.io/blog/2014/03/07/deploying-spring-boot-applications
-http://www.tianmaying.com/tutorial/deploy-spring-boot-application
+http://www.tianmaying.com/tutorial/deploy-spring-boot-application  部署Spring Boot应用      @Profile("dev")  spring.profiles.active=dev
+http://blog.javachen.com/2016/02/22/profile-usage-in-spring-boot.html   你可以使用spring.profiles.active来设置哪些profile被激活。spring.profiles.include属性用来设置无条件的激活哪些profile。
 https://qbgbook.gitbooks.io/spring-boot-reference-guide-zh/content/IX.%20%E2%80%98How-to%E2%80%99%20guides/74.1.%20Create%20a%20deployable%20war%20file.html    创建一个可部署的war文件
 http://geowarin.github.io/understanding-spring-boot.html
 https://blog.coding.net/blog/Spring-Boot
@@ -44,6 +45,17 @@ spring.redis.port=6379
 http://blog.csdn.net/hengyunabc/article/details/19006911
 https://zookeeper.apache.org/doc/trunk/zookeeperReconfig.html   zookeeper 3.5.0 reload config
 https://github.com/Netflix/exhibitor/wiki/Configuration-UI
+
+spring zookeeper
+http://therore.net/distributed-configuration-with-zookeeper-curator-and-spring-cloud-config/
+https://github.com/alfredodiaz/kata-zookeeper
+https://segmentfault.com/a/1190000004356362
+http://www.cnblogs.com/skyblog/category/774535.html
+
+https://github.com/weekface/zipkin-deploy  
+
+https://programmaticponderings.wordpress.com/2016/02/15/diving-deeper-into-getting-started-with-spring-cloud/
+http://m.blog.csdn.net/article/details?id=50594480
 
 
 http://samchu.logdown.com/posts/617636-akka-cluster-example  akka cluster

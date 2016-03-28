@@ -7,6 +7,11 @@ http://bj2014.archsummit.com/slides.html
 http://wenku.it168.com/redian/ArchSummit/
 http://pan.baidu.com/share/home?uk=387674681&view=share#category/type=0
 
+http://blog.jobbole.com/41233/
+http://www.vinaysahni.com/best-practices-for-a-pragmatic-restful-api
+X-RateLimit-Limit	每小时的限制调用次数，超过后服务器会返回 403 错误
+X-RateLimit-Remaining	当前小时中还剩下的调用次数
+X-RateLimit-Reset	限制重置时间 unix time
 
 http://www.waylau.com/about-vpngate/   vpn
 http://opentalk.upyun.com/show/issues  会议ppt

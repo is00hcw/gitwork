@@ -1,3 +1,8 @@
+https://yq.aliyun.com/articles/8461?spm=5176.blog8547.yqblogcon1.20.0cAwah  
+在options里添加readPreference=secondaryPreferred即可实现，读请求优先到Secondary节点，从而实现读写分离的功能
+在options里添加maxPoolSize=xx即可将客户端连接池限制在xx以内。
+在options里添加w= majority即可保证写请求成功写入大多数节点才向客户端确认
+
 配置服务器，存储所有数据库元信息（路由、分片）的配置   mongod --configsvr
 mongos服务器，路由器，请求代理    mongos  --configdb  
 分片的副本集  mongod --shardsvr --replSet

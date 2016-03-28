@@ -1,0 +1,110 @@
+https://github.com/LomoX-Offical/nginx-openresty-windows
+
+https://moonbingbing.gitbooks.io/openresty-best-practices/content/index.html
+http://www.stuq.org/my/courses/study/1015
+
+一个变量在第一次赋值前的默认值是 nil，将 nil 赋予给一个全局变量就等同于删除它。 penResty 的 Lua 接口还提供了一种特殊的空值，即 ngx.null，用来表示不同于 nil 的“空值”。
+Lua 中 nil 和 false 为“假”，其它所有值均为“真”。比如 0 和空字符串就是“真”；
+字符串还可以用一种长括号（即[[ ]]）括起来的方式定义。另外，Lua 的字符串是不可改变的值，不能像在 c 语言中那样直接修改字符串的某个字符，而是根据修改要求来创建一个新的字符串。Lua 也不能通过下标来访问字符串的某个字符。
+在 Lua 实现中，Lua 字符串一般都会经历一个“内化”（intern）的过程，即两个完全一样的 Lua 字符串在 Lua 虚拟机中只会存储一份。每一个 Lua 字符串在创建时都会插入到 Lua 虚拟机内部的一个全局的哈希表中。 
+Table 类型实现了一种抽象的“关联数组”。“关联数组” 是一种具有特殊索引方式的数组，索引通常是字符串（string）或者 number 类型，但也可以是除 nil 以外的任意类型的值。
+Lua 语言中“不等于”运算符的写法为：~=   在使用“==”做等于判断时，要注意对于 table, userdate 和函数， Lua 是作引用比较的。也就是说，只有当两个变量引用同一个对象时，才认为它们相等。
+local a = { x = 1, y = 0}
+a and b 如果 a 为 nil，则返回 a，否则返回 b;
+a or b 如果 a 为 nil，则返回 b，否则返回 a
+在 Lua 中连接两个字符串，可以使用操作符“..”（两个点）
+str1 = string.format("%s-%s","hello","world")
+推荐使用 table 和 table.concat() 来进行很多字符串的拼接，
+Lua 语言提供的控制结构有 if，while，repeat，for，并提供 break 关键字
+for var = begin, finish, step do
+local a = {"a", "b", "c", "d"}
+for i, v in ipairs(a) do
+do return end
+没有被实参初始化的形参，用nil初始化
+若形参为 ... ,示该函数可以接收不同长度的参数。访问参数的时候也要使用 ...
+local temp = {...}                     -- 访问的时候也要使用 ...
+local ans = table.concat(temp, " ")    -- 使用 table.concat 库函数对数
+Lua 具有一项与众不同的特性，允许函数返回多个值。
+
+全动态函数调用
+local args = {...} or {}
+method_name(unpack(args, 1, table.maxn(args)))
+method_name(unpack(args))
+local function do_action(method, ...)
+    local args = {...} or {}
+    method(unpack(args, 1, table.maxn(args)))
+end
+
+Lua 提供了一个名为 require 的函数用来加载模块。要加载一个模块，只需要简单地调用 require "file"就可以了，file 指模块所在的文件名。这个调用会返回一个由模块函数组成的 table ，并且还会定义一个包含该 table 的全局变量。
+在 Lua 中创建一个模块最简单的方法是：创建一个 table ，并将所有需要导出的函数放入其中，最后返回这个 table 就可以了。
+
+在 Lua 中，数组下标从 1 开始计数。  不要在 lua 的 table 中使用 nil 值，如果一个元素要删除，直接 remove，不要用 nil 去代替。
+file = io.input("test1.txt")    -- 使用 io.input() 函数打开文件
+file = io.open("test1.txt", "a+")   -- 使用 io.open() 函数，以添加模式打开文件
+io.output(file)                     -- 使用 io.output() 函数，设置默认输出文件
+
+proxy_cache_use_stale error timeout http_500 http_502 http_503 http_504;
+当 Nginx 收到服务器返回的error，timeout或者其他指定的5xx错误，并且在其缓存中有请求文件的陈旧版本，则会将这些陈旧版本的文件而不是错误信息发送给客户端。
+要轻松的显示一个路径的所有权限，你可以使用： namei -om /path/to/check
+try_files $uri $uri/ /index.php?q=$uri&$args;
+location / {
+        try_files $uri $uri/ @proxy;
+    }
+    location @proxy {
+        include fastcgi_params;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        fastcgi_pass unix:/tmp/phpcgi.socket;
+    }
+如果你没有明确的设置 underscores_in_headers on; , Nginx 将会自动丢弃带有下划线的 HTTP 头
+简单点儿说，你应该把 web 的内容 放在 /var/www/ , /srv 或者 /usr/share/www 里面。
+由于 SSLv3 的 POODLE 漏洞， 建议不要在开启 SSL 的网站使用 SSLv3。 你可以简单粗暴的直接禁止 SSLv3， 用 TLS 来替代：ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+openresty 1.9.3.1 及以下版本，请使用 content_by_lua 命令；在 openresty 1.9.3.2 以上，content_by_lua 改成了 content_by_lua_block。可使用 nginx -V 命令查看版本号。
+
+
+location /lua {
+    set $test "hello, world.";
+    content_by_lua '
+        ngx.header.content_type = "text/plain";
+        ngx.say(ngx.var.test);
+    ';
+}
+
+content_by_lua_block {
+      ngx.say("HelloWorld")
+}
+
+location /test {
+     default_type text/plain;
+     content_by_lua_file  lua/test.lua;
+}
+local welcome = 'Hello World'
+ngx.say(welcome)
+
+local args = ngx.req.get_uri_args()
+ngx.req.get_uri_args、ngx.req.get_post_args，二者主要的区别是参数来源有区别。
+在函数定义时，使用冒号将默认接收一个self参数，而使用点号则需要显式传入self参数。
+URI 内容传递过程中是需要调用 ngx.encode_args 进行规则转义。  args = ngx.encode_args({a = 1, b = '2&'}),
+对于 ngx.location.capture 这里有个小技巧，args 参数可以接受字符串或Lua 表的，    args = {a = 1, b = '2&'},
+# 默认读取 body      lua_need_request_body on;       local data = ngx.req.get_body_data()
+如果你只是某个接口需要读取 body（并非全局行为），那么这时候也可以显示调用 ngx.req.read_body() 接口
+如果请求体已经被存入临时文件，请使用 ngx.req.get_body_file 函数代替。
+ngx.flush() -- 显式的向客户端刷新响应输出
+对于 C 代码，有个像 Valgrind 或者 Purify 这样的工具是必要的。
+ngx.log(ngx.ERR, "num:", num)
+ngx.log(ngx.INFO, " string:", str)
+lua-resty-logger-socket 的目标是替代 Nginx 标准的 ngx_http_log_module 以非阻塞 IO 方式推送 access log 到远程服务器上。对远程服务器的要求是支持 syslog-ng 的日志服务。
+可以对代码 cache 进行关闭，这样不必每次都重新加载 nginx。    lua_code_cache off;
+ access_by_lua_file  /path/to/lua/access_check.lua;
+ ngx.exit(ngx.HTTP_BAD_REQUEST)
+
+http://blog.csdn.net/chosen0ne/article/details/7304192    使用ngx_lua构建高并发应用
+http://www.cnblogs.com/huligong1234/p/4163832.html   Nginx+Lua+Redis 对请求进行限制
+local redis = require "resty.redis"
+local red = redis.new()
+red.connect(red, '127.0.0.1', '6379')
+
+https://moonbingbing.gitbooks.io/openresty-best-practices/content/openresty/inline_var.html   nginx变量
+https://github.com/openresty/lua-nginx-module#ngxvarvariable
+ngx.var.limit_rate = 1000 对于可写的变量中的limit_rate，是值得一提的，他能完成传输速率限制。进一步说对于静态文件传输、日志传输的情况，我们可以用它来完成限速的效果，它的影响是单个请求。
+
+https://github.com/openresty/drizzle-nginx-module#readme    用nginx直接访问mysql，取出数据，返回给浏览器，有两种方法，第一种：使用 HttpDrizzleModule 模块，同时还需要安装 libdrizzle 1.0(在drizzle里)，第二种：使用ngx_lua模块和lua库lua-resty-mysql(Mysql client Driver)。

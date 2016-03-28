@@ -27,6 +27,10 @@ http://mogu.io/ios-analytics-115   iOS 统计打点那些事
 http://yq.aliyun.com/articles/1480
 https://github.com/alibaba/wax  lua
 http://segmentfault.com/a/1190000004268513  Android程序员 如何入门iOS
+http://jspatch.com/Docs/price
+http://mp.weixin.qq.com/s?__biz=MzAwNDY1ODY2OQ==&mid=400011053&idx=1&sn=81ed095f6fb9f7a4345ff50285264be1&scene=1&srcid=0309AZCJwCslk9oehil6nnDp#rd
+https://github.com/bang590/JSPatchConvertor
+http://news.oneapm.com/hotfix-bug/   比如 iOS 下的 JSPatch ， WaxPatch ，Android 下的 Dexpose，AndFix ，ClassLoader 都是比较成熟 Hot Patch 动态部署解决方案。
 
 https://github.com/IFTTT/jot  adding drawings and text to images. 
 https://github.com/IFTTT/FastttCamera   Fasttt and easy camera framework for iOS with customizable filters 

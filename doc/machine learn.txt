@@ -11,6 +11,8 @@ http://segmentfault.com/a/1190000000352163
 http://www.csdn.net/article/2015-04-10/2824454
 
 https://yq.aliyun.com/articles/7595?spm=5176.blog3196.yqblogcon1.30.fNGhNt   阿里专家解读下“AI中的语音识别”
+https://github.com/showcases/machine-learning
+http://highscalability.com/blog/2016/3/16/jeff-dean-on-large-scale-deep-learning-at-google.html
 
 11月10日，谷歌发布全新人工智能系统TensorFlow，并宣布将完全开源；
 11月16日，微软宣布开源机器学习工具包“分布式机器学习工具（DMTK）

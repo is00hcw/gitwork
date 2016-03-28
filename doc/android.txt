@@ -5,6 +5,8 @@ https://yq.aliyun.com/articles/7568?spm=5176.blog8523.yqblogcon1.22.160o9n  Andr
 http://blog.csdn.net/jdsjlzx/article/details/7606423?spm=5176.blog6847.yqblogcon1.6.1BB66k  Android自定义捕获Application全局异常
 https://github.com/googlesamples/
 
+http://www.oschina.net/news/71907/meizu-bsp-engineer-android-kernel  bsp
+https://androidtest.org/android-graphics-performance-pattens/#63debug   Android界面性能调优手册
 https://segmentfault.com/q/1010000004253063/a-1020000004333459  开源库
 https://github.com/JStumpp/awesome-android
 https://github.com/ruijun/Android-Dev-Favorites
@@ -76,6 +78,7 @@ http://mqc.aliyun.com/doc.htm?id=44  Appium
 Google 开源了 Espresso，这是一种Android自动化测试框架，使测试人员可以在云中x86机器的多线程环境里运行测试
 
 AndFix
+https://github.com/jasonross/Nuwa   http://www.jianshu.com/p/72c17fb76f21  
 http://www.oschina.net/p/andfix
 http://blog.csdn.net/qxs965266509/article/details/49816007
 http://blog.csdn.net/lmj623565791/article/details/49883661

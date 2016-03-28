@@ -1,4 +1,8 @@
-﻿http://onexsoft.cn/?page_id=3896  oneproxy 
+﻿http://gao-xianglong.iteye.com/blog/2237277?spm=5176.blog8295.yqblogcon1.10.nNwFMU
+https://github.com/gaoxianglong/shark/wiki/shark%E4%BD%BF%E7%94%A8%E5%85%A5%E9%97%A8
+https://github.com/gaoxianglong/shark/wiki/%E5%9F%BA%E4%BA%8Ezookeeper%E7%9A%84%E9%9B%86%E4%B8%AD%E5%BC%8F%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83
+
+http://onexsoft.cn/?page_id=3896  oneproxy 
 https://yq.aliyun.com/edu/lesson/48?spm=5176.100238.yqhn2.27.2Imdy7#tab2    淘宝丁奇：如何解决影响MySQL使用的9大问题
 性能分析工具介绍 （mytop,innotop,orzdba,tcpdump,pt-query-digest,tbdba-slowpicker.pl,iotop,ioprofile,nicstat,mpstat,iostat,vmstat,tcprstat,dstat,oprofile,vmtouch）
 orzdba 的主要功能： 将MySQL性能元数据进行计算，统计MySQL/INNODB层面的各种指标（QPS/TPS/thread/buffer/log等）和性能阀值展现。 将Linux和MySQL性能指标结合在一起
@@ -27,6 +31,7 @@ https://github.com/youtube/vitess
 http://www.chinaxing.org/articles/Distribute/2015/09/30/2015-09-29-vitess.html
 http://openinx.github.io/2015/02/02/vitess-analysis/
 
+http://xstarcd.github.io/wiki/MySQL/index.html 
 http://dockone.io/article/1106  
 优化慢查有三宝：
 pt-query-digest

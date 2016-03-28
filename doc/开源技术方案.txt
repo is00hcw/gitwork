@@ -4,10 +4,17 @@ redis sentinel 配合 jedis 进行主从热切换 http://blog.ganps.net/2015/12/08/redis%
 Canal会把binlog数据丢到Kafka然后同步到其他系统
 DataX 是阿里巴巴集团内被广泛使用的离线数据同步工具/平台，实现包括 MySQL、SQL Server、Oracle、PostgreSQL、HDFS、Hive、OceanBase、HBase、OTS、ODPS 等各种异构数据源之间高效的数据同步功能。
 
+一致性（C）。分布式系统中所有数据备份在同一时刻的值是否相同。
+可用性（A）。当集群中一部分节点故障后，集群整体是否还能响应客户端的读写请求（可用性不仅包括读，还有写）。
+分区容忍性（P）。集群中的某些节点无法联系后，集群整体是否还能继续进行服务。
+
 kopf 管理Elasticsearch 集群
 Sigar（System Information Gatherer And Reporter），是一个开源的工具，提供了跨平台的系统信息收集的API
 大众点评CAT
 ServiceLoader.load(IService.class);
+
+http://www.infoq.com/cn/news/2015/06/mobile-testing-service?utm_source=tuicool    国内移动测试服务盘点
+http://www.oschina.net/p/reliable   基于 Node.js 的自动化持续集成 Reliable
 
 gis处理： redis， mongodb， postgresql，elasticsearch， mysql 5.7
 监控countly  promethues  karmo

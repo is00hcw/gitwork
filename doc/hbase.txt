@@ -4,6 +4,16 @@ http://dailidong.blog.51cto.com/4183991/1735157   Hbase万亿级存储性能优�
 http://jxy.me/2015/07/06/hbase-tips/  HBase豆知识
 http://hbase.apache.org/book.html#performance
 http://www.chinastor.com/a/hbase/0G3U922014.html   HBase应用性能测试方法
+http://www.adintellig.com/hbase-write-tuning/     HBase写入性能调优
+http://www.adintellig.com/apache-hbase-1-0-0-release/   hbase 1.0
+https://github.com/ndimiduk/hbase-1.0-api-examples/tree/master/src/main/java/com/n10k
+https://github.com/apache/hbase/blob/master/src/main/asciidoc/_chapters/upgrading.adoc
+zookeeper-3.4.3/bin/zkCleanup.sh <DataDir> <Count>  备注：其中DataDir指的是配置文件中的日志文件及快照文件存放的路径地址；Count指的是要保留最近的数据份数。
+http://xstarcd.github.io/wiki/Cloud/zookeeper_log_snapshot.html  从3.4.0开始，zookeeper提供了自动清理snapshot和事务日志的功能，通过配置 autopurge.snapRetainCount 和 autopurge.purgeInterval 这两个参数能够实现定时清理了。这两个参数都是在zoo.cfg中配置的
+http://xstarcd.github.io/wiki/Cloud/hbase_tips.html   hbase日常操作收集
+可以从 zookeeper 上面获取到所有的在线 RegionServer       zkCli.sh ls /hbase/rs
+然后就是在中控机遍历这些机器，挨个进行 graceful 重启     hbase/bin/graceful_stop.sh --restart --reload --debug $host
+https://cloud.google.com/bigtable/docs/hbase-api-changes   谷歌的产品支持hbase api
 
 HBase的Relication机制，事实上和Mysql的同步机制非常像。HBase的每一个Region Server都会有WAL Log，当Put/Delete时。都会先写入到WAL Log里。
 然后后台有线程会把WAL Log随机发给Slave的Region Server。而Slave的Region Server会在zookeeper上记录自己同步到的位置。

@@ -50,6 +50,15 @@ java -XX:+PrintFlagsFinal -version|grep manageable  这些flag可通过JDK management
 jinfo -flag +PrintGCDetails 12278  
 jinfo -flag +PrintGC 12278
 
+jvm
+http://xstarcd.github.io/wiki/Java/JVM_Heap_Non-heap.html    -XX:ReservedCodeCacheSize=128m
+https://blog.codecentric.de/en/2012/07/useful-jvm-flags-part-4-heap-tuning/  -XX:+UseCodeCacheFlushing  -XX:+CMSPermGenSweepingEnabled  -XX:+CMSClassUnloadingEnabled
+http://longtask.com/review/2014/06/07/java-permgen-outofmemory/
+http://wiki.jikexueyuan.com/project/jvm-parameter/all.html    java -server -XX:+UnlockExperimentalVMOptions -XX:+UnlockDiagnosticVMOptions -XX:+PrintFlagsFinal Benchmark
+http://blog.csdn.net/redhat456/article/details/7360249        java -XX:+UnlockDiagnosticVMOptions -XX:+PrintFlagsFinal -version  
+http://0opslab.com/2016/01/16/JVM%E5%8F%82%E6%95%B0%E8%AF%A6%E8%A7%A3/  
+
+
 https://github.com/ColZer/DigAndBuried/blob/master/system/java-memory.md  进程分析之JAVA内存
 http://www.infoq.com/cn/articles/Visualizing-Java-Garbage-Collection
 https://github.com/chewiebug/GCViewer

@@ -18,8 +18,19 @@ git commit --verbose   git commit 命令的verbose参数，会列出 diff 的结果。
 http://www.cnblogs.com/linjiqin/p/3772681.html   Git和Code Review流程
 https://github.com/oldratlee/translations/blob/master/git-workflows-and-tutorials/workflow-feature-branch.md   git功能分支工作流
 
+gitlab ci
+The .gitlab-ci.yml file tells the GitLab runner what do to. By default it runs three stages: build, test, and deploy.
+If everything runs OK (no non-zero return values), you'll get a nice green checkmark
+So in brief, the steps needed to have a working CI can be summed up to:
+Add .gitlab-ci.yml to the root directory of your repository
+Configure a Runner
+the build will be automagically started by the Runner and will appear under the project's /builds page.
+http://doc.gitlab.com/ce/ci/quick_start/README.html
 
+
+http://www.wtoutiao.com/p/hc5qVr.html  —17款最佳的代码审查工具
 http://liuzhichao.com/p/1974.html   Phabricator 实践之安装
+https://hub.docker.com/r/yesnault/docker-phabricator/ 
 https://liuzhichao.com/p/1981.html
 https://liuzhichao.com/p/1992.html
 http://pennchone.lofter.com/post/b6a79_13f5636
