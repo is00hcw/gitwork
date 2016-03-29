@@ -1,3 +1,4 @@
+http://www.lizi.pw/archives/47    最简单的Spring集成 Mongodb 3.x授权认证方式
 https://yq.aliyun.com/articles/8461?spm=5176.blog8547.yqblogcon1.20.0cAwah  
 在options里添加readPreference=secondaryPreferred即可实现，读请求优先到Secondary节点，从而实现读写分离的功能
 在options里添加maxPoolSize=xx即可将客户端连接池限制在xx以内。
