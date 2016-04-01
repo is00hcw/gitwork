@@ -16,6 +16,12 @@ http://www.cnblogs.com/dolphin0520/p/3923167.html
 
 所有长度超过1字节的原始类型，都以大端（big-endian）的方式保存在字节码流中，这意味着高位字节出现在低位字节之前。    网络字节码顺序：Java class文件用网络字节码顺序来进行存储：为了保证和小端的Intel x86架构以及大端的RISC系列的架构保持无关性，JVM使用用于网络传输的网络字节顺序，也就是大端。
 
+http://fengchj.com/?p=1868
+Servlet 3.0规范定义了异步Servlet的处理流程，Servlet容器接到客户端一个请求后，可以将此次请求的上下文(ServletRequest, ServletResponse等)暂存起来，等到耗时的业务逻辑完成(通常在一个异步Worker线程中完成)时，从上下文中取回ServletResponse，将响应结果返回至客户端，而处理此次请求的线程在请求上下文暂存之后即可归还容器。
+Long Polling技术就是在异步Servlet的基础上实现的（服务器端先将请求挂起，等待数据准备好后返回，浏览器端的表现就是一个长连接，迟迟没有返回，一旦返回，必有数据更新）。
+如果请求到达这个Servlet之前还要过Filter，那么同样要在Web.xml的<filter>节点中声明<async-supported>true</async-supported>或者@WebFilter注解中增加asyncSupported=true属性。
+Servlet 3.0通过AsyncContext实例来表示一次客户端请求的上下文。调用HttpServletRequest实例的startAsync方法可以得到异步Servlet上下文实例AsyncContext。
+
 http://www.ibm.com/developerworks/cn/java/j-5things15/index.html    使用 volatile 关键字识别一个变量，意味着这个变量的值会被不同的线程修改。Java 语言规范允许 JRE 在引用变量的每个线程中维护该变量的一个本地副本。您可以将变量的这些 “线程局部” 副本看作是与缓存类似，在每次线程需要访问变量的值时帮助它避免检查主存储器。
 那么不管线程何时读取 A 的值，它都会回头查阅 A 的原版拷贝并读取当前值。 读取易失性变量是同步的，写入易失性变量也是同步的，但非原子操作不同步。
 http://www.ibm.com/developerworks/cn/java/java-lo-concurrenthashmap/index.html

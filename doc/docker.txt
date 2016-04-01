@@ -1,3 +1,27 @@
+http://mp.weixin.qq.com/s?__biz=MzA5MzA2Njk5OA==&mid=402436158&idx=1&sn=25f0ca3b9c844e124e0c1dad75a62eda&scene=0#wechat_redirect   docker ppt
+https://yq.aliyun.com/articles/2986?spm=5176.blog2990.yqblogcon1.38.hPnodI  aliyun docker wordpress workshop
+
+Docker v1.6之后 引入日志驱动(Log Drivers)，除了默认json-file外，还支持： 将日志写入syslog、 journald、
+gelf、 fluentd、 awslogs、 splunk、 null，指定方式收集日志。
+docker daemon --log-driver=journald
+docker run --log-driver=journald ...
+docker run –logs-driver null 就是屏蔽掉日志,不进行输出
+
+docker run -p 8080:8080 -p 50000:50000 -v /data/jenkins:/var/jenkins_home jenkins 
+- https://github.com/sameersbn/docker-gitlab
+- https://github.com/jenkinsci/docker
+
+https://github.com/Mooxe000/mooxe-docker-base
+
+
+-v $(pwd):/project将当前目录挂载到容器中，作为/project目录。
+-w /project设置了/project作为工作目录。这意味着执行mvn命令将在project目录中有效。
+docker run --rm -v $(pwd):/project -v /usr/tmp/.m2:/root/.m2 -w /project maven:3.3.3-jdk-8 mvn clean
+               
+注意，这里没有-v /root/.m2:中的冒号，因为我们不再引入主机目录。而是让Docker在主机上创建自己的数据目录。我们可以通过--volumes-from使用这个容器的卷，而无需考虑Docker持有的实际目录。
+docker run --name maven_data -v /root/.m2 maven:3.3.3-jdk-8 echo 'data for maven'
+卷会在缓存的本地仓库中保留。如果我们希望清理系统，可以使用如下命令删除数据容器：docker rm -v maven_data
+
 http://www.oschina.net/news/70161/docker-architecture  问题
 https://mos.meituan.com/library/26/how-to-install-docker-on-centos/  在CentOS上安装Docker
 

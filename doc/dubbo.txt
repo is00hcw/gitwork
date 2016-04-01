@@ -1,4 +1,19 @@
-﻿http://blog.kazaff.me/tags/dubbo/
+﻿http://www.cnblogs.com/yjmyzz/p/dubbox-demo.html  dubbox简单示例
+http://my.oschina.net/u/238296/blog/602446?fromerr=GJbDMeel
+http://www.cnblogs.com/yjmyzz/p/update-dubbo-to-spring-4-and-add-log4j2-support.html  升级spring4
+http://www.cnblogs.com/yjmyzz/p/dubbo-pritimive-thrift-avro-support.html
+http://my.oschina.net/bieber/blog/378638
+http://m635674608.iteye.com/blog/2240137
+http://blog.csdn.net/jnqqls/article/details/45399357
+https://www.xlongwei.com/detail/15040421
+
+分布式配置 disconf，dangdang zookeeper
+https://github.com/dangdangdotcom/config-toolkit/wiki   zookeeper config
+http://blog.csdn.net/an88411980/article/details/45147613
+http://www.oschina.net/p/config-toolkit?fromerr=55769128
+https://github.com/yjmyzz/disconf-sample
+
+http://blog.kazaff.me/tags/dubbo/
 
 http://blog.csdn.net/u010311445/article/category/2745121/2
 

@@ -1,3 +1,8 @@
+http://www.cnblogs.com/yjmyzz/p/sharding-jdbc-turotial.html
+https://github.com/yjmyzz/spring-mybatis-multidatasource
+https://github.com/abel533/Mybatis-Spring/
+
+
 http://wiki.jikexueyuan.com/project/mybatis-in-action/code-generation-tool.html
 http://zacard.net/2015/09/09/mybatis-generator/
 http://blog.csdn.net/isea533/article/details/50359390

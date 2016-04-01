@@ -13,6 +13,20 @@ queue 10 timeout=30s;
 
 http://blog.csdn.net/zdy0_2004/article/details/48878023  nginxscript
 
+
+动态nginx
+http://www.oschina.net/p/ceryx/similar_projects?sort=time&lang=19
+Upsync：微博开源基于Nginx容器动态流量管理方案   http://toutiao.com/a6254279391729139970/
+基于 DNS : 该模块由 Tengine 团队开发，可以动态的解析 upstream conf 下的域名。这种方式操作简单，只要修改 dns 下挂载的 server 列表便可。
+consul 作为 db，consul-template 部署于 Nginx server 上，consul-template 定时向 consul 发起请求，发现 value 值有变化，便会更新本地的 Nginx 相关配置文件，发起 reload 命令。但是在流量比较重的情况下，发起 reload 会对性能造成影响
+
+在 Nginx 的设计中，每一个 upstream 维护了一张静态路由表，存储了 backend 的 ip、port 以及其他的 meta 信息。每次请求到达后，会依据 location 检索路由表，然后依据具体的调度算法（如 round robin ）选择一个 backend 转发请求。
+http://blog.csdn.net/yeasy/article/details/47749725
+
+Consul 是一套开源的分布式服务发现和配置管理系统，由 HashiCorp 公司用 Go 语言开发。它具有很多优点。包括： 基于 raft 协议，比较简洁； 支持健康检查, 同时支持 HTTP 和 DNS 协议 支持跨数据中心的 WAN 集群 提供图形界面 跨平台，支持 Linux、Mac、Windows
+http://blog.csdn.net/yeasy/article/details/47277031
+
+
 lua
 https://www.scalescale.com/tips/nginx/how-to-install-openresty/  安装 openresty
 http://www.londonlua.org/scripting_nginx_with_lua/slides.html
