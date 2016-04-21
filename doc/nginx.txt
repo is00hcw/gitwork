@@ -27,6 +27,18 @@ Consul 是一套开源的分布式服务发现和配置管理系统，由 HashiCorp 公司用 Go 语言开发
 http://blog.csdn.net/yeasy/article/details/47277031
 
 
+https://yq.aliyun.com/articles/18044?spm=5176.100238.yqhn2.17.HDEmMk
+https://yq.aliyun.com/articles/14974?spm=5176.blog18044.yqblogcon1.16.6Dgke0
+运行 killall – s HUP nginx 来让 Nginx 重新加载配置。
+lsof | grep delete 去看到底是哪些文件表面上被删了，实际上文件描述符还被进程持有着。
+查看某个目录的大小：du -hs /home/master/documents    
+查看磁盘使用情况（文件系统的使用情况）：sudo df -h
+-h是使输出结果更易于人类阅读；du -s只展示目录的使用总量（不分别展示各个子目录情况）
+HUP  重新加载配置，并开启新的工作进程，关闭就的进程，此操作不会中断请求  
+USR1  重新打开日志文件，用于切换日志，例如每天生成一个新的日志文件  
+USR2  平滑升级可执行程序  
+
+
 lua
 https://www.scalescale.com/tips/nginx/how-to-install-openresty/  安装 openresty
 http://www.londonlua.org/scripting_nginx_with_lua/slides.html

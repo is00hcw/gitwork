@@ -15,6 +15,14 @@ Apache Drill是一个针对Hadoop的、开源的“交互式”SQL查询引擎�
 Apache Phoenix是一个用于Apache HBase的开源SQL引擎。它的目标是通过一个嵌入的JDBC驱动对存储在HBase中的数据提供低延迟查询。与之前介绍的其他引擎不同的是，Phoenix提供了HBase数据的读、写操作。
 Geode项目开发始于2002年，开始是商业产品GemFire，在2015年4月发布其开源版本Geode。Pivotal Software是GemFire背后的商业公司
 
+Greenplum 采用 Apache 协议开源之后，加上之前的 HAWQ，PostgreSQL 以及 PostGIS，完全可以构建一体化的 PostgreSQL 企业数据架构。
+Pivotal宣布将其大数据套件的三个核心组件开源，即基于内存的分布式NoSQL数据库GemFire、基于Hadoop架构的大规模并行SQL 分析处理引擎HAWQ、大规模并行处理分析数据库Greenplum。
+Cloud Foundry是VMware于2011年4月12日推出的业界第一个开源PaaS云平台，它支持多种框架、语言、运行时环境、云平台以及应用服务。
+
+Apache Kylin是一个开源的分布式分析引擎，提供Hadoop之上的SQL查询接口及多维分析（OLAP）能力以支持超大规模数据，最初由eBay Inc. 开发并贡献至开源社区。
+Apache Kylin旨在减少Hadoop在10亿及百亿规模以上数据级别的情况下的查询延迟，目前底层数据存储基于HBase，具有较强的可伸缩性。Apache Kylin为Hadoop数据提供了ANSI-SQL接口，并且支持大多数的ANSI-SQL的函数；能够支持在秒级别延迟的情况下同Hadoop进行交互式查询；支持多维联机分析处理数据仓库
+Apache Zeppelin   是一个类似Spark Notebook的基于web的交互式数据分析工具     http://www.yidianzixun.com/home?page=article&id=0Buo2Hv0
+
 Hue是一个开源的Apache Hadoop UI系统，最早是由Cloudera Desktop演化而来，由Cloudera贡献给开源社区，它是基于Python Web框架Django实现的。  http://www.tuicool.com/articles/zIrqemB   http://demo.gethue.com/#
 http://shiyanjun.cn/archives/1002.html
 http://demo.gethue.com/

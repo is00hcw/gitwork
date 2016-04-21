@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JSFileReader</title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <input accept="image/*" type="file" name="fileImg" id="fileImg"  onchange="javascript:getPath(this)" />
+    <input type="button" onclick="readAsDataURL()" value="readAsDataURL">
+    <input type="button" onclick="readAsBinaryString()" value="readAsBinaryString">
+    <br>
+    <br>
+
+    <input accept="text/*" type="file" name="fileTxt" id="fileTxt" />
+    <input type="button" onclick="readAsArrayBuffer()" value="readAsArrayBuffer">
+    <input type="button" onclick="readAsText()" value="readAsText">
+    <br>
+    <br>
+
+    <input type="file" name="file" id="file" multiple />
+    <input type="button" onclick="readAttr()" value="readAttr">
+    <br>
+    <br>
+
+    <input type="button" onclick="saveTXT()" value="saveTXT">
+    <br>
+    <br>
+
+    <div id="result"></div>
+    <script type="text/javascript">
+        var imgs = document.getElementById('fileImg');
+	var txts = document.getElementById('fileTxt');
+	var files = document.getElementById('file');
+	var result = document.getElementById('result');
+	if (typeof FileReader === 'undefined') {
+		img.disabled = true;
+		txt.disabled = true;
+		file.disabled = true;
+		alert('您的浏览器不支持FileReader');
+	}else {
+		var reader = new FileReader();
+	}
+	
+
+	function readAsDataURL(){
+		img = imgs.files[0];
+		if (typeof img == 'undefined') {alert('选择对应文件');return;}
+		if (!/image\/\w+/.test(img.type)) {alert('not image');return;}
+		reader.readAsDataURL(img);
+		reader.onload = function (e){
+			result.innerHTML += "<img src='"+this.result+"'' />";
+		}
+	}
+
+	function readAsBinaryString(){
+		img = imgs.files[0];
+		if (typeof img == 'undefined') {alert('选择对应文件');return;}
+		if (!/image\/\w+/.test(img.type)) {alert('not img');return;}
+		reader.readAsBinaryString(img);
+		reader.onload = function (e){
+			result.innerHTML += this.result;
+		}
+	}
+
+	function readAsArrayBuffer(){
+		txt = txts.files[0];
+		if (typeof txt == 'undefined') {alert('选择对应文件');return;}
+		if (!/text\/\w+/.test(txt.type)) {alert('not txt');return;}
+		reader.readAsArrayBuffer(txt);
+		reader.onload = function (e){
+			result.innerHTML += this.result.byteLength+'<br>'+ab2str(this.result);
+		}
+	}
+
+	// ArrayBuffer转为字符串，参数为ArrayBuffer对象
+	function ab2str(buf) {
+		/*Int8Array：8位有符号整数，长度1个字节。
+		Uint8Array：8位无符号整数，长度1个字节。
+		Int16Array：16位有符号整数，长度2个字节。
+		Uint16Array：16位无符号整数，长度2个字节。
+		Int32Array：32位有符号整数，长度4个字节。
+		Uint32Array：32位无符号整数，长度4个字节。
+		Float32Array：32位浮点数，长度4个字节。
+		Float64Array：64位浮点数，长度8个字节。*/
+		return String.fromCharCode.apply(null, new Uint8Array(buf));
+	}
+
+	// 字符串转为ArrayBuffer对象，参数为字符串
+	function str2ab(str) {
+	    var buf = new ArrayBuffer(str.length*2); // 每个字符占用2个字节
+	    var bufView = new Uint8Array(buf);
+	    for (var i=0, strLen=str.length; i<strLen; i++) {
+	         bufView[i] = str.charCodeAt(i);
+	    }
+	    return buf;
+	}
+
+	function readAsText(){
+        alert(txts.value);
+		txt = txts.files[0];
+		if (typeof txt == 'undefined') {alert('选择对应文件');return;}
+		if (!/text\/\w+/.test(txt.type)) {alert('not txt');return;}
+		reader.readAsText(txt,'utf-8');
+
+		reader.onloadstart = function (e){
+			//alert('开始读取...');
+		}
+		reader.onprogress = function (e){
+		//	alert('读取中...');
+			//reader.abort();
+		}
+		reader.onload = function (e){//载入成功
+			result.innerHTML += this.result;
+		}
+		reader.onloadend = function (e){
+		//	alert('载入完成即触发  不管成功与否');
+		}
+		reader.onerror = function (e){
+		//	alert('读取出错时触发');
+		}
+		reader.onabort = function (e){
+		//	alert('读取中断时触发');
+		}
+	}
+	
+	function readAttr(){
+		img = imgs.files[0];
+		txt = txts.files[0];
+		if (typeof img == 'undefined' || typeof txt == 'undefined') {alert('选择对应文件');return;}
+		for(i in img)
+			result.innerHTML += i+"====>"+img[i]+"<br>";
+
+		result.innerHTML += "<br>";
+
+		for(i in txt)
+			result.innerHTML += i+"====>"+txt[i]+"<br>";
+
+		for (var i = 0; i < files.files.length; i++) {
+			var multipleFile = file.files[i];
+			if (typeof multipleFile == 'undefined') {alert('选择对应文件');return;}
+			for(j in multipleFile)
+				result.innerHTML += j+"====>"+multipleFile[j]+"<br>";
+
+			result.innerHTML += "<br>";
+		}
+	}
+
+	function saveTXT(){
+		if (!result.innerHTML) {alert('没有数据 无需导出');return;}
+		var URL = URL || webkitURL || window;
+		var bb = new Blob([result.innerHTML],{ "type" : "text\/plain;charset=utf-8" }); // the blob
+		saveAs(bb, 'saveTXT.txt');
+	}
+
+	function saveAs(blob, filename){
+		var type = blob.type;
+	    var force_saveable_type = 'application/octet-stream';
+	    if (type && type != force_saveable_type) { // 强制下载，而非在浏览器中打开
+	        var slice = blob.slice || blob.webkitSlice || blob.mozSlice;
+	        blob = slice.call(blob, 0, blob.size, force_saveable_type);
+	    }
+
+	    var url = URL.createObjectURL(blob);
+	    var save_link = document.createElementNS('http://www.w3.org/1999/xhtml', 'a');//方法可创建带有指定命名空间的元素节点。
+	    save_link.href = url;
+	    save_link.download = filename;
+
+	    var event = document.createEvent('MouseEvents');
+	    event.initMouseEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+	    save_link.dispatchEvent(event);
+	    URL.revokeObjectURL(url);
+	}
+    
+    function getPath(obj) 
+{ 
+  if(obj) 
+    { 
+    if (window.navigator.userAgent.indexOf("MSIE")>=1) 
+      { 
+        obj.select(); 
+      return document.selection.createRange().text; 
+      } 
+    else if(window.navigator.userAgent.indexOf("Firefox")>=1) 
+      { 
+      if(obj.files) 
+        { 
+        return obj.files.item(0).getAsDataURL(); 
+        } 
+      return obj.value; 
+      } 
+    return obj.value; 
+    } 
+} 
+
+    </script>
+</body>
+
+</html>

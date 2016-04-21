@@ -15,4 +15,28 @@ https://github.com/abelmyba533/Mapper
 https://github.com/pagehelper/Mybatis-PageHelper
 
 
- @Transactional(propagation = Propagation.REQUIRED, readOnly = false, rollbackFor = Exception.class)
+@Transactional(propagation = Propagation.REQUIRED, readOnly = false, rollbackFor = Exception.class)
+
+SELECT counter_field FROM child_codes FOR UPDATE;
+UPDATE child_codes SET counter_field = counter_field + 1;
+如果事务A先获得了某行的写共享锁，那么事务B就必须等待事务A commit或者roll back之后才可以访问行数据。
+
+@Transactional(propagation = Propagation.REQUIRED, rollbackFor = Exception.class)
+ DefaultTransactionDefinition def = new DefaultTransactionDefinition();
+ def.setPropagationBehavior(TransactionDefinition.PROPAGATION_REQUIRED);
+ TransactionStatus status = transactionManager.getTransaction(def);
+transactionManager.commit(status);
+transactionManager.rollback(status);
+http://openwares.net/java/spring_mybatis_transaction.html
+
+
+http://haohaoxuexi.iteye.com/blog/1338557
+http://zhuyuehua.iteye.com/blog/1717525
+    <select id="findUserListByIdList" parameterType="java.util.ArrayList" resultType="User">
+		select * from user user
+		<where>
+			user.ID in (
+               <foreach item="guard" index="index" collection="list"	separator=","> #{guard} </foreach>
+			)
+		</where>
+	</select> 

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+        <!-- status="OFF"，可以去掉，它的含义为是否记录log4j2本身的event信息，默认是OFF -->
+<configuration status="OFF">
+    <!-- 定义下面的引用名 -->
+    <Properties>
+        <property name="log_pattern">%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n</property>
+        <property name="log-path">${web:rootDir}/logs</property><!-- ${web:rootDir}是项目根目录 -->
+        <property name="every_file_size">5M</property><!-- 日志切割的最小单位 -->
+        <property name="output_log_level">debug</property><!-- 日志输出级别 -->
+    </Properties>
+
+    <!--先定义所有的appender -->
+    <appenders>
+
+        <!--这个输出控制台的配置 -->
+        <Console name="Console" target="SYSTEM_OUT">
+            <!--控制台只输出level及以上级别的信息（onMatch），其他的直接拒绝（onMismatch） -->
+            <ThresholdFilter level="trace" onMatch="ACCEPT" onMismatch="DENY" />
+            <!--这个都知道是输出日志的格式 -->
+            <PatternLayout pattern="${log_pattern}" />
+        </Console>
+
+        <!-- debug级别日志文件 -->
+        <!--每次大小超过size，则这size大小的日志会自动进行压缩，作为存档 -->
+        <RollingFile name="app_debug" fileName="${log-path}/debug/debug.log" filePattern="${log-path}/debug/debug-%d{yyyy-MM-dd}-%i.log.gz">
+            <Filters>
+                <ThresholdFilter level="info" onMatch="DENY" onMismatch="NEUTRAL" />
+                <ThresholdFilter level="debug" onMatch="ACCEPT" onMismatch="NEUTRAL" />
+            </Filters>
+            <PatternLayout pattern="${log_pattern}" />
+            <SizeBasedTriggeringPolicy size="${every_file_size}"/>
+        </RollingFile>
+
+        <!-- info级别日志文件 -->
+        <RollingFile name="app_info" fileName="${log-path}/info/info.log" filePattern="${log-path}/info/info-%d{yyyy-MM-dd}-%i.log.gz">
+            <Filters>
+                <ThresholdFilter level="warn" onMatch="DENY" onMismatch="NEUTRAL" />
+                <ThresholdFilter level="info" onMatch="ACCEPT" onMismatch="DENY" />
+            </Filters>
+            <PatternLayout pattern="${log_pattern}" />
+            <SizeBasedTriggeringPolicy size="${every_file_size}"/>
+        </RollingFile>
+
+        <!-- error级别日志文件 -->
+        <RollingFile name="app_error" fileName="${log-path}/error/error.log" filePattern="${log-path}/error/error-%d{yyyy-MM-dd}-%i.log.gz">
+            <Filters>
+                <ThresholdFilter level="warn" onMatch="ACCEPT" onMismatch="DENY" />
+            </Filters>
+            <PatternLayout pattern="${log_pattern}" />
+            <SizeBasedTriggeringPolicy size="${every_file_size}"/>
+        </RollingFile>
+
+    </appenders>
+
+    <!--然后定义logger，只有定义了logger并引入的appender，appender才会生效 -->
+    <loggers>
+
+
+        <!--建立一个默认的root的logger，需要在root的level中指定输出的级别， -->
+        <root level="${output_log_level}">
+            <appender-ref ref="Console" />
+            <appender-ref ref="app_debug"/>
+            <appender-ref ref="app_info"/>
+            <appender-ref ref="app_error"/>
+        </root>
+
+    </loggers>
+
+</configuration>

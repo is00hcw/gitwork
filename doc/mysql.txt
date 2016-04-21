@@ -56,6 +56,21 @@ Mariadb开发的MaxScale（1.2.0版本）中就集成了binlog server功能。�
 对比mysql 5.6下，开启GTID和关闭GTID两模式，binlog中主要的区别就是：GTID模式下，会多出“SET @@SESSION.GTID_NEXT= '738ec402-8dd1-11e5-aa4c-e0db551cf1ac:2'”等信息。
 http://www.hudings.com/gtid-binlog/
 
+http://blog.tingyun.com/web/article/detail/342     MySQL 性能调优的10个方法
+http://huoding.com/2011/04/10/62
+HandlerSocket 是MySQL的一个插件,用于跳过MySQL的SQL层面,直接访问内部的InnoDB存储引擎   它通过插件的方式赋予MySQL完整的NoSQL功能，从原理上讲，它跳过MySQL中最耗时的语法解析，查询计划等步骤，直接读取数据，如果内存够大，能装下索引，MySQL的查询效率能提高若干倍      如果使用Percona Server版本的MySQL就简单了，因为它已经内置了HandlerSocket支持
+INSTALL PLUGIN handlersocket soname 'handlersocket.so';
+SHOW PROCESSLIST;
+lsof -i :9999
+MySQL5.6提供原生的Memcached API     http://huoding.com/2013/08/20/279
+SOURCE /usr/local/mysql/share/innodb_memcached_config.sql
+INSTALL PLUGIN daemon_memcached soname "libmemcached.so";
+
+http://huoding.com/2013/05/03/251   MySQL主从服务器数据一致性的核对与修复
+http://blog.tingyun.com/web/article/detail/228  MySQL企业常用架构与调优经验分享
+http://blog.tingyun.com/web/article/detail/399   MySQL的分页技术总结
+
+
 Mysos是一个用于运行MySQL实例的Apache Mesos框架。它极大地简化了MySQL集群的管理，具有高可靠性、高可用性及高可扩展性等特点  Apache Cotton, previous named Mysos
 http://m.blog.itpub.net/22664653/viewspace-1993393/  MySQL数据库性能测试
 http://m.blog.itpub.net/29254281/viewspace-1847415/   开始学习调试MySQL

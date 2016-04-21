@@ -22,6 +22,12 @@ docker run --rm -v $(pwd):/project -v /usr/tmp/.m2:/root/.m2 -w /project maven:3
 docker run --name maven_data -v /root/.m2 maven:3.3.3-jdk-8 echo 'data for maven'
 卷会在缓存的本地仓库中保留。如果我们希望清理系统，可以使用如下命令删除数据容器：docker rm -v maven_data
 
+https://yq.aliyun.com/articles/18037?spm=5176.100238.yqhn2.18.HDEmMk   如何设置Docker容器中Java应用的内存限制
+ docker run --rm -m 512m -e JAVA_OPTS='-Xmx512m' tomcat:8
+自从1.7版本之后，Docker把容器的local cgroups以只读方式挂载到容器内部的文件系统上，这样我们就可以在容器内部，通过cgroups信息来获取系统对当前容器的资源限制了。
+cat /sys/fs/cgroup/memory/memory.limit_in_bytes
+Docker 1.10提供了对容器资源限制的动态修改能力。    docker update -m 1024m test
+
 http://www.oschina.net/news/70161/docker-architecture  问题
 https://mos.meituan.com/library/26/how-to-install-docker-on-centos/  在CentOS上安装Docker
 

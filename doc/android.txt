@@ -77,17 +77,35 @@ http://mqc.aliyun.com/doc.htm?id=8  Robotium编写登录APP的自动化脚本
 http://mqc.aliyun.com/doc.htm?id=44  Appium
 Google 开源了 Espresso，这是一种Android自动化测试框架，使测试人员可以在云中x86机器的多线程环境里运行测试
 
-AndFix
-https://github.com/jasonross/Nuwa   http://www.jianshu.com/p/72c17fb76f21  
-http://www.oschina.net/p/andfix
+补丁，热修复
 http://blog.csdn.net/qxs965266509/article/details/49816007
 http://blog.csdn.net/lmj623565791/article/details/49883661
-https://github.com/Qihoo360/DroidPlugin
-https://github.com/dodola/HotFix
-https://github.com/jasonross/Nuwa
-https://github.com/bunnyblue/DroidFix
 http://www.tuicool.com/articles/Fraqeab
 http://blog.csdn.net/t12x3456/article/details/39958755
+http://www.infoq.com/cn/articles/ctrip-android-dynamic-loading 携程插件化  https://github.com/CtripMobile/DynamicAPK
+https://github.com/Qihoo360/DroidPlugin
+下面是几种比较流行的开源热补丁方案：
+1. AndFix  http://www.oschina.net/p/andfix
+1. HotFix  https://github.com/dodola/HotFix
+1. Nuwa  https://github.com/jasonross/Nuwa  http://www.jianshu.com/p/72c17fb76f21  
+1. DroidFix  https://github.com/bunnyblue/DroidFix
+http://news.oneapm.com/developers-discussion-apk/
+http://www.wtoutiao.com/p/10awJ9K.html   Android热补丁动态更新实践
+https://yq.aliyun.com/articles/14738?spm=5176.blog26252.yqblogcon1.17.p4gifk  如何将「插件化」接入到项目之中
+http://mp.weixin.qq.com/s?__biz=MzI1MTA1MzM2Nw==&mid=400118620&idx=1&sn=b4fdd5055731290eef12ad0d17f39d4a&scene=0#wechat_redirect  安卓App热补丁动态修复技术介绍
+http://www.jianshu.com/p/72c17fb76f21?spm=5176.blog8722.yqblogcon1.12.MP1pf8   基于Nuwa实现Android自动化HotFix
+https://github.com/archmages/HotFixSamples
+https://github.com/alibaba/LuaViewSDK
+
+http://blog.tingyun.com/web/article/detail/155   Android客户端性能优化（魅族资深工程师毫无保留奉献）
+利用LeakCanary 来检查Android 内存泄漏   http://www.jianshu.com/p/0049e9b344b0
+通过Android Studio中的 Analyze->Inspect Code 对工程代码做静态扫描；找出潜在的问题代码并修改
+back退出不应存在内存泄露，简单的检查办法是在退出应用后，用命令`adb shell dumpsys meminfo 应用包名`查看 `Activities Views` 是否为零;
+严苛模式（StrictMode），是Android提供的一种运行时检测机制，用于检测代码运行时的一些不规范的操作，最常见的场景是用于发现主线程的IO操作。应用程序可以利用StrictMode尽可能的发现一些编码的疏漏。
+StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().detectAll() .penaltyLog() .build());
+StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder().detectAll() .penaltyLog() .build());
+com.jakewharton.hugo:hugo-plugin:1.2.1    可通过在方法上添加@DebugLog来打印方法的耗时
+
 
 decompile
 https://github.com/google/enjarify
@@ -155,3 +173,13 @@ http://www.lightskystreet.com/2015/06/13/google-for-android-9-tools/   tools
 
 https://github.com/matrixxun/ProductTour  引导页
 https://github.com/PaoloRotolo/AppIntro
+
+
+一个完整的Android系统，包括以下几个部分：
+　　1. bootloader：用来启动操作系统
+　　2. kernel: 系统内核
+　　3. 核心进程，就是 /system/bin 下面那堆东西
+　　4. so库: 系统运行基础，就是 /system/lib 下面那堆东西
+　　5. Android虚拟机，所有的上层应用都是靠虚拟机来运行的
+　　6. Android Framework: 所有的上层应用都是通过调用Framework来实现功能的，就是 /system/framework下面那堆东西
+　　7. 上层应用，比如说桌面Launcher, 拨号，短信，通讯录之类，就是/system/app下面那堆东西
