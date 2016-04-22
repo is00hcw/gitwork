@@ -1,0 +1,1 @@
+http://www.jianshu.com/p/1f9153cfde67   (课程)基于HBase做Storm 实时计算指标存储
