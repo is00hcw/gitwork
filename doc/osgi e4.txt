@@ -1,0 +1,71 @@
+org.eclipse.virgo.web.dm.ServerOsgiBundleXmlWebApplicationContext  
+http://blog.csdn.net/jia20003/article/details/7666795
+http://www.osgi.com.cn/article/7289514
+http://www.osgi.com.cn/article/7289227
+http://www.eclipse.org/virgo/download/
+http://download.eclipse.org/virgo/milestone/tooling
+Spring DM was contributed to Eclipse as the Gemini Blueprint project. Virgo has Gemini Blueprint built-in.
+Using the reference implementation from Gemini Web that was developed by SpringSource from an offshoot of the original VTS codebase. This RI is now fully integrated in VTS as the basis of the support for web application deployment.
+http://itindex.net/detail/53581-virgo-tomcat-server
+修改virgo-tomcat默认管理用户名及密码，编辑 ./configuration/org.eclipse.virgo.kernel.users.properties文件
+修改virgo-tomcat的最大并发连接数，编辑 ./configuration/tomcat-server.xml文件
+配置jvm的堆(Heap)内存大小，编辑 ./bin/dmk.sh文件  
+Virgo基于一个很小的OSGi微内核构建，也就是Virgo Nano。   Nano提供了可扩展的诊断（diagnostics）功能以及全功能的Web管理控制台，以及JMX界面和ssh/telnet控制台。Nano支持热部署，只要将bundle丢到“pickup”目录下即可，同时还支持Declarative Service，从而允许bundle通过"microservices"进行交流。
+Virgo Kernel包为Nano添加了多个基于bundle格式的模块化结构，它将用户应用隔离在“user region”之中，从而与kernel本身实现了分离，而且它添加了OSGi Blueprint Service以及Sprirng编程模型。
+另外还有三个Web服务器的发布包。Virgo Nano Web为Nano添加了基于Apache Tomcat的Web服务器。Virgo Server for Apache Tomcat为kernel添加了相同的Apache Tomcat作为Web服务器。
+针对使用Virgo Server for Apache Tomcat的用户，Virgo还有一个"Snaps"框架。Snaps可以让Web应用进行模块化，这样的话bundle可以为应用程序URL空间的不同部分提供内容。
+
+To hot deploy an artifact, copy it into the pickup directory (by default $SERVER_HOME/pickup):   cp helloWorld.war $SERVER_HOME/pickup
+http://wiki.eclipse.org/Virgo/FAQ
+支持热部署直接把war扔到pickup目录， 启动后的管理后台 http://localhost:8080/admin  ID: admin  Password: springsource， eclipse插件工具 http://download.eclipse.org/virgo/snapshot/tooling 
+例子 http://116.77.75.202:83/1Q2W3E4R5T6Y7U8I9O0P1Z2X3C4V5B/mirror.rise.ph/eclipse/virgo/milestone/VSS/3.0.0.RC1/samples-3.0.0.RC1.zip
+
+
+https://github.com/wmzsoft/JXADF
+http://wenku.baidu.com/link?url=-byp2035xStJy9hcULxm6jp9OtLR-fbw2TsDorioRlbRbYMztj3_azF6KW-leEG8Fx2Iv4r680_ICJUoJf6kSJ-SpGwtGDBGlzVltlmpT5_
+
+所有的JIRA插件jar包中，都必须要包含一个以 atlassian-plugin.xml 命名的配置文件。
+许多企业级开发平台都是基于OSGi架构的，譬如著名的IBM Rational Team Concert/JAZZ平台是完全基于OSGi的，国内的平台厂商普元的EOS最新版本也支持了OSGi，其他还有国家电网的SG-UAP平台等等。
+http://osgi.com.cn/article/7289397
+
+
+Karaf是Apache旗下的一个开源项目.Karaf同时也是一个基于OSGi的运行环境,Karaf提供了一个轻量级的OSGi容器,可以用于部署各种组件
+https://karaf.apache.org/download.html
+http://holbrook.github.io/2014/02/20/apache_karaf.html  Apache Karaf：OSGi中间件
+
+
+Tycho的思路是由MANIFEST.MF自行管理bundle的依赖关系，pom.xml只记录使用maven进行构建时需要的信息，比如maven工程的父子关系、打包时需要的bundle仓库及要发布的目标平台等。
+Apache Felix Maven-Bundle-Plugin 则使用另一套机制：使用Maven-Bundle-Plugin，在开发时可以没有MANIFEST.MF文件！Maven-Bundle-Plugin在pom.xml中复制了一套MANIFEST.MF的元数据，完全可以通过pom.xml文件中的定义生成出完整的MANIFEST.MF文件。
+http://holbrook.github.io/2014/01/21/tycho_vs_maven_bundle_plugin.html
+
+Buleprint(或者说，OSGi Enterprise)目前有两个主要的实现：Eclipse Gemini和Apache Aries。   其中Gemini的代码最初来自Spring DM
+Karaf还提供了Eclipse插件：Eclipse Integration for Karaf (EIK)
+
+
+
+
+Eclipse e4：从OSGi-DS到依赖注入
+http://holbrook.github.io/2014/01/12/dependency_injection_in_e4.html
+http://holbrook.github.io/2014/01/12/e4_platform_services.html
+org.eclipse.e4.core.services.events.IEventBroker  提供基于发布、订阅机制的事件处理功能    Eclipse e4中，将OSGi的EventAdmin  API封装为事件服务，提供了基于发布、订阅机制的事件处理功能：EventBroker作为事件总线，通过EventBroker可以发布和订阅事件。
+e4是位于底层的Equinox、EMF、SWT/JFace和上层的Eclipse应用(Plugin、RCP、RAP等)之间的一个应用开发平台。 从RCP的角度来说，e4的一个主要目标就是更轻松地编写和重用组件。
+e4带来的新特性主要包括：
+基于EMF的应用模型(Application Model)
+依赖注入
+基于CSS定义外观
+Application.e4xmi文件。 该文件是e4中的应用模型文件。在 Eclipse 平台 UI 的早期版本中，workbench 被显式地硬编码来布局 workbench 窗口、workbench 页面、编辑器区域或视图堆栈。
+Application.e4xmi是基于EMF定义的。其定义文件(.ecore）位于 org.eclipse.e4.ui.model.workbench 插件的model文件夹中。    http://holbrook.github.io/2014/01/07/eclipse_e4_RCP_quickstart.html
+PartStack可以容纳多个Part，每次只能显示其中一个Part，以页签(tab)的形式进行切换，而PartSashContainer以水平或竖直布局的方式同时显示多个Part。
+在e4中，View甚至无需实现任何接口，而是通过依赖注入的方式获取UI组件的上下文环境。可以使用JSR330中定义的@Inject注解，也可以使用e4的org.eclipse.e4.ui.di包中定义的@Focus、@Persist等注解。
+对于Eclipse的插件环境，可以使用应用模型所在的插件(bundle)或来自其他插件的资源，分别使用
+bundleclass://Bundle-SymbolicName/ package.classname 和
+platform:/plugin/Bundle-SymbolicName/ path/filename.extension的形式。
+
+Enide bootstrap is basically one configuration file (*.p2f) that lets you quick start by File -> Import -> Software configuration from file. - See more at: https://marketplace.eclipse.org/content/enide-eclipse-boostrap-e4#sthash.YMmsTxZi.dpuf
+Tycho以一组maven插件的形式，支持Eclipse的plug-ins, features, update sites (based on p2) 、products等类型的工程， 表现为不同的maven打包类型(packaging):  http://holbrook.github.io/2014/01/08/build_osgi_bundle_with_tycho_maven_plugin.html
+eclipse-plugin
+eclipse-feature
+eclipse-test-plugin
+eclipse-repository
+eclipse-target-definition
+

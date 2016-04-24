@@ -1,3 +1,12 @@
+http://www.oschina.net/translate/the-flask-mega-tutorial-part-i-hello-world   Flask 教程，第一部分：Hello，World！
+http://holbrook.github.io/2015/05/04/modern_web_dev_env.html
+http://holbrook.github.io/2013/06/20/python_env.html
+virtualenv——python的环境管理器（类似于ruby的gemset)。 pip freeze > req.txt, 然后在另一个环境中按照该文件中的内容安装需要的包：pip install -r req.txt。   R + CRAN
+
+http://holbrook.github.io/2013/08/02/moosefs.html      MooseFS：屌丝的存储
+http://holbrook.github.io/2013/05/03/r_notes_1_what.html    R常用于金融和统计领域。大多数人使用R就是因为它的统计功能，R的内部实现了很多经典的or时髦的统计技术。
+
+
 简单而直接的Python web 框架：web.py  flask
 http://blog.csdn.net/linhan8/article/details/8746110
 http://wechat-python-sdk.readthedocs.org/zh_CN/master/
