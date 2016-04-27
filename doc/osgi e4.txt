@@ -17,8 +17,12 @@ Virgo Kernel包为Nano添加了多个基于bundle格式的模块化结构，它�
 
 To hot deploy an artifact, copy it into the pickup directory (by default $SERVER_HOME/pickup):   cp helloWorld.war $SERVER_HOME/pickup
 http://wiki.eclipse.org/Virgo/FAQ
-支持热部署直接把war扔到pickup目录， 启动后的管理后台 http://localhost:8080/admin  ID: admin  Password: springsource， eclipse插件工具 http://download.eclipse.org/virgo/snapshot/tooling 
+支持热部署直接把war扔到pickup目录， 管理后台 http://localhost:8080/admin  ID: admin  Password: springsource， eclipse插件工具 http://download.eclipse.org/virgo/snapshot/tooling 
 例子 http://116.77.75.202:83/1Q2W3E4R5T6Y7U8I9O0P1Z2X3C4V5B/mirror.rise.ph/eclipse/virgo/milestone/VSS/3.0.0.RC1/samples-3.0.0.RC1.zip
+<param-name>contextClass</param-name>
+<param-value>org.eclipse.virgo.web.dm.ServerOsgiBundleXmlWebApplicationContext</param-value>
+http://www.eclipse.org/virgo/samples/guide-rest-service/README.html
+http://www.eclipse.org/virgo/documentation/virgo-documentation-3.6.4.RELEASE/docs/snaps-guide/htmlsingle/virgo-snaps-guide.html
 
 
 https://github.com/wmzsoft/JXADF
