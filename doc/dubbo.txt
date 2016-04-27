@@ -1,4 +1,6 @@
-﻿http://www.cnblogs.com/yjmyzz/p/dubbox-demo.html  dubbox简单示例
+﻿https://github.com/weibocom/motan  微博rpc
+
+http://www.cnblogs.com/yjmyzz/p/dubbox-demo.html  dubbox简单示例
 http://my.oschina.net/u/238296/blog/602446?fromerr=GJbDMeel
 http://www.cnblogs.com/yjmyzz/p/update-dubbo-to-spring-4-and-add-log4j2-support.html  升级spring4
 http://www.cnblogs.com/yjmyzz/p/dubbo-pritimive-thrift-avro-support.html

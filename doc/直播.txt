@@ -14,5 +14,28 @@ HTTP/2 的多路复用特性，使得可以在一个连接上同时打开多个流，双向传输数据。Server 
 CSS、JS 合并（Concatenation）；
 CSS、JS 内联（Inline）；
 图片、音频内联（Data URI）；
-
 HTTP/2
+
+https://help.aliyun.com/knowledge_detail/6716673.html  播放器
+https://help.aliyun.com/knowledge_detail/6993821.html?spm=5176.776716673.0.0.Xv86UG
+
+2012年8月，爱立信公司推出了首款H.265编解码器，而在仅仅六个月之后，国际电联(ITU)就正式批准通过了HEVC/H.265标准
+H.265旨在在有限带宽下传输更高质量的网络视频，仅需原先的一半带宽即可播放相同质量的视频。这也意味着，我们的智能手机、平板机等移动设备将能够直接在线播放1080p的全高清视频。H.265标准也同时支持4K(4096×2160)和8K(8192×4320)超高清视频。
+
+视频直播服务支持输出RTMP、FLV、HLS三种协议；
+PC端：建议优先级为FLV、RTMP、HLS；
+移动端：优先HLS协议；
+https://help.aliyun.com/knowledge_detail/13094238.html?spm=5176.789196418.2.2.fZMz1Y
+台式计算机或笔记本，使用摄像头或者桌面   使用第三方软件采集摄像头视频或桌面图像，将视频或桌面推流至RTMP推流地址。第三方推流软件包括：OBS(推荐)、FMLE、XSplit等。
+Android/iOS, 使用手机摄像头   使用第三方软件或SDK采集摄像头视频，并推送视频流至RTMP推流地址。
+读取某个视频文件，并以RTMP流方式输出作为视频源来向直播服务的RTMP推流地址进行视频发布。可以使用ffmpeg命令来实现(Windows/Linux/Mac均适用)，例如使用如下命令行：
+ffmpeg -re -i {your_video_file} -r 30 -s 1280x720 -f flv {your_rtmp_address}
+
+支持自定义设置M3U8切片时长，范围从1秒至60秒；有助于用户根据播放端带宽条件来设定切片时长，降低用户首屏加载时间。
+
+https://yq.aliyun.com/articles/31696?spm=5176.group76.0.0.I0fpFK    201604深圳云栖大会Workshop - 入口
+http://blog.csdn.net/leixiaohua1020/article/details/12682699/      https://obsproject.com/
+https://yq.aliyun.com/articles/31773?spm=5176.blog31696.yqblogcon1.7.hDtWm1   推流软件安装
+http://designmodo.github.io/Flat-UI/
+https://github.com/videojs/videojs-contrib-hls
+https://github.com/jabbany/CommentCoreLibrary

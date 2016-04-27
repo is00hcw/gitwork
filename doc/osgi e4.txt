@@ -1,4 +1,4 @@
-org.eclipse.virgo.web.dm.ServerOsgiBundleXmlWebApplicationContext  
+﻿org.eclipse.virgo.web.dm.ServerOsgiBundleXmlWebApplicationContext  
 http://blog.csdn.net/jia20003/article/details/7666795
 http://www.osgi.com.cn/article/7289514
 http://www.osgi.com.cn/article/7289227
@@ -23,6 +23,10 @@ http://wiki.eclipse.org/Virgo/FAQ
 <param-value>org.eclipse.virgo.web.dm.ServerOsgiBundleXmlWebApplicationContext</param-value>
 http://www.eclipse.org/virgo/samples/guide-rest-service/README.html
 http://www.eclipse.org/virgo/documentation/virgo-documentation-3.6.4.RELEASE/docs/snaps-guide/htmlsingle/virgo-snaps-guide.html
+ 
+http://osgi.com.cn/article/7289515   snaps
+http://osgi.com.cn/article/7289354   
+ 
 
 
 https://github.com/wmzsoft/JXADF
