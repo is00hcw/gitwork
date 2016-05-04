@@ -19,6 +19,7 @@ https://zhugeio.com/price/price.html  用户画像
 https://beecloud.cn/   支付
 http://www.infoq.com/cn/news/2015/06/mobile-testing-service?utm_source=tuicool    国内移动测试服务盘点
 http://www.oschina.net/p/reliable   基于 Node.js 的自动化持续集成 Reliable
+https://yq.aliyun.com/articles/36240?spm=5176.team26.teamshow1.16.8yNW5e   WebVirtMgr采用几乎纯Python开发，其前端是基于Python的Django，后端是基于Libvirt的Python接口，将日常kvm的管理操作变的更加的可视化。
 
 gis处理： redis， mongodb， postgresql，elasticsearch， mysql 5.7
 监控countly  promethues  karmo
@@ -36,6 +37,12 @@ https://github.com/openzipkin/brave   java 版
 https://github.com/sourcegraph/appdash  golang 版
 http://hot66hot.iteye.com/blog/2155036  Hystrix 使用与分析
 
+https://yq.aliyun.com/articles/31974?spm=5176.100238.yqhn2.14.YsPr0w#comment  阿里宣布开源Weex，用Web方式开发Native性能体验应用
+https://yq.aliyun.com/articles/34833?spm=5176.100238.yqhn2.47.foflU2  
+https://github.com/WechatFE/vConsole     手机网页的前端 console 调试面板
+http://www.oschina.net/p/huststore   360高性能分布式存储服务 HustStore
+
+https://github.com/NetEase/Dagger/wiki/The-First-Demo   网易webui 测试
 http://dbaplus.cn/news-21-288-1.html   Hadoop：风雨十年，未来何去何从
 http://www.oschina.net/project/alibaba  阿里开源项目
 https://github.com/alibaba/f2etest   多浏览器测试

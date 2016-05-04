@@ -1,6 +1,8 @@
 ﻿http://gao-xianglong.iteye.com/blog/2237277?spm=5176.blog8295.yqblogcon1.10.nNwFMU
 https://github.com/gaoxianglong/shark/wiki/shark%E4%BD%BF%E7%94%A8%E5%85%A5%E9%97%A8
 https://github.com/gaoxianglong/shark/wiki/%E5%9F%BA%E4%BA%8Ezookeeper%E7%9A%84%E9%9B%86%E4%B8%AD%E5%BC%8F%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83
+https://yq.aliyun.com/articles/36051?spm=5176.100238.yqhn2.18.PzRtHg   MySQL性能分析和优化-part 1
+
 
 http://onexsoft.cn/?page_id=3896  oneproxy 
 https://yq.aliyun.com/edu/lesson/48?spm=5176.100238.yqhn2.27.2Imdy7#tab2    淘宝丁奇：如何解决影响MySQL使用的9大问题

@@ -16,6 +16,15 @@ https://github.com/excilys/androidannotations/wiki/AvailableAnnotations
 https://github.com/excilys/androidannotations/wiki/WorkingWithThreads  后台线程@Background和UI线程@UiThread  http://zhenhappy.github.io/2015/11/29/Android-Annotations-7-Threading.html
 http://zhenhappy.github.io/2015/11/05/JRebel-for-Android-Studio.html   JRebel for Android实战用法
 
+https://github.com/googlesamples/android-architecture   
+https://mp.weixin.qq.com/s?__biz=MzA3ODg4MDk0Ng==&mid=403539764&idx=1&sn=d30d89e6848a8e13d4da0f5639100e5f
+http://weishu.me/2016/04/05/understand-plugin-framework-classloader/
+http://www.oschina.net/news/73032/how-to-study-android   如何自学 Android
+
+https://yq.aliyun.com/articles/37164?spm=5176.100238.yqhn2.53.VhcAKD  友盟自动更新
+https://yq.aliyun.com/articles/37156?spm=5176.blog37158.yqblogcon1.41.1gomU6   Android Studio时你应该知道的一切配置
+https://yq.aliyun.com/articles/37158?spm=5176.100238.yqhn2.54.VhcAKD
+
 https://github.com/is00hcw/AndroidDevTools
 http://m.blog.csdn.net/blog/Estellise/41758401  eventbus
 http://blog.chengyunfeng.com/?p=449

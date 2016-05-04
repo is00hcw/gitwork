@@ -1,6 +1,8 @@
 http://dorole.com/1226/   JAVA 内存区域分析
 增大code cache的size，可通过在启动参数上增加-XX:ReservedCodeCacheSize=256m，二是启用code cache的回收机制，可通过在启动参数上增加：-XX:+UseCodeCacheFlushing来启用。
 
+6个原则：尽可能拆分  服务架构“去中心化” 异步化  数据化运营  尽可能使用成熟组件  尽可能自动化
+
 synchronized  无限期等待， 需要有一种机制可以不让等待的线程一直无期限地等待下去（比如只等待一定的时间或者能够响应中断）
 需要一种机制来使得多个线程都只是进行读操作时，线程之间不会发生冲突，通过Lock就可以办到。 
 http://www.cnblogs.com/dolphin0520/p/3923167.html
@@ -13,6 +15,17 @@ http://www.cnblogs.com/dolphin0520/p/3923167.html
 公平锁即尽量以请求锁的顺序来获取锁。比如同是有多个线程在等待一个锁，当这个锁被释放时，等待时间最久的线程（最先请求的线程）会获得该所，这种就是公平锁。
 在Java中，synchronized就是非公平锁，它无法保证等待的线程获取锁的顺序。而对于ReentrantLock和ReentrantReadWriteLock，它默认情况下是非公平锁，但是可以设置为公平锁。
 
+http://jm.taobao.org/2016/03/23/3782/#more   线上某应用的FULLGC分析
+/java/bin/jinfo -flag +PrintGCReason
+jamp -histo：现场触发下fullgc
+JDK5引入的一个新特性有关，对于一些频繁抛出的异常，JDK为了性能会做一个优化，在JIT重新编译后会抛出没有堆栈的异常。在使用server模式的时候，这个优化是开启的，  另一个解决办法是暂时禁用这个优化，强制要求每次都要抛出有堆栈的异常。幸好JDK提供了选项来关闭这个优化，配置JVM参数
+-XX:-OmitStackTraceInFastThrow 就可以禁止这个优化（注意选项中的减号，加号是启用）。
+
+使用SimpleDateFormat的时候要注意线程安全性，要么每次new，要么做同步，两者的性能有差距，但是这个差距很难成为你的性能瓶颈。
+
+在JDK7上，如果调用Classloader.registerAsParallelCapable方法，则会开启并行类加载功能，把锁的级别从ClassLoader对象本身，降低为要加载的类名这个级别。
+<Loader loaderClass="org.apache.catalina.loader.ParallelWebappClassLoader" />  并行类加载功能已经在捐献给Apache tomcat社区，并且被社区接受，在最新的Apache tomcat 7.0.65版本中已经包含该项功能。
+http://jm.taobao.org/2016/01/29/3721/
 
 所有长度超过1字节的原始类型，都以大端（big-endian）的方式保存在字节码流中，这意味着高位字节出现在低位字节之前。    网络字节码顺序：Java class文件用网络字节码顺序来进行存储：为了保证和小端的Intel x86架构以及大端的RISC系列的架构保持无关性，JVM使用用于网络传输的网络字节顺序，也就是大端。
 

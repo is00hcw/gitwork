@@ -1,0 +1,15 @@
+http://www.oschina.net/news/73072/true-openstack
+93%的OpenStack云运行KVM(Kernel Virtual Machine hypervisor)，排名第二的管理器是QEMU（16%）。虽然VMware致力于将自家工具融入OpenStack生态系统，但是只有8%的用户使用ESX。
+OpenStack云架构中开源网络、存储和数据库占据主流。网络层最流行的是Open vSwitch，存储方面Ceph平台占据主导地位。MySQL是最流行的数据库，紧随其后的是MariaDB和MongoDB，以上都是开源软件。
+
+在云平台相关技术上，我觉得目前对OpenStack、Docker、OpenShift、Unikernel，Kubenates，Mesos， DevOps等领域应该保持持续关注；在网络领域，可以重点关注SDN、OpenDaylight、OpenvSwitch、DPDK、VPP等技术发展；在存储方面，关注Ceph、Swift等项目；
+从 hypervisor 讲，Xen/KVM/vSphere/HyperV 都很成熟了  Linux 上虚拟机的开源管理方案也已成熟定型：libvirt, OpenStack
+Linux 容器，Linux 一贯的作风，慢慢演化，不求仔细设计，然后就是 cgroup, pid/uts/ipc/net/uid namespace 一个个实现出来
+Hashicorp 的 Packer  http://www.oschina.net/news/73088/virtualmath-is-die
+
+以Hadoop为核心，融合其他技术的平台级系统，Avro将是实现融合技术的关键技术。
+
+
+https://yq.aliyun.com/articles/37507?spm=5176.100238.yqhn2.56.LYoYva  互联网金融的十大模式
+https://yq.aliyun.com/articles/37308?spm=5176.blog37396.yqblogcon1.7.cxZ7bo
+https://yq.aliyun.com/articles/37396?spm=5176.100238.yqhn2.14.LYoYva  史上最全的“大数据”学习资源（下）
