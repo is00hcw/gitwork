@@ -5,6 +5,9 @@ http://my.oschina.net/vczero/blog/471945
 https://segmentfault.com/a/1190000004033809
 http://www.alloyteam.com/2016/03/react-native-for-android-windows/   React Native for Android Windows环境搭建
 
+f8app：Fecebook开源的F8大会app，该app使用了React Native技术。 https://github.com/fbsamples/f8app 
+http://f8-app.liaohuqiu.net/tutorials/building-the-f8-app/design/
+
 npm info react-native
 npm install -g react-native-cli
 http://localhost:8081/debugger-ui

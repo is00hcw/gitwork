@@ -5,6 +5,15 @@ https://yq.aliyun.com/articles/7568?spm=5176.blog8523.yqblogcon1.22.160o9n  Andr
 http://blog.csdn.net/jdsjlzx/article/details/7606423?spm=5176.blog6847.yqblogcon1.6.1BB66k  Android自定义捕获Application全局异常
 https://github.com/googlesamples/
 
+
+在安卓上面写测试，有很多技术方案。有JUnit、Instrumentation test、Espresso、UiAutomator等等，还有第三方的Appium、Robotium、Calabash等等。
+目前安卓最常用的有两个，Mockito和JMockit。两者的区别是，前者不能mock static method和final class、final method，后者可以。比如RoboGuice、Dagger、Dagger2等等。我们用的是Dagger2，理由很简单，这是目前最好用的DI框架。
+使用Android提供的Instrumentation系统，将单元测试代码运行在模拟器或者是真机上。但是速度非常慢，因为每次运行一次单元测试，都需要将整个项目打包成apk，上传到模拟器或真机上
+使用Robolectric框架，这个框架基本可以理解为在JVM上面实现了一套安卓的模拟环境，同时给安卓相关的类增加了其他一些增强的功能，以方便做单元测试
+https://mp.weixin.qq.com/s?__biz=MzA3ODg4MDk0Ng==&mid=2651112121&idx=1&sn=c5cc27a8cefd0dc8e1ed956e82a76cd9   蘑菇街支付金融Android单元测试实践
+http://mp.weixin.qq.com/s?__biz=MzA3NTYzODYzMg==&mid=2653576922&idx=1&sn=dee69c4a3c4e33ca0b9d3a1a2b17347f&scene=0#wechat_redirect      老司机教你 “飙” EventBus 3
+
+
 http://www.oschina.net/news/71907/meizu-bsp-engineer-android-kernel  bsp
 https://androidtest.org/android-graphics-performance-pattens/#63debug   Android界面性能调优手册
 https://segmentfault.com/q/1010000004253063/a-1020000004333459  开源库
