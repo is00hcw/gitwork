@@ -106,6 +106,13 @@ http://www.jianshu.com/p/72c17fb76f21?spm=5176.blog8722.yqblogcon1.12.MP1pf8   »
 https://github.com/archmages/HotFixSamples
 https://github.com/alibaba/LuaViewSDK
 
+http://www.jianshu.com/p/0202845db617
+-obfuscationdictionary {filename} Ê¹ÓÃ¸ø¶¨ÎÄ¼þÖÐµÄ¹Ø¼ü×Ö×÷ÎªÒª»ìÏý·½·¨µÄÃû³Æ
+ ÔÚAndroid×ÊÔ´ÖÐ£¬ÓÐÒ»ÖÖ×ÊÔ´ÀàÐÍ³ÆÎªPublic£¬ËüÃÇÒ»°ãÊÇ¶¨ÒåÔÚres/values/public.xmlÎÄ¼þÖÐ¡£   Ã¿µ±Android×ÊÔ´´ò°ü¹¤¾ßaaptÖØÐÂ±àÒë±»ÐÞ¸Ä¹ýµÄ×ÊÔ´Ê±£¬¶¼»áÖØÐÂ¸øÕâÐ©×ÊÔ´¸³ÓèID£¬Õâ¾Í¿ÉÄÜ»áÔì³ÉÍ¬Ò»¸ö×ÊÔ´ÏîÔÚÁ½´Î²»Í¬µÄ±àÒëÖÐ±»¸³Óè²» Í¬µÄID¡£Òò´Ë£¬µ±ÎÒÃÇ½«×Ô¼º¶¨ÒåµÄ×ÊÔ´µ¼³öÀ´¸øµÚÈý ·½Ó¦ÓÃ³ÌÐòÊ¹ÓÃÊ±£¬¾ÍÐèÒªÍ¨¹ýpublic.xmlÎÄ¼þ½«µ¼³öÀ´µÄ×ÊÔ´µÄID¹Ì¶¨ÏÂÀ´¡£
+BaseDexClassLoader¨C>pathList¨C>dexElements
+»»¾ä»°Ëµ£¬Ö»ÒªÔÚstatic·½·¨£¬¹¹Ôì·½·¨£¬private·½·¨£¬override·½·¨ÖÐÖ±½ÓÒýÓÃÁËÆäËûdexÖÐµÄÀà£¬ÄÇÃ´Õâ¸öÀà¾Í²»»á±»´òÉÏCLASS_ISPREVERIFIED±ê¼Ç¡£
+
+
 http://blog.tingyun.com/web/article/detail/155   Android¿Í»§¶ËÐÔÄÜÓÅ»¯£¨÷È×å×ÊÉî¹¤³ÌÊ¦ºÁÎÞ±£Áô·îÏ×£©
 ÀûÓÃLeakCanary À´¼ì²éAndroid ÄÚ´æÐ¹Â©   http://www.jianshu.com/p/0049e9b344b0
 Í¨¹ýAndroid StudioÖÐµÄ Analyze->Inspect Code ¶Ô¹¤³Ì´úÂë×ö¾²Ì¬É¨Ãè£»ÕÒ³öÇ±ÔÚµÄÎÊÌâ´úÂë²¢ÐÞ¸Ä

@@ -4,6 +4,21 @@ ssi_silent_errors on;
 <!—#include virtual=“/tpl/header.html”—>
 这套沉淀多年的企业级互联网架构由EDAS应用框架、MQ消息队列、DRDS分布式数据库这三剑客组成。
 
+
+https://yq.aliyun.com/articles/5572?spm=5176.blog25395.yqblogcon1.14.ixjMFI     迁云架构实践
+http://blog.aliyun.com/967?spm=5176.docaliyun-multimedia-cloud/Other/summary.2.4.DYsDPe  图片演进
+http://blog.aliyun.com/2373?spm=5176.docaliyun-multimedia-cloud/Other/summary.2.3.DYsDPe  cdn演进
+
+https://help.aliyun.com/document_detail/aliyun-multimedia-cloud/Other/summary.html?spm=5176.docaliyun-multimedia-cloud/ToolsAndService/summary.6.140.sqCdbt   多媒体云
+https://help.aliyun.com/document_detail/nas/introduction/scenarios.html?spm=5176.docnas/introduction/advantage.6.89.w4DUCI   文件存储nas
+https://help.aliyun.com/knowledge_detail/5974749.html?spm=5176.789071878.2.2.PR1b6p   批量开服、快速部署解决方案
+https://www.aliyun.com/solution/game?spm=5176.2029888.1998.2.ddR8ak   游戏云
+https://help.aliyun.com/document_detail/iot/user-guide/MQTT/access.html?spm=5176.dociot/quickstart/MQTT.2.3.BbI2UL   iot mqtt
+https://help.aliyun.com/document_detail/containerservice/getting-started/inject-aliyun-mirrors-source-when-building.html?spm=5176.doccontainerservice/user-
+guide/workflow/workflow.6.99.2yGORu   如何提高docker镜像构建成功率  http://mirrors.aliyun.com/
+https://yq.aliyun.com/articles/29941?spm=5176.blog31767.yqblogcon1.40.73D4Fq        Docker 镜像加速器
+https://www.aliyunedu.net/
+
 http://yq.aliyun.com/articles/2779?spm=5176.team22.teamshow1.28.e6HPJz    tomcat能支持最大连接数由maxConnections加上acceptCount来决定。
 http://yq.aliyun.com/articles/2930?spm=5176.blog3185.yqblogcon1.14.WtcEqw   在阿里云容器服务上创建一个spring boot应用
 https://buy.aliyun.com/calculator?spm=5176.bbsr273622.0.0.aBpj4j#/ecs    价格计算器
