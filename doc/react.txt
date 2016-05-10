@@ -1,4 +1,8 @@
 http://www.infoq.com/cn/articles/taobao-mobile-weex  weex
+https://github.com/alibaba/luaviewsdk   luaview
+http://www.infoq.com/cn/articles/introducing-weex     Weex详解：灵活的移动端高性能动态化方案
+http://www.infoq.com/cn/articles/the-back-end-business-systems-service-transformation   谈谈后端业务系统的微服务化改造
+
 
 http://my.oschina.net/vczero/blog/597980
 http://my.oschina.net/vczero/blog/471945
@@ -7,6 +11,7 @@ http://www.alloyteam.com/2016/03/react-native-for-android-windows/   React Nativ
 
 f8app：Fecebook开源的F8大会app，该app使用了React Native技术。 https://github.com/fbsamples/f8app 
 http://f8-app.liaohuqiu.net/tutorials/building-the-f8-app/design/
+
 
 npm info react-native
 npm install -g react-native-cli
