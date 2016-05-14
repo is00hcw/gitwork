@@ -20,5 +20,15 @@ org.eclipse.swtbot.eclipse.gef.finder plugin
 https://wiki.eclipse.org/SWTBot/UsersGuide
 
 
+http://wiki.eclipse.org/Tycho/Packaging_Types
+http://wiki.eclipse.org/Eclipse/Testing
+http://wiki.eclipse.org/Tycho/Reference_Card
+http://wiki.eclipse.org/Tycho/FAQ
+http://blog.vogella.com/2013/01/16/testing-plain-swt-with-swtbot/
+http://www.jianshu.com/p/a5a7c78bca62
+http://mdwhatever.free.fr/index.php/2011/09/quality-analysis-on-eclipse-plugins-with-tycho-sonar-jacoco-and-swtbot/
+https://github.com/xseignard/tycho-demo-camp
+
+
 http://www.vainolo.com/2011/06/12/creating-a-gef-editor-part-1-defining-the-model-2/
 https://www.vainolo.com/tag/gef/
