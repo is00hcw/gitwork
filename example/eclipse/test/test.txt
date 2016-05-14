@@ -1,0 +1,24 @@
+SWTBot can automatically generate screenshots of the running application if a test fails. To use this feature include the plug-in org.eclipse.swtbot.junit4_x into the dependencies of your test project. Annotate your class test with @RunWith(SWTBotJunit4ClassRunner.class). This will automatically generated screenshots in the screenshots folder or your test projects. If you do not see this folder in your project, try refreshing the project (F5).
+
+You can trigger a screenshot in your code via the method bot.captureScreenshot(fileName).
+http://www.vogella.com/tutorials/SWTBot/article.html
+
+
+@RunWith(SWTBotJunit4ClassRunner.class)
+private static SWTWorkbenchBot bot;
+ 
+@BeforeClass
+public static void beforeClass() throws Exception {
+    bot = new SWTWorkbenchBot();
+}
+
+https://jaxenter.com/introduction-functional-testing-swtbot-123449.html
+In order to run tests that need a graphical server, you need to install Xvnc and the Xvnc Jenkins plug-in. 
+https://www.ibm.com/developerworks/community/blogs/c914709e-8097-4537-92ef-8982fc416138/entry/building_reusable_eclipse_ui_test_automation_framework_with_swtbot?lang=en
+
+org.eclipse.swtbot.eclipse.gef.finder plugin 
+https://wiki.eclipse.org/SWTBot/UsersGuide
+
+
+http://www.vainolo.com/2011/06/12/creating-a-gef-editor-part-1-defining-the-model-2/
+https://www.vainolo.com/tag/gef/
