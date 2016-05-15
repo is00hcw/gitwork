@@ -1,0 +1,1 @@
+http://severalnines.com/blog/sql-load-balancing-benchmark-comparing-performance-maxscale-haproxy

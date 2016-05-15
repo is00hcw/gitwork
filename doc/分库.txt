@@ -1,0 +1,22 @@
+
+http://www.francissoung.com/2015/10/12/Mysql%E5%88%86%E5%BA%93%E5%88%86%E8%A1%A8%E6%96%B9%E6%A1%88/     用merge存储引擎来实现分表  
+MyISAM 引擎提供 MERGE 表特性，可以通过创建 MERGE 表简化分表联立 MERGE 表适合的场景是：在创建表的初期，预测到随着业务、数据的增长，会在某一时刻分表，于是当表数据达到该阈值（如200W）之后，使用 INSERT_METHOD=LAST 创建 MERGE 表及新表
+这样，新的数据将全部存入 MERGE 表，达到 200W 数据后再创建新的表，并通过 alter table 语句将新表加入到 MERGE 表的 UNION 列表中
+http://chuansong.me/n/2757320   http://geek.csdn.net/news/detail/62793   深度解读海量数据存储和访问下的水平分库&去IOE
+http://www.infoq.com/cn/articles/yupoo-partition-database
+
+http://grepcode.com/file/repo1.maven.org/maven2/org.apache.marmotta/kiwi-triplestore/3.2.1/org/apache/marmotta/kiwi/generator/SnowflakeIDGenerator.java
+http://itindex.net/detail/53406-twitter-id-%E7%AE%97%E6%B3%95  IdWorker java代码
+http://darktea.github.io/notes/2013/12/08/Unique-ID
+https://github.com/LableOrg/java-uniqueid
+https://github.com/noctarius/snowcast
+http://engineering.intenthq.com/2015/03/icicle-distributed-id-generation-with-redis-lua/
+http://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=403837240&idx=1&sn=ae9f2bf0cc5b0f68f9a2213485313127&scene=21
+http://blog.ddup.us/2012/05/24/id-generation-in-distributed-environment/
+SnowFlake 41bit留给毫秒时间，10bit给MachineID，也就是机器要预先配置，剩下12位留给Sequence。
+微博使用了秒级的时间，用了30bit，Sequence 用了15位，理论上可以搞定3.2w/s的速度。用4bit来区分IDC，也就是可以支持16个 IDC，对于核心机房来说够了。剩下的有2bit 用来区分业务，由于当前发号服务是机房中心式的，1bit 来区分热备。是的，也没有用满64bit。
+
+http://gao-xianglong.iteye.com/blog/2019729  tddl
+http://itindex.net/detail/54369-%E9%87%8F%E7%BA%A7-mysql-sharding
+http://www.lanindex.com/%E4%B8%80%E8%87%B4%E6%80%A7%E5%93%88%E5%B8%8C%E7%AE%97%E6%B3%95%EF%BC%88consistent-hash%EF%BC%89%E7%9A%84%E9%BB%91%E7%A7%91%E6%8A%80/  一致性哈希(Jump Consistent Hash)
+大约小十年前，MySQL在ANSI SQL标准上做了一个非标准的“REPLACE INTO”扩展。虽然后来有“INSERT ON DUPLICATE KEY UPDATE”更好的解决了这类问题，但REPLACE INTO现在仍然能用。
