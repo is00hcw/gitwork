@@ -1,17 +1,46 @@
-http://dev.xiaomi.com/doc/p=6298/index.html    MIUI系统音乐控件标准化方案,第三方APP接入指南
-https://yq.aliyun.com/articles/7568?spm=5176.blog8523.yqblogcon1.22.160o9n  Android常见的Event-driven方案
-应用内通过UncaughtExceptionHandler检测到全局崩溃时，上传ANR　Trace文件到后台服务器，归类分析。ANR Trace文件的路径通常是：data/anr/traces.txt 但是文件名可能稍有不同。因此，建议上传data/anr/下所有文件。
-通过BlockCanary检测耗时操作，通过优化算法，放进子线程等方法进行优化。
-http://blog.csdn.net/jdsjlzx/article/details/7606423?spm=5176.blog6847.yqblogcon1.6.1BB66k  Android自定义捕获Application全局异常
+https://yq.aliyun.com/articles/40294?spm=5176.blog2360.yqblogcon1.35.HfmRTE   查找并修复Android中的内存泄露—OutOfMemoryError
+https://yq.aliyun.com/articles/3009?spm=5176.blog40294.yqblogcon1.36.UGmqZo  Android 内存泄漏总结
+
+Google近期在Udacity上发布了Android性能优化的在线课程，分别从渲染，运算与内存，电量几个方面介绍了如何去优化性能，这些课程是Google之前在Youtube上发布的Android性能优化典范专题课程的细化与补充。  https://yq.aliyun.com/articles/20478?spm=5176.blog3009.yqblogcon1.64.GzPin5
+http://hukai.me/android-dev-patterns/     Android开发最佳实践
+http://hukai.me/blog/categories/android-performance/
+https://yq.aliyun.com/articles/12461?spm=5176.blog20478.yqblogcon1.18.c0K6EG
+https://yq.aliyun.com/articles/12460?spm=5176.blog12461.yqblogcon1.27.ieXCGE
+Android为移动操作系统特意编写了一些更加高效的容器，例如SparseArray，今天要介绍的是一个新的容器，叫做ArrayMap。
+
 https://github.com/googlesamples/
+http://www.jianshu.com/p/cf446be43ae8  解读Android官方MVP项目单元测试
+https://github.com/googlesamples/android-architecture  
+http://mp.weixin.qq.com/s?__biz=MzA3ODg4MDk0Ng==&mid=403539764&idx=1&sn=d30d89e6848a8e13d4da0f5639100e5f&scene=0      Android官方MVP架构示例项目解析
+http://my.oschina.net/sulliy/blog/664118?p=1  Google提供的MVP参考实现
+官方给出了四种MVP架构模式：
+1、todo-mvp：MVP基础架构
+2、todo-mvp-loaders：基于MVP基础架构，获取数据部分使用了Loaders架构
+3、todo-mvp-databinding：基于MVP基础架构，使用了数据绑定组件
+4、todo-mvp-clean：基于MVP基础架构，引入Clean架构概念
+官方正在进行的MVP架构模式：
+1、todo-mvp-contentproviders：基于MVP基础架构，使用了Content Provider
+2、todo-mvp-dragger：基于MVP基础架构，使用dragger2依赖注入
+3、todo-mvp-rxjava：基于MVP基础架构，使用RxJava解决数据并发
+MVP中的M代表Model，即数据层，V代表View，即界面层，P代表Presenter，负责关联Model和View，把Model层的数据显示到View。
+BasePresenter中含有方法start(),该方法的作用是presenter开始获取数据并调用view中方法改变界面显示，其调用时机是在Fragment类的onResume方法中。
 
-
+https://yq.aliyun.com/articles/20457?spm=5176.100239.yqblog1.78.QKFMNr  AndroidStudio性能优化
+ 
 在安卓上面写测试，有很多技术方案。有JUnit、Instrumentation test、Espresso、UiAutomator等等，还有第三方的Appium、Robotium、Calabash等等。
 目前安卓最常用的有两个，Mockito和JMockit。两者的区别是，前者不能mock static method和final class、final method，后者可以。比如RoboGuice、Dagger、Dagger2等等。我们用的是Dagger2，理由很简单，这是目前最好用的DI框架。
 使用Android提供的Instrumentation系统，将单元测试代码运行在模拟器或者是真机上。但是速度非常慢，因为每次运行一次单元测试，都需要将整个项目打包成apk，上传到模拟器或真机上
 使用Robolectric框架，这个框架基本可以理解为在JVM上面实现了一套安卓的模拟环境，同时给安卓相关的类增加了其他一些增强的功能，以方便做单元测试
 https://mp.weixin.qq.com/s?__biz=MzA3ODg4MDk0Ng==&mid=2651112121&idx=1&sn=c5cc27a8cefd0dc8e1ed956e82a76cd9   蘑菇街支付金融Android单元测试实践
 http://mp.weixin.qq.com/s?__biz=MzA3NTYzODYzMg==&mid=2653576922&idx=1&sn=dee69c4a3c4e33ca0b9d3a1a2b17347f&scene=0#wechat_redirect      老司机教你 “飙” EventBus 3
+http://www.csdn.net/article/2015-08-19/2825493-using-espresso-for-easy-ui-testing   Espresso实战：快速的Android UI自动化测试
+http://blog.csdn.net/sdyy321/article/details/38757135/   mockito简单教程
+
+http://dev.xiaomi.com/doc/p=6298/index.html    MIUI系统音乐控件标准化方案,第三方APP接入指南
+https://yq.aliyun.com/articles/7568?spm=5176.blog8523.yqblogcon1.22.160o9n  Android常见的Event-driven方案
+应用内通过UncaughtExceptionHandler检测到全局崩溃时，上传ANR　Trace文件到后台服务器，归类分析。ANR Trace文件的路径通常是：data/anr/traces.txt 但是文件名可能稍有不同。因此，建议上传data/anr/下所有文件。
+通过BlockCanary检测耗时操作，通过优化算法，放进子线程等方法进行优化。
+http://blog.csdn.net/jdsjlzx/article/details/7606423?spm=5176.blog6847.yqblogcon1.6.1BB66k  Android自定义捕获Application全局异常
 
 
 http://www.oschina.net/news/71907/meizu-bsp-engineer-android-kernel  bsp
