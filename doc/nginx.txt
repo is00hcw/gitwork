@@ -13,6 +13,11 @@ queue 10 timeout=30s;
 
 http://blog.csdn.net/zdy0_2004/article/details/48878023  nginxscript
 
+ ssi on;
+ ssi_silent_errors on;
+ #ssi_types text/shtml;
+<!--# include file="index.html" -->
+esi需要缓存服务器支持
 
 动态nginx
 http://www.oschina.net/p/ceryx/similar_projects?sort=time&lang=19

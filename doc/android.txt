@@ -1,3 +1,20 @@
+http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2015/1016/3588.html  Consuming APIs with Retrofit  
+https://guides.codepath.com/android/Consuming-APIs-with-Retrofit
+https://drakeet.me/retrofit-2-0-okhttp-3-0-config  Retrofit  token´¦Àí
+https://github.com/rengwuxian/RxJavaSamples  RxJava ºÍ Retrofit ½áºÏÊ¹ÓÃµÄ¼¸¸ö×î³£¼ûÊ¹ÓÃ·½Ê½
+https://github.com/square/okhttp/wiki/Recipes    okhttp
+http://www.baeldung.com/httpclient-connection-management    httpclientÅäÖÃ
+http://blog.csdn.net/lmj623565791/article/details/51304204
+https://gank.io/post/56e80c2c677659311bed9841
+observable.observeOn(AndroidSchedulers.mainThread()) .subscribeOn(Schedulers.io())
+http://blog.zhaiyifan.cn/2016/05/15/android-new-project-from-0-p6/
+http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2016/0518/4270.html
+https://github.com/outware-mobile/swagger-codegen
+http://www.jsonschema2pojo.org/   
+http://www.jianshu.com/p/3141d4e46240
+
+´Ó1.5¿ªÊ¼£¬gradle²å¼ş°üº¬ÁËÒ»¸ö½ĞTransformµÄAPI£¬Õâ¸öAPIÔÊĞíµÚÈı·½²å¼şÔÚclassÎÄ¼ş×ªÎªÎªdexÎÄ¼şÇ°²Ù×÷±àÒëºÃµÄclassÎÄ¼ş£¬Õâ¸öAPIµÄÄ¿±ê¾ÍÊÇ¼ò»¯classÎÄ¼şµÄ×Ô¶¨ÒåµÄ²Ù×÷¶ø²»ÓÃ¶ÔTask½øĞĞ´¦Àí
+
 https://yq.aliyun.com/articles/40294?spm=5176.blog2360.yqblogcon1.35.HfmRTE   ²éÕÒ²¢ĞŞ¸´AndroidÖĞµÄÄÚ´æĞ¹Â¶¡ªOutOfMemoryError
 https://yq.aliyun.com/articles/3009?spm=5176.blog40294.yqblogcon1.36.UGmqZo  Android ÄÚ´æĞ¹Â©×Ü½á
 
@@ -7,12 +24,15 @@ http://hukai.me/blog/categories/android-performance/
 https://yq.aliyun.com/articles/12461?spm=5176.blog20478.yqblogcon1.18.c0K6EG
 https://yq.aliyun.com/articles/12460?spm=5176.blog12461.yqblogcon1.27.ieXCGE
 AndroidÎªÒÆ¶¯²Ù×÷ÏµÍ³ÌØÒâ±àĞ´ÁËÒ»Ğ©¸ü¼Ó¸ßĞ§µÄÈİÆ÷£¬ÀıÈçSparseArray£¬½ñÌìÒª½éÉÜµÄÊÇÒ»¸öĞÂµÄÈİÆ÷£¬½Ğ×öArrayMap¡£
+https://realm.io/cn/news/droidcon-farber-improving-android-app-performance/   10 ÌõÌáÉı Android ĞÔÄÜµÄ½¨Òé
+http://cashow.github.io/android-detect-out-of-memory-with-leakcanary.html   ¼ì²éÄÚ´æĞ¹Â©
 
 https://github.com/googlesamples/
 http://www.jianshu.com/p/cf446be43ae8  ½â¶ÁAndroid¹Ù·½MVPÏîÄ¿µ¥Ôª²âÊÔ
 https://github.com/googlesamples/android-architecture  
 http://mp.weixin.qq.com/s?__biz=MzA3ODg4MDk0Ng==&mid=403539764&idx=1&sn=d30d89e6848a8e13d4da0f5639100e5f&scene=0      Android¹Ù·½MVP¼Ü¹¹Ê¾ÀıÏîÄ¿½âÎö
 http://my.oschina.net/sulliy/blog/664118?p=1  GoogleÌá¹©µÄMVP²Î¿¼ÊµÏÖ
+https://github.com/hehonghui/android-tech-frontier/blob/master/issue-12%2FAndroid%E4%B8%8AMVP%E7%9A%84%E4%BB%8B%E7%BB%8D.md#Ê¹ÓÃmvp   
 ¹Ù·½¸ø³öÁËËÄÖÖMVP¼Ü¹¹Ä£Ê½£º
 1¡¢todo-mvp£ºMVP»ù´¡¼Ü¹¹
 2¡¢todo-mvp-loaders£º»ùÓÚMVP»ù´¡¼Ü¹¹£¬»ñÈ¡Êı¾İ²¿·ÖÊ¹ÓÃÁËLoaders¼Ü¹¹
@@ -26,6 +46,7 @@ MVPÖĞµÄM´ú±íModel£¬¼´Êı¾İ²ã£¬V´ú±íView£¬¼´½çÃæ²ã£¬P´ú±íPresenter£¬¸ºÔğ¹ØÁªModelº
 BasePresenterÖĞº¬ÓĞ·½·¨start(),¸Ã·½·¨µÄ×÷ÓÃÊÇpresenter¿ªÊ¼»ñÈ¡Êı¾İ²¢µ÷ÓÃviewÖĞ·½·¨¸Ä±ä½çÃæÏÔÊ¾£¬Æäµ÷ÓÃÊ±»úÊÇÔÚFragmentÀàµÄonResume·½·¨ÖĞ¡£
 
 https://yq.aliyun.com/articles/20457?spm=5176.100239.yqblog1.78.QKFMNr  AndroidStudioĞÔÄÜÓÅ»¯
+http://blog.csdn.net/sbsujjbcy/article/details/45420475    Android µ÷ÊÔÉñÆ÷-Stetho(Facebook³öÆ·)µÄÊ¹ÓÃ
  
 ÔÚ°²×¿ÉÏÃæĞ´²âÊÔ£¬ÓĞºÜ¶à¼¼Êõ·½°¸¡£ÓĞJUnit¡¢Instrumentation test¡¢Espresso¡¢UiAutomatorµÈµÈ£¬»¹ÓĞµÚÈı·½µÄAppium¡¢Robotium¡¢CalabashµÈµÈ¡£
 Ä¿Ç°°²×¿×î³£ÓÃµÄÓĞÁ½¸ö£¬MockitoºÍJMockit¡£Á½ÕßµÄÇø±ğÊÇ£¬Ç°Õß²»ÄÜmock static methodºÍfinal class¡¢final method£¬ºóÕß¿ÉÒÔ¡£±ÈÈçRoboGuice¡¢Dagger¡¢Dagger2µÈµÈ¡£ÎÒÃÇÓÃµÄÊÇDagger2£¬ÀíÓÉºÜ¼òµ¥£¬ÕâÊÇÄ¿Ç°×îºÃÓÃµÄDI¿ò¼Ü¡£
@@ -125,6 +146,7 @@ http://mqc.aliyun.com/doc.htm?id=44  Appium
 Google ¿ªÔ´ÁË Espresso£¬ÕâÊÇÒ»ÖÖAndroid×Ô¶¯»¯²âÊÔ¿ò¼Ü£¬Ê¹²âÊÔÈËÔ±¿ÉÒÔÔÚÔÆÖĞx86»úÆ÷µÄ¶àÏß³Ì»·¾³ÀïÔËĞĞ²âÊÔ
 
 ²¹¶¡£¬ÈÈĞŞ¸´
+https://github.com/bunnyblue/ACDD
 http://blog.csdn.net/qxs965266509/article/details/49816007
 http://blog.csdn.net/lmj623565791/article/details/49883661
 http://www.tuicool.com/articles/Fraqeab

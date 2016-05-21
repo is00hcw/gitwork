@@ -1,0 +1,27 @@
+IaaS提供系统的物理部署能力
+PaaS层主要提供基础平台的能力
+BaaS层主要提供领域平台的能力  ？firebase
+SaaS层也主要提供领域平台的能力，相对于BaaS提供更完整的领域能力，将整个领域的解决方案作为软件提供给业务方。
+
+BaaS代表第二代云服务,相对于AWS、阿里云等公有云（IaaS，PaaS）是第一代云服务，通过广泛部署云数据中心解决了开发和运维系统不需要管理服务器的问题,BaaS则在第一代公有云数据中心基础之上，对云计算资源进一步封装、简化与优化，提供开发、运维和服务的一站式云服务。
+BaaS将公有云数据中心资源根据前端应用场景打包，通过简化的调用接口提供给开发者使用。
+BaaS = IaaS + PaaS + APIs + SDKs
+
+把集团多年来的技术能力积累更加标准化，模块化，让业务团队可以对这些能力快速组装使用，就是我们说期待的“中台”能力了。
+J2EE时代的三层架构（表现层，中间层，数据服务层）将被移动互联网云计算时代的三层架构（UI，MBaaS，平台）取代。
+https://yq.aliyun.com/articles/2918?spm=5176.blog8523.yqblogcon1.22.EkXa3q
+
+
+
+https://yq.aliyun.com/articles/47515?spm=5176.blog47523.yqblogcon1.21.ObjBMh
+https://yq.aliyun.com/articles/47523?spm=5176.100238.yqhn2.17.pbljmH
+https://yq.aliyun.com/articles/47515?spm=0.0.0.0.BRnSZb  基础业务集成开发平台(BusinessWorks) - 概要设计篇
+
+
+
+华为目前在开发powerapp.io,面向App开发者打造 BaaS/PaaS 公有云平台，提供 App从设计、开发、测试、部署、运维的全生命周期服务,目前以出于内侧阶段。
+https://yq.aliyun.com/articles/8522?spm=0.0.0.0.A3Ng56
+http://usergrid.apache.org/
+
+guice
+http://blog.muhuk.com/2015/05/28/using_guice_effectively.html#.Vz6Ji9x96_4
