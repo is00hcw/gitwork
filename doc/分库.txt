@@ -20,3 +20,13 @@ http://gao-xianglong.iteye.com/blog/2019729  tddl
 http://itindex.net/detail/54369-%E9%87%8F%E7%BA%A7-mysql-sharding
 http://www.lanindex.com/%E4%B8%80%E8%87%B4%E6%80%A7%E5%93%88%E5%B8%8C%E7%AE%97%E6%B3%95%EF%BC%88consistent-hash%EF%BC%89%E7%9A%84%E9%BB%91%E7%A7%91%E6%8A%80/  一致性哈希(Jump Consistent Hash)
 大约小十年前，MySQL在ANSI SQL标准上做了一个非标准的“REPLACE INTO”扩展。虽然后来有“INSERT ON DUPLICATE KEY UPDATE”更好的解决了这类问题，但REPLACE INTO现在仍然能用。
+
+
+http://my.oschina.net/tinyframework/blog/194551?fromerr=36qUpJ7x
+http://my.oschina.net/tinyframework/blog/347176
+http://www.tinygroup.org/confluence/pages/viewpage.action?pageId=4456794
+https://yq.aliyun.com/articles/40177?spm=5176.blog42646.yqblogcon1.13.7y4uNf
+https://yq.aliyun.com/articles/40195?spm=5176.blog42646.yqblogcon1.14.y6TxCo
+
+
+http://hekailiang.github.io/cloud-config/
