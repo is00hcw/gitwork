@@ -19,6 +19,12 @@ http://blog.csdn.net/zdy0_2004/article/details/48878023  nginxscript
 <!--# include file="index.html" -->
 esi需要缓存服务器支持
 
+location ^~ /rest/search {
+        proxy_pass http://127.0.0.1:5000/;
+        rewrite ^/rest/search/(.*)$ /api2/test/query/$1?$args&key=xxx&secret=yyyy? break;
+  }
+
+
 动态nginx
 http://www.oschina.net/p/ceryx/similar_projects?sort=time&lang=19
 Upsync：微博开源基于Nginx容器动态流量管理方案   http://toutiao.com/a6254279391729139970/

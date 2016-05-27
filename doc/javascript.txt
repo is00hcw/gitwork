@@ -1,6 +1,7 @@
 ﻿当浏览器遇到 JavaScript 时，它可能不知道这里的 JS 是否要改变 DOM。因此，它不得不假定它会改变，然后它阻止渲染，直到 JavaScript 完成了执行过程。如果增加了 async 标签，相当于向浏览器保证，该 JS 对于页面不是关键的，因此浏览器可以继续渲染，而不必等待 JS 执行完成。
 这就是 TTFB (Time To First Byte) 注1 的由来。当浏览器发起一个页面请求时，它就处于等待响应的状态。TTFB 代表了它需要多长时间才能收到第一个响应的字节。这个时间不但代表了你的服务器产生响应所需要的时间，而且意味着经过线缆传输所需要的时间。
 
+http://www.oschina.net/p/eruda   手机网页前端调试面板 Eruda
 http://bookshadow.com/weblog/2014/09/26/jquery-blockui-js-introduction/    https://github.com/malsup/blockui  弹出层 遮盖
 http://layer.layui.com/  弹出层
 http://amazeui.org/getting-started/collections  开源方案
@@ -25,6 +26,21 @@ http://www.idangero.us/template7/#.Vm6IxOx96_4  模板
 https://github.com/twbs/ratchet/     http://cnratchet.com/components/
 http://m.sui.taobao.org/getting-started/  http://m.sui.taobao.org/demos/
 http://dev.dcloud.net.cn/mui/
+
+chrome
+http://www.xuanfengge.com/chrome-developer-debugging-tool-tool-tips.html
+http://wiki.jikexueyuan.com/project/chrome-devtools/command-line-api-reference.html
+在 console 中输入代码的最后一行加上 //@ sourceURL=filename.js, 会在 Scripts 面板中有个叫 filename.js 的文件, 然后他就和外部 js 文件一样了，又可以断点调试了（如果没发现，可以再调试面板中CTRL+O，输入文件名即可）。
+copy(str) 复制 str 到剪切板, 在断点时复制变量时有用
+monitorEvents(object[, types])/unmonitorEvents(object[, types]) 当 object 上 types 事件发生时在 console 中输出 event 对象
+$$('figure') // Returns an array of all figure elements in the document.
+$x('html/body/p') // Returns an array of all paragraphs in the document body.
+console.count(label)  这个函数输出 count()在同一行用同一个标签调用的次数。
+console.timeStamp([label])这个方法在记录期间增加了一个事件到时间轴。这可以让你直观地在时间戳上关联生成的代码到其他事件上
+console.trace(object) 输出从这个方法被调用的那个点的栈追踪路径，包括在 Javascript 源代码中指向特定行的链接。
+monitor(function)当这个方法被调用时，一个消息被输出到控制台，来表示函数名和函数被调用时传入的参数。
+inspect(object/function)在恰当的面板中打开并选择指定元素或指定对象
+getEventListeners(object)返回注册在指定对象上的注册的事件监听器。
 
 test
 http://www.oschina.net/p/dagger  Dagger是网易杭州研究院QA团队开发的一个轻量级、运行稳定的WebUI自动化测试框架，主要基于Selenium及TestNg可以认为是对Selenium进行二次封装的一个框架

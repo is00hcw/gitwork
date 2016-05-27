@@ -1,5 +1,15 @@
+Ìá¸ßÓ¦ÓÃ²¢·¢¶È£º1. Ó¦ÓÃ²ãºáÏòÀ©Õ¹ 2. Ê¹ÓÃÓ¦ÓÃ²ã»º´æ 3. Í¬²½×ªÒì²½ 4. Êı¾İ¿â¶ÁĞ´·ÖÀë¼°Ìá¸ßIOÄÜÁ¦
+http://www.oschina.net/p/venus   JavaScript µ¥Ôª²âÊÔ¹¤¾ß Venus
+http://www.oschina.net/p/parseq  Java Òì²½´¦Àí¿ò¼Ü ParSeq   Ö´ĞĞ¸ú×ÙºÍ¿ÉÊÓ»¯
+http://www.oschina.net/p/ceryx  Ceryx ÊÇ»ùÓÚ NGINX OpenResty µÄ¶¯Ì¬·´Ïò´úÀí£¬´øÓĞÒ»¸ö API¡£Õâ¸öÂ·ÓÉÊÇÊ¹ÓÃ NGINX Lua Ä£¿éÖÆ×÷µÄ£¬¿ÉÒÔÍ¨¹ı²éÑ¯Ò»¸ö Redis ºó¶Ë»ñÈ¡½á¹û¡£
+
 spring session»á»°¼¯Èº
 redis sentinel ÅäºÏ jedis ½øĞĞÖ÷´ÓÈÈÇĞ»» http://blog.ganps.net/2015/12/08/redis%20sentinel%20%E9%85%8D%E5%90%88%20jedis%20%E8%BF%9B%E8%A1%8C%E4%B8%BB%E4%BB%8E%E7%83%AD%E5%88%87/
+http://www.oschina.net/p/cachecloud-Redis RedisÔÆ¹ÜÀíÆ½Ì¨ CacheCloud
+http://www.oschina.net/p/kerkee  ËÑºühybrid
+
+http://www.oschina.net/p/heron twitter¿ªÔ´´úÌæstorm  http://twitter.github.io/heron/docs/getting-started/
+http://g2.alipay.com/demo/  °¢Àï¿ªÔ´»­Í¼
 
 https://www.thoughtworks.com/radar/languages-and-frameworks  ÆÀ¹À¿ò¼Ü
 http://www.oschina.net/p/distributedlog   Twitter ¿ªÔ´·Ö²¼Ê½¸ßĞÔÄÜÈÕÖ¾¸´ÖÆ·şÎñ
@@ -18,6 +28,7 @@ Sigar£¨System Information Gatherer And Reporter£©£¬ÊÇÒ»¸ö¿ªÔ´µÄ¹¤¾ß£¬Ìá¹©ÁË¿çÆ½Ì
 ´óÖÚµãÆÀCAT
 ServiceLoader.load(IService.class);
 
+http://www.oschina.net/news/73736/linkedin-open-source-ambry  LinkedIn ¿ªÔ´¶àÃ½Ìå¶ÔÏó´æ´¢Êı¾İ¿â Ambry   https://engineering.linkedin.com/blog/2016/05/introducing-and-open-sourcing-ambry---linkedins-new-distributed-
 https://zhugeio.com/price/price.html  ÓÃ»§»­Ïñ
 https://beecloud.cn/   Ö§¸¶
 http://www.infoq.com/cn/news/2015/06/mobile-testing-service?utm_source=tuicool    ¹úÄÚÒÆ¶¯²âÊÔ·şÎñÅÌµã
@@ -72,7 +83,7 @@ https://chrome.google.com/webstore/detail/postman-interceptor/aicmkgpgakddgnaphh
 https://github.com/alibaba/anyproxy  ä¯ÀÀÆ÷http´úÀí£¬ÀàËÆfiddler   http://anyproxy.io/cn/   
 https://github.com/alibaba/transmittable-thread-local#notebook-user-guide    ¿çÏß³Ì³Ø´«µİthreadlocal
 https://github.com/alibaba/yugong   OracleÊı¾İÇ¨ÒÆÍ¬²½¹¤¾ß(È«Á¿+ÔöÁ¿,Ä¿±êÖ§³ÖMySQL/DRDS)
-http://www.oschina.net/p/kerkee  ËÑºühybrid
+
 https://github.com/58code/Oceanus   58Í¬³ÇÊı¾İ¿âÖĞ¼ä¼ş
 https://github.com/mysql-inception/inception  Inception ¡ª¡ª ¼¯ÉóºË¡¢Ö´ĞĞ¡¢±¸·İ¼°Éú³É»Ø¹öÓï¾äÓÚÒ»ÉíµÄMySQL×Ô¶¯»¯ÔËÎ¬¹¤¾ß
 LepusÊı¾İ¿âÆóÒµ¼à¿ØÏµÍ³
