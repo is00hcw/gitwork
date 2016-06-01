@@ -7,7 +7,7 @@ http://os.51cto.com/art/201409/451927_all.htm
 http://www.csdn.net/article/1970-01-01/2823019  DevOps
 http://code.csdn.net/news/2823944
 
-
+Stackshare 对 Devops 有自己的看法，认为 DevOps 主要分两块：一块是监控，通过监控方案快速发现问题，明确到底是 Dev 的责任，还是 Ops 的责任，并且迅速做出反应；另一块是 Build Test Deploy，就是快速的测试、部署等等。
 
 安装Ansible:
 rpm -ivh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
