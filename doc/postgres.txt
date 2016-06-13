@@ -1,0 +1,7 @@
+PostgreSQL的同构增量迁移，可以使用xDB增量迁移插件，该插件由enterprisedb默认提供。
+可以将数据均衡地打散到8个RDS中。目前支持的中间件包括：plproxy、oneproxy for pgsql、pgpool-II、pg_shard、citusdb、FDW。
+https://yq.aliyun.com/articles/53778?spm=5176.100239.bloglist.13.Ix6hKe
+
+https://yq.aliyun.com/articles/52405?&utm_campaign=sys&utm_medium=market&utm_source=edm_email&msctype=email&mscmsgid=3240116060800264078&   德歌：PostgreSQL独孤九式搞定物联网
+
+https://yq.aliyun.com/articles/53778?spm=5176.100239.bloglist.13.Ix6hKe  德歌：阿里云RDS PG最佳实践
