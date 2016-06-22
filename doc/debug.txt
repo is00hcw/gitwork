@@ -3,6 +3,9 @@ ssh 反向连接  远程端口  localhost  本地端口，  还需要再nginx配置proxy pass到远程
 
 http://blog.lazybee.me/wechat-development/   ssh lazybee.me -R 10000:127.0.0.1:8000  让本地开发环境监听 8000 端口。
 
+http://www.oschina.net/p/eruda   手机网页前端调试面板 Eruda
+http://www.browsersync.cn/
+
 http://blog.csdn.net/shootyou/article/details/6622226
 netstat -n | awk '/^tcp/ {++S[$NF]} END {for(a in S) print a, S[a]}' 
 常用的三个状态是：ESTABLISHED 表示正在通信，TIME_WAIT 表示主动关闭，CLOSE_WAIT 表示被动关闭。

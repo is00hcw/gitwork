@@ -18,6 +18,9 @@ http://www.fising.cn/2014/10/golang-web-%E7%83%AD%E5%8D%87%E7%BA%A7%E6%96%B9%E6%
 https://www.zybuluo.com/NickYu/note/58572  mysql
 https://www.zybuluo.com/NickYu/note/61130  redis
 http://1.guotie.sinaapp.com/?p=400  json
+https://github.com/Sirupsen/logrus   log
+https://github.com/Dataman-Cloud/go-template/
+http://www.infoq.com/cn/articles/build-a-container-golang 通过不到100行Go代码打造你自己的容器
 
 
 http://www.w3hacker.com/?p=1761

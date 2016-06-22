@@ -8,6 +8,17 @@ MyISAM 引擎提供 MERGE 表特性，可以通过创建 MERGE 表简化分表联立 MERGE 表适合的场
 http://chuansong.me/n/2757320   http://geek.csdn.net/news/detail/62793   深度解读海量数据存储和访问下的水平分库&去IOE
 http://www.infoq.com/cn/articles/yupoo-partition-database
 
+http://www.cnblogs.com/tommyli/p/3767362.html   一种可以避免数据迁移的分库分表scale-out扩容方式
+所以在满足基本业务功能的前提下，分库分表方案应该尽量避免的两个问题： 1. 数据迁移 2. 热点    （自增主键，外键约束）
+如果更进一步数据库的设计和部署上能做到每个表一个硬盘，那么扩容的过程只要把原有机器的某一块硬盘拔下来，
+插入到新的机器上，就完成整表搬迁了！可以大大缩短停机时间。
+
+https://yq.aliyun.com/articles/38883?spm=5176.100238.yqhn2.18.deC6O8    阿里云分布式关系型数据库DRDS解析
+https://yq.aliyun.com/articles/217?spm=5176.blog38860.yqblogcon1.17.LzCdIM    OceanBase如何支撑支付宝双十一14万/秒笔交易
+https://yq.aliyun.com/articles/38860?spm=5176.100238.yqhn2.17.deC6O8   金融级海量数据库OceanBase
+OceanBase提供了一种服务，在中间设置了一层OBProxy，主要是表分区信息、位置信息等。当要做某一个查询的时候，根据查询条件会自动化地将请求分发到OceanBase集群的特定节点上，这样就保证了路由是最短的。比如通常的应用场景有两种，一种是获取单条的记录，另一种是获取一批记录。OceanBase在内存里面维持两套索引，一个是Hash索引，一个是Btree索引，分别对应处理这两种不同的请求。同时，内存数据结构都是设计成无锁的。为此，OceanBase引入了Paxos协议，每一笔事务，主库执行完成后，要同步到半数以上库(包括主库自身)，例如3个库中的2个库，或者5个库中的3个库，事务才成功。
+
+
 http://grepcode.com/file/repo1.maven.org/maven2/org.apache.marmotta/kiwi-triplestore/3.2.1/org/apache/marmotta/kiwi/generator/SnowflakeIDGenerator.java
 http://itindex.net/detail/53406-twitter-id-%E7%AE%97%E6%B3%95  IdWorker java代码
 http://darktea.github.io/notes/2013/12/08/Unique-ID

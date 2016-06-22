@@ -15,6 +15,19 @@ http://xstarcd.github.io/wiki/Cloud/hbase_tips.html   hbase日常操作收集
 然后就是在中控机遍历这些机器，挨个进行 graceful 重启     hbase/bin/graceful_stop.sh --restart --reload --debug $host
 https://cloud.google.com/bigtable/docs/hbase-api-changes   谷歌的产品支持hbase api
 
+在Spark中提供了一个JdbcRDD类，该RDD就是读取JDBC中的数据并转换成RDD
+https://github.com/nerdammer/spark-hbase-connector?spm=5176.docemr/best-practice/HBase.2.5.Wscg3b   spark连接hbase
+https://yq.aliyun.com/articles/25702?spm=5176.blog25477.yqblogcon1.22.nzl84e  HBase中的一些注意事项
+https://yq.aliyun.com/articles/25477?spm=5176.blog26250.yqblogcon1.25.S9Ifnz   HBase性能调优
+https://yq.aliyun.com/articles/26333?spm=0.0.0.0.MqH4b1   远程调试Hadoop各组件
+https://github.com/javachen/learning-hadoop
+HBase提供了几个特别的原子操作接口 checkAndPut/checkAndDelete/increment/append，这几个接口非常有用，内部实现也是基于行锁
+https://github.com/larsgeorge/hbase-book
+https://yq.aliyun.com/articles/46936?spm=5176.100239.blogcont.11.uRv01L   hbase七剑
+但据FB的committer分享，G1 GC比较适合<=31GB或者>=100GB的场景，32G～100G的堆大小还是CMS更适合    https://yq.aliyun.com/articles/46936?spm=5176.100239.blogcont.11.uRv01L
+
+
+
 HBase的Relication机制，事实上和Mysql的同步机制非常像。HBase的每一个Region Server都会有WAL Log，当Put/Delete时。都会先写入到WAL Log里。
 然后后台有线程会把WAL Log随机发给Slave的Region Server。而Slave的Region Server会在zookeeper上记录自己同步到的位置。
  

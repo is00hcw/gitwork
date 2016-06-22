@@ -27,6 +27,22 @@ https://github.com/twbs/ratchet/     http://cnratchet.com/components/
 http://m.sui.taobao.org/getting-started/  http://m.sui.taobao.org/demos/
 http://dev.dcloud.net.cn/mui/
 
+http://h5.baidu.com/user  百度搞的h5工具   易企秀或者兔展
+
+目前比较流行组件规范有 AMD 、CommonJs 和 UMD 三种, AMD 和 UMD 居多，而我们的选择是 CommonJs 规范与 node.js 保持一致。 因为它最简单，且实用，学习成本最低。
+http://davidbcalhoun.com/2014/what-is-amd-commonjs-and-umd/
+http://web.jobbole.com/81941/  web component
+http://www.w3ctech.com/topic/109
+
+像素对比比较出名的工具是PhantomCSS。 PhantomCSS结合了 Casperjs截图和ResembleJs 图像对比分析。
+http://fex.baidu.com/blog/2015/07/front-end-test/   前端自动化测试探索
+http://fex.baidu.com/blog/2014/05/light-component/   跨端组件实践 - 移动时代的前端
+http://www.alloyteam.com/2016/05/super-small-web-gesture-library-alloyfinger-released/   手势库
+http://www.alloyteam.com/2016/05/mobile-web-development-debugging-tools-alloylever-introduced/   移动web开发调试工具AlloyLever介绍
+https://github.com/WechatFE/vConsole
+
+
+
 chrome
 http://www.xuanfengge.com/chrome-developer-debugging-tool-tool-tips.html
 http://wiki.jikexueyuan.com/project/chrome-devtools/command-line-api-reference.html

@@ -5,3 +5,6 @@ https://yq.aliyun.com/articles/53778?spm=5176.100239.bloglist.13.Ix6hKe
 https://yq.aliyun.com/articles/52405?&utm_campaign=sys&utm_medium=market&utm_source=edm_email&msctype=email&mscmsgid=3240116060800264078&   德歌：PostgreSQL独孤九式搞定物联网
 
 https://yq.aliyun.com/articles/53778?spm=5176.100239.bloglist.13.Ix6hKe  德歌：阿里云RDS PG最佳实践
+
+FDW全称(Foreign-Data Wrapper)，简单来说就是PostgreSQL中的外部表功能
+https://yq.aliyun.com/articles/53760?spm=5176.100238.goodcont.21.VJHL3c

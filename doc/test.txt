@@ -8,6 +8,28 @@ https://github.com/dreamhead/moco/blob/master/moco-doc/usage.md
 java -jar moco-runner-<version>-standalone.jar http -p 12306 -c foo.json
 
 
+https://yq.aliyun.com/articles/54478?spm=5176.100239.bloglist.22.T7E7Th#rd    有价值的测试
+https://yq.aliyun.com/articles/54013?spm=0.0.0.0.f8yAda
+这些要求快速反应，快速迭代的行业逐步放弃了高度文档化的要求，开始追求原型设计、分步迭代以及“代码及文档”。
+同时还要考虑到未来的可扩展性。设计者要不停的追问自己“如果发生了某种变化，现有的组件布局是否能够处理?如果不能，是否能快速定位要找到的组件，用最小最清晰的修改承载这种变化”。
+整个项目的核心诉求，技术难点和实现方案是否自洽。
+接口上的文档通常有两类，一类是独立的接口描述文档和示意图，用于团队内部review；另一类是程序内文档(javadoc)，作为接口说明(spec)供接口使用者参考。
+项目中有哪些状态，状态的格式，状态的物理分布
+项目采用什么原则进行模块划分，出于什么考虑(如果有多个方案时选择了其中一种)
+某些特殊设计是出于什么考虑,背景知识(性能、吞吐量、一致性、复杂性...)
+
+
+Arquillian是一个集成测试、功能测试平台，可用于Java中间件的测试。Arquillian能集成Java EE容器（像JBoss AS和GlassFish）和Servlet容器（比如Tomcat和Jetty），也可以在云服务里运行测试。对容器的支持能让开发人员针对各种技术平台进行测试，包括Java EE 5和6、Servlet环境、OSGi、嵌入式EJB和独立的CDI。
+http://www.infoq.com/cn/articles/dan-allen-arquillian-framework
+http://arquillian.org/guides/getting_started_zh_cn/
+Arquillian能真正在Web容器中运行测试，它主要通过三种方式与容器进行交互：
+1.  嵌入式(embedded)。Arquillian和Web容器在同一个JVM中运行。
+2. 受管理的(managed)。由Arquillian决定何时启动、关闭Web容器以便向容器中部署、运行测试。
+3. 远程的(remote)。开发者事先启动Web容器，Arquillian连接该容器并将测试部署到容器中运行。
+http://blog.csdn.net/neosmith/article/details/19754703?utm_source=tuicool&utm_medium=referral
+JBoss Forge is the Fastest way to build Maven-based Java EE projects
+
+
 http://leeluolee.github.io/2014/10/24/use-puer-helpus-developer-frontend/
 https://coderwall.com/p/ss80vw/using-node-js-with-express-as-a-simple-api-mock-server
 http://www.mihtool.com/

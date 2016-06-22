@@ -1,0 +1,26 @@
+{
+  "name": "europe_cup",
+  "version": "1.0.0",
+  "description": "wechat activity for europe cup",
+  "main": "app.js",
+  "dependencies": {
+    "async": "^2.0.0-rc.5",
+    "moment": "^2.13.0",
+    "mysql": "^2.10.2",
+    "node-schedule": "^1.1.0",
+    "oneapm": "^1.2.20",
+    "redis": "^2.6.0-2",
+    "restify": "^4.1.0",
+    "restify-cookies": "^0.2.0",
+    "transliteration": "^1.0.6",
+    "wechat-api": "^1.27.1",
+    "wechat-oauth": "^1.1.1",
+    "winston": "^2.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

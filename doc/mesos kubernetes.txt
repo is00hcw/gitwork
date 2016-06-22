@@ -1,0 +1,34 @@
+https://github.com/Dataman-Cloud/Mesos-CN
+http://www.mesoscn.cn/
+
+Mesos内核运行在每一个机器上，同时通过 API 为各种应用提供跨数据中心和云的资源管理调度能力。
+使用 ZooKeeper 实现 Master 和 Slave 的容错。    使用 Linux 容器实现本地任务隔离。    多资源调度能力（内存，CPU、磁盘、端口）
+
+http://mp.weixin.qq.com/s?__biz=MzA3MDg4Nzc2NQ==&mid=206755843&idx=1&sn=f6d71f275f89ff3cfa46dfa619efaf40#rd
+http://blog.dataman-inc.com/mesos-meetup-3-ppt/
+http://dockone.io/article/1211
+http://toutiao.com/i6252415009662435841/   Mesos实践完全手册：去哪儿网的运用
+http://www.infoq.com/cn/articles/resource-scheduling-for-container-technology?utm_campaign=rightbar_v2&utm_source=infoq&utm_medium=articles_link&utm_content=link_text
+
+
+Docker Engine的Swarm模式，集群环境内置 Raft 一致性协议，避免单点故障问题，也无需额外的类似于 ETCD/Consul 的外部存储。 支持服务的不中断更新（rolling update）和其他发布策略
+Docker应用交付的简化：新的DAB(分布式应用打包， Distributed Application Bundles，www.docker.com/dab)
+阿里云容器服务也提供了基于Docker Volume plugin的存储集成方案（包括支持云盘、OSSFS、NAS等）。 https://yq.aliyun.com/articles/55866?spm=5176.100238.goodcont.9.oalUM1
+
+
+常见的服务注册表包括etcd、Consul和ZooKeeper。你可以使用Registrator用于注册和撤消服务以及confd，并用Consul Template实现服务发现与模板创建。
+http://doc.shurenyun.com/practice/tsung_dataman.html  TSUNG测试
+
+Kafka涵盖的功能是消息和数据传输，而Kafka Streams涵盖的功能则是数据的处理。 LinkedIn详细介绍了由他们开源的Kafka Monitor
+Sharding-JDBC于六一前夕正式发布1.3.0里程碑版本。Sharding-JDBC源于当当应用框架ddframe的关系型数据库访问模块dd-rdb，主要功能是使数据库分库分表访问透明化。项目定位为轻量级Java中间件，采用JDBC层协议封装，可以理解为增强版的JDBC，适用于绝大部分Java ORM框架和使用标准SQL的数据库。
+http://www.infoq.com/cn/news/2016/06/sharding-jdbc-130?utm_source=infoq&utm_medium=popular_widget&utm_campaign=popular_content_list&utm_content=homepage
+
+
+
+
+http://www.infoq.com/cn/articles/state-of-javascript-2016?utm_campaign=rightbar_v2&utm_source=infoq&utm_medium=articles_link&utm_content=link_text   js各种组件
+Silk是一个基于Android开源操作系统之上提供Nodejs层、面向智能手机的免费固件。它可以让开发者通过简洁的JavaScript就可以编写程序、访问硬件底层。
+
+https://github.com/weexteam/article/issues/4   Weex快速上手教程
+
+http://www.infoq.com/cn/news/2016/06/jidong-618  揭秘京东历经多年的"618"架构核心

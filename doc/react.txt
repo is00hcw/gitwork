@@ -12,6 +12,17 @@ http://www.alloyteam.com/2016/03/react-native-for-android-windows/   React Nativ
 f8app：Fecebook开源的F8大会app，该app使用了React Native技术。 https://github.com/fbsamples/f8app 
 http://f8-app.liaohuqiu.net/tutorials/building-the-f8-app/design/
 
+Weex由多个关键模块组成，分别是DSL transformer、JS Framework、HTML5/iOS/Android Renderer和工具链 ， 其中JS Framework就直接使用了部分来自Vue.JS的代码。
+全局冲突是CSS“七宗罪”中的一个，其实这也是我们非常重视的，所以在实践上我们把它做到了scoped。
+https://yq.aliyun.com/articles/54775?spm=5176.100239.blogcont54773.9.2RAYjT
+Weex Toolkit  https://www.npmjs.com/package/weex-toolkit
+http://alibaba.github.io/weex/doc/syntax/main.html
+https://yq.aliyun.com/articles/54769?spm=5176.100244.0.0.YK5sVe
+
+
+封装了TBHotaptchSDK提供Lua字节码编译、代码和资源打包、加密、签名、校验、运行等功能。同时还封装了TBHotaptchService提供patch包的版本控制、更新、下载等功能。
+https://yq.aliyun.com/articles/1480?spm=5176.100244.0.0.YK5sVe
+
 
 npm info react-native
 npm install -g react-native-cli

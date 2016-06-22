@@ -1,3 +1,34 @@
+http://www.cnblogs.com/jesse2013/p/things-architect-must-know.html
+
+https://yq.aliyun.com/articles/54449?spm=5176.100238.goodcont.9.LYw3mt&do=login
+总结一下，互联网架构三板斧：
+活下来(Stability)
+简单可扩展（Scalability）
+拦河大坝/去并发
+在第三板斧中又有分层拦截、多级缓存、数据近端、分拆锁、预处理、异步化及队列等pattern。学习原则：灵活运用，不尽信经验。
+
+etcd、Registrator和Confd组合  http://dockone.io/article/667
+http://thesecretlivesofdata.com/raft/
+Consul在核心功能的基础上提供了三个非常重要的特性。etcd要找对应的第三方的组件配合搭建，Consul已经直接包含了。1. 服务发现；2. Failure Detection；3. DNS
+Consul用来做服务发现，负载均衡，Docker用来封装服务 https://yq.aliyun.com/articles/55828?spm=5176.100238.goodcont.27.LYw3mt
+http://www.cnblogs.com/shanyou/p/4695131.html  与 confd 服务集成，动态生成 nginx 和 haproxy 配置文件
+http://www.techweb.com.cn/network/system/2016-01-28/2270190.shtml
+数据中心的核心工作通常包括获取（acquisition）、提供（provision）、更新（update）和销毁（destruction）资源（比如服务器、数据存储和负载平衡器等）。
+自动化的现代数据中心的需求体现为：一条命令部署  弹性分布式系统  自动伸缩、自动健康监测
+一致性协议采用 Raft 算法,用来保证服务的高可用. 使用 GOSSIP 协议管理成员和广播消息, 并且支持 ACL 访问控制.   https://blog.coding.net/blog/intro-consul?type=hot
+http://mesos.apache.org/documentation/latest/architecture/
+https://github.com/kubernetes/kubernetes/blob/release-1.1/docs/design/architecture.md
+Consul Template的作用是，当它发现Consul上的服务有变化时，它会利用Consul更新文件并执行相应的命令。 
+http://blog.csdn.net/rlanffy/article/details/50933704
+
+@RunWith(SpringJUnit4ClassRunner.class)  
+@ContextConfiguration(locations = { "classpath*:application-context-test.xml" })  
+@InjectMocks  
+MockitoAnnotations.initMocks(this);  
+http://blog.csdn.net/derek_zhang_/article/details/12752395
+http://stamen.iteye.com/blog/1484589  Unitils集成DBUnit
+http://www.cnblogs.com/candle806/p/3810061.html
+
 提高应用并发度：1. 应用层横向扩展 2. 使用应用层缓存 3. 同步转异步 4. 数据库读写分离及提高IO能力
 http://www.oschina.net/p/venus   JavaScript 单元测试工具 Venus
 http://www.oschina.net/p/parseq  Java 异步处理框架 ParSeq   执行跟踪和可视化
