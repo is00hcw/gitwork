@@ -1,0 +1,28 @@
+ Drools Workbench (web UI for authoring and management)
+ Drools Expert (business rules engine)
+ Drools Fusion (complex event processing features)
+
+http://blog.csdn.net/lfsf802/article/details/42297553
+http://planet.jboss.org/post/goodbye_guvnor_hello_drools_workbench
+
+http://www.zhihu.com/question/20860347/answer/33446734?utm_campaign=rss&utm_medium=rss&utm_source=rss&utm_content=title
+
+
+tomcat7版本的Drools Workbench,实际就是一个war包，需要严格按照里面的readme的要求，配置好tomcat才可以运行起来。我尝试安装在本地的windows环境，但总是不成功，最后找了一台linux主机安装好了。具体步骤：通过maven可以下载相关的jar包，然后扔到tomcat的lib目录。需要按要求修改tomcat的一些配置。readme没有要求修改h2中sa的默认密码，但我多次尝试后，发现必须设置一个密码。可以通过命令：
+java -cp h2-1.3.161.jar org.h2.tools.Shell
+ -url jdbc:h2:~/jbpm2 -user sa -password 123456创建sa的账号密码，然后修改resources.properties中的sa的密码。
+http://blog.csdn.net/sinat_24910337/article/details/50587793
+
+CEP(Complex Event Processing)也就是复杂事件驱动，是结合多种数据源的数据对信息流进行监测、分析从推理出一些复杂的事件或模式，CEP的目的是识别出一些有意义的事件，例如：机遇、威胁，并且尽可能快的作出反应。
+推荐方案：规则引擎（Drools）+ CEP（Drools Fusion、Esper或Spark）+机器学习算法（scikit-learn）
+Drools Fusion (Complex Event Processing) 是Drools对于复杂事件处理的模块, 与它功能相似的是Esper, 两者都可以提供基于时间跨度和滑动窗口的事件处理, 两者最大的区别可能就在于1. Drools开源, 不支持Distribution, 语法drl, Esper有企业版, 支持Distribution, 语法类SQL
+http://www.cnblogs.com/zhwbqd/p/4212766.html
+http://www.infoq.com/cn/articles/risk-management-analysis-system?utm_source=infoq&utm_medium=popular_widget&utm_campaign=popular_content_list&utm_content=article
+
+
+简单事件处理(Simple event processing) ：简单事件处理可看作是消息导向处理的架构，主要处理单一事件，其中事件则定义为可直接观察到的改变。在这个架构中，简单事件处理只做两件事情，过滤(filtering)和路由(routing) 。过滤功能决定事件是否应该被传送出去，路由则决定事件应该传给谁。
+复合事件处理(Complex event processing)：复合事件是由史丹佛大学的David Luckham 与Brian Fraseca 所提出，David Luckham 与Brian Fraseca 于1990年提出复合事件架构，使用模式比对、事件的相互关系、事件间的聚合关系，目的从事件云(event cloud)中找出有意义的事件
+复杂事件处理中除了过滤和路由之外，还有模式比对的能力。找出事件集合的各种活动，事件聚合，过去历史中的各种因果关系，逻辑以及运算等等，触发新的事件反应。
+http://www.cnblogs.com/shanyou/archive/2010/09/16/cep.html
+http://www.cnblogs.com/Binhua-Liu/p/4646308.html  5分钟开启Esper之旅
+http://www.doc88.com/p-3187943281106.html
