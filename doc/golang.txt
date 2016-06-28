@@ -1,4 +1,7 @@
-﻿godoc -http=:6060
+﻿http://colobu.com/2016/04/21/use-vscode-to-develop-go-programs/
+https://github.com/Microsoft/vscode-tips-and-tricks/blob/master/README.md
+
+godoc -http=:6060
 
 http://bigasp.com/archives/594  golang
 

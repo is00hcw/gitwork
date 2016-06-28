@@ -1,7 +1,24 @@
+http://www.infoq.com/cn/articles/react-native-ide
+
 http://www.infoq.com/cn/articles/taobao-mobile-weex  weex
 https://github.com/alibaba/luaviewsdk   luaview
 http://www.infoq.com/cn/articles/introducing-weex     Weex详解：灵活的移动端高性能动态化方案
 http://www.infoq.com/cn/articles/the-back-end-business-systems-service-transformation   谈谈后端业务系统的微服务化改造
+
+http://www.cnblogs.com/ctriptech/p/5608124.html  React Native实践之携程Moles框架
+http://www.cnblogs.com/CtripMoles/p/5580135.html     React Native Bundle 打包、拆包工具之 moles-packer 介绍
+http://zerosoul.github.io/2016/06/05/building-my-first-ios-app-with-react-native-part-one/
+https://github.com/febobo/react-native-redux-FeInn  
+
+https://segmentfault.com/a/1190000005624728  js调试
+http://tech.meituan.com/abstract-syntax-tree.html
+UglifyJS 提供了一些工具用于分析 JavaScript 代码，包括：
+parser，把 JavaScript 代码解析成抽象语法树
+code generator，通过抽象语法树生成代码
+mangler，混淆 JavaScript 代码
+scope analyzer，分析变量定义的工具
+tree walker，遍历树节点
+tree transformer，改变树节点
 
 
 http://my.oschina.net/vczero/blog/597980

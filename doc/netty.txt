@@ -20,6 +20,33 @@ NetFlix对Dynamo的开源通用实现Dynomite
 
 
 vert.x
+http://colobu.com/2016/03/31/vertx-thread-model/?utm_source=tuicool&utm_medium=referral  
+http://wanshi.iteye.com/blog/2255579
+http://tutorials.jenkov.com/vert.x/index.html
+http://www.csdn.net/article/2015-12-21/2826533?utm_source=tuicool&utm_medium=referral
+http://www.jianshu.com/p/ceb36b8a676d
+http://www.csdn.net/article/2015-08-20/2825505-Vert.x
+http://www.jianshu.com/p/e25234203602
+https://github.com/ef-labs/vertx-jersey
+http://www.tuicool.com/articles/ERje2y
+https://github.com/quanke/vertx3_study_demo
+http://quanke.name/2016/01/15/Vert-x-%E5%AE%9E%E7%8E%B0REST/
+http://quanke.name/2016/04/09/Vert-x-3-x%E7%89%88%E6%9C%ACcallback-hell%E7%9A%84%E8%A7%A3%E5%86%B3/
+http://quanke.name/2016/04/04/Vert-x%E9%85%8D%E7%BD%AE%E9%A1%B9VertxOptions%E7%9A%84%E4%BD%BF%E7%94%A8/
+http://quanke.name/2016/01/16/%E6%80%8E%E6%A0%B7%E5%86%99%E4%B8%80%E4%B8%AA%E5%AE%89%E5%85%A8%E7%9A%84Vert-x-Web-apps/
+http://quanke.name/2016/01/12/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AAVert-x-3-%E5%BA%94%E7%94%A8/
+Vert.x可以通过使用Hazelcast实现底层的事件总线的多节点集群。
+
+verticle是vert.x中的组件，可理解成java中的servlet、pojo bean或akka中的actor。一个组件可有多个实例。verticle实例之间的通讯通过Event Bus，发消息到Event Bus。
+verticle可分为两种类型：标准verticle和worker verticle。
+标准verticle运行在vert.x实例的事件循环线程中，也就是当有事件发生时，在事件循环线程中回调verticle实例中的event handler。   
+
+worker verticle在background workers线程池中执行，该线程池的大小缺省为40。worker verticle又可分成两种，一种是多线程worker verticle，一个多线程worker verticle实例可在多个worker线程中并发执行，另一种是单线程worker verticle，在同一时间只能有一个线程执行（串行执行），但在不同时间可被不同线程执行。
+event bus可理解为一个分布式的消息队列系统，支持点对点（队列）、发布-订阅（topic）、请求-响应模式。
+对可能阻塞事件循环的操作或任务，可调用context的executeBlocking方法，将操作放到worker线程池中执行或通过event bus发消息触发worker verticle执行。
+
+Vertx.vertx().createHttpServer().requestHandler(req -> req.response().end("Hello World!")).listen(8080);
+
 vertx run Server.java -redeploy   http://vert-x3.github.io/docs/vertx-core/java/#_thread_safety
 http://www.hascode.com/2013/11/creating-a-websocket-chat-application-with-vert-x-and-java/
 http://www.javaworld.com/article/2078838/mobile-java/open-source-java-projects-vert-x.html

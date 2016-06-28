@@ -1,3 +1,8 @@
+http://www.jianshu.com/p/ca76aec23ddf 分析平安好医生技术栈
+https://github.com/singwhatiwanna/dynamic-load-apk
+http://www.jianshu.com/p/f1217cce93ef
+http://blog.csdn.net/h3c4lenovo/article/details/50751643
+
 http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2015/1016/3588.html  Consuming APIs with Retrofit  
 https://guides.codepath.com/android/Consuming-APIs-with-Retrofit
 https://drakeet.me/retrofit-2-0-okhttp-3-0-config  Retrofit  token处理

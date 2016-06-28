@@ -1,3 +1,6 @@
+http://www.oschina.net/news/63789/eclipse-for-docker-has-arrived  
+https://wiki.eclipse.org/Linux_Tools_Project/Docker_Tooling
+
 https://yq.aliyun.com/articles/47036?spm=5176.100238.yqhn2.23.pbljmH     Docker集群轻松部署Apache Storm
 https://github.com/denverdino/redis-cluster
 
@@ -15,6 +18,13 @@ docker run -p 8080:8080 -p 50000:50000 -v /data/jenkins:/var/jenkins_home jenkin
 - https://github.com/jenkinsci/docker
 
 https://github.com/Mooxe000/mooxe-docker-base
+
+
+PaaS的出现是为了让运维人员不需要管理一台虚拟机，IaaS的出现是为了让运维人员不需要管理物理机。云计算，说到底都是俩字——运维。
+云计算领域的技术分为虚拟化技术和资源管理两个方面
+VOLUME /tmp命令，这个命令的效果是：在宿主机的/var/lib/docker目录下创建一个临时文件并把它链接到容器中的/tmp目录。
+docker技术的关键在于持续交付，通过与jekins的结合，可以实现这样的效果：开发人员提交push，然后jekins就自动构建并测试刚提交的代码，这就是我理解的持续交付。
+https://yq.aliyun.com/articles/54035?spm=5176.100239.blogrightarea50480.8.INwxCl    Docker with Spring Boot
 
 
 -v $(pwd):/project将当前目录挂载到容器中，作为/project目录。

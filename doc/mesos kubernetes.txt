@@ -10,25 +10,47 @@ http://dockone.io/article/1211
 http://toutiao.com/i6252415009662435841/   Mesos实践完全手册：去哪儿网的运用
 http://www.infoq.com/cn/articles/resource-scheduling-for-container-technology?utm_campaign=rightbar_v2&utm_source=infoq&utm_medium=articles_link&utm_content=link_text
 
+http://www.zhongkerd.com/news/content-1173.html 开源分布式资源管理框架Mesos分析介绍
+CoreOS发布容器分散式储存开源专案Torus  Torus使用etcd分散式键值资料库（Distributed Key-Value Database）来储存和检索档案
 
 Docker Engine的Swarm模式，集群环境内置 Raft 一致性协议，避免单点故障问题，也无需额外的类似于 ETCD/Consul 的外部存储。 支持服务的不中断更新（rolling update）和其他发布策略
 Docker应用交付的简化：新的DAB(分布式应用打包， Distributed Application Bundles，www.docker.com/dab)
 阿里云容器服务也提供了基于Docker Volume plugin的存储集成方案（包括支持云盘、OSSFS、NAS等）。 https://yq.aliyun.com/articles/55866?spm=5176.100238.goodcont.9.oalUM1
+如果把容器的网络驱动设置成overlay，就意味着所有的容器都可以直接ping通，所以所有容器的ip地址都不会重复。为了做到这一点，就需要一个轻量级的存储来存放已经分配出去的ip信息，和其它的一些配置信息。技术上Docker使用了libkv和libnetwork来实现自己的覆盖网络。它们都是用go语言所写，前者是对操作分布式键值存储系统如consul，etcd，zookeeper的抽象层，后者实现了容器的网络连接
+http://qinghua.github.io/docker-overlay-network/
+Ubuntu 14.04的内核版本是3.13，而使用docker overlay网络需要Linux内核版本3.16+，所以需要升级内核，建议升级到3.19或以上。
+sudo apt-get install linux-generic-lts-vivid
+Docker Overlay Network、Flannel、Calico、Weave等4种覆盖网络  http://qinghua.github.io/docker-overlay-network/
 
 
 常见的服务注册表包括etcd、Consul和ZooKeeper。你可以使用Registrator用于注册和撤消服务以及confd，并用Consul Template实现服务发现与模板创建。
 http://doc.shurenyun.com/practice/tsung_dataman.html  TSUNG测试
 
-Kafka涵盖的功能是消息和数据传输，而Kafka Streams涵盖的功能则是数据的处理。 LinkedIn详细介绍了由他们开源的Kafka Monitor
-Sharding-JDBC于六一前夕正式发布1.3.0里程碑版本。Sharding-JDBC源于当当应用框架ddframe的关系型数据库访问模块dd-rdb，主要功能是使数据库分库分表访问透明化。项目定位为轻量级Java中间件，采用JDBC层协议封装，可以理解为增强版的JDBC，适用于绝大部分Java ORM框架和使用标准SQL的数据库。
-http://www.infoq.com/cn/news/2016/06/sharding-jdbc-130?utm_source=infoq&utm_medium=popular_widget&utm_campaign=popular_content_list&utm_content=homepage
+Mesos/Marathon/ZooKeeper/Consul/etcd/Registrator/Nginx/Docker/Logstash/Docker-Registry等等
+在开源DC/OS出现之前，Docker 的统一管理工具只有Kubernetes。Docker的Swarm 只能算是一个管理平台，需要利用Compose 和 Docker Machine等工具的配合。 Mesos 作为资源调度平台也可以管理Docker，但是也需要Marathon 这样的编排工具进行管理，需要DNS，和LoadBalancer等组件服务。 所以说统一的开源容器管理工具只有Kubernetes
+http://geek.csdn.net/news/detail/72112
+CloudFoundry 是VMware主导使用Ruby开发的一款开源PaaS云计算平台，类似于Salesforce旗下的Heroku，遵从OpenStack云计算平台规范。
+openStack是偏IaaS层的开源云计算框架，CloudFoundry是PaaS层的开源框架。Red Hat一直在推销自己的PaaS产品OpenShift。Rackspace在不久前才宣布了自己的开源PaaS项目Solum
+https://github.com/dcos/dcos
+IaaS层抽象的是机器， PaaS则更多考虑部署、管理应用/服务。  http://www.c114.net/cloud/4049/a933242.html
+Apache Mesos是为构建和运行其他分布式系统提供服务的分布式系统。它将CPU 、内存、存储介质以及其它计算机资源从物理机或者虚拟机中抽象出来，构建支持容错和弹性的分布式系统，并提供高效的运行能力。Mesos使用与Linux 内核相同的系统构建原则，只是它们处在不同的抽象层次上。Mesos内核运行在每台机器上，通过应用程序Framework ，提供跨整个数据中心和云环境进行资源管理和调度的API。
+Mesos：作为DCOS的核心组件之一，作用相当于Linux内核，管理着数据中心所有的CPU、内存以及储存等物理资源，实现资源的统一管理和分配。
+Marathon：作为DCOS基础组件之一，相当于Linux中Iinit/systemd进程，管理DCOS中其他的软件包，实现安装、卸载其他框架和应用的功能。
+http://blog.csdn.net/zouyee/article/details/51149944
+http://blog.csdn.net/bogeli5/article/details/51605285
+https://yq.aliyun.com/articles/4694
+http://www.litrin.net/2015/08/20/mesos%E5%AE%9E%E6%88%98/
 
 
 
+http://qinghua.github.io/kubernetes-installation/   轻松搭建Kubernetes 1.2版运行环境
+http://qinghua.github.io/kubernetes-deployment/?utm_source=tuicool&utm_medium=referral
+一台叫做master，运行着k8s的api server、controller manager和scheduler；另两台叫做node1和node2，运行着k8s的kubelet和kube-proxy，当做k8s的两个节点。
+Kubernetes（k8s）是自动化容器操作的开源平台，这些操作包括部署，调度和节点集群间扩展
+http://www.wtoutiao.com/p/100xuFR.html
+在较新的版本里，cadvior功能被集成到了kubelet组件中，kubelet在与docker交互的同时，对外提供监控服务。
+kubernetes集群范围内的监控主要由kubelet, heapster和storage backend（如influxdb）构建。
+http://www.csdn.net/article/2015-07-30/2825337   v1.0
 
-http://www.infoq.com/cn/articles/state-of-javascript-2016?utm_campaign=rightbar_v2&utm_source=infoq&utm_medium=articles_link&utm_content=link_text   js各种组件
-Silk是一个基于Android开源操作系统之上提供Nodejs层、面向智能手机的免费固件。它可以让开发者通过简洁的JavaScript就可以编写程序、访问硬件底层。
 
-https://github.com/weexteam/article/issues/4   Weex快速上手教程
 
-http://www.infoq.com/cn/news/2016/06/jidong-618  揭秘京东历经多年的"618"架构核心
