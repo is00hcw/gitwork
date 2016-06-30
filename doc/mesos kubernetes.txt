@@ -37,11 +37,14 @@ Apache Mesos是为构建和运行其他分布式系统提供服务的分布式系统。它将CPU 、内存、存
 Mesos：作为DCOS的核心组件之一，作用相当于Linux内核，管理着数据中心所有的CPU、内存以及储存等物理资源，实现资源的统一管理和分配。
 Marathon：作为DCOS基础组件之一，相当于Linux中Iinit/systemd进程，管理DCOS中其他的软件包，实现安装、卸载其他框架和应用的功能。
 http://blog.csdn.net/zouyee/article/details/51149944
-http://blog.csdn.net/bogeli5/article/details/51605285
 https://yq.aliyun.com/articles/4694
 http://www.litrin.net/2015/08/20/mesos%E5%AE%9E%E6%88%98/
-
-
+http://blog.csdn.net/bogeli5/article/details/51598199    Mesos+Kubernetes集成安装部署
+http://blog.csdn.net/bogeli5/article/details/51605285
+http://ryanivanka.info/mesos/   play mesos
+http://qinghua.github.io/prometheus/
+vagrant init minimum/ubuntu-trusty64-docker
+ 
 
 http://qinghua.github.io/kubernetes-installation/   轻松搭建Kubernetes 1.2版运行环境
 http://qinghua.github.io/kubernetes-deployment/?utm_source=tuicool&utm_medium=referral

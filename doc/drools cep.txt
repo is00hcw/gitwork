@@ -6,6 +6,7 @@ http://blog.csdn.net/lfsf802/article/details/42297553
 http://planet.jboss.org/post/goodbye_guvnor_hello_drools_workbench
 
 http://www.zhihu.com/question/20860347/answer/33446734?utm_campaign=rss&utm_medium=rss&utm_source=rss&utm_content=title
+http://www.open-open.com/lib/view/1449191572077  ¹æÔò
 
 
 tomcat7°æ±¾µÄDrools Workbench,Êµ¼Ê¾ÍÊÇÒ»¸öwar°ü£¬ĞèÒªÑÏ¸ñ°´ÕÕÀïÃæµÄreadmeµÄÒªÇó£¬ÅäÖÃºÃtomcat²Å¿ÉÒÔÔËĞĞÆğÀ´¡£ÎÒ³¢ÊÔ°²×°ÔÚ±¾µØµÄwindows»·¾³£¬µ«×ÜÊÇ²»³É¹¦£¬×îºóÕÒÁËÒ»Ì¨linuxÖ÷»ú°²×°ºÃÁË¡£¾ßÌå²½Öè£ºÍ¨¹ımaven¿ÉÒÔÏÂÔØÏà¹ØµÄjar°ü£¬È»ºóÈÓµ½tomcatµÄlibÄ¿Â¼¡£ĞèÒª°´ÒªÇóĞŞ¸ÄtomcatµÄÒ»Ğ©ÅäÖÃ¡£readmeÃ»ÓĞÒªÇóĞŞ¸Äh2ÖĞsaµÄÄ¬ÈÏÃÜÂë£¬µ«ÎÒ¶à´Î³¢ÊÔºó£¬·¢ÏÖ±ØĞëÉèÖÃÒ»¸öÃÜÂë¡£¿ÉÒÔÍ¨¹ıÃüÁî£º
@@ -18,6 +19,9 @@ CEP(Complex Event Processing)Ò²¾ÍÊÇ¸´ÔÓÊÂ¼şÇı¶¯£¬ÊÇ½áºÏ¶àÖÖÊı¾İÔ´µÄÊı¾İ¶ÔĞÅÏ¢Á÷½
 Drools Fusion (Complex Event Processing) ÊÇDrools¶ÔÓÚ¸´ÔÓÊÂ¼ş´¦ÀíµÄÄ£¿é, ÓëËü¹¦ÄÜÏàËÆµÄÊÇEsper, Á½Õß¶¼¿ÉÒÔÌá¹©»ùÓÚÊ±¼ä¿ç¶ÈºÍ»¬¶¯´°¿ÚµÄÊÂ¼ş´¦Àí, Á½Õß×î´óµÄÇø±ğ¿ÉÄÜ¾ÍÔÚÓÚ1. Drools¿ªÔ´, ²»Ö§³ÖDistribution, Óï·¨drl, EsperÓĞÆóÒµ°æ, Ö§³ÖDistribution, Óï·¨ÀàSQL
 http://www.cnblogs.com/zhwbqd/p/4212766.html
 http://www.infoq.com/cn/articles/risk-management-analysis-system?utm_source=infoq&utm_medium=popular_widget&utm_campaign=popular_content_list&utm_content=article
+http://docs.jboss.org/drools/release/6.0.1.Final/drools-docs/html_single/index.html£¨Ó¢ÎÄ£¬6.0.1¹Ù·½Ö¸ÄÏ£¬Éæ¼°DroolsµÄ·½·½ÃæÃæ£¬ÊÊºÏ½ø½×Ñ§Ï°£©
+http://blog.csdn.net/quzishen/article/details/6163012£¨ÖĞÎÄ£¬5.x°æ±¾£¬¿ÉÓÃÓÚ¶ÔÕÕ£¬ÇÒÆäÖĞ¶ÔDRL¹æÔòÎÄ¼şµÄ½²½â¿É¹©Ñ§Ï°£©
+
 
 
 ¼òµ¥ÊÂ¼ş´¦Àí(Simple event processing) £º¼òµ¥ÊÂ¼ş´¦Àí¿É¿´×÷ÊÇÏûÏ¢µ¼Ïò´¦ÀíµÄ¼Ü¹¹£¬Ö÷Òª´¦Àíµ¥Ò»ÊÂ¼ş£¬ÆäÖĞÊÂ¼şÔò¶¨ÒåÎª¿ÉÖ±½Ó¹Û²ìµ½µÄ¸Ä±ä¡£ÔÚÕâ¸ö¼Ü¹¹ÖĞ£¬¼òµ¥ÊÂ¼ş´¦ÀíÖ»×öÁ½¼şÊÂÇé£¬¹ıÂË(filtering)ºÍÂ·ÓÉ(routing) ¡£¹ıÂË¹¦ÄÜ¾ö¶¨ÊÂ¼şÊÇ·ñÓ¦¸Ã±»´«ËÍ³öÈ¥£¬Â·ÓÉÔò¾ö¶¨ÊÂ¼şÓ¦¸Ã´«¸øË­¡£
@@ -26,3 +30,9 @@ http://www.infoq.com/cn/articles/risk-management-analysis-system?utm_source=info
 http://www.cnblogs.com/shanyou/archive/2010/09/16/cep.html
 http://www.cnblogs.com/Binhua-Liu/p/4646308.html  5·ÖÖÓ¿ªÆôEsperÖ®ÂÃ
 http://www.doc88.com/p-3187943281106.html
+
+http://blog.csdn.net/xiaohulunb/article/category/2436609  EsperÊÂ¼ş´¦ÀíÒıÇæ
+http://blog.csdn.net/doctor_who2004/article/details/46574737
+http://blog.csdn.net/luonanqin/article/details/11539221  http://blog.csdn.net/luonanqin/article/details/21300263
+EsperÏñ´ø»º´æÊ§Ğ§²ßÂÔÄÚ´æÊı¾İ¿â¡£EsperÖĞ¶¨ÒåµÄEPL±í´ïÊ½£¬ÆäÊµºÍsqlºÜ¶àÏàËÆ¹¦ÄÜ£¬¶øÇÒEPLÀïÃæÓĞµÄ²»½ö½ösql£¬À©Õ¹ÁËºÜ¶àÓï·¨¡£Esper»á½âÎöEPL£¬¶¨ÒåÄÚ´æÊı¾İ½á¹¹£¬»º´æÊ§Ğ§²ßÂÔ£¬Êı¾İ±£´æ£¬Ê±¼ä¼àÌıÆ÷£¬´óÊı¾İ·½ÃæµÄÊı¾İÁ÷/ÊÂ¼şÁ÷£¬JDBCsql·½Ê½µÄ²éÑ¯µÈµÈ¡£
+±ÈÈç£¬´°¿Úº¯Êı¶¨ÒåÊÇÒ»ÖÖFIFOµÄ»º´æ£¬µ×²ãÓÃµÄÊÇË«¶Ë¶ÓÁĞ£¨javaÖĞµÄArrayDeque£©£¬Ê±¼ä´°¿Ú¶¨Òå£¬Ö»²»¹ıÔö¼ÓÁËÒ»¸ö¶¨Ê±ÈÎÎñÈ¥²éÑ¯²¢É¾µô¹ıÆÚÊı¾İ/ÊÂ¼ş£¬guava¿âÓĞÕâÑùµÄ»º´æÊµÏÖ¡£
