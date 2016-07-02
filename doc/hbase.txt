@@ -1,4 +1,13 @@
-﻿http://www.ibm.com/developerworks/cn/java/j-lo-HBase/   HBase 数据库检索性能优化策略
+﻿https://help.aliyun.com/document_detail/31792.html?spm=5176.789091351.6.137.T5psPM  端口转发 chrome代理
+cat ~/.ssh/id_rsa.pub   -->   vim ~/.ssh/authorized_keys
+ssh -i ~/.ssh/id_rsa -ND 8157 root@xx.xx.xx.xx
+数据处理的大致步骤，数据源->数据清洗->数据存储服务->数据分析->可视化展示(有的没有)
+https://yq.aliyun.com/articles/57136?spm=5176.8091938.0.0.iTT3re
+https://yq.aliyun.com/articles/54650?spm=5176.8091938.0.0.iTT3re
+CarbonData是一个新的存储格式，跟parquet、orcfile比较类似。大致就是在列式存储的基础上加上编码、倒排等index的技术。
+https://yq.aliyun.com/articles/53918?spm=5176.8091938.0.0.iTT3re   用户自助搭建Gateway访问E-MapReduce
+
+http://www.ibm.com/developerworks/cn/java/j-lo-HBase/   HBase 数据库检索性能优化策略
 http://www.aliog.com/70845.html  HBase性能优化完全版
 http://dailidong.blog.51cto.com/4183991/1735157   Hbase万亿级存储性能优化总结
 http://jxy.me/2015/07/06/hbase-tips/  HBase豆知识

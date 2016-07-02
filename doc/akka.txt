@@ -1,7 +1,18 @@
 http://shiyanjun.cn/archives/1168.html
 http://shiyanjun.cn/archives/1178.html
 http://shiyanjun.cn/archives/1186.html
+http://www.cnblogs.com/xinsheng/p/4391808.html   spray 是基于 akka 的轻量级 scala 库，可用于编写 REST API 服务。
+http://www.cnblogs.com/xinsheng/p/4615515.html   akka cluster 初体验
 
- 
+
 colossus
 http://tumblr.github.io/colossus/docs/quickstart/
+
+
+http://www.soso.io/article/8721.html   https://github.com/agiledon/SprayExample
+http://www.smartjava.org/content/first-steps-rest-spray-and-scala
+https://github.com/oermolaev/simple-scala-rest-example
+http://my.oschina.net/FengJ/blog/261224  spring scala
+http://my.oschina.net/FengJ/blog/228912  websocket
+https://blog.pivotal.io/pivotal-labs/labs/spring-4-mvc-scala   https://github.com/robb1e/scala-spring4
+http://my.oschina.net/FengJ/blog/228272  spray rest

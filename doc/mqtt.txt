@@ -1,3 +1,10 @@
+https://bce.baidu.com/doc/IOT/Quickstart.html#.E6.A6.82.E8.BF.B0
+http://mqttfx.org/
+http://websocketshow.fc.bdysite.com/
+https://github.com/arvindr21/mqttApp
+https://rndm.io/go-and-mqtt/
+
+
 http://yunba.io/docs/#สนำร-socket.io-api
 http://yunba.io/account/apps/details/54852d1352be1f7e1dd83351/#showPublish
 http://sock.yunba.io:3000/examples/yunba_javascript_demo.html

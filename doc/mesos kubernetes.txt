@@ -26,6 +26,7 @@ Docker Overlay Network、Flannel、Calico、Weave等4种覆盖网络  http://qinghua.gith
 常见的服务注册表包括etcd、Consul和ZooKeeper。你可以使用Registrator用于注册和撤消服务以及confd，并用Consul Template实现服务发现与模板创建。
 http://doc.shurenyun.com/practice/tsung_dataman.html  TSUNG测试
 
+Twitter刚开源了Mysos项目，把mysql跑在mesos上   http://www.csdn.net/article/2015-07-10/2825180
 Mesos/Marathon/ZooKeeper/Consul/etcd/Registrator/Nginx/Docker/Logstash/Docker-Registry等等
 在开源DC/OS出现之前，Docker 的统一管理工具只有Kubernetes。Docker的Swarm 只能算是一个管理平台，需要利用Compose 和 Docker Machine等工具的配合。 Mesos 作为资源调度平台也可以管理Docker，但是也需要Marathon 这样的编排工具进行管理，需要DNS，和LoadBalancer等组件服务。 所以说统一的开源容器管理工具只有Kubernetes
 http://geek.csdn.net/news/detail/72112

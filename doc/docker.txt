@@ -1,5 +1,17 @@
 http://www.oschina.net/news/63789/eclipse-for-docker-has-arrived  
 https://wiki.eclipse.org/Linux_Tools_Project/Docker_Tooling
+https://yq.aliyun.com/articles/57138?spm=5176.100239.blogcont55916.29.9Ny9Rt   Docker监控厂商之Sysdig
+
+https://yq.aliyun.com/articles/29941?spm=5176.100239.blogcont57122.89.hekwDd
+创建一台安装有Docker环境的Linux虚拟机，指定机器名称为default，同时配置Docker加速器地址。
+docker-machine create --engine-registry-mirror=https://m09w2ldy.mirror.aliyuncs.com -d virtualbox default
+您的专属加速器地址：https://m09w2ldy.mirror.aliyuncs.com
+您可以通过阿里云的镜像仓库下载： mirrors.aliyun.com/help/docker-engine
+curl -sSL http://acs-public-mirror.oss-cn-hangzhou.aliyuncs.com/docker-engine/internet | sh -
+Ubuntu 12.04 14.04，Docker 1.9 以上
+echo "DOCKER_OPTS=\"\$DOCKER_OPTS --registry-mirror=\"" | sudo tee -a /etc/default/docker
+sudo service docker restart
+
 
 https://yq.aliyun.com/articles/47036?spm=5176.100238.yqhn2.23.pbljmH     Docker集群轻松部署Apache Storm
 https://github.com/denverdino/redis-cluster

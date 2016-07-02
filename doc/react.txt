@@ -1,5 +1,17 @@
 http://www.infoq.com/cn/articles/react-native-ide
+https://github.com/weexteam/article/issues/25  weex android
+https://github.com/alibaba/weex/blob/dev/SCRIPTS.md
+http://alibaba.github.io/weex/doc/tools/cli.html
+the renderer (weex-html5), the js-framework (weex-js-framework) and the transformer (gulp-weex).
+weex --debugger
+https://github.com/weexteam/article/issues/31  组件定义
+https://github.com/weexteam/article/issues/32   http://alibaba.github.io/weex/doc/advanced/how-it-works.html  
 
+
+https://github.com/facebook/SocketRocket  Objective-C WebSocket client library
+https://github.com/square/PonyDebugger   debugging for your native iOS app using Chrome Developer Tools
+https://github.com/facebook/stetho  Stetho is a debug bridge for Android applications, enabling the powerful Chrome Developer Tools 
+ 
 http://www.infoq.com/cn/articles/taobao-mobile-weex  weex
 https://github.com/alibaba/luaviewsdk   luaview
 http://www.infoq.com/cn/articles/introducing-weex     Weex详解：灵活的移动端高性能动态化方案

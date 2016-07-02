@@ -3,8 +3,10 @@ ssi on;
 ssi_silent_errors on;
 <!—#include virtual=“/tpl/header.html”—>
 这套沉淀多年的企业级互联网架构由EDAS应用框架、MQ消息队列、DRDS分布式数据库这三剑客组成。
+https://yq.aliyun.com/articles/49468?spm=5176.100238.ad3.1.buTzYU  mq 你的分布式应用真的需要那么多同步调用么
 
-
+https://yq.aliyun.com/articles/57164?spm=5176.8091938.0.0.t02Ogl  成本
+https://yq.aliyun.com/articles/57159?spm=5176.8091938.0.0.t02Ogl   安全
 https://yq.aliyun.com/articles/5572?spm=5176.blog25395.yqblogcon1.14.ixjMFI     迁云架构实践
 http://blog.aliyun.com/967?spm=5176.docaliyun-multimedia-cloud/Other/summary.2.4.DYsDPe  图片演进
 http://blog.aliyun.com/2373?spm=5176.docaliyun-multimedia-cloud/Other/summary.2.3.DYsDPe  cdn演进

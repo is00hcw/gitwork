@@ -7,6 +7,9 @@ https://github.com/dreamhead/moco/blob/master/moco-doc/apis.md
 https://github.com/dreamhead/moco/blob/master/moco-doc/usage.md
 java -jar moco-runner-<version>-standalone.jar http -p 12306 -c foo.json
 
+http://tmq.qq.com/2016/05/ios_automatic_tools/  ios自动化
+http://tmq.qq.com/2016/05/robotium_for_app_test/  android
+http://tmq.qq.com/2016/06/uitestingiosautomation/?utm_source=tuicool&utm_medium=referral
 
 https://yq.aliyun.com/articles/54478?spm=5176.100239.bloglist.22.T7E7Th#rd    有价值的测试
 https://yq.aliyun.com/articles/54013?spm=0.0.0.0.f8yAda

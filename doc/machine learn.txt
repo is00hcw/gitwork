@@ -2,7 +2,7 @@ http://www.pythontutor.com/
 http://wiki.jikexueyuan.com/project/tensorflow-zh/
 https://segmentfault.com/a/1190000003984727?utm_source=tuicool&utm_medium=referral
 http://wiki.jikexueyuan.com/project/neural-networks-and-deep-learning-zh-cn/
-
+https://yq.aliyun.com/articles/56834?spm=5176.8067842.tagmain.30.r3omIU
 
 a、深度学习算法及模型（如Caffe、Cudacovnet、Purine、神经网络、随机梯度下降、CNN、RBM、模型参数设置等） 
 b、统计学习算法及模型（如支持向量机、Boosting、Logistic Regression、PCA、LDA等） 
