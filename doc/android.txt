@@ -1,7 +1,18 @@
 http://www.jianshu.com/p/ca76aec23ddf 分析平安好医生技术栈
+http://blog.csdn.net/qq_25943493/article/details/51463884   android热更新技术研究
+https://mp.weixin.qq.com/s?__biz=MzAwNDY1ODY2OQ==&mid=2649286306&idx=1&sn=d6b2865e033a99de60b2d4314c6e0a25    微信Android热补丁实践演进之路
 https://github.com/singwhatiwanna/dynamic-load-apk
 http://www.jianshu.com/p/f1217cce93ef
 http://blog.csdn.net/h3c4lenovo/article/details/50751643
+
+rxjava
+https://github.com/rengwuxian/RxJavaSamples
+http://blog.csdn.net/lzyzsd/article/details/41833541/
+http://gank.io/post/560e15be2dca930e00da1083
+http://blog.csdn.net/qq_25943493/article/details/51647402   
+Android 还有一个专用的 AndroidSchedulers.mainThread()，它指定的操作将在 Android 主线程运行。
+subscribeOn(): 指定 subscribe() 所发生的线程，即 Observable.OnSubscribe 被激活时所处的线程。或者叫做事件产生的线程。 * observeOn(): 指定 Subscriber 所运行在的线程。或者叫做事件消费的线程。
+RxJava使用Subscriber的onError()进行错误处理。每一个Obervable的执行最后一定会调用onCompleted()和onError()方法中的一个。
 
 http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2015/1016/3588.html  Consuming APIs with Retrofit  
 https://guides.codepath.com/android/Consuming-APIs-with-Retrofit
@@ -68,7 +79,7 @@ https://yq.aliyun.com/articles/7568?spm=5176.blog8523.yqblogcon1.22.160o9n  Andr
 通过BlockCanary检测耗时操作，通过优化算法，放进子线程等方法进行优化。
 http://blog.csdn.net/jdsjlzx/article/details/7606423?spm=5176.blog6847.yqblogcon1.6.1BB66k  Android自定义捕获Application全局异常
 
-
+http://www.yanzhenjie.com/andserver.html  Anroid搭建一个局域网Web服务器
 http://www.oschina.net/news/71907/meizu-bsp-engineer-android-kernel  bsp
 https://androidtest.org/android-graphics-performance-pattens/#63debug   Android界面性能调优手册
 https://segmentfault.com/q/1010000004253063/a-1020000004333459  开源库

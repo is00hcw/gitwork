@@ -1,5 +1,22 @@
 ﻿http://colobu.com/2016/04/21/use-vscode-to-develop-go-programs/
 https://github.com/Microsoft/vscode-tips-and-tricks/blob/master/README.md
+http://www.cnblogs.com/zsy/archive/2016/02/28/5223957.html  配置
+http://www.golangtc.com/t/564d30cfb09ecc72c30000b1
+到 https://github.com/golang/tools 下载然后放到 golang.org/x/tools 下面。
+go get -u -v github.com/nsf/gocode
+go get -u -v github.com/rogpeppe/godef
+go get -u -v github.com/golang/lint/golint
+go get -u -v github.com/lukehoban/go-find-references
+go get -u -v sourcegraph.com/sqs/goreturns
+go get -u -v golang.org/x/tools/cmd/gorename
+go get -u -v github.com/derekparker/delve/cmd/dl
+
+热更新
+https://github.com/facebookgo/grace 
+https://github.com/rcrowley/goagain
+http://my.oschina.net/astaxie/blog/136364
+http://studygolang.com/topics/1194
+http://www.fising.cn/2014/10/golang-web-%E7%83%AD%E5%8D%87%E7%BA%A7%E6%96%B9%E6%A1%88%E7%A0%94%E7%A9%B6.shtml
 
 godoc -http=:6060
 

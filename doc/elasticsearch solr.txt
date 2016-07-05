@@ -1,3 +1,4 @@
+http://my.oschina.net/wsyblog/blog/702841
 https://imququ.com/post/elasticsearch.html   使用 Elasticsearch 实现博客站内搜索
 http://blog.sctux.com/?p=445 
 http://blog.sctux.com/?p=451  ELK+Kafka 企业日志收集平台

@@ -1,4 +1,7 @@
-﻿http://colobu.com/2016/01/04/Scala-magic-functions/   Scala 魔法函数
+﻿http://www.slideshare.net/fujohnwang/scala-thegoodparts
+http://afoo.me/posts/2015-07-21-scala-developers-springboot-guide.html   Scala开发者的SpringBoot快速入门指南
+
+http://colobu.com/2016/01/04/Scala-magic-functions/   Scala 魔法函数
 http://colobu.com/2015/07/02/Scala-Collections-Tips-and-Tricks/
 a.apply(x)则可以简化为a(x)
 a.update(x,y)简化为a(x)=y

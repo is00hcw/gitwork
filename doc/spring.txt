@@ -151,3 +151,22 @@ http://docs.spring.io/spring-boot/docs/current/reference/html/howto-traditional-
 If you include org.springframework.boot:spring-boot-legacy as a dependency
  <listener-class>org.springframework.boot.legacy.context.web.SpringBootContextLoaderListener</listener-class>
 http://www.javabeat.net/spring-boot-actuator/
+
+
+jpa
+Repository： 仅仅是一个标识，表明任何继承它的均为仓库接口类，方便Spring自动扫描识别 
+CrudRepository<T, ID extends Serializable>： 继承Repository，这个接口提供了最基本的对实体类的添删改查操作
+PagingAndSortingRepository： 继承CrudRepository，实现了一组分页排序相关的方法 
+JpaRepository： 继承PagingAndSortingRepository，实现一组JPA规范相关的方法  
+按照Spring data 定义的规则，查询方法以find|read|get开头   要注意的是：条件属性以首字母大写其余字母小写为规定。 
+findByLastnameAndFirstname(String lastname,String firstname) 条件的属性名称与个数要与参数的位置与个数一一对应   
+@Query(value = "SELECT * FROM http_api where http_suite_id = ?1", nativeQuery = true)
+索引值从1开始，查询中 ”?X” 个数需要与方法定义的参数个数相一致，并且顺序也要一致 
+http://www.cnblogs.com/WangJinYang/p/4257383.html
+
+@ImportResource("classpath:applicationContext.xml")
+@PropertySource("classpath:application.properties")
+@EnableTransactionManagement
+@EnableJpaRepositories(basePackages = {"org.exam.app.repository"})
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(loader=AnnotationConfigContextLoader.class,classes={AppConfig.class})
