@@ -1,3 +1,13 @@
+ALIVE=$(curl -m 10 --connect-timeout 10 -o /dev/null -s -w %{http_code} $URL)
+http://www.onealert.com/open/alert/event.jsp  告警api
+psi log
+com.googlecode.psiprobe.controllers.apps.AjaxToggleContextController - 14.153.222.74 requested STOP of /app/m7
+com.googlecode.psiprobe.controllers.apps.AjaxToggleContextController - 14.153.222.74 requested START of /app/m7
+nginx log
+"116.77.162.236" - atwx20150318_ [05/Jul/2016:20:38:58 +0800] "GET /probe/app/toggle.ajax;jsessionid=4EC941228DF6C8A51449F9F30D69F0C0?webapp=/app/m7 HTTP/1.1"  200 20 "http://120.24.162.97/probe/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2756.0 Safari/537.36" 127.0.0.1:8080
+http://tomcat.apache.org/tomcat-6.0-doc/manager-howto.html
+https://segmentfault.com/a/1190000002539169  shell
+
 echo stat|nc 127.0.0.1 2181 来查看哪个节点被选择作为follower或者leader
 echo conf | nc 127.0.0.1 2181 ,输出相关服务配置的详细信息。
 echo ruok|nc 127.0.0.1 2181 测试是否启动了该Server，若回复imok表示已经启动。

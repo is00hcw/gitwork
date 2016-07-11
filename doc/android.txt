@@ -5,6 +5,10 @@ https://github.com/singwhatiwanna/dynamic-load-apk
 http://www.jianshu.com/p/f1217cce93ef
 http://blog.csdn.net/h3c4lenovo/article/details/50751643
 
+https://yq.aliyun.com/articles/57284?spm=5176.100238.goodcont.5.DxzG2I  APK瘦身记，如何实现高达53%的压缩效果
+https://yq.aliyun.com/articles/57255?spm=5176.100239.blogcont57284.26.uyiqmb  Android项目持续集成实践之Gitlab CI
+
+
 rxjava
 https://github.com/rengwuxian/RxJavaSamples
 http://blog.csdn.net/lzyzsd/article/details/41833541/
@@ -28,6 +32,8 @@ http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2016/0518/4270.html
 https://github.com/outware-mobile/swagger-codegen
 http://www.jsonschema2pojo.org/   
 http://www.jianshu.com/p/3141d4e46240  Android网络请求心路历程
+
+
 
 从1.5开始，gradle插件包含了一个叫Transform的API，这个API允许第三方插件在class文件转为为dex文件前操作编译好的class文件，这个API的目标就是简化class文件的自定义的操作而不用对Task进行处理
 

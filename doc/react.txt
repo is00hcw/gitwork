@@ -2,9 +2,11 @@ http://www.infoq.com/cn/articles/react-native-ide
 https://github.com/fengjundev/React-Native-Remote-Update   使用React-Native实现app热更新的一次实践
 http://update.reactnative.cn/home
 http://www.infoq.com/cn/articles/react-native-solution-dev-environment   React-Native痛点解析之开发环境搭建及扩展
+http://my.oschina.net/MrHou/blog?catalog=3590216&temp=1467334626860   react-native-android  教程   https://github.com/houyu01/react-native-android-tutorial
 http://www.infoq.com/cn/articles/introducing-reactmix   ReactMix：基于HTML+JS+CSS写APP的最佳实践   https://github.com/xueduany/react-mix
 https://mp.weixin.qq.com/s?__biz=MzA3ODg4MDk0Ng==&mid=2651112408&idx=1&sn=32c2636a2653fe9391b44de514261cbf   Moles：携程基于React Native的跨平台开发框架
 
+https://yq.aliyun.com/articles/57554?spm=5176.100238.goodcont.24.DxzG2I   Weex入门与进阶指南  ios集成
 https://github.com/weexteam/article/issues/25  weex android
 https://github.com/alibaba/weex/blob/dev/SCRIPTS.md
 http://alibaba.github.io/weex/doc/tools/cli.html

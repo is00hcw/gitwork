@@ -1,0 +1,36 @@
+白屏时间的多数是：DNS解析耗时+服务端耗时+网络传输耗时。 chrome 屏幕捕获的工具，可以看到整个网页的渲染过程。 
+http://my.oschina.net/MrHou/blog/699968 性能统计  使用html5新增的接口：performance来评估一下自己的网站
+HTML5的performance接口提供了这个时间：performance.timing.navigationStart，这个就是用户访问我们网页最开始的跳转时间了。
+http://my.oschina.net/MrHou/blog/693071  前端日志
+http://my.oschina.net/MrHou/blog/706745  百度移动端首页前端速度
+
+
+http://www.itwhy.org/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/web/web-%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96.html  WEB 前端性能优化
+
+<link rel="dns-prefetch" href="//widget.foo.com">  关于DNS的有两点：一是减少DNS的请求次数，第二个就是进行DNS预先获取。默认情况下浏览器会对页面中和当前域名（正在浏览网页的域名）不在同一个域的域名进行预获取，并且缓存结果，这就是隐式的DNS Prefetch。如果想对页面中没有出现的域进行预获取，那么就要使用显示的DNS　Prefetch了
+可以通过下面的标签禁止隐式的DNS Prefetch <meta http-equiv=”x-dns-prefetch-control” content=”off”> 
+
+可以使用prerender属性，这个属性能够帮助你提前加载整个页面，如下：<link rel="prerender" href="http://www.gbtags.com/gb/search.htm" />
+<link rel="prefetch" href="sprite.png">
+
+http://blog.csdn.net/orclight/article/details/8560498   OSCache  缓存整个页面 & 缓存局部页面  
+<%@ taglib uri="http://www.opensymphony.com/oscache" prefix="cache" %>  
+
+
+https://help.aliyun.com/document_detail/29096.html?spm=5176.doc29095.2.2.mVlH9P  网站访问日志统计分析
+https://yq.aliyun.com/articles/35979?spm=5176.55536.224592.5.wEIM8i   loghub
+https://help.aliyun.com/document_detail/31752.html?spm=5176.doc28999.6.116.MFcRbp   日志服务Tracking功能  https://yq.aliyun.com/articles/54402?spm=5176.100239.blogrightarea55967.14.6YyKdM
+使用Loghub Log4j Appender的好处  客户端日志不落盘：既数据生产后直接通过网络发往服务端。  https://yq.aliyun.com/articles/55967?spm=5176.100244.teamconlist.23.Y6jlRX
+用户创建NAS文件系统实例和挂载点后，即可在ECS内通过标准的NFS协议挂载文件系统，并使用标准的Posix接口对文件系统进行访问。多台ECS虚拟机可以同时挂载同一个文件系统，共享文件和目录。
+SLB+ECS：使用SLB+多台ECS（如 web服务器） 部署业务，多台ECS需要访问同一个存储空间，以便多台ECS能共享数据。
+日志共享：多台ECS应用，需要将日志写到同一个存储空间，以方便做集中的日志数据处理与分析。
+https://help.aliyun.com/document_detail/28984.html?spm=5176.doc28978.2.12.4XquKV    Logstash接入
+https://help.aliyun.com/document_detail/28995.html?spm=5176.doc28994.6.127.mIaYii   Logstash multiline
+拥有相同consumer group 名字的消费者共同消费同一个logstore的所有数据，这些消费者之间不会重复消费数据
+https://help.aliyun.com/document_detail/28998.html?spm=5176.doc28997.6.133.0OPR55   loghub client library使用说明
+https://help.aliyun.com/document_detail/28999.html?spm=5176.doc28998.6.134.tOiZR7   storm
+
+
+http://docs.confluent.io/3.0.0/kafka-rest/docs/intro.html  kafka rest proxy
+https://github.com/confluentinc/kafka-rest
+

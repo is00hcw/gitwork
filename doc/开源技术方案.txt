@@ -58,7 +58,6 @@ DataX 是阿里巴巴集团内被广泛使用的离线数据同步工具/平台，实现包括 MySQL、SQL Ser
 
 kopf 管理Elasticsearch 集群
 Sigar（System Information Gatherer And Reporter），是一个开源的工具，提供了跨平台的系统信息收集的API
-大众点评CAT
 ServiceLoader.load(IService.class);
 
 http://www.oschina.net/news/73736/linkedin-open-source-ambry  LinkedIn 开源多媒体对象存储数据库 Ambry   https://engineering.linkedin.com/blog/2016/05/introducing-and-open-sourcing-ambry---linkedins-new-distributed-
@@ -79,6 +78,14 @@ https://github.com/frostynova/open-falcon-docker  小米监控
 把流量复制到其他服务器上，一种方式是使用如tcpcopy引流；另外我们还可以使用nginx的HttpLuaModule模块中的ngx.location.capture_multi进行并发执行来模拟复制。  http://jinnianshilongnian.iteye.com/blog/2190343
 http://jinnianshilongnian.iteye.com/blog/2280928
 
+服务监控系统 Prometheus
+http://www.oschina.net/p/bosun
+http://www.oschina.net/p/open-falcon
+
+http://www.oschina.net/p/apache+htrace
+http://www.oschina.net/p/pinpoint
+http://www.oschina.net/p/cat-dianping 大众点评CAT
+https://github.com/Nike-Inc/wingtips  nike dapper
 https://github.com/openzipkin/docker-zipkin
 https://github.com/openzipkin/brave   java 版
 https://github.com/sourcegraph/appdash  golang 版

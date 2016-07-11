@@ -1,6 +1,19 @@
+在生产环境中使用Docker技术时，不仅仅是在所有的机器上装上Docker引擎这么简单。首先需要创建和管理集群；其次是安全、网络、存储等基础配置；还需要做资源的调度和编排。
 http://www.oschina.net/news/63789/eclipse-for-docker-has-arrived  
 https://wiki.eclipse.org/Linux_Tools_Project/Docker_Tooling
 https://yq.aliyun.com/articles/57138?spm=5176.100239.blogcont55916.29.9Ny9Rt   Docker监控厂商之Sysdig
+https://yq.aliyun.com/articles/57265?spm=5176.100239.bloglist.72.YjaDvM   在阿里云容器服务上开发基于Docker的Spring Cloud微服务应用
+
+
+如果大家希望在Swarm主机发生故障时对容器进行重新调度，则需要在容器部署中使用特定标记。作为可行方案之一，我们可以使用以下标记：--restart=always -e reschedule:on-node-failure或者类似于-l 'com.docker.swarm.reschedule-policy=["on-node-failure"]'的标签。
+监控时序数据库Influxdb, 监控报警框架Kapacitor，及界面展现Grafana.  https://github.com/influxdata/kapacitor
+模板中通过标签“ aliyun.monitoring.addon.influxdb”来指定将阿里云容器服务中的监控数据发送到Influxdb.
+https://yq.aliyun.com/articles/57283?spm=5176.100244.teamconlist.3.Ofs4JB
+基于EFK（Elasticsearch Fluentd Kibana）、TIGK（Telegraf InfluxDB Grafana Kapacitor）以及HBase/Spark等技术栈，构建起来一个分析平台
+Telegraf 是一个用 Go 编写的代理程序，可收集系统和服务的统计数据，并写入到 InfluxDB 数据库。
+本方案借助docker的Volume功能。在host机器上开辟一个固定目录D；产生日志的容器将日志文件所在目录mount到D目录下的子目录中；收集日志的容器再把目录D mount到自己容器内。 https://yq.aliyun.com/articles/303?spm=5176.100239.blogcont2663.10.044OZz&do=login
+OSS作为对象存储，用来虚拟文件系统有其天生的缺陷：修改文件会导致整个文件重写   元数据操作，例如list directory，性能较差，因为需要远程访问OSS服务器
+Logspout是在用于收集Docker容器日志的工具。它连接到主机上的所有容器，然后将其路由到你想让让它去的地方。
 
 https://yq.aliyun.com/articles/29941?spm=5176.100239.blogcont57122.89.hekwDd
 创建一台安装有Docker环境的Linux虚拟机，指定机器名称为default，同时配置Docker加速器地址。

@@ -5,15 +5,6 @@ http://www.infoq.com/cn/news/2015/12/linux-performance?utm_source=infoq&utm_medi
 http://www.infoq.com/cn/articles/linux-networking-performance-analytics?utm_source=infoq&utm_medium=related_content_link&utm_campaign=relatedContent_news_clk
 http://www.360doc.com/content/14/0606/16/3300331_384326124.shtml
 http://www.cnblogs.com/gbin1/archive/2013/07/03/3169060.html
-http://www.itwhy.org/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/web/web-%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96.html  WEB 前端性能优化
-<link rel="dns-prefetch" href="//widget.foo.com">  关于DNS的有两点：一是减少DNS的请求次数，第二个就是进行DNS预先获取。默认情况下浏览器会对页面中和当前域名（正在浏览网页的域名）不在同一个域的域名进行预获取，并且缓存结果，这就是隐式的DNS Prefetch。如果想对页面中没有出现的域进行预获取，那么就要使用显示的DNS　Prefetch了
-可以通过下面的标签禁止隐式的DNS Prefetch <meta http-equiv=”x-dns-prefetch-control” content=”off”> 
-
-可以使用prerender属性，这个属性能够帮助你提前加载整个页面，如下：<link rel="prerender" href="http://www.gbtags.com/gb/search.htm" />
-<link rel="prefetch" href="sprite.png">
-
-http://blog.csdn.net/orclight/article/details/8560498   OSCache  缓存整个页面 & 缓存局部页面  
-<%@ taglib uri="http://www.opensymphony.com/oscache" prefix="cache" %>  
 
 http://www.infoq.com/cn/articles/high-availability-scalable-architecture-practical-experience   高可用可伸缩架构实用经验谈
 在分布式系统中，一个请求可能会经过多个不同的子系统，这时最好生成一个UUID附在请求中，每个子系统在打印日志时都将该UUID放在MDC里，便于后续查询相关的日志
