@@ -1,3 +1,10 @@
+https://yq.aliyun.com/articles/11248?spm=5176.100239.blogcont57695.15.Yhlwvx
+编译环境：Visual Studio 2013 Ultimate版， 获取地址：http://download.microsoft.com/download/9/3/E/93EA27FF-DB02-4822-8771-DCA0238957E9/vs2013.5_ult_chs.iso?type=ISO
+CUDA Toolkit版本：7.5，获取地址：https://developer.nvidia.com/cuda-downloads
+http://blog.csdn.net/kkk584520?spm=5176.100239.blogcont57695.6.Yhlwvx
+http://blog.csdn.net/kkk584520/article/details/51476816
+
+
 http://www.pythontutor.com/
 http://wiki.jikexueyuan.com/project/tensorflow-zh/
 https://segmentfault.com/a/1190000003984727?utm_source=tuicool&utm_medium=referral

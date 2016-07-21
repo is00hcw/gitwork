@@ -25,6 +25,9 @@ df -i  查看索引节点的占用（Inodes）
 du -h --max-depth=1  查看当前目录内文件夹的大小
 http://www.kejianet.cn/aliyun-esc  
 
+
+https://yq.aliyun.com/articles/47237?spm=5176.8091938.0.0.Kpwjb9    CentOS 7 安装 MySQL
+
 supervisor
 http://www.ttlsa.com/linux/supervisor-linux-process-control-management/
 http://my.oschina.net/crooner/blog/395069?fromerr=yV46aj4d

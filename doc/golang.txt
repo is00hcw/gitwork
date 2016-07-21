@@ -27,6 +27,8 @@ http://learnxinyminutes.com/docs/go/
 
 http
 http://www.cnblogs.com/yjf512/archive/2012/06/18/2554066.html
+https://yq.aliyun.com/articles/47117?spm=5176.8091938.0.0.Kpwjb9    WebSocket 和 Golang 实现聊天功能
+
 
 mqtt
 https://github.com/huin/mqtt

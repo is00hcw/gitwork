@@ -1,0 +1,574 @@
+#!/bin/bash
+set -e
+#
+# This script is meant for quick & easy install via:
+#   'curl -sSL https://get.docker.com/ | sh'
+# or:
+#   'wget -qO- https://get.docker.com/ | sh'
+#
+# For test builds (ie. release candidates):
+#   'curl -sSL https://test.docker.com/ | sh'
+# or:
+#   'wget -qO- https://test.docker.com/ | sh'
+#
+# For experimental builds:
+#   'curl -sSL https://experimental.docker.com/ | sh'
+# or:
+#   'wget -qO- https://experimental.docker.com/ | sh'
+#
+# Docker Maintainers:
+#   To update this script on https://get.docker.com,
+#   use hack/release.sh during a normal release,
+#   or the following one-liner for script hotfixes:
+#     s3cmd put --acl-public -P hack/install.sh s3://get.docker.com/index
+#
+
+openapi="https://cs.console.aliyun.com"
+config_dir=/etc/docker
+did_apt_get_update=
+did_yum_update=
+lsb_dist=
+dist_version=
+sh_c='sh -c'
+
+ubuntuUrl='http://acs-public-mirror.oss-cn-hangzhou.aliyuncs.com/docker-engine/daemon-build/ubuntu/docker-engine_1.11.2~git20160509.074956.0.c40c5cd-0~trusty_amd64.deb'
+centosUrl='http://acs-public-mirror.oss-cn-hangzhou.aliyuncs.com/docker-engine/daemon-build/centos/docker-engine-1.11.2-0.0.20160509.074956.gitc40c5cd.el7.centos.x86_64.rpm'
+centosSelinuxUrl='http://acs-public-mirror.oss-cn-hangzhou.aliyuncs.com/docker-engine/daemon-build/centos/docker-engine-selinux-1.11.2-0.0.20160509.074956.gitc40c5cd.el7.centos.noarch.rpm'
+
+command_exists() {
+	command -v "$@" > /dev/null 2>&1
+}
+
+apt_get_update() {
+    if [ -z "$did_apt_get_update" ]; then
+        ( set -x; $sh_c 'sleep 3; apt-get update || true' )
+        did_apt_get_update=1
+    fi
+}
+
+unsupported_distro(){
+    echo "Error: your linux distro $lsb_dist is not supported. Current supported are fedora centos oraclelinux ubuntu debian."
+    exit 1
+}
+
+yum_update(){
+    if [ -z "$did_yum_update" ]; then
+        ( set -x; $sh_c 'sleep 3; yum -q -y update || true' )
+        did_yum_update=1
+    fi
+}
+
+interface_addr(){
+    local interface=$1
+    ip addr show dev $interface|awk '$1=="inet"{print $2}'|awk -F/ '{print $1}'
+}
+
+# Check if this is a forked Linux distro
+check_forked() {
+	# Check for lsb_release command existence, it usually exists in forked distros
+	if command_exists lsb_release; then
+		# Check if the `-u` option is supported
+		set +e
+		lsb_release -a -u > /dev/null 2>&1
+		lsb_release_exit_code=$?
+		set -e
+
+		# Check if the command has exited successfully, it means we're in a forked distro
+		if [ "$lsb_release_exit_code" = "0" ]; then
+			# Print info about current distro
+			echo "You're using '$lsb_dist' version '$dist_version'."
+
+			# Get the upstream release info
+			lsb_dist=$(lsb_release -a -u 2>&1 | tr '[:upper:]' '[:lower:]' | grep -E 'id' | cut -d ':' -f 2 | tr -d '[[:space:]]')
+			dist_version=$(lsb_release -a -u 2>&1 | tr '[:upper:]' '[:lower:]' | grep -E 'codename' | cut -d ':' -f 2 | tr -d '[[:space:]]')
+
+			# Print info about upstream distro
+			echo "Upstream release is '$lsb_dist' version '$dist_version'."
+		fi
+	fi
+}
+
+rpm_import_repository_key() {
+	local key=$1; shift
+	local tmpdir=$(mktemp -d)
+	chmod 600 "$tmpdir"
+	gpg --homedir "$tmpdir" --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"
+	gpg --homedir "$tmpdir" --export --armor "$key" > "$tmpdir"/repo.key
+	rpm --import "$tmpdir"/repo.key
+	rm -rf "$tmpdir"
+}
+
+in_list(){
+    local name=$1
+    shift
+    for i in "$@"
+    do
+        if [ "$name" == "$i" ]; then
+            return 0
+        fi
+    done
+    return 1
+}
+
+do_detect_lsb(){
+	# perform some very rudimentary platform detection
+	lsb_dist=''
+	dist_version=''
+	if command_exists lsb_release; then
+		lsb_dist="$(lsb_release -si)"
+	fi
+	if [ -z "$lsb_dist" ] && [ -r /etc/lsb-release ]; then
+		lsb_dist="$(. /etc/lsb-release && echo "$DISTRIB_ID")"
+	fi
+	if [ -z "$lsb_dist" ] && [ -r /etc/debian_version ]; then
+		lsb_dist='debian'
+	fi
+	if [ -z "$lsb_dist" ] && [ -r /etc/fedora-release ]; then
+		lsb_dist='fedora'
+	fi
+	if [ -z "$lsb_dist" ]; then
+		if [ -r /etc/centos-release ] || [ -r /etc/redhat-release ]; then
+			lsb_dist='centos'
+		fi
+	fi
+	if [ -z "$lsb_dist" ] && [ -r /etc/os-release ]; then
+		lsb_dist="$(. /etc/os-release && echo "$ID")"
+	fi
+
+	lsb_dist="$(echo "$lsb_dist" | tr '[:upper:]' '[:lower:]')"
+
+	case "$lsb_dist" in
+		ubuntu)
+			if command_exists lsb_release; then
+				dist_version="$(lsb_release --codename | cut -f2)"
+			fi
+			if [ -z "$dist_version" ] && [ -r /etc/lsb-release ]; then
+				dist_version="$(. /etc/lsb-release && echo "$DISTRIB_CODENAME")"
+			fi
+		;;
+
+		debian)
+			dist_version="$(cat /etc/debian_version | sed 's/\/.*//' | sed 's/\..*//')"
+			case "$dist_version" in
+				8)
+					dist_version="jessie"
+				;;
+				7)
+					dist_version="wheezy"
+				;;
+			esac
+		;;
+
+		fedora|centos)
+			dist_version="$(rpm -q --whatprovides redhat-release --queryformat "%{VERSION}\n" | sed 's/\/.*//' | sed 's/\..*//' | sed 's/Server*//')"
+		;;
+
+		*)
+			if command_exists lsb_release; then
+				dist_version="$(lsb_release --codename | cut -f2)"
+			fi
+			if [ -z "$dist_version" ] && [ -r /etc/os-release ]; then
+				dist_version="$(. /etc/os-release && echo "$VERSION_ID")"
+			fi
+		;;
+	esac
+
+	# Check if this is a forked Linux distro
+	check_forked
+
+    if ! in_list "$lsb_dist" fedora centos oraclelinux ubuntu debian; then
+        unsupported_distro
+    fi
+}
+
+do_check_kernel(){
+	case "$(uname -m)" in
+		*64)
+			;;
+		*)
+			echo -e "Error: you are not using a 64bit platform.\n  Docker currently only supports 64bit platforms."
+			exit 1
+			;;
+	esac
+
+    kernel_version=$(uname -r|awk -F. '{printf "%d%02d",$1,$2}')
+    case "$lsb_dist" in
+        ubuntu|debian)
+            if [ "$kernel_version" -lt "313" ]; then
+                echo -e "Error: your linux kernel is too old.\n Aliyun container service require linux 3.13+ on ubuntu/debian."
+                exit 1
+            fi
+            ;;
+        *)
+            if [ "$kernel_version" -lt "318" ]; then
+                echo -e "Error: your linux kernel is too old.\n Aliyun container service require linux 3.18+."
+                exit 1
+            fi
+            ;;
+    esac
+
+}
+
+do_fix_routing_rules(){
+    set +e
+    route del -net 172.16.0.0/12
+    if [ -e /etc/network/interfaces ]; then sed -i '/^up route add -net 172.16.0.0 netmask 255.240.0.0 gw/d' /etc/network/interfaces; fi
+    if [ -e /etc/sysconfig/network-scripts/route-eth0 ]; then sed -i '/^172.16.0.0\\/12 via /d' /etc/sysconfig/network-scripts/route-eth0; fi
+    set -e
+}
+
+do_prepare_sh(){
+	user="$(id -un 2>/dev/null || true)"
+
+	if [ "$user" != 'root' ]; then
+		if command_exists sudo; then
+			sh_c='sudo -E sh -c'
+		elif command_exists su; then
+			sh_c='su -c'
+		else
+			echo "Error: this installer needs the ability to run commands as root.  We are unable to find either "sudo" or "su" available to make this happen."
+			exit 1
+		fi
+	fi
+}
+
+do_install_curl(){
+    if command_exists curl; then
+        return
+    fi
+	case "$lsb_dist" in
+        ubuntu|debian)
+            apt_get_update
+            ( set -x; $sh_c 'sleep 3; apt-get install -y -q curl ca-certificates' ) 
+            ;;
+		fedora|centos|oraclelinux)
+            yum_update
+            ( set -x; $sh_c 'sleep 3; yum install -y curl' )
+            ;;
+        *)
+            unsupported_distro
+            ;;
+    esac
+}
+
+do_install_docker() {
+
+	if command_exists docker; then
+            echo "Warning: the "docker" command appears to already exist on this system. 
+
+            If you already have Docker installed, this script can cause trouble, which is
+            why we're displaying this warning and provide the opportunity to cancel the
+            installation.
+
+            If you installed the current Docker package using this script and are using it
+            again to update Docker, you can safely ignore this message.
+
+            You may press Ctrl+C now to abort this script. " 
+		( set -x; sleep 20 )
+	fi
+
+
+	# check to see which repo they are trying to install from
+	repo='main'
+
+    if [ $network = "vpc" ]; then
+        aliyun_mirror="mirrors.cloud.aliyuncs.com"
+    else
+        aliyun_mirror="mirrors.aliyun.com"
+    fi
+
+
+	# Run setup for each distro accordingly
+	case "$lsb_dist" in
+		ubuntu|debian)
+			export DEBIAN_FRONTEND=noninteractive
+
+			(
+			set -x
+			$sh_c "curl -sSL http://$aliyun_mirror/docker-engine/apt/gpg | apt-key add -"
+			$sh_c "mkdir -p /etc/apt/sources.list.d"
+			$sh_c "echo deb http://$aliyun_mirror/docker-engine/apt ${lsb_dist}-${dist_version} ${repo} > /etc/apt/sources.list.d/docker.list"
+            )
+
+			# aufs is preferred over devicemapper; try to ensure the driver is available.
+			if ! grep -q aufs /proc/filesystems && ! $sh_c 'modprobe aufs'; then
+				if uname -r | grep -q -- '-generic' && dpkg -l 'linux-image-*-generic' | grep -q '^ii' 2>/dev/null; then
+					kern_extras="linux-image-extra-$(uname -r) linux-image-extra-virtual"
+
+                    apt_get_update
+					( set -x; $sh_c 'sleep 3; apt-get install -y -q '"$kern_extras" ) || true
+
+					if ! grep -q aufs /proc/filesystems && ! $sh_c 'modprobe aufs'; then
+						echo >&2 'Warning: tried to install '"$kern_extras"' (for AUFS)'
+						echo >&2 ' but we still have no AUFS.  Docker may not work. Proceeding anyways!'
+						( set -x; sleep 10 )
+					fi
+				else
+					echo >&2 'Warning: current kernel is not supported by the linux-image-extra-virtual'
+					echo >&2 ' package.  We have no AUFS support.  Consider installing the packages'
+					echo >&2 ' linux-image-virtual kernel and linux-image-extra-virtual for AUFS support.'
+					( set -x; sleep 10 )
+				fi
+			fi
+
+			# install apparmor utils if they're missing and apparmor is enabled in the kernel
+			# otherwise Docker will fail to start
+			if [ "$(cat /sys/module/apparmor/parameters/enabled 2>/dev/null)" = 'Y' ]; then
+				if command -v apparmor_parser >/dev/null 2>&1; then
+					echo 'apparmor is enabled in the kernel and apparmor utils were already installed'
+				else
+					echo 'apparmor is enabled in the kernel, but apparmor_parser missing'
+                    apt_get_update
+					( set -x; $sh_c 'sleep 3; apt-get install -y -q apparmor' )
+				fi
+			fi
+
+			if [ ! -e /usr/lib/apt/methods/https ]; then
+                apt_get_update
+				( set -x; $sh_c 'sleep 3; apt-get install -y -q apt-transport-https ca-certificates' )
+			fi
+			if [ -z "$curl" ]; then
+                apt_get_update
+				( set -x; $sh_c 'sleep 3; apt-get install -y -q curl ca-certificates' )
+				curl='curl -sSL'
+			fi
+            apt_get_update
+            ( set -x; $sh_c "sleep 3; apt-get install -y -q gdebi aufs-tools ca-certificates cgroup-lite git xz-utils apparmor; curl -L $ubuntuUrl -o docker-engine.deb; gdebi -qn docker-engine.deb; rm -f docker-engine.deb; apt-get install -y -q unzip")
+			;;
+
+		fedora|centos|oraclelinux)
+			$sh_c "cat >/etc/yum.repos.d/docker-${repo}.repo" <<-EOF
+			[docker-${repo}-repo]
+			name=Docker ${repo} Repository
+			baseurl=http://$aliyun_mirror/docker-engine/yum/${repo}/${lsb_dist}/${dist_version}
+			enabled=1
+			gpgcheck=1
+			gpgkey=http://$aliyun_mirror/docker-engine/yum/gpg
+			EOF
+			if [ "$lsb_dist" = "fedora" ] && [ "$dist_version" -ge "22" ]; then
+				(
+					set -x
+					$sh_c 'sleep 3; dnf -y -q update; dnf -y -q install docker-engine-1.9.1 unzip'
+				)
+			else
+				(
+					set -x
+					$sh_c "sleep 3; yum -y -q update;curl -L ${centosSelinuxUrl} -o docker-engine.selinux.rpm; curl -L ${centosUrl} -o docker-engine.rpm;  yum -y -q --nogpgcheck localinstall docker-engine.selinux.rpm; yum -y -q --nogpgcheck localinstall docker-engine.rpm; rm -f docker-engine.rpm docker-engine.selinux.rpm"
+				)
+			fi
+			;;
+        *)
+            # intentionally mixed spaces and tabs here -- tabs are stripped by "<<-'EOF'", spaces are kept in the output
+            unsupported_distro
+            ;;
+	esac
+}
+
+do_start_container()
+{
+    #Start tunnel agent
+    docker run -d \
+        --restart=always \
+        --name=tunnel-agent \
+        --label aliyun.system=true \
+        --net=host \
+        -v $config_dir:$config_dir \
+        -v /var/run/docker.sock:/var/run/docker.sock \
+        --memory-reservation 50m \
+        --oom-kill-disable \
+        $tunnel_image \
+            -config=config.yml \
+            -server-addr=$tunnel_server \
+            -tlsCA=$ca_path \
+            -tlsCert=$agent_cert_path \
+            -tlsKey=$agent_key_path \
+            -log=stdout \
+            start docker
+
+    mkdir -p /dev/mqueue
+
+    #Start acs agent
+    docker run -d \
+        --restart=always \
+        --name acs-agent \
+        --label aliyun.system=true \
+        --net host \
+        --privileged --pid=host --ipc=host --uts=host --volume /:/host \
+        -v $config_dir:$config_dir \
+        -v /var/run/docker.sock:/var/run/docker.sock \
+        -v /var/lib/docker:/var/lib/docker \
+        -v /mnt:/mnt \
+        --memory-reservation 50m \
+        --oom-kill-disable \
+        $swarm_image \
+        join \
+        --node $address \
+        --discovery-opt kv.cacertfile=$acs_ca_path \
+        --discovery-opt kv.certfile=$agent_cert_path \
+        --discovery-opt kv.keyfile=$agent_key_path \
+        --advertise $swarm_endpoint $etcd_address
+
+}
+
+do_config_network()
+{
+    set -o pipefail
+    if [ "$network" == "classic" ]; then
+        if ! docker network ls|grep -q multi-host-network; then
+            docker network create -d overlay --subnet=172.19.0.0/16  multi-host-network 
+        fi
+    else
+        if ! docker network ls|grep -q multi-host-network; then
+            docker network create -d vpc --ipam-driver vpcipam  multi-host-network
+        fi
+    fi
+}
+
+do_get_info()
+{
+    if ip link show eth1; then
+        address=$(interface_addr eth1)
+    else
+        address=$(interface_addr eth0)
+    fi
+    info=$(curl -sfSL "$openapi/script/info.do?token=${token}&instanceId=${instance_id}&ip=${address}"|grep '\w')
+    eval "$info"
+}
+
+do_finish_attach()
+{
+    curl -sfSL -d "token=${token}&instanceId=${instance_id}" "$openapi/script/call.json"
+    echo "======================================="
+    echo "                 SUCCESS               "
+    echo "======================================="
+}
+
+do_config_docker()
+{
+    mkdir -p $config_dir
+    local tmp=$(mktemp)
+    curl -sfSL "$openapi/script/downNodeCerts.do?token=${token}&nodeId=${node_index}" > $tmp
+
+    unzip -o $tmp -d $config_dir
+
+    acs_ca_path=$config_dir/acs-ca.pem
+    agent_cert_path=$config_dir/agent.pem
+    agent_key_path=$config_dir/agent-key.pem
+    rm -f $tmp
+    
+    #Docker options
+    case "$lsb_dist" in
+        ubuntu|debian)
+            option_file=/etc/default/docker
+            option_name="DOCKER_OPTS"
+            storage_driver=aufs
+            ;;
+		fedora|centos|oraclelinux)
+            option_file=/etc/sysconfig/docker
+            option_name="other_args"
+            storage_driver=overlay
+            if ! grep 'EnvironmentFile=-/etc/sysconfig/docker' /usr/lib/systemd/system/docker.service; then
+                ( 
+                set -x
+                touch /etc/sysconfig/docker
+                $sh_c 'sed -i "/\[Service\]/a \EnvironmentFile=-/etc/sysconfig/docker" /usr/lib/systemd/system/docker.service'
+                )
+            fi
+            ( set -x
+            $sh_c 'sed -i "s:^ExecStart.*:ExecStart=/usr/bin/docker daemon \$other_args:" /usr/lib/systemd/system/docker.service'
+            $sh_c 'systemctl daemon-reload'
+            )
+            ;;
+        *)
+            unsupported_distro
+            ;;
+    esac
+
+    #intranet_addr=$(ip addr show dev eth0|awk '$1=="inet"{print $2}'|awk -F/ '{print $1}')
+
+    if [ "$network" == "classic" ]; then
+        options="$option_name=\\\"--storage-driver $storage_driver \
+        --label provider=aliyunecs \
+        --label aliyun.zone=$zone \
+        --label aliyun.instance_id=$instance_id \
+        --registry-mirror $mirror \
+        --log-opt max-size=10m \
+        --log-opt max-file=10 \
+        --label aliyun.cluster=$cluster_id \
+        --label aliyun.node=$node_id \
+        --label aliyun.network_mode=$network \
+        --label aliyun.region=$region \
+        --label aliyun.node_index=${node_index} \
+        --cluster-store $etcd_address \
+        --cluster-store-opt kv.cacertfile=$acs_ca_path \
+        --cluster-store-opt kv.certfile=$agent_cert_path \
+        --cluster-store-opt kv.keyfile=$agent_key_path \
+        --label aliyun.tunnel_server=$tunnel_server \
+        --cluster-advertise=eth0:2376\\\"";
+    else
+        options="$option_name=\\\"--storage-driver $storage_driver \
+        --label provider=aliyunecs \
+        --label aliyun.zone=$zone \
+        --label aliyun.instance_id=$instance_id \
+        --registry-mirror $mirror \
+        --log-opt max-size=10m \
+        --log-opt max-file=10 \
+        --label aliyun.cluster=$cluster_id \
+        --label aliyun.node=$node_id \
+        --label aliyun.network_mode=$network \
+        --label aliyun.region=$region \
+        --label aliyun.node_index=${node_index} \
+        --label com.docker.network.driver.vpc.subnet=$bip/24 \
+        --bip 172.31.254.1/24 \
+        --cluster-store $etcd_address \
+        --cluster-store-opt kv.cacertfile=$acs_ca_path \
+        --cluster-store-opt kv.certfile=$agent_cert_path \
+        --cluster-store-opt kv.keyfile=$agent_key_path \
+        --label aliyun.tunnel_server=$tunnel_server \
+        --cluster-advertise=eth0:2376\\\"";
+    fi
+
+
+    ( 
+    set -x
+    $sh_c 'sed -i "/^'"$option_name"'/d" '"$option_file"
+    $sh_c 'echo '"$options"'|tee -a '"$option_file"
+    $sh_c 'service docker restart'
+    ) 
+}
+
+# wrapped up in a function so that we have some protection against only getting
+# half the file during "curl | sh"
+do_attach(){
+    do_detect_lsb
+    do_check_kernel
+    do_install_curl
+    do_get_info
+    do_fix_routing_rules
+    do_install_docker
+    do_config_docker
+    do_config_network
+    do_start_container
+    do_finish_attach
+}
+
+token=$1
+shift
+while [[ $# > 1 ]]
+do
+    key=$1
+    shift
+    case "$key" in
+        --instance-id)
+            instance_id=$1
+            shift
+            ;;
+        *)
+            echo "usage: $0 <token> <--instance-id instance>"
+            exit 1
+            ;;
+    esac
+done
+
+do_attach
+

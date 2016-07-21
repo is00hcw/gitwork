@@ -1,0 +1,45 @@
+http://www.cnblogs.com/jython/p/4425944.html
+wget http://elrepo.org/linux/kernel/el6/x86_64/RPMS/kernel-ml-4.6.4-1.el6.elrepo.x86_64.rpm
+centos6系统中使用Dracut这个程序生成内核的initramfs.img, 而Dracut程序使用的是旧函数"blk_init_queue"(installkernel文件中),因此升级3.18.x内核后,Dracut程序生成的initramfs.img无法包含virtio_blk.ko模块,造成虚拟机启动报错
+
+http://elrepo.org/linux/kernel/el6/x86_64/RPMS/
+
+
+rpm -ivh kernel-ml-4.6.4-1.el6.elrepo.x86_64.rpm
+
+#添加virtio_blk支持(新建conf文件)
+echo 'add_drivers+="virtio_blk"' >/etc/dracut.conf.d/force-vitio_blk-to-ensure-boot.conf
+
+#备份initramfs
+cp /boot/initramfs-4.6.4-1.el6.elrepo.x86_64.img /boot/initramfs-4.6.4-1.el6.elrepo.x86_64.img.bak
+
+#重新生成initramfs
+dracut -f /boot/initramfs-4.6.4-1.el6.elrepo.x86_64.img 4.6.4-1.el6.elrepo.x86_64
+
+vim /etc/grub.conf
+
+升级7
+uname -a
+cat /etc/redhat-release 
+
+http://www.centoscn.com/image-text/setup/2014/0901/3634.html
+
+rpm --import http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-7
+centos-upgrade-tool-cli --network 7 --instrepo=http://mirror.centos.org/centos/7/os/x86_64/
+
+rpm --import http://mirrors.aliyun.com/centos/7/os/x86_64/RPM-GPG-KEY-CentOS-7
+centos-upgrade-tool-cli --network 7 --instrepo=http://mirrors.aliyun.com/centos/7/os/x86_64/
+
+INPLACERISK: HIGH: The service network on CentOS 7 is disabled by default. Enable them via commands: systemctl enable network && systemctl start network.service .
+INPLACERISK: HIGH: The service nscd on CentOS 7 is disabled by default. Enable them via commands: systemctl enable nscd && systemctl start nscd.service .
+INPLACERISK: HIGH: The service ntpd on CentOS 7 is disabled by default. Enable them via commands: systemctl enable ntpd && systemctl start ntpd.service .
+INPLACERISK: HIGH: The service udev-post on CentOS 7 is disabled by default. Enable them via commands: systemctl enable udev-post && systemctl start udev-post.service .
+
+centos 7升级内核
+http://www.centoscn.com/CentOS/config/2015/0131/4605.html
+rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
+rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm
+ yum --enablerepo=elrepo-kernel install  kernel-lt-devel kernel-lt -y   4.4 
+
+yum --enablerepo=elrepo-kernel install  kernel-ml-devel kernel-ml -y  4.6
+

@@ -1,4 +1,31 @@
-﻿Spring3.0中对异常的处理方法一共提供了两种：一种是使用HandlerExceptionResolver接口；一种是在Controller类内部使用@ExceptionHandler注解。使用第一种方式可以实现全局异常控制，并且Spring已经提供了一个默认的实现类SimpleMappingExceptionResolver
+﻿spring 4.2
+HTTP Streaming  ResponseBodyEmitter   StreamingResponseBody
+SseEmitter is a sub-class of ResponseBodyEmitter providing support for Server-Sent Events.
+@CrossOrigin(origins = "http://domain2.com", maxAge = 3600)
+<mvc:cors><mvc:mapping path="/**" />
+新的 SocketUtils 类被引入到了spring-core模块。这个类可以使你能够扫描本地主机的空闲的 TCP 和 UDP 服务端口。
+ResponseEntity提供了一种 builder 风格的 API 来指导控制器向服务器端的响应的展示，例如，ResponseEntity.ok()
+SQL脚本的执行可以通过Sql和SqlConfig注解申明在每一个类和方法中。
+ReflectionTestUtils 现在支持 setting 和 getting static 字段,包括常量
+
+springboot
+http://start.spring.io/   用mvn spring-boot:run命令启动程序   http://www.jianshu.com/p/846bb2d26ff8
+@SpringBootApplication是这个注解是该应用程序入口的标志，然后有熟悉的main函数，通过SpringApplication.run(xxxApplication.class, args)来运行Spring Boot应用。打开SpringBootApplication注解可以发现，它是由其他几个类组合而成的：@Configuration（等同于spring中的xml配置文件，使用Java文件做配置可以检查类型安全）、@EnableAutoConfiguration（自动配置，稍后细讲）、@ComponentScan（组件扫描，大家非常熟悉的，可以自动发现和装配一些Bean）
+https://yq.aliyun.com/articles/6056  http://blog.csdn.net/hengyunabc/article/details/50120001  springboot启动
+http://blog.csdn.net/mn960mn/article/details/51306140  自定义tomcat参数
+https://yq.aliyun.com/articles/2360  优化
+http://blog.csdn.net/catoop/article/details/50588851  Spring Boot 部署与服务配置
+http://mrlee23.iteye.com/blog/2047968   extends SpringBootServletInitializer 
+在运行应用时可以通过命令行参数指定配置文件： java -jar location_of_your_jar_file.jar --spring.config.location=location_of_your_config_file.properties
+http://blog.csdn.net/xiaoyu411502/article/details/47865561
+ <artifactId>spring-session-data-redis</artifactId>  @EnableRedisHttpSession    所有实体类实现Serializable接口   spring.redis.host=192.168.1.103
+http://blog.csdn.net/nisxiya/article/details/44937763    设置静态资源访问
+@EnableWebMvc，增加该注解以后WebMvcAutoConfiguration中配置就不会生效，你需要自己来配置需要的每一项。
+Spring Boot 默认配置的/**映射到/static（或/public ，/resources，/META-INF/resources），/webjars/**会映射到classpath:/META-INF/resources/webjars/
+http://blog.csdn.net/isea533/article/details/50412212
+
+
+Spring3.0中对异常的处理方法一共提供了两种：一种是使用HandlerExceptionResolver接口；一种是在Controller类内部使用@ExceptionHandler注解。使用第一种方式可以实现全局异常控制，并且Spring已经提供了一个默认的实现类SimpleMappingExceptionResolver
 http://jinnianshilongnian.iteye.com/blog/2107205   4.1新特性——Spring MVC增强
 http://zilongsky-gmail-com.iteye.com/blog/2032001   maven spring profile    <param-name>spring.profiles.active</param-name><param-value>${profiles.activation}</param-value>  
 http://www.importnew.com/1099.html        ctx.getEnvironment().setActiveProfiles("container");    -Dspring.profiles.active="standalone"    
@@ -71,6 +98,7 @@ http://blog.csdn.net/yi3040/article/details/6447289
 @WebServlet(name = "TokenFail", urlPatterns = { "/TokenFail" })
 
 http://www.slideshare.net/zenyk/spring-for-apache-hadoop
+
 
 schedule
 To enable support for @Scheduled and @Async annotations add @EnableScheduling and @EnableAsync to one of your @Configuration classes

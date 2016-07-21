@@ -1,8 +1,43 @@
+http://xxgblog.com/2015/10/23/wagon-maven-plugin/?utm_source=tuicool&utm_medium=referral   Maven插件wagon-maven-plugin自动化部署Java项目到Linux远程服务器
+http://blog.csdn.net/mn960mn/article/details/49560003
+ 
+
 在生产环境中使用Docker技术时，不仅仅是在所有的机器上装上Docker引擎这么简单。首先需要创建和管理集群；其次是安全、网络、存储等基础配置；还需要做资源的调度和编排。
 http://www.oschina.net/news/63789/eclipse-for-docker-has-arrived  
 https://wiki.eclipse.org/Linux_Tools_Project/Docker_Tooling
 https://yq.aliyun.com/articles/57138?spm=5176.100239.blogcont55916.29.9Ny9Rt   Docker监控厂商之Sysdig
 https://yq.aliyun.com/articles/57265?spm=5176.100239.bloglist.72.YjaDvM   在阿里云容器服务上开发基于Docker的Spring Cloud微服务应用
+http://blog.csdn.net/u010943460/article/details/50982317   centos安装gradle
+http://blog.csdn.net/u010943460/article/details/50979862   centos7安装oracle jdk8最简介教程
+wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/8u60-b27/jdk-8u60-linux-x64.rpm"
+docker exec jenkins-master tail -f /var/log/jenkins/jenkins.log
+docker cp jenkins-master:/var/log/jenkins/jenkins.log jenkins.log 
+docker run -d --name jenkins-server -p 7780:8080 -p 50000:50000 -v /opt/jenkins/data:/var/jenkins_home -u root --restart always jenkins
+http://blog.csdn.net/ggjlvzjy/article/details/51151591
+直接在主机中配置Jenkins环境；wget -qO - http://pkg.jenkins-ci.org/debian/jenkins-ci.org.key | apt-key add - && echo 'deb http://pkg.jenkins-ci.org/debian binary/' | tee /etc/apt/sources.list.d/jenkins.list && apt-get update && apt-get -y install jenkins
+
+
+ssh-copy-id -i ~/.ssh/id_rsa.pub root@$ECS_IP
+export ALI_MIRROR=https://0i912uv5.mirror.aliyuncs.com #从dev.aliyun.com后台获取你的专属加速器，这个是假的并不能用
+docker-machine create --engine-registry-mirror=$ALI_MIRROR --driver generic --generic-ip-address=$ECS_IP aliyun-machine
+https://yq.aliyun.com/articles/7495?spm=5176.100240.searchblog.92.cWNZ52    docker machine
+http://mirrors.aliyun.com/help/docker-toolbox
+您可以通过阿里云的镜像仓库下载： mirrors.aliyun.com/help/docker-engine
+curl -sSL http://acs-public-mirror.oss-cn-hangzhou.aliyuncs.com/docker-engine/internet | sh -
+https://cr.console.aliyun.com/?spm=5176.1971733.2.28.90N8e7#/docker/booster    加速器
+https://yq.aliyun.com/articles/57310?spm=5176.100240.searchblog.16.cWNZ52   基于OSS搭建私有 Docker Registry  https://cnodejs.org/topic/5696e48e115b8984510218f0
+https://yq.aliyun.com/articles/47348?spm=5176.100240.searchblog.43.cWNZ52    用 Docker、Gradle 来构建、运行、发布一个 Spring Boot 应用   java -Dserver.port=9000 -jar docker-spring-boot-1.0.0.jar
+http://spring.io/guides/gs/spring-boot-docker/
+http://www.open-open.com/lib/view/open1439793616442.html
+https://yq.aliyun.com/articles/7695?spm=5176.100240.searchblog.84.cWNZ52  docker安装
+http://waylau.com/docker-installation-centos/?spm=5176.100239.blogcont47348.13.iXyFRk   Docker 在 CentOS 下的安装、使用
+Docker的镜像以及一些数据都是在/var/lib/docker目录下，它占用的是Linux的系统分区
+安装 Docker Engine
+curl -sSL http://acs-public-mirror.oss-cn-hangzhou.aliyuncs.com/docker-engine/internet | sh -
+安装 Docker Compose
+sudo curl -sSL http://mirrors.aliyun.com/docker-toolbox/linux/compose/1.7.1/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+sudo chmod a+x /usr/local/bin/docker-compose
+curl -L https://github.com/docker/compose/releases/download/{docker-compose.version}/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
 
 
 如果大家希望在Swarm主机发生故障时对容器进行重新调度，则需要在容器部署中使用特定标记。作为可行方案之一，我们可以使用以下标记：--restart=always -e reschedule:on-node-failure或者类似于-l 'com.docker.swarm.reschedule-policy=["on-node-failure"]'的标签。
@@ -44,6 +79,8 @@ docker run -p 8080:8080 -p 50000:50000 -v /data/jenkins:/var/jenkins_home jenkin
 
 https://github.com/Mooxe000/mooxe-docker-base
 
+http://blog.dataman-inc.com/shurenyun-mesos-131/   如何做好持续集成——Jenkins on Mesos 实践
+http://blog.dataman-inc.com/shurenyun-docker-133/  将Docker网络方案进行到底
 
 PaaS的出现是为了让运维人员不需要管理一台虚拟机，IaaS的出现是为了让运维人员不需要管理物理机。云计算，说到底都是俩字——运维。
 云计算领域的技术分为虚拟化技术和资源管理两个方面

@@ -2,6 +2,10 @@ http://www.cnblogs.com/yjmyzz/p/sharding-jdbc-turotial.html
 https://github.com/yjmyzz/spring-mybatis-multidatasource
 https://github.com/abel533/Mybatis-Spring/
 
+https://yq.aliyun.com/articles/47349?spm=5176.100239.blogrightarea47348.29.iXyFRk   Hibernate 性能优化法则
+启用 Hibernate 数据统计策略，用来做优化前后的数据对比。
+将 hibernate.generate_statistics置为true，日志级别org.hibernate.stat置为DEBUG，Hibernate 会收集内部统计数据，比如查询的性能、缓存命中情况等。
+
 
 http://wiki.jikexueyuan.com/project/mybatis-in-action/code-generation-tool.html
 http://zacard.net/2015/09/09/mybatis-generator/

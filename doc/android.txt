@@ -7,7 +7,8 @@ http://blog.csdn.net/h3c4lenovo/article/details/50751643
 
 https://yq.aliyun.com/articles/57284?spm=5176.100238.goodcont.5.DxzG2I  APK瘦身记，如何实现高达53%的压缩效果
 https://yq.aliyun.com/articles/57255?spm=5176.100239.blogcont57284.26.uyiqmb  Android项目持续集成实践之Gitlab CI
-
+http://www.oschina.net/news/75092/android-flatbuffers-json   Android 开发者应该使用 FlatBuffers 替代 JSON
+https://yq.aliyun.com/articles/57666?spm=5176.100239.bloglist.53.y4etsZ   Android局域网通信机制初探
 
 rxjava
 https://github.com/rengwuxian/RxJavaSamples

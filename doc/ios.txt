@@ -2,6 +2,7 @@ http://www.cnblogs.com/kenshincui/p/3985090.html
 http://www.cnblogs.com/kenshincui/p/3890880.html  IOS程序开发概览
 http://www.cnblogs.com/csharpstyle/articles/4176630.html    Ad Hoc 方式发布 APP
 
+http://www.jianshu.com/p/228535226656   27个iOS开源库，让你的开发坐上火箭吧
 https://github.com/Tim9Liu9/TimLiu-iOS  开源库
 http://www.cocoachina.com/cms/wap.php?action=article&id=7746  第三方开源库
 AFNetworking MKNetworkKit CocoaAsyncSocket  fmdb  MagicalRecord  MBProgressHUD GPUImage SVProgressHUD FLAnimatedImage

@@ -1,4 +1,6 @@
 ﻿https://github.com/weibocom/motan  微博rpc
+https://help.aliyun.com/document_detail/35478.html?spm=5176.7946893.222623.7.T2X8UJ   EDAS Dubbo使用指南
+
 
 http://www.cnblogs.com/yjmyzz/p/dubbox-demo.html  dubbox简单示例
 http://my.oschina.net/u/238296/blog/602446?fromerr=GJbDMeel

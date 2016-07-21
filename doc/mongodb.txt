@@ -15,6 +15,8 @@ mongos配置信息 db.runCommand( { addshard : "shard1/192.168.0.136:22001,192.168.0
 https://cnodejs.org/topic/55c97a997a5d91fa63fe9ce7  Mongodb线上真实事故案例
 http://snoopyxdy.blog.163.com/blog/static/6011744020157511536993/
 https://yq.aliyun.com/articles/7245?spm=5176.blog6833.yqblogcon1.16.9znaHJ
+https://yq.aliyun.com/articles/57589?spm=5176.100238.goodcont.14.SqkEzW  当游戏遇上MongoDB
+http://www.mongoing.com/mongodb-advanced-pattern-design?spm=5176.100239.blogcont57589.7.btInZn   MongoDB 进阶模式设计
 
 MongoDB副本集默认会创建local、admin数据库，local数据库主要存储副本集的元数据，admin数据库则主要存储MongoDB的用户、角色等信息。
 local数据库，从名字可以看出，它只会在本地存储数据，即local数据库里的内容不会同步到副本集里其他节点上去；目前local数据库主要存储副本集的配置信息、oplog信息，这些信息是每个Mongod进程独有的，不需要同步到副本集种其他节点。

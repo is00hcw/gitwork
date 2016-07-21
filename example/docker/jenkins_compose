@@ -1,0 +1,18 @@
+my_jenkins:
+  environment:
+    - LANG=C.UTF-8
+    - JENKINS_HOME=/var/jenkins_home
+    - JENKINS_SLAVE_AGENT_PORT=50000
+    - TINI_SHA=066ad710107dc7ee05d3aa6e4974f01dc98f3888
+    - JENKINS_SHA=537d910f541c25a23499b222ccd37ca25e074a0c
+    - 'JENKINS_UC=https://updates.jenkins-ci.org'
+    - COPY_REFERENCE_FILE_LOG=/var/jenkins_home/copy_reference_file.log
+  image: 'jenkins:latest'
+  labels:
+    aliyun.scale: '1'
+  ports:
+    - '50000:50000/tcp'
+    - '7080:8080/tcp'
+  restart: always
+  volumes:
+    - '/root/jenkins:/var/jenkins_home:rw'
