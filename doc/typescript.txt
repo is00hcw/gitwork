@@ -1,0 +1,27 @@
+https://www.typescriptlang.org/samples/index.html
+https://www.typescriptlang.org/play/index.html
+https://zhongsp.gitbooks.io/typescript-handbook/content/doc/wiki/Roadmap.html
+http://reactjs.cn/
+http://www.cnblogs.com/clark159/p/4615031.html
+如果想在页面上直接编译看到结果，还需要引用typescript.min.js与typescript.compile.min.js。
+TypeScript 的基本数据类型 有boolean、number 、string 、 array 、 enum 、any 、void。
+http://www.hubwiz.com/class/55b724ab3ad79a1b05dcc26c
+可选参数：在参数名后面，冒号前面添加一个问号，则表明该参数是可选的。默认参数：在参数名后直接给定一个值，如果这个值没有被传入，那么将会被赋值为默认值。注：可选参数和默认参数必须在参数列表的最后。
+构造函数 ，是一种特殊的方法。主要用来在创建对象时初始化对象， 即为对象成员变量赋初始值，总与new运算符一起使用在创建对象的语句中。而TypeScript的构造函数用关键字constructor来实现。
+
+
+微软发布了TypeScript语言，这个项目主要的负责人是 Anders Hejlsberg （C#、TurboPascal 之父）。TypeScript提供了类、模块和接口来帮助您构建健壮的组件
+TypeScript 是微软2012年推出的一种编程语言，属于 JavaScript 的超集，可以编译为 JavaScript 执行。 它的最大特点就是支持强类型和 ES6 Class。
+但是，TypeScript 并不适应于所有的开发人员、所有的项目，下面是 TypeScript 适应的场景：
+适应较大、复杂的项目。例如 SinglePageApplication、大型 JS 框架、前端游戏。需要支持面向对象设计、高可重用性、组件化开发的 JS 代码。
+下面是 TypeScript 不适应的场景：一些简单的、不需要 OOD、灵活性高、动态性高的代码就不适合选择 TypeScript。
+
+Shadow DOM可以完美的解决CSS污染的问题，并且它的规范很早就被指定出来，但是浏览器对它的支持却十分可怜。
+Angular 2.0支持原生的Shadow DOM，也可以通过模拟(emulated)的方式来支持它，通过设置每个component的encapsulation属性，可以决定每个组件的css的影响范围。
+
+ts-loader可以让webpack使用TypeScript的标准配置文件tsconfig.json编译TypeScript代码。
+随后Microsoft同意在它们的TypeScript语言（JavaScript的一个严格超集）上添加对装饰符（decorator，又称为注解）的支持，所以，它就成为了开发Angular 2框架本身所使用的语言
+
+Angular团队还集成了Microsoft的另外一个产品到Angular 2框架之中，这就是反应型JavaScript扩展（reactive JavaScript extension）的RxJS库。
+Angular 2并不是一个MVC框架，而是基于组件（component）的框架。在Angular 2中，应用是松耦合组件所组成的树。
+http://www.infoq.com/cn/articles/Angular2-TypeScript-High-Level-Overview

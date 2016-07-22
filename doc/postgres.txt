@@ -1,3 +1,5 @@
+http://www.jianshu.com/p/7e95fd0bc91a  CentOS 7 安装、配置、使用 PostgreSQL 9.5    http://www.cnblogs.com/tjpanda88/p/4306149.html
+
 https://yq.aliyun.com/articles/57134?spm=5176.100239.blogcont57133.7.jzxs90  fdw
 https://yq.aliyun.com/articles/50922?spm=5176.100240.searchblog.14.UON3IO  postgis
 http://blog.csdn.net/wusuopubupt/article/details/21621477  lbs

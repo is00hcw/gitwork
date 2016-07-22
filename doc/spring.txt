@@ -1,4 +1,6 @@
-﻿spring 4.2
+﻿http://www.cnblogs.com/wcongcode/p/5482239.html   深入Spring:自定义注解加载和使用
+
+spring 4.2
 HTTP Streaming  ResponseBodyEmitter   StreamingResponseBody
 SseEmitter is a sub-class of ResponseBodyEmitter providing support for Server-Sent Events.
 @CrossOrigin(origins = "http://domain2.com", maxAge = 3600)

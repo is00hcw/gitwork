@@ -1,3 +1,7 @@
+https://yq.aliyun.com/articles/25387?spm=5176.8091938.0.0.d2D3Me   Android应用开发架构概述
+https://github.com/liuguangli/MVPTeach?spm=5176.100239.blogcont8132.5.HeMaSn   mvp
+https://yq.aliyun.com/articles/57838?&utm_campaign=sys&utm_medium=market&utm_source=edm_email&msctype=email&mscareaid=cn&mscmsgid=4730116072100639934&   提高代码质量－工具篇
+
 http://www.jianshu.com/p/ca76aec23ddf 分析平安好医生技术栈
 http://blog.csdn.net/qq_25943493/article/details/51463884   android热更新技术研究
 https://mp.weixin.qq.com/s?__biz=MzAwNDY1ODY2OQ==&mid=2649286306&idx=1&sn=d6b2865e033a99de60b2d4314c6e0a25    微信Android热补丁实践演进之路
