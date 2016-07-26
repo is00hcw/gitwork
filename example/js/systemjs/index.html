@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SystemJS</title>
+    <script src="node_modules/systemjs/dist/system.js"></script>
+    <script src="node_modules/typescript/lib/typescript.js"></script>
+    <script>
+      System.config({
+        transpiler: 'typescript',
+        packages: {
+          src: {
+            defaultExtension: 'ts'
+          }
+        } 
+      });
+      System
+        .import('src/main')
+        .then(null, console.error.bind(console));
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
