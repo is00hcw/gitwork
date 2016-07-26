@@ -69,7 +69,7 @@ mySearch = function(src: string, sub: string) {
 class Point {
   // Properties
   x: number;
-
+  
   // Constructor - the public/private keywords in this context will generate
   // the boiler plate code for the property and the initialization in the
   // constructor.
