@@ -1,4 +1,6 @@
-﻿https://yq.aliyun.com/articles/57862?spm=5176.100239.blogcont57826.17.H9WGdQ   罗龙九：云数据库十大经典案例分析
+﻿https://yq.aliyun.com/articles/57980?spm=5176.100238.goodcont.17.bNiC7T  MySQL数据库主从同步实现
+
+https://yq.aliyun.com/articles/57862?spm=5176.100239.blogcont57826.17.H9WGdQ   罗龙九：云数据库十大经典案例分析
 http://debezium.io/docs/connectors/mysql/    kafka
 http://maxwells-daemon.io/  
 

@@ -1,5 +1,14 @@
 ﻿http://www.cnblogs.com/wcongcode/p/5482239.html   深入Spring:自定义注解加载和使用
 
+namespace -->  handler --> parser --> BeanPostProcessor
+https://yq.aliyun.com/articles/57657?spm=5176.8067842.tagmain.64.GiXHiP
+spring.schema定义配置文档的文法规范，spring.handler定义客户化配置的解析工具--就可以将bean接入到spring容器里。Bean接入后还可以通过实现BeanPostProcessor或者init-method对bean做后处理甚至替换bean。
+Spring-beans的核心实体是BeanDefinition和BeanFactory。前者映射我们的定义，后者则是依据定义生产bean的工厂。
+NamespaceHandlerResolver由BeanDefinitionReader初始化，后者在第一次被访问时读取spring.handlers文件。.handlers文件定义namespace uri和对应处理类的映射关系。init方法注册localName和自定义parser的关系，parser和localName的关系由handler的提供者自己注册。spring先通过命名空间定位到handler，handler处理时再基于localName取相应的parser解析当前结点。
+ registerBeanDefinitionParser("config", new ConfigBeanDefinitionParser());
+ApplicationContext会自动检测在配置文件中实现了BeanPostProcessor接口的所有bean，并把它们注册为后置处理器，然后在容器创建bean的适当时候调用它。
+Proxy.newProxyInstance  InvocationHandler.invoke(Object proxy, Method method, Object[] args)
+
 spring 4.2
 HTTP Streaming  ResponseBodyEmitter   StreamingResponseBody
 SseEmitter is a sub-class of ResponseBodyEmitter providing support for Server-Sent Events.

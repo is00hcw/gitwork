@@ -3,6 +3,23 @@ https://www.typescriptlang.org/play/index.html
 https://zhongsp.gitbooks.io/typescript-handbook/content/doc/wiki/Roadmap.html
 http://reactjs.cn/
 http://www.cnblogs.com/clark159/p/4615031.html
+https://cnodejs.org/topic/55cc36c9b25bd72150842bc9
+http://blog.csdn.net/lihongxun945/article/details/49999049
+https://zhuanlan.zhihu.com/p/21629069   TypeScript 2.0 ĞÂÌØĞÔÒ»ÀÀ
+npm install grunt  grunt-ts grunt-contrib-uglify grunt-contrib-copy --save-dev
+
+×îºó°´ÏÂ¿ì½İ¼ü¡¸Ctrl+Shift+B¡¹£¬¾Í¿ÉÒÔ¿´µ½Visual Studio Code±àÒëTypeScript,²¢ÇÒÊä³ö¶ÔÓ¦µÄJavaScriptµµ°¸£ºmain.js
+html:5 °´tab¼ü×Ô¶¯²¹È«  http://blog.163.com/jre_sun/blog/static/25527704420164299615418/
+https://segmentfault.com/a/1190000005085629  Ğ´¸øÏë×öÇ°¶ËµÄÄã
+
+TypeScript ÊÇES6µÄÒ»¸ö³¬¼¯£¬Ò²¾ÍÊÇÍêÕû°üº¬ÁËÈ«²¿ES6ÌØĞÔ£¬²¢ÇÒ»¹ÒıÈëÁËÇ¿ÀàĞÍºÍ×¢½â¡£
+TypeScript = ES6 + Ç¿ÀàĞÍ + Annotation
+http://www.uedsc.com/typescript-introduction.html
+ÔÚES6£¨ECMAScript 6£¬¼´ECMAScript 2015£©µÄÖ§³Ö·½Ãæ¡£TypeScript 1.5°æ±¾Ôö¼ÓÁË¶ÔES6ÖĞModules¡¢Destructuring¡¢Spread¡¢for..of¡¢Symbols¡¢Computed Properties¡¢Let/Const¡¢ºÍTagged String TemplatesµÈĞÂÌØĞÔµÄÖ§³Ö¡£ÕâĞ©ĞÂÌØĞÔÊ¹µÃTypeScriptÏò³ÉÎªES6µÄ³¬¼¯²¢ÎªES6µÄËùÓĞÖ÷ÒªÌØĞÔÌá¹©ÀàĞÍ¼ì²éµÄÄ¿±êÂõ½øÁËÒ»´ó²½¡£
+Æä´Î£¬ÔÚÄ£¿é£¨Module£©·½Ãæ£¬TypeScript 1.5Ò²½øĞĞÁËºÜ´ó¸Ä¶¯¡£TypeScript 1.5Ö§³ÖES6µÄĞÂÄ£¿éÓï·¨¡ª¡ªES6Ä£¿é¿ÉÒÔÓÃimportµ¼ÈëÄ£¿é²¢ÓÃexportµ¼³öÃ¿Ò»¸ö¹«¹²API£¬ÉõÖÁ¿ÉÒÔÖ»µ¼Èë¹«¹²APIËùĞèÒªÊ¹ÓÃµÄÄÇ²¿·Ö¡£
+import * as Math from "my/math";
+import { add, subtract } from "my/math";
+
 Èç¹ûÏëÔÚÒ³ÃæÉÏÖ±½Ó±àÒë¿´µ½½á¹û£¬»¹ĞèÒªÒıÓÃtypescript.min.jsÓëtypescript.compile.min.js¡£
 TypeScript µÄ»ù±¾Êı¾İÀàĞÍ ÓĞboolean¡¢number ¡¢string ¡¢ array ¡¢ enum ¡¢any ¡¢void¡£
 http://www.hubwiz.com/class/55b724ab3ad79a1b05dcc26c
@@ -25,3 +42,25 @@ ts-loader¿ÉÒÔÈÃwebpackÊ¹ÓÃTypeScriptµÄ±ê×¼ÅäÖÃÎÄ¼ştsconfig.json±àÒëTypeScript´úÂ
 AngularÍÅ¶Ó»¹¼¯³ÉÁËMicrosoftµÄÁíÍâÒ»¸ö²úÆ·µ½Angular 2¿ò¼ÜÖ®ÖĞ£¬Õâ¾ÍÊÇ·´Ó¦ĞÍJavaScriptÀ©Õ¹£¨reactive JavaScript extension£©µÄRxJS¿â¡£
 Angular 2²¢²»ÊÇÒ»¸öMVC¿ò¼Ü£¬¶øÊÇ»ùÓÚ×é¼ş£¨component£©µÄ¿ò¼Ü¡£ÔÚAngular 2ÖĞ£¬Ó¦ÓÃÊÇËÉñîºÏ×é¼şËù×é³ÉµÄÊ÷¡£
 http://www.infoq.com/cn/articles/Angular2-TypeScript-High-Level-Overview
+
+
+Èç¹ûÏëÔÚTypeScript´úÂëÖĞÖ±½ÓÊ¹ÓÃnpmÉÏµÄJS¿â£¬ĞèÒª½èÖúTypingsÕâ¸ö¹¤¾ß¡£
+TypingsÒ²ÊÇÒ»¸ö°ü¹ÜÀíÆ÷£¬Ëü¹ÜÀíµÄÊÇJS´úÂë¡°¶¨ÒåÎÄ¼ş¡±£¬ÓÃTypings°²×°ÏàÓ¦µÄ¶¨ÒåÎÄ¼şºó£¬±à¼­Æ÷ºÍ±àÒëÆ÷¾Í¿ÉÒÔÈ¥node_modulesÄ¿Â¼ÖĞÕÒµ½ÏàÓ¦µÄJS¿â£¬²¢±àÒëµ½×îÖÕµÄJS´úÂëÖĞ¡£
+
+
+
+Angular2
+E2E test framework for Angular apps http://www.protractortest.org
+http://plnkr.co/edit/73ck1MUOYc8bZ0Wm9M6V?p=preview
+http://www.angularjs.cn/A2nG
+<li *ngFor="let hero of heroes" (click)="onSelect(hero)">
+ <input [(ngModel)]="selectedHero.name" placeholder="name"/>
+<div *ngIf="selectedHero">
+Äã»á×¢Òâµ½£¬ÔÚÃû½Ğ app.component.ts µÄÎÄ¼şÖĞÓĞÒ»¸ö AppComponent ×é¼ş£¬ÔÚÃû½Ğ hero-detail.component.ts µÄÎÄ¼şÖĞÓĞÒ»¸ö HeroDetailComponent ×é¼ş¡£ÎÒÃÇµÄËùÓĞ×é¼şÃû¶¼ÒÔ Component ½áÎ²¡£ËùÓĞ×é¼şµÄÎÄ¼şÃû¶¼ÒÔ .component ½áÎ²¡£
+import { Injectable } from '@angular/core';   @Injectable()
+¶àÄêµÄ¾­ÑéºÍ²ÒÍ´µÄ½ÌÑµ½ÌÓıÎÒÃÇ£¬Ó¦¸Ã°Ñ¸´ÔÓµÄÂß¼­ÈÓµ½¹¹Ôìº¯ÊıÍâÃæÈ¥£¬ÌØ±ğÊÇÄÇĞ©ĞèÒª´Ó·şÎñÆ÷»ñÈ¡Êı¾İµÄÂß¼­¸üÊÇÈç´Ë¡£¹¹Ôìº¯ÊıÊÇÎªÁË¼òµ¥µÄ³õÊ¼»¯¹¤×÷¶øÉè¼ÆµÄ£¬±ÈÈç°Ñ¹¹Ôìº¯ÊıµÄ²ÎÊı¸³Öµ¸øÊôĞÔ¡£
+Ö»ÒªÎÒÃÇÊµÏÖÁË Angular µÄ ngOnInit ÉúÃüÖÜÆÚ¹³×Ó £¬ Angular ¾Í»áÖ÷¶¯µ÷ÓÃÕâ¸ö¹³×Ó¡£ Angular Ìá¹©ÁËÒ»Ğ©½Ó¿Ú£¬ÓÃÀ´½éÈë×é¼şÉúÃüÖÜÆÚµÄ¼¸¸ö¹Ø¼üÊ±¼äµã£º¸Õ´´½¨Ê±¡¢Ã¿´Î±ä»¯Ê±£¬ÒÔ¼°×îÖÕ±»Ïú»ÙÊ±¡£
+
+http://www.jbrantly.com/typescript-and-webpack/
+http://www.jbrantly.com/es6-modules-with-typescript-and-webpack/
+http://david-barreto.com/how-to-use-typescript-with-systemjs/

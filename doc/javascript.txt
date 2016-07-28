@@ -312,3 +312,12 @@ https://github.com/DavidDurman/FlexiColorPicker
 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+
+长连接 服务器推送  
+http://my.oschina.net/jb2011/blog/716376
+Comet技术实现模型1：基于 AJAX 的长轮询（long-polling）方式 。 使用 AJAX 实现“服务器推”与传统的 AJAX 应用不同之处在于：
+服务器端会阻塞请求直到有数据传递或超时才返回。
+客户端 JavaScript 响应处理函数会在处理完服务器返回的信息后，再次发出请求，重新建立连接。
+当客户端处理接收的数据、重新建立连接时，服务器端可能有新的数据到达；这些信息会被服务器端保存直到客户端重新建立连接，客户端会一次把当前服务器端所有的信息取回。
+Comet技术实现模型2：基于 Iframe 及 htmlfile 的流（streaming）方式
+iframe 是很早就存在的一种 HTML 标记， 通过在 HTML 页面里嵌入一个隐蔵帧，然后将这个隐蔵帧的 SRC 属性设为对一个长连接的请求，服务器端就能源源不断地往客户端输入数据。

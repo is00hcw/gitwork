@@ -1,3 +1,5 @@
+http://www.infoq.com/cn/news/2016/07/qunar-zhang-yue-interview  去哪儿网张悦：合适的开源软件，支撑800万+监控指标
+
 ALIVE=$(curl -m 10 --connect-timeout 10 -o /dev/null -s -w %{http_code} $URL)
 http://www.onealert.com/open/alert/event.jsp  告警api
 psi log

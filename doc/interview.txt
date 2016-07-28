@@ -5,3 +5,111 @@ http://www.jianshu.com/p/6b88a0abe640   35岁程序员的独家面试经历
 http://www.jianshu.com/p/0b6808e1fbe9
 
 http://www.oschina.net/news/69068/javaer-have-to-learn-linux-command
+
+http://mp.weixin.qq.com/s?__biz=MjM5MDE0Mjc4MA==&mid=2650993458&idx=1&sn=e959385bc0bddb4b7cfab84a1310f9e8&scene=1&srcid=07278uyBPLt7goHKHJTNpsWt#wechat_redirect    不谈架构，看看如何从代码层面优化系统性能！
+企业信息化关注的是如何最大限度的实现无纸办公，流程自动化，信息流通和存储，避免孤岛和数据的多维度交叉分析
+
+
+PROPAGATION_NESTED -- 如果当前存在事务，则在嵌套事务内执行。如果当前没有事务，则进行与PROPAGATION_REQUIRED类似的操作。
+前六个策略类似于EJB CMT，第七个（PROPAGATION_NESTED）是Spring所提供的一个特殊变量。 它要求事务管理器或者使用JDBC 3.0 Savepoint API提供嵌套事务行为（如Spring的DataSourceTransactionManager）
+
+Spring默认的事务传播行为是PROPAGATION_REQUIRED，它适合绝大多数的情况，如果多个ServiveX#methodX()均工 作在事务环境下（即均被Spring事务增强），且程序中存在如下的调用 链：Service1#method1()->Service2#method2()->Service3#method3()，那么这3个 服务类的3个方法通过Spring的事务传播机制都工作在同一个事务中。
+使用PROPAGATION_REQUIRED满足需求1：事务BC与事务AD一起commit，即：作为事务AD的子事务，事务BC只有在事务AD成功commit时（阶段3成功）才commit，但子事务BC的rollback会无条件地使父事务AD也rollback
+使用PROPAGATION_REQUIRES_NEW满足需求2：需要事务BC的rollback不（无条件的）影响事务AD的commit。这个需求简单称之为“隔离失败”。，但子事务（这时不应该称之为子事务）BC是完全新的事务上下文，父事务（这时也不应该称之为父事务）AD的成功与否完全不影响BC的提交，不能满足需求1。
+同时满足上述两条需求就要用到PROPAGATION_NESTED了。PROPAGATION_NESTED在事务AD执行到B点时，设置了savePoint（关键）。 当BC事务成功commit时，PROPAGATION_NESTED的行为与PROPAGATION_REQUIRED一样。只有当事务AD在D点成功commit时，事务BC才真正commit，如果阶段3执行异常，导致事务AD rollback，事务BC也将一起rollback ，从而满足了“联合成功”。  当阶段2执行异常，导致BC事务rollback时，因为设置了savePoint，AD事务可以选择与BC一起rollback或继续阶段3的执行并保留阶段1的执行结果，从而满足了“隔离失败”。
+另外，SavePoint在JDBC3.0中，所以应用嵌套事务必须保证JDK1.4+和驱动对JDBC3.0的支持。
+http://sharajava.iteye.com/blog/78270
+
+NESTED：如果一个活动的事务存在，则运行在一个嵌套的事务中. 如果没有活动事务, 则按REQUIRED属性执行.它使用了一个单独的事务，这个事务拥有多个可以回滚的保存点。内部事务的回滚不会对外部事务造成影响。它只对DataSourceTransactionManager事务管理器起效
+ } catch (SomeException) {           // 执行其他业务, 如 ServiceC.methodC();   或者rollback（），或者commit（）
+
+
+一个jvm中默认的classloader有Bootstrap ClassLoader、Extension ClassLoader、App ClassLoader，分别各司其职：
+Bootstrap ClassLoader     负责加载java基础类，主要是 %JRE_HOME/lib/ 目录下的rt.jar、resources.jar、charsets.jar和class等
+Extension ClassLoader      负责加载java扩展类，主要是 %JRE_HOME/lib/ext 目录下的jar和class
+App ClassLoader           负责加载当前java应用的classpath中的所有类。
+其中Bootstrap ClassLoader是JVM级别的，由C++撰写；Extension ClassLoader、App ClassLoader都是java类，都继承自URLClassLoader超类。
+Bootstrap ClassLoader由JVM启动，然后初始化sun.misc.Launcher ，sun.misc.Launcher初始化Extension ClassLoader、App ClassLoader。可以通过ClassLoader的getParent方法得到当前ClassLoader的parent。Bootstrap ClassLoader比较特殊，因为它不是java class所以Extension ClassLoader的getParent方法返回的是NULL。
+所谓全盘负责，即是当一个classloader加载一个Class的时候，这个Class所依赖的和引用的所有 Class也由这个classloader负责载入，除非是显式的使用另外一个classloader载入。
+ jvm中没有提供class及classloader的unload方法.那热部署及osgi中是通过什么机制来实现的呢?实现思路主要是通过更换classLoader进行重新加载.
+
+
+InvocationHandler    Proxy.newProxyInstance(classLoader, interfaces, proxy);
+
+
+http://jinnianshilongnian.iteye.com/blog/2305117
+在开发高并发系统时有三把利器用来保护系统：缓存、降级和限流。
+令牌桶和漏桶算法。Guava框架提供了令牌桶算法实现，可直接拿来使用。 Guava RateLimiter提供了令牌桶算法实现：平滑突发限流(SmoothBursty)和平滑预热限流(SmoothWarmingUp)实现。
+对于Nginx接入层限流可以使用Nginx自带了两个模块：连接数限流模块ngx_http_limit_conn_module和漏桶算法实现的请求限流模块ngx_http_limit_req_module。还可以使用OpenResty提供的Lua限流模块lua-resty-limit-traffic进行更复杂的限流场景。
+
+多个应用同时操作一份数据很可能造成缓存数据是脏数据，解决办法：
+1.1、更新数据时使用更新时间戳或者版本对比，如果使用Redis可以利用其单线程机制进行原子化更新；
+1.2、使用如canal订阅数据库binlog；
+2.1、将更新请求按照相应的规则分散到多个队列，然后每个队列的进行单线程更新，更新时拉取最新的数据保存；
+2.2、分布式锁，更新之前获取相关的锁。
+我们使用init_by_lua_file初始化开关数据，共享字典存储开关数据，提供API进行开关切换
+我们系统中存在的主要限流逻辑是：对于大多数请求按照IP请求数限流，对于登陆用户按照用户限流；对于读取缓存的请求不进行限流，只对打到后端系统的请求进行限流。还可以限制用户访问频率，比如使用ngx_lua中的ngx.sleep对请求进行休眠处理，让刷接口的速度降下来；或者种植cookie token之类的，必须按照流程访问。
+
+使用消息队列可以实现服务解耦（一对多消费）、异步、缓冲（削峰）等。比如电商系统中的交易订单数据，该数据有非常多的系统关心并订阅，比如订单生产系统、定期送系统、订单风控系统等等；
+直接在Redis中扣减，然后记录下扣减日志，通过Worker去同步到DB。
+订单分库分表一般按照订单ID进行分，那么如果要查询某个用户的订单列表就需要聚合N个表的数据然后返回，这样会导致订单表的读性能很低；此时需要对订单表进行异构，异构一套用户订单表，按照用户ID进行分库分表；另外还需要考虑对历史订单数据进行归档处理。
+http://jinnianshilongnian.iteye.com/blog/2312284    电商前端交易型系统设计原则
+
+
+在tomcat中我们只要在context.xml的<context>标签里加上sessionCookiePath="/"就能做到cookie跨域了。这里所谓的跨域是指a.xxx.com/b和a.xxx.com/c之间cookie共享，这是因为设置这个参数后tomcat是生成cookie时会把cookie的path设成根目录，这样就能全局共享了。 我们知道session是默认会存在cookie里，其实也就是生成一个JESSIONID的cookie由浏览器缓存起来。
+
+
+JSONP跨域，dom动态添加script，src无域名限制
+Promise主要作用就是解决异步回调问题，promise有三种状态， 等待（pending）、已完成（fulfilled）、已拒绝（rejected）它的作用就是将各种内嵌回调的事务用流水形式表达。利用 Promise 可以让异步编程更符合人的直觉，让代码逻辑更加清晰
+https://www.promisejs.org/implementing/
+http://www.tuicool.com/articles/fe6Jbyz
+
+
+OSGi的主要职责就是为了让开发者能够创建动态化、模块化的Java系统。
+OSGi框架从概念上可以分为三层：模块层、生命周期层和服务层。Module Layer：模块层主要涉及包及共享的代码；Lifecycle Layer：生命周期层主要涉及Bundle的运行时生命周期管理；Service Layer：服务层主要涉及模块之间的交互和通信。
+OSGi 的模块化，是通过为 Jar 包添加metadata 来定义哪些类该暴露，哪些类该隐藏，其控制单元叫做 Bundle（jar 包）。 MANIFEST.MF 文件存储的实际上是 Bundle 的元数据。
+生命周期层的主要功能是控制动态安装、开启、关闭、更新和卸载的bundles。生命周期层的API主要是由以下三个核心接口来组成的：BundleActivator，BundleContext 和 Bundle。 
+BundleActivator：让你能够捕捉bundle的start和stop事件，并对这两个事件作出自定义的反应。
+BundleContext：一个bundle在框架中的执行时上下文，这个上下文提供了和框架进行交互的方法。
+Bundle：在逻辑上表示了一个bundle，OSGi环境中的一个物理bundle对应了一个bundle对象。该对象中包含了bundle的基本信息和bundle生命周期的控制接口。
+Bundle 可以通过 Bundle的上下文去注册Service或去查询Service。  http://www.cnblogs.com/jingmoxukong/p/4546947.html
+
+http://cloud.51cto.com/art/201510/494051.htm   saas
+SaaS系统说起来很简单，任何系统似乎加个tenant_id(租户id)就变成SaaS系统了
+比较好做法是通过url识别租户。系统是给租户生成一个随机的三级域名，比如 abc.crm.baidu.com. 如果客户想使用自己的域名，可以在cname到我们生成的三级域名，并在管理系统里面做绑定。
+SaaS系统是必须考虑计费系统和租户控制系统。定制化开发尽可能分系统，分模块去做。然后通过控制台中配置不同租户订购不同模块，那些模块可以在前端页面上显示。不同的子系统需要分开部署。
+
+
+
+我们的MTA LBS 定位组件主要是用GeoHash 来计算附近的人， 因为要存储亿级用户的地址位置信息，所以用HBase作为存储，用户每次上报都更新geohash中附近的用户的信息，查询的时候先通过geohash值获取到附近的用户列表，再通过用户的属性信息和具体的经纬度进行过滤和排序。
+将二维坐标转化成一维字符串(GeoHash) 然后通过比较GeoHash字符串来查找附近的点。 字符串越长，表示的范围越精确。当geohash base32编码长度为8时，精度在19米左右，而当编码长度为9时，精度在2米左右    
+由于GeoHash是将区域划分为一个个规则矩形，并对每个矩形进行编码，这个问题往往产生在边界处。  解决的思路很简单，我们查询时，除了使用定位点的GeoHash编码进行匹配外，还使用周围8个区域的GeoHash编码，这样可以避免这个问题。http://blog.jobbole.com/80633/
+使用Mongodb可以很容易实现因为它支持geospatial indexes。 你可以对每个用户实时更新数据库中的user_loc 然后db.places.find( { user_loc : { $near : [50,50] } } )
+https://docs.mongodb.com/manual/core/geospatial-indexes/
+redis geo  http://blog.csdn.net/opensure/article/details/51375961   http://www.tuicool.com/articles/yMnuyeY
+PostGIS： 为postgreSQL提供了高级GEO函数功能。Cube和Earthdistance： 这两个拓展为轻量级的Geo关系实体提供了简单、快速的实现方法。PostGIS支持所有OGC规范的“Simple Features”类型，同时在此基础上扩展了对3DZ、3DM、4D坐标的支持。
+
+
+
+http://www.cnblogs.com/lhws/archive/2012/03/10/2389189.html
+单一职责原则（Single Responsibility Principle）
+定义：不要存在多于一个导致类变更的原因。通俗的说，即一个类只负责一项职责。
+问题由来：类T负责两个不同的职责：职责P1，职责P2。当由于职责P1需求发生改变而需要修改类T时，有可能会导致原本运行正常的职责P2功能发生故障。
+
+依赖倒置原则（Dependence Inversion Principle）
+定义：高层模块不应该依赖低层模块，二者都应该依赖其抽象；抽象不应该依赖细节；细节应该依赖抽象。
+解决方案：将类A修改为依赖接口I，类B和类C各自实现接口I，类A通过接口I间接与类B或者类C发生联系，则会大大降低修改类A的几率。
+
+迪米特法则（Law Of Demeter）
+定义：一个对象应该对其他对象保持最少的了解。
+问题由来：类与类之间的关系越密切，耦合度越大，当一个类发生改变时，对另一个类的影响也越大。
+解决方案：尽量降低类与类之间的耦合。
+
+开闭原则的定义已经非常明确告诉我们：软件实体应该对扩展开放，对修改关闭，其含义是说一个软件实体应该通过扩展来实现变化，而不是通过修改已有的代码来实现变化。
+
+里氏替换原则（Liskov Substitution Principle）
+定义2：所有引用基类的地方必须能透明地使用其子类的对象。
+解决方案：当使用继承时，遵循里氏替换原则。类B继承类A时，除添加新的方法完成新增功能P2外，尽量不要重写父类A的方法，也尽量不要重载父类A的方法。
+
+接口隔离原则（Interface Segregation Principle）
+定义：客户端不应该依赖它不需要的接口；一个类对另一个类的依赖应该建立在最小的接口上。
