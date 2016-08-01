@@ -6,6 +6,20 @@ http://www.jianshu.com/p/0b6808e1fbe9
 
 http://www.oschina.net/news/69068/javaer-have-to-learn-linux-command
 
+
+https://github.com/GeniusVJR/LearningNotes  面试
+https://zhuanlan.zhihu.com/p/20672941  简历
+
+https://github.com/jhalterman/failsafe   失败处理
+https://github.com/jhalterman/failsafe/wiki/Comparisons
+Hystrix is more oriented around the execution of remote requests and offers features around that, while Failsafe is more general purpose for handling any type of execution failure.
+http://www.cnblogs.com/shanyou/p/4752226.html
+http://blog.csdn.net/caomiao2006/article/details/50000511
+Michael T. Nygard 在在精彩的《Release It!》一书中总结了很多提高系统可用性的模式，其中非常重要的两条是：  使用超时    使用断路器
+在自身服务和依赖之间放一个断路器，实时统计访问的状态，当访问超时或者失败达到某个阈值的时候（如50%请求超时，或者连续20次请失败），就打开断路器，那么后续的请求就直接返回失败，不至于浪费资源。断路器再根据一个时间间隔（如5分钟）尝试关闭断路器（或者更换保险丝），看依赖是否恢复服务了。
+
+
+
 http://mp.weixin.qq.com/s?__biz=MjM5MDE0Mjc4MA==&mid=2650993458&idx=1&sn=e959385bc0bddb4b7cfab84a1310f9e8&scene=1&srcid=07278uyBPLt7goHKHJTNpsWt#wechat_redirect    不谈架构，看看如何从代码层面优化系统性能！
 企业信息化关注的是如何最大限度的实现无纸办公，流程自动化，信息流通和存储，避免孤岛和数据的多维度交叉分析
 

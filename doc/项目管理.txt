@@ -5,6 +5,7 @@ https://bugtags.com/
 http://www.oschina.net/news/71273/product-manager-hole     从需求到上线，产品经理你挖了多少坑？
 StackShare.io 是一个开发者工具及服务分享平台，致力于发现并分享开发者使用的开发工具、服务与优质资源，帮助开发者使用最方便的开发工具和便捷的服务。
 
+http://blog.brucefeng.info/post/bigproj-in-scrum  Scrum中大项目管理
 
 http://www.csdn.net/article/1970-01-01/2823718?tvd
 
