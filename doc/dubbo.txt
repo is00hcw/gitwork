@@ -2,6 +2,23 @@
 https://help.aliyun.com/document_detail/35478.html?spm=5176.7946893.222623.7.T2X8UJ   EDAS Dubbo使用指南
 
 
+Protocol基于spi可以动态生成特定协议的invoker以及服务端的exporter
+请求被委托给逻辑集群，集群从目录中list所有invoker，负载均衡组件从中select出一个可用的，invoker再通过exchange发送请求，请求被序列化（codec）后以特定的传输协议（transporter）发送，在每一个事件处理成功后 --比如连接、发送、应答等等，都会通知handler处理相应事件
+URL结构会是协议://用户名:密码@host:port/group/path?参数path一般是service:version
+URL被流转于几乎所有调用链路的上下文，因此dubbo扩展点在做动态决策时可以参考URL中的参数信息从而做出正确委派。比如动态决策使用哪种codec时
+Dubbo里几乎每个组件都支持多种协议，在这幕后的英雄就是SPI组件
+
+Directory提供目录服务，一组invoker必定会聚集在一个目录下。它实现NotifyListener接口，监听注册中心提供者变更事件，注册中心向其推送提供者变更。目录收到的是提供者的配置信息，基于提供者配置信息客户端生成invoker，并缓存在目录里。
+Invoker是对确定节点提供者的逻辑抽象，invoker封装了远程调用的实现细节，主要包括应用协议和传输协议等等。因为它基于提供者配置生成（配置包括但不仅限于提供者的地址和端口信息），因此它能确定指向一个节点。
+Reference引用远端服务，它并不确定指向一个节点的提供者，而是引用由多个提供同样服务能力的invoker组成的集群。它被提供给消费者，消费者的所有请求通过它最终被委派给invoker发起remoting调用。
+Invoker其实是一个边界，它是RPC协议的具体实现， Reference并不是dubbo里的ReferenceConfig实体，而是返回给消费者的服务代理。
+Cluster代表逻辑集群，它的背后是一组提供同质服务的节点。在dubbo里Cluster实体并不直接提供集群能力，它基于动态扩展生成特定HA策略的集群invoker，由集群invoker提供集群的相关能力。
+调用链路上，reference将请求委派给集群，集群从目录下list所有invoker再由负载均衡select，最后由被选出的invoker发起remoting，如果失败则遵循当次集群HA协议重试或者快速失败等等。
+注册中心对订阅和发布的匹配是以path，以及version，group和classifier三个参数作为依据。
+RPC组件分成6层，自上而下分别是应用层，交换层，传输层，转码/序列化层、事件处理层、事件分发层。
+交换层在传输层基础上扩展了请求和应答语义，体现信息交换的含义。交换层有定时任务做心跳探测，超时会发起重连。它增加了三个实体，分别是ExchangeChannel，ExchangeClient和ExchangeServer。
+ChannelHandler用于网络事件流式处理，它支持5种事件：connected，sent，received，disconnected，caught。分别对应5种网络事件：连接，发送消息，接收消息，断连和异常捕获。
+
 http://www.cnblogs.com/yjmyzz/p/dubbox-demo.html  dubbox简单示例
 http://my.oschina.net/u/238296/blog/602446?fromerr=GJbDMeel
 http://www.cnblogs.com/yjmyzz/p/update-dubbo-to-spring-4-and-add-log4j2-support.html  升级spring4

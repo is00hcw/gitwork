@@ -44,6 +44,8 @@ http://www.alloyteam.com/2016/05/super-small-web-gesture-library-alloyfinger-rel
 http://www.alloyteam.com/2016/05/mobile-web-development-debugging-tools-alloylever-introduced/   移动web开发调试工具AlloyLever介绍
 https://github.com/WechatFE/vConsole
 
+test
+http://www.oschina.net/p/dagger  Dagger是网易杭州研究院QA团队开发的一个轻量级、运行稳定的WebUI自动化测试框架，主要基于Selenium及TestNg可以认为是对Selenium进行二次封装的一个框架
 
 
 chrome
@@ -61,8 +63,6 @@ monitor(function)当这个方法被调用时，一个消息被输出到控制台
 inspect(object/function)在恰当的面板中打开并选择指定元素或指定对象
 getEventListeners(object)返回注册在指定对象上的注册的事件监听器。
 
-test
-http://www.oschina.net/p/dagger  Dagger是网易杭州研究院QA团队开发的一个轻量级、运行稳定的WebUI自动化测试框架，主要基于Selenium及TestNg可以认为是对Selenium进行二次封装的一个框架
 
 zepto  zepto中并没有fadeIn和fadeOut
 http://www.cnblogs.com/yexiaochai/p/4219523.html
@@ -99,6 +99,14 @@ http://web.jobbole.com/84285/#comment-95949   使用Flexible实现手淘H5页面
 http://www.paintcodeapp.com/news/ultimate-guide-to-iphone-resolutions
 https://github.com/amfe/article/issues/5  写给前端面试者
 http://www.cnblogs.com/Wayou/p/html5_web_api_queryselector.html   HTML5向Web API新引入了document.querySelector以及document.querySelectorAll
+
+
+如果你设置cookie的时候，设定了cookie的访问域名为一个顶级域名，则可以达到几个子域名共享cookie的效果。
+有些重要信息，如用户的唯一标识，建议给这些cookie字段加上HttpOnly标识。加上了这个标识的话，我们的客户端js是无法读到与写入加了标识的cookie字段的，这样非常安全。
+如果设定了cookie的超时时间的话，那么cookie将在到期的时候失效。如果没有设定，那么cookie就是session级别的啦。 cookie的session是，在未关闭浏览器的情况下，所有的tab级别的页面或新开，或刷新，均属于一个session
+建议存储一些同步访问页面的时候必须要被带到服务端的信息。比如，网站的用户登录信息。这个是在访问时必须要在服务端获取的信息，所以种在cookie里面很必要。
+不同于cookie，sessionStorage的访问限制更高一些，只有当前设定sessionStorage的域下才能访问，而且不同的两个tab之间不能互通。  证明sessionStorage里面的session，并不同于cookie，是以tab为级别的session。
+http://mp.weixin.qq.com/s?__biz=MzIwNjQwMzUwMQ==&mid=2247484013&idx=1&sn=270295c8a6fe604d22e71d8087297d35#rd
 
 阿里
 http://thx.github.io/

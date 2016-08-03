@@ -1,0 +1,41 @@
+多租户，安全，审计等一直是企业用户对平台软件的基本诉求
+
+http://mp.weixin.qq.com/s?__biz=MzA5Nzc4OTA1Mw==&mid=2659597787&idx=1&sn=5482cf464d2bef4d1178e5d978beb993#rd   专访吕毅：链家网技术架构的演进之路   Kafka Connector日志收集
+http://blog.dataman-inc.com/shurenyun-cntv-150/    实录分享|一篇文章看CNTV的容器化探索和平台搭建
+
+http://mp.weixin.qq.com/s?__biz=MzA5Nzc4OTA1Mw==&mid=2659597788&idx=1&sn=8b226411fdf8d3f803d08d0c067e4ac2#rd   一篇文章，读懂Netty的高性能架构之道
+https://yq.aliyun.com/articles/58510?spm=5176.100239.bloglist.27.uzsf1U   dubbo 上
+https://yq.aliyun.com/articles/58511?spm=5176.100239.bloglist.19.uzsf1U   dubbo 下
+http://shiyanjun.cn/archives/1075.html    
+
+http://www.cnblogs.com/luxiaoxun/p/5492646.html   Kafka基本原理
+https://yq.aliyun.com/articles/58382?spm=5176.100239.topwz.4.mxO05H  《Kafka Stream》调研：一种轻量级流计算模式
+
+https://yq.aliyun.com/articles/2764  微服务（Microservice）那点事
+传统的Monolithic Web开发方式，其优点包括：开发简单直接、中式管理；基本不会重复开发；功能都在本地，没有分布式的管理开销和调用开销。然而，随着应用程序功能的增多，Monolithic的缺点也暴露无遗（特别对于互联网公司来说）：开发效率低，所有的开发在一个项目改代码，递交代码相互等待，代码冲突不断；代码维护难，代码功能耦合在一起，可能难以下手；部署不灵活，构建时间长，任何小修改必须重新构建整个项目，这个过程往往很长；稳定性不高，一个微不足道的小问题，可以导致整个应用挂掉；扩展性不够，无法满足高并发情况下的业务需求。因此，旨在有效拆分应用，实现敏捷开发和部署的Microservice Architecture也就成为近两年的热点。
+比如客户端如何访问这些服务、服务之间如何通信、服务太多如何寻找、服务挂了怎么办等等。
+Docker其实就是一个基于LXC的高级容器引擎，但是Docker主要定位应用层面，解决应用对运行环境的依赖这个特性让其成为了各个领域当之无愧的宠儿
+
+https://yq.aliyun.com/articles/58392?spm=5176.100239.blogcont58510.25.XS1m03   Spring-Boot + Mybatis 多数据源配置
+https://segmentfault.com/a/1190000005357718  OAuth认证实现机制及单点登录原理
+http://efe.baidu.com/blog/friendly-restful-api/   设计易用的RESTFul API
+
+http://www.tuicool.com/articles/riMNraa  大公司都有哪些开源项目~~~阿里，百度，腾讯，360，新浪，网易，小米等
+
+
+http://my.oschina.net/MrHou/blog/699968 聊一聊前端速度统计(性能统计)那些事儿
+http://my.oschina.net/MrHou/blog/693071  前端日志
+http://my.oschina.net/MrHou/blog/706745  百度移动端首页前端速度
+http://my.oschina.net/MrHou/blog/710248   聊一聊前端存储那些事儿
+http://isux.tencent.com/h5-performance.html  移动H5前端性能优化指南
+http://blog.tingyun.com/web/article/detail/586   丰趣海淘：跨境电商平台的前端性能优化实践
+http://tech.meituan.com/performance-framework-and-platform.html  js性能分析
+http://efe.baidu.com/blog/mvc-deformation/   前端MVC变形记
+http://fecs.baidu.com/  前端代码风格检查套件，包含 HTML、CSS、JavaScript 与 Less 代码的检查与修复。
+http://efe.baidu.com/blog/comparison-of-html-linting-tool/  HTML代码风格检查工具对比
+http://efe.baidu.com/blog/js-lints/  JavaScript 代码静态质量检查
+http://efe.baidu.com/blog/front-end-continuous-integration-tools/   前端开源项目持续集成三剑客
+测试运行器 Test Runner: edp-test karma
+测试框架 Testing Framework: jasmine mocha qunit Jest
+断言库 Assertion library: expect.js should chai
+覆盖率 Coverage library: istanbul

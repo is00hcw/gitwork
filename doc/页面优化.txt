@@ -1,5 +1,5 @@
 白屏时间的多数是：DNS解析耗时+服务端耗时+网络传输耗时。 chrome 屏幕捕获的工具，可以看到整个网页的渲染过程。 
-http://my.oschina.net/MrHou/blog/699968 性能统计  使用html5新增的接口：performance来评估一下自己的网站
+http://my.oschina.net/MrHou/blog/699968 聊一聊前端速度统计(性能统计)那些事儿  使用html5新增的接口：performance来评估一下自己的网站
 HTML5的performance接口提供了这个时间：performance.timing.navigationStart，这个就是用户访问我们网页最开始的跳转时间了。
 http://my.oschina.net/MrHou/blog/693071  前端日志
 http://my.oschina.net/MrHou/blog/706745  百度移动端首页前端速度

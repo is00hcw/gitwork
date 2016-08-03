@@ -1,6 +1,7 @@
 http://xxgblog.com/2015/10/23/wagon-maven-plugin/?utm_source=tuicool&utm_medium=referral   Maven插件wagon-maven-plugin自动化部署Java项目到Linux远程服务器
 http://blog.csdn.net/mn960mn/article/details/49560003
- 
+https://yq.aliyun.com/articles/58669?spm=5176.100239.bloglist.18.4IR9mK  远程调试阿里云上的NodeJS Docker应用
+
 
 在生产环境中使用Docker技术时，不仅仅是在所有的机器上装上Docker引擎这么简单。首先需要创建和管理集群；其次是安全、网络、存储等基础配置；还需要做资源的调度和编排。
 http://www.oschina.net/news/63789/eclipse-for-docker-has-arrived  

@@ -18,10 +18,32 @@ http://blog.csdn.net/caomiao2006/article/details/50000511
 Michael T. Nygard 在在精彩的《Release It!》一书中总结了很多提高系统可用性的模式，其中非常重要的两条是：  使用超时    使用断路器
 在自身服务和依赖之间放一个断路器，实时统计访问的状态，当访问超时或者失败达到某个阈值的时候（如50%请求超时，或者连续20次请失败），就打开断路器，那么后续的请求就直接返回失败，不至于浪费资源。断路器再根据一个时间间隔（如5分钟）尝试关闭断路器（或者更换保险丝），看依赖是否恢复服务了。
 
-
-
 http://mp.weixin.qq.com/s?__biz=MjM5MDE0Mjc4MA==&mid=2650993458&idx=1&sn=e959385bc0bddb4b7cfab84a1310f9e8&scene=1&srcid=07278uyBPLt7goHKHJTNpsWt#wechat_redirect    不谈架构，看看如何从代码层面优化系统性能！
 企业信息化关注的是如何最大限度的实现无纸办公，流程自动化，信息流通和存储，避免孤岛和数据的多维度交叉分析
+
+
+http://my.oschina.net/apdplat/blog/719841  15道非常经典的Java面试题
+Daemon的作用是为其他线程的运行提供服务，比如说GC线程。其实User Thread线程和Daemon Thread守护线程本质上来说去没啥区别的，唯一的区别之处就在虚拟机的离开：如果User Thread全部撤离，那么Daemon Thread也就没啥线程好服务的了，所以虚拟机也就退出了。
+用个比较通俗的比如，任何一个守护线程都是整个JVM中所有非守护线程的保姆：只要当前JVM实例中尚存在任何一个非守护线程没有结束，守护线程就全部工作；只有当最后一个非守护线程结束时，守护线程随着JVM一同结束工作。
+thread.setDaemon(true)必须在thread.start()之前设置，否则会跑出一个IllegalThreadStateException异常。你不能把正在运行的常规线程设置为守护线程。
+
+((NULL)null).hello();
+
+
+Volatile是轻量级的synchronized，它在多处理器开发中保证了共享变量的“可见性”。可见性的意思是当一个线程修改一个共享变量时，另外一个线程能读到这个修改的值。
+用来确保将变量的更新操作通知到其他线程,保证了新值能立即同步到主内存,以及每次使用前立即从主内存刷新. 当把变量声明为volatile类型后,编译器与运行时都会注意到这个变量是共享的.
+volatile 变量对所有线程是立即可见的,对 volatile 变量所有的写操作都能立即反应到其他线程之中,换句话说:volatile 变量在各个线程中是一致的
+一个线程对 volatile 变量的写一定对之后对这个变量的读的线程可见，即线程对 volatile 变量的读一定能看见在它之前最后一个线程对这个变量的写。
+volatile变量不会被缓存在寄存器中(只有拥有线程可见)或者其他对CPU不可见的地方，每次总是从主存中读取volatile变量的结果。   
+volatile 变量保证的是一个线程对它的写会立即刷新到主内存中，并置其它线程的副本为无效，它并不保证对 volatile 变量的操作都是具有原子性的。  https://yq.aliyun.com/articles/38392
+http://www.cnblogs.com/yakun/p/3589437.html
+每一个线程运行时都有一个线程栈，线程栈保存了线程运行时候变量值信息。当线程访问某一个对象时候值的时候，首先通过对象的引用找到对应在堆内存的变量的值，然后把堆内存变量的具体值load到线程本地内存中，建立一个变量副本，之后线程就不再和对象在堆内存变量值有任何关系，而是直接修改副本变量的值，在修改完之后的某一个时刻（线程退出之前），自动把线程变量副本的值回写到对象在堆中变量。这样在堆中的对象的值就产生变化了。
+锁提供了两种主要特性：互斥（mutual exclusion） 和可见性（visibility）。   http://my.oschina.net/jamaly/blog/386912?p=1
+http://blog.csdn.net/vking_wang/article/details/9982709
+http://blog.csdn.net/vking_wang/article/details/8574376
+
+Condition可以替代传统的线程间通信，用await()替换wait()，用signal()替换notify()，用signalAll()替换notifyAll()。  http://blog.csdn.net/vking_wang/article/details/9952063
+在Runnable中创建ThreadLocal
 
 
 PROPAGATION_NESTED -- 如果当前存在事务，则在嵌套事务内执行。如果当前没有事务，则进行与PROPAGATION_REQUIRED类似的操作。
