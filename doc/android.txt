@@ -55,7 +55,7 @@ https://realm.io/cn/news/droidcon-farber-improving-android-app-performance/   10
 http://cashow.github.io/android-detect-out-of-memory-with-leakcanary.html   ¼ì²éÄÚ´æĞ¹Â©
 
 https://github.com/googlesamples/
-http://www.jianshu.com/p/cf446be43ae8  ½â¶ÁAndroid¹Ù·½MVPÏîÄ¿µ¥Ôª²âÊÔ
+
 https://github.com/googlesamples/android-architecture  
 http://mp.weixin.qq.com/s?__biz=MzA3ODg4MDk0Ng==&mid=403539764&idx=1&sn=d30d89e6848a8e13d4da0f5639100e5f&scene=0      Android¹Ù·½MVP¼Ü¹¹Ê¾ÀıÏîÄ¿½âÎö
 http://my.oschina.net/sulliy/blog/664118?p=1  GoogleÌá¹©µÄMVP²Î¿¼ÊµÏÖ
@@ -75,6 +75,9 @@ BasePresenterÖĞº¬ÓĞ·½·¨start(),¸Ã·½·¨µÄ×÷ÓÃÊÇpresenter¿ªÊ¼»ñÈ¡Êı¾İ²¢µ÷ÓÃviewÖĞ·½
 https://yq.aliyun.com/articles/20457?spm=5176.100239.yqblog1.78.QKFMNr  AndroidStudioĞÔÄÜÓÅ»¯
 http://blog.csdn.net/sbsujjbcy/article/details/45420475    Android µ÷ÊÔÉñÆ÷-Stetho(Facebook³öÆ·)µÄÊ¹ÓÃ
  
+
+²âÊÔ
+http://www.jianshu.com/p/cf446be43ae8  ½â¶ÁAndroid¹Ù·½MVPÏîÄ¿µ¥Ôª²âÊÔ
 ÔÚ°²×¿ÉÏÃæĞ´²âÊÔ£¬ÓĞºÜ¶à¼¼Êõ·½°¸¡£ÓĞJUnit¡¢Instrumentation test¡¢Espresso¡¢UiAutomatorµÈµÈ£¬»¹ÓĞµÚÈı·½µÄAppium¡¢Robotium¡¢CalabashµÈµÈ¡£
 Ä¿Ç°°²×¿×î³£ÓÃµÄÓĞÁ½¸ö£¬MockitoºÍJMockit¡£Á½ÕßµÄÇø±ğÊÇ£¬Ç°Õß²»ÄÜmock static methodºÍfinal class¡¢final method£¬ºóÕß¿ÉÒÔ¡£±ÈÈçRoboGuice¡¢Dagger¡¢Dagger2µÈµÈ¡£ÎÒÃÇÓÃµÄÊÇDagger2£¬ÀíÓÉºÜ¼òµ¥£¬ÕâÊÇÄ¿Ç°×îºÃÓÃµÄDI¿ò¼Ü¡£
 Ê¹ÓÃAndroidÌá¹©µÄInstrumentationÏµÍ³£¬½«µ¥Ôª²âÊÔ´úÂëÔËĞĞÔÚÄ£ÄâÆ÷»òÕßÊÇÕæ»úÉÏ¡£µ«ÊÇËÙ¶È·Ç³£Âı£¬ÒòÎªÃ¿´ÎÔËĞĞÒ»´Îµ¥Ôª²âÊÔ£¬¶¼ĞèÒª½«Õû¸öÏîÄ¿´ò°ü³Éapk£¬ÉÏ´«µ½Ä£ÄâÆ÷»òÕæ»úÉÏ
@@ -83,6 +86,13 @@ https://mp.weixin.qq.com/s?__biz=MzA3ODg4MDk0Ng==&mid=2651112121&idx=1&sn=c5cc27
 http://mp.weixin.qq.com/s?__biz=MzA3NTYzODYzMg==&mid=2653576922&idx=1&sn=dee69c4a3c4e33ca0b9d3a1a2b17347f&scene=0#wechat_redirect      ÀÏË¾»ú½ÌÄã ¡°ì­¡± EventBus 3
 http://www.csdn.net/article/2015-08-19/2825493-using-espresso-for-easy-ui-testing   EspressoÊµÕ½£º¿ìËÙµÄAndroid UI×Ô¶¯»¯²âÊÔ
 http://blog.csdn.net/sdyy321/article/details/38757135/   mockito¼òµ¥½Ì³Ì
+EasyMockºÍMockitoµÈ¿ò¼Ü£¬¶Ôstatic, final, private·½·¨¾ùÊÇ²»ÄÜmockµÄ¡£
+ÕâĞ©¿ò¼ÜÆÕ±éÊÇÍ¨¹ı´´½¨ProxyµÄ·½Ê½À´ÊµÏÖµÄmock¡£ ¶øPowerMockÊÇÊ¹ÓÃCGLibÀ´²Ù×İ×Ö½ÚÂë¶øÊµÏÖµÄmock£¬ËùÒÔËüÄÜÊµÏÖ¶ÔÉÏÃæ·½·¨µÄmock¡£
+https://yq.aliyun.com/articles/58770?spm=5176.100239.bloglist.5.ZcuiyD
+http://mqc.aliyun.com/doc.htm?id=8  Robotium±àĞ´µÇÂ¼APPµÄ×Ô¶¯»¯½Å±¾
+http://mqc.aliyun.com/doc.htm?id=44  Appium
+Google ¿ªÔ´ÁË Espresso£¬ÕâÊÇÒ»ÖÖAndroid×Ô¶¯»¯²âÊÔ¿ò¼Ü£¬Ê¹²âÊÔÈËÔ±¿ÉÒÔÔÚÔÆÖĞx86»úÆ÷µÄ¶àÏß³Ì»·¾³ÀïÔËĞĞ²âÊÔ
+
 
 http://dev.xiaomi.com/doc/p=6298/index.html    MIUIÏµÍ³ÒôÀÖ¿Ø¼ş±ê×¼»¯·½°¸,µÚÈı·½APP½ÓÈëÖ¸ÄÏ
 https://yq.aliyun.com/articles/7568?spm=5176.blog8523.yqblogcon1.22.160o9n  Android³£¼ûµÄEvent-driven·½°¸
@@ -167,10 +177,8 @@ FacebookµÄ²å×®·½·¨£¬ËûÃÇÔÚ¿¼²ìÁËAndroidÄÚ½¨µÄDebugÒÔ¼°ÁíÒ»Ğ©·½·¨ºó£¬Ñ¡ÔñÁË×Ö½ÚÂë
 Stetho ÊÇ Facebook ¿ªÔ´µÄÒ»¸ö Android µ÷ÊÔ¹¤¾ß¡£ÊÇÒ»¸ö Chrome Developer Tools µÄÀ©Õ¹£¬¿ÉÓÃÀ´¼ì²âÓ¦ÓÃµÄÍøÂç¡¢Êı¾İ¿â¡¢WebKit µÈ·½ÃæµÄ¹¦ÄÜ¡£¿ª·¢ÕßÒ²¿ÉÍ¨¹ıËüµÄ dumpapp ¹¤¾ßÌá¹©Ç¿´óµÄÃüÁîĞĞ½Ó¿ÚÀ´·ÃÎÊÓ¦ÓÃÄÚ²¿¡£
 
 ¹ÙÍøµØÖ·£ºhttp://facebook.github.io/stetho/
-test
-http://mqc.aliyun.com/doc.htm?id=8  Robotium±àĞ´µÇÂ¼APPµÄ×Ô¶¯»¯½Å±¾
-http://mqc.aliyun.com/doc.htm?id=44  Appium
-Google ¿ªÔ´ÁË Espresso£¬ÕâÊÇÒ»ÖÖAndroid×Ô¶¯»¯²âÊÔ¿ò¼Ü£¬Ê¹²âÊÔÈËÔ±¿ÉÒÔÔÚÔÆÖĞx86»úÆ÷µÄ¶àÏß³Ì»·¾³ÀïÔËĞĞ²âÊÔ
+ 
+
 
 ²¹¶¡£¬ÈÈĞŞ¸´
 https://github.com/bunnyblue/ACDD
@@ -213,6 +221,7 @@ com.jakewharton.hugo:hugo-plugin:1.2.1    ¿ÉÍ¨¹ıÔÚ·½·¨ÉÏÌí¼Ó@DebugLogÀ´´òÓ¡·½·¨µ
 decompile
 https://github.com/google/enjarify
 https://github.com/iBotPeaches/Apktool
+
 
 
 package

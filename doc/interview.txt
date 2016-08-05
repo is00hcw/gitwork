@@ -45,6 +45,16 @@ http://blog.csdn.net/vking_wang/article/details/8574376
 Condition可以替代传统的线程间通信，用await()替换wait()，用signal()替换notify()，用signalAll()替换notifyAll()。  http://blog.csdn.net/vking_wang/article/details/9952063
 在Runnable中创建ThreadLocal
 
+我们可以利用wait()来让一个线程在某些条件下暂停运行。例如，在生产者消费者模型中，生产者线程在缓冲区为满的时候，消费者在缓冲区为空的时 候，都应该暂停运行。如果某些线程在等待某些条件触发，那当那些条件为真时，你可以用 notify 和 notifyAll 来通知那些等待中的线程重新开始运行。不同之处在于，notify 仅仅通知一个线程，并且我们不知道哪个线程会收到通知，然而 notifyAll 会通知所有等待中的线程。
+既然我们应该在synchronized的函数或是对象里调用wait，那哪个对象应该被synchronized呢？答案是，那个 你希望上锁的对象就应该被synchronized，即那个在多个线程间被共享的对象。在生产者消费者问题中，应该被synchronized的就是那个 缓冲区队列。
+永远在循环（loop）里调用 wait 和 notify，不是在 If 语句  但if语句存在一些微妙的小问题，导致即使条件没被满足，你的线程你也有可能被错误地唤醒。所以如果你不在线程被唤 醒后再次使用while循环检查唤醒条件是否被满足
+http://developer.51cto.com/art/201508/487488.htm
+
+
+分布式最大的特性就是网络是不可靠的。  所以当我们的系统是由一系列的服务调用链组成的时候，我们 必须确保任一环节出问题都不至于影响整体链路。相应的手段有很多：重试机制  限流  熔断机制 负载均衡  降级（本地缓存）
+
+容错方法的组合: 网络超时并重试  每个依赖项都划分出单独的线程池   信号量(通过tryAcquire，非阻塞调用)   断路器
+
 
 PROPAGATION_NESTED -- 如果当前存在事务，则在嵌套事务内执行。如果当前没有事务，则进行与PROPAGATION_REQUIRED类似的操作。
 前六个策略类似于EJB CMT，第七个（PROPAGATION_NESTED）是Spring所提供的一个特殊变量。 它要求事务管理器或者使用JDBC 3.0 Savepoint API提供嵌套事务行为（如Spring的DataSourceTransactionManager）
