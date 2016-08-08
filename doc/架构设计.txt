@@ -8,6 +8,8 @@ https://yq.aliyun.com/articles/58510?spm=5176.100239.bloglist.27.uzsf1U   dubbo 
 https://yq.aliyun.com/articles/58511?spm=5176.100239.bloglist.19.uzsf1U   dubbo 下
 http://shiyanjun.cn/archives/1075.html    
 
+http://mp.weixin.qq.com/s?__biz=MjM5ODc4NzAwMA==&mid=2652695263&idx=3&sn=f5439433e85f5f0f1f8306f245ba4c85&scene=0#wechat_redirect   Mercury:唯品会全链路应用监控系统解决方案详解
+
 http://www.cnblogs.com/luxiaoxun/p/5492646.html   Kafka基本原理
 https://yq.aliyun.com/articles/58382?spm=5176.100239.topwz.4.mxO05H  《Kafka Stream》调研：一种轻量级流计算模式
 

@@ -1,6 +1,23 @@
 ﻿https://github.com/weibocom/motan  微博rpc
 https://help.aliyun.com/document_detail/35478.html?spm=5176.7946893.222623.7.T2X8UJ   EDAS Dubbo使用指南
 
+启动时，需要指定参数-Ddubbo.shutdown.hook=true
+dubbo.service.min.thread.pool.size=200
+dubbo.service.max.thread.pool.size=200
+dubbo:parameter key="shutdown.timeout" value="60000" /> <!-- 单位毫秒 -->
+
+<!-- 服务调用超时设置为6秒,超时不重试--> 
+<dubbo:service interface="com.provider.service.DemoService" ref="demoService"  retries="0" timeout="5000"/>
+dubbo在调用服务不成功时，默认会重试2次。Dubbo的路由机制，会把超时的请求路由到其他机器上，而不是本机尝试，所以 dubbo的重试机器也能一定程度的保证服务的质量。
+https://yq.aliyun.com/articles/38436?spm=5176.100240.searchblog.52.zE9gPO
+
+https://yq.aliyun.com/articles/38403?spm=5176.100240.searchblog.36.zE9gPO
+https://yq.aliyun.com/articles/27895?spm=5176.100240.searchblog.73.zE9gPO  基于Dubbo框架构建分布式服务
+
+在开发阶段为了方便测试，通常系统客户端能指定调用某个服务提供者，那么可以在引用服务时加一个url参数去指定服务提供者
+<dubbo:reference  id="xxxService"interface="com.alibaba.xxx.XxxService"url="dubbo://localhost:20890"/>
+
+
 
 Protocol基于spi可以动态生成特定协议的invoker以及服务端的exporter
 请求被委托给逻辑集群，集群从目录中list所有invoker，负载均衡组件从中select出一个可用的，invoker再通过exchange发送请求，请求被序列化（codec）后以特定的传输协议（transporter）发送，在每一个事件处理成功后 --比如连接、发送、应答等等，都会通知handler处理相应事件
@@ -19,6 +36,8 @@ RPC组件分成6层，自上而下分别是应用层，交换层，传输层，�
 交换层在传输层基础上扩展了请求和应答语义，体现信息交换的含义。交换层有定时任务做心跳探测，超时会发起重连。它增加了三个实体，分别是ExchangeChannel，ExchangeClient和ExchangeServer。
 ChannelHandler用于网络事件流式处理，它支持5种事件：connected，sent，received，disconnected，caught。分别对应5种网络事件：连接，发送消息，接收消息，断连和异常捕获。
 
+
+https://yq.aliyun.com/articles/25666?spm=5176.100240.searchblog.45.mvMoDO  编译Dubbo源码并测试
 http://www.cnblogs.com/yjmyzz/p/dubbox-demo.html  dubbox简单示例
 http://my.oschina.net/u/238296/blog/602446?fromerr=GJbDMeel
 http://www.cnblogs.com/yjmyzz/p/update-dubbo-to-spring-4-and-add-log4j2-support.html  升级spring4
