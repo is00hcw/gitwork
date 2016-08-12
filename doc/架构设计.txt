@@ -3,6 +3,23 @@
 http://mp.weixin.qq.com/s?__biz=MzA5Nzc4OTA1Mw==&mid=2659597787&idx=1&sn=5482cf464d2bef4d1178e5d978beb993#rd   专访吕毅：链家网技术架构的演进之路   Kafka Connector日志收集
 http://blog.dataman-inc.com/shurenyun-cntv-150/    实录分享|一篇文章看CNTV的容器化探索和平台搭建
 
+http://www.infoq.com/cn/articles/basis-frameworkto-implement-micro-service  实施微服务，我们需要哪些基础框架？
+https://yq.aliyun.com/articles/54004?spm=5176.100239.blogcont58765.15.Z6yL8V    蚂蚁金服技术专家对性能优化的常见模式及趋势的思考
+https://yq.aliyun.com/articles/59008?spm=5176.8091938.0.0.MjwoNs  
+1) 失效转移  提高服务的高可用性，最基本的原则就是消除单点，通过负载均衡技术构建集群，所有的集群节点都是无状态且完全对等的。
+2) 异步调用  避免一个服务失败导致整个应用请求失败很重要的是使用异步调用。
+3) 依赖隔离  避免Service A被依赖的服务拖垮就是要确保Service A的线程资源不会被调用的依赖服务耗尽，在《Release It!》一书中总结了非常重要的两条方法： 设置超时和使用断路器。所以通过网络调用外部依赖服务时，都必须设置超时。
+在程序中也是如此，当知道服务调用某个依赖服务有大量超时的时候，再让新的请求去访问也只会超时，并不能得到想到的结果，还会消耗现有资源，增加负载，导致服务不可用。这个时候使用断路器就能避免这种资源浪费，在自身服务和依赖服务之间放一个断路器，通过断路器的监控实时统计访问的状态，当访问超时或者失败达到某个阈值的时候（如50%请求超时，或者连续20次请失败），就打开断路器，那么后续的请求就直接返回失败，而不是一个长时间的等待，再根据一个时间间隔（如30秒）或请求超时的情况（如0%的超时）尝试关闭断路器（或者更换保险丝），看依赖是否恢复服务了。
+在服务访问的高峰期可能因为大量的并发导致性能下降，严重时将会有大量的请求排队，可能会导致服务宕机。为了保证应用的可用性，可拒绝低优先级的调用，让高优先级的请求成功，避免所有调用都失败的情况，并且为每个依赖服务提供一个小的线程池，如果线程池已满调用将被立即拒绝，默认不采用排队，可以加速失败判定时间。
+Hystrix使用命令模式HystrixCommand(Command)包装依赖调用逻辑，每个命令在单独线程中/信号授权下执行。    // 依赖逻辑封装在run()方法中    // protected String getFallback()     //使用execute()同步调用代码,效果等同于:helloWorldCommand.queue().get(); 
+Observable<String> fs = new HelloWorldCommand("World").observe();  //注册结果回调事件 fs.subscribe(new Action1<String>() {  //注册完整执行生命周期事件fs.subscribe(new Observer<String>() {  
+每个CommandKey代表一个依赖抽象,相同的依赖要使用相同的CommandKey名称。依赖隔离的根本就是对相同CommandKey的依赖做隔离.
+
+Zuul 是在云平台上提供动态路由，监控，弹性，安全等边缘服务的框架。 Zuul提供了一个框架，可以对过滤器进行动态的加载，编译，运行。过滤器之间没有直接的相互通信。他们是通过一个RequestContext的静态类来进行数据传递的。RequestContext类中有ThreadLocal变量来记录每个Request所需要传递的数据。
+过滤器是由Groovy写成。这些过滤器文件被放在Zuul Server上的特定目录下面。Zuul会定期轮询这些目录。修改过的过滤器会动态的加载到Zuul Server中以便于request使用。  http://lxlong.iteye.com/blog/2267985
+http://f.dataguru.cn/thread-572577-1-4.html   Netflix推荐系统的后台实现
+
+
 http://mp.weixin.qq.com/s?__biz=MzA5Nzc4OTA1Mw==&mid=2659597788&idx=1&sn=8b226411fdf8d3f803d08d0c067e4ac2#rd   一篇文章，读懂Netty的高性能架构之道
 https://yq.aliyun.com/articles/58510?spm=5176.100239.bloglist.27.uzsf1U   dubbo 上
 https://yq.aliyun.com/articles/58511?spm=5176.100239.bloglist.19.uzsf1U   dubbo 下

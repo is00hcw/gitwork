@@ -1,4 +1,15 @@
-﻿http://colobu.com/2016/04/21/use-vscode-to-develop-go-programs/
+﻿我们知道Go使用GOPATH这个环境变量来管理编译时的源代码路径，所以第三方库也是下载在GOPATH下，并且我们的源代码也需要处于GOPATH下。
+bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
+gvm install go1.4.2
+gvm use go1.4.2
+gvm pkgset create --local  
+gvm pkgset use --local  
+gvm listall 查看所有的golang版本
+使用gvm diff 列出GOROOT中添加或者移除的文件
+使用gvm pkgset [create/use/delete] [name]管理GOPATHs
+vim ~/.gvm/scripts/install 修改 GO_SOURCE_URL=https://github.com/golang/go
+
+http://colobu.com/2016/04/21/use-vscode-to-develop-go-programs/
 https://github.com/Microsoft/vscode-tips-and-tricks/blob/master/README.md
 http://www.cnblogs.com/zsy/archive/2016/02/28/5223957.html  配置
 http://www.golangtc.com/t/564d30cfb09ecc72c30000b1

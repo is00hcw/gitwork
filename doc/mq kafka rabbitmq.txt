@@ -18,6 +18,20 @@ http://lbs.amap.com/api/javascript-api/reference/plugin/#AMap.MarkerClusterer
 http://developer.baidu.com/map/library.htm
 
 kafka
+http://valleylord.github.io/post/201607-mq-kafka/  说说 MQ 之 Kafka
+http://valleylord.github.io/post/201607-mq-rocketmq/  rocketmq
+消息发送时都被发送到一个topic，其本质就是一个目录，而topic由是由一些Partition Logs(分区日志) 每个Partition中的消息都是有序的，生产的消息被不断追加到Partition log上，其中的每一个消息都被赋予了一个唯一的offset值。 Kafka集群会保存所有的消息，不管消息有没有被消费；我们可以设定消息的过期时间，只有过期的数据才会被自动清除以释放磁盘空间。
+Kafka允许用户为每个topic设置副本数量，副本数量决定了有几个broker来存放写入的数据。每一个topic都可以设置它的partition数量，Partition的数量决定了组成topic的log的数量。Producer在生产数据时，会按照一定规则（这个规则是可以自定义的）把消息发布到topic的各个partition中。上面将的副本都是以partition为单位的，不过只有一个partition的副本会被选举成leader作为读写用。 
+建议partition的数量大于集群broker的数量，这样leader partition就可以均匀的分布在各个broker中，最终使得集群负载均衡。
+Producers直接发送消息到broker上的leader partition，不需要经过任何中介一系列的路由转发。为了实现这个特性，kafka集群中的每个broker都可以响应producer的请求，并返回topic的一些元信息，这些元信息包括哪些机器是存活的，topic的leader partition都在哪，现阶段哪些leader partition是可以直接被访问的。 
+Producer客户端自己控制着消息被推送到哪些partition。实现的方式可以是随机分配、实现一类随机负载均衡算法，或者指定一些分区算法。Kafka提供了接口供用户实现自定义的分区，用户可以为每个消息指定一个partitionKey，通过这个key来实现一些hash分区算法。这其中有个非常重要的参数“acks”,这个参数决定了producer要求leader partition 收到确认的副本个数，如果acks设置数量为0，表示producer不会等待broker的响应
+在所有备份节点中，有一个节点作为lead节点，这个节点保存了其它备份节点列表，并维持各个备份间的状体同步。
+在多副本的情况下，如果要指定同步复制还是异步复制，可以使用 acks 参数，详细参考官方文档 Producer Configs 部分的内容；在多分区的情况下，如果要指定发送到哪个分区，可以使用 partitioner.class 参数，其值是一个实现了 org.apache.kafka.clients.producer.Partitioner 接口的类，用于根据不同的消息指定分区
+
+ConsumerRecords<Integer, String> records = consumer.poll(100);
+其实，Kafka 也提供了按分区订阅，可以一次订阅多个分区 TopicPartition[]；也支持手动提交 offset，需要调用 consumer.commitSync。
+如果生产者向 Broker 写入的 Topic 是一个新 Topic，那么 Broker 会创建这个 Topic。创建的过程中会使用默认参数，例如，分区个数，会使用 Broker 配置中的 num.partitions 参数（默认1）；副本个数，会使用 default.replication.factor 参数。
+Replicas 表示副本在哪些 Broker 上，Isr（In-Sync Replicas）表示处于同步状态中的 Broker，如果有 Broker 宕机了，那么 Replicas 不会变，但是 Isr 会仅显示没有宕机的 Broker
 https://yq.aliyun.com/articles/5914?spm=5176.blog8069.yqblogcon1.235.sMZNTk     Kafka 设计与原理详解
 http://colobu.com/2016/02/24/kafka-connect/    kafka connect
 http://chuansong.me/n/1202245   Kafka消息的可靠性测试

@@ -1,6 +1,20 @@
+https://yq.aliyun.com/articles/57215?spm=5176.100239.blogrightarea59055.17.6Oe2G5
+mac下启动docker的工具发展
+最开始使用boot2docker
+再到Docker Toolbox
+最近新出的 Docker for Mac
+https://docs.docker.com/engine/tutorials/
+
+https://yq.aliyun.com/articles/57310  基于OSS搭建私有 Docker Registry
+https://yq.aliyun.com/articles/54037?spm=5176.100240.searchblog.13.9Ee9GF  Docker with Spring Boot
+ 加速地址：https://m09w2ldy.mirror.aliyuncs.com
+echo "DOCKER_OPTS=\"--registry-mirror=https://m09w2ldy.mirror.aliyuncs.com\"" | sudo tee -a /etc/default/docker
+https://yq.aliyun.com/articles/59048?spm=5176.100239.bloglist.43.Mn2nIp  在阿里云容器服务上一键部署JStorm
+https://yq.aliyun.com/articles/58669?spm=5176.100239.bloglist.18.4IR9mK  远程调试阿里云上的NodeJS Docker应用
+https://yq.aliyun.com/articles/57265?spm=5176.100244.teamconlist.3.nhonEn   在阿里云容器服务上开发基于Docker的Spring Cloud微服务应用
 http://xxgblog.com/2015/10/23/wagon-maven-plugin/?utm_source=tuicool&utm_medium=referral   Maven插件wagon-maven-plugin自动化部署Java项目到Linux远程服务器
 http://blog.csdn.net/mn960mn/article/details/49560003
-https://yq.aliyun.com/articles/58669?spm=5176.100239.bloglist.18.4IR9mK  远程调试阿里云上的NodeJS Docker应用
+
 
 
 在生产环境中使用Docker技术时，不仅仅是在所有的机器上装上Docker引擎这么简单。首先需要创建和管理集群；其次是安全、网络、存储等基础配置；还需要做资源的调度和编排。
@@ -27,7 +41,6 @@ http://mirrors.aliyun.com/help/docker-toolbox
 curl -sSL http://acs-public-mirror.oss-cn-hangzhou.aliyuncs.com/docker-engine/internet | sh -
 https://cr.console.aliyun.com/?spm=5176.1971733.2.28.90N8e7#/docker/booster    加速器
 https://yq.aliyun.com/articles/57310?spm=5176.100240.searchblog.16.cWNZ52   基于OSS搭建私有 Docker Registry  https://cnodejs.org/topic/5696e48e115b8984510218f0
-https://yq.aliyun.com/articles/47348?spm=5176.100240.searchblog.43.cWNZ52    用 Docker、Gradle 来构建、运行、发布一个 Spring Boot 应用   java -Dserver.port=9000 -jar docker-spring-boot-1.0.0.jar
 http://spring.io/guides/gs/spring-boot-docker/
 http://www.open-open.com/lib/view/open1439793616442.html
 https://yq.aliyun.com/articles/7695?spm=5176.100240.searchblog.84.cWNZ52  docker安装
@@ -83,12 +96,16 @@ https://github.com/Mooxe000/mooxe-docker-base
 http://blog.dataman-inc.com/shurenyun-mesos-131/   如何做好持续集成——Jenkins on Mesos 实践
 http://blog.dataman-inc.com/shurenyun-docker-133/  将Docker网络方案进行到底
 
-PaaS的出现是为了让运维人员不需要管理一台虚拟机，IaaS的出现是为了让运维人员不需要管理物理机。云计算，说到底都是俩字——运维。
-云计算领域的技术分为虚拟化技术和资源管理两个方面
-VOLUME /tmp命令，这个命令的效果是：在宿主机的/var/lib/docker目录下创建一个临时文件并把它链接到容器中的/tmp目录。
+PaaS的出现是为了让运维人员不需要管理一台虚拟机，IaaS的出现是为了让运维人员不需要管理物理机。云计算，说到底都是俩字——运维。云计算领域的技术分为虚拟化技术和资源管理两个方面
+FROM frolvlad/alpine-oraclejdk8:slim
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
+VOLUME 指定了临时文件目录为/tmp。其效果是在主机 /var/lib/docker 目录下创建了一个临时文件，并链接到容器的/tmp。改步骤是可选的，如果涉及到文件系统的应用就很有必要了。/tmp目录用来持久化到 Docker 数据文件夹，因为 Spring Boot 使用的内嵌 Tomcat 容器默认使用/tmp作为工作目录
 docker技术的关键在于持续交付，通过与jekins的结合，可以实现这样的效果：开发人员提交push，然后jekins就自动构建并测试刚提交的代码，这就是我理解的持续交付。
 https://yq.aliyun.com/articles/54035?spm=5176.100239.blogrightarea50480.8.INwxCl    Docker with Spring Boot
-
+https://yq.aliyun.com/articles/47348?spm=5176.100240.searchblog.43.cWNZ52    用 Docker、Gradle 来构建、运行、发布一个 Spring Boot 应用   java -Dserver.port=9000 -jar docker-spring-boot-1.0.0.jar
+https://yq.aliyun.com/articles/2930?spm=5176.100240.searchblog.98.9Ee9GF
+mvn package docker:build
+docker run -p 8090:8080 -t is00hcw/docker-spring-boot
 
 -v $(pwd):/project将当前目录挂载到容器中，作为/project目录。
 -w /project设置了/project作为工作目录。这意味着执行mvn命令将在project目录中有效。
