@@ -1,7 +1,19 @@
 多租户，安全，审计等一直是企业用户对平台软件的基本诉求
 
+http://mp.weixin.qq.com/s?__biz=MzAwMDU1MTE1OQ==&mid=2653547663&idx=1&sn=4de30a5a792d9442ef6015b554182913&scene=1&srcid=0813UuexH7rTacCEIOR9DFCW#wechat_redirect    蘑菇街电商交易平台服务架构及改造优化历程
+http://mp.weixin.qq.com/s?__biz=MzAwMDU1MTE1OQ==&mid=2653546976&idx=1&sn=c3fb2338389a41e7ab998c0c21bd3e5d&scene=21#wechat_redirect     保证分布式系统数据一致性的6种方案
 http://mp.weixin.qq.com/s?__biz=MzA5Nzc4OTA1Mw==&mid=2659597787&idx=1&sn=5482cf464d2bef4d1178e5d978beb993#rd   专访吕毅：链家网技术架构的演进之路   Kafka Connector日志收集
 http://blog.dataman-inc.com/shurenyun-cntv-150/    实录分享|一篇文章看CNTV的容器化探索和平台搭建
+
+DB 垂直拆分
+
+业务系统垂直拆分（购物车，下单，资金…）
+
+数据 & 业务模型统一，服务接口设计逻辑清晰，粒度合适
+
+基础业务逻辑下沉到服务，Web 层专注表示逻辑和编排
+
+服务治理
 
 http://www.infoq.com/cn/articles/basis-frameworkto-implement-micro-service  实施微服务，我们需要哪些基础框架？
 https://yq.aliyun.com/articles/54004?spm=5176.100239.blogcont58765.15.Z6yL8V    蚂蚁金服技术专家对性能优化的常见模式及趋势的思考

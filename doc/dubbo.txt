@@ -15,9 +15,11 @@ https://yq.aliyun.com/articles/38403?spm=5176.100240.searchblog.36.zE9gPO
 https://yq.aliyun.com/articles/27895?spm=5176.100240.searchblog.73.zE9gPO  基于Dubbo框架构建分布式服务
 
 在开发阶段为了方便测试，通常系统客户端能指定调用某个服务提供者，那么可以在引用服务时加一个url参数去指定服务提供者
-<dubbo:reference  id="xxxService"interface="com.alibaba.xxx.XxxService"url="dubbo://localhost:20890"/>
+<dubbo:reference  id="xxxService"interface="com.alibaba.xxx.XxxService" url="dubbo://localhost:20890"/>
 
-
+https://yq.aliyun.com/articles/28065
+https://yq.aliyun.com/articles/26829
+ 
 
 Protocol基于spi可以动态生成特定协议的invoker以及服务端的exporter
 请求被委托给逻辑集群，集群从目录中list所有invoker，负载均衡组件从中select出一个可用的，invoker再通过exchange发送请求，请求被序列化（codec）后以特定的传输协议（transporter）发送，在每一个事件处理成功后 --比如连接、发送、应答等等，都会通知handler处理相应事件
