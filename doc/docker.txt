@@ -17,6 +17,8 @@ http://blog.csdn.net/mn960mn/article/details/49560003
 https://github.com/denverdino/docker-storm?spm=5176.100239.blogcont47036.18.PMvNRL   docker storm
 https://yq.aliyun.com/articles/57283?spm=5176.group3.0.0.QNZ1ri  监控时序数据库Influxdb, 监控报警框架Kapacitor，及界面展现Grafana.
 https://yq.aliyun.com/articles/57109?spm=5176.group3.0.0.QNZ1ri  存储 
+https://yq.aliyun.com/articles/53971  使用阿里云容器服务Jenkins实现持续集成和Docker镜像构建
+https://github.com/AliyunContainerService/DevOps
 
 Docker Machine是一个可以帮助开发者在自己本地电脑或云服务中创建Docker运行环境的的应用工具。使用它的阿里云ECS Driver，可以大大简化在阿里云环境下Docker运行环境的部署。
 Docker Machine和阿里云ECS Driver的安装步骤如下, https://help.aliyun.com/document_detail/26088.html
@@ -24,6 +26,7 @@ https://yq.aliyun.com/articles/55973?spm=5176.8091938.0.0.X5MEIn  在阿里云上体验
 docker自带的DNS 服务发现，只要docker版本大于1.10（目前阿里云支持的docker最新版本为1.11），就支持DNS的服务发现。其特点是为1）每个容器提供独立的DNS解析；2）可以通过容器名与别名(aliases)方式在整个网络作用域内解析到某个容器的IP；3）通过链接别名的方式（link aliases）在容器的作用域内设置DNS解析，好处是不同容器的相同别名不会冲突。4）对外部的DNS解析请求进行代理。
 https://yq.aliyun.com/articles/58415?spm=5176.100240.searchblog.17.2NQZpj  dns负载均衡
 https://yq.aliyun.com/articles/50628?spm=5176.100240.searchblog.34.2NQZpj  docker host模式
+https://yq.aliyun.com/articles/5065   docker 监控
 
 
 在生产环境中使用Docker技术时，不仅仅是在所有的机器上装上Docker引擎这么简单。首先需要创建和管理集群；其次是安全、网络、存储等基础配置；还需要做资源的调度和编排。
