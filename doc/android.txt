@@ -13,10 +13,16 @@ https://github.com/singwhatiwanna/dynamic-load-apk
 http://www.jianshu.com/p/f1217cce93ef
 http://blog.csdn.net/h3c4lenovo/article/details/50751643
 
+http://mp.weixin.qq.com/s?__biz=MzA3ODg4MDk0Ng==&mid=2651112554&idx=1&sn=95e57e0d6cb95f5c209ee8065380a395#rd   网易 Android工程模板化实践
 https://yq.aliyun.com/articles/57284?spm=5176.100238.goodcont.5.DxzG2I  APK瘦身记，如何实现高达53%的压缩效果
 https://yq.aliyun.com/articles/57255?spm=5176.100239.blogcont57284.26.uyiqmb  Android项目持续集成实践之Gitlab CI
 http://www.oschina.net/news/75092/android-flatbuffers-json   Android 开发者应该使用 FlatBuffers 替代 JSON
 https://yq.aliyun.com/articles/57666?spm=5176.100239.bloglist.53.y4etsZ   Android局域网通信机制初探
+
+Fresco 中设计有一个叫做 Image Pipeline 的模块。它负责从网络，从本地文件系统，本地资源加载图片。为了最大限度节省空间和CPU时间，它含有3级缓存设计（2级内存，1级磁盘）。
+使用tinypng压缩图片  改用EventBus进行状态同步，同时这样也使得各个页面之间的耦合也低。
+http://mp.weixin.qq.com/s?__biz=MzA3ODg4MDk0Ng==&mid=2651112544&idx=1&sn=c0dabd4c0d8ec272d7e0de6462d2085c#rd   小红书Android客户端技术演进之路
+
 
 rxjava
 https://github.com/rengwuxian/RxJavaSamples

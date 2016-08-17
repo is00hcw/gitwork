@@ -14,7 +14,16 @@ https://yq.aliyun.com/articles/58669?spm=5176.100239.bloglist.18.4IR9mK  Ô¶³Ìµ÷Ê
 https://yq.aliyun.com/articles/57265?spm=5176.100244.teamconlist.3.nhonEn   ÔÚ°¢ÀïÔÆÈİÆ÷·şÎñÉÏ¿ª·¢»ùÓÚDockerµÄSpring CloudÎ¢·şÎñÓ¦ÓÃ
 http://xxgblog.com/2015/10/23/wagon-maven-plugin/?utm_source=tuicool&utm_medium=referral   Maven²å¼şwagon-maven-plugin×Ô¶¯»¯²¿ÊğJavaÏîÄ¿µ½LinuxÔ¶³Ì·şÎñÆ÷
 http://blog.csdn.net/mn960mn/article/details/49560003
+https://github.com/denverdino/docker-storm?spm=5176.100239.blogcont47036.18.PMvNRL   docker storm
+https://yq.aliyun.com/articles/57283?spm=5176.group3.0.0.QNZ1ri  ¼à¿ØÊ±ĞòÊı¾İ¿âInfluxdb, ¼à¿Ø±¨¾¯¿ò¼ÜKapacitor£¬¼°½çÃæÕ¹ÏÖGrafana.
+https://yq.aliyun.com/articles/57109?spm=5176.group3.0.0.QNZ1ri  ´æ´¢ 
 
+Docker MachineÊÇÒ»¸ö¿ÉÒÔ°ïÖú¿ª·¢ÕßÔÚ×Ô¼º±¾µØµçÄÔ»òÔÆ·şÎñÖĞ´´½¨DockerÔËĞĞ»·¾³µÄµÄÓ¦ÓÃ¹¤¾ß¡£Ê¹ÓÃËüµÄ°¢ÀïÔÆECS Driver£¬¿ÉÒÔ´ó´ó¼ò»¯ÔÚ°¢ÀïÔÆ»·¾³ÏÂDockerÔËĞĞ»·¾³µÄ²¿Êğ¡£
+Docker MachineºÍ°¢ÀïÔÆECS DriverµÄ°²×°²½ÖèÈçÏÂ, https://help.aliyun.com/document_detail/26088.html
+https://yq.aliyun.com/articles/55973?spm=5176.8091938.0.0.X5MEIn  ÔÚ°¢ÀïÔÆÉÏÌåÑéDocker 1.12ÄÚÖÃµÄ±àÅÅÄÜÁ¦
+docker×Ô´øµÄDNS ·şÎñ·¢ÏÖ£¬Ö»Òªdocker°æ±¾´óÓÚ1.10£¨Ä¿Ç°°¢ÀïÔÆÖ§³ÖµÄdocker×îĞÂ°æ±¾Îª1.11£©£¬¾ÍÖ§³ÖDNSµÄ·şÎñ·¢ÏÖ¡£ÆäÌØµãÊÇÎª1£©Ã¿¸öÈİÆ÷Ìá¹©¶ÀÁ¢µÄDNS½âÎö£»2£©¿ÉÒÔÍ¨¹ıÈİÆ÷ÃûÓë±ğÃû(aliases)·½Ê½ÔÚÕû¸öÍøÂç×÷ÓÃÓòÄÚ½âÎöµ½Ä³¸öÈİÆ÷µÄIP£»3£©Í¨¹ıÁ´½Ó±ğÃûµÄ·½Ê½£¨link aliases£©ÔÚÈİÆ÷µÄ×÷ÓÃÓòÄÚÉèÖÃDNS½âÎö£¬ºÃ´¦ÊÇ²»Í¬ÈİÆ÷µÄÏàÍ¬±ğÃû²»»á³åÍ»¡£4£©¶ÔÍâ²¿µÄDNS½âÎöÇëÇó½øĞĞ´úÀí¡£
+https://yq.aliyun.com/articles/58415?spm=5176.100240.searchblog.17.2NQZpj  dns¸ºÔØ¾ùºâ
+https://yq.aliyun.com/articles/50628?spm=5176.100240.searchblog.34.2NQZpj  docker hostÄ£Ê½
 
 
 ÔÚÉú²ú»·¾³ÖĞÊ¹ÓÃDocker¼¼ÊõÊ±£¬²»½ö½öÊÇÔÚËùÓĞµÄ»úÆ÷ÉÏ×°ÉÏDockerÒıÇæÕâÃ´¼òµ¥¡£Ê×ÏÈĞèÒª´´½¨ºÍ¹ÜÀí¼¯Èº£»Æä´ÎÊÇ°²È«¡¢ÍøÂç¡¢´æ´¢µÈ»ù´¡ÅäÖÃ£»»¹ĞèÒª×ö×ÊÔ´µÄµ÷¶ÈºÍ±àÅÅ¡£

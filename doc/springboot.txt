@@ -8,7 +8,16 @@ http://cloud.spring.io/spring-cloud-sleuth/
 Hadoop 2.6的新特性包含了Trace功能，一个类似于Google Dapper的分布式跟踪工具，为Hadoop系列应用提供请求跟踪和性能分析。在2.7中支持了Apache version of HTrace。并且，HTrace也集成到了HBase中，HBase 1.0.0使用Apache 3.1.0 release。
 http://blog.csdn.net/hustsselbj/article/details/46603809
  
+PID，当前进程ID{LOG_FILE}，Spring Boot配置文件（application.properties|.yml）中logging.file的值 ${LOG_PATH}, Spring Boot配置文件中logging.path的值 http://blog.csdn.net/catoop/article/details/50501714
+logging.level.root=WARN
+logging.level.org.springframework=DEBUG
 
+
+自动化测试、持续集成与自动化部署是向微服务架构大规模迁移前必须补偿的技术欠债。
+在实施微服务改造前，建议先行搭建好运营支撑平台，平台至少提供微服务的编译、集成、打包、部署、配置等工作；如果有能力建议采用PaaS平台，解决微服务从开发到运行的全生命周期管理，同时提供异构环境管理、容器资源隔离与互通、服务伸缩漂移、服务升级与回退、服务熔断与降级、服务注册与发现。
+制定微服务开发规范（包括技术架构，Spring Boot+Motan+etcd+RESTEasy+Elasticsearch+Docker+Kubernetes是我们的技术架构选型）
+微服务拆分之后，最大的挑战来自于运维、监控、故障处理
+http://mp.weixin.qq.com/s?__biz=MzA5Nzc4OTA1Mw==&mid=2659597920&idx=1&sn=ab11a7a319d8f0ee1031168ca37314d0#rd
 
 
 brew tap pivotal/tap切换到Pivotal仓库中，然后执行brew install springboot命令

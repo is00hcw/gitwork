@@ -32,6 +32,14 @@ Zuul 是在云平台上提供动态路由，监控，弹性，安全等边缘服务的框架。 Zuul提供了一个
 http://f.dataguru.cn/thread-572577-1-4.html   Netflix推荐系统的后台实现
 
 
+http://mp.weixin.qq.com/s?__biz=MzA5Nzc4OTA1Mw==&mid=2659597919&idx=1&sn=2ee62aa72b5abd3a15ea9a8c098f0838#rd
+每张表/视图要有注释（comment），格式为 模块|用途|负责人|创建日期 ，例如：贷款|记录贷款用户身份证号码|张三|2016-03-25；
+每个字段要有注释（comment），格式为 用途|负责人|创建日期 ， 例如：记录用户性别@1:男@0:女@2:未知|李四|2016-03-25；
+每张表三个必加字段，id （自动增长）， create_time ， update_time 用作存储主键，记录创建时间，记录更新时间 ， 这三个字段由OP维护，RD无需处理；
+有逻辑删除需求的表，可选增加delete_flag字段（int类型，默认值为0），用来标识字段是否被逻辑删除；
+字段来源需要说明，来自哪张表的那个字段，例如：记录车辆ID，#取自cp_used_car.car_id|李四|2016-03-25；
+
+
 http://mp.weixin.qq.com/s?__biz=MzA5Nzc4OTA1Mw==&mid=2659597788&idx=1&sn=8b226411fdf8d3f803d08d0c067e4ac2#rd   一篇文章，读懂Netty的高性能架构之道
 https://yq.aliyun.com/articles/58510?spm=5176.100239.bloglist.27.uzsf1U   dubbo 上
 https://yq.aliyun.com/articles/58511?spm=5176.100239.bloglist.19.uzsf1U   dubbo 下
