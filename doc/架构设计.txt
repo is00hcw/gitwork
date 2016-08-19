@@ -1,5 +1,14 @@
+rxjava openresty hystrix docker angularjs2   weex
+一个项目的完整流程如下：痛点–>分析–>原型–>UI/UE–>设计–>架构–>测试–>构建–>QA–>运营–>迭代。
 多租户，安全，审计等一直是企业用户对平台软件的基本诉求
+客户端的 SLB，还有熔断、降级、限流，这是保护服务的几大法宝，一些埋点，全链路跟踪等等，全部都内嵌在框架里面。嵌在 SDK 里的软负载，拿到一个服务全部的列表，做一个轮循就可以了。
+haproxy 用起来比较麻烦，配置复杂，而且它不能进行热加载， 工程师就用 Go 语言写了一个 GoProxy，基于四层，它会从服务中心把你需要的列表全部抓下来，做四层的负载均衡。
+灰度发布也是基于发布系统做的，我们会在发布系统里面定义集群，每个集群里面的机器又分成不同的组，发布的时候按这些组来发布的，你可以先发一个组，观察没有问题后，然后再发其他的组。
+监控现在做的比较简单，是 statsd + graphite + grafana 的组合。现在最大的问题是监控系统不支持 tags
+我们也在做 trace，前两天终于把拓扑图给画出来，把一个业务所有的调用展示成一个调用树，这样就可以很好的分析业务。
+峰哥（CTO）说你无法预测每个开发者会怎么使用你的框架，即使框架被滥用了，最坏的情况，也需要保证能够活的下去。 所有的监控系统，链路跟踪系统都是可以降级的，不能因为这些东西导致整个系统崩溃。
 
+ 
 http://mp.weixin.qq.com/s?__biz=MzAwMDU1MTE1OQ==&mid=2653547663&idx=1&sn=4de30a5a792d9442ef6015b554182913&scene=1&srcid=0813UuexH7rTacCEIOR9DFCW#wechat_redirect    蘑菇街电商交易平台服务架构及改造优化历程
 http://mp.weixin.qq.com/s?__biz=MzAwMDU1MTE1OQ==&mid=2653546976&idx=1&sn=c3fb2338389a41e7ab998c0c21bd3e5d&scene=21#wechat_redirect     保证分布式系统数据一致性的6种方案
 http://mp.weixin.qq.com/s?__biz=MzA5Nzc4OTA1Mw==&mid=2659597787&idx=1&sn=5482cf464d2bef4d1178e5d978beb993#rd   专访吕毅：链家网技术架构的演进之路   Kafka Connector日志收集

@@ -1,6 +1,13 @@
 https://github.com/TangXiaoLv/Android-Easy-MultiDex  Android，multidex，splitdex，分包插件 
 http://www.jianshu.com/p/bc9bbac5a170 Android Studio 2.2 中几个实用的新功能
 
+http://gank.io/post/560e15be2dca930e00da1083?spm=5176.100239.blogcont59123.10.4AM5dg#toc_1   给 Android 开发者的 RxJava 详解
+http://gank.io/post/56e80c2c677659311bed9841
+
+https://yq.aliyun.com/articles/59177?spm=5176.100239.bloglist.16.EjXXV7     Freeline - Android平台上的秒级编译方案   https://github.com/alibaba/freeline
+https://github.com/alibaba/java-dns-cache-manipulator/tree/master/library   代码里面设置dns ip绑定
+
+https://yq.aliyun.com/articles/58517?spm=5176.8067842.tagmain.62.gdmKQ2  深度理解Android InstantRun原理以及源码分析
 https://yq.aliyun.com/articles/25387?spm=5176.8091938.0.0.d2D3Me   Android应用开发架构概述
 https://github.com/liuguangli/MVPTeach?spm=5176.100239.blogcont8132.5.HeMaSn   mvp
 https://yq.aliyun.com/articles/57838?&utm_campaign=sys&utm_medium=market&utm_source=edm_email&msctype=email&mscareaid=cn&mscmsgid=4730116072100639934&   提高代码质量－工具篇

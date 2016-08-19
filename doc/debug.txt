@@ -1,3 +1,14 @@
+线上排查
+http://blog.csdn.net/huaweitman/article/details/51420687
+http://zhongl.iteye.com/blog/1562235    HouseMD, 比BTrace更实用的Java运行诊断工具
+http://yq.aliyun.com/articles/2390  Greys Java在线问题诊断工具
+netstat -aonp | grep tcp| wc -l查看各种状态的TCP连接数量和
+netstat -natp|awk ‘{print $7}’|sort|uniq -c|sort -rn按照PID统计TCP连接的数量
+tail -10000 stdout.log.2014-08-15 | grep -B2 -A10 -i exception可以查到日志中最近记录的异常。
+http://my.oschina.net/LostTimes/blog/532599  
+https://yq.aliyun.com/articles/26553
+
+
 puer -a route.js -p 8080
 ssh 反向连接  远程端口  localhost  本地端口，  还需要再nginx配置proxy pass到远程端口，默认绑定到127.0.0.1
 

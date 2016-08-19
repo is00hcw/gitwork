@@ -19,7 +19,7 @@ logging.level.org.springframework=DEBUG
 微服务拆分之后，最大的挑战来自于运维、监控、故障处理
 http://mp.weixin.qq.com/s?__biz=MzA5Nzc4OTA1Mw==&mid=2659597920&idx=1&sn=ab11a7a319d8f0ee1031168ca37314d0#rd
 
-
+http://my.oschina.net/wangnian/blog/661389   SpringBoot之redis
 brew tap pivotal/tap切换到Pivotal仓库中，然后执行brew install springboot命令
 注意：使用.yml时，属性名的值和冒号中间必须有空格，如name: Isea533正确，name:Isea533就是错的。
 spring会从classpath下的/config目录或者classpath的根目录查找application.properties或application.yml。
