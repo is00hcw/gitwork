@@ -1,8 +1,23 @@
 https://github.com/TangXiaoLv/Android-Easy-MultiDex  Android，multidex，splitdex，分包插件 
 http://www.jianshu.com/p/bc9bbac5a170 Android Studio 2.2 中几个实用的新功能
+http://www.jianshu.com/p/6319e43572fa   Android-屏幕适配全攻略
 
 http://gank.io/post/560e15be2dca930e00da1083?spm=5176.100239.blogcont59123.10.4AM5dg#toc_1   给 Android 开发者的 RxJava 详解
 http://gank.io/post/56e80c2c677659311bed9841
+
+http://blog.bugtags.com/2016/03/28/embrace-android-studio-gradle-plugin/  Gradle 插件开发
+http://blog.bugtags.com/2016/01/27/embrace-android-studio-maven-deploy/  Maven 公共仓库使用与私有仓库搭建
+http://blog.bugtags.com/2015/12/17/embrace-android-studio-indepth/   Android Studio 与 Gradle 深入
+docker pull sonatype/nexus
+docker run -d -p 8081:8081 --name nexus sonatype/nexus:oss
+docker pull jfrog-docker-reg2.bintray.io/jfrog/artifactory-oss:4.4.1
+docker run -d -p 8080:8081 jfrog-docker-reg2.bintray.io/jfrog/artifactory-oss:4.4.1
+就需要查看更多信息，可以使用参数 –info 或者 –stacktrace：  
+./gradlew build --info
+Gradle 默认是当前目录下寻找 build.gradle 文件执行任务，这样执行 build 会使得整个 project 所有的 module 的 build 任务都会运行，浪费不必要的时间，可以指定 module (-p) 或者 build.gradle (-b)文件以缩小作用范围：
+./gradlew -p app build
+
+
 
 https://yq.aliyun.com/articles/59177?spm=5176.100239.bloglist.16.EjXXV7     Freeline - Android平台上的秒级编译方案   https://github.com/alibaba/freeline
 https://github.com/alibaba/java-dns-cache-manipulator/tree/master/library   代码里面设置dns ip绑定
