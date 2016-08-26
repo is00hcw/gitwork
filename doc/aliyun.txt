@@ -8,6 +8,12 @@ https://yq.aliyun.com/articles/49468?spm=5176.100238.ad3.1.buTzYU  mq 你的分布式
 http://www.cnblogs.com/linprogram/p/5508026.html  CentOS6.5内核升级FATAL: Module scsi_wait_scan not found
 http://www.cnblogs.com/jython/p/4425944.html
 
+快照（snapshot）是一种备份方式，打快照就是对某一个磁盘在某一个时间点上的数据进行备份。
+阿里云快照的原理是通过增量机制快速创建快照  建立第一份快照后，两个快照之间只有数据变化的部分才会被拷贝
+可以将系统盘做成自定义镜像，数据盘做成快照，然后再新购买云服务器时镜像选择该自定义镜像，数据盘的快照选择该快照，安全组的规则配置与原云服务器一致的规则，就可以创建一台基于原云服务器“此刻状态”的新云服务器。
+
+如果非ECS机器，需要在机器上touch用户标示，以表明这台机器属于对应的用户，可以收集该机器上日志
+
 https://help.aliyun.com/document_detail/42487.html?spm=5176.doc42782.6.91.ugFVTj
 数据通道在ARMS中其实是一个类似于Kafka的数据队列。它主要起到以下作用：
 保证从数据源中流出的数据能立即被ARMS接收到，以为下游的实时计算层充当缓冲层。
@@ -26,6 +32,19 @@ Syntax: resolver address ... [valid=time] [ipv6=on|off];  当没有配置该指令时，te
 ngx_http_upstream_dynamic_module此模块提供了在运行时动态解析upstream中server域名的功能。  dynamic_resolve fallback=stale fail_timeout=30s;
 
 Tengine是一个由阿里巴巴工程师基于Nginx开发的开源Web服务器，适合流量大的互联网服务，在淘宝、天猫等电商业务大量使用，并成为阿里云产品SLB、OSS、CDN的核心组件。微博、土豆、小米等大型互联网公司也是Tengine用户。据W3Techs统计，Tengine在全球用户量排名中位列第9。
+
+过多的 小的文件，比如小于10m，请合并小文件，当数据量在128m以上，使用emr+oss的性能最佳。
+阿里云采用在备节点上执行RDB快照备份，备份期间对您的实例访问不会产生性能影响，并且提供了控制台的快捷操作可以让用户进行个性化的备份设置。  用户可以在阿里云Redis控制台上（Redis控制台->备份与恢复->备份设置）自行设置云数据库Redis实例的备份周期，系统会在您设置的时间段对您的Redis实例进行自动的备份功能。
+如果时间可控还是建议先采用克隆实例的方式，基于一个需要恢复的备份集创建一个按量付费实例，验证数据正确性之后，在进行数据归档操作。
+  云数据库Redis针对这个痛点，开发了克隆实例的功能，客户可以根据备份文件克隆出一个新的包年包月或者按量付费实例（Redis控制台->备份与恢复->备份数据，针对一个备份选择克隆实例）
+
+日志服务支持“日志消费”，“日志索引”和“日志投递”三种消费模式，“日志消费”功能默认支持，支持日志数据上传到服务端3秒内进行实时消费，并且支持保留48小时，“日志索引功能”支持30秒内进行查询，并且在创建时支持保存7天/30天/90天，“日志投递”能够在分钟级别将数据投递至OSS/ODPS。
+
+MNS类似于azure blob，订阅时消息POST推送到自定义url， https://help.aliyun.com/document_detail/27498.html
+https://help.aliyun.com/knowledge_detail/38991.html
+
+ONS MQ 发送普通消息有三种实现方式：可靠同步发送、可靠异步发送、单向(Oneway)发送。
+
 
 http://www.jianshu.com/p/ad68f78f1419  阿里云上CentOS的图形访问
 https://yq.aliyun.com/articles/57164?spm=5176.8091938.0.0.t02Ogl  成本

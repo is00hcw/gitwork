@@ -1,4 +1,17 @@
-﻿https://yq.aliyun.com/articles/57980?spm=5176.100238.goodcont.17.bNiC7T  MySQL数据库主从同步实现
+﻿https://yq.aliyun.com/articles/59260?spm=5176.8091938.0.0.dNadcl  通过Mysql的日志主要分为：General log，slow log，binary log三种。通 过query日志，我们可以分析业务的逻辑，业务特点。通过slow log，我们可以找到服务器的瓶颈。通过binary log，我们可以恢复数据。最适合的工具非 mysqlsla 与 pt-query-digest 莫属。 mysqlsla与pt-query-digest的作者是同一个人。
+https://yq.aliyun.com/articles/59234?spm=5176.8091938.0.0.dNadcl  mysqlrpladmin + GTID HA切换
+https://yq.aliyun.com/articles/59258?spm=5176.100239.blogcont59202.12.dR4cI9  MySQL无损复制
+https://yq.aliyun.com/articles/59259?spm=5176.8091938.0.0.TDrmME   Multi-threaded Slave 多线程复制
+
+mysqldump对于导出10G以下的数据库或几个表，还是适用的，而且更快捷。一旦数据量达到100-500G，无论是对原库的压力还是导出的性能，mysqldump就力不从心了。Percona-Xtrabackup备份工具，是实现MySQL在线热备工作的不二选择，可进行全量、增量、单表备份和还原。
+XtraBackup优势 ：无需停止数据库进行InnoDB热备  增量备份MySQL   为什么要做主从复制？是为了实现读写分离，减轻主库负载或数据分析？ 为了数据安全，做备份恢复？主从切换做高可用？当然slave太多也会对master的负载和网络带宽造成压力，此时可以考虑级联复制，即 A->B->C
+主-主 复制就产生了，凭借各自不同的 server-id ，可以避免 “A的变化同步到B，B应用变化又同步到A” 这样循环复制的问题。但建议是，主主复制，其中一个主库强制设置为只读
+基于语句的复制：STATEMENT，在主服务器上执行的SQL语句，在从服务器上执行同样的语句，有可能会由于SQL执行上下文环境不同而是数据不一致，例如调用NOW()函数。MySQL在5.7.7以前默认采用基于语句的复制，在 5.7.7 及以后版本默认改用 row-based。
+基于行的复制：ROW，把改变的内容复制过去，而不是把命令在从服务器上执行一遍。
+复制类型还可以分为 异步复制和半同步复制。通常没说明指的都是异步，即主库执行完Commit后，在主库写入Binlog日志后即可成功返回客户端，无需等等Binlog日志传送给从库，一旦主库宕机，有可能会丢失日志。而半同步复制，是等待其中一个从库也接收到Binlog事务并成功写入Relay Log之后，才返回Commit操作成功给客户端；如此半同步就保证了事务成功提交后至少有两份日志记录，一份在主库Binlog上，另一份在从库的Relay Log上，从而进一步保证数据完整性
+https://yq.aliyun.com/articles/47351?spm=5176.100240.searchblog.24.3MZT7V
+
+https://yq.aliyun.com/articles/57980?spm=5176.100238.goodcont.17.bNiC7T  MySQL数据库主从同步实现
 
 https://yq.aliyun.com/articles/57862?spm=5176.100239.blogcont57826.17.H9WGdQ   罗龙九：云数据库十大经典案例分析
 http://debezium.io/docs/connectors/mysql/    kafka
