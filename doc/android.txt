@@ -1,3 +1,9 @@
+http://android-arsenal.com/rating   http://www.zhihu.com/question/28481864
+https://github.com/typicode/json-server
+https://github.com/facebook/fresco  http://fresco-cn.org/docs/index.html
+https://github.com/Trinea/android-open-project
+https://github.com/googlesamples/android-architecture
+
 https://github.com/TangXiaoLv/Android-Easy-MultiDex  Android，multidex，splitdex，分包插件 
 http://www.jianshu.com/p/bc9bbac5a170 Android Studio 2.2 中几个实用的新功能
 http://www.jianshu.com/p/6319e43572fa   Android-屏幕适配全攻略

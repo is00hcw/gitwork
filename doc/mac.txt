@@ -1,5 +1,20 @@
 https://segmentfault.com/a/1190000005994196?utm_source=weekly&utm_medium=email&utm_campaign=email_weekly   Awesome Mac
 
+
+https://cr.console.aliyun.com/?spm=5176.1971733.0.2.JiVUJh#/accelerator
+https://www.daocloud.io/mirror#accelerator-doc
+ef1383d6.m.daocloud.io
+m09w2ldy.mirror.aliyuncs.com
+
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+http://www.jianshu.com/p/7a51eae6337f
+curl -L https://get.rvm.io | bash -s stable
+// 修改 RVM 的 Ruby 安装源到国内的 [淘宝镜像服务器](http://ruby.taobao.org/)，这样能提高安装速度
+sed -i -e 's/ftp\.ruby-lang\.org\/pub\/ruby/ruby\.taobao\.org\/mirrors\/ruby/g' ~/.rvm/config/db
+rvm install 2.2.4
+gem source -r https://rubygems.org/
+gem source -a https://ruby.taobao.org
+
 http://brew.sh/
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 Homebrew 将软件包分装到单独的目录（/usr/local/Cellar），然后 symlink 到 /usr/local 中
