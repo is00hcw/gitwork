@@ -5,6 +5,8 @@ mac下启动docker的工具发展
 最近新出的 Docker for Mac
 https://docs.docker.com/engine/tutorials/
 
+http://mp.weixin.qq.com/s?__biz=MzI0NTE4NjA0OQ==&mid=2658352001&idx=1&sn=7e1bfff4233a555153f3e21949848bbc&scene=1&srcid=0828RF1LPescXXG3a1e8OHVt#wechat_redirect    Docker插件机制详解
+
 https://yq.aliyun.com/articles/57310  基于OSS搭建私有 Docker Registry
 https://yq.aliyun.com/articles/54037?spm=5176.100240.searchblog.13.9Ee9GF  Docker with Spring Boot
  加速地址：https://m09w2ldy.mirror.aliyuncs.com
