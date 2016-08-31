@@ -1,4 +1,5 @@
 rxjava openresty hystrix docker angularjs2   weex
+http://www.oschina.net/translate/distributed-tracing-design-architecture   分布式追踪系统架构与设计
 一个项目的完整流程如下：痛点–>分析–>原型–>UI/UE–>设计–>架构–>测试–>构建–>QA–>运营–>迭代。
 多租户，安全，审计等一直是企业用户对平台软件的基本诉求
 客户端的 SLB，还有熔断、降级、限流，这是保护服务的几大法宝，一些埋点，全链路跟踪等等，全部都内嵌在框架里面。嵌在 SDK 里的软负载，拿到一个服务全部的列表，做一个轮循就可以了。

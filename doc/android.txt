@@ -24,6 +24,16 @@ Gradle 默认是当前目录下寻找 build.gradle 文件执行任务，这样执行 build 会使得整个
 ./gradlew -p app build
 
 
+Android：文件名必须为 baichuan-hotfix-patch.jar
+iOS：文件名必须为 main.js
+http://baichuan.taobao.com/docs/doc.htm?spm=a3c0d.7629140.0.0.CcQ659&treeId=234&articleId=105459&docType=1
+http://baichuan.taobao.com/docs/doc.htm?spm=a3c0d.7629140.0.0.rscI9s&treeId=234&articleId=105517&docType=1
+http://baichuan.taobao.com/product/maliApp.htm?spm=a3c0d.8115102.0.0.HhNslC
+http://baichuan.taobao.com/doc2/detail.htm?spm=a2o1e.8170699.0.0.WDD7uI&treeId=186&articleId=105038&docType=1  百川监控
+http://baichuan.taobao.com/doc2/detail.htm?spm=0.0.0.0.PpgdWO&treeId=187&articleId=105125&docType=1  服务器
+阿里百川HotFix的Android版本在AndFix的基础上，增加了补丁版本管理、补丁安全校验、控制台灰度管理等更加人性化的功能，同时针对兼容性进行了完善，支持市面上超过800种常见机型
+http://baichuan.taobao.com/docs/doc.htm?spm=a3c0d.7629140.0.0.15uSgA&treeId=195&articleId=105216&docType=1  app测试
+
 
 https://yq.aliyun.com/articles/59177?spm=5176.100239.bloglist.16.EjXXV7     Freeline - Android平台上的秒级编译方案   https://github.com/alibaba/freeline
 https://github.com/alibaba/java-dns-cache-manipulator/tree/master/library   代码里面设置dns ip绑定
@@ -40,6 +50,9 @@ http://wereadteam.github.io/2016/07/26/AndroidPatch/?hmsr=toutiao.io&utm_medium=
 https://github.com/singwhatiwanna/dynamic-load-apk
 http://www.jianshu.com/p/f1217cce93ef
 http://blog.csdn.net/h3c4lenovo/article/details/50751643
+https://github.com/iReaderAndroid/ZeusPlugin 插件化和补丁在目前看来是老生常谈的东西了，市面上已经有一堆实现方案，如DroidPlugin、Small、Android-Plugin-Framework。
+http://mp.weixin.qq.com/s?__biz=MzA3ODg4MDk0Ng==&mid=2651112601&idx=1&sn=8ac730ff885077f0b4a001fe27cf782d#rd  掌阅Android App插件补丁实践
+
 
 http://mp.weixin.qq.com/s?__biz=MzA3ODg4MDk0Ng==&mid=2651112554&idx=1&sn=95e57e0d6cb95f5c209ee8065380a395#rd   网易 Android工程模板化实践
 https://yq.aliyun.com/articles/57284?spm=5176.100238.goodcont.5.DxzG2I  APK瘦身记，如何实现高达53%的压缩效果

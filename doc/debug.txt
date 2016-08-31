@@ -8,6 +8,7 @@ tail -10000 stdout.log.2014-08-15 | grep -B2 -A10 -i exception可以查到日志中最近
 http://my.oschina.net/LostTimes/blog/532599  
 https://yq.aliyun.com/articles/26553
 
+http://www.oschina.net/p/alloylever   Web 开发调试工具 AlloyLever
 
 puer -a route.js -p 8080
 ssh 反向连接  远程端口  localhost  本地端口，  还需要再nginx配置proxy pass到远程端口，默认绑定到127.0.0.1

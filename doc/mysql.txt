@@ -1,4 +1,7 @@
-﻿https://yq.aliyun.com/articles/59260?spm=5176.8091938.0.0.dNadcl  通过Mysql的日志主要分为：General log，slow log，binary log三种。通 过query日志，我们可以分析业务的逻辑，业务特点。通过slow log，我们可以找到服务器的瓶颈。通过binary log，我们可以恢复数据。最适合的工具非 mysqlsla 与 pt-query-digest 莫属。 mysqlsla与pt-query-digest的作者是同一个人。
+﻿alisql  rds
+微信开源 PhxSQL：高可用强一致的 MySQL 集群   http://www.oschina.net/news/76658/tecent-wechat-opensource-phxsql
+
+https://yq.aliyun.com/articles/59260?spm=5176.8091938.0.0.dNadcl  通过Mysql的日志主要分为：General log，slow log，binary log三种。通 过query日志，我们可以分析业务的逻辑，业务特点。通过slow log，我们可以找到服务器的瓶颈。通过binary log，我们可以恢复数据。最适合的工具非 mysqlsla 与 pt-query-digest 莫属。 mysqlsla与pt-query-digest的作者是同一个人。
 https://yq.aliyun.com/articles/59234?spm=5176.8091938.0.0.dNadcl  mysqlrpladmin + GTID HA切换
 https://yq.aliyun.com/articles/59258?spm=5176.100239.blogcont59202.12.dR4cI9  MySQL无损复制
 https://yq.aliyun.com/articles/59259?spm=5176.8091938.0.0.TDrmME   Multi-threaded Slave 多线程复制
@@ -22,7 +25,6 @@ https://github.com/gaoxianglong/shark/wiki/shark%E4%BD%BF%E7%94%A8%E5%85%A5%E9%9
 https://github.com/gaoxianglong/shark/wiki/%E5%9F%BA%E4%BA%8Ezookeeper%E7%9A%84%E9%9B%86%E4%B8%AD%E5%BC%8F%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83
 https://yq.aliyun.com/articles/36051?spm=5176.100238.yqhn2.18.PzRtHg   MySQL性能分析和优化-part 1
 
-
 https://yq.aliyun.com/articles/54454?spm=5176.100238.goodcont.5.QmEHjZ   mysql新特性
 通过数据订阅提供的SDK 您可以从数据订阅通道中实时获取并消费RDS增量日志。通过数据订阅功能，您可以实现业务消息通知、OLTP->OLAP数据实时同步、定制化ETL的数据实时同步、构建本地灾备等多种应用场景。数据订阅是通过拉取解析并分发RDS实例的增量日志来实现增量数据实时分发的能力  https://yq.aliyun.com/articles/54027?spm=5176.100238.goodcont.62.QmEHjZ
 
@@ -43,6 +45,12 @@ http://ruiaylin.github.io/2014/05/31/mysql-auto-failover/   mysql5.6自动failov
 首先推荐几本书：Pro MySQL , Expert MySQL , mariadb的设计和实现。
 http://blog.csdn.net/staricqxyz/article/details/14227037  MySQL Utilities Example
 Percona Server是MySQL的一个分支，并且在MySQL数据库上进行了改进在功能和性能上较MySQL有着很显著的提升，默认使用了Percona-XtraDB存储引擎。
+
+在从库上修改表定义，修改之后再提升为新的主库。
+通过MySQL的InnoDB在线DDL功能。
+使用修改表定义工具。现在最流行的是Percona公司的pt-online-schema-change和Facebook的OSC，也有人使用LHM或最早的oak-online-alter-table。
+https://github.com/github/gh-ost
+http://mp.weixin.qq.com/s?__biz=MzA5NzkxMzg1Nw==&mid=2653160498&idx=1&sn=092f45972c5acb363d90946c000e4929&scene=1&srcid=0829dozRPXQOpJ11mxNMcRsq#rd
 
 https://github.com/mysql/mysql-utilities
 https://github.com/yoshinorim/mha4mysql-manager
