@@ -7,25 +7,12 @@ http://www.infoq.com/cn/articles/introducing-reactmix   ReactMix：基于HTML+JS+CS
 https://mp.weixin.qq.com/s?__biz=MzA3ODg4MDk0Ng==&mid=2651112408&idx=1&sn=32c2636a2653fe9391b44de514261cbf   Moles：携程基于React Native的跨平台开发框架
 
 
-https://yq.aliyun.com/articles/59341?spm=5176.100239.bloglist.100.OkOb5e   Weex-初次见到你
-https://yq.aliyun.com/articles/57554?spm=5176.100238.goodcont.24.DxzG2I   Weex入门与进阶指南  ios集成
-https://github.com/weexteam/article/issues/25  weex android
-https://github.com/alibaba/weex/blob/dev/SCRIPTS.md
-http://alibaba.github.io/weex/doc/tools/cli.html
-the renderer (weex-html5), the js-framework (weex-js-framework) and the transformer (gulp-weex).
-weex --debugger
-https://github.com/weexteam/article/issues/31  组件定义
-https://github.com/weexteam/article/issues/32   http://alibaba.github.io/weex/doc/advanced/how-it-works.html  
-
 
 https://github.com/facebook/SocketRocket  Objective-C WebSocket client library
 https://github.com/square/PonyDebugger   debugging for your native iOS app using Chrome Developer Tools
 https://github.com/facebook/stetho  Stetho is a debug bridge for Android applications, enabling the powerful Chrome Developer Tools 
  
-http://www.infoq.com/cn/articles/taobao-mobile-weex  weex
-https://github.com/alibaba/luaviewsdk   luaview
-http://www.infoq.com/cn/articles/introducing-weex     Weex详解：灵活的移动端高性能动态化方案
-http://www.infoq.com/cn/articles/the-back-end-business-systems-service-transformation   谈谈后端业务系统的微服务化改造
+
 
 http://www.cnblogs.com/ctriptech/p/5608124.html  React Native实践之携程Moles框架
 http://www.cnblogs.com/CtripMoles/p/5580135.html     React Native Bundle 打包、拆包工具之 moles-packer 介绍
@@ -51,16 +38,6 @@ http://www.alloyteam.com/2016/03/react-native-for-android-windows/   React Nativ
 f8app：Fecebook开源的F8大会app，该app使用了React Native技术。 https://github.com/fbsamples/f8app 
 http://f8-app.liaohuqiu.net/tutorials/building-the-f8-app/design/
 
-Weex由多个关键模块组成，分别是DSL transformer、JS Framework、HTML5/iOS/Android Renderer和工具链 ， 其中JS Framework就直接使用了部分来自Vue.JS的代码。
-全局冲突是CSS“七宗罪”中的一个，其实这也是我们非常重视的，所以在实践上我们把它做到了scoped。
-https://yq.aliyun.com/articles/54775?spm=5176.100239.blogcont54773.9.2RAYjT
-Weex Toolkit  https://www.npmjs.com/package/weex-toolkit
-http://alibaba.github.io/weex/doc/syntax/main.html
-https://yq.aliyun.com/articles/54769?spm=5176.100244.0.0.YK5sVe
-
-
-封装了TBHotaptchSDK提供Lua字节码编译、代码和资源打包、加密、签名、校验、运行等功能。同时还封装了TBHotaptchService提供patch包的版本控制、更新、下载等功能。
-https://yq.aliyun.com/articles/1480?spm=5176.100244.0.0.YK5sVe
 
 
 npm info react-native

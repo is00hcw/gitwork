@@ -1,0 +1,43 @@
+https://github.com/xkli/WXSample.git
+https://github.com/weexteam/article/issues/25   WEEX SDK集成到工程(Integrate to Android)
+compile 'com.taobao.android:weex_sdk:0.5.1@aar'
+https://bintray.com/alibabaweex/maven/weex_sdk/view 
+npm install -g weex-toolkit
+利用week－toolkit将.we转换为.js     weex tech_list.we --qr -h {ip or hostname}
+
+http://www.tuicool.com/articles/bY7Jba6   https://github.com/kingofglory/weex-demo.git
+
+http://blog.csdn.net/walid1992/article/details/52420591  weex初体验
+
+ios
+https://open.taobao.com/doc2/detail?spm=a219a.7629140.0.0.sf2ubW&&docType=1&articleId=104829#
+
+
+
+https://yq.aliyun.com/articles/59341?spm=5176.100239.bloglist.100.OkOb5e   Weex-初次见到你
+https://yq.aliyun.com/articles/57554?spm=5176.100238.goodcont.24.DxzG2I   Weex入门与进阶指南  ios集成
+https://github.com/weexteam/article/issues/25  weex android
+https://github.com/alibaba/weex/blob/dev/SCRIPTS.md
+http://alibaba.github.io/weex/doc/tools/cli.html
+the renderer (weex-html5), the js-framework (weex-js-framework) and the transformer (gulp-weex).
+weex --debugger
+https://github.com/weexteam/article/issues/31  组件定义
+https://github.com/weexteam/article/issues/32   http://alibaba.github.io/weex/doc/advanced/how-it-works.html  
+
+
+http://www.infoq.com/cn/articles/taobao-mobile-weex  weex
+https://github.com/alibaba/luaviewsdk   luaview
+http://www.infoq.com/cn/articles/introducing-weex     Weex详解：灵活的移动端高性能动态化方案
+http://www.infoq.com/cn/articles/the-back-end-business-systems-service-transformation   谈谈后端业务系统的微服务化改造
+
+Weex由多个关键模块组成，分别是DSL transformer、JS Framework、HTML5/iOS/Android Renderer和工具链 ， 其中JS Framework就直接使用了部分来自Vue.JS的代码。
+全局冲突是CSS“七宗罪”中的一个，其实这也是我们非常重视的，所以在实践上我们把它做到了scoped。
+https://yq.aliyun.com/articles/54775?spm=5176.100239.blogcont54773.9.2RAYjT
+Weex Toolkit  https://www.npmjs.com/package/weex-toolkit
+http://alibaba.github.io/weex/doc/syntax/main.html
+https://yq.aliyun.com/articles/54769?spm=5176.100244.0.0.YK5sVe
+
+
+封装了TBHotaptchSDK提供Lua字节码编译、代码和资源打包、加密、签名、校验、运行等功能。同时还封装了TBHotaptchService提供patch包的版本控制、更新、下载等功能。
+https://yq.aliyun.com/articles/1480?spm=5176.100244.0.0.YK5sVe
+
