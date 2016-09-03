@@ -1,0 +1,11 @@
+https://github.com/hacking-with-angular/angular2-travel.git
+https://hacking-with-angular.github.io/
+https://segmentfault.com/a/1190000004517842
+http://www.hubwiz.com/course/5599d367a164dd0d75929c76/
+https://github.com/DotHide/angular2-quickstart  件（Component）、模型（Model）、服务（Service）、管道（Pipe）、传入传出（Input / Output）以及事件播散（EventEmitter）
+templete 使用到了多行模板的用法，即使用\`作为模板开始结束标记
+声明了 Injectable 之后，需要在入口函数中 inject 相关服务bootstrap(TodoApp, [TodoService]);
+使用 ngFor 时需要在前加 * 号（* 号表示该动作将引起模板的变化），循环中的个体元素引用前需要添加 # 号
+http://plnkr.co/edit/gist:2050713
+
+https://github.com/timjacobi/angular2-education
