@@ -12,6 +12,7 @@ http://www.jianshu.com/p/6319e43572fa   Android-屏幕适配全攻略
 http://blog.csdn.net/walid1992/article/details/51558162   AndFix 热修复框架原理及源码解析   http://blog.csdn.net/walid1992/article/details/51555108
 http://blog.csdn.net/walid1992/article/details/51493271   gradle jenkins
 
+
 http://gank.io/post/560e15be2dca930e00da1083?spm=5176.100239.blogcont59123.10.4AM5dg#toc_1   给 Android 开发者的 RxJava 详解
 http://gank.io/post/56e80c2c677659311bed9841
 
@@ -255,6 +256,8 @@ http://mp.weixin.qq.com/s?__biz=MzI1MTA1MzM2Nw==&mid=400118620&idx=1&sn=b4fdd505
 http://www.jianshu.com/p/72c17fb76f21?spm=5176.blog8722.yqblogcon1.12.MP1pf8   基于Nuwa实现Android自动化HotFix
 https://github.com/archmages/HotFixSamples
 https://github.com/alibaba/LuaViewSDK
+http://www.oschina.net/p/amigo   Amigo，是一个Android 平台的hotfix库，由饿了么公司开源。
+
 
 http://www.jianshu.com/p/0202845db617
 -obfuscationdictionary {filename} 使用给定文件中的关键字作为要混淆方法的名称

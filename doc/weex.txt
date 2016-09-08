@@ -41,3 +41,28 @@ https://yq.aliyun.com/articles/54769?spm=5176.100244.0.0.YK5sVe
 封装了TBHotaptchSDK提供Lua字节码编译、代码和资源打包、加密、签名、校验、运行等功能。同时还封装了TBHotaptchService提供patch包的版本控制、更新、下载等功能。
 https://yq.aliyun.com/articles/1480?spm=5176.100244.0.0.YK5sVe
 
+
+vue.js
+http://jiongks.name/blog/just-vue/
+http://www.jianshu.com/p/a5361bff1cd8
+https://github.com/brandonxiang/example-vue-webpack/tree/s1s2
+https://segmentfault.com/a/1190000004060034
+http://galen-yip.com/typescript/vue/webpack/2016/06/09/typescrit-vue-todo/?utm_source=tuicool&utm_medium=referral
+http://www.cnblogs.com/zhengjialux/p/5848950.html
+
+
+webpack
+http://www.jbrantly.com/typescript-and-webpack/
+http://www.jbrantly.com/es6-modules-with-typescript-and-webpack/
+https://segmentfault.com/a/1190000003970448
+http://cookingjs.github.io/zh-cn/intro.html
+https://segmentfault.com/a/1190000004577578   优化
+http://www.alloyteam.com/2016/01/webpack-use-optimization/?utm_source=tuicool&utm_medium=referral
+https://zhuanlan.zhihu.com/p/20914387?refer=jscss
+https://segmentfault.com/a/1190000004728494
+https://segmentfault.com/a/1190000003006331  工具
+相比Grunt，WebPack除了具备丰富的插件外，同时带有一套加载（Loader）系统。使它支持多种规范的加载方式，包括ES6、CommonJS、AMD等方式，这是Grunt、Gulp所不具备的。
+符合AMD规范，如RequireJS
+符合CMD 规范，如SeaJS
+NodeJS规范 CommonJS
+ECMAScript 6的模块化
