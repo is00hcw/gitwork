@@ -10,6 +10,9 @@ http://www.tuicool.com/articles/bY7Jba6   https://github.com/kingofglory/weex-de
 http://blog.csdn.net/walid1992/article/details/52420591  weex初体验
 
 ios
+http://blog.csdn.net/daiyelang/article/details/52184544
+http://gw.alicdn.com/bao/uploaded/LB1yfvtKpXXXXXbXXXXXXXXXXXX.zip
+http://blog.csdn.net/daiyelang/article/details/52251703
 https://open.taobao.com/doc2/detail?spm=a219a.7629140.0.0.sf2ubW&&docType=1&articleId=104829#
 
 
@@ -43,12 +46,47 @@ https://yq.aliyun.com/articles/1480?spm=5176.100244.0.0.YK5sVe
 
 
 vue.js
+http://elemefe.github.io/mint-ui/#!/
+https://github.com/ElemeFE/vue-desktop
+https://github.com/ElemeFE/element
+https://github.com/lodamemory/vue-metronic
+Bootstrap components built with Vue.js  http://yuche.github.io/vue-strap/
+http://www.webpackbin.com/vue
+http://www.cnblogs.com/pandabunny/p/5417938.html   vue-cli webpack 引入jquery
+
 http://jiongks.name/blog/just-vue/
 http://www.jianshu.com/p/a5361bff1cd8
 https://github.com/brandonxiang/example-vue-webpack/tree/s1s2
 https://segmentfault.com/a/1190000004060034
 http://galen-yip.com/typescript/vue/webpack/2016/06/09/typescrit-vue-todo/?utm_source=tuicool&utm_medium=referral
 http://www.cnblogs.com/zhengjialux/p/5848950.html
+http://mp.weixin.qq.com/s?__biz=MzA3NTYzODYzMg==&mid=2653577777&idx=1&sn=4b5377051bd849b85af17bcf8c05174c&scene=0#wechat_redirect  基于 Webpack & Vue & Vue-Router 的 SPA 初体验
+npm install webpack-dev-server -g
+全局安装vue-cli，使用命令npm install -g vue-cli。
+下载模板代码，使用命令vue init webpack my-project
+npm run dev启动热加载，就会去自动化执行package.json里的 
+“scripts”: { “dev”: “node build/dev-server.js”, 
+https://github.com/vuejs-templates/webpack
+vue-cli默认创建的项目都是假设你在做单页应用，也就是仅有一个index.html作为应用入口，剩下的事情都是交由javascript动态处理的。 https://segmentfault.com/q/1010000005793472/a-1020000005793617
+src目录下的资源只能import或require。
+想静态引入的话，建立一个与src同级的目录例如static，然后把静态资源放入该文件夹下，html的引入路径如下：./static/...   http://www.oschina.net/question/1188944_2152341
+https://segmentfault.com/q/1010000004479605
+https://github.com/yaoyao1987/vue-cli-multipage   多页面
+https://github.com/bluefox1688/vue-cli-multi-page
+
+http://www.w3cfuns.com/notes/15904/fbb4d15b9c22fd373b605805bde8fd44.html
+http://www.w3cfuns.com/notes/15904/cad84afddab13604f987cbf511d265e4.html
+https://segmentfault.com/q/1010000005169531/a-1020000005170343  第三方
+http://blog.csdn.net/usluckily/article/details/51861892
+因为 Vue.js 指令是异步更新，如果想在修改数据之后修改 DOM ，应当在 Vue.nextTick 的回调中操作。
+http://webpack.github.io/docs/shimming-modules.html  三方库
+new webpack.optimize.CommonsChunkPlugin('common.js'),
+new webpack.ProvidePlugin({
+jQuery: "jquery",
+$: "jquery"
+})
+https://segmentfault.com/a/1190000004267935
+
 
 
 webpack
