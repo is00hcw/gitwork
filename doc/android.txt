@@ -1,3 +1,23 @@
+阿里百川HotFix的Android版本在AndFix的基础上，增加了补丁版本管理、补丁安全校验、控制台灰度管理等更加人性化的功能，同时针对兼容性进行了完善，支持市面上超过800种常见机型
+https://github.com/Tencent/tinker  https://my.oschina.net/shwenzhang/blog/751618  微信官方的Android热补丁解决方案，它支持动态下发代码、So库以及资源，让应用能够在不需要重新安装的情况下实现更新。
+https://mp.weixin.qq.com/s?__biz=MzAwNDY1ODY2OQ==&mid=2649286306&idx=1&sn=d6b2865e033a99de60b2d4314c6e0a25    微信Android热补丁实践演进之路
+https://github.com/TangXiaoLv/Android-Easy-MultiDex  Android，multidex，splitdex，分包插件 
+https://github.com/iReaderAndroid/ZeusPlugin 插件化和补丁在目前看来是老生常谈的东西了，市面上已经有一堆实现方案，如DroidPlugin、Small、Android-Plugin-Framework。
+http://mp.weixin.qq.com/s?__biz=MzA3ODg4MDk0Ng==&mid=2651112601&idx=1&sn=8ac730ff885077f0b4a001fe27cf782d#rd  掌阅Android App插件补丁实践  https://github.com/iReaderAndroid/ZeusPlugin
+Dex的热修复目前来看基本上有四种方案：
+阿里系的从native层入手，见AndFix
+QQ空间的方案，插桩，见安卓App热补丁动态修复技术介绍
+微信的方案，见微信Android热补丁实践演进之路，dexDiff和dexPatch，方法很牛逼，需要全量插入，但是这个全量插入的dex中需要删除一些过早加载的类，不然同样会报class is pre verified异常，还有一个缺点就是合成占内存和内置存储空间。微信读书的方式和微信类似，见Android Patch 方案与持续交付，不过微信读书是miniloader方式，启动时容易ANR，在我锤子手机上变现出来特别明显，长时间的卡图标现象。
+美团的方案，也就是instant run的方案，见Android热更新方案Robust
+此外，微信的方案是多classloader，这种方式可以解决用multidex方式在部分机型上不生效patch的问题，同时还带来一个好处，这种多classloader的方式使用的是instant run的代码，如果存在native library的修复，也会带来极大的方便。
+http://blog.csdn.net/sbsujjbcy/article/details/52541803   Android 热补丁技术——资源的热修复
+
+
+
+https://yq.aliyun.com/articles/59177?spm=5176.100239.bloglist.16.EjXXV7     Freeline - Android平台上的秒级编译方案   https://github.com/alibaba/freeline
+https://github.com/alibaba/java-dns-cache-manipulator/tree/master/library   代码里面设置dns ip绑定
+https://yq.aliyun.com/articles/58517?spm=5176.8067842.tagmain.62.gdmKQ2  深度理解Android InstantRun原理以及源码分析
+
 https://mp.weixin.qq.com/s?__biz=MzA4NTQwNDcyMA==&mid=2650661681&idx=1&sn=b151aba0c5fb702492f6bbd82211988d&scene=1&srcid=0516zj5pE2h0zmq1FTa3XXh8&key=b28b03434249256b1925f433cb052fd00117b50219b8aaf351d376f601a857b4150c3a3979f1fea589e03cf72b9e4ca9&ascene=0&uin=Mjc3OTU3Nzk1&devicetype=iMac+MacBookPro10%2C1+OSX+OSX+10.10.5+build%2814F1713%29&version=11020201&pass_ticket=8lpzOjRJO3IS%2BmKcvsqRN%2FlzlWyR2q2fmKv15GKO2PPYAKDGPXDhyfntueC4bIod
 http://blog.csdn.net/walid1992/article/details/52167539  代码规范
 http://android-arsenal.com/rating   http://www.zhihu.com/question/28481864
@@ -6,7 +26,6 @@ https://github.com/facebook/fresco  http://fresco-cn.org/docs/index.html
 https://github.com/Trinea/android-open-project
 https://github.com/googlesamples/android-architecture
 
-https://github.com/TangXiaoLv/Android-Easy-MultiDex  Android，multidex，splitdex，分包插件 
 http://www.jianshu.com/p/bc9bbac5a170 Android Studio 2.2 中几个实用的新功能
 http://www.jianshu.com/p/6319e43572fa   Android-屏幕适配全攻略
 http://blog.csdn.net/walid1992/article/details/51558162   AndFix 热修复框架原理及源码解析   http://blog.csdn.net/walid1992/article/details/51555108
@@ -36,27 +55,22 @@ http://baichuan.taobao.com/docs/doc.htm?spm=a3c0d.7629140.0.0.rscI9s&treeId=234&
 http://baichuan.taobao.com/product/maliApp.htm?spm=a3c0d.8115102.0.0.HhNslC
 http://baichuan.taobao.com/doc2/detail.htm?spm=a2o1e.8170699.0.0.WDD7uI&treeId=186&articleId=105038&docType=1  百川监控
 http://baichuan.taobao.com/doc2/detail.htm?spm=0.0.0.0.PpgdWO&treeId=187&articleId=105125&docType=1  服务器
-阿里百川HotFix的Android版本在AndFix的基础上，增加了补丁版本管理、补丁安全校验、控制台灰度管理等更加人性化的功能，同时针对兼容性进行了完善，支持市面上超过800种常见机型
 http://baichuan.taobao.com/docs/doc.htm?spm=a3c0d.7629140.0.0.15uSgA&treeId=195&articleId=105216&docType=1  app测试
 
 
-https://yq.aliyun.com/articles/59177?spm=5176.100239.bloglist.16.EjXXV7     Freeline - Android平台上的秒级编译方案   https://github.com/alibaba/freeline
-https://github.com/alibaba/java-dns-cache-manipulator/tree/master/library   代码里面设置dns ip绑定
 
-https://yq.aliyun.com/articles/58517?spm=5176.8067842.tagmain.62.gdmKQ2  深度理解Android InstantRun原理以及源码分析
+
 https://yq.aliyun.com/articles/25387?spm=5176.8091938.0.0.d2D3Me   Android应用开发架构概述
 https://github.com/liuguangli/MVPTeach?spm=5176.100239.blogcont8132.5.HeMaSn   mvp
 https://yq.aliyun.com/articles/57838?&utm_campaign=sys&utm_medium=market&utm_source=edm_email&msctype=email&mscareaid=cn&mscmsgid=4730116072100639934&   提高代码质量－工具篇
 
 http://www.jianshu.com/p/ca76aec23ddf 分析平安好医生技术栈
 http://blog.csdn.net/qq_25943493/article/details/51463884   android热更新技术研究
-https://mp.weixin.qq.com/s?__biz=MzAwNDY1ODY2OQ==&mid=2649286306&idx=1&sn=d6b2865e033a99de60b2d4314c6e0a25    微信Android热补丁实践演进之路
 http://wereadteam.github.io/2016/07/26/AndroidPatch/?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io   Android Patch 方案与持续交付
 https://github.com/singwhatiwanna/dynamic-load-apk
 http://www.jianshu.com/p/f1217cce93ef
 http://blog.csdn.net/h3c4lenovo/article/details/50751643
-https://github.com/iReaderAndroid/ZeusPlugin 插件化和补丁在目前看来是老生常谈的东西了，市面上已经有一堆实现方案，如DroidPlugin、Small、Android-Plugin-Framework。
-http://mp.weixin.qq.com/s?__biz=MzA3ODg4MDk0Ng==&mid=2651112601&idx=1&sn=8ac730ff885077f0b4a001fe27cf782d#rd  掌阅Android App插件补丁实践
+
 
 
 http://mp.weixin.qq.com/s?__biz=MzA3ODg4MDk0Ng==&mid=2651112554&idx=1&sn=95e57e0d6cb95f5c209ee8065380a395#rd   网易 Android工程模板化实践

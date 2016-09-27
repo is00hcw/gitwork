@@ -1,6 +1,17 @@
 export CATALINA_OPTS="-server -Xss512k -Xms1024M -Xmx2400M -XX:MaxPermSize=180M -XX:PermSize=64M -XX:NewRatio=3 -XX:+CMSClassUnloadingEnabled -XX:CMSInitiatingOccupancyFraction=75 -XX:+UseConcMarkSweepGC -XX:+UseParNewGC  -XX:+DisableExplicitGC  -XX:ParallelGCThreads=4 -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -Xloggc:/data/vmlog/gc.log -XX:-HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/data/vmlog/java_pid<pid>.hprof -XX:+UseCMSCompactAtFullCollection -XX:CMSFullGCsBeforeCompaction=2 -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=8998 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -Djava.rmi.server.hostname=wyx.atsmart.net -Dcom.sun.management.jmxremote.local.only=false"
 https://github.com/chewiebug/GCViewer/wiki/Changelog
 
+https://my.oschina.net/lianss/blog/272230
+http://www.oschina.net/translate/tomcat-performance-tuning
+http://netkiller-github-com.iteye.com/blog/2119391?utm_source=tuicool&utm_medium=referral
+https://my.oschina.net/u/2343310/blog/731168
+http://www.jianshu.com/p/d45e12241af4
+增加JVM堆内存大小
+修复JRE内存泄漏
+线程池设置
+压缩
+
+
 protocol="org.apache.coyote.http11.Http11NioProtocol"
 org.apache.coyote.http11.Http11AprProtocol
 executor="tomcatThreadPool"

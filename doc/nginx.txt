@@ -1,3 +1,9 @@
+http://xuewb.com/  OpenResty最佳实践
+https://openresty.org/posts/dynamic-tracing/  动态追踪技术漫谈
+https://my.oschina.net/tudouatudou/blog/747786
+http://www.wtoutiao.com/p/1ebEdD7.html
+
+
 http://my.oschina.net/eduosi/blog/169606  Tengine + Lua + GraphicsMagick 实现图片自动裁
 OpenResty是Nginx的Bundle，与官方的最新版本是同步的
 Tengine则是Nginx 1.6.2版本的Fork, 阿里根据自己的业务情况对nginx进行了一些定制开发
