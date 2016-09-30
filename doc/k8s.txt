@@ -1,0 +1,12 @@
+
+Kubernetes 1.3有个叫做 Minikube 的强大测试工具，可以在任意笔记本上运行单节点的小型集群。它借鉴了 Docker 中的一些概念，比如 docker－machine driver，用单个命令来设置本地环境。
+minikube打包了和配置一个linux虚拟机、docker与kubernetes组件。
+
+https://caicloud.io/products/cubernetes
+
+http://kubernetes.io/docs/getting-started-guides/kubeadm/
+http://blog.csdn.net/zqg5258423/article/details/52683737
+
+
+https://www.ustack.com/blog/kubernetes1/?belong=news
+http://blog.csdn.net/bogeli5/article/details/51598199

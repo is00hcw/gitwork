@@ -1,4 +1,7 @@
-﻿我们知道Go使用GOPATH这个环境变量来管理编译时的源代码路径，所以第三方库也是下载在GOPATH下，并且我们的源代码也需要处于GOPATH下。
+﻿http://it.taocms.org/05/10911.htm  gokit
+http://studygolang.com/articles/7010
+
+我们知道Go使用GOPATH这个环境变量来管理编译时的源代码路径，所以第三方库也是下载在GOPATH下，并且我们的源代码也需要处于GOPATH下。
 bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
 gvm install go1.4.2
 gvm use go1.4.2

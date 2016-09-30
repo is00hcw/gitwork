@@ -9,3 +9,9 @@ templete 使用到了多行模板的用法，即使用\`作为模板开始结束标记
 http://plnkr.co/edit/gist:2050713
 
 https://github.com/timjacobi/angular2-education
+https://wx.angular.cn/library/article/%E6%88%91%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89%E6%8B%A9Angular%202   
+https://github.com/angular/universal-starter
+
+
+https://github.com/angular/angular-cli
+http://www.talkingdotnet.com/angular-cli-for-angularjs-2/

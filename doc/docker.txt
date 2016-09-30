@@ -4,6 +4,10 @@ mac下启动docker的工具发展
 再到Docker Toolbox
 最近新出的 Docker for Mac
 https://docs.docker.com/engine/tutorials/
+https://my.oschina.net/zjzhai/blog/225112   export save区别
+https://lengzzz.com/note/timezone-in-docker  设置时区
+清空所有工作区的修改git checkout . 
+切换分支git checkout branch_name(在切换分支之前，需要清空工作区，提交到本地版本仓库或者移除工作区的东西)
 
 http://mp.weixin.qq.com/s?__biz=MzI0NTE4NjA0OQ==&mid=2658352001&idx=1&sn=7e1bfff4233a555153f3e21949848bbc&scene=1&srcid=0828RF1LPescXXG3a1e8OHVt#wechat_redirect    Docker插件机制详解
 

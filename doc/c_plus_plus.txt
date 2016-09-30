@@ -1,3 +1,4 @@
+https://my.oschina.net/osccreate/blog/752986  魅族微服务
 https://github.com/yyzybb537/libgo   libgo - 协程库、并行编程库
 首先要隆重推荐一下我们魅族的开源项目：libgo.  这个项目旨在全面提升C++语言在服务端方向的开发效率，欢迎广大C++er一起参与进来。
 然后，推荐一下google今年开源的benchmark，非常不错的性能测试lib，语法上和google的gtest一脉相承，使用简单快捷，结果展示清晰美观。很好地解决了性能测试中常见的预热、时间精确度等问题。

@@ -46,6 +46,8 @@ https://yq.aliyun.com/articles/1480?spm=5176.100244.0.0.YK5sVe
 
 
 vue.js
+https://segmentfault.com/a/1190000005863691  ±Ê¼Ç±¾Àý×Ó https://coligo.io/learn-vuex-by-building-notes-app/ 
+http://www.cnblogs.com/terry01/p/5888650.html
 http://elemefe.github.io/mint-ui/#!/
 https://github.com/ElemeFE/vue-desktop
 https://github.com/ElemeFE/element
