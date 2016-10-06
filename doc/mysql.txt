@@ -1,4 +1,10 @@
-﻿alisql  rds
+﻿show variables like 'time_zone';如果是system 就说明这个和主机的时区是一样的。
+set GLOBAL time_zone= 你现在所在的时区..
+set GLOBAL  time_zone='+8:00';  
+select @@global.system_time_zone,@@time_zone;
+https://help.aliyun.com/knowledge_detail/41689.html
+
+alisql  rds
 微信开源 PhxSQL：高可用强一致的 MySQL 集群   http://www.oschina.net/news/76658/tecent-wechat-opensource-phxsql
 
 https://yq.aliyun.com/articles/59260?spm=5176.8091938.0.0.dNadcl  通过Mysql的日志主要分为：General log，slow log，binary log三种。通 过query日志，我们可以分析业务的逻辑，业务特点。通过slow log，我们可以找到服务器的瓶颈。通过binary log，我们可以恢复数据。最适合的工具非 mysqlsla 与 pt-query-digest 莫属。 mysqlsla与pt-query-digest的作者是同一个人。
