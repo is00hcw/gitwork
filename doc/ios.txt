@@ -1,3 +1,6 @@
+http://blog.csdn.net/potato512/article/details/52176073  自动打包
+https://my.oschina.net/u/727843/blog/391946
+
 http://www.cnblogs.com/kenshincui/p/3985090.html
 http://www.cnblogs.com/kenshincui/p/3890880.html  IOS程序开发概览
 http://www.cnblogs.com/csharpstyle/articles/4176630.html    Ad Hoc 方式发布 APP

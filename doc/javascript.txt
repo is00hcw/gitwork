@@ -1,5 +1,7 @@
-﻿type="text/defered-script"   http://www.tuicool.com/articles/VzINj2f
+﻿http://www.oschina.net/news/77853/how-about-learn-javascript-at-2016   在 2016 年学 JavaScript 是一种什么样的体验
+https://github.com/hustcc/onfire.js/blob/master/README_zh.md  事件发布订阅
 
+type="text/defered-script"   http://www.tuicool.com/articles/VzINj2f
 
 当浏览器遇到 JavaScript 时，它可能不知道这里的 JS 是否要改变 DOM。因此，它不得不假定它会改变，然后它阻止渲染，直到 JavaScript 完成了执行过程。如果增加了 async 标签，相当于向浏览器保证，该 JS 对于页面不是关键的，因此浏览器可以继续渲染，而不必等待 JS 执行完成。
 这就是 TTFB (Time To First Byte) 注1 的由来。当浏览器发起一个页面请求时，它就处于等待响应的状态。TTFB 代表了它需要多长时间才能收到第一个响应的字节。这个时间不但代表了你的服务器产生响应所需要的时间，而且意味着经过线缆传输所需要的时间。
