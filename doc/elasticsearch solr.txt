@@ -1,3 +1,31 @@
+http://blog.csdn.net/sunnyyoona/article/details/51747381  [Elasticsearch]elasticsearch+kibana+marvel安装
+kibana 2.6.1  Elasticsearch 2.4.1
+kibana plugin --install elastic/sense
+访问地址：localhost:5601/app/sense
+Step 1: Install Marvel into Elasticsearch:	
+bin/plugin install license
+bin/plugin install marvel-agent
+Step 2: Install Marvel into Kibana	
+bin/kibana plugin --install elasticsearch/marvel/latest
+Step 4: Navigate to http://localhost:5601/app/marvel
+
+head:http://localhost:9200/_plugin/head/
+bigdesk：http://localhost:9200/_plugin/bigdesk/
+plugin install mobz/elasticsearch-head
+绿色表示主分片和副本分片都可用；
+黄色表示只有主分片可用，没有副本分片；
+红色表示主分片中的部分索引不可用，但是不耽误某些索引的访问。
+
+创建simple.conf文件，并编写测试conf
+input { stdin { } }
+output {
+  elasticsearch { host => localhost }
+  stdout { codec => rubydebug }
+}
+logstash -f simple.conf --debug
+
+
+
 http://www.infoq.com/cn/articles/analysis-of-elasticsearch-cluster-part01  Elasticsearch的存储模型和读写操作
 http://my.oschina.net/wsyblog/blog/702841
 https://imququ.com/post/elasticsearch.html   使用 Elasticsearch 实现博客站内搜索

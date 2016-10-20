@@ -11,7 +11,8 @@ QQ空间的方案，插桩，见安卓App热补丁动态修复技术介绍
 美团的方案，也就是instant run的方案，见Android热更新方案Robust
 此外，微信的方案是多classloader，这种方式可以解决用multidex方式在部分机型上不生效patch的问题，同时还带来一个好处，这种多classloader的方式使用的是instant run的代码，如果存在native library的修复，也会带来极大的方便。
 http://blog.csdn.net/sbsujjbcy/article/details/52541803   Android 热补丁技术——资源的热修复
-
+http://mp.weixin.qq.com/s?__biz=MzA3NTYzODYzMg==&mid=2653577964&idx=1&sn=bac5c8883b7aaaf7d7d9ea227f200412  QFix探索之路——手Q热补丁轻量级方案
+ 
 
 
 https://yq.aliyun.com/articles/59177?spm=5176.100239.bloglist.16.EjXXV7     Freeline - Android平台上的秒级编译方案   https://github.com/alibaba/freeline

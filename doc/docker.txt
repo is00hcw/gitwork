@@ -1,3 +1,20 @@
+docker cp c4dfda7a9367:/usr/local/tomcat/bin/catalina.sh .
+docker cp catalina.sh c4dfda7a9367:/usr/local/tomcat/bin/catalina.sh
+docker logs -f --tail=100  c4d
+docker exec -it d2d /bin/sh
+FROM registry.aliyuncs.com/acs-sample/ubuntu:14.04
+FROM registry.aliyuncs.com/acs-sample/centos:7
+FROM registry.aliyuncs.com/acs-sample/mysql:5.7
+docker pull registry.cn-hangzhou.aliyuncs.com/acs-sample/node
+docker pull registry.cn-hangzhou.aliyuncs.com/acs-sample/zookeeper   3.4.8
+docker pull registry.cn-hangzhou.aliyuncs.com/acs-sample/alpine
+
+https://yq.aliyun.com/articles/61331?spm=5176.100239.bloglist.37.a75830  阿里云容器服务--配置自定义路由服务应对DDOS攻击
+https://sloppy.io/from-dev-to-prod-with-nodejs-and-hackathon-starter-using-docker-compose-part-1/  docker nodejs
+https://imququ.com/post/use-docker.html
+http://debugo.com/docker-compose/?utm_source=tuicool&utm_medium=referral   python
+
+
 https://yq.aliyun.com/articles/57215?spm=5176.100239.blogrightarea59055.17.6Oe2G5
 mac下启动docker的工具发展
 最开始使用boot2docker

@@ -66,3 +66,9 @@ yum groupinstall “Virtualization Client”
 yum groupinstall “Virtualization Platform”
 yum groupinstall “Virtualization Tools”
 http://my.oschina.net/jk409/blog/297577
+
+
+
+管理
+http://wangchao.de/%e8%81%8a%e8%81%8a%e5%88%9b%e4%b8%9a%e5%9b%a2%e9%98%9f%e7%9a%84%e9%a1%b9%e7%9b%ae%e7%ae%a1%e7%90%86%e5%a6%82%e4%bd%95%e9%9d%a2%e5%90%91%e5%bc%80%e5%8f%91%e4%ba%ba%e5%91%98%e4%bc%98%e5%8c%96/    聊聊创业团队的项目管理如何面向开发人员优化
+http://wangchao.de/%e8%81%8a%e8%81%8a%e9%92%88%e5%af%b9%e5%bc%82%e5%9c%b0%e5%9b%a2%e9%98%9f%e7%9a%84%e9%9c%80%e6%b1%82%e5%8d%8f%e4%bd%9c%e5%92%8c%e5%8e%9f%e5%9e%8b%e3%80%81%e8%ae%be%e8%ae%a1%e7%9a%84%e8%af%84%e5%ae%a1/

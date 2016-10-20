@@ -1,6 +1,8 @@
 http://blog.csdn.net/potato512/article/details/52176073  自动打包
 https://my.oschina.net/u/727843/blog/391946
 
+https://github.com/fengling2300/networkTest   http://oncenote.com/2014/10/21/Security-1-HTTPS/
+
 http://www.cnblogs.com/kenshincui/p/3985090.html
 http://www.cnblogs.com/kenshincui/p/3890880.html  IOS程序开发概览
 http://www.cnblogs.com/csharpstyle/articles/4176630.html    Ad Hoc 方式发布 APP
@@ -57,6 +59,28 @@ https://github.com/IFTTT/IFTTTLaunchImage
 
 升级
 http://www.infoq.com/cn/articles/wechat-ios9-adaptation  微信iOS 9适配总结
+
+xctool
+xctool -scheme testOClintNew archive (对应xcode的archive)  或者 
+xctool -scheme testOClintNew build  (对应xcode的build) 
+若你的工程使用了workspace,格式如下：xctool -workspace testOClintWorkspace -scheme testOClintNew build 
+
+fir.im
+http://nomad-cli.com/    https://github.com/nomad/shenzhen
+https://github.com/FIRHQ/fir-cli/blob/master/doc/build_ipa.md   fir build_ipa path/to/workspace -w -S <scheme name> -p -Q
+http://club.fir.im/topic/54f3d1a474c4c85e73e4ac13
+https://github.com/heyuan110/BashShell?spm=5176.100239.blogcont5028.4.kFcLtR
+http://www.tuicool.com/articles/QFruyq2
+
+
+fastlane
+http://www.jianshu.com/p/9ae446d76271   iOS项目的持续集成与管理[译]
+http://icyleaf.com/2016/07/fastlane-in-action/?utm_source=tuicool&utm_medium=referral  fastlane
+http://icyleaf.com/2016/07/intro-fastlane-automation-for-ios-and-android/
+http://www.jianshu.com/p/41ecb06ae95f   手把手教你利用Jenkins持续集成iOS项目
+http://www.jianshu.com/p/002e1061ee08
+http://mp.weixin.qq.com/s?__biz=MzA3ODg4MDk0Ng==&mid=2651112713&idx=1&sn=dd049e7edf3402af887c1fc295f43b98&scene=21#wechat_redirect
+
 
 test
 http://www.infoq.com/cn/news/2016/02/earlgrey-ios-functional-ui-test Google推出iOS功能性UI测试框架EarlGrey
