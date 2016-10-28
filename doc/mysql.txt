@@ -1,8 +1,14 @@
-﻿show variables like 'time_zone';如果是system 就说明这个和主机的时区是一样的。
-set GLOBAL time_zone= 你现在所在的时区..
-set GLOBAL  time_zone='+8:00';  
+﻿查看mysql当前时间，当前时区 select curtime();   #或select now()也可以   http://www.kuitao8.com/20151024/4110.shtml
+show variables like 'time_zone';如果是system 就说明这个和主机的时区是一样的。
+set global time_zone = '+8:00';  ##修改mysql全局时区为北京时间，即我们所在的东8区
+set time_zone = '+8:00';  ##修改当前会话时区
+flush privileges;  #立即生效
 select @@global.system_time_zone,@@time_zone;
 https://help.aliyun.com/knowledge_detail/41689.html
+
+有时候大的插入和更新会被max_allowed_packet 参数限制掉，导致失败。查看目前配置show VARIABLES like '%max_allowed_packet%';
+Packet for query is too large (1141 > 1024). You can change this value on the server by setting the max_allowed_packet' variable.
+
 
 alisql  rds
 微信开源 PhxSQL：高可用强一致的 MySQL 集群   http://www.oschina.net/news/76658/tecent-wechat-opensource-phxsql

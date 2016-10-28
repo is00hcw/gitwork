@@ -14,3 +14,5 @@ https://yq.aliyun.com/articles/53778?spm=5176.100239.bloglist.13.Ix6hKe  µÂ¸è£º°
 
 FDWÈ«³Æ(Foreign-Data Wrapper)£¬¼òµ¥À´Ëµ¾ÍÊÇPostgreSQLÖÐµÄÍâ²¿±í¹¦ÄÜ
 https://yq.aliyun.com/articles/53760?spm=5176.100238.goodcont.21.VJHL3c
+
+http://www.oschina.net/news/78395/weixin-payment-arch  ÌÚÐÅpostgresql

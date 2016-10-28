@@ -1,4 +1,30 @@
-﻿http://www.oschina.net/news/77853/how-about-learn-javascript-at-2016   在 2016 年学 JavaScript 是一种什么样的体验
+﻿npm install -g generator-webpack-es6-cssnext
+npm install es6-promise whatwg-fetch --save
+npm install --save isomorphic-fetch es6-promise
+https://segmentfault.com/a/1190000006095018
+npm install -g create-react-app
+
+https://segmentfault.com/a/1190000006178770  入门 Webpack，看这篇就够了
+http://www.bootcss.com/p/git-guide/  git - 简易指南
+
+View 就是 React 组件，而 Model 是 flux 中的 store。 Store 就是一个存储数据的对象，它会在 dispatch上注册自己感兴趣的事件。Dispatcher 是flux提供的一个全局的事件分发器，而 action 其实就是自定义的事件而已。
+React的好处，比如说它的虚拟DOM可以被高效的渲染，比如说它的组件化使得项目结构非常清晰，代码复用非常容易，比如说它的数据管理机制也能让你清晰的知晓数据的状态
+https://segmentfault.com/a/1190000004133844   《Head First JavaScript》读书笔记
+https://zhangwang1990.gitbooks.io/reactenlightenment/content/%E5%88%9D%E6%8E%A2React.html  https://segmentfault.com/a/1190000006720893  reactjs系列
+class HelloMessage extends React.Component
+const HelloMessage = (props) => <div>Hello {props.name}</div>;
+https://segmentfault.com/a/1190000006685370
+
+typescript
+http://blog.csdn.net/lihongxun945/article/details/49999049  
+interface  implements @Injectable()   var name:string;
+Component 是Angular2的核心，相当于Angular1 中 Directive 和 Controller 的合体。 TypeScript 可以简单理解为 ES6 + Annotation + 强类型。
+bootstrap(AppComponent, [HeroService]);其实这是一个简写，[HeroService] 等价于 [provide(HeroService, {useClass:HeroService})]; 也就是默认用同名的类来提供。
+Pipe 是一个数据处理管道。主要作用就是对数据输出的时候进行一些格式化处理。{{ birthday | date | uppercase}}
+https://github.com/lightningtgc/awesome-ng2
+
+
+http://www.oschina.net/news/77853/how-about-learn-javascript-at-2016   在 2016 年学 JavaScript 是一种什么样的体验
 https://github.com/hustcc/onfire.js/blob/master/README_zh.md  事件发布订阅
 
 type="text/defered-script"   http://www.tuicool.com/articles/VzINj2f
