@@ -1,4 +1,5 @@
-﻿npm install -g generator-webpack-es6-cssnext
+﻿http://www.webpackbin.com/
+npm install -g generator-webpack-es6-cssnext
 npm install es6-promise whatwg-fetch --save
 npm install --save isomorphic-fetch es6-promise
 https://segmentfault.com/a/1190000006095018
@@ -22,6 +23,37 @@ Component 是Angular2的核心，相当于Angular1 中 Directive 和 Controller 
 bootstrap(AppComponent, [HeroService]);其实这是一个简写，[HeroService] 等价于 [provide(HeroService, {useClass:HeroService})]; 也就是默认用同名的类来提供。
 Pipe 是一个数据处理管道。主要作用就是对数据输出的时候进行一些格式化处理。{{ birthday | date | uppercase}}
 https://github.com/lightningtgc/awesome-ng2
+
+javascript OO
+https://segmentfault.com/a/1190000002900676#articleHeader3    javascript OO  函数（constructor）、原型（prototype）、原型链（prototype chain）
+prototype是函数的一个属性（每个函数都有一个prototype属性），这个属性是一个指针，指向一个对象。它是显示修改对象的原型的属性。
+__proto__是一个对象拥有的内置属性（请注意：prototype是函数的内置属性，__proto__是对象的内置属性），是JS内部使用寻找原型链的属性。
+每个被new实例化的对象都会包含一个__proto__ 属性，它是对构造函数 prototype 的引用。
+所有构造器/函数的__proto__都指向Function.prototype，它是一个空函数（Empty function） 所有构造器都继承了Function.prototype的属性及方法。如length、call、apply、bind（ES5）。
+在JS里，万物皆对象。方法（Function）是对象，方法的原型(Function.prototype)是对象。 所有对象的__proto__都指向其构造器的prototype    
+总结：1.对象有属性__proto__,指向该对象的构造函数的原型对象。2.方法除了有属性__proto__,还有属性prototype，prototype指向该方法的原型对象。 
+https://www.zhihu.com/question/34183746/answer/58068402
+对象的内部原型(__proto__)和构造器的原型（prototype）的关系。  __proto__（隐式原型）与prototype（显式原型） 大多数浏览器都支持通过__proto__来访问。ES5中有了对于这个内置属性标准的Get方法Object.getPrototypeOf(). 
+每一个函数在创建之后都会拥有一个名为prototype的属性，这个属性指向函数的原型对象。 显式原型的作用：用来实现基于原型的继承与属性的共享。
+隐式原型指向创建这个对象的函数(constructor)的prototype 隐式原型的作用：构成原型链，同样用于实现基于原型的继承。 举个例子，当我们访问obj这个对象中的x属性时，如果在obj中找不到，那么就会沿着__proto__依次查找。
+JS中对象被创建的方式，一眼看过去似乎有三种方式：（1）对象字面量的方式 （2）new 的方式 （3）ES5中的Object.create() 但是我认为本质上只有一种方式，也就是通过new来创建。
+既然是构造函数那么它就是Function（）的实例，因此也就指向Function.prototype,比如 Object.__proto__ === Function.prototype
+Array.prototype.__proto__ === Object.prototype //true，或者也可以这么理解，所有的内建对象都是由Object()创建而来。
+
+Each constructor is a function that has a property named “prototype” that is used to implement prototype-based inheritance and shared properties
+Every object created by a constructor has an implicit reference (called the object’s prototype) to the value of its constructor’s “prototype”
+
+Object.__proto__ === Function.prototype  // true
+console.log(Foo.prototype.constructor === Foo); // true
+console.log(typeof Function.prototype) // function
+console.log(Function.prototype.__proto__ === Object.prototype) // true   这说明所有的构造器也都是一个普通JS对象，同时它也继承了Object.prototype上的所有方法：toString、valueOf、hasOwnProperty等。
+Object.prototype.__proto__ === null  // true
+
+
+es6 (generator/yeild)   es7 ( async/await)
+ES6将一个文件视为一个模块，上面的模块通过 export 向外输出了一个变量。一个模块也可以同时往外面输出多个变量。 export {name, age};   import {name, age} from './test.js'
+https://segmentfault.com/a/1190000002904199#articleHeader4
+
 
 
 http://www.oschina.net/news/77853/how-about-learn-javascript-at-2016   在 2016 年学 JavaScript 是一种什么样的体验
