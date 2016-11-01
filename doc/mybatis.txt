@@ -1,3 +1,13 @@
+http://www.cnblogs.com/sunada2005/p/4739312.html
+在mybatis中，”${xxx}”这样格式的参数会直接参与sql编译，从而不能避免注入攻击。但涉及到动态表名和列名时，只能使用“${xxx}”这样的参数格式，所以，这样的参数需要我们在代码中手工进行处理来防止注入。
+结论：在编写mybatis的映射语句时，尽量采用“#{xxx}”这样的格式。若不得不使用“${xxx}”这样的参数，要手工地做好过滤工作，来防止sql注入攻击。
+#{xxx}，使用的是PreparedStatement，会有类型转换，所以比较安全；
+${xxx}，使用字符串拼接，可以SQL注入；
+like查询不小心会有漏动，正确写法如下：
+Mysql: select * from t_user where name like concat('%', #{name}, '%')      
+Oracle: select * from t_user where name like '%' || #{name} || '%'      
+SQLServer: select * from t_user where name like '%' + #{name} + '%'
+
 http://www.cnblogs.com/yjmyzz/p/sharding-jdbc-turotial.html
 https://github.com/yjmyzz/spring-mybatis-multidatasource
 https://github.com/abel533/Mybatis-Spring/

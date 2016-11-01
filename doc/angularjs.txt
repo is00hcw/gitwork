@@ -1,3 +1,5 @@
+https://angular-2-training-book.rangle.io/
+
 http://www.cnblogs.com/yangxiao/p/5885286.html
 https://augury.angular.io/
 http://www.tuicool.com/articles/z6V3Ubz
@@ -21,3 +23,6 @@ https://github.com/angular/universal-starter
 
 https://github.com/angular/angular-cli
 http://www.talkingdotnet.com/angular-cli-for-angularjs-2/
+
+typescript
+http://tutorialzine.com/2016/07/learn-typescript-in-30-minutes/

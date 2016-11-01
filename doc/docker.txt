@@ -14,6 +14,9 @@ https://sloppy.io/from-dev-to-prod-with-nodejs-and-hackathon-starter-using-docke
 https://imququ.com/post/use-docker.html
 http://debugo.com/docker-compose/?utm_source=tuicool&utm_medium=referral   python
 
+image: registry.aliyuncs.com/acs-sample/alpine:3.3
+command: "sh -c 'apk update; apk add curl; while true; do curl --head restserver.local; sleep 1; done'" #访问rest服务，测试负载均衡
+
 
 https://yq.aliyun.com/articles/57215?spm=5176.100239.blogrightarea59055.17.6Oe2G5
 mac下启动docker的工具发展
