@@ -1,6 +1,6 @@
 http://danielkummer.github.io/git-flow-cheatsheet/index.zh_CN.html
 http://www.codeceo.com/article/how-to-use-git-flow.html
-
+http://www.bootcss.com/p/git-guide/  git - 简易指南
 
 http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html  常用命令
 http://www.ruanyifeng.com/blog/2015/08/git-use-process.html
