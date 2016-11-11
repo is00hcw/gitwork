@@ -1,3 +1,9 @@
+npm install -g angular-cli@latest
+npm install -g weexpack
+sudo npm install -g ios-deploy --unsafe-perm=true
+npm install -g vue vue-cli 
+npm i vue-resource vue-router vuex --save
+
 https://github.com/xkli/WXSample.git
 https://github.com/weexteam/article/issues/25   WEEX SDK集成到工程(Integrate to Android)
 compile 'com.taobao.android:weex_sdk:0.5.1@aar'
@@ -16,7 +22,7 @@ http://blog.csdn.net/daiyelang/article/details/52251703
 https://open.taobao.com/doc2/detail?spm=a219a.7629140.0.0.sf2ubW&&docType=1&articleId=104829#
 
 
-
+https://github.com/weexteam/weex-pack
 https://yq.aliyun.com/articles/59341?spm=5176.100239.bloglist.100.OkOb5e   Weex-初次见到你
 https://yq.aliyun.com/articles/57554?spm=5176.100238.goodcont.24.DxzG2I   Weex入门与进阶指南  ios集成
 https://github.com/weexteam/article/issues/25  weex android
@@ -47,6 +53,9 @@ https://yq.aliyun.com/articles/1480?spm=5176.100244.0.0.YK5sVe
 
 vue.js
 https://segmentfault.com/a/1190000005863691  笔记本例子 https://coligo.io/learn-vuex-by-building-notes-app/ 
+https://jsfiddle.net/reeco/jw5hphqg/4/   http://www.doc00.com/doc/1001004eg   vue-resource
+https://segmentfault.com/q/1010000005894526/a-1020000005899559
+http://www.imooc.com/article/2688
 http://www.cnblogs.com/terry01/p/5888650.html
 http://elemefe.github.io/mint-ui/#!/
 https://github.com/ElemeFE/vue-desktop
