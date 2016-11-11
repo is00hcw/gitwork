@@ -1,0 +1,33 @@
+<html>
+<script type="text/javascript" src="loghub-tracking.js"></script>
+
+<script>
+  var logger = new window.Tracker('cn-shenzhen.log.aliyuncs.com','lc-express','webtrack-log');
+  
+function test1(){
+
+  logger.push('customer', 'lisi');
+  logger.push('product', 'ipod');
+  logger.push('price', 3000);
+  logger.logger();
+  console.log("ok2")
+
+
+}
+
+function test2(){
+  logger.push('customer', 'zhangsan');
+  logger.push('product', 'iphone6s');
+  logger.push('price', 5500);
+  logger.logger();
+   console.log("ok1")
+}
+
+test1();
+setTimeout(test2, 0)
+</script>
+<body>
+<h1>hello</h1>
+</body>
+
+</html>

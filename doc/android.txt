@@ -14,7 +14,7 @@ http://blog.csdn.net/sbsujjbcy/article/details/52541803   Android 热补丁技术——
 http://mp.weixin.qq.com/s?__biz=MzA3NTYzODYzMg==&mid=2653577964&idx=1&sn=bac5c8883b7aaaf7d7d9ea227f200412  QFix探索之路——手Q热补丁轻量级方案
  
 
-
+http://www.oschina.net/news/78857/best-android-libraries-for-developers  面向开发者的最佳 Android 库列表
 https://yq.aliyun.com/articles/59177?spm=5176.100239.bloglist.16.EjXXV7     Freeline - Android平台上的秒级编译方案   https://github.com/alibaba/freeline
 https://github.com/alibaba/java-dns-cache-manipulator/tree/master/library   代码里面设置dns ip绑定
 https://yq.aliyun.com/articles/58517?spm=5176.8067842.tagmain.62.gdmKQ2  深度理解Android InstantRun原理以及源码分析

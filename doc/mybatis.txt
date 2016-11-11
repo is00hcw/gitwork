@@ -1,3 +1,7 @@
+https://my.oschina.net/u/2928967/blog/782629   构建微服务：如何优雅的使用mybatis
+http://www.ityouknow.com/spring%20data%20jpa/2016/08/20/%E6%9E%84%E5%BB%BA%E5%BE%AE%E6%9C%8D%E5%8A%A1-spring-data-jpa%E7%9A%84%E4%BD%BF%E7%94%A8.html  
+http://www.ityouknow.com/springcloud/2016/10/25/%E5%A4%A7%E8%AF%9Dspring-cloud.html
+
 http://www.cnblogs.com/sunada2005/p/4739312.html
 在mybatis中，”${xxx}”这样格式的参数会直接参与sql编译，从而不能避免注入攻击。但涉及到动态表名和列名时，只能使用“${xxx}”这样的参数格式，所以，这样的参数需要我们在代码中手工进行处理来防止注入。
 结论：在编写mybatis的映射语句时，尽量采用“#{xxx}”这样的格式。若不得不使用“${xxx}”这样的参数，要手工地做好过滤工作，来防止sql注入攻击。
