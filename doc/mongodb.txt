@@ -1,3 +1,5 @@
+https://yq.aliyun.com/articles/61760?spm=5176.100239.bloglist.159.lbH8B1  MongoDB 疑难杂症分析及优化
+
 https://yq.aliyun.com/articles/57133?spm=5176.100238.goodcont.33.53PewF  基于MongoDB构建阿里云MongoDB云数据库服务
 http://www.lizi.pw/archives/47    最简单的Spring集成 Mongodb 3.x授权认证方式
 https://yq.aliyun.com/articles/8461?spm=5176.blog8547.yqblogcon1.20.0cAwah  

@@ -1,13 +1,19 @@
+npm install -g angular-cli@latest
+npm install -g weexpack
+sudo npm install -g ios-deploy --unsafe-perm=true
+npm install -g vue vue-cli 
+npm i vue-resource vue-router vuex --save
+
 https://github.com/xkli/WXSample.git
-https://github.com/weexteam/article/issues/25   WEEX SDK¼¯³Éµ½¹¤³Ì(Integrate to Android)
+https://github.com/weexteam/article/issues/25   WEEX SDKï¿½ï¿½ï¿½Éµï¿½ï¿½ï¿½ï¿½ï¿½(Integrate to Android)
 compile 'com.taobao.android:weex_sdk:0.5.1@aar'
 https://bintray.com/alibabaweex/maven/weex_sdk/view 
 npm install -g weex-toolkit
-ÀûÓÃweek£­toolkit½«.we×ª»»Îª.js     weex tech_list.we --qr -h {ip or hostname}
+ï¿½ï¿½ï¿½ï¿½weekï¿½ï¿½toolkitï¿½ï¿½.we×ªï¿½ï¿½Îª.js     weex tech_list.we --qr -h {ip or hostname}
 
 http://www.tuicool.com/articles/bY7Jba6   https://github.com/kingofglory/weex-demo.git
 
-http://blog.csdn.net/walid1992/article/details/52420591  weex³õÌåÑé
+http://blog.csdn.net/walid1992/article/details/52420591  weexï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 ios
 http://blog.csdn.net/daiyelang/article/details/52184544
@@ -16,39 +22,42 @@ http://blog.csdn.net/daiyelang/article/details/52251703
 https://open.taobao.com/doc2/detail?spm=a219a.7629140.0.0.sf2ubW&&docType=1&articleId=104829#
 
 
-
-https://yq.aliyun.com/articles/59341?spm=5176.100239.bloglist.100.OkOb5e   Weex-³õ´Î¼ûµ½Äã
-https://yq.aliyun.com/articles/57554?spm=5176.100238.goodcont.24.DxzG2I   WeexÈëÃÅÓë½ø½×Ö¸ÄÏ  ios¼¯³É
+https://github.com/weexteam/weex-pack
+https://yq.aliyun.com/articles/59341?spm=5176.100239.bloglist.100.OkOb5e   Weex-ï¿½ï¿½ï¿½Î¼ï¿½ï¿½ï¿½ï¿½ï¿½
+https://yq.aliyun.com/articles/57554?spm=5176.100238.goodcont.24.DxzG2I   Weexï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½  iosï¿½ï¿½ï¿½ï¿½
 https://github.com/weexteam/article/issues/25  weex android
 https://github.com/alibaba/weex/blob/dev/SCRIPTS.md
 http://alibaba.github.io/weex/doc/tools/cli.html
 the renderer (weex-html5), the js-framework (weex-js-framework) and the transformer (gulp-weex).
 weex --debugger
-https://github.com/weexteam/article/issues/31  ×é¼þ¶¨Òå
+https://github.com/weexteam/article/issues/31  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 https://github.com/weexteam/article/issues/32   http://alibaba.github.io/weex/doc/advanced/how-it-works.html  
 
 
 http://www.infoq.com/cn/articles/taobao-mobile-weex  weex
 https://github.com/alibaba/luaviewsdk   luaview
-http://www.infoq.com/cn/articles/introducing-weex     WeexÏê½â£ºÁé»îµÄÒÆ¶¯¶Ë¸ßÐÔÄÜ¶¯Ì¬»¯·½°¸
-http://www.infoq.com/cn/articles/the-back-end-business-systems-service-transformation   Ì¸Ì¸ºó¶ËÒµÎñÏµÍ³µÄÎ¢·þÎñ»¯¸ÄÔì
+http://www.infoq.com/cn/articles/introducing-weex     Weexï¿½ï¿½â£ºï¿½ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½ï¿½Ë¸ï¿½ï¿½ï¿½ï¿½Ü¶ï¿½Ì¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+http://www.infoq.com/cn/articles/the-back-end-business-systems-service-transformation   Ì¸Ì¸ï¿½ï¿½ï¿½ï¿½Òµï¿½ï¿½ÏµÍ³ï¿½ï¿½Î¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-WeexÓÉ¶à¸ö¹Ø¼üÄ£¿é×é³É£¬·Ö±ðÊÇDSL transformer¡¢JS Framework¡¢HTML5/iOS/Android RendererºÍ¹¤¾ßÁ´ £¬ ÆäÖÐJS Framework¾ÍÖ±½ÓÊ¹ÓÃÁË²¿·ÖÀ´×ÔVue.JSµÄ´úÂë¡£
-È«¾Ö³åÍ»ÊÇCSS¡°Æß×Ú×ï¡±ÖÐµÄÒ»¸ö£¬ÆäÊµÕâÒ²ÊÇÎÒÃÇ·Ç³£ÖØÊÓµÄ£¬ËùÒÔÔÚÊµ¼ùÉÏÎÒÃÇ°ÑËü×öµ½ÁËscoped¡£
+Weexï¿½É¶ï¿½ï¿½ï¿½Ø¼ï¿½Ä£ï¿½ï¿½ï¿½ï¿½É£ï¿½ï¿½Ö±ï¿½ï¿½ï¿½DSL transformerï¿½ï¿½JS Frameworkï¿½ï¿½HTML5/iOS/Android Rendererï¿½Í¹ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½JS Frameworkï¿½ï¿½Ö±ï¿½ï¿½Ê¹ï¿½ï¿½ï¿½Ë²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Vue.JSï¿½Ä´ï¿½ï¿½ë¡£
+È«ï¿½Ö³ï¿½Í»ï¿½ï¿½CSSï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¡±ï¿½Ðµï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½Ò²ï¿½ï¿½ï¿½ï¿½ï¿½Ç·Ç³ï¿½ï¿½ï¿½ï¿½ÓµÄ£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½scopedï¿½ï¿½
 https://yq.aliyun.com/articles/54775?spm=5176.100239.blogcont54773.9.2RAYjT
 Weex Toolkit  https://www.npmjs.com/package/weex-toolkit
 http://alibaba.github.io/weex/doc/syntax/main.html
 https://yq.aliyun.com/articles/54769?spm=5176.100244.0.0.YK5sVe
 
 
-·â×°ÁËTBHotaptchSDKÌá¹©Lua×Ö½ÚÂë±àÒë¡¢´úÂëºÍ×ÊÔ´´ò°ü¡¢¼ÓÃÜ¡¢Ç©Ãû¡¢Ð£Ñé¡¢ÔËÐÐµÈ¹¦ÄÜ¡£Í¬Ê±»¹·â×°ÁËTBHotaptchServiceÌá¹©patch°üµÄ°æ±¾¿ØÖÆ¡¢¸üÐÂ¡¢ÏÂÔØµÈ¹¦ÄÜ¡£
+ï¿½ï¿½×°ï¿½ï¿½TBHotaptchSDKï¿½á¹©Luaï¿½Ö½ï¿½ï¿½ï¿½ï¿½ï¿½ë¡¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü¡ï¿½Ç©ï¿½ï¿½ï¿½ï¿½Ð£ï¿½é¡¢ï¿½ï¿½ï¿½ÐµÈ¹ï¿½ï¿½Ü¡ï¿½Í¬Ê±ï¿½ï¿½ï¿½ï¿½×°ï¿½ï¿½TBHotaptchServiceï¿½á¹©patchï¿½ï¿½ï¿½Ä°æ±¾ï¿½ï¿½ï¿½Æ¡ï¿½ï¿½ï¿½ï¿½Â¡ï¿½ï¿½ï¿½ï¿½ØµÈ¹ï¿½ï¿½Ü¡ï¿½
 https://yq.aliyun.com/articles/1480?spm=5176.100244.0.0.YK5sVe
 
 
 vue.js
-https://segmentfault.com/a/1190000005863691  ±Ê¼Ç±¾Àý×Ó https://coligo.io/learn-vuex-by-building-notes-app/ 
+https://segmentfault.com/a/1190000005863691  ï¿½Ê¼Ç±ï¿½ï¿½ï¿½ï¿½ï¿½ https://coligo.io/learn-vuex-by-building-notes-app/
 https://github.com/airyland/vux
-http://www.jianshu.com/p/5ba253651c3b  Vue2.0 ÐÂÊÖÍêÈ«Ìî¿Ó¹¥ÂÔ¡ª¡ª´Ó»·¾³´î½¨µ½·¢²¼ 
+http://www.jianshu.com/p/5ba253651c3b  Vue2.0 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È«ï¿½ï¿½Ó¹ï¿½ï¿½Ô¡ï¿½ï¿½ï¿½ï¿½Ó»ï¿½ï¿½ï¿½ï¿½î½¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+https://jsfiddle.net/reeco/jw5hphqg/4/   http://www.doc00.com/doc/1001004eg   vue-resource
+https://segmentfault.com/q/1010000005894526/a-1020000005899559
+http://www.imooc.com/article/2688
 http://www.cnblogs.com/terry01/p/5888650.html
 http://elemefe.github.io/mint-ui/#!/
 https://github.com/ElemeFE/vue-desktop
@@ -56,9 +65,9 @@ https://github.com/ElemeFE/element
 https://github.com/lodamemory/vue-metronic
 Bootstrap components built with Vue.js  http://yuche.github.io/vue-strap/
 http://www.webpackbin.com/vue
-http://www.cnblogs.com/pandabunny/p/5417938.html   vue-cli webpack ÒýÈëjquery
-npm run devÊÇÔÚ¿ª·¢Ä£Ê½ÏÂÔËÐÐÏîÄ¿£¬¿ÉÒÔ¼ÓÔØÒ»Ð©µ÷ÊÔµÄÄ£¿éÈçhotload£»
-npm run buildÊÇÏîÄ¿´ò°üÃüÁî£¬ÔËÐÐÕâ¸öÃüÁîºó»áÉú³É¿ÉÒÔ½øÐÐÉÏÏßµÄ´ò°üÎÄ¼þ   ½Ó×Å°Ñ index.html ºÍÕû¸ö dist Ä¿Â¼¶ªµ½·þÎñÆ÷¾Í¿ÉÒÔÁË¡£
+http://www.cnblogs.com/pandabunny/p/5417938.html   vue-cli webpack ï¿½ï¿½ï¿½ï¿½jquery
+npm run devï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½Ä£Ê½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½ï¿½Ò»Ð©ï¿½ï¿½ï¿½Ôµï¿½Ä£ï¿½ï¿½ï¿½ï¿½hotloadï¿½ï¿½
+npm run buildï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½î£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¿ï¿½ï¿½Ô½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ßµÄ´ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½   ï¿½ï¿½ï¿½Å°ï¿½ index.html ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ dist Ä¿Â¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¿ï¿½ï¿½ï¿½ï¿½Ë¡ï¿½
 npm install webpack-dev-server --save-dev
 webpack-dev-server
 npm install -g http-server
@@ -70,26 +79,26 @@ https://github.com/brandonxiang/example-vue-webpack/tree/s1s2
 https://segmentfault.com/a/1190000004060034
 http://galen-yip.com/typescript/vue/webpack/2016/06/09/typescrit-vue-todo/?utm_source=tuicool&utm_medium=referral
 http://www.cnblogs.com/zhengjialux/p/5848950.html
-http://mp.weixin.qq.com/s?__biz=MzA3NTYzODYzMg==&mid=2653577777&idx=1&sn=4b5377051bd849b85af17bcf8c05174c&scene=0#wechat_redirect  »ùÓÚ Webpack & Vue & Vue-Router µÄ SPA ³õÌåÑé
+http://mp.weixin.qq.com/s?__biz=MzA3NTYzODYzMg==&mid=2653577777&idx=1&sn=4b5377051bd849b85af17bcf8c05174c&scene=0#wechat_redirect  ï¿½ï¿½ï¿½ï¿½ Webpack & Vue & Vue-Router ï¿½ï¿½ SPA ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 npm install webpack-dev-server -g
-È«¾Ö°²×°vue-cli£¬Ê¹ÓÃÃüÁînpm install -g vue-cli¡£
-ÏÂÔØÄ£°å´úÂë£¬Ê¹ÓÃÃüÁîvue init webpack my-project
-npm run devÆô¶¯ÈÈ¼ÓÔØ£¬¾Í»áÈ¥×Ô¶¯»¯Ö´ÐÐpackage.jsonÀïµÄ 
-¡°scripts¡±: { ¡°dev¡±: ¡°node build/dev-server.js¡±, 
+È«ï¿½Ö°ï¿½×°vue-cliï¿½ï¿½Ê¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½npm install -g vue-cliï¿½ï¿½
+ï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½ï¿½ï¿½ë£¬Ê¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½vue init webpack my-project
+npm run devï¿½ï¿½ï¿½ï¿½ï¿½È¼ï¿½ï¿½Ø£ï¿½ï¿½Í»ï¿½È¥ï¿½Ô¶ï¿½ï¿½ï¿½Ö´ï¿½ï¿½package.jsonï¿½ï¿½ï¿½ 
+ï¿½ï¿½scriptsï¿½ï¿½: { ï¿½ï¿½devï¿½ï¿½: ï¿½ï¿½node build/dev-server.jsï¿½ï¿½, 
 https://github.com/vuejs-templates/webpack
-vue-cliÄ¬ÈÏ´´½¨µÄÏîÄ¿¶¼ÊÇ¼ÙÉèÄãÔÚ×öµ¥Ò³Ó¦ÓÃ£¬Ò²¾ÍÊÇ½öÓÐÒ»¸öindex.html×÷ÎªÓ¦ÓÃÈë¿Ú£¬Ê£ÏÂµÄÊÂÇé¶¼ÊÇ½»ÓÉjavascript¶¯Ì¬´¦ÀíµÄ¡£ https://segmentfault.com/q/1010000005793472/a-1020000005793617
-srcÄ¿Â¼ÏÂµÄ×ÊÔ´Ö»ÄÜimport»òrequire¡£
-Ïë¾²Ì¬ÒýÈëµÄ»°£¬½¨Á¢Ò»¸öÓësrcÍ¬¼¶µÄÄ¿Â¼ÀýÈçstatic£¬È»ºó°Ñ¾²Ì¬×ÊÔ´·ÅÈë¸ÃÎÄ¼þ¼ÐÏÂ£¬htmlµÄÒýÈëÂ·¾¶ÈçÏÂ£º./static/...   http://www.oschina.net/question/1188944_2152341
+vue-cliÄ¬ï¿½Ï´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½Ç¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò³Ó¦ï¿½Ã£ï¿½Ò²ï¿½ï¿½ï¿½Ç½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½index.htmlï¿½ï¿½ÎªÓ¦ï¿½ï¿½ï¿½ï¿½Ú£ï¿½Ê£ï¿½Âµï¿½ï¿½ï¿½ï¿½é¶¼ï¿½Ç½ï¿½ï¿½ï¿½javascriptï¿½ï¿½Ì¬ï¿½ï¿½ï¿½ï¿½Ä¡ï¿½ https://segmentfault.com/q/1010000005793472/a-1020000005793617
+srcÄ¿Â¼ï¿½Âµï¿½ï¿½ï¿½Ô´Ö»ï¿½ï¿½importï¿½ï¿½requireï¿½ï¿½
+ï¿½ë¾²Ì¬ï¿½ï¿½ï¿½ï¿½Ä»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½srcÍ¬ï¿½ï¿½ï¿½ï¿½Ä¿Â¼ï¿½ï¿½ï¿½ï¿½staticï¿½ï¿½È»ï¿½ï¿½ï¿½Ñ¾ï¿½Ì¬ï¿½ï¿½Ô´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Â£ï¿½htmlï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½ï¿½ï¿½Â£ï¿½./static/...   http://www.oschina.net/question/1188944_2152341
 https://segmentfault.com/q/1010000004479605
-https://github.com/yaoyao1987/vue-cli-multipage   ¶àÒ³Ãæ
+https://github.com/yaoyao1987/vue-cli-multipage   ï¿½ï¿½Ò³ï¿½ï¿½
 https://github.com/bluefox1688/vue-cli-multi-page
 
 http://www.w3cfuns.com/notes/15904/fbb4d15b9c22fd373b605805bde8fd44.html
 http://www.w3cfuns.com/notes/15904/cad84afddab13604f987cbf511d265e4.html
-https://segmentfault.com/q/1010000005169531/a-1020000005170343  µÚÈý·½
+https://segmentfault.com/q/1010000005169531/a-1020000005170343  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 http://blog.csdn.net/usluckily/article/details/51861892
-ÒòÎª Vue.js Ö¸ÁîÊÇÒì²½¸üÐÂ£¬Èç¹ûÏëÔÚÐÞ¸ÄÊý¾ÝÖ®ºóÐÞ¸Ä DOM £¬Ó¦µ±ÔÚ Vue.nextTick µÄ»Øµ÷ÖÐ²Ù×÷¡£
-http://webpack.github.io/docs/shimming-modules.html  Èý·½¿â
+ï¿½ï¿½Îª Vue.js Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ì²½ï¿½ï¿½ï¿½Â£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Þ¸ï¿½ï¿½ï¿½ï¿½ï¿½Ö®ï¿½ï¿½ï¿½Þ¸ï¿½ DOM ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½ Vue.nextTick ï¿½Ä»Øµï¿½ï¿½Ð²ï¿½ï¿½ï¿½ï¿½ï¿½
+http://webpack.github.io/docs/shimming-modules.html  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 new webpack.optimize.CommonsChunkPlugin('common.js'),
 new webpack.ProvidePlugin({
 jQuery: "jquery",
@@ -104,13 +113,13 @@ http://www.jbrantly.com/typescript-and-webpack/
 http://www.jbrantly.com/es6-modules-with-typescript-and-webpack/
 https://segmentfault.com/a/1190000003970448
 http://cookingjs.github.io/zh-cn/intro.html
-https://segmentfault.com/a/1190000004577578   ÓÅ»¯
+https://segmentfault.com/a/1190000004577578   ï¿½Å»ï¿½
 http://www.alloyteam.com/2016/01/webpack-use-optimization/?utm_source=tuicool&utm_medium=referral
 https://zhuanlan.zhihu.com/p/20914387?refer=jscss
 https://segmentfault.com/a/1190000004728494
-https://segmentfault.com/a/1190000003006331  ¹¤¾ß
-Ïà±ÈGrunt£¬WebPack³ýÁË¾ß±¸·á¸»µÄ²å¼þÍâ£¬Í¬Ê±´øÓÐÒ»Ì×¼ÓÔØ£¨Loader£©ÏµÍ³¡£Ê¹ËüÖ§³Ö¶àÖÖ¹æ·¶µÄ¼ÓÔØ·½Ê½£¬°üÀ¨ES6¡¢CommonJS¡¢AMDµÈ·½Ê½£¬ÕâÊÇGrunt¡¢GulpËù²»¾ß±¸µÄ¡£
-·ûºÏAMD¹æ·¶£¬ÈçRequireJS
-·ûºÏCMD ¹æ·¶£¬ÈçSeaJS
-NodeJS¹æ·¶ CommonJS
-ECMAScript 6µÄÄ£¿é»¯
+https://segmentfault.com/a/1190000003006331  ï¿½ï¿½ï¿½ï¿½
+ï¿½ï¿½ï¿½Gruntï¿½ï¿½WebPackï¿½ï¿½ï¿½Ë¾ß±ï¿½ï¿½á¸»ï¿½Ä²ï¿½ï¿½ï¿½â£¬Í¬Ê±ï¿½ï¿½ï¿½ï¿½Ò»ï¿½×¼ï¿½ï¿½Ø£ï¿½Loaderï¿½ï¿½ÏµÍ³ï¿½ï¿½Ê¹ï¿½ï¿½Ö§ï¿½Ö¶ï¿½ï¿½Ö¹æ·¶ï¿½Ä¼ï¿½ï¿½Ø·ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ES6ï¿½ï¿½CommonJSï¿½ï¿½AMDï¿½È·ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Gruntï¿½ï¿½Gulpï¿½ï¿½ï¿½ï¿½ï¿½ß±ï¿½ï¿½Ä¡ï¿½
+ï¿½ï¿½ï¿½ï¿½AMDï¿½æ·¶ï¿½ï¿½ï¿½ï¿½RequireJS
+ï¿½ï¿½ï¿½ï¿½CMD ï¿½æ·¶ï¿½ï¿½ï¿½ï¿½SeaJS
+NodeJSï¿½æ·¶ CommonJS
+ECMAScript 6ï¿½ï¿½Ä£ï¿½é»¯
