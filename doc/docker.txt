@@ -17,7 +17,7 @@ http://debugo.com/docker-compose/?utm_source=tuicool&utm_medium=referral   pytho
 image: registry.aliyuncs.com/acs-sample/alpine:3.3
 command: "sh -c 'apk update; apk add curl; while true; do curl --head restserver.local; sleep 1; done'" #访问rest服务，测试负载均衡
 
-
+https://yq.aliyun.com/articles/59144?spm=5176.100239.blogcont62930.17.QVsCVR   Docker常见故障排查指南 - 阿里云容器服务
 https://yq.aliyun.com/articles/57215?spm=5176.100239.blogrightarea59055.17.6Oe2G5
 mac下启动docker的工具发展
 最开始使用boot2docker

@@ -47,6 +47,8 @@ https://yq.aliyun.com/articles/1480?spm=5176.100244.0.0.YK5sVe
 
 vue.js
 https://segmentfault.com/a/1190000005863691  笔记本例子 https://coligo.io/learn-vuex-by-building-notes-app/ 
+https://github.com/airyland/vux
+http://www.jianshu.com/p/5ba253651c3b  Vue2.0 新手完全填坑攻略——从环境搭建到发布 
 http://www.cnblogs.com/terry01/p/5888650.html
 http://elemefe.github.io/mint-ui/#!/
 https://github.com/ElemeFE/vue-desktop
@@ -55,6 +57,12 @@ https://github.com/lodamemory/vue-metronic
 Bootstrap components built with Vue.js  http://yuche.github.io/vue-strap/
 http://www.webpackbin.com/vue
 http://www.cnblogs.com/pandabunny/p/5417938.html   vue-cli webpack 引入jquery
+npm run dev是在开发模式下运行项目，可以加载一些调试的模块如hotload；
+npm run build是项目打包命令，运行这个命令后会生成可以进行上线的打包文件   接着把 index.html 和整个 dist 目录丢到服务器就可以了。
+npm install webpack-dev-server --save-dev
+webpack-dev-server
+npm install -g http-server
+http-server -a 127.0.0.1 -p 7070
 
 http://jiongks.name/blog/just-vue/
 http://www.jianshu.com/p/a5361bff1cd8

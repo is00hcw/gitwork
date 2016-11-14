@@ -1,6 +1,11 @@
 ﻿http://www.slideshare.net/fujohnwang/scala-thegoodparts
 http://afoo.me/posts/2015-07-21-scala-developers-springboot-guide.html   Scala开发者的SpringBoot快速入门指南
+https://my.oschina.net/yangbajing/blog/717763  写给Java程序员的Scala入门教程
+https://github.com/helloscala/spring-boot-scala
+https://github.com/yangbajing/play-seed  
+https://my.oschina.net/yangbajing/blog/756191  Java/Scala互操作实践 1：基础操作
 
+https://my.oschina.net/yangbajing/blog/107745  sbt  https://github.com/CSUG/real_world_scala/blob/master/02_sbt.markdown
 http://colobu.com/2016/01/04/Scala-magic-functions/   Scala 魔法函数
 http://colobu.com/2015/07/02/Scala-Collections-Tips-and-Tricks/
 a.apply(x)则可以简化为a(x)
@@ -17,6 +22,20 @@ http://colobu.com/2015/07/02/Scala-Collections-Tips-and-Tricks/
 https://github.com/spray/spray-template/
 http://my.oschina.net/FengJ/blog/228272
 http://www.ibm.com/developerworks/cn/java/j-jvmc5/index.html  使用 Akka 执行异步操作
+
+
+http://doc.mbalib.com/view/0dcb54987f65e5c7ee26e6db00398e26.html  akka微服务实践
+https://my.oschina.net/yangbajing/blog/536205  Akka实战：构建REST风格的微服务
+http://www.cnblogs.com/xinsheng/p/4615515.html  akka cluster 初体验
+https://my.oschina.net/FengJ/blog/228272  Spray.io搭建Rest服务
+http://www.smartjava.org/content/first-steps-rest-spray-and-scala
+https://github.com/DanielaSfregola/quiz-management-service/
+Akka Http是一个完整的server和client端HTTP开发栈，基于akka-actor他akka-stream。
+
+
+默认加载classpath下的application.conf,application.json和application.properties文件。通过ConfigFactory.load()加载。只能加载src/main/resources目录下的application.conf文件
+val c = ConfigFactory.parseFile(new File("*****.conf"))
+
 
 http://www.tuicool.com/articles/U3Abe2A  sbt加速下载
 http://my.oschina.net/u/915967/blog/146746
