@@ -4,6 +4,13 @@ minikube打包了和配置一个linux虚拟机、docker与kubernetes组件。
 
 https://caicloud.io/products/cubernetes
 
+https://mritd.me/2016/10/09/kubernetes-1.4-create-cluster/
+https://mritd.me/2016/10/29/set-up-kubernetes-cluster-by-kubeadm/
+http://www.slahser.com/2016/11/10/%E5%85%B3%E4%BA%8Ekubernetes-1.4.5-%E6%90%AD%E5%BB%BA/
+https://github.com/kubernetes/release
+https://github.com/mritd/docker-library
+
+
 http://kubernetes.io/docs/getting-started-guides/kubeadm/
 http://blog.csdn.net/zqg5258423/article/details/52683737
 

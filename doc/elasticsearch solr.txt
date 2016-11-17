@@ -25,7 +25,7 @@ output {
 logstash -f simple.conf --debug
 
 
-
+https://my.oschina.net/u/2903254/blog/789355  23 款实用的 Elasticsearch 查询示例
 http://www.infoq.com/cn/articles/analysis-of-elasticsearch-cluster-part01  Elasticsearch的存储模型和读写操作
 http://my.oschina.net/wsyblog/blog/702841
 https://imququ.com/post/elasticsearch.html   使用 Elasticsearch 实现博客站内搜索

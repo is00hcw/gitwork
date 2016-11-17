@@ -9,7 +9,7 @@ https://segmentfault.com/a/1190000006095018
 npm install -g create-react-app
 
 https://segmentfault.com/a/1190000006178770  入门 Webpack，看这篇就够了
-
+https://my.oschina.net/osccreate/blog/788185   流动的数据，使用 RxJS 构造复杂单页应用的数据逻辑  https://github.com/JayKan/RxJS-Playground https://github.com/Reactive-Extensions/RxJS/tree/master/examples
 
 
 View 就是 React 组件，而 Model 是 flux 中的 store。 Store 就是一个存储数据的对象，它会在 dispatch上注册自己感兴趣的事件。Dispatcher 是flux提供的一个全局的事件分发器，而 action 其实就是自定义的事件而已。
