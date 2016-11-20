@@ -1,8 +1,14 @@
 
 Kubernetes 1.3有个叫做 Minikube 的强大测试工具，可以在任意笔记本上运行单节点的小型集群。它借鉴了 Docker 中的一些概念，比如 docker－machine driver，用单个命令来设置本地环境。
-minikube打包了和配置一个linux虚拟机、docker与kubernetes组件。
+minikube打包了和配置一个linux虚拟机、docker与kubernetes组件。  https://segmentfault.com/a/1190000007065715
+在Minikube 启动 Kubernetes 集群，使用` minikube start`命令：
+Minikube 创建一个Host-Only（仅主机模式）网络接口，通过这个接口可以路由到节点。如果要与运行的pods或services进行交互，你应该通过这个地址发送流量。使用` minikube ip`命令可以查看这个地址
+Minikube 默认集成了Kubernetes Dashboard。执行` minikube dashboard`命令后，默认会打开浏览器
+如果你想通过shell里面执行命令，可以使用` kubectl exec `。如果想把流量从本地服务器转发给Pod或API Server，可以使用 ` kubectl port-forward`和`kubectl proxy`命令。
 
 https://caicloud.io/products/cubernetes
+https://caicloud.io/article_detail/581857d40f5c4ac8c7000001  基于 Kubernetes 的容器云平台落地实践
+https://caicloud.io/article_detail/580438cc5a7a621481000002  手把手教你搭建 Kubernetes 1.4 集群
 
 https://mritd.me/2016/10/09/kubernetes-1.4-create-cluster/
 https://mritd.me/2016/10/29/set-up-kubernetes-cluster-by-kubeadm/
@@ -17,3 +23,13 @@ http://blog.csdn.net/zqg5258423/article/details/52683737
 
 https://www.ustack.com/blog/kubernetes1/?belong=news
 http://blog.csdn.net/bogeli5/article/details/51598199
+
+
+docker1.12展示了docker大统一平台的野心, 集成了swarmkit, 使你可以不用安装额外的软件包, 使用简单的命令启动创建docker swarm集群.集成了swarm集群的安全特性, 集成了K-V存储, 你现在不需要额外部署etcd或者consul.
+Docker 中基于虚拟 IP（VIP）的负载均衡法，或者基于轮询调度（RR）DNS 的均衡负载法  新的 1.12.0 版 Docker Swarm 模式使用 IPVS（名为 “ip_vs” 的核心模块）来进行负载均衡。这是一个被整合进 Linux 内核的负载均衡模块。
+默认绑定 0.0.0.0:2377 ，当然我们也可以使用 docker swarm init –listen-addr <MANAGER-IP>:<PORT> 进行绑定ip
+集群环境内置Raft一致性协议，避免单点故障问题，也无需额外的类似于 Etcd/Consul/Zookeeper 的外部发现服务  自动选举出leader进行集群管理
+集群中的节点可以包括worker和manager两类不同的角色，它们之间可以通过promote和demote操作互相切换。在manager节点上可以进行集群的管理操作，其状态通过一个内部的Raft一致性协议实现进行同步和持久化。manager节点中会选举出一个leader来进行调度和编排。
+Swarm支持自我复制服务（replicated service 指定副本数目）或全局服务（global service 在每个worker上执行）。一个任务（task）是原子化执行和调度单元，对应着Docker容器和其运行配置。
+https://yq.aliyun.com/articles/55973?spm=5176.100239.blogcont57576.10.XOqA1n   DockerCon 2016 深度解读：在阿里云上体验Docker 1.12内置的编排能力
+http://www.tuicool.com/articles/jEniian  Docker Swarm 集群搭建笔记

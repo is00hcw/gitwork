@@ -1,4 +1,5 @@
 http://docs.daocloud.io/faq/what-is-daocloud-accelerator   docker
+https://fangs.work/blog/%E7%A8%8B%E5%BA%8F/%E6%9D%82%E9%A1%B9/Common-Repo-Mirror/  常用开发工具源国内镜像
 
 由于众所周知的网络原因，react-native命令行从npm官方源拖代码时会遇上麻烦。请将npm仓库源替换为国内镜像：
 

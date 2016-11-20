@@ -5,6 +5,9 @@ http://www.infoq.com/cn/news/2013/02/netflix-opensource
 http://netflix.github.io/
 http://cloud.spring.io/spring-cloud-sleuth/
 
+Stream已经支持Kafka/Rabbit MQ/Redis/Gemfire  http://blog.spring-cloud.io/blog/sc-stream.html
+http://blog.spring-cloud.io/blog/sc-config.html  SpringCloud 分布式配置
+
 Hadoop 2.6的新特性包含了Trace功能，一个类似于Google Dapper的分布式跟踪工具，为Hadoop系列应用提供请求跟踪和性能分析。在2.7中支持了Apache version of HTrace。并且，HTrace也集成到了HBase中，HBase 1.0.0使用Apache 3.1.0 release。
 http://blog.csdn.net/hustsselbj/article/details/46603809
  

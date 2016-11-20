@@ -8,6 +8,29 @@ FROM registry.aliyuncs.com/acs-sample/mysql:5.7
 docker pull registry.cn-hangzhou.aliyuncs.com/acs-sample/node
 docker pull registry.cn-hangzhou.aliyuncs.com/acs-sample/zookeeper   3.4.8
 docker pull registry.cn-hangzhou.aliyuncs.com/acs-sample/alpine
+registry.cn-hangzhou.aliyuncs.com/acs-sample/alisql:latest
+aliyun.global: true # 每台机器均部署一个nginx容器，达到高可用目的
+ return 301 https://$host$request_uri;
+
+https://yq.aliyun.com/articles/61083?spm=5176.100244.teamconlist.41.Z5uTmf  阿里云容器服务-配置http直接跳转到https
+https://yq.aliyun.com/articles/60789?spm=5176.100244.teamconlist.5.TCUeod  在Docker中运行Dubbo应用   
+https://github.com/binblee/dubbo-docker
+https://yq.aliyun.com/articles/60530?spm=5176.8091938.0.0.3aQ56o  openresty API网关遇上容器服务
+https://github.com/binblee/apigateway-docker-demo
+https://segmentfault.com/a/1190000007387013  openresty的docker实例
+
+
+https://segmentfault.com/a/1190000005177766
+http://blog.spring-cloud.io/blog/sc-sleuth.html  SpringCloudSleuth 微服务架构下的分布式追踪  https://github.com/seagrape/SpringCloudSleuth
+https://yq.aliyun.com/articles/60165?spm=5176.100239.blogrightarea60789.27.qe9OEl  利用Zipkin对Spring Cloud应用进行服务追踪分析
+https://github.com/binblee/zipkin-demo
+STORAGE_TYPE`: SpanStore implementation: one of `mem`, `mysql`, `cassandra`, `elasticsearc
+spring应用在监测到Java依赖包中有sleuth和zipkin后，会自动在RestTemplate的调用过程中向HTTP请求注入追踪信息，并向Zipkin Server发送这些信息。
+哪么Zipkin Server的地址又是在哪里指定的呢？答案是在application.properties中：
+spring.zipkin.base-url=http://zipkin-server:9411   在生产环境中还需要为Zipkin配置数据库
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/' /etc/apk/repositories
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
+
 
 https://yq.aliyun.com/articles/61331?spm=5176.100239.bloglist.37.a75830  阿里云容器服务--配置自定义路由服务应对DDOS攻击
 https://sloppy.io/from-dev-to-prod-with-nodejs-and-hackathon-starter-using-docker-compose-part-1/  docker nodejs
