@@ -9,6 +9,7 @@ Minikube 默认集成了Kubernetes Dashboard。执行` minikube dashboard`命令后，默认会
 https://caicloud.io/products/cubernetes
 https://caicloud.io/article_detail/581857d40f5c4ac8c7000001  基于 Kubernetes 的容器云平台落地实践
 https://caicloud.io/article_detail/580438cc5a7a621481000002  手把手教你搭建 Kubernetes 1.4 集群
+http://www.xf80.com/2016/10/31/kubernetes-update-1.4.5/
 
 https://mritd.me/2016/10/09/kubernetes-1.4-create-cluster/
 https://mritd.me/2016/10/29/set-up-kubernetes-cluster-by-kubeadm/
@@ -25,11 +26,33 @@ https://www.ustack.com/blog/kubernetes1/?belong=news
 http://blog.csdn.net/bogeli5/article/details/51598199
 
 
+Overlay网络是指在不改变现有网络基础设施的前提下，通过某种约定通信协议，把二层报文封装在IP报文之上的新的数据格式。 Docker内置的Overlay网络是采用IETF标准的VXLAN方式，并且是VXLAN中普遍认为最适合大规模的云计算虚拟化环境的SDN Controller模式。
 docker1.12展示了docker大统一平台的野心, 集成了swarmkit, 使你可以不用安装额外的软件包, 使用简单的命令启动创建docker swarm集群.集成了swarm集群的安全特性, 集成了K-V存储, 你现在不需要额外部署etcd或者consul.
 Docker 中基于虚拟 IP（VIP）的负载均衡法，或者基于轮询调度（RR）DNS 的均衡负载法  新的 1.12.0 版 Docker Swarm 模式使用 IPVS（名为 “ip_vs” 的核心模块）来进行负载均衡。这是一个被整合进 Linux 内核的负载均衡模块。
 默认绑定 0.0.0.0:2377 ，当然我们也可以使用 docker swarm init –listen-addr <MANAGER-IP>:<PORT> 进行绑定ip
 集群环境内置Raft一致性协议，避免单点故障问题，也无需额外的类似于 Etcd/Consul/Zookeeper 的外部发现服务  自动选举出leader进行集群管理
 集群中的节点可以包括worker和manager两类不同的角色，它们之间可以通过promote和demote操作互相切换。在manager节点上可以进行集群的管理操作，其状态通过一个内部的Raft一致性协议实现进行同步和持久化。manager节点中会选举出一个leader来进行调度和编排。
 Swarm支持自我复制服务（replicated service 指定副本数目）或全局服务（global service 在每个worker上执行）。一个任务（task）是原子化执行和调度单元，对应着Docker容器和其运行配置。
+http://blog.csdn.net/yeasy/article/details/52098902
 https://yq.aliyun.com/articles/55973?spm=5176.100239.blogcont57576.10.XOqA1n   DockerCon 2016 深度解读：在阿里云上体验Docker 1.12内置的编排能力
 http://www.tuicool.com/articles/jEniian  Docker Swarm 集群搭建笔记
+eval $(docker-machine env node-1)
+TOKEN=$(docker swarm join-token -q worker)
+docker network create -d overlay ngx_net
+docker service create --name nginx --replicas 1 --network ngx_net -p 80:80/tcp nginx
+http://liubin.org/blog/2016/06/21/try-new-docker-swarm/
+https://segmentfault.com/a/1190000006235025
+
+
+overlay网络，这个特性最早出现在docker1.9版本发布的功能特性中，他的特点就是能够使不同宿主机上的容器进行网络互通。
+
+而在此之前，如果要做到位于不同主机的容器之间通信，一般有几种方法：
+
+使用端口映射：直接把容器的服务端口映射到主机上，主机直接通过映射出来的端口通信
+
+把容器放到主机所在的网段
+
+通过第三方工具flannel，weave 或者 pipework 等，这些方案一般都是通过 SDN 搭建 overlay 网络达到容器通信的
+目前Swarm mode提供了6种discovery机制：Token（默认）、Node、File、Consul、Etcd、Zookeeper。其中有两种方式的节点需要对配置文件或者其他相关内容进行维护，其他服务发现仅需要通过join命令行来完成。这两种方式分别是Node和File discovery。
+docker service update --update-parallelism  2 --image demo:2.0 --update-delay 10s test
+http://www.jianshu.com/p/0ff3181aa886
