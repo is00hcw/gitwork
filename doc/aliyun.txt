@@ -48,7 +48,7 @@ https://help.aliyun.com/knowledge_detail/38991.html
 
 ONS MQ 发送普通消息有三种实现方式：可靠同步发送、可靠异步发送、单向(Oneway)发送。
 
-
+https://gosspublic.alicdn.com/image/index.html?spm=5176.8195614.499545.6.7RKW3Z   oss图片处理接口
 http://www.jianshu.com/p/ad68f78f1419  阿里云上CentOS的图形访问
 https://yq.aliyun.com/articles/57164?spm=5176.8091938.0.0.t02Ogl  成本
 https://yq.aliyun.com/articles/57159?spm=5176.8091938.0.0.t02Ogl   安全

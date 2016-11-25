@@ -1,3 +1,5 @@
+curl -sSL https://cdn.quncrm.com/docker.sh | sudo sh   
+http://blog.csdn.net/u014788227/article/details/52829507
 docker cp c4dfda7a9367:/usr/local/tomcat/bin/catalina.sh .
 docker cp catalina.sh c4dfda7a9367:/usr/local/tomcat/bin/catalina.sh
 docker logs -f --tail=100  c4d
@@ -10,7 +12,7 @@ docker pull registry.cn-hangzhou.aliyuncs.com/acs-sample/zookeeper   3.4.8
 docker pull registry.cn-hangzhou.aliyuncs.com/acs-sample/alpine
 registry.cn-hangzhou.aliyuncs.com/acs-sample/alisql:latest
 aliyun.global: true # Ã¿Ì¨»úÆ÷¾ù²¿ÊğÒ»¸önginxÈİÆ÷£¬´ïµ½¸ß¿ÉÓÃÄ¿µÄ
- return 301 https://$host$request_uri;
+return 301 https://$host$request_uri;
 
 https://yq.aliyun.com/articles/61083?spm=5176.100244.teamconlist.41.Z5uTmf  °¢ÀïÔÆÈİÆ÷·şÎñ-ÅäÖÃhttpÖ±½ÓÌø×ªµ½https
 https://yq.aliyun.com/articles/60789?spm=5176.100244.teamconlist.5.TCUeod  ÔÚDockerÖĞÔËĞĞDubboÓ¦ÓÃ   
@@ -19,6 +21,15 @@ https://yq.aliyun.com/articles/60530?spm=5176.8091938.0.0.3aQ56o  openresty APIÍ
 https://github.com/binblee/apigateway-docker-demo
 https://segmentfault.com/a/1190000007387013  openrestyµÄdockerÊµÀı
 
+harbor
+https://mritd.me/2016/06/27/Harbor-%E4%BC%81%E4%B8%9A%E7%BA%A7-Docker-Registry-%E5%88%9D%E8%AF%95/?utm_source=tuicool&utm_medium=referral   
+https://my.oschina.net/vmwareharbor/blog/667088
+
+crane
+https://github.com/Dataman-Cloud/crane/tree/master/release/v1.0.6
+/lib/systemd/system/docker.service ÖĞ¸ù±¾Ã»ÓĞÉèÖÃ EnvironmentFile ±äÁ¿£¬ÒâÎ¶×Å /etc/docker/default ¸ù±¾Ã»ÓĞ±»¶ÁÈ¡    http://blog.csdn.net/jcjc918/article/details/46564891
+http://m.blog.csdn.net/article/details?id=52679365
+Ä¬ÈÏÓÃ»§Ãû£ºadmin@admin.com ÃÜÂë£ºadminadmin
 
 https://segmentfault.com/a/1190000005177766
 http://blog.spring-cloud.io/blog/sc-sleuth.html  SpringCloudSleuth Î¢·şÎñ¼Ü¹¹ÏÂµÄ·Ö²¼Ê½×·×Ù  https://github.com/seagrape/SpringCloudSleuth

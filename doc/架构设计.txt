@@ -9,7 +9,9 @@ haproxy ÓÃÆðÀ´±È½ÏÂé·³£¬ÅäÖÃ¸´ÔÓ£¬¶øÇÒËü²»ÄÜ½øÐÐÈÈ¼ÓÔØ£¬ ¹¤³ÌÊ¦¾ÍÓÃ Go ÓïÑÔÐ´ÁËÒ
 ÎÒÃÇÒ²ÔÚ×ö trace£¬Ç°Á½ÌìÖÕÓÚ°ÑÍØÆËÍ¼¸ø»­³öÀ´£¬°ÑÒ»¸öÒµÎñËùÓÐµÄµ÷ÓÃÕ¹Ê¾³ÉÒ»¸öµ÷ÓÃÊ÷£¬ÕâÑù¾Í¿ÉÒÔºÜºÃµÄ·ÖÎöÒµÎñ¡£
 ·å¸ç£¨CTO£©ËµÄãÎÞ·¨Ô¤²âÃ¿¸ö¿ª·¢Õß»áÔõÃ´Ê¹ÓÃÄãµÄ¿ò¼Ü£¬¼´Ê¹¿ò¼Ü±»ÀÄÓÃÁË£¬×î»µµÄÇé¿ö£¬Ò²ÐèÒª±£Ö¤ÄÜ¹»»îµÄÏÂÈ¥¡£ ËùÓÐµÄ¼à¿ØÏµÍ³£¬Á´Â·¸ú×ÙÏµÍ³¶¼ÊÇ¿ÉÒÔ½µ¼¶µÄ£¬²»ÄÜÒòÎªÕâÐ©¶«Î÷µ¼ÖÂÕû¸öÏµÍ³±ÀÀ£¡£
 
- 
+ IaaS ±¾ÖÊÉÏÓÐÈý¿é£º¼ÆËãµÄÐéÄâ»¯¡¢ÍøÂçµÄÐéÄâ»¯¡¢´æ´¢µÄÐéÄâ»¯¡£
+AWS ¶ÔÒ»¸öÓ¦ÓÃµÄÀí½â¾ÍÊÇÊý¾Ý+º¯Êý+ÊÂ¼þ¡£OCR Ê¶±ðµÄ×÷ÓÃÊÇ°ÑÌâÄ¿É¨Ãè³ÉÍ¼Æ¬£¬Í¨¹ý opencv ºÍ»úÆ÷Ñ§Ï°µÄ·½Ê½Ê¶±ðÌâÄ¿µÄÄÚÈÝ¡£
+http://business.sohu.com/20161011/n470006712.shtml   ÖÕÓÚ°ÑÇø¿éÁ´µÄ¼¼ÊõÓëÓ¦ÓÃ½²Çå³þÁË 
 http://mp.weixin.qq.com/s?__biz=MzAwMDU1MTE1OQ==&mid=2653547663&idx=1&sn=4de30a5a792d9442ef6015b554182913&scene=1&srcid=0813UuexH7rTacCEIOR9DFCW#wechat_redirect    Ä¢¹½½ÖµçÉÌ½»Ò×Æ½Ì¨·þÎñ¼Ü¹¹¼°¸ÄÔìÓÅ»¯Àú³Ì
 http://mp.weixin.qq.com/s?__biz=MzAwMDU1MTE1OQ==&mid=2653546976&idx=1&sn=c3fb2338389a41e7ab998c0c21bd3e5d&scene=21#wechat_redirect     ±£Ö¤·Ö²¼Ê½ÏµÍ³Êý¾ÝÒ»ÖÂÐÔµÄ6ÖÖ·½°¸
 http://mp.weixin.qq.com/s?__biz=MzA5Nzc4OTA1Mw==&mid=2659597787&idx=1&sn=5482cf464d2bef4d1178e5d978beb993#rd   ×¨·ÃÂÀÒã£ºÁ´¼ÒÍø¼¼Êõ¼Ü¹¹µÄÑÝ½øÖ®Â·   Kafka ConnectorÈÕÖ¾ÊÕ¼¯

@@ -14,10 +14,15 @@ http://blog.csdn.net/sbsujjbcy/article/details/52541803   Android 热补丁技术——
 http://mp.weixin.qq.com/s?__biz=MzA3NTYzODYzMg==&mid=2653577964&idx=1&sn=bac5c8883b7aaaf7d7d9ea227f200412  QFix探索之路——手Q热补丁轻量级方案
  
 
+Freeline本质上是一个热补丁方案，将修过过的*.java和资源文件分别打成dex和pack，然后通过socket传输到手机上，在运行期动态加载生效。 
+https://yq.aliyun.com/articles/62334?spm=5176.100239.blogcont59122.15.peq2Ma  Android秒级编译工具Freeline新特性支持！
+https://github.com/T-Group/QFix?spm=5176.100239.blogcont62334.23.rLMEuE
+
 http://www.oschina.net/news/78857/best-android-libraries-for-developers  面向开发者的最佳 Android 库列表
 https://yq.aliyun.com/articles/59177?spm=5176.100239.bloglist.16.EjXXV7     Freeline - Android平台上的秒级编译方案   https://github.com/alibaba/freeline
 https://github.com/alibaba/java-dns-cache-manipulator/tree/master/library   代码里面设置dns ip绑定
 https://yq.aliyun.com/articles/58517?spm=5176.8067842.tagmain.62.gdmKQ2  深度理解Android InstantRun原理以及源码分析
+http://www.infoq.com/cn/articles/practice-of-netease-android-project-template?utm_campaign=rightbar_v2&utm_source=infoq&utm_medium=articles_link&utm_content=link_text   网易 Android工程模板化实践
 
 https://mp.weixin.qq.com/s?__biz=MzA4NTQwNDcyMA==&mid=2650661681&idx=1&sn=b151aba0c5fb702492f6bbd82211988d&scene=1&srcid=0516zj5pE2h0zmq1FTa3XXh8&key=b28b03434249256b1925f433cb052fd00117b50219b8aaf351d376f601a857b4150c3a3979f1fea589e03cf72b9e4ca9&ascene=0&uin=Mjc3OTU3Nzk1&devicetype=iMac+MacBookPro10%2C1+OSX+OSX+10.10.5+build%2814F1713%29&version=11020201&pass_ticket=8lpzOjRJO3IS%2BmKcvsqRN%2FlzlWyR2q2fmKv15GKO2PPYAKDGPXDhyfntueC4bIod
 http://blog.csdn.net/walid1992/article/details/52167539  代码规范

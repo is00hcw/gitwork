@@ -20,6 +20,7 @@ http://developer.baidu.com/map/library.htm
 kafka
 http://valleylord.github.io/post/201607-mq-kafka/  说说 MQ 之 Kafka
 http://valleylord.github.io/post/201607-mq-rocketmq/  rocketmq
+https://my.oschina.net/pingpangkuangmo/blog/791636  kafka的高可用和一致性探究
 消息发送时都被发送到一个topic，其本质就是一个目录，而topic由是由一些Partition Logs(分区日志) 每个Partition中的消息都是有序的，生产的消息被不断追加到Partition log上，其中的每一个消息都被赋予了一个唯一的offset值。 Kafka集群会保存所有的消息，不管消息有没有被消费；我们可以设定消息的过期时间，只有过期的数据才会被自动清除以释放磁盘空间。
 Kafka允许用户为每个topic设置副本数量，副本数量决定了有几个broker来存放写入的数据。每一个topic都可以设置它的partition数量，Partition的数量决定了组成topic的log的数量。Producer在生产数据时，会按照一定规则（这个规则是可以自定义的）把消息发布到topic的各个partition中。上面将的副本都是以partition为单位的，不过只有一个partition的副本会被选举成leader作为读写用。 
 建议partition的数量大于集群broker的数量，这样leader partition就可以均匀的分布在各个broker中，最终使得集群负载均衡。

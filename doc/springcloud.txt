@@ -1,0 +1,21 @@
+https://www.oschina.net/translate/integration-the-spring-cloud-netflix-framework-int
+Eureka用于Spring管理下的bean服务发现
+Zuul处理路由服务，被视为请求的”守门员“
+Ribbon用于动态路由和负载均衡
+Hystrix提供了断路器功能，以处理无响应的API调用
+Turbine提供了关于Hystrix的全部可用断路器的信息
+Spring Cloud Config，它把应用配置集中到了一个Git仓库
+
+http://www.tuicool.com/articles/bAJJbmb
+
+ConfigurableApplicationContext context = new SpringApplicationBuilder()
+.web(false).sources(TestStoreApp.class).run(args);
+@RunWith(SpringJUnit4ClassRunner.class)
+
+@SpringApplicationConfiguration(classes = StoreApp.class)
+
+@EnableCircuitBreaker
+@EnableDiscoveryClient
+
+@EnableFeignClients
+@HystrixCommand(fallbackMethod = "defaultLink")

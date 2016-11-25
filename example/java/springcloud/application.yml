@@ -1,0 +1,73 @@
+server:
+  port: 9000
+
+endpoints:
+  restart:
+    enabled: true
+  shutdown:
+    enabled: true
+  health:
+    sensitive: false
+
+integration:
+  stores:
+    uri: http://localhost:8081
+    test: '{cipher}316f8cdbb776c23e679bf209014788a6eab7522f48f97114328c2c9388e6b3c1'
+
+stores:
+  ribbon:
+    ServerListRefreshInterval: 1000
+    
+ribbon:
+  ServerListRefreshInterval: 5000
+  ConnectTimeout: 3000
+  ReadTimeout: 60000
+  
+zuul:
+  routes:
+    stores:
+      path: /stores/**
+      strip-prefix: false
+    customers:
+      path: /customers/**
+      strip-prefix: false
+      
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    metadataMap:
+      instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${server.port}}}
+  client:
+    region: default
+    registryFetchIntervalSeconds: 5
+    availabilityZones: 
+      default: ${APPLICATION_DOMAIN:${DOMAIN:defaultZone}}
+
+# For demo only allow more hystrix connections
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 60000
+hystrix:
+  stream:
+    maxConcurrentConnections: 20
+    bus:
+      enabled: true
+
+spring:
+  rabbitmq:
+    addresses: ${vcap.services.${PREFIX:}rabbitmq.credentials.uri:amqp://${RABBITMQ_HOST:localhost}:${RABBITMQ_PORT:5672}}
+
+logging:
+  level:
+    com.netflix.discovery: 'OFF'
+    com.netflix.zuul: 'OFF'
+
+---
+spring:
+  profiles: mysql
+  datasource:
+    url: jdbc:mysql://localhost/test
+    username: root
+    password:
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop

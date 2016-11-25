@@ -1,6 +1,6 @@
 http://blog.csdn.net/potato512/article/details/52176073  自动打包
 https://my.oschina.net/u/727843/blog/391946
-
+http://xudafeng.github.io/slide/archives/native-in-practice/#/   移动客户端编程实战
 https://github.com/fengling2300/networkTest   http://oncenote.com/2014/10/21/Security-1-HTTPS/
 
 http://www.cnblogs.com/kenshincui/p/3985090.html
@@ -22,11 +22,27 @@ http://www.jianshu.com/p/b0bf2368fb95   iOS最佳实践
 http://pan.baidu.com/s/1mgIbCz2  ios8
 
 http://m.163.com/special/newsclient/ios_libraries.html  网易类库
-
+http://mp.weixin.qq.com/s?__biz=MzA3ODg4MDk0Ng==&mid=2651112821&idx=1&sn=2987ba2c9d68e3982e795d9eeb15f82b  豆瓣App的模块化实践
 http://blog.ibireme.com/2013/09/23/ios-third-party-libs/  iOS 第三方开源库的吐槽和备忘
 http://blog.ibireme.com/2015/11/12/smooth_user_interfaces_for_ios/  iOS 保持界面流畅的技巧
 http://idlelife.org/archives/733    AsyncDisplayKit入门指南
 https://github.com/facebook/AsyncDisplayKit  
+
+自动化测试
+http://www.cnblogs.com/hyddd/p/5571229.html
+https://yq.aliyun.com/articles/64671?spm=5176.100239.blogcont64822.13.UwZpZ1    Macaca-Java版入门指南
+https://macacajs.com/inspector?spm=5176.100239.blogcont64671.26.wWF5pB
+https://yq.aliyun.com/articles/64822?spm=5176.100239.topwz.1.Qh0UpW
+iTools就是使用这玩意儿和iPhone通讯的，libimobiledevice是破解iTunes和iPhone的通讯后实现的lib。Xcode5之前是fruitstrap，fruitstrap后来放弃维护，Xcode5后使用libimobiledevice。
+
+Macaca 对于 native 的自动化测试主要利用了 UIAutomator UIAutomator 是随 Android SDK 一起发布的一个测试框架，该测试框架提供了一系列 API，利用这些 API 我们可以编程和安卓 App 进行交互，例如：打开设置菜单，点击，滑动等。并且可以对设备进行物理指令操作，如：旋转设备，获取设备分辨率等。该测试框架的 jar 包可以在 SDK 的安装目录中找到:
+$ANDROID_HOME/platforms/android-$version/uiautomator.jar
+Macaca 主要有两个模块来负责操作设备的自动化测试，一个是 macaca-adb ，一个是 uiautomator-client 。 macaca-adb 用 Nodejs 对安卓 adb 命令进行了包装，以供其他 node 模块调用，可以用其来进行模拟器的启动，端口号映射，获取设备等操作。
+uiautomator-client 模块会在本地机器和安卓设备之间建立 socket 连接，然后自动化指令就通过 socket 进行传输。
+http://www.tuicool.com/articles/nABjMbv
+http://www.cnblogs.com/hyddd/p/5593479.html
+http://www.cnblogs.com/fnng/p/5873878.html
+iOS的自动化测试框架可分为两种：注入式和非注入式。注入式的框架通常会提供一些Lib或者是Framework，要求测试人员在待测应用的代码工程中导入这些内容，框架可以通过他们完成对app的驱动，典型的比如monkeytalk。非注入式的框架则是通过苹果提供的instruments工具，调用官方的接口函数，实现对app的相关操作，典型的就是uiautomation，appium
 https://github.com/Carthage/Carthage   库管理
 https://github.com/ibireme/YYKit
 https://github.com/ibireme/YYDispatchQueuePool
