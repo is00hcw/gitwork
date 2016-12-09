@@ -1,6 +1,13 @@
+http://sudhaker.com/30/install-the-latest-meso-on-centos-7-x   Install the latest Mesos on CentOS 7.x
+yum install http://repos.mesosphere.io/el/7/noarch/RPMS/mesosphere-el-repo-7-1.noarch.rpm
+yum install docker mesosphere-zookeeper mesos marathon chronos  -y
+echo 'docker,mesos' > /etc/mesos-slave/containerizers
+http://open.mesosphere.com/advanced-course/installing-software/
+http://sudhaker.com/65/minimal-mesosphere-dcos-1-8-on-centos-7-x   Minimal Mesosphere DC/OS 1.8 on CentOS 7.x
+
+
 https://github.com/Dataman-Cloud/Mesos-CN
-http://www.mesoscn.cn/
- 
+http://www.mesoscn.cn/ 
 http://blog.dataman-inc.com/shurenyun-mesos-151/   数人云总架构师解读Mesos1.0.0
 https://blog.tutum.co/2014/12/02/docker-and-s6-my-new-favorite-process-supervisor/  docker s6进程管理
 http://www.youruncloud.com/apphouse.html  一篇文章看CNTV的容器化探索和平台搭建  
@@ -9,16 +16,92 @@ AppHouse为国内首家免费企业级私有镜像仓库，以安全可靠简单易用为导向
 
 VMware公司最近开源了企业级Registry项目Harbor，由VMware中国研发的团队负责开发。Harbor项目是帮助用户迅速搭建一个企业级的registry 服务。它以Docker公司开源的registry为基础，提供了管理UI, 基于角色的访问控制(Role Based Access Control)，AD/LDAP集成、以及审计日志(Audit logging) 等企业用户需求的功能，同时还原生支持中文
 http://mt.sohu.com/20160331/n443025063.shtml  Harbor的每个组件都是以Docker 容器的形式构建的，因此很自然地，我们使用Docker Compose来对它进行部署。
-在源代码中(https://github.com/vmware/harbor), 用于部署Harbor的Docker Compose 模板位于 /Deployer/docker-compose.yml由5个容器组成：
-Proxy: 由Nginx 服务器构成的反向代理。
-Registry:由Docker官方的开源registry 镜像构成的容器实例。
-UI: 即架构中的core services, 构成此容器的代码是Harbor项目的主体。
-Mysql: 由官方MySql镜像构成的数据库容器。
-Log: 运行着rsyslogd的容器，通过log-driver的形式收集其他容器的日志。
+在源代码中(https://github.com/vmware/harbor), 用于部署Harbor的Docker Compose 模板位于 /Deployer/docker-compose.yml由5个容器组成：Proxy: 由Nginx 服务器构成的反向代理。Registry:由Docker官方的开源registry 镜像构成的容器实例。UI: 即架构中的core services, 构成此容器的代码是Harbor项目的主体。
+Mysql: 由官方MySql镜像构成的数据库容器。Log: 运行着rsyslogd的容器，通过log-driver的形式收集其他容器的日志。
 https://www.ustack.com/blog/docker/?utm_source=tuicool&utm_medium=referral
 
 思科容器管理平台 Mantl 团队的认可。Mantl 也是基于 Mesos 和 Docker 打造的，并在 Github 上开源。Mantl 为用户提供了部署微服务平台所需的所有基础设施组件，通过将这些组件良好地配合运行，使用户免于编写用于整合这些组件的代码。
 http://www.infoq.com/cn/news/2016/03/cisco-mantl-microservices?utm_campaign=infoq_content
+
+
+https://sreeninet.wordpress.com/2016/06/19/mesos-dcos-hands-on/   Mesos DC/OS Hands-On
+http://qinyueming.cc/2016/08/04/Mesos-%E5%AE%89%E8%A3%85/   Mesos 安装
+./bin/mesos-master.sh --ip=0.0.0.0 --work_dir=/var/lib/mesos
+./bin/mesos-agent.sh --master=0.0.0.0:5050 --work_dir=/var/lib/mesos
+http://blog.liulantao.com/blog/2016/2016-10-11-mesos-series-1-mesos-up.html   Mesos 实战-1：Mesos 起步
+yum install -y http://repos.mesosphere.com/el-testing/7/noarch/RPMS/mesosphere-el-repo-7-3.noarch.rpm && \ 
+yum update -y && \ 
+yum install -y mesos mesosphere-zookeeper
+
+yum install -y http://repos.mesosphere.com/el-testing/7/noarch/RPMS/mesosphere-el-repo-7-3.noarch.rpm && \
+yum update -y && \
+yum install -y marathon
+
+mesos-master --quorum=1 --zk=zk://127.0.0.1:2181/mesos --ip=0.0.0.0 --work_dir=/var/lib/mesos/master
+mesos-agent --master=0.0.0.0:5050 --work_dir=/var/lib/mesos/slave
+http://blog.liulantao.com/blog/2016/2016-10-12-mesos-series-2-mesos-frameworks.html  Mesos 实战-2：Mesos 框架初探
+http://blog.liulantao.com/blog/2016/2016-11-11-mesos-series-3-marathon-as-operation-platform.html   Mesos 实战-3：Marathon 作为运维管理平台
+./bin/start --master zk://127.0.0.1:2181/mesos --zk zk://127.0.0.1:2181/marathon
+
+'OSAtomicCompareAndSwap32' is deprecated: first deprecated in macOS 10.12 
+configure CPPFLAGS="-Wno-deprecated-declarations"
+
+https://mesos.github.io/chronos/docs/
+rpm -Uvh http://repos.mesosphere.io/el/7/noarch/RPMS/mesosphere-el-repo-7-1.noarch.rpm
+rpm -Uvh http://repos.mesosphere.io/el/7/noarch/RPMS/mesosphere-el-repo-7-2.noarch.rpm
+yum install mesos marathon chronos mesosphere-zookeeper
+
+http://www.cnblogs.com/ee900222/p/docker_2.html  使用Mesos管理Docker集群（Mesos + Marathon + Chronos + Docker）
+http://kiwenlau.com/2015/09/18/150918-single-mesos-docker/   基于Docker搭建单机版Mesos/Marathon
+
+http://topspeedsnail.com/ubuntu16-install-java-jdk/    Ubuntu 16.04安装Java JDK
+https://www.digitalocean.com/community/tutorials/an-introduction-to-mesosphere   An Introduction to Mesosphere
+http://www.cnblogs.com/hl-piglet/p/6043185.html  Apache Mesos1.0.1 编译安装部署教程(ubuntu)
+http://mesos.apache.org/gettingstarted/
+https://www.zybuluo.com/SailorXiao/note/463230   mesos 学习笔记1 -- mesos安装和配置
+http://www.jianshu.com/p/f60e8177376b     Mesos1.0.1 安装指南
+http://billcloud.me/configuring-a-mesos/marathon-cluster-on-ubuntu-16.04/   Configuring a Mesos/Marathon Cluster on Ubuntu 16.04
+默认make install会安装到/user/local/sbin底下，配置文件在/usr/local/etc底下，在这两个目录下，会有一些文件跟master/agent相关
+
+
+http://www.jianshu.com/p/c472ae302125   Mesos安装部署
+http://www.jianshu.com/p/257f44167c45  Mesos简介与安装
+http://m.blog.csdn.net/article/details?id=52524970   mesos1.0实战
+echo "deb http://repos.mesosphere.com/ubuntu xenial main" | sudo tee /etc/apt/sources.list.d/mesosphere.list
+
+访问Mesos console :     http://<master-ip>:5050
+访问Marathon console :      http://<master-ip>:8080
+另外一个快速验证的方法是在通过mesos-execute执行一个任务使其运行在任何节点上：
+MASTER=$(mesos-resolve `cat /etc/mesos/zk`)
+mesos-execute --master=$MASTER --name="cluster-test" --command="sleep 5"
+
+http://yemic.com/cloud/mesos-introduction.html  Mesos Introduction
+Mesos四个组件master、slave、scheduler和executor采用actor model通信，协议用protobuf，基于libprocess库实现。每个模块都是一个服务，监听其他模块的消息。计算框架想接入Mesos只需要写Scheduler和Executor即可。
+
+https://mesosphere.com/blog/2014/07/07/installing-mesos-on-your-mac-with-homebrew/
+/usr/local/sbin/mesos-master --registry=in_memory --ip=127.0.0.1
+curl -O http://downloads.mesosphere.com/marathon/v1.3.5/marathon-1.3.5.tgz
+
+http://www.itdadao.com/articles/c15a190632p0.html  mesos marathon环境简单搭建
+marathon-1.1.1/bin/start --master 192.168.211.131:5050  --zk zk://127.0.0.1:2181/marathon
+
+Marathon LB是Marathon的服务发现系统。Marathon LB通过使用Haproxy实现了代理服务器的功能。 http://kiwenlau.com/2016/09/04/what-is-service-discovery/
+mesos提供了两个工具：mesos-dns和marathon-lb。mesos-dns是一个服务发现工具，marathon-lb不仅是服务发现工具，还是负载均衡工具。
+Mesos-dns是 mesos 服务发现工具，能查找app的Ip，端口号以及master，leader等信息。
+Marathon-lb既是一个服务发现工具，也是负载均衡工具，它集成了haproxy，自动获取各个app的信息，为每一组app生成haproxy配置，通过servicePort或者web虚拟主机提供服务。
+http://www.cnblogs.com/hahp/p/5396302.html
+mesos-exporter 是 mesosphere 开发的工具，用于导出 mesos 集群包括 task 的监控数据并传递给prometheus；prometheus是个集 db、graph、statistic 于一体的监控工具；alert-manager 是 prometheus 的报警工具
+http://kiwenlau.com/2016/07/10/mesos-marathon-platform/    基于Docker搭建多节点Mesos/Marathon
+
+marathon的restful api 有查看当前程序信息的接口:http://192.168.1.110:8080/v2/tasks
+haproxy-marathon-bridge根据该接口生成haproxy的服务发现及负载均衡。
+./haproxy-marathon-bridge 192.168.1.110:8080 > /etc/haproxy/haproxy.cfg
+Marathon附带一个简单的被叫做 haproxy-marathon-bridge 的shell脚本以及更高级的
+Python脚本 servicerouter.py。两个脚本都可以将Marathon的REST API列表中正在运行的任务推送到HAproxy的设置文件中  http://www.mesoscn.cn/document/Marathon/Service-Discovery.html
+
+之前的版本使用serf/dnsmasq为Hadoop集群提供DNS服务，由于Docker网络功能更新，现在并不需要了。更新的版本中，使用以下命令为Hadoop集群创建单独的网络:
+sudo docker network create --driver=bridge hadoop
+
 
 
 Apache Mesos由四个组件组成，分别是Mesos-master，mesos-slave，framework和executor。
@@ -97,54 +180,34 @@ vagrant init minimum/ubuntu-trusty64-docker
  
 
 
-Kubernetes 
-http://qinghua.github.io/kubernetes-installation/   轻松搭建Kubernetes 1.2版运行环境
-http://qinghua.github.io/kubernetes-deployment/?utm_source=tuicool&utm_medium=referral
-一台叫做master，运行着k8s的api server、controller manager和scheduler；另两台叫做node1和node2，运行着k8s的kubelet和kube-proxy，当做k8s的两个节点。
-Kubernetes（k8s）是自动化容器操作的开源平台，这些操作包括部署，调度和节点集群间扩展
-http://www.wtoutiao.com/p/100xuFR.html
-在较新的版本里，cadvior功能被集成到了kubelet组件中，kubelet在与docker交互的同时，对外提供监控服务。
-kubernetes集群范围内的监控主要由kubelet, heapster和storage backend（如influxdb）构建。
-http://www.csdn.net/article/2015-07-30/2825337   v1.0
+https://open.mesosphere.com/advanced-course/introduction/
+https://github.com/dcos/dcos-vagrant/releases/tag/v0.9.0
+https://github.com/redspread/spread
+https://gist.github.com/Nikkau/8f4badc0d87871b5feb4   install Docker/k8s from scratch on OSX
+brew tap redspread/spread 
+brew install kubectl spread
+spread cluster start # ask Spread to start a k8s cluster with Docker client settings
+https://imququ.com/post/vagrantup.html  开始使用 Vagrant
+http://ninghao.net/blog/2077  用 Vagrant 管理虚拟机
+http://kiwenlau.com/2016/07/03/vagrant-vm-cluster/   使用Vagrant创建多节点虚拟机集群
+http://ninghao.net/blog/2071  （Windows：Chocolatey，Mac：Homebrew）
+iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))
 
+http://www.zoues.com/2016/03/07/mesosphere-dcos-zoues/
+sudo bash dcos_generate_config.sh --web -v启动安装程序
+curl -O http://<workstation-ip>:<your_port>/dcos_install.sh
+sudo bash dcos_install.sh master
+sudo bash dcos_install.sh slave
 
-https://yq.aliyun.com/articles/55883?spm=5176.8067842.tagmain.53.xlnV8D  kubernetes听云实战发布版
-http://mp.weixin.qq.com/s?__biz=MzI4MjE3MTcwNA==&mid=2664334723&idx=1&sn=6a5b727b066469dc9f26ca73cc0c37e1#rd    《K8s与云原生应用》之K8s的系统架构与设计理念
-http://dockone.io/article/932
-http://www.infoq.com/cn/articles/Kubernetes-system-architecture-introduction
-https://linfan1.gitbooks.io/kubernetes-chinese-docs/content/   Kubernetes中文文档
-http://valleylord.github.io/post/201601-kubernetes-concepts/   Kubernetes原理简介
-http://valleylord.github.io/post/201602-kubernetes-concepts2/
-http://www.csdn.net/article/1970-01-01/2824933
-http://blog.coocla.org/kubernetes-overview.html
-http://7xi8kv.com5.z0.glb.qiniucdn.com/%E4%BD%BF%E7%94%A8kubernetes%E6%9E%84%E5%BB%BA%E6%9C%8D%E5%8A%A1%E5%BA%94%E7%94%A8%E5%B9%B3%E5%8F%B0.pdf  使用kubernetes构建企业级服务应用平台
-http://gaocegege.com/Blog/kubernetes/spring-boot-in-kubernetes  在Kubernetes中的Spring Boot项目部署
-https://community.qingcloud.com/topic/393/kubernetes%E5%92%8Cmesos%E9%9B%86%E6%88%90%E8%A7%A3%E6%9E%90    Kubernetes和Mesos集成解析
-http://qinghua.github.io/kubernetes-in-mesos-9/
-https://linfan1.gitbooks.io/kubernetes-chinese-docs/content/032-memsos.html
-http://blog.dataman-inc.com/109-shurenyun-huodong/
-http://www.tqcto.com/article/framework/3324.html   Mesos+Kubernetes集成安装部署
-从K8s的系统架构、技术概念和设计理念，我们可以看到K8s系统最核心的两个设计理念：一个是容错性，一个是易扩展性。容错性实际是保证K8s系统稳定性和安全性的基础，易扩展性是保证K8s对变更友好，可以快速迭代增加新功能的基础。
-Kubernetes是为生产环境而设计的容器调度管理系统，对于负载均衡、服务发现、高可用、滚动升级、自动伸缩等容器云平台的功能要求有原生支持。由于Kubernetes在K和s间有8个字母，因此常简称K8s。
-K8s在2016年6月的云计算大会上发表了有关容器设计模式的论文《Design patterns for container-based distributed systems》，介绍了基于K8s设计云原生应用的容器设计模式，
-一个K8s集群是由分布式存储（etcd）、服务节点（Minion，etcd现在称为Node）和控制节点（Master）构成的。所有的集群状态都保存在etcd中，Master节点上则运行集群的管理控制模块。Node节点是真正运行应用容器的主机节点，在每个Minion节点上都会运行一个Kubelet代理，控制该节点上的容器、镜像和存储卷等。
-K8s中所有的配置都是通过API对象的spec去设置的，也就是用户通过配置系统的理想状态来改变系统，这是k8s重要设计理念之一，即所有的操作都是声明式（Declarative）的而不是命令式（Imperative）的。
-Pod的设计理念是支持多个容器在一个Pod中共享网络地址和文件系统，可以通过进程间通信和文件共享这种简单高效的方式组合完成服务。Pod对多容器的支持是K8最基础的设计理念。
-目前K8s中的业务主要可以分为长期伺服型（long-running）、批处理型（batch）、节点后台支撑型（node-daemon）和有状态应用型（stateful application）；分别对应的小机器人控制器为Deployment、Job、DaemonSet和PetSet
-复制控制器（Replication Controller，RC）是K8s集群中最早的保证Pod高可用的API对象。通过监控运行中的Pod来保证集群中运行指定数目的Pod副本。 RC是K8s较早期的技术概念，只适用于长期伺服型的业务类型，比如控制小机器人提供高可用的Web服务。副本集（Replica Set，RS）RS是新一代RC
-滚动升级一个服务，实际是创建一个新的RS，然后逐渐将新RS中副本数增加到理想状态，将旧RS中的副本数减小到0的复合操作；这样一个复合操作用一个RS是不太好描述的，所以用一个更通用的Deployment来描述。
-要稳定地提供服务需要服务发现和负载均衡能力。服务发现完成的工作，是针对客户端访问的服务，找到对应的的后端服务实例。在K8集群中，客户端需要访问的服务就是Service对象。每个Service会对应一个集群内部有效的虚拟IP，集群内部通过虚拟IP访问一个服务。在K8s集群中微服务的负载均衡是由Kube-proxy实现的。Kube-proxy是K8s集群内部的负载均衡器。它是一个分布式代理服务器，在K8s的每个节点上都有一个
-Job是K8s用来控制批处理型任务的API对象。批处理业务与长期伺服业务的主要区别是批处理业务的运行有头有尾，而长期伺服业务在用户不停止的情况下永远运行。Job管理的Pod根据用户的设置把任务成功完成就自动退出了。
-后台支撑型服务的核心关注点在K8s集群中的节点（物理机或虚拟机），要保证每个节点上都有一个此类Pod运行。节点可能是所有集群节点也可能是通过nodeSelector选定的一些特定节点。典型的后台支撑型服务包括，存储，日志和监控等在每个节点上支持K8s集群运行的服务。
-RC和RS主要是控制提供无状态服务的，其所控制的Pod的名字是随机设置的，一个Pod出故障了就被丢弃掉，在另一个地方重启一个新的Pod，名字变了、名字和启动在哪儿都不重要，重要的只是Pod总数；而PetSet是用来控制有状态服务，PetSet中的每个Pod的名字都是事先确定的，不能更改。PetSet中Pod的名字的作用，关联与该Pod对应的状态。
-对于RC和RS中的Pod，一般不挂载存储或者挂载共享存储，保存的是所有Pod共享的状态。对于PetSet中的Pod，每个Pod挂载自己独立的存储，如果一个Pod出现故障，从其他节点启动一个同样名字的Pod，要挂在上原来Pod的存储继续以它的状态提供服务。
-适合于PetSet的业务包括数据库服务MySQL和PostgreSQL，集群化管理服务Zookeeper、etcd等有状态服务。PetSet做的只是将确定的Pod与确定的存储关联起来保证状态的连续性。
-K8s的设计定位是单一集群在同一个地域内，因为同一个地区的网络性能才能满足K8s的调度和计算存储连接要求。
-而联合集群服务就是为提供跨Region跨服务商K8s集群服务而设计的。每个K8s Federation有自己的分布式存储、API Server和Controller Manager。而Cluster之间的负载均衡是通过域名服务的负载均衡来实现的。
-K8s集群中的存储卷跟Docker的存储卷有些类似，只不过Docker的存储卷作用范围为一个容器，而K8s的存储卷的生命周期和作用范围是一个Pod。每个Pod中声明的存储卷由Pod中的所有容器共享。 支持多种分布式存储包括GlusterFS和Ceph；也支持较容易使用的主机本地目录hostPath和NFS。
-K8s集群中的计算能力由Node提供，最初Node称为服务节点Minion，后来改名为Node。K8s集群中的Node也就等同于Mesos集群中的Slave节点，是所有Pod运行所在的工作主机，可以是物理机也可以是虚拟机。
-秘盒对象（Secret）Secret是用来保存和传递密码、密钥、认证凭证这些敏感信息的对象。使用Secret的好处是可以避免把敏感信息明文写在配置文件里。
-用户帐户为人提供账户标识，而服务账户为计算机进程和K8s集群中运行的Pod提供账户标识。在ABAC中，K8s集群中的访问策略只能跟用户直接关联；而在RBAC中，访问策略可以跟某个角色关联，具体的用户在跟一个或多个角色相关联。
+curl -O https://downloads.dcos.io/dcos-cli/install.sh
+http://blog.chinaunix.net/uid-21335514-id-5751564.html  DC/OS 安装体验 
+http://yurisubach.com/2016/07/06/dcos-local-deployment/
+https://downloads.dcos.io/dcos-vagrant/dcos-centos-virtualbox-0.8.0.box
+https://gist.github.com/jaceklaskowski/86ec3b6bd98ae2543fe7e3fe70cd4dcd 
+echo "oauth_enabled: 'false'" >> etc/config-1.8.yaml
+添加离线下载的box   vagrant box add metadata.json
+删除整个集群vagrant destroy -f
+dcos marathon app add https://dcos.io/docs/latest/usage/nginx.json
 
 
 

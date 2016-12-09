@@ -1,3 +1,4 @@
+https://yq.aliyun.com/articles/64871?spm=5176.100238.goodcont.177.Ke9cUL  PostgreSQL on Linux 最佳部署指南
 http://www.jianshu.com/p/7e95fd0bc91a  CentOS 7 安装、配置、使用 PostgreSQL 9.5    http://www.cnblogs.com/tjpanda88/p/4306149.html
 
 https://yq.aliyun.com/articles/57134?spm=5176.100239.blogcont57133.7.jzxs90  fdw
@@ -16,3 +17,4 @@ FDW全称(Foreign-Data Wrapper)，简单来说就是PostgreSQL中的外部表功能
 https://yq.aliyun.com/articles/53760?spm=5176.100238.goodcont.21.VJHL3c
 
 http://www.oschina.net/news/78395/weixin-payment-arch  腾信postgresql
+https://yq.aliyun.com/articles/64959?spm=5176.8091938.0.0.NoXGV1   鉴黄、视频、图片去重、图像搜索业务分析与实践

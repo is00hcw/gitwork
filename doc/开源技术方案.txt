@@ -2,6 +2,9 @@ http://mp.weixin.qq.com/s?__biz=MjM5NjQ5MTI5OA==&mid=2651745490&idx=1&sn=658a645
 http://mp.weixin.qq.com/s?__biz=MjM5MDE0Mjc4MA==&mid=2650993219&idx=1&sn=0f2241f570b25de5ebe2da4d99d2e38d  一篇文读懂开源数据库的现状：方案、设计思想及适用场景
 http://www.cnblogs.com/jesse2013/p/things-architect-must-know.html
 
+毫秒服务引擎（MSEC, Mass Service Engine in Cluste）是腾讯的一个开源框架，适用于在廉价机器组成的集群上开发和运营分布式后台服务。该项目集RPC、名字发现服务、负载均衡、业务监控、灰度发布、容量管理、日志管理、key-value存储于一体，目的是提高开发与运营的效率和质量。
+https://github.com/Tencent/MSEC
+
 https://yq.aliyun.com/articles/54449?spm=5176.100238.goodcont.9.LYw3mt&do=login
 总结一下，互联网架构三板斧：
 活下来(Stability)

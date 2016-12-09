@@ -12,6 +12,8 @@ https://segmentfault.com/a/1190000006178770  入门 Webpack，看这篇就够了
 webpack --progress --colors --watch  --display-error-details
 webpack-dev-server --progress --colors
 
+http://www.ruanyifeng.com/blog/2016/11/javascript.html   JavaScript 全栈工程师培训教程 
+https://github.com/ruanyf/jstraining
 
 
 View 就是 React 组件，而 Model 是 flux 中的 store。 Store 就是一个存储数据的对象，它会在 dispatch上注册自己感兴趣的事件。Dispatcher 是flux提供的一个全局的事件分发器，而 action 其实就是自定义的事件而已。

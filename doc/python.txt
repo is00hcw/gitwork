@@ -1,6 +1,13 @@
 pyenv可以帮助你在一台开发机上建立多个版本的python环境， 并提供方便的切换方法。
 virtualenv则提供了一种功能， 就是将一个目录建立为一个虚拟的python环境， 这样的话， 用户可以建立多个虚拟环境， 每个环境里面的python版本可以是不同的， 也可以是相同的， 而且环境之间相互独立。
 
+https://zhuanlan.zhihu.com/p/20811026?refer=gevin-view  Flask 入门指南
+http://blog.csdn.net/qq_32198277/article/details/52432890  nginx+Gunicorn部署你的Flask项目
+http://www.pythondoc.com/flask-restful/third.html  使用 Flask 设计 RESTful 的认证
+http://cangmean.me/2015/11/03/aliyun/  Flask在阿里云搭建服务
+http://cangmean.me/2015/12/01/flask-redis/  flask 中使用redis做缓存
+
+http://blog.csdn.net/qq_32198277/article/details/52281711  Flask写一个简易的知乎日报API
 
 http://www.oschina.net/translate/the-flask-mega-tutorial-part-i-hello-world   Flask 教程，第一部分：Hello，World！
 http://holbrook.github.io/2015/05/04/modern_web_dev_env.html
@@ -79,3 +86,27 @@ http://sdiehl.github.io/gevent-tutorial/  gevent
 http://xlambda.com/gevent-tutorial/
 https://github.com/kennethreitz/grequests
 pip install grequests
+
+
+http://blog.csdn.net/zwgdft/article/details/52854121   Flask项目的代码组织方式
+开发Flask应用时，使用相对形式的import会让你的生活更加轻松。 原因很简单。之前，当需要import一个内部模块时，你也许要显式指明应用的包名（the app's package name）。假设你想要从myapp/models.py中导入User模型：
+# 使用绝对路径来导入User
+from myapp.models import User
+用了相对形式的import后，你可以使用点标记法：第一个.来表示当前目录，之后的每一个.表示下一个父目录。
+
+# 使用相对路径来导入User
+from .models import User
+
+https://code.tutsplus.com/tutorials/creating-a-web-app-from-scratch-using-python-flask-and-mysql--cms-22972  
+https://github.com/jay3dec/PythonFlaskMySQLApp---Part-1
+from flask import Flask, render_template
+return render_template("main_page.html")
+
+pip install sqlacodegen
+sqlacodegen --noviews --noconstraints --noindexes --outfile d:\\models.py mysql://test:test@122.30.100.12:3388/test  
+http://blog.csdn.net/kaku21/article/details/42741595
+pip install flask-sqlacodegen -i https://pypi.douban.com/simple
+https://github.com/ksindi/flask-sqlacodegen
+pip install virtualenv  --trusted-host pypi.douban.com -i http://pypi.douban.com/simple
+https://my.oschina.net/purewind/blog/203624   Python-pip, RubyGems, node-npm使用国内镜像加速下载
+sqlacodegen --noviews --noconstraints --noindexes --outfile models.py mysql://root:123456@120.76.131.172:3306/lc-express

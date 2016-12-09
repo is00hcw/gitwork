@@ -1,7 +1,9 @@
 线上排查
 http://blog.csdn.net/huaweitman/article/details/51420687
-http://zhongl.iteye.com/blog/1562235    HouseMD, 比BTrace更实用的Java运行诊断工具
+http://zhongl.iteye.com/blog/1562235    HouseMD, 比BTrace更实用的Java运行诊断工具    2012年淘宝的聚石写了HouseMD，将常用的几个Btrace脚本整合在一起形成一个独立风格的应用，但其核心代码用的是Scala
 http://yq.aliyun.com/articles/2390  Greys Java在线问题诊断工具
+curl -sLk http://ompc.oss.aliyuncs.com/greys/install.sh|sh
+
 netstat -aonp | grep tcp| wc -l查看各种状态的TCP连接数量和
 netstat -natp|awk ‘{print $7}’|sort|uniq -c|sort -rn按照PID统计TCP连接的数量
 tail -10000 stdout.log.2014-08-15 | grep -B2 -A10 -i exception可以查到日志中最近记录的异常。

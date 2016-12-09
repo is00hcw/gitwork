@@ -202,7 +202,7 @@ https://github.com/amplab/docker-scripts
 https://github.com/sequenceiq/hadoop-docker    https://hub.docker.com/r/sequenceiq/hadoop-docker/
 https://github.com/sequenceiq/docker-spark    https://hub.docker.com/r/sequenceiq/spark/
 http://blog.csdn.net/stark_summer/article/details/47343113  http://nanxiao.me/install-spark/
-http://nanxiao.me/gitlab-docker-image/  gitlab
+
 
 https://github.com/google/cadvisor  监控
 http://dockone.io/article/397  五个Docker监控工具的对比
@@ -363,3 +363,84 @@ Docker Swarm - Docker众实例的原生集群。
 http://www.tinylab.org/take-5-minutes-to-build-linux-0-11-experiment-envrionment/
 
 GitBook 是一个基于 Node.js 的命令行工具，可使用 Github/Git 和 Markdown 来制作精美的电子书。
+
+
+
+
+example
+http://get.daocloud.io/#install-toolbox
+http://docs.daocloud.io/ci-on-daocloud/sample
+https://github.com/tutumcloud
+https://yq.aliyun.com/articles/25840  使用Vagrant创建虚拟机安装Hadoop
+https://mos.meituan.com/library/18/how-to-install-lnmp-on-centos7/  在CentOS 7上搭建LNMP环境
+https://mos.meituan.com/library/26/how-to-install-docker-on-centos/  centos docker
+https://mos.meituan.com/library/32/how-to-install-kafka-on-centos7/  centos  kafka
+https://mos.meituan.com/library/37/how-to-setup-k8s-cluster-on-CentOS7/   在CentOS7上部署Kubernetes集群
+https://segmentfault.com/a/1190000006996479   zabbix 3 
+http://blog.csdn.net/a5nan/article/details/51991428?utm_source=itdadao&utm_medium=referral
+http://www.datlet.com/docker/2016/09/05/using-zabbix-agent-30-xxl-with-docker.html
+https://segmentfault.com/a/1190000004328677   docker mysql主从
+https://segmentfault.com/a/1190000005905861  kafka
+https://segmentfault.com/a/1190000006243691   phabricator
+
+
+mongodb
+http://www.sohamkamani.com/blog/2016/06/30/docker-mongo-replica-set/  docker mongodb set
+http://bitsentangled.com/3-nodes-docker-replica-set-with-arbiter/
+https://github.com/ongoworks/mongo-rep-set
+
+sentry
+http://ningning.today/2016/10/18/python/docker-sentry/
+https://github.com/getsentry/onpremise
+https://ldsink.com/archives/Setup-sentry-with-docker.html
+http://ningning.today/2016/05/12/python/%E7%94%A8docker-compose%E6%9E%84%E5%BB%BAflask%E5%BA%94%E7%94%A8/  用docker-compose构建flask应用
+http://vernonzheng.com/2014/12/26/%E6%95%B4%E5%90%88Sentry%E5%92%8CNodejs%E5%AE%9E%E7%8E%B0%E5%88%86%E5%B8%83%E5%BC%8F%E6%97%A5%E5%BF%97%E6%94%B6%E9%9B%86/   整合Sentry和NodeJS实现分布式日志收集
+
+wget https://raw.githubusercontent.com/sameersbn/docker-gitlab/master/docker-compose.yml
+Username: root Password: 5iveL!fe
+docker-compose run --rm gitlab app:rake gitlab:backup:create
+docker-compose run --rm gitlab app:rake gitlab:backup:restore # List available backups
+docker-compose run --rm gitlab app:rake gitlab:backup:restore BACKUP=1417624827 # Choose to restore from 1417624827
+
+http://wuyijun.cn/phabricatorshi-yong-chu-shi/
+https://github.com/yesnault/docker-phabricator
+docker exec -it phabricator bash
+/opt/phabricator/bin/storage upgrade
+
+
+dataquestio/python3-starter – 这个包含了Python 3，Jupyter notebook以及其他很多热门的数据科研库，比如：numpy, pandas, scipy, scikit-learn,nltk. 
+dataquestio/python2-starter – 这个包含了Python 2，Jupyter notebook以及其他很多热门的数据科研库，比如：numpy, pandas, scrapy，scipy, scikit-learn,nltk.
+docker pull dataquestio/python3-starter
+
+git clone https://github.com/indiehosters/piwik.git
+MYSQL_ROOT_PASSWORD=mystrongpassword docker-compose up
+
+http://wuyijun.cn/shi-yong-odookuai-su-chuang-jian-bo-ke-he-dian-shang-wang-zhan/  最终选定开源ERP系统Odoo
+http://wuyijun.cn/shi-yong-dockerfang-shi-an-zhuang-he-yun-xing-confluence/   Confluence
+docker run -d -p 8888:8888 jupyter/tensorflow-notebook
+
+sysdig
+curl -s https://s3.amazonaws.com/download.draios.com/stable/install-sysdig | bash
+http://www.ibm.com/developerworks/cn/linux/1607_caoyq_sysdig/index.html
+
+http://qinghua.github.io/docker-registry/  轻松搭建Docker Registry运行环境
+http://qinghua.github.io/elastic-search/  用容器快速上手Elasticsearch
+http://qinghua.github.io/solr/  用容器快速上手Apache Solr
+http://qinghua.github.io/docker-swarm/   轻松搭建Docker Swarm运行环境
+http://qinghua.github.io/redis-cluster/    用容器轻松搭建redis主从和集群环境  redis-trib.rb 
+
+http://kiwenlau.com/2016/06/12/160612-hadoop-cluster-docker-update/    基于Docker搭建Hadoop集群之升级版
+http://trustmeiamadeveloper.com/2016/07/03/bringing-the-light-of-monitoring-with-prometheus/   Bringing the light of monitoring with Prometheus
+
+http://www.lxy520.net/2016/04/16/docker-jenkins-git-mavenzi-dong-hua-gou-jian-yu-bu-shu/
+docker run -d --name jenkins  -p 8080:8080  -p 50000:50000  -v /dockerworkspace/jenkins:/var/jenkins_home   -v /dockerworkspace/maven/apache-maven-3.3.9:/usr/local/maven   -v /dockerworkspace/java/jdk:/usr/local/jdk   jenkins:2.0-beta-1
+docker run -d  --name test_tomcat  -p 8888:8080 -v /dockerworkspace/tomcat/webapps:/usr/local/tomcat/webapps  -v /dockerworkspace/java/jdk:/usr/local/jdk  -e "JAVA_HOME=/usr/local/jdk"   tomcat
+docker run -p 3306:3306 --name mysql -e MYSQL_ROOT_PASSWORD=admin -d mysql
+
+https://blog.lukaspradel.com/dockerizing-a-tomcat-postgresql-java-web-application/    Dockerizing a Tomcat + PostgreSQL Java web application
+http://www.lxy520.net/2016/07/02/shi-yong-docker-1-12-da-jian-duo-zhu-ji-docker-swarmji-qun/   使用docker 1.12 搭建多主机docker swarm集群
+http://blog.daocloud.io/dockerstos/   用 Swarm 模式创建 Swarm 集群
+docker swarm：集群管理，子命令有init, join,join-token, leave, update
+docker node：节点管理，子命令有demote, inspect,ls, promote, rm, ps, update
+docker service：服务管理，子命令有create, inspect, ps, ls ,rm , scale, update
+docker stack/deploy：试验特性，用于多应用部署

@@ -1,3 +1,54 @@
+https://www.kubernetes.org.cn/870.html   kubernetes1.4 基础篇：Learn Kubernetes 1.4 by 6 steps
+https://github.com/liumiaocn/easypack
+Kubernetes1.5GA正式版本发布   将PetSet改名为StatefulSet    增加了命令kubectl cp   将ScheduledJobs改名为CronJobs
+Kubernetes 1.4里引入了kubeadm init和kubeadm join两个命令
+在1.5版本中会除了继续加强kubeadm的能力，还会引入新命令kubefed，以简化集群联邦的相关操作
+
+http://blog.liulantao.com/blog/2015/2015-09-30-kubernetes-101-study-notes.html   Kubernetes 101 学习笔记
+http://blog.liulantao.com/blog/2015/2015-10-05-kubernetes-201-study-notes.html  Kubernetes 201 学习笔记
+
+https://mritd.me/2016/10/29/set-up-kubernetes-cluster-by-kubeadm/   kubeadm 搭建 kubernetes 集群
+
+
+#用户测试的镜像，建议pull
+docker pull d1studio/echoserver:1.4
+docker tag  d1studio/echoserver:1.4 gcr.io/google_containers/echoserver:1.4 
+
+#如果docker.io也不行了可以使用 save 和 load的方式导入
+docker save -o pause.tar.gz gcr.io/google_containers/pause
+最后把这个包放到 kubernetes 环境所有的 docker 服务器上docker load -i pause.tar.gz
+eval $(minikube-linux-amd64 docker-env)
+docker load<kubeaddonmanagerv51.tar.bz2 
+
+http://www.josheaton.org/how-to-automatically-add-hosts-to-vagrant-without-a-password-on-os-x/   How to Automatically Add Hosts to Vagrant Without a Password on OS X
+http://purplepalmdash.github.io/page/2/   RunWordPressOnMinikube
+docker pull gcr.io/google_containers/pause-amd64:3.0
+docker save -o pause.tar.gz gcr.io/google_containers/pause-amd64
+docker pull gcr.io/google-containers/kube-addon-manager:v5.1
+docker save -o kube-addon-manager.tar.gz gcr.io/google-containers/kube-addon-manager
+docker pull gcr.io/google_containers/kubernetes-dashboard-amd64:v1.4.2
+docker save -o kubernetes-dashboard.tar.gz  gcr.io/google_containers/kubernetes-dashboard-amd64
+http://purplepalmdash.github.io/blog/2016/12/06/tipsoncassandraonkubernetes/   TipsOnCassandraOnKubernetes
+http://purplepalmdash.github.io/blog/2016/11/26/workingtipsonkubernetes/   WorkingTipsOnKubernetes
+kubectl run hello-minikube --image=gcr.io/google_containers/echoserver:1.4 --port=8080 
+kubectl expose deployment hello-minikube --type=NodePort
+
+https://segmentfault.com/a/1190000007564445  Minikube在Mac上搭建PHP容器集群
+http://blog.fleeto.us/translation/kompose-tool-go-docker-compose-kubernetes   Kompose: Docker-compose 到 Kubernetes 的迁移工具
+http://kiwenlau.com/2015/11/28/151128-single-kubernetes-docker/   基于Docker搭建单机版Kuberntes
+http://www.jianshu.com/p/76eda0a82540   kubernetes 安装配置 kube-ui
+http://kubernetes.io/docs/getting-started-guides/kubeadm/   Installing Kubernetes on Linux with kubeadm
+kubeadm join --token=34af28.aded065435ea9792 47.90.80.78
+http://kubernetes.io/docs/getting-started-guides/kubeadm/
+kubeadm reset
+
+If you wish to start over, run systemctl start kubelet followed by kubeadm init or kubeadm join
+
+
+https://www.kubernetes.org.cn/932.html  Kubernetes监控Heapster介绍
+直接依赖heapster-0.19.0/deploy/kube-config/influxdb/目录下的yaml文件，
+使用kubectl create -f heapster-0.19.0/deploy/kube-config/influxdb/命令进行部署。
+
 
 Kubernetes 1.3有个叫做 Minikube 的强大测试工具，可以在任意笔记本上运行单节点的小型集群。它借鉴了 Docker 中的一些概念，比如 docker－machine driver，用单个命令来设置本地环境。
 minikube打包了和配置一个linux虚拟机、docker与kubernetes组件。  https://segmentfault.com/a/1190000007065715
@@ -5,6 +56,8 @@ minikube打包了和配置一个linux虚拟机、docker与kubernetes组件。  https://segmentfa
 Minikube 创建一个Host-Only（仅主机模式）网络接口，通过这个接口可以路由到节点。如果要与运行的pods或services进行交互，你应该通过这个地址发送流量。使用` minikube ip`命令可以查看这个地址
 Minikube 默认集成了Kubernetes Dashboard。执行` minikube dashboard`命令后，默认会打开浏览器
 如果你想通过shell里面执行命令，可以使用` kubectl exec `。如果想把流量从本地服务器转发给Pod或API Server，可以使用 ` kubectl port-forward`和`kubectl proxy`命令。
+
+
 
 https://caicloud.io/products/cubernetes
 https://caicloud.io/article_detail/581857d40f5c4ac8c7000001  基于 Kubernetes 的容器云平台落地实践
@@ -17,13 +70,22 @@ http://www.slahser.com/2016/11/10/%E5%85%B3%E4%BA%8Ekubernetes-1.4.5-%E6%90%AD%E
 https://github.com/kubernetes/release
 https://github.com/mritd/docker-library
 
-
 http://kubernetes.io/docs/getting-started-guides/kubeadm/
 http://blog.csdn.net/zqg5258423/article/details/52683737
-
-
 https://www.ustack.com/blog/kubernetes1/?belong=news
 http://blog.csdn.net/bogeli5/article/details/51598199
+
+https://pure-earth-7284.herokuapp.com/2015/05/19/Kubernetes%E4%B8%8A%E6%89%8B%E6%8C%87%E5%8D%97%E4%B9%8BVagrant%E9%83%A8%E7%BD%B2Kubernetes/  Kubernetes上手指南之Vagrant部署Kubernetes
+https://github.com/flix-tech/vagrant-kubernetes
+vagrant init flixtech/kubernetes; vagrant up --provider virtualbox
+export KUBERNETES_PROVIDER=vagrant
+curl -sS https://get.k8s.io | bash
+http://lollyrock.com/articles/kubernetes-vagrant/   Try Kubernetes with Vagrant
+http://linoxide.com/linux-how-to/install-kubernetes-locally-using-vagrant-minikube/   How to Install Kubernetes Locally using Vagrant / Minikube
+https://dzone.com/articles/minikube-rapid-dev-and-testing-for-kubernetes   Minikube: Rapid Dev and Testing for Kubernetes
+kubectl run hello-minikube --image=gcr.io/google_containers/echoserver:1.4 --hostport=8000 --port=8080
+minikube stop; minikube delete; minikube start --memory=8096 --disk-size=30g --vm-driver=virtualbox
+
 
 
 Overlay网络是指在不改变现有网络基础设施的前提下，通过某种约定通信协议，把二层报文封装在IP报文之上的新的数据格式。 Docker内置的Overlay网络是采用IETF标准的VXLAN方式，并且是VXLAN中普遍认为最适合大规模的云计算虚拟化环境的SDN Controller模式。
@@ -56,3 +118,72 @@ overlay网络，这个特性最早出现在docker1.9版本发布的功能特性中，他的特点就是能够使
 目前Swarm mode提供了6种discovery机制：Token（默认）、Node、File、Consul、Etcd、Zookeeper。其中有两种方式的节点需要对配置文件或者其他相关内容进行维护，其他服务发现仅需要通过join命令行来完成。这两种方式分别是Node和File discovery。
 docker service update --update-parallelism  2 --image demo:2.0 --update-delay 10s test
 http://www.jianshu.com/p/0ff3181aa886
+
+Flannel是CoreOS团队针对Kubernetes设计的一个网络规划服务，简单来说，它的功能是让集群中的不同节点主机创建的Docker容器都具有全集群唯一的虚拟IP地址。
+Flannel的设计目的就是为集群中的所有节点重新规划IP地址的使用规则，从而使得不同节点上的容器能够获得“同属一个内网”且”不重复的”IP地址，并让属于不同节点上的容器能够直接通过内网IP通信。
+Flannel实质上是一种“覆盖网络(overlay network)”，也就是将TCP数据包装在另一种网络包里面进行路由转发和通信，目前已经支持UDP、VxLAN、AWS VPC和GCE路由等数据转发方式。
+Flannel通过Etcd服务维护了一张节点间的路由表
+http://dockone.io/article/618
+
+
+
+
+Kubernetes 
+http://qinghua.github.io/kubernetes-installation/   轻松搭建Kubernetes 1.2版运行环境
+http://qinghua.github.io/kubernetes-deployment/?utm_source=tuicool&utm_medium=referral
+一台叫做master，运行着k8s的api server、controller manager和scheduler；另两台叫做node1和node2，运行着k8s的kubelet和kube-proxy，当做k8s的两个节点。
+Kubernetes（k8s）是自动化容器操作的开源平台，这些操作包括部署，调度和节点集群间扩展
+http://www.wtoutiao.com/p/100xuFR.html
+在较新的版本里，cadvior功能被集成到了kubelet组件中，kubelet在与docker交互的同时，对外提供监控服务。
+kubernetes集群范围内的监控主要由kubelet, heapster和storage backend（如influxdb）构建。
+http://www.csdn.net/article/2015-07-30/2825337   v1.0
+
+
+https://yq.aliyun.com/articles/55883?spm=5176.8067842.tagmain.53.xlnV8D  kubernetes听云实战发布版
+http://mp.weixin.qq.com/s?__biz=MzI4MjE3MTcwNA==&mid=2664334723&idx=1&sn=6a5b727b066469dc9f26ca73cc0c37e1#rd    《K8s与云原生应用》之K8s的系统架构与设计理念
+http://dockone.io/article/932
+http://www.infoq.com/cn/articles/Kubernetes-system-architecture-introduction
+https://linfan1.gitbooks.io/kubernetes-chinese-docs/content/   Kubernetes中文文档
+http://valleylord.github.io/post/201601-kubernetes-concepts/   Kubernetes原理简介
+http://valleylord.github.io/post/201602-kubernetes-concepts2/
+http://www.csdn.net/article/1970-01-01/2824933
+http://blog.coocla.org/kubernetes-overview.html
+http://7xi8kv.com5.z0.glb.qiniucdn.com/%E4%BD%BF%E7%94%A8kubernetes%E6%9E%84%E5%BB%BA%E6%9C%8D%E5%8A%A1%E5%BA%94%E7%94%A8%E5%B9%B3%E5%8F%B0.pdf  使用kubernetes构建企业级服务应用平台
+http://gaocegege.com/Blog/kubernetes/spring-boot-in-kubernetes  在Kubernetes中的Spring Boot项目部署
+https://community.qingcloud.com/topic/393/kubernetes%E5%92%8Cmesos%E9%9B%86%E6%88%90%E8%A7%A3%E6%9E%90    Kubernetes和Mesos集成解析
+http://qinghua.github.io/kubernetes-in-mesos-9/
+https://linfan1.gitbooks.io/kubernetes-chinese-docs/content/032-memsos.html
+http://blog.dataman-inc.com/109-shurenyun-huodong/
+http://www.tqcto.com/article/framework/3324.html   Mesos+Kubernetes集成安装部署
+从K8s的系统架构、技术概念和设计理念，我们可以看到K8s系统最核心的两个设计理念：一个是容错性，一个是易扩展性。容错性实际是保证K8s系统稳定性和安全性的基础，易扩展性是保证K8s对变更友好，可以快速迭代增加新功能的基础。
+Kubernetes是为生产环境而设计的容器调度管理系统，对于负载均衡、服务发现、高可用、滚动升级、自动伸缩等容器云平台的功能要求有原生支持。由于Kubernetes在K和s间有8个字母，因此常简称K8s。
+K8s在2016年6月的云计算大会上发表了有关容器设计模式的论文《Design patterns for container-based distributed systems》，介绍了基于K8s设计云原生应用的容器设计模式，
+一个K8s集群是由分布式存储（etcd）、服务节点（Minion，etcd现在称为Node）和控制节点（Master）构成的。所有的集群状态都保存在etcd中，Master节点上则运行集群的管理控制模块。Node节点是真正运行应用容器的主机节点，在每个Minion节点上都会运行一个Kubelet代理，控制该节点上的容器、镜像和存储卷等。
+K8s中所有的配置都是通过API对象的spec去设置的，也就是用户通过配置系统的理想状态来改变系统，这是k8s重要设计理念之一，即所有的操作都是声明式（Declarative）的而不是命令式（Imperative）的。
+Pod的设计理念是支持多个容器在一个Pod中共享网络地址和文件系统，可以通过进程间通信和文件共享这种简单高效的方式组合完成服务。Pod对多容器的支持是K8最基础的设计理念。
+目前K8s中的业务主要可以分为长期伺服型（long-running）、批处理型（batch）、节点后台支撑型（node-daemon）和有状态应用型（stateful application）；分别对应的小机器人控制器为Deployment、Job、DaemonSet和PetSet
+复制控制器（Replication Controller，RC）是K8s集群中最早的保证Pod高可用的API对象。通过监控运行中的Pod来保证集群中运行指定数目的Pod副本。 RC是K8s较早期的技术概念，只适用于长期伺服型的业务类型，比如控制小机器人提供高可用的Web服务。副本集（Replica Set，RS）RS是新一代RC
+滚动升级一个服务，实际是创建一个新的RS，然后逐渐将新RS中副本数增加到理想状态，将旧RS中的副本数减小到0的复合操作；这样一个复合操作用一个RS是不太好描述的，所以用一个更通用的Deployment来描述。
+要稳定地提供服务需要服务发现和负载均衡能力。服务发现完成的工作，是针对客户端访问的服务，找到对应的的后端服务实例。在K8集群中，客户端需要访问的服务就是Service对象。每个Service会对应一个集群内部有效的虚拟IP，集群内部通过虚拟IP访问一个服务。在K8s集群中微服务的负载均衡是由Kube-proxy实现的。Kube-proxy是K8s集群内部的负载均衡器。它是一个分布式代理服务器，在K8s的每个节点上都有一个
+Job是K8s用来控制批处理型任务的API对象。批处理业务与长期伺服业务的主要区别是批处理业务的运行有头有尾，而长期伺服业务在用户不停止的情况下永远运行。Job管理的Pod根据用户的设置把任务成功完成就自动退出了。
+后台支撑型服务的核心关注点在K8s集群中的节点（物理机或虚拟机），要保证每个节点上都有一个此类Pod运行。节点可能是所有集群节点也可能是通过nodeSelector选定的一些特定节点。典型的后台支撑型服务包括，存储，日志和监控等在每个节点上支持K8s集群运行的服务。
+RC和RS主要是控制提供无状态服务的，其所控制的Pod的名字是随机设置的，一个Pod出故障了就被丢弃掉，在另一个地方重启一个新的Pod，名字变了、名字和启动在哪儿都不重要，重要的只是Pod总数；而PetSet是用来控制有状态服务，PetSet中的每个Pod的名字都是事先确定的，不能更改。PetSet中Pod的名字的作用，关联与该Pod对应的状态。
+对于RC和RS中的Pod，一般不挂载存储或者挂载共享存储，保存的是所有Pod共享的状态。对于PetSet中的Pod，每个Pod挂载自己独立的存储，如果一个Pod出现故障，从其他节点启动一个同样名字的Pod，要挂在上原来Pod的存储继续以它的状态提供服务。
+适合于PetSet的业务包括数据库服务MySQL和PostgreSQL，集群化管理服务Zookeeper、etcd等有状态服务。PetSet做的只是将确定的Pod与确定的存储关联起来保证状态的连续性。
+K8s的设计定位是单一集群在同一个地域内，因为同一个地区的网络性能才能满足K8s的调度和计算存储连接要求。
+而联合集群服务就是为提供跨Region跨服务商K8s集群服务而设计的。每个K8s Federation有自己的分布式存储、API Server和Controller Manager。而Cluster之间的负载均衡是通过域名服务的负载均衡来实现的。
+K8s集群中的存储卷跟Docker的存储卷有些类似，只不过Docker的存储卷作用范围为一个容器，而K8s的存储卷的生命周期和作用范围是一个Pod。每个Pod中声明的存储卷由Pod中的所有容器共享。 支持多种分布式存储包括GlusterFS和Ceph；也支持较容易使用的主机本地目录hostPath和NFS。
+K8s集群中的计算能力由Node提供，最初Node称为服务节点Minion，后来改名为Node。K8s集群中的Node也就等同于Mesos集群中的Slave节点，是所有Pod运行所在的工作主机，可以是物理机也可以是虚拟机。
+秘盒对象（Secret）Secret是用来保存和传递密码、密钥、认证凭证这些敏感信息的对象。使用Secret的好处是可以避免把敏感信息明文写在配置文件里。
+用户帐户为人提供账户标识，而服务账户为计算机进程和K8s集群中运行的Pod提供账户标识。在ABAC中，K8s集群中的访问策略只能跟用户直接关联；而在RBAC中，访问策略可以跟某个角色关联，具体的用户在跟一个或多个角色相关联。
+
+
+http://www.lxy520.net/2016/07/02/shi-yong-docker-1-12-da-jian-duo-zhu-ji-docker-swarmji-qun/
+docker swarm：集群管理，子命令有init, join,join-token, leave, update
+docker node：节点管理，子命令有demote, inspect,ls, promote, rm, ps, update
+docker service：服务管理，子命令有create, inspect, ps, ls ,rm , scale, update
+docker stack/deploy：试验特性，用于多应用部署
+docker swarm init --advertise-addr 192.168.10.1
+docker swarm join --token SWMTKN-1-49nj1cmql0jkz5s954yi3oex3nedyz0fb0xx14ie39trti4wxv-8vxv8rssmk743ojnwacrr2e7c 192.168.10.1:2377
+docker service create --replicas 1 --name hellowswarm alpine ping docker.com 
+docker service scale helloswarm=5
