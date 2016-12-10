@@ -1,19 +1,19 @@
-npm install -g angular-cli@latest
+﻿npm install -g angular-cli@latest
 npm install -g weexpack
 sudo npm install -g ios-deploy --unsafe-perm=true
 npm install -g vue vue-cli 
 npm i vue-resource vue-router vuex --save
 
 https://github.com/xkli/WXSample.git
-https://github.com/weexteam/article/issues/25   WEEX SDK���ɵ�����(Integrate to Android)
+https://github.com/weexteam/article/issues/25   WEEX SDK集成到工程(Integrate to Android)
 compile 'com.taobao.android:weex_sdk:0.5.1@aar'
 https://bintray.com/alibabaweex/maven/weex_sdk/view 
 npm install -g weex-toolkit
-����week��toolkit��.weת��Ϊ.js     weex tech_list.we --qr -h {ip or hostname}
+利用week－toolkit将.we转换为.js     weex tech_list.we --qr -h {ip or hostname}
 
 http://www.tuicool.com/articles/bY7Jba6   https://github.com/kingofglory/weex-demo.git
 
-http://blog.csdn.net/walid1992/article/details/52420591  weex������
+http://blog.csdn.net/walid1992/article/details/52420591  weex初体验
 
 ios
 http://blog.csdn.net/daiyelang/article/details/52184544
@@ -23,38 +23,38 @@ https://open.taobao.com/doc2/detail?spm=a219a.7629140.0.0.sf2ubW&&docType=1&arti
 
 
 https://github.com/weexteam/weex-pack
-https://yq.aliyun.com/articles/59341?spm=5176.100239.bloglist.100.OkOb5e   Weex-���μ�����
-https://yq.aliyun.com/articles/57554?spm=5176.100238.goodcont.24.DxzG2I   Weex���������ָ��  ios����
+https://yq.aliyun.com/articles/59341?spm=5176.100239.bloglist.100.OkOb5e   Weex-初次见到你
+https://yq.aliyun.com/articles/57554?spm=5176.100238.goodcont.24.DxzG2I   Weex入门与进阶指南  ios集成
 https://github.com/weexteam/article/issues/25  weex android
 https://github.com/alibaba/weex/blob/dev/SCRIPTS.md
 http://alibaba.github.io/weex/doc/tools/cli.html
 the renderer (weex-html5), the js-framework (weex-js-framework) and the transformer (gulp-weex).
 weex --debugger
-https://github.com/weexteam/article/issues/31  �������
+https://github.com/weexteam/article/issues/31  组件定义
 https://github.com/weexteam/article/issues/32   http://alibaba.github.io/weex/doc/advanced/how-it-works.html  
 
 
 http://www.infoq.com/cn/articles/taobao-mobile-weex  weex
 https://github.com/alibaba/luaviewsdk   luaview
-http://www.infoq.com/cn/articles/introducing-weex     Weex��⣺�����ƶ��˸����ܶ�̬������
-http://www.infoq.com/cn/articles/the-back-end-business-systems-service-transformation   ̸̸����ҵ��ϵͳ��΢����������
+http://www.infoq.com/cn/articles/introducing-weex     Weex详解：灵活的移动端高性能动态化方案
+http://www.infoq.com/cn/articles/the-back-end-business-systems-service-transformation   谈谈后端业务系统的微服务化改造
 
-Weex�ɶ���ؼ�ģ����ɣ��ֱ���DSL transformer��JS Framework��HTML5/iOS/Android Renderer�͹����� �� ����JS Framework��ֱ��ʹ���˲�������Vue.JS�Ĵ��롣
-ȫ�ֳ�ͻ��CSS��������е�һ������ʵ��Ҳ�����Ƿǳ����ӵģ�������ʵ�������ǰ���������scoped��
+Weex由多个关键模块组成，分别是DSL transformer、JS Framework、HTML5/iOS/Android Renderer和工具链 ， 其中JS Framework就直接使用了部分来自Vue.JS的代码。
+全局冲突是CSS“七宗罪”中的一个，其实这也是我们非常重视的，所以在实践上我们把它做到了scoped。
 https://yq.aliyun.com/articles/54775?spm=5176.100239.blogcont54773.9.2RAYjT
 Weex Toolkit  https://www.npmjs.com/package/weex-toolkit
 http://alibaba.github.io/weex/doc/syntax/main.html
 https://yq.aliyun.com/articles/54769?spm=5176.100244.0.0.YK5sVe
 
 
-��װ��TBHotaptchSDK�ṩLua�ֽ�����롢�������Դ���������ܡ�ǩ����У�顢���еȹ��ܡ�ͬʱ����װ��TBHotaptchService�ṩpatch���İ汾���ơ����¡����صȹ��ܡ�
+封装了TBHotaptchSDK提供Lua字节码编译、代码和资源打包、加密、签名、校验、运行等功能。同时还封装了TBHotaptchService提供patch包的版本控制、更新、下载等功能。
 https://yq.aliyun.com/articles/1480?spm=5176.100244.0.0.YK5sVe
 
 
 vue.js
-https://segmentfault.com/a/1190000005863691  �ʼǱ����� https://coligo.io/learn-vuex-by-building-notes-app/
+https://segmentfault.com/a/1190000005863691  笔记本例子 https://coligo.io/learn-vuex-by-building-notes-app/ 
 https://github.com/airyland/vux
-http://www.jianshu.com/p/5ba253651c3b  Vue2.0 ������ȫ��ӹ��ԡ����ӻ����������
+http://www.jianshu.com/p/5ba253651c3b Vue2.0 新手完全填坑攻略——从环境搭建到发布
 https://jsfiddle.net/reeco/jw5hphqg/4/   http://www.doc00.com/doc/1001004eg   vue-resource
 https://segmentfault.com/q/1010000005894526/a-1020000005899559
 http://www.imooc.com/article/2688
@@ -65,9 +65,9 @@ https://github.com/ElemeFE/element
 https://github.com/lodamemory/vue-metronic
 Bootstrap components built with Vue.js  http://yuche.github.io/vue-strap/
 http://www.webpackbin.com/vue
-http://www.cnblogs.com/pandabunny/p/5417938.html   vue-cli webpack ����jquery
-npm run dev���ڿ���ģʽ��������Ŀ�����Լ���һЩ���Ե�ģ����hotload��
-npm run build����Ŀ������������������������ɿ��Խ������ߵĴ����ļ�   ���Ű� index.html ������ dist Ŀ¼�����������Ϳ����ˡ�
+http://www.cnblogs.com/pandabunny/p/5417938.html   vue-cli webpack 引入jquery
+npm run dev hotload 
+npm run build  index.html   dist  
 npm install webpack-dev-server --save-dev
 webpack-dev-server
 npm install -g http-server
@@ -79,33 +79,38 @@ https://github.com/brandonxiang/example-vue-webpack/tree/s1s2
 https://segmentfault.com/a/1190000004060034
 http://galen-yip.com/typescript/vue/webpack/2016/06/09/typescrit-vue-todo/?utm_source=tuicool&utm_medium=referral
 http://www.cnblogs.com/zhengjialux/p/5848950.html
-http://mp.weixin.qq.com/s?__biz=MzA3NTYzODYzMg==&mid=2653577777&idx=1&sn=4b5377051bd849b85af17bcf8c05174c&scene=0#wechat_redirect  ���� Webpack & Vue & Vue-Router �� SPA ������
+http://mp.weixin.qq.com/s?__biz=MzA3NTYzODYzMg==&mid=2653577777&idx=1&sn=4b5377051bd849b85af17bcf8c05174c&scene=0#wechat_redirect  基于 Webpack & Vue & Vue-Router 的 SPA 初体验
 npm install webpack-dev-server -g
-ȫ�ְ�װvue-cli��ʹ������npm install -g vue-cli��
-����ģ����룬ʹ������vue init webpack my-project
-npm run dev�����ȼ��أ��ͻ�ȥ�Զ���ִ��package.json��� 
-��scripts��: { ��dev��: ��node build/dev-server.js��, 
+全局安装vue-cli，使用命令npm install -g vue-cli。
+下载模板代码，使用命令vue init webpack my-project
+npm run dev启动热加载，就会去自动化执行package.json里的 
+“scripts”: { “dev”: “node build/dev-server.js”, 
 https://github.com/vuejs-templates/webpack
-vue-cliĬ�ϴ�������Ŀ���Ǽ�����������ҳӦ�ã�Ҳ���ǽ���һ��index.html��ΪӦ����ڣ�ʣ�µ����鶼�ǽ���javascript��̬����ġ� https://segmentfault.com/q/1010000005793472/a-1020000005793617
-srcĿ¼�µ���Դֻ��import��require��
-�뾲̬����Ļ�������һ����srcͬ����Ŀ¼����static��Ȼ���Ѿ�̬��Դ������ļ����£�html������·�����£�./static/...   http://www.oschina.net/question/1188944_2152341
+vue-cli默认创建的项目都是假设你在做单页应用，也就是仅有一个index.html作为应用入口，剩下的事情都是交由javascript动态处理的。 https://segmentfault.com/q/1010000005793472/a-1020000005793617
+src目录下的资源只能import或require。
+想静态引入的话，建立一个与src同级的目录例如static，然后把静态资源放入该文件夹下，html的引入路径如下：./static/...   http://www.oschina.net/question/1188944_2152341
 https://segmentfault.com/q/1010000004479605
-https://github.com/yaoyao1987/vue-cli-multipage   ��ҳ��
+https://github.com/yaoyao1987/vue-cli-multipage   多页面
 https://github.com/bluefox1688/vue-cli-multi-page
 
 http://www.w3cfuns.com/notes/15904/fbb4d15b9c22fd373b605805bde8fd44.html
 http://www.w3cfuns.com/notes/15904/cad84afddab13604f987cbf511d265e4.html
-https://segmentfault.com/q/1010000005169531/a-1020000005170343  ������
+https://segmentfault.com/q/1010000005169531/a-1020000005170343  第三方
 http://blog.csdn.net/usluckily/article/details/51861892
-��Ϊ Vue.js ָ�����첽���£���������޸�����֮���޸� DOM ��Ӧ���� Vue.nextTick �Ļص��в�����
-http://webpack.github.io/docs/shimming-modules.html  ������
+因为 Vue.js 指令是异步更新，如果想在修改数据之后修改 DOM ，应当在 Vue.nextTick 的回调中操作。
+http://webpack.github.io/docs/shimming-modules.html  三方库
 new webpack.optimize.CommonsChunkPlugin('common.js'),
 new webpack.ProvidePlugin({
 jQuery: "jquery",
 $: "jquery"
 })
 https://segmentfault.com/a/1190000004267935
-
+你可以直接就用 vue init <template-name> <project-name> 使用。你也可以运行 vue list 命令来看看现在有哪些官方模板是现在可用的。
+目前有以下模板可供选择：
+browserify - 拥有高级功能的 Browserify + vueify 用于正式开发。
+browserify-simple - 拥有基础功能的 Browserify + vueify 用于快速原型开发。
+webpack - 拥有高级功能的 Webpack + vue-loader 用于正式开发。   This template is Vue 2.0 compatible. For Vue 1.x use this command: vue init webpack#1.0 my-project
+webpack-simple - 拥有基础功能的 Webpack + vue-loader 用于快速原型开发。
 
 
 webpack
@@ -113,13 +118,13 @@ http://www.jbrantly.com/typescript-and-webpack/
 http://www.jbrantly.com/es6-modules-with-typescript-and-webpack/
 https://segmentfault.com/a/1190000003970448
 http://cookingjs.github.io/zh-cn/intro.html
-https://segmentfault.com/a/1190000004577578   �Ż�
+https://segmentfault.com/a/1190000004577578   优化
 http://www.alloyteam.com/2016/01/webpack-use-optimization/?utm_source=tuicool&utm_medium=referral
 https://zhuanlan.zhihu.com/p/20914387?refer=jscss
 https://segmentfault.com/a/1190000004728494
-https://segmentfault.com/a/1190000003006331  ����
-���Grunt��WebPack���˾߱��ḻ�Ĳ���⣬ͬʱ����һ�׼��أ�Loader��ϵͳ��ʹ��֧�ֶ��ֹ淶�ļ��ط�ʽ������ES6��CommonJS��AMD�ȷ�ʽ������Grunt��Gulp�����߱��ġ�
-����AMD�淶����RequireJS
-����CMD �淶����SeaJS
-NodeJS�淶 CommonJS
-ECMAScript 6��ģ�黯
+https://segmentfault.com/a/1190000003006331  工具
+相比Grunt，WebPack除了具备丰富的插件外，同时带有一套加载（Loader）系统。使它支持多种规范的加载方式，包括ES6、CommonJS、AMD等方式，这是Grunt、Gulp所不具备的。
+符合AMD规范，如RequireJS
+符合CMD 规范，如SeaJS
+NodeJS规范 CommonJS
+ECMAScript 6的模块化
