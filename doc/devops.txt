@@ -42,6 +42,11 @@ Stackshare ¶Ô Devops ÓĞ×Ô¼ºµÄ¿´·¨£¬ÈÏÎª DevOps Ö÷Òª·ÖÁ½¿é£ºÒ»¿éÊÇ¼à¿Ø£¬Í¨¹ı¼à¿Ø·
 °²×°Ansible:
 rpm -ivh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
 yum install ansible
+https://github.com/lexrus/ios-dev-playbook  ansible playbook
+Ad-HocÊÊÓÃÓÚÁÙÊ±ÃüÁîµÄÖ´ĞĞ£¬PlaybookºÏÊÊÖĞĞ¡ÏîÄ¿£¬´óÏîÄ¿ÇëÒ»¶¨Ê¹ÓÃRoles¡£Roles²»½öÖ§³ÖTasksµÄ¼¯ºÏ£¬Í¬Ê±°üÀ¨vars_files, tasks, and handlers,meta,templates¡£RolesÖ÷ÒªÒÀÀµÓÚÄ¿Â¼µÄÃüÃûºÍ°Ú·Å£¬Ä¬ÈÏtasks/main.ymlÊÇËùÓĞÈÎÎñµÄÈë¿Ú
+https://t.hao0.me/devops/2015/12/01/ansible-practice.html   https://github.com/ihaolin/ansible-practice
+http://fishcried.com/2016-09-05/ansible-common-modules/
+
 
 °²×°saltstack:
 rpm -ivh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm

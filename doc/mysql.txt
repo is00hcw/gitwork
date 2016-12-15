@@ -1,5 +1,14 @@
 ﻿MySQL数据库delete数据时，不支持表别名
 TRUNCATE TABLE '表名' 这样就利用SQL语句清空了该数据表，而不保留日志。
+http://www.leexh.com/blog/2014/07/10/mysql-item-compare-bug/   Mysql查询类型转换诡异问题
+数字类型的索引,如果传入字符串可以使用索引. 字符串类型的索引,如果查询数字无法使用索引. https://blog.xupeng.me/2012/02/08/type-conversion-and-index-selection-of-mysql/
+id字段是字符串型，当我用整数型0作为where条件去与其比对时，字符串id被自动转为整数型，也就成了0。自然就把所有记录都给匹配出来了
+select 11 + '11', 11 + 'aa', 'a1' + 'bb', 11 + '0.01a';    http://seanlook.com/2016/05/05/mysql-type-conversion/
+当查询字段是INT类型，如果查询条件为CHAR，将查询条件转换为INT，如果是字符串前导都是数字将会进行截取，如果不是转换为0。当查询字段是CHAR类型，如果查询条件为INT，将查询字段为换为INT再进行比较，可能会造成全表扫描。  http://courages.us/archives/382
+11 + 'aa'，由于操作符两边的类型不一样且符合第g条，aa要被转换成浮点型小数，然而转换失败（字母被截断），可以认为转成了 0，整数11被转成浮点型还是它自己，所以11 + 'aa' = 11。
+0.01a转成double型也是被截断成0.01，所以11 + '0.01a' = 11.01。
+MySQL优化器只有两个自由度：顺序选择；单表访问方式   https://yq.aliyun.com/articles/11222
+http://tech.meituan.com/mysql-index.html   MySQL索引原理及慢查询优化
 
 查看mysql当前时间，当前时区 select curtime();   #或select now()也可以   http://www.kuitao8.com/20151024/4110.shtml
 show variables like 'time_zone';如果是system 就说明这个和主机的时区是一样的。

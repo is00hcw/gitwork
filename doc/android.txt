@@ -1,3 +1,6 @@
+SoLoader是facebook出品的一款小巧的用于加载so库文件的开源项目，主要作用是自动检查和加载多个有依赖关系的so库文件。在Android平台下React-Native项目大量使用了动态链接库，即JNI技术，作为Java和JavaScript两种程序语言之间的通信桥梁。
+其中libreactnativejni.so是JNI桥梁的入口。 。好在Android 4.3版本（包括）之后，会自动检查和加载依赖库，但是React-Native是兼容到Android 4.1版本的，所以SoLoader就是一种兼容4.3以下版本的技术解决方案。
+
 阿里百川HotFix的Android版本在AndFix的基础上，增加了补丁版本管理、补丁安全校验、控制台灰度管理等更加人性化的功能，同时针对兼容性进行了完善，支持市面上超过800种常见机型
 https://github.com/Tencent/tinker  https://my.oschina.net/shwenzhang/blog/751618  微信官方的Android热补丁解决方案，它支持动态下发代码、So库以及资源，让应用能够在不需要重新安装的情况下实现更新。
 https://mp.weixin.qq.com/s?__biz=MzAwNDY1ODY2OQ==&mid=2649286306&idx=1&sn=d6b2865e033a99de60b2d4314c6e0a25    微信Android热补丁实践演进之路

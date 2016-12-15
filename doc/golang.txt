@@ -1,5 +1,9 @@
-﻿https://wide.b3log.org/playground
+﻿https://my.oschina.net/u/2894582/blog/804421  Google Go 语言从入门到应用必备开源项目
+https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/directory.md
+https://github.com/Unknwon/go-fundamental-programming
+https://wide.b3log.org/playground
 https://wide.b3log.org/
+https://github.com/mailgun/godebug
 
 http://it.taocms.org/05/10911.htm  gokit
 http://studygolang.com/articles/7010

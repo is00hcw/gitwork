@@ -1,3 +1,5 @@
+https://mirror.tuna.tsinghua.edu.cn/help/docker/
+
 curl -sSL https://cdn.quncrm.com/docker.sh | sudo sh   
 http://blog.csdn.net/u014788227/article/details/52829507
 docker cp c4dfda7a9367:/usr/local/tomcat/bin/catalina.sh .
@@ -30,6 +32,14 @@ https://github.com/Dataman-Cloud/crane/tree/master/release/v1.0.6
 /lib/systemd/system/docker.service 中根本没有设置 EnvironmentFile 变量，意味着 /etc/docker/default 根本没有被读取    http://blog.csdn.net/jcjc918/article/details/46564891
 http://m.blog.csdn.net/article/details?id=52679365
 默认用户名：admin@admin.com 密码：adminadmin
+
+
+gitlab runner
+http://jigsawye.com/2015/09/25/gitlab-ce-in-docker/  使用 Docker 建置 Gitlab CE 的 Source Control 及 CI 環境
+http://blog.fatedier.com/2016/04/05/install-gitlab-supporting-ci-with-docker/   利用docker搭建gitlab及持续集成模块  golang
+http://walterinsh.github.io/2016/04/18/using-gitlab-ci.html   maven
+https://www.slahser.com/2016/11/21/migrate-gitlab-to-docker/
+https://www.slahser.com/2016/09/07/%E5%9F%BA%E4%BA%8EGitlab%E4%B8%8EDocker%E7%9A%84CI/
 
 https://segmentfault.com/a/1190000005177766
 http://blog.spring-cloud.io/blog/sc-sleuth.html  SpringCloudSleuth 微服务架构下的分布式追踪  https://github.com/seagrape/SpringCloudSleuth
@@ -444,3 +454,16 @@ docker swarm：集群管理，子命令有init, join,join-token, leave, update
 docker node：节点管理，子命令有demote, inspect,ls, promote, rm, ps, update
 docker service：服务管理，子命令有create, inspect, ps, ls ,rm , scale, update
 docker stack/deploy：试验特性，用于多应用部署
+
+
+
+https://github.com/elgohr/cf-jetbrains-license-server/blob/master/Dockerfile
+ https://download.jetbrains.com/lcsrv/license-server-installer.zip  
+docker pull wolfogre/jetbrains-licenser   安装 JetBrains 授权服务
+docker run -d -p 8002:80 --name wo-jetbrains-licenser wolfogre/jetbrains-licenser
+
+docker pull countly/countly-server
+http://resources.count.ly/v2.0/docs/installing-countly-server
+https://wolfogre.gitbooks.io/server-configuration-notes/content/Docker%20%E5%8C%96%EF%BC%9A%E5%AE%89%E8%A3%85%20Countly%20.html
+Sentry 是一个实时的事件日志和聚合平台，基于 Django 构建。
+Countly 是一个实时的、开源的移动分析应用，通过收集来自手机的数据，并将这些数据通过可视化效果展示出来以分析移动应用的使用和最终用户的行为。
