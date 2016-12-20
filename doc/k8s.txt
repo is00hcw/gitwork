@@ -4,6 +4,13 @@ Kubernetes1.5GA正式版本发布   将PetSet改名为StatefulSet    增加了命令kubectl cp 
 Kubernetes 1.4里引入了kubeadm init和kubeadm join两个命令
 在1.5版本中会除了继续加强kubeadm的能力，还会引入新命令kubefed，以简化集群联邦的相关操作
 
+pod-infra-container-image=registry.cn-hangzhou.aliyuncs.com/google-containers/pause-amd64:3.0
+k8s.oss-cn-shanghai.aliyuncs.com/admin.sh
+https://yq.aliyun.com/articles/66474?spm=5176.100238.goodcont.46.dtkE9k   阿里云快速部署Kubernetes - VPC环境
+https://hub.tenxcloud.com/repos/google_containers
+https://tryk8s.com/tutorial/deploy-kubernetes-on-aliyun/   Deploy Kubernetes on Aliyun
+
+
 http://blog.liulantao.com/blog/2015/2015-09-30-kubernetes-101-study-notes.html   Kubernetes 101 学习笔记
 http://blog.liulantao.com/blog/2015/2015-10-05-kubernetes-201-study-notes.html  Kubernetes 201 学习笔记
 

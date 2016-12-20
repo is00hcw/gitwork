@@ -21,8 +21,11 @@ webpack-dev-server --progress --colors
 
 http://www.ruanyifeng.com/blog/2016/11/javascript.html   JavaScript 全栈工程师培训教程 
 https://github.com/ruanyf/jstraining
+https://segmentfault.com/a/1190000007656902  推荐轻量高效无依赖的开源JS插件和库
 
-
+http://yuyang041060120.github.io/2016/09/22/change-detection-and-batch-update/  Change Detection And Batch Update
+http://yuyang041060120.github.io/2016/05/05/webpack-defineplugin-and-provideplugin/   通过DefinePlugin可以定义一些全局的变量
+https://techctu.gitbooks.io/sl-web-dev-guide/content/%E4%BD%BF%E7%94%A8webpackdefineplugin%E6%9D%A5%E5%AE%9A%E4%B9%89%E5%92%8C%E6%A4%8D%E5%85%A5%E7%8E%AF%E5%A2%83%E7%9B%B8%E5%85%B3%E5%8F%98%E9%87%8F.html
 View 就是 React 组件，而 Model 是 flux 中的 store。 Store 就是一个存储数据的对象，它会在 dispatch上注册自己感兴趣的事件。Dispatcher 是flux提供的一个全局的事件分发器，而 action 其实就是自定义的事件而已。
 React的好处，比如说它的虚拟DOM可以被高效的渲染，比如说它的组件化使得项目结构非常清晰，代码复用非常容易，比如说它的数据管理机制也能让你清晰的知晓数据的状态
 https://segmentfault.com/a/1190000004133844   《Head First JavaScript》读书笔记

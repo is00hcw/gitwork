@@ -1,4 +1,20 @@
 https://mirror.tuna.tsinghua.edu.cn/help/docker/
+https://yq.aliyun.com/articles/29941?spm=5176.100239.0.0.68bt6N   Docker 镜像加速器
+https://hpc.aliyun.com/doc/docker%E9%95%9C%E5%83%8F%E6%9C%8D%E5%8A%A1?spm=5176.100210.0.0.2PoQcr
+https://help.aliyun.com/document_detail/25985.html
+
+阿里云公开了他们的镜像仓库  http://maven.aliyun.com/nexus    
+https://yq.aliyun.com/articles/65274?spm=5176.100239.blogcont46991.11.rYefW9   Maven Docker镜像使用技巧
+docker login --username=xxx@163.com registry.cn-hangzhou.aliyuncs.com
+docker pull registry.cn-hangzhou.aliyuncs.com/is00hcw/openresty:[镜像版本号]
+docker tag [ImageId] registry.cn-hangzhou.aliyuncs.com/is00hcw/openresty:[镜像版本号]
+docker push registry.cn-hangzhou.aliyuncs.com/is00hcw/openresty:[镜像版本号]
+
+以下是快速启动支持OSS的docker-registry的方式：
+docker run -e OSS_BUCKET= -e STORAGE_PATH=/docker/ -e OSS_KEY= -e OSS_SECRET= -p 5000:5000 -d chrisjin/registry:ali_oss
+docker tag hello-world 127.0.0.1:5000/hello-world
+docker push 127.0.0.1:5000/hello-world
+
 
 curl -sSL https://cdn.quncrm.com/docker.sh | sudo sh   
 http://blog.csdn.net/u014788227/article/details/52829507
@@ -16,12 +32,15 @@ registry.cn-hangzhou.aliyuncs.com/acs-sample/alisql:latest
 aliyun.global: true # 每台机器均部署一个nginx容器，达到高可用目的
 return 301 https://$host$request_uri;
 
+https://yq.aliyun.com/articles/64970?spm=5176.100239.0.0.68bt6N  使用阿里云容器服务Jenkins 2.0实现持续集成之Pipeline篇
+https://yq.aliyun.com/articles/66478?spm=5176.100238.goodcont.60.dtkE9k   搭建私有docker仓库并使用OSS作为存储
 https://yq.aliyun.com/articles/61083?spm=5176.100244.teamconlist.41.Z5uTmf  阿里云容器服务-配置http直接跳转到https
 https://yq.aliyun.com/articles/60789?spm=5176.100244.teamconlist.5.TCUeod  在Docker中运行Dubbo应用   
 https://github.com/binblee/dubbo-docker
 https://yq.aliyun.com/articles/60530?spm=5176.8091938.0.0.3aQ56o  openresty API网关遇上容器服务
 https://github.com/binblee/apigateway-docker-demo
 https://segmentfault.com/a/1190000007387013  openresty的docker实例
+https://yq.aliyun.com/articles/65272?spm=5176.100239.0.0.ONr9lT   利用Docker轻松实现云原生应用: Spring Boot + Redis分布式会话
 
 harbor
 https://mritd.me/2016/06/27/Harbor-%E4%BC%81%E4%B8%9A%E7%BA%A7-Docker-Registry-%E5%88%9D%E8%AF%95/?utm_source=tuicool&utm_medium=referral   
@@ -40,6 +59,9 @@ http://blog.fatedier.com/2016/04/05/install-gitlab-supporting-ci-with-docker/   
 http://walterinsh.github.io/2016/04/18/using-gitlab-ci.html   maven
 https://www.slahser.com/2016/11/21/migrate-gitlab-to-docker/
 https://www.slahser.com/2016/09/07/%E5%9F%BA%E4%BA%8EGitlab%E4%B8%8EDocker%E7%9A%84CI/
+http://www.snowdream.tech/2016/07/02/android-ci-gitlab/  android runner
+http://blog.csdn.net/maosidiaoxian/article/details/53373947?utm_source=itdadao&utm_medium=referral     解放双手——Android的自动化构建及发布
+
 
 https://segmentfault.com/a/1190000005177766
 http://blog.spring-cloud.io/blog/sc-sleuth.html  SpringCloudSleuth 微服务架构下的分布式追踪  https://github.com/seagrape/SpringCloudSleuth

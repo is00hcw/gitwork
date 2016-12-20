@@ -2,6 +2,10 @@ http://danielkummer.github.io/git-flow-cheatsheet/index.zh_CN.html
 http://www.codeceo.com/article/how-to-use-git-flow.html
 http://www.bootcss.com/p/git-guide/  git - 简易指南
 
+git diff  此命令比较的是工作目录中当前文件和暂存区域快照之间的差异，也就是修改之后还没有暂存起来的变化内容。
+若要看已经暂存起来的文件和上次提交时的快照之间的差异，可以用 git diff --cached 命令。
+
+
 http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html  常用命令
 http://www.ruanyifeng.com/blog/2015/08/git-use-process.html
 http://www.ruanyifeng.com/blog/2012/07/git.html
