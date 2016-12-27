@@ -9,6 +9,11 @@ https://weui.io/
 https://github.com/airyland/vux   https://vux.li/?x-page=oschina#!/demo
 
 
+http://jdc.jd.com/archives/2806  浅析渲染引擎与前端优化
+http://jdc.jd.com/archives/2942  JavaScript写类的前世今生
+https://github.com/wepayui/wepayui   微信支付
+
+
 npm install -g generator-webpack-es6-cssnext
 npm install es6-promise whatwg-fetch --save
 npm install --save isomorphic-fetch es6-promise

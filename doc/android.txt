@@ -1,5 +1,10 @@
+https://yq.aliyun.com/articles/67136?spm=5176.100238.goodcont.47.DNy5oa   °¢ÀïHotFix2.0Éı¼¶Ïê½â¡ª¡ª¼¼ÊõÔËÓªĞ¡¶ş³©Ì¸ÈÈĞŞ¸´ÁìÓòÄÇĞ©ÊÂ
 SoLoaderÊÇfacebook³öÆ·µÄÒ»¿îĞ¡ÇÉµÄÓÃÓÚ¼ÓÔØso¿âÎÄ¼şµÄ¿ªÔ´ÏîÄ¿£¬Ö÷Òª×÷ÓÃÊÇ×Ô¶¯¼ì²éºÍ¼ÓÔØ¶à¸öÓĞÒÀÀµ¹ØÏµµÄso¿âÎÄ¼ş¡£ÔÚAndroidÆ½Ì¨ÏÂReact-NativeÏîÄ¿´óÁ¿Ê¹ÓÃÁË¶¯Ì¬Á´½Ó¿â£¬¼´JNI¼¼Êõ£¬×÷ÎªJavaºÍJavaScriptÁ½ÖÖ³ÌĞòÓïÑÔÖ®¼äµÄÍ¨ĞÅÇÅÁº¡£
 ÆäÖĞlibreactnativejni.soÊÇJNIÇÅÁºµÄÈë¿Ú¡£ ¡£ºÃÔÚAndroid 4.3°æ±¾£¨°üÀ¨£©Ö®ºó£¬»á×Ô¶¯¼ì²éºÍ¼ÓÔØÒÀÀµ¿â£¬µ«ÊÇReact-NativeÊÇ¼æÈİµ½Android 4.1°æ±¾µÄ£¬ËùÒÔSoLoader¾ÍÊÇÒ»ÖÖ¼æÈİ4.3ÒÔÏÂ°æ±¾µÄ¼¼Êõ½â¾ö·½°¸¡£
+
+http://pingguohe.net/2016/03/21/Dynimac-write-infomation-into-apk.html   Ò»ÖÖ¶¯Ì¬ÎªapkĞ´ÈëĞÅÏ¢µÄ·½°¸
+http://pingguohe.net/2016/02/26/Android-App-secure-ssl.html  android https  
+
 
 °¢Àï°Ù´¨HotFixµÄAndroid°æ±¾ÔÚAndFixµÄ»ù´¡ÉÏ£¬Ôö¼ÓÁË²¹¶¡°æ±¾¹ÜÀí¡¢²¹¶¡°²È«Ğ£Ñé¡¢¿ØÖÆÌ¨»Ò¶È¹ÜÀíµÈ¸ü¼ÓÈËĞÔ»¯µÄ¹¦ÄÜ£¬Í¬Ê±Õë¶Ô¼æÈİĞÔ½øĞĞÁËÍêÉÆ£¬Ö§³ÖÊĞÃæÉÏ³¬¹ı800ÖÖ³£¼û»úĞÍ
 https://github.com/Tencent/tinker  https://my.oschina.net/shwenzhang/blog/751618  Î¢ĞÅ¹Ù·½µÄAndroidÈÈ²¹¶¡½â¾ö·½°¸£¬ËüÖ§³Ö¶¯Ì¬ÏÂ·¢´úÂë¡¢So¿âÒÔ¼°×ÊÔ´£¬ÈÃÓ¦ÓÃÄÜ¹»ÔÚ²»ĞèÒªÖØĞÂ°²×°µÄÇé¿öÏÂÊµÏÖ¸üĞÂ¡£
@@ -10,6 +15,7 @@ http://mp.weixin.qq.com/s?__biz=MzA3ODg4MDk0Ng==&mid=2651112601&idx=1&sn=8ac730f
 DexµÄÈÈĞŞ¸´Ä¿Ç°À´¿´»ù±¾ÉÏÓĞËÄÖÖ·½°¸£º
 °¢ÀïÏµµÄ´Ónative²ãÈëÊÖ£¬¼ûAndFix
 QQ¿Õ¼äµÄ·½°¸£¬²å×®£¬¼û°²×¿AppÈÈ²¹¶¡¶¯Ì¬ĞŞ¸´¼¼Êõ½éÉÜ
+
 Î¢ĞÅµÄ·½°¸£¬¼ûÎ¢ĞÅAndroidÈÈ²¹¶¡Êµ¼ùÑİ½øÖ®Â·£¬dexDiffºÍdexPatch£¬·½·¨ºÜÅ£±Æ£¬ĞèÒªÈ«Á¿²åÈë£¬µ«ÊÇÕâ¸öÈ«Á¿²åÈëµÄdexÖĞĞèÒªÉ¾³ıÒ»Ğ©¹ıÔç¼ÓÔØµÄÀà£¬²»È»Í¬Ñù»á±¨class is pre verifiedÒì³££¬»¹ÓĞÒ»¸öÈ±µã¾ÍÊÇºÏ³ÉÕ¼ÄÚ´æºÍÄÚÖÃ´æ´¢¿Õ¼ä¡£Î¢ĞÅ¶ÁÊéµÄ·½Ê½ºÍÎ¢ĞÅÀàËÆ£¬¼ûAndroid Patch ·½°¸Óë³ÖĞø½»¸¶£¬²»¹ıÎ¢ĞÅ¶ÁÊéÊÇminiloader·½Ê½£¬Æô¶¯Ê±ÈİÒ×ANR£¬ÔÚÎÒ´¸×ÓÊÖ»úÉÏ±äÏÖ³öÀ´ÌØ±ğÃ÷ÏÔ£¬³¤Ê±¼äµÄ¿¨Í¼±êÏÖÏó¡£
 ÃÀÍÅµÄ·½°¸£¬Ò²¾ÍÊÇinstant runµÄ·½°¸£¬¼ûAndroidÈÈ¸üĞÂ·½°¸Robust
 ´ËÍâ£¬Î¢ĞÅµÄ·½°¸ÊÇ¶àclassloader£¬ÕâÖÖ·½Ê½¿ÉÒÔ½â¾öÓÃmultidex·½Ê½ÔÚ²¿·Ö»úĞÍÉÏ²»ÉúĞ§patchµÄÎÊÌâ£¬Í¬Ê±»¹´øÀ´Ò»¸öºÃ´¦£¬ÕâÖÖ¶àclassloaderµÄ·½Ê½Ê¹ÓÃµÄÊÇinstant runµÄ´úÂë£¬Èç¹û´æÔÚnative libraryµÄĞŞ¸´£¬Ò²»á´øÀ´¼«´óµÄ·½±ã¡£
@@ -21,13 +27,16 @@ Freeline±¾ÖÊÉÏÊÇÒ»¸öÈÈ²¹¶¡·½°¸£¬½«ĞŞ¹ı¹ıµÄ*.javaºÍ×ÊÔ´ÎÄ¼ş·Ö±ğ´ò³ÉdexºÍpack£¬È»º
 https://yq.aliyun.com/articles/62334?spm=5176.100239.blogcont59122.15.peq2Ma  AndroidÃë¼¶±àÒë¹¤¾ßFreelineĞÂÌØĞÔÖ§³Ö£¡
 https://github.com/T-Group/QFix?spm=5176.100239.blogcont62334.23.rLMEuE
 
+http://www.infoq.com/cn/articles/ctrip-app-architecture  Ğ¯³ÌÒÆ¶¯App¼Ü¹¹ÓÅ»¯Ö®ÂÃ
+https://zhuanlan.zhihu.com/p/23882195?from=groupmessage  APKÊİÉí¼Ç£¬ÈçºÎÊµÏÖ¸ß´ï53%µÄÑ¹ËõĞ§¹û
+https://github.com/android-notes/SwissArmyKnife   androidÃâroot¼æÈİËùÓĞ°æ±¾uiµ÷ÊÔ¹¤¾ß
 http://www.oschina.net/news/78857/best-android-libraries-for-developers  ÃæÏò¿ª·¢ÕßµÄ×î¼Ñ Android ¿âÁĞ±í
 https://yq.aliyun.com/articles/59177?spm=5176.100239.bloglist.16.EjXXV7     Freeline - AndroidÆ½Ì¨ÉÏµÄÃë¼¶±àÒë·½°¸   https://github.com/alibaba/freeline
 https://github.com/alibaba/java-dns-cache-manipulator/tree/master/library   ´úÂëÀïÃæÉèÖÃdns ip°ó¶¨
 https://yq.aliyun.com/articles/58517?spm=5176.8067842.tagmain.62.gdmKQ2  Éî¶ÈÀí½âAndroid InstantRunÔ­ÀíÒÔ¼°Ô´Âë·ÖÎö
 http://www.infoq.com/cn/articles/practice-of-netease-android-project-template?utm_campaign=rightbar_v2&utm_source=infoq&utm_medium=articles_link&utm_content=link_text   ÍøÒ× Android¹¤³ÌÄ£°å»¯Êµ¼ù
 
-https://mp.weixin.qq.com/s?__biz=MzA4NTQwNDcyMA==&mid=2650661681&idx=1&sn=b151aba0c5fb702492f6bbd82211988d&scene=1&srcid=0516zj5pE2h0zmq1FTa3XXh8&key=b28b03434249256b1925f433cb052fd00117b50219b8aaf351d376f601a857b4150c3a3979f1fea589e03cf72b9e4ca9&ascene=0&uin=Mjc3OTU3Nzk1&devicetype=iMac+MacBookPro10%2C1+OSX+OSX+10.10.5+build%2814F1713%29&version=11020201&pass_ticket=8lpzOjRJO3IS%2BmKcvsqRN%2FlzlWyR2q2fmKv15GKO2PPYAKDGPXDhyfntueC4bIod
+https://mp.weixin.qq.com/s?__biz=MzA4NTQwNDcyMA==&mid=2650661681&idx=1&sn=b151aba0c5fb702492f6bbd82211988d   Google¿ªÔ´µÄFlexboxLayout
 http://blog.csdn.net/walid1992/article/details/52167539  ´úÂë¹æ·¶
 http://android-arsenal.com/rating   http://www.zhihu.com/question/28481864
 https://github.com/typicode/json-server
@@ -260,6 +269,7 @@ Stetho ÊÇ Facebook ¿ªÔ´µÄÒ»¸ö Android µ÷ÊÔ¹¤¾ß¡£ÊÇÒ»¸ö Chrome Developer Tools µÄ
 
 
 ²¹¶¡£¬ÈÈĞŞ¸´
+https://zhuanlan.zhihu.com/p/24305296   MultiDex¹¤×÷Ô­Àí·ÖÎöºÍÓÅ»¯·½°¸
 https://github.com/bunnyblue/ACDD
 http://blog.csdn.net/qxs965266509/article/details/49816007
 http://blog.csdn.net/lmj623565791/article/details/49883661

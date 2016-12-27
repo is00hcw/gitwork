@@ -3,15 +3,27 @@ https://my.oschina.net/u/727843/blog/391946
 http://xudafeng.github.io/slide/archives/native-in-practice/#/   移动客户端编程实战
 https://github.com/fengling2300/networkTest   http://oncenote.com/2014/10/21/Security-1-HTTPS/
 
+http://mp.weixin.qq.com/s/qRW_akbU3TSd0SxpF3iQmQ   DynamicCocoa：滴滴 iOS 动态化方案的诞生与起航
+http://pingguohe.net/2016/12/20/Tangram-design-and-practice.html    页面动态化的基础 —— Tangram
+https://github.com/wequick/Small
+
 http://www.cnblogs.com/kenshincui/p/3985090.html
 http://www.cnblogs.com/kenshincui/p/3890880.html  IOS程序开发概览
 http://www.cnblogs.com/csharpstyle/articles/4176630.html    Ad Hoc 方式发布 APP
 https://my.oschina.net/u/2462807/blog/796698  手把手教你, Jenkins构建iOS项目
 
+https://mp.weixin.qq.com/s?__biz=MzA3ODg4MDk0Ng==&mid=2651112909&idx=1&sn=cf3949b08f602e40e7125b0a4b5b184c   Rexxar：豆瓣对混合开发的思考
+https://wereadteam.github.io/2016/05/23/GYBootingProtection/  微信读书开发了 iOS 连续闪退保护工具：GYBootingProtection，检测连续闪退，在连续闪退出现时，尝试自修复 App
+https://wereadteam.github.io/2016/07/06/GYDataCenter/  GYDataCenter：高性能数据库框架
+https://wereadteam.github.io/2016/02/25/GYHttpMock/  GYHttpMock：iOS HTTP请求模拟工具
+https://wereadteam.github.io/2016/02/22/MLeaksFinder/  MLeaksFinder：精准 iOS 内存泄露检测工具
+https://github.com/SnapKit/Masonry   
 http://www.oschina.net/p/ohhttpstubs 
 http://blog.csdn.net/colorapp/article/details/47007431  unit test
 http://blog.shiqichan.com/using-afnetworking-sdwebimage-and-ohhttpstubs/
 
+
+http://zackzheng.info/2016/02/26/2016-02-26-app-image-compress-upload-to-server/   App图片压缩裁剪原理和上传方案，以及那些有趣的事儿
 https://yq.aliyun.com/articles/59447?spm=5176.100239.bloglist.17.OkOb5e  CocoaPods的使用及其原理
 http://www.jianshu.com/p/228535226656   27个iOS开源库，让你的开发坐上火箭吧
 https://www.oschina.net/translate/27-ios-open-source-libraries-to-skyrocket-your-development  27 款 iOS 开源库，让你的开发溜到飞起

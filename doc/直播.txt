@@ -1,3 +1,18 @@
+http://blog.qiniu.com/archives/7463
+直播主要由以下几个环节所组成（图 1）
+1. 主播端采集
+2. 处理：美颜、水印，基于人脸识别的动态贴纸；
+3. 编码：视频主要是基于 H264 的编码格式；
+4. 推流：使用 RTP 的实时传输协议，如 RTSP、RTMP、HLS；
+5. 网络传输：使用 CDN 服务厂商的服务；
+6. 拉流：需要服务端处理转码，支持多分辨率，支持 RTP 实时传输协议；
+7. 解码：可以使用硬件或者软件解码；
+8. 播放。
+
+https://gold.xitu.io/entry/56acefa4a341310052ce20d1  goim
+http://blog.qiniu.com/archives/6611
+
+
 https://imququ.com/post/html5-live-player-1.html
 https://imququ.com/post/html5-live-player-2.html
 https://imququ.com/post/html5-live-player-3.html

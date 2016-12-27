@@ -5,6 +5,8 @@ http://linuxtools-rst.readthedocs.org/zh_CN/latest/base/01_use_man.html
 检查连接  netstat -tan | awk '{print $6}' | sort | uniq -c 
 ss -s 
 netstat -napt | grep -i LISTEN
+systemd 就是一个新的 Init 系统， 所有服务的 Systemd 配置文件都在/usr/lib/systemd/system目录下，你也可以将其放在/etc/systemd/system目录下
+
 
 AWK是针对文件或管道中每行输入的处理语言。所以也可以从管道输入:
 grep “xxx” access.log | awk '{print $1}’

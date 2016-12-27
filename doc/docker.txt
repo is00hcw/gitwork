@@ -1,3 +1,7 @@
+查了下手册发现： -g, --graph="/var/lib/docker"	设置Docker运行时根目录. 在 ubuntu 中的位置是：/etc/default/docker   在 centos 中的位置是：/etc/sysconfig/docker
+OPTIONS=--graph="/home/lib/docker" --selinux-enabled -H fd://
+http://www.cnblogs.com/homewch/p/5688448.html   docker-machine -s "E:\docker" create --engine-registry-mirror=https://vf29u5xi.mirror.aliyuncs.com -d virtualbox default
+
 https://mirror.tuna.tsinghua.edu.cn/help/docker/
 https://yq.aliyun.com/articles/29941?spm=5176.100239.0.0.68bt6N   Docker 镜像加速器
 https://hpc.aliyun.com/doc/docker%E9%95%9C%E5%83%8F%E6%9C%8D%E5%8A%A1?spm=5176.100210.0.0.2PoQcr
@@ -31,6 +35,10 @@ docker pull registry.cn-hangzhou.aliyuncs.com/acs-sample/alpine
 registry.cn-hangzhou.aliyuncs.com/acs-sample/alisql:latest
 aliyun.global: true # 每台机器均部署一个nginx容器，达到高可用目的
 return 301 https://$host$request_uri;
+
+docker rmi $(docker images -f dangling=true -q)
+http://www.howtoing.com/how-to-remove-docker-images-containers-and-volumes/  如何删除Docker镜像，容器和卷
+https://github.com/yangtao309/yangtao309.github.com/issues/1
 
 https://yq.aliyun.com/articles/64970?spm=5176.100239.0.0.68bt6N  使用阿里云容器服务Jenkins 2.0实现持续集成之Pipeline篇
 https://yq.aliyun.com/articles/66478?spm=5176.100238.goodcont.60.dtkE9k   搭建私有docker仓库并使用OSS作为存储
@@ -489,3 +497,33 @@ http://resources.count.ly/v2.0/docs/installing-countly-server
 https://wolfogre.gitbooks.io/server-configuration-notes/content/Docker%20%E5%8C%96%EF%BC%9A%E5%AE%89%E8%A3%85%20Countly%20.html
 Sentry 是一个实时的事件日志和聚合平台，基于 Django 构建。
 Countly 是一个实时的、开源的移动分析应用，通过收集来自手机的数据，并将这些数据通过可视化效果展示出来以分析移动应用的使用和最终用户的行为。
+
+https://andyyoung01.github.io/2016/11/15/%E9%80%9A%E8%BF%87logspout%E8%B7%AF%E7%94%B1docker%E5%AE%B9%E5%99%A8%E6%97%A5%E5%BF%97/    通过Logspout路由docker容器日志
+
+
+http://blog.liuts.com/post/252/   腾讯游戏大数据解密：DevOps持续改进之道
+https://beingasysadmin.wordpress.com/2015/09/07/scaling-ha-proxy-with-docker-confd-serf-etcd/
+http://www.jianshu.com/p/bc85a54f98ff   Haproxy+etcd+confd+Docker搭建节点自动发现的高可用负载均衡框架
+etcdctl  --endpoints http://10.0.0.222:2379 mk /demo/hello "Hello Etcd"
+http://blog.liuts.com/post/242/    构建一个高可用及自动发现的Docker基础架构-HECD
+http://www.cnblogs.com/iamdoufu/p/4533063.html  HECK：haproxy+etcd+confd+kvm 实现高可用自动化发现基础架构
+https://yq.aliyun.com/articles/8708   docker服务发现——confd
+https://github.com/kelseyhightower/confd/blob/master/docs/templates.md?spm=5176.100239.blogcont8708.3.z0GbRu&file=templates.md
+https://github.com/chenzhiwei/linux/tree/master/haproxy  HAProxy配置相关
+
+通过以下指令可以移除这些残余的无用挂载目录：docker volume rm $(docker volume ls -qf dangling=true)
+Docker 1.9新增了docker volume命令，可以创建命名的挂载目录 .Networking的跨主机部分使用的时ovs（Open vSwitch）和VXLAN隧道进行实现。关于容器之间的隔离，则使用了iptables。  出现了Docker 的分布式卷解决方案 Flocker
+自从1.9.1之后，Docker容器支持5种不同的网络模式，分别为bridge、host、container、overlay，none。
+在云端，阿里容器服务为集群缺省创建了一个全局跨节点的“multi-host-network”网络，这样在集群内部容器之间的网络是相互连通的。无需指明网络模式，容器之间就可以直接通过容器名进行访问
+自从Docker 1.10版本之后，Docker内嵌了DNS服务，还支持在用户定义的网络上使用容器链接别名来访问引用的容器。
+https://yq.aliyun.com/articles/50628    docker dubbo 通过启动sh修改端口
+https://yq.aliyun.com/articles/30328?spm=5176.100239.0.0.cBSjyA  搭建分布式Zookeeper集群
+https://yq.aliyun.com/articles/61953?spm=5176.100239.0.0.cBSjyA   使用VPN容器连接容器服务内网
+https://yq.aliyun.com/articles/53486?spm=5176.100239.0.0.cBSjyA   使用阿里云容器监控服务与第三方监控框架集成搭建自己的容器看板  influxdb grafana
+http://tonybai.com/2016/02/15/understanding-docker-multi-host-networking/  理解Docker跨多主机容器网络
+http://liubin.org/blog/2016/04/24/how-to-choose-a-docker-monitor-solution/  如何选择Docker监控方案
+https://yq.aliyun.com/articles/7585?spm=5176.100239.blogcont67160.43.mNdELI   基于OSS搭建跨区域部署的分布式Docker镜像仓库
+https://yq.aliyun.com/articles/67160?spm=5176.100239.bloglist.108.jC0Jbg  利用Docker和OSS轻松搭建ownCloud专属网盘
+https://yq.aliyun.com/articles/62315?spm=5176.100239.blogcont62355.15.SJ4rQl  在阿里云容器服务中使用定时任务
+
+https://lukasklein.com/docker/ffmpeg/python/2015/06/12/on-demand-transcoder/   Building a realtime audio transcoder with Docker, FFmpeg and Flask

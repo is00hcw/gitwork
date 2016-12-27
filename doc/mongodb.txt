@@ -1,4 +1,10 @@
+https://yq.aliyun.com/articles/67120?spm=5176.100239.bloglist.111.u8aLGA  告别 MongoDB 2.x 拥抱 3.x 版本的5大理由
+http://www.mongoing.com/archives/3586  MongoDB 3.4 功能改进一览
+http://www.mongoing.com/archives/3694  MongoDB最佳实践及问题案例分析
+http://www.mongoing.com/archives/3573   MongoDB分布式架构演进
 https://yq.aliyun.com/articles/61760?spm=5176.100239.bloglist.159.lbH8B1  MongoDB 疑难杂症分析及优化
+http://blog.csdn.net/sharetop/article/details/53610379   MongoDB 3.4 分片与副本集实践笔记
+
 
 https://yq.aliyun.com/articles/57133?spm=5176.100238.goodcont.33.53PewF  基于MongoDB构建阿里云MongoDB云数据库服务
 http://www.lizi.pw/archives/47    最简单的Spring集成 Mongodb 3.x授权认证方式

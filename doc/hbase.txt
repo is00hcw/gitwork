@@ -1,4 +1,5 @@
-﻿http://mp.weixin.qq.com/s?spm=5176.100239.blogcont63134.26.eJ0K6L&__biz=MzAxNjc1MTk5Nw==&mid=400828499&idx=1&sn=c898c6b0ff752ece4e631565aa83a394&mpshare=1&scene=1&srcid=12239hfEZlgdTDUFBn3vZO0X&from=singlemessage&isappinstalled=0#wechat_redirect    HBase高可用原理与实践
+﻿http://hbasefly.com/2016/09/26/hbase-mutiltenant-1/    HBase最佳实践－多租户机制简析
+http://mp.weixin.qq.com/s?spm=5176.100239.blogcont63134.26.eJ0K6L&__biz=MzAxNjc1MTk5Nw==&mid=400828499&idx=1&sn=c898c6b0ff752ece4e631565aa83a394   HBase高可用原理与实践
 https://help.aliyun.com/document_detail/31792.html?spm=5176.789091351.6.137.T5psPM  端口转发 chrome代理
 cat ~/.ssh/id_rsa.pub   -->   vim ~/.ssh/authorized_keys
 ssh -i ~/.ssh/id_rsa -ND 8157 root@xx.xx.xx.xx

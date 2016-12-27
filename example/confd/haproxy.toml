@@ -1,0 +1,13 @@
+[template]
+#模板文件，基于它进行修改
+src = "haproxy.cfg.tmpl"
+#haproxy的默认配置路径
+dest = "/etc/haproxy/haproxy.cfg"
+#keys是在etcd上订阅消息的前缀
+keys = [
+  "/app/servers",
+]
+#更新配置后重启haproxy
+reload_cmd = "/etc/init.d/haproxy reload"
+
+

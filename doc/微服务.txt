@@ -1,0 +1,25 @@
+﻿https://github.com/i5ting/nodejs-arch-for-java   Java项目如何与Node.js共存
+可视化编辑校验： http://jsoneditoronline.org/
+
+http://mp.weixin.qq.com/s?__biz=MzA5OTAyNzQ2OA==&mid=2649692459&idx=1&sn=5f7bae5f64e8f8156b5b4f1f9bdd2426   如何使用 Node.js 和 Docker 构建高质量的微服务
+
+http://mp.weixin.qq.com/s?__biz=MzA5OTAyNzQ2OA==&mid=2649692067&idx=1&sn=a944922e5adbd4c0fa05cd8091ce0c7e   Docker在B站的实施之路
+动态Upstream：Nginx + UpSync + Consul。Upsync是Weibo开源的一个模块，使用Consul保存Upstream的server信息。Nginx启动时会从Consul获取最新的Upstream server信息，同时Nginx会建立一个TCP连接hook到Consul，当Consul里的数据有变更时会立即通知到Nginx，Nginx的worker进程更新自己的Upstream server信息。整个过程不需要reload nginx。注意：UpSync的功能是动态更新upstream server，当有vhost的变更时，还是需要reload nginx。
+Tengine + Dyups。Dyups的弊端就是Upstream信息是保存在内存里的。 
+
+
+http://heqin.blog.51cto.com/8931355/1865665   开源API网关Kong的部署与使用
+http://blog.catscarlet.com/201612202671.html    基于Kong建立支持OAuth2.0的API网关
+http://www.jianshu.com/p/89dc0d24823d  学习Kong
+Kong，是一款基于lua的API管理软件。能够注册、管理API，能够提供API的验证访问。Kong本质上始一个反向代理软件，类似于ngnix，但比nginx提供了更简单的配置方式（REST接口）。kong是基于openresty的api网关,并且利用数据库和serf实现了集群模式.节点自动发现,所有的配置更改都会通过数据库中心同步到所有kong节点.自带许多插件,比如安全类的,日志相关,限制相关,计量相关等等.  
+npm install -g kong-dashboard
+http://blog.toast38coza.me/up-and-running-with-kong-and-docker/  up and running with Kong and Docker Compose
+http://www.58maisui.com/2016/11/08/853/     用API网关把API管起来
+http://orange.sumory.com/docs/guides/about/   Orange Documentatio
+
+
+https://github.com/yeasy/docker-compose-files/blob/master/consul-discovery/docker-compose.yml
+http://blog.csdn.net/yeasy/article/details/47749725   用 consul + consul-template + registrator + nginx 打造真正可动态扩展的服务架构
+https://www.ghostcloud.cn/home/mdShow?id=b2338634-20be-11e6-8c19-0242c0a80002   服务注册器快速入门教程
+使用consul做服务发现（进行服务的注册类似etcd），使用consul_template(类似confd)进行nginx配置文件的更新，使用registartor进行检测docker上所起的服务并注册到指定的consul机器上
+Registrator去除了需要手动管理Consul服务条目的复杂性，它监视容器的启动和停止，根据容器暴露的端口和环境变量自动注册服务。  curl -sSL 172.17.0.1:8500/v1/catalog/services | python -m json.tool

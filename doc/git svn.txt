@@ -2,8 +2,24 @@ http://danielkummer.github.io/git-flow-cheatsheet/index.zh_CN.html
 http://www.codeceo.com/article/how-to-use-git-flow.html
 http://www.bootcss.com/p/git-guide/  git - 简易指南
 
+Git 保存的不是文件差异或者变化量，而只是一系列文件快照。在 Git 中提交时，会保存一个提交（commit）对象，该对象包含一个指向暂存内容快照的指针，包含本次提交的作者等相关附属信息，包含零个或多个指向该提交对象的父对象指针。 当使用 git commit 新建一个提交对象前，Git 会先计算每一个子目录的校验和，然后在 Git 仓库中将这些目录保存为树（tree）对象。
 git diff  此命令比较的是工作目录中当前文件和暂存区域快照之间的差异，也就是修改之后还没有暂存起来的变化内容。
 若要看已经暂存起来的文件和上次提交时的快照之间的差异，可以用 git diff --cached 命令。
+Git 提供了一个跳过使用暂存区域的方式，只要在提交的时候，给 git commit 加上 -a 选项，Git 就会自动把所有已经跟踪过的文件暂存起来一并提交，从而跳过 git add 步骤
+要移除跟踪但不删除文件，以便稍后在 .gitignore 文件中补上，用 --cached 选项即可git rm --cached readme.txt
+想要撤消刚才的提交操作，可以使用 --amend 选项重新提交：git commit --amend  如果刚才提交时忘了暂存某些修改，可以先补上暂存操作，然后再运行 --amend 提交：
+https://my.oschina.net/qiangdada/blog/800093
+也可以加上 -v 选项（译注：此为 --verbose 的简写，取首字母），显示对应的克隆地址： git remote -v 
+Git 又是如何创建一个新的分支的呢？答案很简单，创建一个新的分支指针。 Git 是如何知道你当前在哪个分支上工作的呢？其实答案也很简单，它保存着一个名为 HEAD 的特别指针。在 Git 中，它是一个指向你正在工作中的本地分支的指针。
+换句话说，如果顺着一个分支走下去可以到达另一个分支的话，那么 Git 在合并两者时，只会简单地把指针右移，因为这种单线的历史分支不存在任何需要解决的分歧，所以这种合并过程可以称为快进（Fast forward）。
+在解决了所有文件里的所有冲突后，运行 git add 将把它们标记为已解决状态（实际上就是来一次快照保存到暂存区域）。 
+https://my.oschina.net/qiangdada/blog/808527
+请务必牢记这些分支全部都是本地分支，这一点很重要。当你在使用分支及合并的时候，一切都是在你自己的 Git 仓库中进行的 — 完全不涉及与服务器的交互。
+一次 Git 克隆会建立你自己的本地分支 master 和远程分支 origin/master，并且将它们都指向 origin 上的 master 分支。 若想把远程分支叫作 awesomebranch，可以用 git push origin serverfix:awesomebranch 来推送数据。
+git push [远程名] [本地分支]:[远程分支] 语法，如果省略 [本地分支]，那就等于是在说“在这里提取空白然后把它变成[远程分支]”。
+在 Git 里，这种操作叫做衍合（rebase）。有了 rebase 命令，就可以把在一个分支里提交的改变移到另一个分支里重放一遍。
+git rebase [主分支] [特性分支] 命令会先取出特性分支 server，然后在主分支 master 上重演
+一旦分支的提交对象发布到公共仓库，就千万不要对该分支进行衍合操作。进行衍合的时候，实际上抛弃了一些显存的提交对象而创造了一些类似但不同的新的提交对象，如果你把原来分支中的提交对象发布出去，并且其他人更新下载后在其基础上开展工作，而稍后你又用Git rebase抛弃这些提交对象，把新的重演后的提交对象发布出去的话，你的合作者就不得不重新合并他们的工作，这样当你再次从他们那里获取内容的时候，提交历史就会变得一团糟。
 
 
 http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html  常用命令
