@@ -1,3 +1,5 @@
+https://yq.aliyun.com/articles/67246?spm=5176.100239.bloglist.51.HBENG0   机器学习介绍
+
 https://yq.aliyun.com/articles/11248?spm=5176.100239.blogcont57695.15.Yhlwvx
 编译环境：Visual Studio 2013 Ultimate版， 获取地址：http://download.microsoft.com/download/9/3/E/93EA27FF-DB02-4822-8771-DCA0238957E9/vs2013.5_ult_chs.iso?type=ISO
 CUDA Toolkit版本：7.5，获取地址：https://developer.nvidia.com/cuda-downloads
