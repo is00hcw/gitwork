@@ -2,11 +2,17 @@ http://blog.didispace.com/categories/Spring-Cloud/
 http://blog.didispace.com/springcloud-sourcecode-eureka/   Spring Cloud源码分析（一）Eureka
 http://blog.didispace.com/springcloud6/
 http://blog.didispace.com/springcloud5/   服务网关  zuul
+https://code.aliyun.com/libin.libin/aliyuncs-springcloud-demo?spm=5176.100239.blogcont57265.24.2n2VhV
 
+
+如果想直接用构建好的镜像，可以使用本文提供的示例：docker pull registry.aliyuncs.com/jingshanlb/discovery-server
+https://yq.aliyun.com/articles/57268?spm=5176.100239.blogcont57270.14.M6GgZo   Eureka服务发现和镜像构建
+https://segmentfault.com/a/1190000004356362  SpringBoot应用之配置中心
+http://sail-y.github.io/2016/03/21/Spring-cloud%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/
 https://www.oschina.net/translate/integration-the-spring-cloud-netflix-framework-int
 Eureka用于Spring管理下的bean服务发现
 Zuul处理路由服务，被视为请求的”守门员“
-Ribbon用于动态路由和负载均衡
+Ribbon用于动态路由和负载均衡  主要提供客户侧的软件负载均衡算法
 Hystrix提供了断路器功能，以处理无响应的API调用
 Turbine提供了关于Hystrix的全部可用断路器的信息
 Spring Cloud Config，它把应用配置集中到了一个Git仓库
@@ -26,7 +32,18 @@ ConfigurableApplicationContext context = new SpringApplicationBuilder()
 @HystrixCommand(fallbackMethod = "defaultLink")
 
 
-Archaius 
+spring-boot-tomcat 优化参数：
+主要只有2个，最大和最小worker线程：
+
+
+server.tomcat.max-threads=128 # Maximum amount of worker threads.
+
+server.tomcat.min-spare-threads=64 # Minimum amount of worker threads.
+zuul.host.maxTotalConnections: 200
+zuul.host.maxPerRouteConnections: 10
+#zuul.semaphore.max-semaphores: 128
+# 建议使用这种方式来设置，可以给每个不同的后端微服务设置不同的信号量
+zuul.eureka.[service id].semaphore.maxSemaphores: 128
 
 Netflix在Zuul的实现上，主要特色是：Filter的PRE ROUTING POST ERROR（PRPE 模型），以及采用Groovy脚本的Filter实现机制、采用Cassandra作为filter repository的机制。在商业产品上还有apigee公司所提供的方案，在轻量级开源实现上还有基于Nginx的kong，kong其实提供了19个插件式的功能实现，涵盖的面主要在于安全、监控等领域
 http://www.infoq.com/cn/news/2016/07/API-background-architecture-floo
@@ -34,10 +51,12 @@ http://www.infoq.com/cn/news/2016/07/API-background-architecture-floo
 @EnableZuulProxy
 @SpringCloudApplication  
 //整合@SpringBootApplication、@EnableDiscoveryClient、@EnableCircuitBreaker
-
-服务发现——Netflix Eureka
-客服端负载均衡——Netflix Ribbon  主要提供客户侧的软件负载均衡算法。
-断路器——Netflix Hystrix
-服务网关——Netflix Zuul
-分布式配置——Spring Cloud Config
 https://segmentfault.com/a/1190000005029218
+@EnableZuulServer - 普通网关,只支持基本的route与filter.
+@EnableZuulProxy - 配合上服务发现与熔断开关的上面这位增强版,具有反向代理功能.
+https://www.slahser.com/2016/10/08/API%E7%BD%91%E5%85%B3-Zuul%E6%BA%90%E7%A0%81%E8%A7%A3%E8%AF%BB-spring-cloud/
+http://docs.springcloud.cn/user-guide/zuul/
+
+
+@EnableConfigServer   spring.cloud.config.server.git.uri=https://github.com/xxxx/spring-cloud-samples-config
+@RefreshScope注解将从Config Server中获取配置。
