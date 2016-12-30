@@ -22,6 +22,9 @@ http://www.oschina.net/p/ohhttpstubs
 http://blog.csdn.net/colorapp/article/details/47007431  unit test
 http://blog.shiqichan.com/using-afnetworking-sdwebimage-and-ohhttpstubs/
 
+lua
+https://my.oschina.net/vimfung/blog/814212  Lua与ObjC的交互
+https://my.oschina.net/vimfung/blog/805037  使用LuaScriptCore来让Lua与iOS进行交互
 
 http://zackzheng.info/2016/02/26/2016-02-26-app-image-compress-upload-to-server/   App图片压缩裁剪原理和上传方案，以及那些有趣的事儿
 https://yq.aliyun.com/articles/59447?spm=5176.100239.bloglist.17.OkOb5e  CocoaPods的使用及其原理

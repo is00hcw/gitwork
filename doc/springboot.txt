@@ -1,3 +1,26 @@
+http://blog.javachen.com/2016/02/22/profile-usage-in-spring-boot.html  通过不同的profile，可以有对应的资源文件application-{profile}.properties。例如，application-dev.properties   
+http://blog.javachen.com/2016/02/22/devtools-in-spring-boot.html   DevTools in Spring Boot
+http://blog.javachen.com/2016/02/19/spring-boot-auto-configuration.html   
+第一部分里面没有spring.profiles 属性，所以Boot会将其作为 default profile
+如果启动类在根包下面，则你可以在该类上添加@ComponentScan注解而不需要添加任何参数，Spring Boot会在根包下面搜索注有@Component, @Service, @Repository, @Controller注解的所有类，并将他们注册为Spring Beans，否则，你需要在@ComponentScan注解上定义basePackages或者其他属性。
+@EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})   --debug开关启动应用，这将会记录一个自动配置的报告并输出到控制台。
+
+spring Boot 使用事务非常简单，首先使用注解 @EnableTransactionManagement 开启事务支持后，然后在访问数据库的Service方法上添加注解 @Transactional 便可。
+在声明事务时，只需要通过value属性指定配置的事务管理器名即可，例如：@Transactional(value="transactionManagerPrimary")
+READ_COMMITTED：该隔离级别表示一个事务只能读取另一个事务已经提交的数据。该级别可以防止脏读，这也是大多数情况下的推荐值。
+REPEATABLE_READ：该隔离级别表示一个事务在整个过程中可以多次重复执行某个查询，并且每次返回的记录都相同。即使在多次查询之间有新增的数据满足该查询，这些新增的记录也会被忽略。该级别可以防止脏读和不可重复读。
+NESTED：如果当前存在事务，则创建一个事务作为当前事务的嵌套事务来运行；如果当前没有事务，则该取值等价于REQUIRED。
+http://didispace.com/springboottransactional/
+
+这里我们对不可重复读和幻读加以区分：不可重复读指事务原先所读到的数据被修改或删除了，不可重复读取；而幻读则指事务在执行相同查询时读到了新增加的数据，读到幻象般出现的数据。
+Serializable 相当于锁定表, Read Repeatable 相当于锁定扫描的每一行
+http://www.dengshenyu.com/java/spring/2016/12/03/spring-database-transaction.html   Spring数据库事务
+
+
+http://sail-y.github.io/2016/03/22/Spring-cloud%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5-%E4%B8%89/  docker
+http://sail-y.github.io/2016/03/21/Spring-cloud%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5-%E4%BA%8C/  mongodb
+http://www.dengshenyu.com/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF/2016/05/24/websocket.html  Spring与WebSocket
+http://blog.didispace.com/categories/Spring-Boot/
 https://github.com/cloudera/htrace
 https://github.com/Netflix/ribbon
 https://github.com/Netflix/exhibitor
@@ -14,6 +37,8 @@ http://blog.csdn.net/hustsselbj/article/details/46603809
 PID，当前进程ID{LOG_FILE}，Spring Boot配置文件（application.properties|.yml）中logging.file的值 ${LOG_PATH}, Spring Boot配置文件中logging.path的值 http://blog.csdn.net/catoop/article/details/50501714
 logging.level.root=WARN
 logging.level.org.springframework=DEBUG
+
+http://blog.didispace.com/spring-statemachine/  使用Spring StateMachine框架实现状态机
 
 
 自动化测试、持续集成与自动化部署是向微服务架构大规模迁移前必须补偿的技术欠债。

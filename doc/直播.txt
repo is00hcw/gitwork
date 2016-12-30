@@ -1,4 +1,5 @@
 http://bugly.qq.com/bbs/forum.php?mod=viewthread&tid=1277   HTML 5 视频直播一站式扫盲
+http://mp.weixin.qq.com/s?__biz=MjM5ODIzNDQ3Mw==&mid=2649966092&idx=1&sn=aaba8cc1f2b34860669f5fbfa814cf60  陈老师｜如何搭建一个属于自己的直播平台？
 https://github.com/lvming6816077/LMVideoTest/
 https://github.com/runner365/LiveVideoCoreSDK
 https://github.com/arut/nginx-rtmp-module/wiki/

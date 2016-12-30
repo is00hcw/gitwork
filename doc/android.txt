@@ -4,7 +4,7 @@ SoLoader是facebook出品的一款小巧的用于加载so库文件的开源项目，主要作用是自动检查
 
 http://pingguohe.net/2016/03/21/Dynimac-write-infomation-into-apk.html   一种动态为apk写入信息的方案
 http://pingguohe.net/2016/02/26/Android-App-secure-ssl.html  android https  
-
+https://my.oschina.net/vimfung/blog/744795   使用Android Studio进行JNI开发 － Mac篇
 
 阿里百川HotFix的Android版本在AndFix的基础上，增加了补丁版本管理、补丁安全校验、控制台灰度管理等更加人性化的功能，同时针对兼容性进行了完善，支持市面上超过800种常见机型
 https://github.com/Tencent/tinker  https://my.oschina.net/shwenzhang/blog/751618  微信官方的Android热补丁解决方案，它支持动态下发代码、So库以及资源，让应用能够在不需要重新安装的情况下实现更新。

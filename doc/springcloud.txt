@@ -1,3 +1,8 @@
+http://blog.didispace.com/categories/Spring-Cloud/
+http://blog.didispace.com/springcloud-sourcecode-eureka/   Spring Cloud源码分析（一）Eureka
+http://blog.didispace.com/springcloud6/
+http://blog.didispace.com/springcloud5/   服务网关  zuul
+
 https://www.oschina.net/translate/integration-the-spring-cloud-netflix-framework-int
 Eureka用于Spring管理下的bean服务发现
 Zuul处理路由服务，被视为请求的”守门员“
@@ -19,3 +24,20 @@ ConfigurableApplicationContext context = new SpringApplicationBuilder()
 
 @EnableFeignClients
 @HystrixCommand(fallbackMethod = "defaultLink")
+
+
+Archaius 
+
+Netflix在Zuul的实现上，主要特色是：Filter的PRE ROUTING POST ERROR（PRPE 模型），以及采用Groovy脚本的Filter实现机制、采用Cassandra作为filter repository的机制。在商业产品上还有apigee公司所提供的方案，在轻量级开源实现上还有基于Nginx的kong，kong其实提供了19个插件式的功能实现，涵盖的面主要在于安全、监控等领域
+http://www.infoq.com/cn/news/2016/07/API-background-architecture-floo
+全新的Zuul 2将HTTP请求的处理方式从同步变成了异步。 https://www.zybuluo.com/babydragon/note/532177
+@EnableZuulProxy
+@SpringCloudApplication  
+//整合@SpringBootApplication、@EnableDiscoveryClient、@EnableCircuitBreaker
+
+服务发现——Netflix Eureka
+客服端负载均衡——Netflix Ribbon  主要提供客户侧的软件负载均衡算法。
+断路器——Netflix Hystrix
+服务网关——Netflix Zuul
+分布式配置——Spring Cloud Config
+https://segmentfault.com/a/1190000005029218
