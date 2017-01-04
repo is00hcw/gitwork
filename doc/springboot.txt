@@ -5,8 +5,14 @@ http://blog.javachen.com/2016/02/19/spring-boot-auto-configuration.html
 如果启动类在根包下面，则你可以在该类上添加@ComponentScan注解而不需要添加任何参数，Spring Boot会在根包下面搜索注有@Component, @Service, @Repository, @Controller注解的所有类，并将他们注册为Spring Beans，否则，你需要在@ComponentScan注解上定义basePackages或者其他属性。
 @EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})   --debug开关启动应用，这将会记录一个自动配置的报告并输出到控制台。
 
+mapperHelper.processConfiguration(sqlSessionFactory.getConfiguration()); // 通用mapper
+sqlSessionFactory.getConfiguration().addInterceptor(interceptor);  // 分页
+https://github.com/johntostring/spring-boot-shiro
+https://patrickgrimard.io/2016/01/18/spring-boot-devtools-first-look/
+http://yukinami.github.io/2016/05/28/%E7%94%A8Spring-Test%E8%BF%9B%E8%A1%8C%E9%A1%B5%E9%9D%A2%E7%9A%84%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95/    用Spring Test进行页面的功能测试
 
-
+http://spring.io/blog/2016/04/15/testing-improvements-in-spring-boot-1-4  @RunWith(SpringRunner.class) @SpringBootTest(webEnvironment=WebEnvironment.RANDOM_PORT)
+csrf 解决的方法就是使用Synchronizer Token Pattern。这个方案确保每个请求，除了session的cookies值，还需要发送一个预先生成的随机值作为请求参数。 http://yukinami.github.io/2016/02/14/Spring-Security-CSRF/
 spring Boot 使用事务非常简单，首先使用注解 @EnableTransactionManagement 开启事务支持后，然后在访问数据库的Service方法上添加注解 @Transactional 便可。
 在声明事务时，只需要通过value属性指定配置的事务管理器名即可，例如：@Transactional(value="transactionManagerPrimary")
 READ_COMMITTED：该隔离级别表示一个事务只能读取另一个事务已经提交的数据。该级别可以防止脏读，这也是大多数情况下的推荐值。
