@@ -24,6 +24,20 @@ Serializable 相当于锁定表, Read Repeatable 相当于锁定扫描的每一行
 http://www.dengshenyu.com/java/spring/2016/12/03/spring-database-transaction.html   Spring数据库事务
 
 
+http://blog.oneapm.com/apm-tech/385.html
+移除 @SpringBootApplication and @ComponentScan, 用 @EnableAutoConfiguration 来替代
+mvn spring-boot:run -Ddebug  
+http://benweizhu.github.io/blog/2015/03/10/get-started-with-spring-boot-1-quick-start/   用Spring Boot开发Spring项目 快速上手
+http://benweizhu.github.io/blog/2015/02/07/spring-test-and-integration-test/   了解Spring Test对单元测试和集成测试的支持
+@TestPropertySource拥有比@PropertySource更高的优先级，可以用来加载专门为测试提供的Properties
+@TransactionConfiguration是为集成测试提供的类似@EnableTransactionManagement的功能的注解
+@RunWith(SpringRunner.class) 告诉JUnit运行使用Spring的测试支持。SpringRunner是SpringJUnit4ClassRunner的新名字
+@SpringBootTest(webEnvironment=WebEnvironment.RANDOM_PORT)
+https://www.huangyunkun.com/2016/04/03/spring-boot-alpine-linux/  Spring Boot和Alpine Linux
+https://www.huangyunkun.com/2016/01/16/move-existing-project-to-docker/  迁移遗留项目到Docker
+
+
+
 http://sail-y.github.io/2016/03/22/Spring-cloud%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5-%E4%B8%89/  docker
 http://sail-y.github.io/2016/03/21/Spring-cloud%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5-%E4%BA%8C/  mongodb
 http://www.dengshenyu.com/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF/2016/05/24/websocket.html  Spring与WebSocket
