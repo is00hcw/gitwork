@@ -7,7 +7,6 @@ http://www.jianshu.com/p/0b6808e1fbe9
 
 http://www.oschina.net/news/69068/javaer-have-to-learn-linux-command
 
-
 https://github.com/GeniusVJR/LearningNotes  面试
 https://zhuanlan.zhihu.com/p/20672941  简历
 
@@ -16,7 +15,7 @@ https://github.com/jhalterman/failsafe/wiki/Comparisons
 Hystrix is more oriented around the execution of remote requests and offers features around that, while Failsafe is more general purpose for handling any type of execution failure.
 http://www.cnblogs.com/shanyou/p/4752226.html
 http://blog.csdn.net/caomiao2006/article/details/50000511
-Michael T. Nygard 在在精彩的《Release It!》一书中总结了很多提高系统可用性的模式，其中非常重要的两条是：  使用超时    使用断路器
+Michael T. Nygard 在在精彩的《Release It!》一书中总结了很多提高系统可用性的模式，其中非常重要的两条是： 使用超时   使用断路器
 在自身服务和依赖之间放一个断路器，实时统计访问的状态，当访问超时或者失败达到某个阈值的时候（如50%请求超时，或者连续20次请失败），就打开断路器，那么后续的请求就直接返回失败，不至于浪费资源。断路器再根据一个时间间隔（如5分钟）尝试关闭断路器（或者更换保险丝），看依赖是否恢复服务了。
 
 http://mp.weixin.qq.com/s?__biz=MjM5MDE0Mjc4MA==&mid=2650993458&idx=1&sn=e959385bc0bddb4b7cfab84a1310f9e8&scene=1&srcid=07278uyBPLt7goHKHJTNpsWt#wechat_redirect    不谈架构，看看如何从代码层面优化系统性能！
@@ -156,7 +155,6 @@ SaaS系统说起来很简单，任何系统似乎加个tenant_id(租户id)就变成SaaS系统了
 SaaS系统是必须考虑计费系统和租户控制系统。定制化开发尽可能分系统，分模块去做。然后通过控制台中配置不同租户订购不同模块，那些模块可以在前端页面上显示。不同的子系统需要分开部署。
 
 
-
 我们的MTA LBS 定位组件主要是用GeoHash 来计算附近的人， 因为要存储亿级用户的地址位置信息，所以用HBase作为存储，用户每次上报都更新geohash中附近的用户的信息，查询的时候先通过geohash值获取到附近的用户列表，再通过用户的属性信息和具体的经纬度进行过滤和排序。
 将二维坐标转化成一维字符串(GeoHash) 然后通过比较GeoHash字符串来查找附近的点。 字符串越长，表示的范围越精确。当geohash base32编码长度为8时，精度在19米左右，而当编码长度为9时，精度在2米左右    
 由于GeoHash是将区域划分为一个个规则矩形，并对每个矩形进行编码，这个问题往往产生在边界处。  解决的思路很简单，我们查询时，除了使用定位点的GeoHash编码进行匹配外，还使用周围8个区域的GeoHash编码，这样可以避免这个问题。http://blog.jobbole.com/80633/
@@ -165,6 +163,10 @@ https://docs.mongodb.com/manual/core/geospatial-indexes/
 redis geo  http://blog.csdn.net/opensure/article/details/51375961   http://www.tuicool.com/articles/yMnuyeY
 PostGIS： 为postgreSQL提供了高级GEO函数功能。Cube和Earthdistance： 这两个拓展为轻量级的Geo关系实体提供了简单、快速的实现方法。PostGIS支持所有OGC规范的“Simple Features”类型，同时在此基础上扩展了对3DZ、3DM、4D坐标的支持。
 
+
+xss原理上利用的是浏览器可以拼接成任意的javascript，然后黑客拼接好javascript让浏览器自动地给服务器端发出多个请求（get、post请求）。
+csrf原理上利用的是网站服务器端所有参数都是可预先构造的原理，然后黑客拼接好具体请求url，可以引诱你提交他构造好的请求。
+https://blog.tonyseek.com/post/introduce-to-xss-and-csrf/
 
 
 http://www.cnblogs.com/lhws/archive/2012/03/10/2389189.html

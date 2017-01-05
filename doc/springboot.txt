@@ -10,16 +10,26 @@ sqlSessionFactory.getConfiguration().addInterceptor(interceptor);  // 分页
 https://github.com/johntostring/spring-boot-shiro
 https://patrickgrimard.io/2016/01/18/spring-boot-devtools-first-look/
 http://yukinami.github.io/2016/05/28/%E7%94%A8Spring-Test%E8%BF%9B%E8%A1%8C%E9%A1%B5%E9%9D%A2%E7%9A%84%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95/    用Spring Test进行页面的功能测试
+http://spring.io/blog/2016/04/15/testing-improvements-in-spring-boot-1-4  @RunWith(SpringRunner.class) @SpringBootTest(webEnvironment=WebEnvironment.RANDOM_PORT)
 
 security
+AjaxLoginProcessingFilter 拦截请求获取{username password} ==> this.getAuthenticationManager().authenticate(token) ==> 
 http://www.baeldung.com/securing-a-restful-web-service-with-spring-security
 http://icodeit.org/2016/05/about-session-and-security-api-1/  thoughtworks
 http://haycco.ren/2016/08/21/%E5%88%9B%E5%BB%BARESTful%E9%A3%8E%E6%A0%BC%E5%92%8C%E5%9F%BA%E4%BA%8Etoken%E6%96%B9%E5%BC%8F%E9%AA%8C%E8%AF%81%E7%9A%84Spring%20Boot%E5%BA%94%E7%94%A8/
 http://www.codesandnotes.be/2014/10/31/restful-authentication-using-spring-security-on-spring-boot-and-jquery-as-a-web-client/
 http://www.svlada.com/jwt-token-authentication-with-spring-boot/
+HttpSecurity：一般用它来具体控制权限，角色，url等安全的东西。
+AuthenticationManagerBuilder：用来做登录认证的。
+WebSecurity：For example, if you wish to ignore certain requests.
+BasicAuthenticationFilter 的 doFilterInternal 方法该方法中有一句Authentication authResult = authenticationManager.authenticate(authRequest);  ==> 它的默认实现类是 ProviderManager，实现了 authenticate() 方法,在该方法中继续调用子类 AbstractUserDetailsAuthenticationProvider 对应的 authenticate()
+OAuth2AuthenticationProcessingFilter
+EnableAuthorizationServer ==> AuthorizationServerEndpointsConfiguration (AuthorizationEndpoint  TokenEndpoint ), AuthorizationServerSecurityConfiguration
+EnableResourceServer ==> ResourceServerConfiguration ==> ResourceServerSecurityConfigurer (OAuth2AuthenticationManager)
+http://blog.csdn.net/monkeyking1987/article/details/16828059
+http://websystique.com/spring-security/secure-spring-rest-api-using-oauth2/  Secure Spring REST API using OAuth2
+ 
 
-
-http://spring.io/blog/2016/04/15/testing-improvements-in-spring-boot-1-4  @RunWith(SpringRunner.class) @SpringBootTest(webEnvironment=WebEnvironment.RANDOM_PORT)
 csrf 解决的方法就是使用Synchronizer Token Pattern。这个方案确保每个请求，除了session的cookies值，还需要发送一个预先生成的随机值作为请求参数。 http://yukinami.github.io/2016/02/14/Spring-Security-CSRF/
 spring Boot 使用事务非常简单，首先使用注解 @EnableTransactionManagement 开启事务支持后，然后在访问数据库的Service方法上添加注解 @Transactional 便可。
 在声明事务时，只需要通过value属性指定配置的事务管理器名即可，例如：@Transactional(value="transactionManagerPrimary")
