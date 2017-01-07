@@ -24,6 +24,8 @@ Packet for query is too large (1141 > 1024). You can change this value on the se
 
 alisql  rds
 微信开源 PhxSQL：高可用强一致的 MySQL 集群   http://www.oschina.net/news/76658/tecent-wechat-opensource-phxsql
+https://github.com/SOHUDBA/SOHU-DBProxy  SOHU-DBProxy 是由搜狐数据库团队开发维护的一个基于MySQL协议的数据中间层项目。它在MySQL官方推出的 MySQL-Proxy 0.8.3版本的基础上， 修改了大量bug，添加了很多功能特性。
+http://www.oschina.net/news/80714/meituan-dbproxy-open  美团点评数据库中间件 DBProxy 开源
 
 https://yq.aliyun.com/articles/59260?spm=5176.8091938.0.0.dNadcl  通过Mysql的日志主要分为：General log，slow log，binary log三种。通 过query日志，我们可以分析业务的逻辑，业务特点。通过slow log，我们可以找到服务器的瓶颈。通过binary log，我们可以恢复数据。最适合的工具非 mysqlsla 与 pt-query-digest 莫属。 mysqlsla与pt-query-digest的作者是同一个人。
 https://yq.aliyun.com/articles/59234?spm=5176.8091938.0.0.dNadcl  mysqlrpladmin + GTID HA切换
@@ -220,7 +222,6 @@ MySQL 慢日志系统  基于 pt-query-digest logstash 和 Anemometer 实现，�
 http://www.gpfeng.com/?p=657  谈谈MySQL水平扩展
 http://www.gpfeng.com/?p=603  Galera replication for MySQL
 http://yq.aliyun.com/edu/lesson/27?spm=0.0.0.0.isZ8Ts 
-SOHU-DBProxy 是由搜狐数据库团队开发维护的一个基于MySQL协议的数据中间层项目。它在MySQL官方推出的 MySQL-Proxy 0.8.3版本的基础上， 修改了大量bug，添加了很多功能特性。
 
 https://www.52os.net/articles/mysql-reset-password.html  重置密码
 https://segmentfault.com/a/1190000000593398  Mysql在大型网站的应用架构演变
@@ -289,7 +290,7 @@ http://www.slideshare.net/AlexSu1/redis-introduction-23784248
 
 http://www.mycat.org.cn/   完全开源的数据库中间件产品
 http://www.csdn.net/article/2015-07-16/2825228
-https://github.com/SOHUDBA/SOHU-DBProxy
+
 http://www.guokr.com/blog/475765/
 DRBD负责接收数据，把数据写到本地磁盘，然后发送给另一个主机。另一个主机再将数据存到自己的磁盘中。
 http://www.infoq.com/cn/news/2014/10/clay.io-aws-docker-haproxy-10x?utm_campaign=infoq_content&amp;utm_source=infoq&amp;utm_medium=feed&amp;utm_term=global

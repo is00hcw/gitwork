@@ -1,5 +1,7 @@
 https://segmentfault.com/a/1190000005994196?utm_source=weekly&utm_medium=email&utm_campaign=email_weekly   Awesome Mac
-
+https://www.tonymacx86.com/threads/unibeast-install-macos-sierra-on-any-supported-intel-based-pc.200564/   sierra 
+https://imac.hk/mac-unibeast-osx-ei-capitan-boot.html
+https://zhuanlan.zhihu.com/p/23808260
 
 https://cr.console.aliyun.com/?spm=5176.1971733.0.2.JiVUJh#/accelerator
 https://www.daocloud.io/mirror#accelerator-doc

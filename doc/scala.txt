@@ -1,4 +1,12 @@
-﻿http://www.slideshare.net/fujohnwang/scala-thegoodparts
+﻿http://rerun.me/
+https://blog.yuanbin.me/posts/2015/08/Akka-Notes-Actor-Messaging.html
+http://www.algorithmdog.com/akka-usage-getstarted    Akka 使用系列之一: 快速入门
+https://github.com/billryan/akka_notes
+http://blog.jasonding.top/2016/08/08/Developer%20Kits/%E4%BD%BF%E7%94%A8maven%E6%9E%84%E5%BB%BAscala%E9%A1%B9%E7%9B%AE/
+创建Maven工程，勾选右侧的Create from archetype选项，然后选中下方的scala-archetype-simple选项   右键Project，点击Add FrameWork Support，在打开的栏框中添加Scala支持
+a.apply(x)则可以简化为a(x)  a.update(x,y)简化为a(x)=y
+
+http://www.slideshare.net/fujohnwang/scala-thegoodparts
 http://afoo.me/posts/2015-07-21-scala-developers-springboot-guide.html   Scala开发者的SpringBoot快速入门指南
 https://my.oschina.net/yangbajing/blog/717763  写给Java程序员的Scala入门教程
 https://github.com/helloscala/spring-boot-scala
@@ -8,8 +16,8 @@ https://my.oschina.net/yangbajing/blog/756191  Java/Scala互操作实践 1：基
 https://my.oschina.net/yangbajing/blog/107745  sbt  https://github.com/CSUG/real_world_scala/blob/master/02_sbt.markdown
 http://colobu.com/2016/01/04/Scala-magic-functions/   Scala 魔法函数
 http://colobu.com/2015/07/02/Scala-Collections-Tips-and-Tricks/
-a.apply(x)则可以简化为a(x)
-a.update(x,y)简化为a(x)=y
+
+
 
 http://ibruce.info/2014/12/02/hello-colossus/   微服务框架 Colossus
 http://ibruce.info/2014/10/23/zookeeper/ 
