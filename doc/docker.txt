@@ -36,6 +36,7 @@ registry.cn-hangzhou.aliyuncs.com/acs-sample/alisql:latest
 aliyun.global: true # 每台机器均部署一个nginx容器，达到高可用目的
 return 301 https://$host$request_uri;
 
+https://yq.aliyun.com/articles/68477?spm=5176.100238.goodcont.19.4jm47N  Docker镜像原理和最佳实践
 docker rmi $(docker images -f dangling=true -q)
 http://www.howtoing.com/how-to-remove-docker-images-containers-and-volumes/  如何删除Docker镜像，容器和卷
 https://github.com/yangtao309/yangtao309.github.com/issues/1

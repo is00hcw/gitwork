@@ -1,3 +1,4 @@
+http://weishu.me/2016/12/30/simple-way-to-compile-android-source/  史上最简单Android源码编译环境搭建方法
 https://yq.aliyun.com/articles/67136?spm=5176.100238.goodcont.47.DNy5oa   阿里HotFix2.0升级详解——技术运营小二畅谈热修复领域那些事
 SoLoader是facebook出品的一款小巧的用于加载so库文件的开源项目，主要作用是自动检查和加载多个有依赖关系的so库文件。在Android平台下React-Native项目大量使用了动态链接库，即JNI技术，作为Java和JavaScript两种程序语言之间的通信桥梁。
 其中libreactnativejni.so是JNI桥梁的入口。 。好在Android 4.3版本（包括）之后，会自动检查和加载依赖库，但是React-Native是兼容到Android 4.1版本的，所以SoLoader就是一种兼容4.3以下版本的技术解决方案。
