@@ -5,14 +5,13 @@ https://bugtags.com/
 需求
 https://yq.aliyun.com/articles/61831?spm=5176.100239.topwz.1.lbH8B1  互联网项目管理浅析之需求管理
 https://yq.aliyun.com/articles/61858?spm=5176.100239.bloglist.43.lbH8B1
-
 http://www.oschina.net/news/71273/product-manager-hole     从需求到上线，产品经理你挖了多少坑？
 StackShare.io 是一个开发者工具及服务分享平台，致力于发现并分享开发者使用的开发工具、服务与优质资源，帮助开发者使用最方便的开发工具和便捷的服务。
 
 http://blog.brucefeng.info/post/bigproj-in-scrum  Scrum中大项目管理
 
-http://www.csdn.net/article/1970-01-01/2823718?tvd
 
+http://nobodyiam.com/2016/02/18/team-management-thought/  一点团队管理心得
 
 gitblit gitlab gitbucket  Gitblit 是一个纯 Java 库用来管理、查看和处理 Git 资料库。相当于 Git 的 Java 管理工具。
 http://www.infoq.com/cn/articles/douban-code-2years/   
@@ -20,11 +19,11 @@ https://www.scm-manager.org/download/      http://www.fishlee.net/soft/scm-manag
 http://www.oschina.net/news/50222/git-code-platforms  
 http://www.oschina.net/p/docker-gitlab
 http://debugo.com/gitbucket/  gitbucket
-java -jar gitbucket.war（当然需要1.7以上的JRE环境）就可以运行，可以指定下面几个参数:
---port=[NUMBER] --prefix=[CONTEXTPATH] --host=[HOSTNAME] --gitbucket.home=[DATA_DIR]
+java -jar gitbucket.war（当然需要1.7以上的JRE环境）就可以运行，可以指定下面几个参数:  --port=[NUMBER] --prefix=[CONTEXTPATH] --host=[HOSTNAME] --gitbucket.home=[DATA_DIR]
 如果没有指定–gitbucket.home，它会把数据保存在$HOME/.gitbucket下面，包括用户数据库信息以及repositories。所以只把这个目录备份就可以了
 开源中国： http://git.oschina.net/
 CSDN： https://code.csdn.net/
 GitCafe： https://gitcafe.com/
 GitLab：http://www.gitlab.org/
 http://gitstack.com/pricing/
+http://www.csdn.net/article/1970-01-01/2823718?tvd  回顾那些曾经热门的国产开源软件

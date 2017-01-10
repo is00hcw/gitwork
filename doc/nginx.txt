@@ -65,6 +65,18 @@ USR2  平滑升级可执行程序
 
 
 lua
+http://jinnianshilongnian.iteye.com/blog/2187328  第五章 常用Lua开发库1-redis、mysql、http客户端
+http://jinnianshilongnian.iteye.com/blog/2187643  第五章 常用Lua开发库2-JSON库、编码转换、字符串处理
+http://jinnianshilongnian.iteye.com/blog/2187775   第五章 常用Lua开发库3-模板渲染
+http://jinnianshilongnian.iteye.com/blog/2190343 第八章 流量复制/AB测试/协程
+https://moonbingbing.gitbooks.io/openresty-best-practices/content/web/conn_pool.html 
+http://www.cnblogs.com/pigzhu/p/3813019.html  OpenResty--mysql,redis 项目中的应用
+https://github.com/bungle/awesome-resty
+https://github.com/sumory/lor
+http://sumory.com/moklr/
+http://lua.ren/topic/153/lua%E7%9A%84web%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6vanilla  
+http://www.stuq.org/news/557   基于OpenResty的Web服务框架Vanilla实战
+
 https://www.scalescale.com/tips/nginx/how-to-install-openresty/  安装 openresty
 http://www.londonlua.org/scripting_nginx_with_lua/slides.html
 http://io.upyun.com/2015/04/14/using-ngxlua-in-upyun/  

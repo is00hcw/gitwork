@@ -1,8 +1,19 @@
+http://nobodyiam.com/2016/04/02/dive-into-spring-cloud-config/   Dive into Spring Cloud Config
+http://nobodyiam.com/2016/06/25/dive-into-eureka/    Dive into Eureka
+
+
 http://blog.didispace.com/categories/Spring-Cloud/
 http://blog.didispace.com/springcloud-sourcecode-eureka/   Spring Cloud源码分析（一）Eureka
 http://blog.didispace.com/springcloud6/
 http://blog.didispace.com/springcloud5/   服务网关  zuul
 https://code.aliyun.com/libin.libin/aliyuncs-springcloud-demo?spm=5176.100239.blogcont57265.24.2n2VhV
+
+
+http://www.baeldung.com/spring-cloud-netflix-hystrix   Spring Cloud Netflix – Hystrix
+https://segmentfault.com/a/1190000004356362  spring zookeeper
+https://blog.coding.net/blog/spring-cloud-config  config git
+http://blog.didispace.com/springcloud1/ eureka
+http://www.jianshu.com/p/775c363d0fda  以zookeeper为注册中心搭建spring cloud环境
 
 
 如果想直接用构建好的镜像，可以使用本文提供的示例：docker pull registry.aliyuncs.com/jingshanlb/discovery-server
