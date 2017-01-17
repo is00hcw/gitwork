@@ -526,5 +526,5 @@ http://liubin.org/blog/2016/04/24/how-to-choose-a-docker-monitor-solution/  如何
 https://yq.aliyun.com/articles/7585?spm=5176.100239.blogcont67160.43.mNdELI   基于OSS搭建跨区域部署的分布式Docker镜像仓库
 https://yq.aliyun.com/articles/67160?spm=5176.100239.bloglist.108.jC0Jbg  利用Docker和OSS轻松搭建ownCloud专属网盘
 https://yq.aliyun.com/articles/62315?spm=5176.100239.blogcont62355.15.SJ4rQl  在阿里云容器服务中使用定时任务
-
+https://github.com/phinexdaz/fdfs_storage   FastDFS
 https://lukasklein.com/docker/ffmpeg/python/2015/06/12/on-demand-transcoder/   Building a realtime audio transcoder with Docker, FFmpeg and Flask

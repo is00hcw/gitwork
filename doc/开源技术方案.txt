@@ -6,11 +6,13 @@ http://www.cnblogs.com/jesse2013/p/things-architect-must-know.html
 https://github.com/Tencent/MSEC
 
 https://yq.aliyun.com/articles/54449?spm=5176.100238.goodcont.9.LYw3mt&do=login
-总结一下，互联网架构三板斧：
-活下来(Stability)
-简单可扩展（Scalability）
-拦河大坝/去并发
+总结一下，互联网架构三板斧：  活下来(Stability)  简单可扩展（Scalability） 拦河大坝/去并发
 在第三板斧中又有分层拦截、多级缓存、数据近端、分拆锁、预处理、异步化及队列等pattern。学习原则：灵活运用，不尽信经验。
+
+
+http://calvin1978.blogcn.com/articles/serviceconfig.html     配置中心
+http://nobodyiam.com/2016/07/09/introduction-to-apollo/    Apollo配置中心介绍
+https://github.com/ctripcorp/apollo/wiki/%E5%BA%94%E7%94%A8%E6%8E%A5%E5%85%A5%E6%8C%87%E5%8D%97#%E4%B8%80%E6%99%AE%E9%80%9A%E5%BA%94%E7%94%A8%E6%8E%A5%E5%85%A5%E6%8C%87%E5%8D%97
 
 etcd、Registrator和Confd组合  http://dockone.io/article/667
 http://thesecretlivesofdata.com/raft/

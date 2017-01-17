@@ -1,3 +1,5 @@
+mvn archetype:generate -DgroupId=com.wanke -DartifactId=wanke_stock_api -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
 http://blog.javachen.com/2016/02/22/profile-usage-in-spring-boot.html  通过不同的profile，可以有对应的资源文件application-{profile}.properties。例如，application-dev.properties   
 http://blog.javachen.com/2016/02/22/devtools-in-spring-boot.html   DevTools in Spring Boot
 http://blog.javachen.com/2016/02/19/spring-boot-auto-configuration.html   

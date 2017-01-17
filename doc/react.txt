@@ -1,3 +1,6 @@
+https://github.com/verekia/js-stack-from-scratch     https://github.com/pd4d10/js-stack-from-scratch
+npm install -g yo gulp generator-electrode  http://www.electrode.io/docs/what_is_electrode.html?utm_source=itdadao&utm_medium=referral
+
 http://www.infoq.com/cn/articles/react-native-ide
 https://github.com/fengjundev/React-Native-Remote-Update   使用React-Native实现app热更新的一次实践
 http://update.reactnative.cn/home
@@ -6,7 +9,14 @@ http://my.oschina.net/MrHou/blog?catalog=3590216&temp=1467334626860   react-nati
 http://www.infoq.com/cn/articles/introducing-reactmix   ReactMix：基于HTML+JS+CSS写APP的最佳实践   https://github.com/xueduany/react-mix
 https://mp.weixin.qq.com/s?__biz=MzA3ODg4MDk0Ng==&mid=2651112408&idx=1&sn=32c2636a2653fe9391b44de514261cbf   Moles：携程基于React Native的跨平台开发框架
 
+http://www.cnblogs.com/Upton/p/6180512.html  axios基本用法
 
+next.js
+http://www.59m59s.com/blog/shi-wan-next-js/
+http://mp.weixin.qq.com/s/1IClppabinbX_4bWyT_T7w
+https://scotch.io/tutorials/react-universal-with-next-js-server-side-react
+https://auth0.com/blog/building-universal-apps-with-nextjs/
+与express-react-views这样的项目不同，它是构建在Express之上的视图引擎，通用（Universal）的JavaScript依然是一项更为高级的技术，很多的框架都有自己的实现。Angular 2有Universal Angular 2， Ember有Fastboot。在React领域中，这方面的可选方案也不少，比如Walmart的Electrode和Redfin的React Server。现在，Next.js作为一个很简单的可选方案，具有很大的潜力。
 
 https://github.com/facebook/SocketRocket  Objective-C WebSocket client library
 https://github.com/square/PonyDebugger   debugging for your native iOS app using Chrome Developer Tools

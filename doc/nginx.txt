@@ -10,7 +10,8 @@ OpenResty是Nginx的Bundle，与官方的最新版本是同步的
 Tengine则是Nginx 1.6.2版本的Fork, 阿里根据自己的业务情况对nginx进行了一些定制开发
 https://zhuanlan.zhihu.com/p/21362834
 https://zhuanlan.zhihu.com/p/21582892?refer=netxfly
-
+https://git.oschina.net/oschina/nginx-http-upstreams-control-module    基于web的 nginx upstream 监控和管理模块
+http://www.59m59s.com/blog/she-zhi-dockerhua-de-nginxbei-wang-shi-xiang/   nginx docker
 
 http://blog.csdn.net/faye0412/article/details/8632959   https
 http://seanlook.com/2015/05/18/nginx-keepalived-ha/  Nginx+Keepalived实现站点高可用

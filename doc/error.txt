@@ -125,3 +125,11 @@ Python.h：No such file or directory
 可以进入/usr/include/文件夹下的Python2.x文件夹里查找是否有Python.h这个文件。
 如果是第一种情况，那么需要安装Python-dev这个包，(sudo apt-get install python-dev)
  sudo yum install python-devel
+
+
+http://nobodyiam.com/2016/06/07/tomcat-startup-slow/   tomcat启动加速
+There is a way to configure JRE to use a non-blocking entropy source by setting the following system property: -Djava.security.egd=file:/dev/./urandom
+http://techshow.ctrip.com/archives/1524.html  Tomcat类加载机制触发的Too many open files问题分析
+由于Max Open Files的设置太小，一旦进程打开的文件句柄数达到4096，后续的所有请求（文件IO，网络IO）都会失败。
+原来Tomcat对webapp有一套自己的WebappClassLoader，它在启动的过程中会打开应用依赖的jar包来加载class信息，但是过一段时间就会把打开的jar包全部关闭从而释放资源。然而如果后面需要加载某个新的class的时候，会把之前所有的jar包全部重新打开一遍，然后再从中找到对应的jar来加载。加载完后过一段时间会再一次全部释放掉。
+生产环境遇到故障，不要慌张，如果一时无法解决问题的话，可以通过重启解决。不过应该至少保留一台有问题的机器，从而为后面排查问题提供有利线索。

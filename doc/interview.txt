@@ -1,3 +1,9 @@
+http://calvin1978.blogcn.com/articles/ratelimiter.html   服务化体系之－限流
+http://calvin1978.blogcn.com/articles/collection.html  关于Java集合的小抄
+http://calvin1978.blogcn.com/articles/javatuning.html  Java性能优化指南1.8版，及唯品会的实战
+http://calvin1978.blogcn.com/articles/jvmoption-2.html   关键业务系统的JVM参数推荐(2016热冬版)
+http://irfen.me/java1-8-hashmap/  hashmap存储结构由以前单纯的数组+链表，变成了数组+链表/红黑树
+
 https://linux.cn/article-7480-1.html  算法复杂度速查表
 http://markyun.github.io/2015/Front-end-Developer-Questions/
 https://www.zhihu.com/question/40909636/answer/88775539  android
@@ -17,6 +23,29 @@ http://www.cnblogs.com/shanyou/p/4752226.html
 http://blog.csdn.net/caomiao2006/article/details/50000511
 Michael T. Nygard 在在精彩的《Release It!》一书中总结了很多提高系统可用性的模式，其中非常重要的两条是： 使用超时   使用断路器
 在自身服务和依赖之间放一个断路器，实时统计访问的状态，当访问超时或者失败达到某个阈值的时候（如50%请求超时，或者连续20次请失败），就打开断路器，那么后续的请求就直接返回失败，不至于浪费资源。断路器再根据一个时间间隔（如5分钟）尝试关闭断路器（或者更换保险丝），看依赖是否恢复服务了。
+
+
+
+http://calvin1978.blogcn.com/articles/uuid.html  分布式Unique ID的生成方法一览
+http://calvin1978.blogcn.com/articles/routing.html  负载均衡与路由的设计
+
+http://calvin1978.blogcn.com/articles/btrace1.html   Btrace入门到熟练小工完全指南
+BTrace客户端使用Attach API attach到目标VM，并加载agent包；agent打开socket来与客户端进行通信；客户端给agent发送InstrumentCommand，其中包含BTrace脚本编译后的字节码；agent通过Attach API和ASM来完成满足BTrace脚本的字节码修改工作；
+https://yq.aliyun.com/articles/7569   https://btrace.org/btrace/
+http://calvin1978.blogcn.com/articles/perf-tunning-2.html  Java应用调优指南之－工具篇
+http://calvin1978.blogcn.com/articles/perf-tunning-1.html  
+http://hellojava.info/?p=517
+http://blog.hesey.net/2013/09/common-troubleshooting-tools-and-methods-on-java.html
+http://hellojava.info/?p=520  分布式领域架构师要掌握的技术
+http://calvin1978.blogcn.com/articles/dailysites.html  应该日常翻看的中文技术网站
+
+http://irfen.me/java-jmh-simple-microbenchmark/   Java使用JMH进行简单的基准测试Benchmark
+通过maven archtype我们可以很快的创建一个JMH工程。
+ mvn archetype:generate -DinteractiveMode=false -DarchetypeGroupId=org.openjdk.jmh \
+      -DarchetypeArtifactId=jmh-java-benchmark-archetype -DarchetypeVersion=1.4.1 \
+      -DgroupId=org.agoncal.sample.jmh -DartifactId=logging -Dversion=1.0
+
+
 
 http://mp.weixin.qq.com/s?__biz=MjM5MDE0Mjc4MA==&mid=2650993458&idx=1&sn=e959385bc0bddb4b7cfab84a1310f9e8&scene=1&srcid=07278uyBPLt7goHKHJTNpsWt#wechat_redirect    不谈架构，看看如何从代码层面优化系统性能！
 企业信息化关注的是如何最大限度的实现无纸办公，流程自动化，信息流通和存储，避免孤岛和数据的多维度交叉分析
