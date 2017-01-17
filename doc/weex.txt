@@ -4,6 +4,7 @@ sudo npm install -g ios-deploy --unsafe-perm=true
 npm install -g vue vue-cli 
 npm i vue-resource vue-router vuex --save
 
+https://m.aliyun.com/yunqi/articles/68818  Weex Conf回顾集锦：讲义PDF+活动视频
 https://github.com/xkli/WXSample.git
 https://github.com/weexteam/article/issues/25   WEEX SDK集成到工程(Integrate to Android)
 compile 'com.taobao.android:weex_sdk:0.5.1@aar'

@@ -1,3 +1,4 @@
+https://yq.aliyun.com/articles/68488?spm=5176.100239.bloglist.171.aGe2u7  MongoDB 安全 checklist 及最优配置模板
 https://yq.aliyun.com/articles/67120?spm=5176.100239.bloglist.111.u8aLGA  告别 MongoDB 2.x 拥抱 3.x 版本的5大理由
 http://www.mongoing.com/archives/3586  MongoDB 3.4 功能改进一览
 http://www.mongoing.com/archives/3694  MongoDB最佳实践及问题案例分析
