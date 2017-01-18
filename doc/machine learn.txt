@@ -5,7 +5,7 @@ https://yq.aliyun.com/articles/11248?spm=5176.100239.blogcont57695.15.Yhlwvx
 CUDA Toolkit版本：7.5，获取地址：https://developer.nvidia.com/cuda-downloads
 http://blog.csdn.net/kkk584520?spm=5176.100239.blogcont57695.6.Yhlwvx
 http://blog.csdn.net/kkk584520/article/details/51476816
-
+https://my.oschina.net/editorial-story/blog/826663   
 
 http://www.pythontutor.com/
 http://wiki.jikexueyuan.com/project/tensorflow-zh/
