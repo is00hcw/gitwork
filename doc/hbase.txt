@@ -356,3 +356,9 @@ http://wuchong.me/blog/2015/04/06/spark-on-hbase-new-api/
 HBase 实现了 TableInputFormatBase 类，该类提供了对表数据的大部分操作，其子类 TableInputFormat 则提供了完整的实现，用于处理表数据并生成键值对。
 HBase 实现了 TableMapper 类和 TableReducer 类   HBase 实现的 TableOutputFormat 将输出的<key,value>对写到指定的 HBase 表中，该类不会对 WAL（Write-Ahead  Log）进行操作
 http://www.jianshu.com/p/722a75d2b2bd
+
+
+
+HBase 如果是采用默认参数，那么对于大批量的随机读性能是完全不够的，需要对随机读进行针对性优化才能有很大的性能提升。例如 HBase 参数调优，在 MR 中通过采取全局排序的方式变随机读为顺序读、数据聚合、RowKey 设计、表预先切分、客户端使用参数调优、大批写使用 Bulk Load 、中间数据和小表使用文件替代等多种具体的优化手段。
+在 HBase 使用过程中，为了避免踩坑，吴磊提醒大家注意三点：第一，重视运维；第二，及时关注官方动态；第三，在使用一些新特性时需要谨慎对待。
+每个 MapReduce 任务内部，Shuffle 两端的数据都要在本地磁盘上暂存， IO 开销比较大，这也是为什么 MapReduce 任务设计中，有效的利用 Combiner 能够大幅度提高任务运行速度的一个原因 (另一个更重要的原因是 Combiner 减少了需要 Shuffle 的数据量， 从而大大减少了网络 IO)。

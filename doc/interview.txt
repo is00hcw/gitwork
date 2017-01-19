@@ -2,7 +2,7 @@ http://calvin1978.blogcn.com/articles/ratelimiter.html   服务化体系之－限流
 http://calvin1978.blogcn.com/articles/collection.html  关于Java集合的小抄
 http://calvin1978.blogcn.com/articles/javatuning.html  Java性能优化指南1.8版，及唯品会的实战
 http://calvin1978.blogcn.com/articles/jvmoption-2.html   关键业务系统的JVM参数推荐(2016热冬版)
-http://irfen.me/java1-8-hashmap/  hashmap存储结构由以前单纯的数组+链表，变成了数组+链表/红黑树
+http://irfen.me/java1-8-hashmap/  hashmap存储结构由以前单纯的数组+链表，变成了数组+链表/红黑树, 跳跃表有序
 http://img.blog.csdn.net/20161020160817595  垃圾收集脑图
 http://img.blog.csdn.net/20161020114230160  java线程脑图 
 http://blog.9i0i.com/?u013970991/article/details/52035133   性能分析系列-小命令保证大性能

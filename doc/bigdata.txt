@@ -147,3 +147,19 @@ http://idning.github.io/coding-for-ssd.html
 http://idning.github.io/ssd-cache.html#id36
 https://github.com/siddontang/ledisdb
 https://github.com/docker/go-redis-server
+
+
+
+Apache Kylin是可扩展到PB规模的开源分布式大数据分析引擎，为Apache Hadoop等大型分布式数据平台之上的超大规模数据集提供标准SQL查询及多维分析（OLAP）能力，提供亚秒级的交互式分析能力。Apache Kylin有效的满足了各种挑战，从分析交易数据到日志数据到点击流数据，在百亿及以上规模数据集上体现了优秀的分析性能和良好的用户体验。作为最好的OLAP on Hadoop方案
+Kafka 是一个高性能、高可用、易扩展的分布式日志系统将整个数据处理流程解耦
+
+Druid是针对时间序列数据提供低延时的数据写入以及快速交互式查询的的分布式OLAP数据库
+为OLAP查询优化过的列式存储结构：Segment. Segment中存储聚合计算后的统计结果. 主要根据时间对Segment文件进行分片存储 基于Yahoo开发的 datasketches 库.  使用Theta Sketch近似算法
+
+Samza是一个分布式的实时计算框架；支持低延时的、有状态的实时计算 Samza基于RocksDB实现本地状态存储
+
+Lambda架构  http://www.jianshu.com/p/b6bf05332c18
+http://blog.csdn.net/brucesea/article/details/45937875
+http://www.infoq.com/cn/articles/stock-market-event-processing-engine-based-on-Lambda
+Nathan Marz的大作Big Data: Principles and best practices of scalable real-time data systems介绍了Labmda Architecture的概念
+Lambda架构是由Storm的作者Nathan Marz提出的一个实时大数据处理框架。Lambda架构的目标是设计出一个能满足实时大数据系统关键特性的架构，包括有：高容错、低延时和可扩展等。Lambda架构整合离线计算和实时计算，融合不可变性（Immunability），读写分离和复杂性隔离等一系列架构原则，可集成Hadoop，Kafka，Storm，Spark，Hbase等各类大数据组件。

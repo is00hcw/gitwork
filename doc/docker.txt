@@ -41,6 +41,7 @@ https://yq.aliyun.com/articles/68477?spm=5176.100238.goodcont.19.4jm47N  Docker¾
 docker rmi $(docker images -f dangling=true -q)
 http://www.howtoing.com/how-to-remove-docker-images-containers-and-volumes/  ÈçºÎÉ¾³ıDocker¾µÏñ£¬ÈİÆ÷ºÍ¾í
 https://github.com/yangtao309/yangtao309.github.com/issues/1
+ÒªÊÖ¶¯É¾³ıËùÓĞ²å¼ş²¢½â¾ö´ËÎÊÌâ£¬ÇëÖ´ĞĞÒÔÏÂ²½Öè£º´Ó /var/lib/docker/plugins/ ÖĞÉ¾³ı plugins.json
 
 https://yq.aliyun.com/articles/64970?spm=5176.100239.0.0.68bt6N  Ê¹ÓÃ°¢ÀïÔÆÈİÆ÷·şÎñJenkins 2.0ÊµÏÖ³ÖĞø¼¯³ÉÖ®PipelineÆª
 https://yq.aliyun.com/articles/66478?spm=5176.100238.goodcont.60.dtkE9k   ´î½¨Ë½ÓĞdocker²Ö¿â²¢Ê¹ÓÃOSS×÷Îª´æ´¢
