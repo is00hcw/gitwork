@@ -27,6 +27,8 @@ webpack-dev-server --progress --colors
 http://www.ruanyifeng.com/blog/2016/11/javascript.html   JavaScript 全栈工程师培训教程 
 https://github.com/ruanyf/jstraining
 https://segmentfault.com/a/1190000007656902  推荐轻量高效无依赖的开源JS插件和库
+https://www.tjvantoll.com/2015/09/13/fetch-and-errors/   Handling Failed HTTP Responses With fetch()
+
 
 http://yuyang041060120.github.io/2016/09/22/change-detection-and-batch-update/  Change Detection And Batch Update
 http://yuyang041060120.github.io/2016/05/05/webpack-defineplugin-and-provideplugin/   通过DefinePlugin可以定义一些全局的变量
@@ -38,6 +40,8 @@ https://zhangwang1990.gitbooks.io/reactenlightenment/content/%E5%88%9D%E6%8E%A2R
 class HelloMessage extends React.Component
 const HelloMessage = (props) => <div>Hello {props.name}</div>;
 https://segmentfault.com/a/1190000006685370
+
+
 
 react
 https://my.oschina.net/chkui/blog/789871  React由0到1

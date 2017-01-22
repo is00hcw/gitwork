@@ -1,3 +1,6 @@
+curl -sSL https://get.docker.com/ | sh -s -- --mirror AzureChinaCloud   http://blog.lab99.org/post/docker-2016-11-14-what-is-new-in-docker-1-13.html#top-10-xin-zeng-gong-neng
+http://blog.lab99.org/post/docker-2016-12-10-video-docker-online-meetup-42-tips-and-tricks-for-using-docker.html   Ê¹ÓÃ Docker 1.12 µÄ¼¼ÇÉ
+1.12 docker-compose bundle ÃüÁî½« docker-compose.yml ×ª»»Îª .dab ÎÄ¼ş
 ²éÁËÏÂÊÖ²á·¢ÏÖ£º -g, --graph="/var/lib/docker"	ÉèÖÃDockerÔËĞĞÊ±¸ùÄ¿Â¼. ÔÚ ubuntu ÖĞµÄÎ»ÖÃÊÇ£º/etc/default/docker   ÔÚ centos ÖĞµÄÎ»ÖÃÊÇ£º/etc/sysconfig/docker
 OPTIONS=--graph="/home/lib/docker" --selinux-enabled -H fd://
 http://www.cnblogs.com/homewch/p/5688448.html   docker-machine -s "E:\docker" create --engine-registry-mirror=https://vf29u5xi.mirror.aliyuncs.com -d virtualbox default
@@ -36,6 +39,7 @@ registry.cn-hangzhou.aliyuncs.com/acs-sample/alisql:latest
 aliyun.global: true # Ã¿Ì¨»úÆ÷¾ù²¿ÊğÒ»¸önginxÈİÆ÷£¬´ïµ½¸ß¿ÉÓÃÄ¿µÄ
 return 301 https://$host$request_uri;
 
+https://coding.net/u/twang2218/p/docker-example/git
 http://blog.daocloud.io/dockerby-evelyn/  ÈÃÒ»¸öĞ¡°×¶¨ÖÆ Docker
 https://yq.aliyun.com/articles/68477?spm=5176.100238.goodcont.19.4jm47N  Docker¾µÏñÔ­ÀíºÍ×î¼ÑÊµ¼ù
 docker rmi $(docker images -f dangling=true -q)
@@ -52,6 +56,12 @@ https://yq.aliyun.com/articles/60530?spm=5176.8091938.0.0.3aQ56o  openresty APIÍ
 https://github.com/binblee/apigateway-docker-demo
 https://segmentfault.com/a/1190000007387013  openrestyµÄdockerÊµÀı
 https://yq.aliyun.com/articles/65272?spm=5176.100239.0.0.ONr9lT   ÀûÓÃDockerÇáËÉÊµÏÖÔÆÔ­ÉúÓ¦ÓÃ: Spring Boot + Redis·Ö²¼Ê½»á»°
+
+ÔÚ 1.13 Àï£¬¿ªÊ¼Ö§³Ö docker service update --rollback ¹¦ÄÜ£¬µ±·¢Éú¹ÊÕÏÍ£Ö¹ºó£¬¿ÉÒÔÓÉ¹ÜÀíÔ±Ö´ĞĞ¸ÃÃüÁî½«·şÎñ»Ø¹öµ½Ö®Ç°µÄ°æ±¾
+ÔÚ 1.13£¬ÒıÈëÁË docker service update --force ¹¦ÄÜ£¬¿ÉÒÔÔÚ·şÎñÎ´·¢Éú¸Ä±äÊ±£¬Ç¿ÖÆ´¥·¢ÔÙ·¢²¼µÄÁ÷³Ì£¬Ò²¾ÍÊÇÇ¿ÖÆÖØĞÂ pull ¸Ã¾µÏñ¡¢Í£Ö¹ÈİÆ÷£¬ÖØĞÂµ÷¶ÈÔËĞĞÈİÆ÷¡£
+echo "MySuperSecretPassword" | docker secret create mysql_password   ËùÖ¸¶¨µÄ secret »áÒÔÎÄ¼şĞÎÊ½¹ÒÔØÓÚ /var/run/secrets/ Ä¿Â¼ÏÂ
+ÀûÓÃONBUILDÖ¸Áî,Êµ¼ÊÉÏ¾ÍÊÇÏàµ±ÓÚ´´½¨Ò»¸öÄ£°å¾µÏñ£¬ºóĞø¿ÉÒÔ¸ù¾İ¸ÃÄ£°å¾µÏñ´´½¨ÌØ¶¨µÄ×Ó¾µÏñ£¬ĞèÒªÔÚ×Ó¾µÏñ¹¹½¨¹ı³ÌÖĞÖ´ĞĞµÄÒ»Ğ©Í¨ÓÃ²Ù×÷¾Í¿ÉÒÔÔÚÄ£°å¾µÏñ¶ÔÓ¦µÄdockerfileÎÄ¼şÖĞÓÃONBUILDÖ¸ÁîÖ¸¶¨¡£ ´Ó¶ø¼õÉÙdockerfileÎÄ¼şµÄÖØ¸´ÄÚÈİ±àĞ´¡£ 
+docker run -it  --name maven-project -v "$PWD":/data andreptb/maven:3.3.9-jdk-8  mvn clean install
 
 harbor
 https://mritd.me/2016/06/27/Harbor-%E4%BC%81%E4%B8%9A%E7%BA%A7-Docker-Registry-%E5%88%9D%E8%AF%95/?utm_source=tuicool&utm_medium=referral   

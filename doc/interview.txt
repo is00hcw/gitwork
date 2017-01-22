@@ -12,6 +12,10 @@ http://blog.9i0i.com/?u013970991/article/details/52035153   由多线程内存溢出产生
 http://blog.9i0i.com/?u013970991/article/details/52055527   @Transactional(rollbackFor = Throwable.class, propagation = Propagation.REQUIRED)
 
 
+http://blog.csdn.net/eastmount/article/details/41575053?utm_source=tuicool&utm_medium=referral  SOLID原则(Principles)如下：单一职责原则（Single Responsibility）开闭原则（Open Closed）里氏代换原则（Liskov Substitution）接口隔离原原则（Interface Segregation）依赖倒置原则（Dependency Inversion）
+http://mp.weixin.qq.com/s/NWM-OKuKCyHTlXc32h39uA   优秀的（Android）软件工程师是如何练成的
+https://github.com/jwasham/google-interview-university/blob/master/translations/README-cn.md  Google 的面试
+
 
 https://linux.cn/article-7480-1.html  算法复杂度速查表
 http://markyun.github.io/2015/Front-end-Developer-Questions/
