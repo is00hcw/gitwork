@@ -1,6 +1,12 @@
 hbase:60010/master-status
 hbase:60010/zk.jsp
 
+btrace
+http://qa.blog.163.com/blog/static/19014700220142257572460
+http://blog.csdn.net/wilsonpeng3/article/details/52576253
+http://stacktrace.cn/?p=4
+
+
 http://www.mspring.org/article/1229   jmc
 http://www.icoolxue.com/blog/show/9
 chmod 600 jmxremote.password 

@@ -1,0 +1,121 @@
+vue.js
+https://github.com/Coffcer/Blog/issues/3   vue 性能优化  异步组件
+https://github.com/MeCKodo/vue-tutorial   vue2.0 构建单页应用最佳实战 - V2EX
+http://www.jianshu.com/p/5ba253651c3b   Vue2.0 新手完全填坑攻略——从环境搭建到发布
+https://zhuanlan.zhihu.com/p/23078117  Vue.js 2.0 快速上手 - 基础篇 
+https://segmentfault.com/a/1190000005863691  笔记本例子 https://coligo.io/learn-vuex-by-building-notes-app/ 
+http://www.infoq.com/cn/articles/vue-2-progressive-front-end-solution
+http://xiangsongtao.com/article/584d614a65017d7408deb8bc
+http://lvyongbo.net/2016/09/27/%E7%AA%BA%E6%8E%A2Vue2/
+
+https://jsfiddle.net/reeco/jw5hphqg/4/   http://www.doc00.com/doc/1001004eg   vue-resource
+https://segmentfault.com/q/1010000005894526/a-1020000005899559
+http://www.imooc.com/article/2688
+http://www.cnblogs.com/terry01/p/5888650.html
+http://elemefe.github.io/mint-ui/#!/
+https://github.com/airyland/vux
+https://github.com/ElemeFE/vue-desktop
+https://github.com/ElemeFE/element
+https://github.com/lodamemory/vue-metronic
+Bootstrap components built with Vue.js  http://yuche.github.io/vue-strap/
+http://www.webpackbin.com/vue
+http://www.cnblogs.com/pandabunny/p/5417938.html   vue-cli webpack 引入jquery
+npm run dev hotload 
+npm run build  index.html   dist  
+npm install webpack-dev-server --save-dev
+webpack-dev-server
+npm install -g http-server
+http-server -a 127.0.0.1 -p 7070
+
+http://jiongks.name/blog/just-vue/
+http://www.jianshu.com/p/a5361bff1cd8
+https://github.com/brandonxiang/example-vue-webpack/tree/s1s2
+https://segmentfault.com/a/1190000004060034
+http://galen-yip.com/typescript/vue/webpack/2016/06/09/typescrit-vue-todo/?utm_source=tuicool&utm_medium=referral
+http://www.cnblogs.com/zhengjialux/p/5848950.html
+http://mp.weixin.qq.com/s?__biz=MzA3NTYzODYzMg==&mid=2653577777&idx=1&sn=4b5377051bd849b85af17bcf8c05174c&scene=0#wechat_redirect  基于 Webpack & Vue & Vue-Router 的 SPA 初体验
+npm install webpack-dev-server -g
+全局安装vue-cli，使用命令npm install -g vue-cli。
+下载模板代码，使用命令vue init webpack my-project
+npm run dev启动热加载，就会去自动化执行package.json里的 
+“scripts”: { “dev”: “node build/dev-server.js”, 
+https://github.com/vuejs-templates/webpack
+vue-cli默认创建的项目都是假设你在做单页应用，也就是仅有一个index.html作为应用入口，剩下的事情都是交由javascript动态处理的。 https://segmentfault.com/q/1010000005793472/a-1020000005793617
+src目录下的资源只能import或require。
+想静态引入的话，建立一个与src同级的目录例如static，然后把静态资源放入该文件夹下，html的引入路径如下：./static/...   http://www.oschina.net/question/1188944_2152341
+https://segmentfault.com/q/1010000004479605
+https://github.com/yaoyao1987/vue-cli-multipage   多页面
+https://github.com/bluefox1688/vue-cli-multi-page
+
+http://www.w3cfuns.com/notes/15904/fbb4d15b9c22fd373b605805bde8fd44.html
+http://www.w3cfuns.com/notes/15904/cad84afddab13604f987cbf511d265e4.html
+https://segmentfault.com/q/1010000005169531/a-1020000005170343  第三方
+http://blog.csdn.net/usluckily/article/details/51861892
+因为 Vue.js 指令是异步更新，如果想在修改数据之后修改 DOM ，应当在 Vue.nextTick 的回调中操作。
+http://webpack.github.io/docs/shimming-modules.html  三方库
+new webpack.optimize.CommonsChunkPlugin('common.js'),
+new webpack.ProvidePlugin({
+jQuery: "jquery",
+$: "jquery"
+})
+https://segmentfault.com/a/1190000004267935
+你可以直接就用 vue init <template-name> <project-name> 使用。你也可以运行 vue list 命令来看看现在有哪些官方模板是现在可用的。
+目前有以下模板可供选择：
+browserify - 拥有高级功能的 Browserify + vueify 用于正式开发。
+browserify-simple - 拥有基础功能的 Browserify + vueify 用于快速原型开发。
+webpack - 拥有高级功能的 Webpack + vue-loader 用于正式开发。   This template is Vue 2.0 compatible. For Vue 1.x use this command: vue init webpack#1.0 my-project
+webpack-simple - 拥有基础功能的 Webpack + vue-loader 用于快速原型开发。
+
+
+优化
+https://github.com/hilongjw/vue-lazyload
+http://ac.alloyteam.com/summary.html 腾讯大会
+http://download.csdn.net/meeting/meeting_detail/23  sdcc 2016
+http://web.jobbole.com/86981/   Angular 和 Vue 按需加载的项目实践优化方案
+https://zhuanlan.zhihu.com/p/23926652?refer=moduth   页面加载性能
+实践基于路由的代码分块 当 Webpack 在 app 代码中发现 require.ensure()（在 Webpack 2 中是 System.import）时，支持分割代码。这些方法出现的地方被称为“分割点”，Webpack 会对它们的每一个都生成一个分开的 bundle，按需解决依赖。
+https://github.com/googlechrome/lighthouse
+http://www.alloyteam.com/2015/10/optimization-of-alloyteam-series-node-directly-transferring-your-web-pages-second-opening/
+http://www.cnblogs.com/ihardcoder/p/5819005.html
+https://smallpath.me/post/spa-opti  tree-shaking打包减少无用代码
+分块异步加载也是SPA的一种常见首屏优化策略, 指将首屏中不需要的组件分割开, 在访问其他路径时才加载服务器的另一个块来获取需要的组件.
+SSR是SPA的终极目的地了, 除了可以解决SEO外, 还可以大幅度降低首屏加载速度
+https://etianqq.gitbooks.io/vue2/content/%E9%83%A8%E7%BD%B2.html  v-if指令其实很有用处，它可以让我们项目中暂时不需要的组件不进行渲染，等需要用到的时候在渲染
+
+ssr
+https://blog.alphatr.com/how-to-use-ssr-in-vue-2.0.html
+https://smallpath.me/post/thinkjs-ssr
+https://smallpath.me/post/vue2-ssr-email-template
+https://segmentfault.com/a/1190000007985486
+ 
+
+webpack
+https://ant-tool.github.io/dora.html   dora 本质就是使用 koa 模块启动一个 koa 服务器   dora --plugins webpack,livereload,jsonapi
+https://github.com/sorrycc/roadhog
+https://webpack.toobug.net/zh-cn/chapter3/config.html
+https://github.com/petehunt/webpack-howto#9-async-loading   https://github.com/petehunt/webpack-howto/blob/master/README-zh.md
+https://medium.com/@dabit3/beginner-s-guide-to-webpack-b1f1a3638460#.if6jjz9i4
+http://www.jbrantly.com/typescript-and-webpack/
+http://www.jbrantly.com/es6-modules-with-typescript-and-webpack/
+https://segmentfault.com/a/1190000003970448
+http://cookingjs.github.io/zh-cn/intro.html
+https://segmentfault.com/a/1190000004577578   优化
+http://www.alloyteam.com/2016/01/webpack-use-optimization/?utm_source=tuicool&utm_medium=referral
+https://zhuanlan.zhihu.com/p/20914387?refer=jscss
+https://segmentfault.com/a/1190000004728494
+https://segmentfault.com/a/1190000003006331  工具
+相比Grunt，WebPack除了具备丰富的插件外，同时带有一套加载（Loader）系统。使它支持多种规范的加载方式，包括ES6、CommonJS、AMD等方式，这是Grunt、Gulp所不具备的。
+符合AMD规范，如RequireJS
+符合CMD 规范，如SeaJS
+NodeJS规范 CommonJS
+ECMAScript 6的模块化
+http://www.cnblogs.com/ihardcoder/p/5378290.html  浅析前端工程化
+http://www.cnblogs.com/ihardcoder/p/6090779.html  https://boijs.github.io/boit/  https://boijs.github.io/res/
+
+rxjs
+https://fe.ele.me/let-us-learn-rxjs/   Observable.fromEvent   Observable.fromPromise   Rx.Observable.interval(1000)
+https://github.com/joeyguo/blog/issues/11  构建流式应用—RxJS详解  http://www.alloyteam.com/2016/12/learn-rxjs/
+https://alligator.io/vuejs/using-rxjs/
+https://www.learnrxjs.io/
+https://github.com/JayKan/RxJS-Playground
+https://github.com/Reactive-Extensions/RxJS/tree/master/examples
