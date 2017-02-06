@@ -1,8 +1,35 @@
-http://danielkummer.github.io/git-flow-cheatsheet/index.zh_CN.html
+http://danielkummer.github.io/git-flow-cheatsheet/index.zh_CN.html  git-flow 备忘清单
 http://www.codeceo.com/article/how-to-use-git-flow.html
 http://www.bootcss.com/p/git-guide/  git - 简易指南
+https://github.com/xirong/my-git/blob/master/useful-git-command.md  常用命令
 
+https://my.oschina.net/qiangdada/blog/800093  如何合理利用Git进行团队协作
+https://my.oschina.net/qiangdada/blog/808527  如何合理利用Git进行团队协作2 
 https://yq.aliyun.com/articles/68655?spm=5176.100239.bloglist.169.dQEjl8  Git Flow使用原则
+https://github.com/xirong/my-git/blob/master/git-workflow-tutorial.md
+http://www.ruanyifeng.com/blog/2015/08/git-use-process.html  Git 使用规范流程
+
+http://www.cnblogs.com/linjiqin/p/3772681.html   Git和Code Review流程
+https://github.com/oldratlee/translations/blob/master/git-workflows-and-tutorials/workflow-feature-branch.md   git功能分支工作流
+http://nvie.com/posts/a-successful-git-branching-model/
+http://ndpsoftware.com/git-cheatsheet.html
+http://learngitbranching.js.org/
+https://github.com/github/gitignore  
+https://github.com/git-lfs/git-lfs
+https://my.oschina.net/u/2399867/blog/675541  7个重要的Git使用技巧
+
+rebase操作过程是把本地提交一次一个地迁移到更新了的中央仓库master分支之上。 这意味着可能要解决在迁移某个提交时出现的合并冲突，而不是解决包含了所有提交的大型合并时所出现的冲突。
+git rebase --continue
+git checkout -b marys-feature master 这个命令检出一个基于master名为marys-feature的分支，Git的-b选项表示如果分支还不存在则新建分支。
+git push -u origin marys-feature 这条命令push marys-feature分支到中央仓库（origin），-u选项设置本地分支去跟踪远程对应的分支。 设置好跟踪的分支后，小红就可以使用git push命令省去指定推送分支的参数。
+但如果你偏爱线性的提交历史，可以在执行合并时rebase新功能到master分支的顶部，这样生成一个快进（fast-forward）的合并。
+master分支存储了正式发布的历史，而develop分支作为功能的集成分支。 这样也方便master分支上的所有提交分配一个版本号。但功能分支不是从master分支上拉出新分支，而是使用develop分支作为父分支。当新功能完成时，合并回develop分支。 新功能提交应该从不直接与master分支交互。
+bug来源于master,release来源于develope,完成后都合并到master和develope
+一旦develop分支上有了做一次发布（或者说快到了既定的发布日）的足够功能，就从develop分支上fork一个发布分支。 新建的分支用于开始发布循环，所以从这个时间点开始之后新的功能不能再加到这个分支上—— 这个分支只应该做Bug修复、文档生成和其它面向发布任务。 
+维护分支或说是热修复（hotfix）分支用于生成快速给产品发布版本（production releases）打补丁，这是唯一可以直接从master分支fork出来的分支。 修复完成，修改应该马上合并回master分支和develop分支（当前的发布分支）
+常见的约定是使用origin作为远程克隆的仓库的别名 （这个别名会在运行git clone自动创建），upstream（上游）作为正式仓库的别名。
+
+
 Master分支是线上稳定分支，Release通常用作测试分支，Develop分支是开发应用的主分支
 所有的功能开发都在Feature分支进行，然后合并到Develop分支
 Release分支发布后出现问题，直接在Release分支修改，避免Develop分支代码污染
@@ -15,8 +42,6 @@ Git 提供了一个跳过使用暂存区域的方式，只要在提交的时候，给 git commit 加上 -a 选
 要移除跟踪但不删除文件，以便稍后在 .gitignore 文件中补上，用 --cached 选项即可git rm --cached readme.txt
 想要撤消刚才的提交操作，可以使用 --amend 选项重新提交：git commit --amend  如果刚才提交时忘了暂存某些修改，可以先补上暂存操作，然后再运行 --amend 提交：
 
-https://my.oschina.net/qiangdada/blog/800093  如何合理利用Git进行团队协作
-https://my.oschina.net/qiangdada/blog/808527  如何合理利用Git进行团队协作2 
 也可以加上 -v 选项（译注：此为 --verbose 的简写，取首字母），显示对应的克隆地址： git remote -v 
 Git 又是如何创建一个新的分支的呢？答案很简单，创建一个新的分支指针。 Git 是如何知道你当前在哪个分支上工作的呢？其实答案也很简单，它保存着一个名为 HEAD 的特别指针。在 Git 中，它是一个指向你正在工作中的本地分支的指针。
 换句话说，如果顺着一个分支走下去可以到达另一个分支的话，那么 Git 在合并两者时，只会简单地把指针右移，因为这种单线的历史分支不存在任何需要解决的分歧，所以这种合并过程可以称为快进（Fast forward）。
@@ -56,8 +81,7 @@ Release branches: 准备要 release 的版本，只修 bugs。从 develop 分支出来，完成后 
 Hotfix branches: 等不及 release 版本就必须马上修 master 赶上线的情况。会从 master 分支出来，完成后 merge 回 master 和 develop
 
 
-http://www.cnblogs.com/linjiqin/p/3772681.html   Git和Code Review流程
-https://github.com/oldratlee/translations/blob/master/git-workflows-and-tutorials/workflow-feature-branch.md   git功能分支工作流
+
 
 gitlab ci
 The .gitlab-ci.yml file tells the GitLab runner what do to. By default it runs three stages: build, test, and deploy.

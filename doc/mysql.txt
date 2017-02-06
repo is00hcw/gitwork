@@ -1,5 +1,4 @@
 ﻿MySQL数据库delete数据时，不支持表别名
-TRUNCATE TABLE '表名' 这样就利用SQL语句清空了该数据表，而不保留日志。
 http://www.leexh.com/blog/2014/07/10/mysql-item-compare-bug/   Mysql查询类型转换诡异问题
 数字类型的索引,如果传入字符串可以使用索引. 字符串类型的索引,如果查询数字无法使用索引. https://blog.xupeng.me/2012/02/08/type-conversion-and-index-selection-of-mysql/
 id字段是字符串型，当我用整数型0作为where条件去与其比对时，字符串id被自动转为整数型，也就成了0。自然就把所有记录都给匹配出来了
@@ -7,6 +6,7 @@ select 11 + '11', 11 + 'aa', 'a1' + 'bb', 11 + '0.01a';    http://seanlook.com/2
 当查询字段是INT类型，如果查询条件为CHAR，将查询条件转换为INT，如果是字符串前导都是数字将会进行截取，如果不是转换为0。当查询字段是CHAR类型，如果查询条件为INT，将查询字段为换为INT再进行比较，可能会造成全表扫描。  http://courages.us/archives/382
 11 + 'aa'，由于操作符两边的类型不一样且符合第g条，aa要被转换成浮点型小数，然而转换失败（字母被截断），可以认为转成了 0，整数11被转成浮点型还是它自己，所以11 + 'aa' = 11。
 0.01a转成double型也是被截断成0.01，所以11 + '0.01a' = 11.01。
+TRUNCATE TABLE '表名' 这样就利用SQL语句清空了该数据表，而不保留日志。
 MySQL优化器只有两个自由度：顺序选择；单表访问方式   https://yq.aliyun.com/articles/11222
 http://tech.meituan.com/mysql-index.html   MySQL索引原理及慢查询优化
 
@@ -25,6 +25,11 @@ https://help.aliyun.com/knowledge_detail/41689.html
 
 有时候大的插入和更新会被max_allowed_packet 参数限制掉，导致失败。查看目前配置show VARIABLES like '%max_allowed_packet%';
 Packet for query is too large (1141 > 1024). You can change this value on the server by setting the max_allowed_packet' variable.
+
+http://mp.weixin.qq.com/s/A7SFqsclK5xVrfHQK6-Zdw  MySQL当前存在的三种复制模式有：异步模式、半同步模式和组复制模式
+异步复制提供了一种简单的主-从复制方法，包含一个主库（master）和备库（一个，或者多个）之间，主库执行并提交了事务，在这之后（因此才称之为异步），这些事务才在从库上重新执行一遍（基于statement）或者变更数据内容（基于row），主库不检测其从库上的同步情况。
+MySQL5.5的版本在一步同步的基础之上，以插件的形式实现了一个变种的同步方案，称之为半同步（semi-sync replication）。这个插件在源生的异步复制上，添加了一个同步的过程：当从库接收到了主库的变更（即事务）时，会通知主库。主库上的操作有两种：接收到这个通知以后才去commit事务；接受到之后释放session。这两种方式是由主库上的具体配置决定的。当主库收不到从库的变更通知超时时，由半同步复制自动切换到异步同步
+MySQL组复制是一个MySQL插件，它建立在现有的MySQL复制基础结构上，利用了二进制日志，基于行的日志记录和全局事务标识符等功能。组复制（Group Replication）基于分布式一致性算法(Paxos协议的变体)实现，一个组允许部分节点挂掉，只要保证绝大多数节点仍然存活并且之间的通讯是没有问题的，那么这个组对外仍然能够提供服务. 简而言之，一个Group Replication就是一组节点，每个节点都可以独立执行事务，而读写事务则会在于group内的其他节点进行协调之后再commit。因此，当一个事务准备提交时，会自动在group内进行原子性的广播，告知其他节点变更了什么内容/执行了什么事务。这种原子广播的方式，使得这个事务在每一个节点上都保持着同样顺序。
 
 
 alisql  rds
@@ -416,4 +421,4 @@ HA方案不完善
 备份和恢复方案还是比较复杂，需要依赖外部组件
 展现给用户信息过少，排查问题困难
 众多分支，让人难以选择
-
+ 

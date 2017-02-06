@@ -13,6 +13,32 @@ https://github.com/johntostring/spring-boot-shiro
 https://patrickgrimard.io/2016/01/18/spring-boot-devtools-first-look/
 http://yukinami.github.io/2016/05/28/%E7%94%A8Spring-Test%E8%BF%9B%E8%A1%8C%E9%A1%B5%E9%9D%A2%E7%9A%84%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95/    用Spring Test进行页面的功能测试
 http://spring.io/blog/2016/04/15/testing-improvements-in-spring-boot-1-4  @RunWith(SpringRunner.class) @SpringBootTest(webEnvironment=WebEnvironment.RANDOM_PORT)
+http://www.jianshu.com/p/4fc45c6f437d   spring boot应用部署至外部容器的相关配置
+http://www.jianshu.com/p/907731a373a4   spring boot与kafka集成  @EnableKafka  KafkaAutoConfiguration
+https://github.com/lianggzone/springboot-action  Spring Boot 揭秘与实战 系列
+使用@Mock注解对测试接口进行修饰。该注解位于org.mockito.Mock中
+使用when().thenReturn()方法指定测试接口中某方法的返回值。（也可以指定抛出的异常类型等）。
+http://www.jianshu.com/p/549d03f98678  利用docker-maven-plugin快速交测
+EnableAutoConfigurationImportSelector类使用了Spring Core包的SpringFactoriesLoader类的loadFactoryNamesof()方法。 SpringFactoriesLoader会查询META-INF/spring.factories文件中包含的JAR文件。 
+http://blog.5ibc.net/p/103504.html  Spring Boot的强大之处在于使用了Spring 4框架的新特性：@Conditional注释，此注释使得只有在特定条件满足时才启用一些配置。 
+值得注意的是，optional=true 表示依赖不会传递，换句话说，其他依赖该项目的项目，如果想要使用 devtools，需要重新引入
+
+扩展
+http://liuxi.name/blog/20161228/spring-container-extension.html  Spring生命周期回调与容器扩展
+若以上三种方式配置的初始化方法都不一样，则执行顺序为：@PostConstruct注解方法 –> InitializingBean的afterPropertiesSet –> init-method方法 ；若三种方式配置的方法一样，则方法只执行一次 
+BeanPostProcessor接口定义了两个容器级别的回调方法postProcessBeforeInitialization和postProcessAfterInitialization，用于在初始化实例后的一些逻辑处理，会针对容器中的所有实例进行处理。
+在Spring应用上下文启动的一个特殊阶段，会直接初始化所有实现了BeanPostProcessor接口的实例，以及该实例所引用的类也会被实例化。然后作为后处理器应用于其他普通实例。
+BeanFactoryPostProcessors接口在bean实例化前处理bean的配置元数据，BeanPostProcessor接口在bean实例化后处理bean的实例
+http://blog.csdn.net/cutesource/article/details/5864562  
+https://gist.github.com/dchjmichael/07dfd189c4c29bab63ec
+http://upload-images.jianshu.io/upload_images/1329440-740c239f41566b16.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240
+编写NamespaceHandler和BeanDefinitionParser完成解析工作 编写spring.handlers和spring.schemas串联起所有部件。NamespaceHandler会根据schema和节点名找到某个BeanDefinitionParser，然后由BeanDefinitionParser完成具体的解析工作。Spring提供了默认实现类NamespaceHandlerSupport和AbstractSingleBeanDefinitionParser，简单的方式就是去继承这两个类
+
+
+ElasticSearch  
+https://gold.xitu.io/post/5859c06d8d6d810065c7fb34   Spring Boot 揭秘与实战（二） 数据存储篇 - ElasticSearch  
+http://www.voidcn.com/blog/moest/article/p-6233248.html
+http://liuxi.name/blog/20160803/spring-data-es.html
 
 security
 AjaxLoginProcessingFilter 拦截请求获取{username password} ==> this.getAuthenticationManager().authenticate(token) ==> 

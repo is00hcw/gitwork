@@ -22,6 +22,7 @@ https://github.com/SnapKit/Masonry
 http://www.oschina.net/p/ohhttpstubs 
 http://blog.csdn.net/colorapp/article/details/47007431  unit test
 http://blog.shiqichan.com/using-afnetworking-sdwebimage-and-ohhttpstubs/
+https://www.oschina.net/p/lottie  动画
 
 lua
 https://my.oschina.net/vimfung/blog/814212  Lua与ObjC的交互
