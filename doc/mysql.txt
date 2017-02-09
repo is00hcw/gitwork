@@ -422,3 +422,6 @@ HA方案不完善
 展现给用户信息过少，排查问题困难
 众多分支，让人难以选择
  
+
+所以如果我们连接RDS的账户具有REPLICATION SLAVE, REPLICATION CLIENT的权限，则就可以把主库master的产生的binlog同步到本地数据库中去，实现数据同步。
+Global Transaction ID,全局事务ID，在整个事务架构中每一个事务ID号是全局唯一的，不止是在一个节点上而是整个主从复制架构中每任何两个事务的ID号都不会相同。在mysql5.6以后每一个mysql服务器都有一个全局唯一的ID号叫做uuid，通用唯一识别码 (Universally Unique Identifier)，而GTID就是由当前节点的UUID（一个128位的随机数）和为当前节点生成的随机数（TID）组成的，因此只要UUID不同再在此基础上保证事务ID不同就保证全局不一样了。

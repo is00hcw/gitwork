@@ -6,6 +6,7 @@ http://blog.jasonding.top/2016/08/08/Developer%20Kits/%E4%BD%BF%E7%94%A8maven%E6
 创建Maven工程，勾选右侧的Create from archetype选项，然后选中下方的scala-archetype-simple选项   右键Project，点击Add FrameWork Support，在打开的栏框中添加Scala支持
 a.apply(x)则可以简化为a(x)  a.update(x,y)简化为a(x)=y
 
+http://www.jianshu.com/p/d4f426ad11ba   java与scala混合编程打包
 http://www.slideshare.net/fujohnwang/scala-thegoodparts
 http://afoo.me/posts/2015-07-21-scala-developers-springboot-guide.html   Scala开发者的SpringBoot快速入门指南
 https://my.oschina.net/yangbajing/blog/717763  写给Java程序员的Scala入门教程

@@ -1,3 +1,27 @@
+只要重写 equals，就必须重写 hashCode。因为 Set 存储的是不重复的对象，依据 hashCode 和 equals 进行判断，所以 Set 存储的对象必须重写这两个方法
+【强制】 SimpleDateFormat 是线程不安全的类，一般不要定义为 static 变量，如果定义为
+static，必须加锁
+ 【强制】多线程并行处理定时任务时， Timer 运行多个 TimeTask 时，只要其中之一没有捕获
+抛出的异常，其它任务便会自动终止运行，使用 ScheduledExecutorService 则没有这个问题。
+【推荐】避免 Random 实例被多线程使用，虽然共享该实例是线程安全的，但会因竞争同一
+seed 导致的性能下降
+【参考】 HashMap 在容量不够进行 resize 时由于高并发可能出现死链，导致 CPU 飙升，在
+开发过程中注意规避此风险。
+【强制】不能在 finally 块中使用 return， finally 块中的 return 返回后方法结束执行，不会再执行 try 块中的 return 语句
+【强制】小数类型为 decimal，禁止使用 float 和 double
+【推荐】单表行数超过 500 万行或者单表容量超过 2GB，才推荐进行分库分表。
+【推荐】字段允许适当冗余，以提高性能，但是必须考虑数据同步的情况。冗余字段应遵循：1） 不是频繁修改的字段。2） 不是 varchar 超长字段，更不能是 text 字段
+【强制】 varchar 是可变长字符串，不预先分配存储空间，长度不要超过 5000，如果存储长度大于此值，定义字段类型为 text，独立出来一张表，用主键来对应，避免影响其它字段索引效率。
+【强制】页面搜索严禁左模糊或者全模糊，如果需要请走搜索引擎来解决。
+1） consts 单表中最多只有一个匹配行（ 主键或者唯一索引） ，在优化阶段即可读取到数据。2） ref 指的是使用普通的索引（ normal index）。3） range 对索引进行范围检索。
+【强制】 count(distinct col) 计算该列除 NULL 之外的不重复数量。注意 count(distinct col1, col2) 如果其中一列全为 NULL，那么即使另一列有不同的值，也返回为 0。
+【强制】使用 ISNULL()来判断是否为 NULL 值。注意： NULL 与任何值的直接比较都为 NULL。
+【强制】 xml 配置中参数注意使用： #{}， #param# 不要使用${} 此种方式容易出现 SQL 注入。
+【强制】禁止向 HTML 页面输出未经安全过滤或未正确转义的用户数据
+【强制】用户请求传入的任何参数必须做有效性验证。
+一方库：本工程中的各模块的相互依赖   二方库：公司内部的依赖库，一般指公司内部的其他项目发布的jar包  三方库：公司之外的开源库
+
+https://yq.aliyun.com/articles/56  Java调试那点事
 http://calvin1978.blogcn.com/articles/ratelimiter.html   服务化体系之－限流
 http://calvin1978.blogcn.com/articles/collection.html  关于Java集合的小抄
 http://calvin1978.blogcn.com/articles/javatuning.html  Java性能优化指南1.8版，及唯品会的实战

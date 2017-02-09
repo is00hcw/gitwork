@@ -7,6 +7,10 @@ http://blog.csdn.net/kkk584520?spm=5176.100239.blogcont57695.6.Yhlwvx
 http://blog.csdn.net/kkk584520/article/details/51476816
 https://my.oschina.net/editorial-story/blog/826663   
 
+机器学习公开课：
+coursera：https://www.coursera.org/learn/machine-learning
+网易公开课：http://open.163.com/special/opencourse/machinelearning.html
+
 http://www.pythontutor.com/
 http://wiki.jikexueyuan.com/project/tensorflow-zh/
 https://segmentfault.com/a/1190000003984727?utm_source=tuicool&utm_medium=referral

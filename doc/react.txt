@@ -11,6 +11,14 @@ https://mp.weixin.qq.com/s?__biz=MzA3ODg4MDk0Ng==&mid=2651112408&idx=1&sn=32c263
 
 http://www.cnblogs.com/Upton/p/6180512.html  axios基本用法
 
+首屏优化
+http://www.jianshu.com/p/a72b1c9d8c32   react博客开发记录之首屏优化  webpack.optimize.UglifyJsPlugin   webpack.optimize.CommonsChunkPlugin 
+http://www.alloyteam.com/2015/10/optimization-of-alloyteam-series-the-first-screen-time/   纯前端优化首屏时间
+http://www.alloyteam.com/2015/10/optimization-of-alloyteam-series-node-directly-transferring-your-web-pages-second-opening/   其实在Web1.0时代，前后端没有分离的时候，程序员直接用后台程序渲染出模板，这便是直出。
+http://www.alloyteam.com/2016/06/react-isomorphic/  React同构直出优化总结
+https://github.com/joeyguo/blog/issues/8
+
+
 next.js
 http://www.59m59s.com/blog/shi-wan-next-js/
 http://mp.weixin.qq.com/s/1IClppabinbX_4bWyT_T7w

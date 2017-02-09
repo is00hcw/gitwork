@@ -28,6 +28,7 @@ bug来源于master,release来源于develope,完成后都合并到master和develope
 一旦develop分支上有了做一次发布（或者说快到了既定的发布日）的足够功能，就从develop分支上fork一个发布分支。 新建的分支用于开始发布循环，所以从这个时间点开始之后新的功能不能再加到这个分支上—— 这个分支只应该做Bug修复、文档生成和其它面向发布任务。 
 维护分支或说是热修复（hotfix）分支用于生成快速给产品发布版本（production releases）打补丁，这是唯一可以直接从master分支fork出来的分支。 修复完成，修改应该马上合并回master分支和develop分支（当前的发布分支）
 常见的约定是使用origin作为远程克隆的仓库的别名 （这个别名会在运行git clone自动创建），upstream（上游）作为正式仓库的别名。
+但是，Pull Request远不止一个简单的通知，而是为讨论提交的功能的一个专门论坛。 如果变更有任何问题，团队成员反馈在Pull Request中，甚至push新的提交微调功能。 所有的这些活动都直接跟踪在Pull Request中。
 
 
 Master分支是线上稳定分支，Release通常用作测试分支，Develop分支是开发应用的主分支

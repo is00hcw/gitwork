@@ -8,6 +8,7 @@ http://mp.weixin.qq.com/s?__biz=MzA5OTAyNzQ2OA==&mid=2649692067&idx=1&sn=a944922
 Tengine + Dyups。Dyups的弊端就是Upstream信息是保存在内存里的。 
 
 
+http://afoo.me/posts/2017-01-29-build-api-gateway-with-consul-slardar.html  使用consul和又拍云slardar构建API网关
 http://heqin.blog.51cto.com/8931355/1865665   开源API网关Kong的部署与使用
 http://blog.catscarlet.com/201612202671.html    基于Kong建立支持OAuth2.0的API网关
 http://www.jianshu.com/p/89dc0d24823d  学习Kong
