@@ -2,6 +2,11 @@ Bug管理工具不是很多吗：QC、redmine、jira、bugzilla，国产的禅道、easybug和techexc
 Bugclose是一款免费的Bug管理工具，他们的Slogan则显示了他们的追求：简单、易用、稳定、安全。
 https://bugtags.com/
 
+https://www.zhihu.com/question/20190597
+Google 引进的 OKR 体系（Objectives& Key Results，目标与关键成果），这跟传统的 KPI（Key Performance Indicator，关键绩效考核）
+
+
+
 需求
 https://yq.aliyun.com/articles/61831?spm=5176.100239.topwz.1.lbH8B1  互联网项目管理浅析之需求管理
 https://yq.aliyun.com/articles/61858?spm=5176.100239.bloglist.43.lbH8B1

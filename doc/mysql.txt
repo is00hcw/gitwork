@@ -1,4 +1,5 @@
-﻿MySQL数据库delete数据时，不支持表别名
+﻿可创建表数量，跟容量有关，1G 存储空间可创建 512 张表。比如购买的存储空间为 20G，那么最多可以创建 512*20=1W 张表。 shown processlist 的行对应的 Host 就是用户的出口 IP。
+MySQL数据库delete数据时，不支持表别名
 http://www.leexh.com/blog/2014/07/10/mysql-item-compare-bug/   Mysql查询类型转换诡异问题
 数字类型的索引,如果传入字符串可以使用索引. 字符串类型的索引,如果查询数字无法使用索引. https://blog.xupeng.me/2012/02/08/type-conversion-and-index-selection-of-mysql/
 id字段是字符串型，当我用整数型0作为where条件去与其比对时，字符串id被自动转为整数型，也就成了0。自然就把所有记录都给匹配出来了
@@ -11,6 +12,8 @@ MySQL优化器只有两个自由度：顺序选择；单表访问方式   https:
 http://tech.meituan.com/mysql-index.html   MySQL索引原理及慢查询优化
 
 spring.datasource.initSQL=set names utf8mb4
+int类型占4个字节，tinyint占1个字节。int(1) 和 int(4) 从本身长度还是存储方式上都是一样的，区别就是显示的长度不同，但是要设置一个参数：如果列制定了zerofill 就会用0填充显示，int(4)指定后就会显示为0002
+smallint存储大小为 2 个字节, bigint存储大小为 8 个字节。
 MySQL中的索引也有长度限制： 767字节，所以使用utf8编码的的时候，可以指定索引字段最长为255字节，但是指定utf8mb4的话，只能索引191字节。
 MySQL中的字段类型都有长度限制，比如varchar的最长字节长度是65535
 MySQL中的行也有长度限制： 65535字节

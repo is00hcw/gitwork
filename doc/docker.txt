@@ -39,6 +39,9 @@ registry.cn-hangzhou.aliyuncs.com/acs-sample/alisql:latest
 aliyun.global: true # 每台机器均部署一个nginx容器，达到高可用目的
 return 301 https://$host$request_uri;
 
+
+https://yq.aliyun.com/articles/69444?&utm_campaign=sys&utm_medium=market&utm_source=edm_email&msctype=email&mscareaid=cn&mscsiteid=cn&mscmsgid=7130117021600379067&    Docker 1.13 编排能力进化
+https://yq.aliyun.com/articles/69382?spm=5176.100239.blogrightarea69570.13.swjHZn   Docker日志收集新方案：fluent-pilot
 https://coding.net/u/twang2218/p/docker-example/git
 http://blog.daocloud.io/dockerby-evelyn/  让一个小白定制 Docker
 https://yq.aliyun.com/articles/68477?spm=5176.100238.goodcont.19.4jm47N  Docker镜像原理和最佳实践

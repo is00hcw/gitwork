@@ -7,6 +7,7 @@ https://segmentfault.com/a/1190000005863691  笔记本例子 https://coligo.io/learn-
 http://www.infoq.com/cn/articles/vue-2-progressive-front-end-solution
 http://xiangsongtao.com/article/584d614a65017d7408deb8bc
 http://lvyongbo.net/2016/09/27/%E7%AA%BA%E6%8E%A2Vue2/
+https://segmentfault.com/a/1190000006741478  vue-cli + webpack 多页面实例配置优化方法
 
 https://jsfiddle.net/reeco/jw5hphqg/4/   http://www.doc00.com/doc/1001004eg   vue-resource
 https://segmentfault.com/q/1010000005894526/a-1020000005899559
