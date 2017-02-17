@@ -8,7 +8,7 @@ http://shokunin.co/blog/2014/11/11/operational_redis.html    Running Redis in pr
 http://blog.huangz.me/diary/2015/redis-geo.html    Redis 的 GEO 特性将在 Redis 3.2 版本释出， 这个功能可以将用户给定的地理位置信息储存起来， 并对这些信息进行操作。
 http://dumbee.net/archives/114  Redis 2.8 配置文件说明
 http://git.oschina.net/284520459/nredis-proxy      https://git.oschina.net/284520459/redis-monitor
-https://my.oschina.net/liubingsmile/blog/786465  nredis-proxy 高性能Redis 服务中间件
+https://my.oschina.net/liubingsmile/blog/786465  nredis-proxy 高性能Redis 服务中间件  https://my.oschina.net/liubingsmile/blog/825474  http://mt.sohu.com/20170217/n480942237.shtml
 http://blog.9i0i.com/?u013970991/article/details/53142780
 
 
