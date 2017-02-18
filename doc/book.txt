@@ -32,3 +32,16 @@ http://dreamer-yzy.github.io/2015/01/14/%E9%9B%86%E7%BE%A4%E4%B8%ADSession%E8%A7
 http://www.lxy520.net/2015/10/29/springshi-yong-rediscun-chu-session/
 
 其他粗略地看了《创业维艰》，《从0到1》，《企业估值就是讲故事》，《经济学原理》，《聪明的投资者》，《怎样选择成长股》
+
+
+由浅入深 — 阅读下面三本书：
+Dustin Boswell 的 《编写可读代码的艺术 The Art of Readable Code》
+Robert C. Martin 的 《代码整洁之道 Clean Code: A Handbook of Agile Software Craftsmanship》
+Steve McConnell 的 《代码大全 Code Complete: A Practical Handbook of Software Construction》
+
+John Sonmez 的《软技能：代码之外的生存指南Soft Skills: The software developer’s life manual》。
+Robert C. Martin 的《代码整洁之道：程序员的职业素养The Clean Coder: A Code of Conduct for Professional Programmers》。
+Jim Camp 的 《从零开始：专业人士不想让你了解的谈判工具Start with No: The Negotiating Tools that the Pros Don’t Want You to Know》。
+
+William Strunk 和 E. B. White 的《英文写作指南 The Elements of Style》
+http://www.oschina.net/news/81784/what-to-learn-in-2017-if-youre-a-frontend-developer   前端开发者，2017 年你应该学习什么
