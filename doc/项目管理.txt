@@ -1,38 +1,38 @@
-Bug¹ÜÀí¹¤¾ß²»ÊÇºÜ¶àÂğ£ºQC¡¢redmine¡¢jira¡¢bugzilla£¬¹ú²úµÄìøµÀ¡¢easybugºÍtechexcelµÈ
-BugcloseÊÇÒ»¿îÃâ·ÑµÄBug¹ÜÀí¹¤¾ß£¬ËûÃÇµÄSloganÔòÏÔÊ¾ÁËËûÃÇµÄ×·Çó£º¼òµ¥¡¢Ò×ÓÃ¡¢ÎÈ¶¨¡¢°²È«¡£
+ï»¿Bugç®¡ç†å·¥å…·ä¸æ˜¯å¾ˆå¤šå—ï¼šQCã€redmineã€jiraã€bugzillaï¼Œå›½äº§çš„ç¦…é“ã€easybugå’Œtechexcelç­‰
+Bugcloseæ˜¯ä¸€æ¬¾å…è´¹çš„Bugç®¡ç†å·¥å…·ï¼Œä»–ä»¬çš„Sloganåˆ™æ˜¾ç¤ºäº†ä»–ä»¬çš„è¿½æ±‚ï¼šç®€å•ã€æ˜“ç”¨ã€ç¨³å®šã€å®‰å…¨ã€‚
 https://bugtags.com/
 
 https://www.zhihu.com/question/20190597
-Google Òı½øµÄ OKR ÌåÏµ£¨Objectives& Key Results£¬Ä¿±êÓë¹Ø¼ü³É¹û£©£¬Õâ¸ú´«Í³µÄ KPI£¨Key Performance Indicator£¬¹Ø¼ü¼¨Ğ§¿¼ºË£©
+Google å¼•è¿›çš„ OKR ä½“ç³»ï¼ˆObjectives& Key Resultsï¼Œç›®æ ‡ä¸å…³é”®æˆæœï¼‰ï¼Œè¿™è·Ÿä¼ ç»Ÿçš„ KPIï¼ˆKey Performance Indicatorï¼Œå…³é”®ç»©æ•ˆè€ƒæ ¸ï¼‰
 
 
 
-ĞèÇó
-https://yq.aliyun.com/articles/61831?spm=5176.100239.topwz.1.lbH8B1  »¥ÁªÍøÏîÄ¿¹ÜÀíÇ³ÎöÖ®ĞèÇó¹ÜÀí
+éœ€æ±‚
+https://yq.aliyun.com/articles/61831?spm=5176.100239.topwz.1.lbH8B1  äº’è”ç½‘é¡¹ç›®ç®¡ç†æµ…æä¹‹éœ€æ±‚ç®¡ç†
 https://yq.aliyun.com/articles/61858?spm=5176.100239.bloglist.43.lbH8B1
-http://www.oschina.net/news/71273/product-manager-hole     ´ÓĞèÇóµ½ÉÏÏß£¬²úÆ·¾­ÀíÄãÍÚÁË¶àÉÙ¿Ó£¿
-StackShare.io ÊÇÒ»¸ö¿ª·¢Õß¹¤¾ß¼°·şÎñ·ÖÏíÆ½Ì¨£¬ÖÂÁ¦ÓÚ·¢ÏÖ²¢·ÖÏí¿ª·¢ÕßÊ¹ÓÃµÄ¿ª·¢¹¤¾ß¡¢·şÎñÓëÓÅÖÊ×ÊÔ´£¬°ïÖú¿ª·¢ÕßÊ¹ÓÃ×î·½±ãµÄ¿ª·¢¹¤¾ßºÍ±ã½İµÄ·şÎñ¡£
+http://www.oschina.net/news/71273/product-manager-hole     ä»éœ€æ±‚åˆ°ä¸Šçº¿ï¼Œäº§å“ç»ç†ä½ æŒ–äº†å¤šå°‘å‘ï¼Ÿ
+StackShare.io æ˜¯ä¸€ä¸ªå¼€å‘è€…å·¥å…·åŠæœåŠ¡åˆ†äº«å¹³å°ï¼Œè‡´åŠ›äºå‘ç°å¹¶åˆ†äº«å¼€å‘è€…ä½¿ç”¨çš„å¼€å‘å·¥å…·ã€æœåŠ¡ä¸ä¼˜è´¨èµ„æºï¼Œå¸®åŠ©å¼€å‘è€…ä½¿ç”¨æœ€æ–¹ä¾¿çš„å¼€å‘å·¥å…·å’Œä¾¿æ·çš„æœåŠ¡ã€‚
 
-http://blog.brucefeng.info/post/bigproj-in-scrum  ScrumÖĞ´óÏîÄ¿¹ÜÀí
+http://blog.brucefeng.info/post/bigproj-in-scrum  Scrumä¸­å¤§é¡¹ç›®ç®¡ç†
 
 
-http://nobodyiam.com/2016/02/18/team-management-thought/  Ò»µãÍÅ¶Ó¹ÜÀíĞÄµÃ
+http://nobodyiam.com/2016/02/18/team-management-thought/  ä¸€ç‚¹å›¢é˜Ÿç®¡ç†å¿ƒå¾—
 
-gitblit gitlab gitbucket  Gitblit ÊÇÒ»¸ö´¿ Java ¿âÓÃÀ´¹ÜÀí¡¢²é¿´ºÍ´¦Àí Git ×ÊÁÏ¿â¡£Ïàµ±ÓÚ Git µÄ Java ¹ÜÀí¹¤¾ß¡£
+gitblit gitlab gitbucket  Gitblit æ˜¯ä¸€ä¸ªçº¯ Java åº“ç”¨æ¥ç®¡ç†ã€æŸ¥çœ‹å’Œå¤„ç† Git èµ„æ–™åº“ã€‚ç›¸å½“äº Git çš„ Java ç®¡ç†å·¥å…·ã€‚
 http://www.infoq.com/cn/articles/douban-code-2years/   
 https://www.scm-manager.org/download/      http://www.fishlee.net/soft/scm-manager-chs/
 http://www.oschina.net/news/50222/git-code-platforms  
 http://www.oschina.net/p/docker-gitlab
 http://debugo.com/gitbucket/  gitbucket
-java -jar gitbucket.war£¨µ±È»ĞèÒª1.7ÒÔÉÏµÄJRE»·¾³£©¾Í¿ÉÒÔÔËĞĞ£¬¿ÉÒÔÖ¸¶¨ÏÂÃæ¼¸¸ö²ÎÊı:  --port=[NUMBER] --prefix=[CONTEXTPATH] --host=[HOSTNAME] --gitbucket.home=[DATA_DIR]
-Èç¹ûÃ»ÓĞÖ¸¶¨¨Cgitbucket.home£¬Ëü»á°ÑÊı¾İ±£´æÔÚ$HOME/.gitbucketÏÂÃæ£¬°üÀ¨ÓÃ»§Êı¾İ¿âĞÅÏ¢ÒÔ¼°repositories¡£ËùÒÔÖ»°ÑÕâ¸öÄ¿Â¼±¸·İ¾Í¿ÉÒÔÁË
-¿ªÔ´ÖĞ¹ú£º http://git.oschina.net/
-CSDN£º https://code.csdn.net/
-GitCafe£º https://gitcafe.com/
-GitLab£ºhttp://www.gitlab.org/
+java -jar gitbucket.warï¼ˆå½“ç„¶éœ€è¦1.7ä»¥ä¸Šçš„JREç¯å¢ƒï¼‰å°±å¯ä»¥è¿è¡Œï¼Œå¯ä»¥æŒ‡å®šä¸‹é¢å‡ ä¸ªå‚æ•°:  --port=[NUMBER] --prefix=[CONTEXTPATH] --host=[HOSTNAME] --gitbucket.home=[DATA_DIR]
+å¦‚æœæ²¡æœ‰æŒ‡å®šâ€“gitbucket.homeï¼Œå®ƒä¼šæŠŠæ•°æ®ä¿å­˜åœ¨$HOME/.gitbucketä¸‹é¢ï¼ŒåŒ…æ‹¬ç”¨æˆ·æ•°æ®åº“ä¿¡æ¯ä»¥åŠrepositoriesã€‚æ‰€ä»¥åªæŠŠè¿™ä¸ªç›®å½•å¤‡ä»½å°±å¯ä»¥äº†
+å¼€æºä¸­å›½ï¼š http://git.oschina.net/
+CSDNï¼š https://code.csdn.net/
+GitCafeï¼š https://gitcafe.com/
+GitLabï¼šhttp://www.gitlab.org/
 http://gitstack.com/pricing/
-http://www.csdn.net/article/1970-01-01/2823718?tvd  »Ø¹ËÄÇĞ©Ôø¾­ÈÈÃÅµÄ¹ú²ú¿ªÔ´Èí¼ş
+http://www.csdn.net/article/1970-01-01/2823718?tvd  å›é¡¾é‚£äº›æ›¾ç»çƒ­é—¨çš„å›½äº§å¼€æºè½¯ä»¶
 
 
-Ãô½İ
-http://www.cnblogs.com/jetlian/p/3913687.html Ò»²½²½Ñ§Ãô½İ¿ª·¢£º¿ªÆª
+æ•æ·
+http://www.cnblogs.com/jetlian/p/3913687.html ä¸€æ­¥æ­¥å­¦æ•æ·å¼€å‘ï¼šå¼€ç¯‡
