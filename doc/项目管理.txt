@@ -27,3 +27,7 @@ GitCafe： https://gitcafe.com/
 GitLab：http://www.gitlab.org/
 http://gitstack.com/pricing/
 http://www.csdn.net/article/1970-01-01/2823718?tvd  回顾那些曾经热门的国产开源软件
+
+
+敏捷
+http://www.cnblogs.com/jetlian/p/3913687.html 一步步学敏捷开发：开篇

@@ -1,3 +1,6 @@
+>* http://afoo.me/posts/2014-11-05-how-make-sbt-jump-over-GFW.html  SBT免翻墙手册
+>* http://www.winseliu.com/blog/2016/11/10/play2-development-environment-with-eclipse/  Play2开发环境搭建
+
 >* https://github.com/sksamuel/akka-patterns 
 >* https://github.com/PacktPublishing/Mastering-Akka
 >* http://shiyanjun.cn/archives/1168.html
