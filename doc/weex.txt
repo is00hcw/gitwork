@@ -1,5 +1,11 @@
 ﻿npm install -g angular-cli@latest
-npm install -g weexpack
+npm install -g weexpack   https://github.com/weexteam/weex-pack
+weexpack platform add android  /  weexpack platform add ios
+weexpack run android  你可以更改项目目录下的android.config.json
+模拟器运行 weexpack run ios  构建ipa包 weexpack build ios
+打包html5平台：weexpack build web  在 html5 平台运行：weexpack run web
+https://github.com/weexteam/weex-hackernews
+
 sudo npm install -g ios-deploy --unsafe-perm=true
 npm install -g vue vue-cli 
 npm i vue-resource vue-router vuex --save

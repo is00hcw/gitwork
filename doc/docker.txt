@@ -1,3 +1,6 @@
+http://www.cnblogs.com/atuotuo/p/6340183.html  升级docker1.13
+https://yq.aliyun.com/articles/69444?&utm_campaign=sys&utm_medium=market&utm_source=edm_email&msctype=email&mscareaid=cn&mscsiteid=cn&mscmsgid=7130117021600379067&    Docker 1.13 编排能力进化
+https://git.tiaozhan.com/xczh/jetbrains-license-server  
 curl -sSL https://get.docker.com/ | sh -s -- --mirror AzureChinaCloud   http://blog.lab99.org/post/docker-2016-11-14-what-is-new-in-docker-1-13.html#top-10-xin-zeng-gong-neng
 http://blog.lab99.org/post/docker-2016-12-10-video-docker-online-meetup-42-tips-and-tricks-for-using-docker.html   使用 Docker 1.12 的技巧
 1.12 docker-compose bundle 命令将 docker-compose.yml 转换为 .dab 文件
@@ -40,7 +43,8 @@ aliyun.global: true # 每台机器均部署一个nginx容器，达到高可用目的
 return 301 https://$host$request_uri;
 
 
-https://yq.aliyun.com/articles/69444?&utm_campaign=sys&utm_medium=market&utm_source=edm_email&msctype=email&mscareaid=cn&mscsiteid=cn&mscmsgid=7130117021600379067&    Docker 1.13 编排能力进化
+
+https://mp.weixin.qq.com/s?__biz=MzIzNjUxMzk2NQ==&mid=2247484639&idx=1&sn=7a035c7c413b75808a67ddcec99ee21b   Docker、Containerd、RunC 你应该知道的所有
 https://yq.aliyun.com/articles/69382?spm=5176.100239.blogrightarea69570.13.swjHZn   Docker日志收集新方案：fluent-pilot
 https://coding.net/u/twang2218/p/docker-example/git
 http://blog.daocloud.io/dockerby-evelyn/  让一个小白定制 Docker

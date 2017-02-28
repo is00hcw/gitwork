@@ -1,4 +1,7 @@
-﻿maven-help-plugin是一个小巧的辅助工具，最简单的help:system可以打印所有可用的环境变量和Java系统属性。help:effective-pom和help:effective-settings最为有用
+﻿http://maven.aliyun.com/nexus/content/groups/public/   http://blog.lanyus.com/archives/264.html
+http://mvnrepo.tae.taobao.com/content/groups/public/
+
+maven-help-plugin是一个小巧的辅助工具，最简单的help:system可以打印所有可用的环境变量和Java系统属性。help:effective-pom和help:effective-settings最为有用
 http://m.blog.csdn.net/blog/yuzjang/41546487  maven之deploy的两种方式
 1). 安装到本地库：
 mvn install:install-file -DgroupId=org.apache.hadoop -DartifactId=hbase -Dversion=1.0 -Dpackaging=jar -Dfile=[path to file]
