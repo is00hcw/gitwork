@@ -428,3 +428,19 @@ HA方案不完善
 
 所以如果我们连接RDS的账户具有REPLICATION SLAVE, REPLICATION CLIENT的权限，则就可以把主库master的产生的binlog同步到本地数据库中去，实现数据同步。
 Global Transaction ID,全局事务ID，在整个事务架构中每一个事务ID号是全局唯一的，不止是在一个节点上而是整个主从复制架构中每任何两个事务的ID号都不会相同。在mysql5.6以后每一个mysql服务器都有一个全局唯一的ID号叫做uuid，通用唯一识别码 (Universally Unique Identifier)，而GTID就是由当前节点的UUID（一个128位的随机数）和为当前节点生成的随机数（TID）组成的，因此只要UUID不同再在此基础上保证事务ID不同就保证全局不一样了。
+
+
+TINYTEXT	256 bytes	
+TEXT	65,535 bytes	~64kb 
+MEDIUMTEXT	16,777,215 bytes	~16MB 
+LONGTEXT	4,294,967,295 bytes	~4GB 
+
+从官方文档中我们可以得知当varchar大于某些数值的时候，其会自动转换为text，大概规则如下：
+大于varchar（255）变为 tinytext
+大于varchar（500）变为 text
+大于varchar（20000）变为 mediumtext
+所以对于过大的内容使用varchar和text没有太多区别。
+对于text来说，只能添加前缀索引，并且前缀索引最大只能达到1000字节。 主要考虑text没有默认值的问题
+http://www.cnblogs.com/billyxp/p/3548540.html
+
+根据谷歌官方的建议，存储经纬度的时候，使用double(10,6)就可以了。这样，这些字段将会存储小数点后 6 位数以及小数点前最多 4 位数，如 -153.456783 度，可以把表占用的存储空间降至最低。同时保证精确性。

@@ -87,6 +87,53 @@ http://xlambda.com/gevent-tutorial/
 https://github.com/kennethreitz/grequests
 pip install grequests
 
+http://www.hubwiz.com/class/562427361bc20c980538e26f   flask框架教程
+app.add_url_rule('/test',view_func=test)
+@app.route('/user',methods=['POST','GET'])
+在Flask中，可以将URL中的可变部分使用一对小括号<>声明为变量，@app.route('/user/<uname>')
+path转换器允许 规则匹配包含/的字符串：@app.route('/file/<path:fname>')
+在Flask内部使用两张表维护路由：
+- url_map ：维护URL规则和endpoint的映射
+- view_functions ：维护endpoint和视图函数的映射。
+默认访问点 ：当我们使用route装饰器注册路由时，默认使用被装饰函数的 函数名（__name__）作为访问点
+app = Flask(__name__,static_folder='assets',static_url_path='/assets')
+Flask框架将用户使用POST方法提交的表单数据，存储在所创建Request对象的 form属性中。对于浏览器以GET方法提交的表单数据，Flask框架将其存储在Request实例对象的args 属性中。
+如果前端在提交JSON数据时，正确设置了mimetype为application/json， 那么Flask框架会将其存储在Request实例对象的json属性中。
+当视图函数返回的是一个字符串时，Flask自动使用 这个字符串作为正文内容，以200作为状态码，以text/html作为mimetype，构造 一个Response对象传递给后续处理环节。
+当视图函数返回的是一个形式如(response,status,headers)的元组时， Flask自动根据这几个值构造一个Response对象。
+make_response()函数用来构造一个Response对象，第一个参数为响应的正文。
+在Flask中，可以使用json模块的dumps()方法将数组或字典对象转换为JSON字符串
+abort()方法的code参数用来指定返回给客户端的HTTP状态码。由于abort()方法 将抛出HttpException异常，因此它之后的代码不会被执行。
+服务器需要识别来自同一访问者的请求。这主要是通过浏览器的cookie实现的。 访问者在第一次访问服务器时，服务器在其cookie中设置一个唯一的ID号——会话ID。 这样，访问者后续对服务器的访问头中将自动包含该信息，服务器通过这个ID号，即可区 隔不同的访问者。
+在视图函数内，Flask提供了一个全局对象session，它始终等效于当前请求所对应的 Session类实例对象。Session类定义了get_item()方法和set_item()方法
+实现一个WSGI应用，需要满足要求：是可调用的，比如是一个函数，或者是一个可调用类（具有__call__方法）的实例  environ是一个包含全部HTTP请求信息的字典/Dict，由WSGI服务器解包HTTP请求生成。
+Flask基于Jinja2模板引擎，提供了两个渲染函数，分别使用字符串或单独的文件保存模板内容：
+- render_template_string(sourcestr,**context) - 使用sourcestr作为模板字符串
+- render_template(filename,**context) - 使用filename指定的文件内容作为模板字符串
+默认情况下，Flask使用当前模块文件夹下的templates子目录作为模板目录
+http://www.hubwiz.com/class/562427361bc20c980538e26f   Jinja2内置的全局对象
+Flask-SQLAlchemy使用数据库访问URL来统一的表示这些配置信息，比如一些常见 的数据库的访问URL举例如下：
+- MySQL - mysql://username:password@hostname/database
+- Postgre - postgresql://username:password@hostname/database
+- SQLite - sqlite:////absolute/path/to/database
+Flask-SQLAlchemy在Flask应用中，定义了两个配置项进行ORM的数据库设置：
+- SQLALCHEMY_DATABASE_URI - 声明ORM底层所用数据库的访问URL
+- SQLALCHEMY_COMMIT_ON_TEARDOWN - 当关闭数据库连接时是否自动提交事务
+__tablename__定义了这个对象对应的数据表名。这个变量是 可选的，默认情况下，SQLAlchemy将使用类名作为表名。
+创建对象对应的数据表只要执行SQLAlchemy对象的一个方法 create_all().  删除表也只需要执行SQLAlchemy对象的一个方法drop_all()
+  一个会话对象代表一个数据库的事务。可以在会话对象上添加一个对象：db.session.add(obj)   也可以调用all_all()方法一次添加多个对象：db.session.add_all([obj1,obj2,obj3])
+  提交数据库会话 当在会话上执行完所有操作后，调用commit()方法提交本次事务：db.session.commit()
+users = User.query.all()
+user = User.query.filter_by(id=1).first()
+我们需要在数据库会话上进行 删除操作，然后提交数据库会话：db.session.delete(user) db.session.commit()
+
+蓝图/Blueprint对象用起来和一个应用/Flask对象差不多，最大的区别在于一个 蓝图对象没有办法独立运行，必须将它注册到一个应用对象上才能生效。
+创建一个蓝图对象  ezbp = Blueprint("ezbp",__name__)  在应用对象上注册这个蓝图对象app.register_blueprint(ezbp,url_prefix='/ezbp')
+当我们在蓝图对象上调用route装饰器或使用 add_url_rule()方法注册路由时，它只是在内部的一个延迟操作记录列表 defered_functions中添加了一项
+当执行应用对象的register_blueprint() 方法时，应用对象将从蓝图对象的defered_functions列表中取出每一项，并以自身 作为参数执行该匿名函数 —— 即调用应用对象的add_url_rule()方法，这将真正的 修改应用对象的两张路由表。
+admin = Blueprint("admin",__name__,static_folder='ezstatic',static_url_path='/lib')
+蓝图对象没有默认的模板目录，可以在创建蓝图对象时使用template_folder 关键字参数设置模板目录。admin = Blueprint('admin',__name__,template_folder='mytpls')
+
 
 http://blog.csdn.net/zwgdft/article/details/52854121   Flask项目的代码组织方式
 开发Flask应用时，使用相对形式的import会让你的生活更加轻松。 原因很简单。之前，当需要import一个内部模块时，你也许要显式指明应用的包名（the app's package name）。假设你想要从myapp/models.py中导入User模型：
@@ -101,6 +148,7 @@ https://code.tutsplus.com/tutorials/creating-a-web-app-from-scratch-using-python
 https://github.com/jay3dec/PythonFlaskMySQLApp---Part-1
 from flask import Flask, render_template
 return render_template("main_page.html")
+
 
 pip install sqlacodegen
 sqlacodegen --noviews --noconstraints --noindexes --outfile d:\\models.py mysql://test:test@122.30.100.12:3388/test  
