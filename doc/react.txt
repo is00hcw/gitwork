@@ -1,6 +1,7 @@
 https://github.com/verekia/js-stack-from-scratch     https://github.com/pd4d10/js-stack-from-scratch
 npm install -g yo gulp generator-electrode  http://www.electrode.io/docs/what_is_electrode.html?utm_source=itdadao&utm_medium=referral
 
+https://yq.aliyun.com/articles/71200?spm=5176.100239.bloglist.208.3SXlWR   基于webpack Code Splitting实现react组件的按需加载
 http://www.infoq.com/cn/articles/react-native-ide
 https://github.com/fengjundev/React-Native-Remote-Update   使用React-Native实现app热更新的一次实践
 http://update.reactnative.cn/home

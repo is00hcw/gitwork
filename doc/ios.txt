@@ -1,90 +1,99 @@
-https://segmentfault.com/a/1190000000487144  14 ¿îºÃÓÃµÄ iOS ¿ª·¢¹¤¾ß
-http://blog.csdn.net/potato512/article/details/52176073  ×Ô¶¯´ò°ü
+ï»¿https://segmentfault.com/a/1190000000487144  14 æ¬¾å¥½ç”¨çš„ iOS å¼€å‘å·¥å…·
+http://blog.csdn.net/potato512/article/details/52176073  è‡ªåŠ¨æ‰“åŒ…
 https://my.oschina.net/u/727843/blog/391946
-http://xudafeng.github.io/slide/archives/native-in-practice/#/   ÒÆ¶¯¿Í»§¶Ë±à³ÌÊµÕ½
+http://xudafeng.github.io/slide/archives/native-in-practice/#/   ç§»åŠ¨å®¢æˆ·ç«¯ç¼–ç¨‹å®æˆ˜
 https://github.com/fengling2300/networkTest   http://oncenote.com/2014/10/21/Security-1-HTTPS/
 
-http://mp.weixin.qq.com/s/qRW_akbU3TSd0SxpF3iQmQ   DynamicCocoa£ºµÎµÎ iOS ¶¯Ì¬»¯·½°¸µÄµ®ÉúÓëÆğº½
-http://pingguohe.net/2016/12/20/Tangram-design-and-practice.html    Ò³Ãæ¶¯Ì¬»¯µÄ»ù´¡ ¡ª¡ª Tangram
+http://blog.cnbang.net/tech/3354/   iOS å¼€å‘æŠ€æœ¯æ ˆä¸è¿›é˜¶
+http://blog.cnbang.net/internet/3245/  å¦‚ä½•é¢è¯•iOSå·¥ç¨‹å¸ˆ
+http://blog.fir.im/fir-im-weekly161223/   iOS / Android åŠ¨æ€åŒ–æ›´æ–°æ–¹æ¡ˆç›˜ç‚¹
+http://mp.weixin.qq.com/s/qRW_akbU3TSd0SxpF3iQmQ   DynamicCocoaï¼šæ»´æ»´ iOS åŠ¨æ€åŒ–æ–¹æ¡ˆçš„è¯ç”Ÿä¸èµ·èˆª.  DynamicCocoaÂ è¿™ç§æ–¹æ¡ˆï¼Œç»•äº†ä¸€ä¸ªæ›´å¤§çš„é“ï¼Œä»ç¼–è¯‘é˜¶æ®µå…¥æ‰‹ï¼Œé€šè¿‡ clang æŠŠ OC ä»£ç ç¼–è¯‘æˆè‡ªå·±å®šåˆ¶çš„ JS æ ¼å¼ï¼Œå†åŠ¨æ€ä¸‹å‘å»æ‰§è¡Œï¼Œåšåˆ°åŸç”Ÿå¼€å‘ï¼ŒåŠ¨æ€è¿è¡Œï¼Œä¸»æ‰“åŠ¨æ€æ·»åŠ åŠŸèƒ½
+http://pingguohe.net/2016/12/20/Tangram-design-and-practice.html    é¡µé¢åŠ¨æ€åŒ–çš„åŸºç¡€ â€”â€” Tangram
 https://github.com/wequick/Small
 
 http://www.cnblogs.com/kenshincui/p/3985090.html
-http://www.cnblogs.com/kenshincui/p/3890880.html  IOS³ÌĞò¿ª·¢¸ÅÀÀ
-http://www.cnblogs.com/csharpstyle/articles/4176630.html    Ad Hoc ·½Ê½·¢²¼ APP
-https://my.oschina.net/u/2462807/blog/796698  ÊÖ°ÑÊÖ½ÌÄã, Jenkins¹¹½¨iOSÏîÄ¿
+http://www.cnblogs.com/kenshincui/p/3890880.html  IOSç¨‹åºå¼€å‘æ¦‚è§ˆ
+http://www.cnblogs.com/csharpstyle/articles/4176630.html    Ad Hoc æ–¹å¼å‘å¸ƒ APP
+https://my.oschina.net/u/2462807/blog/796698  æ‰‹æŠŠæ‰‹æ•™ä½ , Jenkinsæ„å»ºiOSé¡¹ç›®
 
-https://mp.weixin.qq.com/s?__biz=MzA3ODg4MDk0Ng==&mid=2651112909&idx=1&sn=cf3949b08f602e40e7125b0a4b5b184c   Rexxar£º¶¹°ê¶Ô»ìºÏ¿ª·¢µÄË¼¿¼
-https://wereadteam.github.io/2016/05/23/GYBootingProtection/  Î¢ĞÅ¶ÁÊé¿ª·¢ÁË iOS Á¬ĞøÉÁÍË±£»¤¹¤¾ß£ºGYBootingProtection£¬¼ì²âÁ¬ĞøÉÁÍË£¬ÔÚÁ¬ĞøÉÁÍË³öÏÖÊ±£¬³¢ÊÔ×ÔĞŞ¸´ App
-https://wereadteam.github.io/2016/07/06/GYDataCenter/  GYDataCenter£º¸ßĞÔÄÜÊı¾İ¿â¿ò¼Ü
-https://wereadteam.github.io/2016/02/25/GYHttpMock/  GYHttpMock£ºiOS HTTPÇëÇóÄ£Äâ¹¤¾ß
-https://wereadteam.github.io/2016/02/22/MLeaksFinder/  MLeaksFinder£º¾«×¼ iOS ÄÚ´æĞ¹Â¶¼ì²â¹¤¾ß
+https://mp.weixin.qq.com/s?__biz=MzA3ODg4MDk0Ng==&mid=2651112909&idx=1&sn=cf3949b08f602e40e7125b0a4b5b184c   Rexxarï¼šè±†ç“£å¯¹æ··åˆå¼€å‘çš„æ€è€ƒ
+https://wereadteam.github.io/2016/05/23/GYBootingProtection/  å¾®ä¿¡è¯»ä¹¦å¼€å‘äº† iOS è¿ç»­é—ªé€€ä¿æŠ¤å·¥å…·ï¼šGYBootingProtectionï¼Œæ£€æµ‹è¿ç»­é—ªé€€ï¼Œåœ¨è¿ç»­é—ªé€€å‡ºç°æ—¶ï¼Œå°è¯•è‡ªä¿®å¤ App
+https://wereadteam.github.io/2016/07/06/GYDataCenter/  GYDataCenterï¼šé«˜æ€§èƒ½æ•°æ®åº“æ¡†æ¶
+https://wereadteam.github.io/2016/02/25/GYHttpMock/  GYHttpMockï¼šiOS HTTPè¯·æ±‚æ¨¡æ‹Ÿå·¥å…·
+https://wereadteam.github.io/2016/02/22/MLeaksFinder/  MLeaksFinderï¼šç²¾å‡† iOS å†…å­˜æ³„éœ²æ£€æµ‹å·¥å…·
 https://github.com/SnapKit/Masonry   
 http://www.oschina.net/p/ohhttpstubs 
 http://blog.csdn.net/colorapp/article/details/47007431  unit test
 http://blog.shiqichan.com/using-afnetworking-sdwebimage-and-ohhttpstubs/
-https://www.oschina.net/p/lottie  ¶¯»­
+https://www.oschina.net/p/lottie  åŠ¨ç”»
+
+http://pingguohe.net/2016/12/20/Tangram-design-and-practice.html  é¡µé¢åŠ¨æ€åŒ–çš„åŸºç¡€ â€”â€” Tangram
+http://pingguohe.net/2016/01/31/lazyscroll.html    iOS é«˜æ€§èƒ½å¼‚æ„æ»šåŠ¨è§†å›¾æ„å»ºæ–¹æ¡ˆ â€”â€” LazyScrollView
+https://yq.aliyun.com/articles/71685?spm=5176.100239.blogcont71215.19.x83PHy   iOSå¤§å‹é¡¹ç›®è§£è€¦æ–¹æ¡ˆæœ‰éš¾åº¦ï¼ŸBeeHiveè®¾è®¡ä¼˜åŒ–æ¥å¸®åŠ©
+http://www.jianshu.com/p/07f1cb2b2773  é˜¿é‡ŒBeeHiveæºç å°è¯»  https://github.com/alibaba/BeeHive
+https://github.com/meili/MGJRouter
 
 lua
-https://my.oschina.net/vimfung/blog/814212  LuaÓëObjCµÄ½»»¥
-https://my.oschina.net/vimfung/blog/805037  Ê¹ÓÃLuaScriptCoreÀ´ÈÃLuaÓëiOS½øĞĞ½»»¥
+https://my.oschina.net/vimfung/blog/814212  Luaä¸ObjCçš„äº¤äº’
+https://my.oschina.net/vimfung/blog/805037  ä½¿ç”¨LuaScriptCoreæ¥è®©Luaä¸iOSè¿›è¡Œäº¤äº’
 
-http://zackzheng.info/2016/02/26/2016-02-26-app-image-compress-upload-to-server/   AppÍ¼Æ¬Ñ¹Ëõ²Ã¼ôÔ­ÀíºÍÉÏ´«·½°¸£¬ÒÔ¼°ÄÇĞ©ÓĞÈ¤µÄÊÂ¶ù
-https://yq.aliyun.com/articles/59447?spm=5176.100239.bloglist.17.OkOb5e  CocoaPodsµÄÊ¹ÓÃ¼°ÆäÔ­Àí
-http://www.jianshu.com/p/228535226656   27¸öiOS¿ªÔ´¿â£¬ÈÃÄãµÄ¿ª·¢×øÉÏ»ğ¼ı°É
-https://www.oschina.net/translate/27-ios-open-source-libraries-to-skyrocket-your-development  27 ¿î iOS ¿ªÔ´¿â£¬ÈÃÄãµÄ¿ª·¢Áïµ½·ÉÆğ
-https://github.com/Tim9Liu9/TimLiu-iOS  ¿ªÔ´¿â
-http://www.cocoachina.com/cms/wap.php?action=article&id=7746  µÚÈı·½¿ªÔ´¿â
+http://zackzheng.info/2016/02/26/2016-02-26-app-image-compress-upload-to-server/   Appå›¾ç‰‡å‹ç¼©è£å‰ªåŸç†å’Œä¸Šä¼ æ–¹æ¡ˆï¼Œä»¥åŠé‚£äº›æœ‰è¶£çš„äº‹å„¿
+https://yq.aliyun.com/articles/59447?spm=5176.100239.bloglist.17.OkOb5e  CocoaPodsçš„ä½¿ç”¨åŠå…¶åŸç†
+http://www.jianshu.com/p/228535226656   27ä¸ªiOSå¼€æºåº“ï¼Œè®©ä½ çš„å¼€å‘åä¸Šç«ç®­å§
+https://www.oschina.net/translate/27-ios-open-source-libraries-to-skyrocket-your-development  27 æ¬¾ iOS å¼€æºåº“ï¼Œè®©ä½ çš„å¼€å‘æºœåˆ°é£èµ·
+https://github.com/Tim9Liu9/TimLiu-iOS  å¼€æºåº“
+http://www.cocoachina.com/cms/wap.php?action=article&id=7746  ç¬¬ä¸‰æ–¹å¼€æºåº“
 AFNetworking MKNetworkKit CocoaAsyncSocket  fmdb  MagicalRecord  MBProgressHUD GPUImage SVProgressHUD FLAnimatedImage
 NSJSONSerialization    http://blog.csdn.net/shouqiangwei/article/details/11557919?utm_source=tuicool
 http://objccn.io/
-http://www.jianshu.com/p/b0bf2368fb95   iOS×î¼ÑÊµ¼ù 
+http://www.jianshu.com/p/b0bf2368fb95   iOSæœ€ä½³å®è·µ 
 http://pan.baidu.com/s/1mgIbCz2  ios8
 
-http://m.163.com/special/newsclient/ios_libraries.html  ÍøÒ×Àà¿â
-http://mp.weixin.qq.com/s?__biz=MzA3ODg4MDk0Ng==&mid=2651112821&idx=1&sn=2987ba2c9d68e3982e795d9eeb15f82b  ¶¹°êAppµÄÄ£¿é»¯Êµ¼ù
-http://blog.ibireme.com/2013/09/23/ios-third-party-libs/  iOS µÚÈı·½¿ªÔ´¿âµÄÍÂ²ÛºÍ±¸Íü
-http://blog.ibireme.com/2015/11/12/smooth_user_interfaces_for_ios/  iOS ±£³Ö½çÃæÁ÷³©µÄ¼¼ÇÉ
-http://idlelife.org/archives/733    AsyncDisplayKitÈëÃÅÖ¸ÄÏ
+http://m.163.com/special/newsclient/ios_libraries.html  ç½‘æ˜“ç±»åº“
+http://mp.weixin.qq.com/s?__biz=MzA3ODg4MDk0Ng==&mid=2651112821&idx=1&sn=2987ba2c9d68e3982e795d9eeb15f82b  è±†ç“£Appçš„æ¨¡å—åŒ–å®è·µ
+http://blog.ibireme.com/2013/09/23/ios-third-party-libs/  iOS ç¬¬ä¸‰æ–¹å¼€æºåº“çš„åæ§½å’Œå¤‡å¿˜
+http://blog.ibireme.com/2015/11/12/smooth_user_interfaces_for_ios/  iOS ä¿æŒç•Œé¢æµç•…çš„æŠ€å·§
+http://idlelife.org/archives/733    AsyncDisplayKitå…¥é—¨æŒ‡å—
 https://github.com/facebook/AsyncDisplayKit  
 
-×Ô¶¯»¯²âÊÔ
+è‡ªåŠ¨åŒ–æµ‹è¯•
 http://www.cnblogs.com/hyddd/p/5571229.html
-https://yq.aliyun.com/articles/64671?spm=5176.100239.blogcont64822.13.UwZpZ1    Macaca-Java°æÈëÃÅÖ¸ÄÏ
+https://yq.aliyun.com/articles/64671?spm=5176.100239.blogcont64822.13.UwZpZ1    Macaca-Javaç‰ˆå…¥é—¨æŒ‡å—
 https://macacajs.com/inspector?spm=5176.100239.blogcont64671.26.wWF5pB
 https://yq.aliyun.com/articles/64822?spm=5176.100239.topwz.1.Qh0UpW
-iTools¾ÍÊÇÊ¹ÓÃÕâÍæÒâ¶ùºÍiPhoneÍ¨Ñ¶µÄ£¬libimobiledeviceÊÇÆÆ½âiTunesºÍiPhoneµÄÍ¨Ñ¶ºóÊµÏÖµÄlib¡£Xcode5Ö®Ç°ÊÇfruitstrap£¬fruitstrapºóÀ´·ÅÆúÎ¬»¤£¬Xcode5ºóÊ¹ÓÃlibimobiledevice¡£
+iToolså°±æ˜¯ä½¿ç”¨è¿™ç©æ„å„¿å’ŒiPhoneé€šè®¯çš„ï¼Œlibimobiledeviceæ˜¯ç ´è§£iTuneså’ŒiPhoneçš„é€šè®¯åå®ç°çš„libã€‚Xcode5ä¹‹å‰æ˜¯fruitstrapï¼Œfruitstrapåæ¥æ”¾å¼ƒç»´æŠ¤ï¼ŒXcode5åä½¿ç”¨libimobiledeviceã€‚
 
-Macaca ¶ÔÓÚ native µÄ×Ô¶¯»¯²âÊÔÖ÷ÒªÀûÓÃÁË UIAutomator UIAutomator ÊÇËæ Android SDK Ò»Æğ·¢²¼µÄÒ»¸ö²âÊÔ¿ò¼Ü£¬¸Ã²âÊÔ¿ò¼ÜÌá¹©ÁËÒ»ÏµÁĞ API£¬ÀûÓÃÕâĞ© API ÎÒÃÇ¿ÉÒÔ±à³ÌºÍ°²×¿ App ½øĞĞ½»»¥£¬ÀıÈç£º´ò¿ªÉèÖÃ²Ëµ¥£¬µã»÷£¬»¬¶¯µÈ¡£²¢ÇÒ¿ÉÒÔ¶ÔÉè±¸½øĞĞÎïÀíÖ¸Áî²Ù×÷£¬Èç£ºĞı×ªÉè±¸£¬»ñÈ¡Éè±¸·Ö±æÂÊµÈ¡£¸Ã²âÊÔ¿ò¼ÜµÄ jar °ü¿ÉÒÔÔÚ SDK µÄ°²×°Ä¿Â¼ÖĞÕÒµ½:
+Macaca å¯¹äº native çš„è‡ªåŠ¨åŒ–æµ‹è¯•ä¸»è¦åˆ©ç”¨äº† UIAutomator UIAutomator æ˜¯éš Android SDK ä¸€èµ·å‘å¸ƒçš„ä¸€ä¸ªæµ‹è¯•æ¡†æ¶ï¼Œè¯¥æµ‹è¯•æ¡†æ¶æä¾›äº†ä¸€ç³»åˆ— APIï¼Œåˆ©ç”¨è¿™äº› API æˆ‘ä»¬å¯ä»¥ç¼–ç¨‹å’Œå®‰å“ App è¿›è¡Œäº¤äº’ï¼Œä¾‹å¦‚ï¼šæ‰“å¼€è®¾ç½®èœå•ï¼Œç‚¹å‡»ï¼Œæ»‘åŠ¨ç­‰ã€‚å¹¶ä¸”å¯ä»¥å¯¹è®¾å¤‡è¿›è¡Œç‰©ç†æŒ‡ä»¤æ“ä½œï¼Œå¦‚ï¼šæ—‹è½¬è®¾å¤‡ï¼Œè·å–è®¾å¤‡åˆ†è¾¨ç‡ç­‰ã€‚è¯¥æµ‹è¯•æ¡†æ¶çš„ jar åŒ…å¯ä»¥åœ¨ SDK çš„å®‰è£…ç›®å½•ä¸­æ‰¾åˆ°:
 $ANDROID_HOME/platforms/android-$version/uiautomator.jar
-Macaca Ö÷ÒªÓĞÁ½¸öÄ£¿éÀ´¸ºÔğ²Ù×÷Éè±¸µÄ×Ô¶¯»¯²âÊÔ£¬Ò»¸öÊÇ macaca-adb £¬Ò»¸öÊÇ uiautomator-client ¡£ macaca-adb ÓÃ Nodejs ¶Ô°²×¿ adb ÃüÁî½øĞĞÁË°ü×°£¬ÒÔ¹©ÆäËû node Ä£¿éµ÷ÓÃ£¬¿ÉÒÔÓÃÆäÀ´½øĞĞÄ£ÄâÆ÷µÄÆô¶¯£¬¶Ë¿ÚºÅÓ³Éä£¬»ñÈ¡Éè±¸µÈ²Ù×÷¡£
-uiautomator-client Ä£¿é»áÔÚ±¾µØ»úÆ÷ºÍ°²×¿Éè±¸Ö®¼ä½¨Á¢ socket Á¬½Ó£¬È»ºó×Ô¶¯»¯Ö¸Áî¾ÍÍ¨¹ı socket ½øĞĞ´«Êä¡£
+Macaca ä¸»è¦æœ‰ä¸¤ä¸ªæ¨¡å—æ¥è´Ÿè´£æ“ä½œè®¾å¤‡çš„è‡ªåŠ¨åŒ–æµ‹è¯•ï¼Œä¸€ä¸ªæ˜¯ macaca-adb ï¼Œä¸€ä¸ªæ˜¯ uiautomator-client ã€‚ macaca-adb ç”¨ Nodejs å¯¹å®‰å“ adb å‘½ä»¤è¿›è¡Œäº†åŒ…è£…ï¼Œä»¥ä¾›å…¶ä»– node æ¨¡å—è°ƒç”¨ï¼Œå¯ä»¥ç”¨å…¶æ¥è¿›è¡Œæ¨¡æ‹Ÿå™¨çš„å¯åŠ¨ï¼Œç«¯å£å·æ˜ å°„ï¼Œè·å–è®¾å¤‡ç­‰æ“ä½œã€‚
+uiautomator-client æ¨¡å—ä¼šåœ¨æœ¬åœ°æœºå™¨å’Œå®‰å“è®¾å¤‡ä¹‹é—´å»ºç«‹ socket è¿æ¥ï¼Œç„¶åè‡ªåŠ¨åŒ–æŒ‡ä»¤å°±é€šè¿‡ socket è¿›è¡Œä¼ è¾“ã€‚
 http://www.tuicool.com/articles/nABjMbv
 http://www.cnblogs.com/hyddd/p/5593479.html
 http://www.cnblogs.com/fnng/p/5873878.html
-iOSµÄ×Ô¶¯»¯²âÊÔ¿ò¼Ü¿É·ÖÎªÁ½ÖÖ£º×¢ÈëÊ½ºÍ·Ç×¢ÈëÊ½¡£×¢ÈëÊ½µÄ¿ò¼ÜÍ¨³£»áÌá¹©Ò»Ğ©Lib»òÕßÊÇFramework£¬ÒªÇó²âÊÔÈËÔ±ÔÚ´ı²âÓ¦ÓÃµÄ´úÂë¹¤³ÌÖĞµ¼ÈëÕâĞ©ÄÚÈİ£¬¿ò¼Ü¿ÉÒÔÍ¨¹ıËûÃÇÍê³É¶ÔappµÄÇı¶¯£¬µäĞÍµÄ±ÈÈçmonkeytalk¡£·Ç×¢ÈëÊ½µÄ¿ò¼ÜÔòÊÇÍ¨¹ıÆ»¹ûÌá¹©µÄinstruments¹¤¾ß£¬µ÷ÓÃ¹Ù·½µÄ½Ó¿Úº¯Êı£¬ÊµÏÖ¶ÔappµÄÏà¹Ø²Ù×÷£¬µäĞÍµÄ¾ÍÊÇuiautomation£¬appium
-https://github.com/Carthage/Carthage   ¿â¹ÜÀí
+iOSçš„è‡ªåŠ¨åŒ–æµ‹è¯•æ¡†æ¶å¯åˆ†ä¸ºä¸¤ç§ï¼šæ³¨å…¥å¼å’Œéæ³¨å…¥å¼ã€‚æ³¨å…¥å¼çš„æ¡†æ¶é€šå¸¸ä¼šæä¾›ä¸€äº›Libæˆ–è€…æ˜¯Frameworkï¼Œè¦æ±‚æµ‹è¯•äººå‘˜åœ¨å¾…æµ‹åº”ç”¨çš„ä»£ç å·¥ç¨‹ä¸­å¯¼å…¥è¿™äº›å†…å®¹ï¼Œæ¡†æ¶å¯ä»¥é€šè¿‡ä»–ä»¬å®Œæˆå¯¹appçš„é©±åŠ¨ï¼Œå…¸å‹çš„æ¯”å¦‚monkeytalkã€‚éæ³¨å…¥å¼çš„æ¡†æ¶åˆ™æ˜¯é€šè¿‡è‹¹æœæä¾›çš„instrumentså·¥å…·ï¼Œè°ƒç”¨å®˜æ–¹çš„æ¥å£å‡½æ•°ï¼Œå®ç°å¯¹appçš„ç›¸å…³æ“ä½œï¼Œå…¸å‹çš„å°±æ˜¯uiautomationï¼Œappium
+https://github.com/Carthage/Carthage   åº“ç®¡ç†
 https://github.com/ibireme/YYKit
 https://github.com/ibireme/YYDispatchQueuePool
-http://blog.ibireme.com/2015/11/02/ios_image_tips/  Í¼Æ¬´¦Àí
-http://blog.ibireme.com/2015/11/02/mobile_image_benchmark/  ÒÆ¶¯¶ËÍ¼Æ¬¸ñÊ½µ÷ÑĞ
+http://blog.ibireme.com/2015/11/02/ios_image_tips/  å›¾ç‰‡å¤„ç†
+http://blog.ibireme.com/2015/11/02/mobile_image_benchmark/  ç§»åŠ¨ç«¯å›¾ç‰‡æ ¼å¼è°ƒç ”
 http://blog.ibireme.com/2015/10/23/ios_model_framework_benchmark/  json
-http://mogu.io/ios-analytics-115   iOS Í³¼Æ´òµãÄÇĞ©ÊÂ
+http://mogu.io/ios-analytics-115   iOS ç»Ÿè®¡æ‰“ç‚¹é‚£äº›äº‹
 
 http://yq.aliyun.com/articles/1480
 https://github.com/alibaba/wax  lua
-http://segmentfault.com/a/1190000004268513  Android³ÌĞòÔ± ÈçºÎÈëÃÅiOS
+http://segmentfault.com/a/1190000004268513  Androidç¨‹åºå‘˜ å¦‚ä½•å…¥é—¨iOS
 http://jspatch.com/Docs/price
 http://mp.weixin.qq.com/s?__biz=MzAwNDY1ODY2OQ==&mid=400011053&idx=1&sn=81ed095f6fb9f7a4345ff50285264be1&scene=1&srcid=0309AZCJwCslk9oehil6nnDp#rd
 https://github.com/bang590/JSPatchConvertor
-http://news.oneapm.com/hotfix-bug/   ±ÈÈç iOS ÏÂµÄ JSPatch £¬ WaxPatch £¬Android ÏÂµÄ Dexpose£¬AndFix £¬ClassLoader ¶¼ÊÇ±È½Ï³ÉÊì Hot Patch ¶¯Ì¬²¿Êğ½â¾ö·½°¸¡£
+http://news.oneapm.com/hotfix-bug/   æ¯”å¦‚ iOS ä¸‹çš„ JSPatch ï¼Œ WaxPatch ï¼ŒAndroid ä¸‹çš„ Dexposeï¼ŒAndFix ï¼ŒClassLoader éƒ½æ˜¯æ¯”è¾ƒæˆç†Ÿ Hot Patch åŠ¨æ€éƒ¨ç½²è§£å†³æ–¹æ¡ˆã€‚
 http://philonpang.github.io/blog/2015/11/20/ali-waxshi-yong-he-yuan-ma-jie-xi-xi-lie-waxde-ji-cheng-he-diao-shi-huan-jing-da-jian/  waxpatch
 
 
-http://mp.weixin.qq.com/s?__biz=MjM5OTM0MzIwMQ==&mid=404370707&idx=1&sn=049fc87eaaaf09933967dfccc159fc24&scene=1&srcid=0317HQR6Ngdyw7l0sA0FKIs1#rd    ÔÚĞ´Ò»¸öiOSÓ¦ÓÃÖ®Ç°±ØĞë×öµÄ7¼şÊÂ
+http://mp.weixin.qq.com/s?__biz=MjM5OTM0MzIwMQ==&mid=404370707&idx=1&sn=049fc87eaaaf09933967dfccc159fc24&scene=1&srcid=0317HQR6Ngdyw7l0sA0FKIs1#rd    åœ¨å†™ä¸€ä¸ªiOSåº”ç”¨ä¹‹å‰å¿…é¡»åšçš„7ä»¶äº‹
 http://mp.weixin.qq.com/s?__biz=MzAwNDY1ODY2OQ==&mid=400011053&idx=1&sn=81ed095f6fb9f7a4345ff50285264be1&scene=1&srcid=0309AZCJwCslk9oehil6nnDp#rd
-JSContext ÊÇ JS ´úÂëµÄÖ´ĞĞ»·¾³£¬¿ÉÒÔ¸ø JSContext Ìí¼Ó·½·¨£¬JS ¾Í¿ÉÒÔÖ±½Óµ÷ÓÃÕâ¸ö·½·¨
-http://www.cocoachina.com/swift/20160318/15712.html?spm=5176.blog8634.yqblogcon1.12.tMzPKF     Hello£¬·şÎñ¶Ë Swift
-http://mp.weixin.qq.com/s?__biz=MjM5OTM0MzIwMQ==&mid=404370707&idx=5&sn=9107377d64e873b887f57fb131cc5983&scene=1&srcid=0317DHkzCCu68VLACnZsKqnu#rd    Injection for Xcode£º³É¶ÖµÄÌá¸ß¿ª·¢Ğ§ÂÊ
+JSContext æ˜¯ JS ä»£ç çš„æ‰§è¡Œç¯å¢ƒï¼Œå¯ä»¥ç»™ JSContext æ·»åŠ æ–¹æ³•ï¼ŒJS å°±å¯ä»¥ç›´æ¥è°ƒç”¨è¿™ä¸ªæ–¹æ³•
+http://www.cocoachina.com/swift/20160318/15712.html?spm=5176.blog8634.yqblogcon1.12.tMzPKF     Helloï¼ŒæœåŠ¡ç«¯ Swift
+http://mp.weixin.qq.com/s?__biz=MjM5OTM0MzIwMQ==&mid=404370707&idx=5&sn=9107377d64e873b887f57fb131cc5983&scene=1&srcid=0317DHkzCCu68VLACnZsKqnu#rd    Injection for Xcodeï¼šæˆå¨çš„æé«˜å¼€å‘æ•ˆç‡
 
 
 https://github.com/IFTTT/jot  adding drawings and text to images. 
@@ -92,13 +101,13 @@ https://github.com/IFTTT/FastttCamera   Fasttt and easy camera framework for iOS
 https://github.com/IFTTT/JazzHands simple keyframe-based animation framework for UIKit. Perfect for scrolling app intros
 https://github.com/IFTTT/IFTTTLaunchImage
 
-Éı¼¶
-http://www.infoq.com/cn/articles/wechat-ios9-adaptation  Î¢ĞÅiOS 9ÊÊÅä×Ü½á
+å‡çº§
+http://www.infoq.com/cn/articles/wechat-ios9-adaptation  å¾®ä¿¡iOS 9é€‚é…æ€»ç»“
 
 xctool
-xctool -scheme testOClintNew archive (¶ÔÓ¦xcodeµÄarchive)  »òÕß 
-xctool -scheme testOClintNew build  (¶ÔÓ¦xcodeµÄbuild) 
-ÈôÄãµÄ¹¤³ÌÊ¹ÓÃÁËworkspace,¸ñÊ½ÈçÏÂ£ºxctool -workspace testOClintWorkspace -scheme testOClintNew build 
+xctool -scheme testOClintNew archive (å¯¹åº”xcodeçš„archive)  æˆ–è€… 
+xctool -scheme testOClintNew build  (å¯¹åº”xcodeçš„build) 
+è‹¥ä½ çš„å·¥ç¨‹ä½¿ç”¨äº†workspace,æ ¼å¼å¦‚ä¸‹ï¼šxctool -workspace testOClintWorkspace -scheme testOClintNew build 
 
 fir.im
 http://nomad-cli.com/    https://github.com/nomad/shenzhen
@@ -109,22 +118,22 @@ http://www.tuicool.com/articles/QFruyq2
 
 
 fastlane
-http://www.jianshu.com/p/9ae446d76271   iOSÏîÄ¿µÄ³ÖĞø¼¯³ÉÓë¹ÜÀí[Òë]
+http://www.jianshu.com/p/9ae446d76271   iOSé¡¹ç›®çš„æŒç»­é›†æˆä¸ç®¡ç†[è¯‘]
 http://icyleaf.com/2016/07/fastlane-in-action/?utm_source=tuicool&utm_medium=referral  fastlane
 http://icyleaf.com/2016/07/intro-fastlane-automation-for-ios-and-android/
-http://www.jianshu.com/p/41ecb06ae95f   ÊÖ°ÑÊÖ½ÌÄãÀûÓÃJenkins³ÖĞø¼¯³ÉiOSÏîÄ¿
+http://www.jianshu.com/p/41ecb06ae95f   æ‰‹æŠŠæ‰‹æ•™ä½ åˆ©ç”¨JenkinsæŒç»­é›†æˆiOSé¡¹ç›®
 http://www.jianshu.com/p/002e1061ee08
 http://mp.weixin.qq.com/s?__biz=MzA3ODg4MDk0Ng==&mid=2651112713&idx=1&sn=dd049e7edf3402af887c1fc295f43b98&scene=21#wechat_redirect
 
 
 test
-http://www.infoq.com/cn/news/2016/02/earlgrey-ios-functional-ui-test GoogleÍÆ³öiOS¹¦ÄÜĞÔUI²âÊÔ¿ò¼ÜEarlGrey
+http://www.infoq.com/cn/news/2016/02/earlgrey-ios-functional-ui-test Googleæ¨å‡ºiOSåŠŸèƒ½æ€§UIæµ‹è¯•æ¡†æ¶EarlGrey
 http://houlianpi.github.io/blog/ios-testframework.html?utm_source=tuicool&utm_medium=referral
 http://www.secbox.cn/hacker/8235.html
-AppeckerÊÇÒ»¿îÓÃÓÚiOSÏµÁĞÏµÍ³µÄ×Ô¶¯»¯²âÊÔ¿ò¼Ü¡£ Appecker²ÉÓÃObjective CÎª²âÊÔÓÃÀıµÄ¿ª·¢ÓïÑÔ, ÍêÕûÖ§³ÖiOSÉÏµÄUI¹¦ÄÜ²âÊÔ¡¢µ¥Ôª²âÊÔ²¢ÇÒ¿ÉÒÔÁ¼ºÃµØÖ§³Ö×Ô¶¯»¯ÔËĞĞ
+Appeckeræ˜¯ä¸€æ¬¾ç”¨äºiOSç³»åˆ—ç³»ç»Ÿçš„è‡ªåŠ¨åŒ–æµ‹è¯•æ¡†æ¶ã€‚ Appeckeré‡‡ç”¨Objective Cä¸ºæµ‹è¯•ç”¨ä¾‹çš„å¼€å‘è¯­è¨€, å®Œæ•´æ”¯æŒiOSä¸Šçš„UIåŠŸèƒ½æµ‹è¯•ã€å•å…ƒæµ‹è¯•å¹¶ä¸”å¯ä»¥è‰¯å¥½åœ°æ”¯æŒè‡ªåŠ¨åŒ–è¿è¡Œ
 
 hybrid
-http://www.infoq.com/cn/news/2016/03/React-Native-develop-iOS    ÓÃReact Native¿ª·¢µÚÒ»¸öiOSÓ¦ÓÃ
+http://www.infoq.com/cn/news/2016/03/React-Native-develop-iOS    ç”¨React Nativeå¼€å‘ç¬¬ä¸€ä¸ªiOSåº”ç”¨
 https://github.com/marcuswestin/WebViewJavascriptBridge
 http://www.tuicool.com/articles/ea2An2Q
 - (BOOL)webView:(KCWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
@@ -140,21 +149,21 @@ if(clz && [clz respondsToSelector:method])
 build
 https://fastlane.tools/
 https://github.com/facebook/xctool
-http://www.cnblogs.com/brycezhang/p/4117180.html  podÉú³ÉÀà¿â
-http://www.cnblogs.com/brycezhang/p/4097487.html  ×Ô¶¯build
-http://www.cnblogs.com/brycezhang/p/3675670.html  CocoaPods°æ±¾Éı¼¶
+http://www.cnblogs.com/brycezhang/p/4117180.html  podç”Ÿæˆç±»åº“
+http://www.cnblogs.com/brycezhang/p/4097487.html  è‡ªåŠ¨build
+http://www.cnblogs.com/brycezhang/p/3675670.html  CocoaPodsç‰ˆæœ¬å‡çº§
 
 xcode
 http://pan.baidu.com/s/1kTCCV47#path=%252FXcode%25206.3
 http://www.douban.com/group/topic/73154481/
 http://www.cnblogs.com/yipu/p/4308110.html  10.10 vm
-10.9.5 ÏÂÔØµØÖ·£ºhttp://pan.baidu.com/s/1jGHxFZS¡¡½âÑ¹ÃÜÂë£º1024
-10.10.2ÏÂÔØµØÖ·£ºhttp://pan.baidu.com/s/1pJLrzp5¡¡ÌáÈ¡Âë£ºfuxf¡¡½âÑ¹ÃÜÂë£ºhonghaosheji
+10.9.5 ä¸‹è½½åœ°å€ï¼šhttp://pan.baidu.com/s/1jGHxFZSã€€è§£å‹å¯†ç ï¼š1024
+10.10.2ä¸‹è½½åœ°å€ï¼šhttp://pan.baidu.com/s/1pJLrzp5ã€€æå–ç ï¼šfuxfã€€è§£å‹å¯†ç ï¼šhonghaosheji
 
-http://blog.cnbluebox.com/blog/2014/08/26/ioser-wei-ma-sao-miao/    AVFoundationÉ¨Âë
-http://www.mexiqq.com/2014/07/25/xcode6+ios8%E6%9C%80%E6%96%B0%E7%9C%9F%E6%9C%BA%E8%B0%83%E8%AF%95%E6%95%99%E7%A8%8B/    xcode6+ios8×îĞÂÕæ»úµ÷ÊÔ½Ì³Ì
-http://www.mexiqq.com/2014/10/18/iOS-%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/   iOS ¿ª·¢ÖĞµÄÉè¼ÆÄ£Ê½
-http://strivingboy.github.io/blog/2014/11/08/scan-qrcode/  ¶şÎ¬Âë
+http://blog.cnbluebox.com/blog/2014/08/26/ioser-wei-ma-sao-miao/    AVFoundationæ‰«ç 
+http://www.mexiqq.com/2014/07/25/xcode6+ios8%E6%9C%80%E6%96%B0%E7%9C%9F%E6%9C%BA%E8%B0%83%E8%AF%95%E6%95%99%E7%A8%8B/    xcode6+ios8æœ€æ–°çœŸæœºè°ƒè¯•æ•™ç¨‹
+http://www.mexiqq.com/2014/10/18/iOS-%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/   iOS å¼€å‘ä¸­çš„è®¾è®¡æ¨¡å¼
+http://strivingboy.github.io/blog/2014/11/08/scan-qrcode/  äºŒç»´ç 
 https://github.com/100mango/zen/blob/master/iOS%E5%AD%A6%E4%B9%A0%EF%BC%9AAVFoundation%20%E8%A7%86%E9%A2%91%E6%B5%81%E5%A4%84%E7%90%86/iOS%E5%AD%A6%E4%B9%A0%EF%BC%9AAVFoundation%20%E8%A7%86%E9%A2%91%E6%B5%81%E5%A4%84%E7%90%86%20.md
 
 
@@ -166,7 +175,7 @@ http://facebook.github.io/react-native/docs/tutorial.html#content
 http://www.iversong.com/2015/05/02/simple-react-desc/
 https://github.com/lazaronixon/react-native-qrcode-reader
 https://rnplay.org/apps/6JolNQ  webview
-https://appetize.io/demo    Ä£ÄâÆ÷
+https://appetize.io/demo    æ¨¡æ‹Ÿå™¨
 http://www.slideshare.net/andrewrota/the-complementarity-of-reactjs-and-web-components
 
 
@@ -184,7 +193,7 @@ NSInvocationOperation *invocationOperation=[[NSInvocationOperation alloc]initWit
 
 NSThread *thread=[[NSThread alloc]initWithTarget:self selector:@selector(loadImage:) object:[NSNumber numberWithInt:i]];
 [NSThread sleepForTimeInterval:2.0];
-GCD(Grand Central Dispatch)ÊÇ»ùÓÚCÓïÑÔ¿ª·¢µÄÒ»Ì×¶àÏß³Ì¿ª·¢»úÖÆ£¬GCDÖĞµÄ¶ÓÁĞ·ÖÎª²¢ĞĞ¶ÓÁĞºÍ´®ĞĞ¶ÓÁĞÁ½Àà
-dispatch_queue_t mainQueue= dispatch_get_main_queue();   //¸üĞÂUI½çÃæ,´Ë´¦µ÷ÓÃÁËGCDÖ÷Ïß³Ì¶ÓÁĞµÄ·½·¨
-dispatch_queue_t globalQueue=dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);   // È¡µÃÒ»¸öÈ«¾ÖµÄ²¢·¢¶ÓÁĞ
-¿ÉÒÔÊ¹ÓÃNSThreadµÄcurrentThread·½·¨È¡µÃµ±Ç°Ïß³Ì£¬Ê¹ÓÃ sleepForTimeInterval:·½·¨ÈÃµ±Ç°Ïß³ÌĞİÃß¡£
+GCD(Grand Central Dispatch)æ˜¯åŸºäºCè¯­è¨€å¼€å‘çš„ä¸€å¥—å¤šçº¿ç¨‹å¼€å‘æœºåˆ¶ï¼ŒGCDä¸­çš„é˜Ÿåˆ—åˆ†ä¸ºå¹¶è¡Œé˜Ÿåˆ—å’Œä¸²è¡Œé˜Ÿåˆ—ä¸¤ç±»
+dispatch_queue_t mainQueue= dispatch_get_main_queue();   //æ›´æ–°UIç•Œé¢,æ­¤å¤„è°ƒç”¨äº†GCDä¸»çº¿ç¨‹é˜Ÿåˆ—çš„æ–¹æ³•
+dispatch_queue_t globalQueue=dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);   // å–å¾—ä¸€ä¸ªå…¨å±€çš„å¹¶å‘é˜Ÿåˆ—
+å¯ä»¥ä½¿ç”¨NSThreadçš„currentThreadæ–¹æ³•å–å¾—å½“å‰çº¿ç¨‹ï¼Œä½¿ç”¨ sleepForTimeInterval:æ–¹æ³•è®©å½“å‰çº¿ç¨‹ä¼‘çœ ã€‚

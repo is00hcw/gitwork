@@ -1,3 +1,6 @@
+docker run ubuntu:14.04 /bin/echo 'Hello world'
+https://github.com/dockerfile/java
+
 http://www.cnblogs.com/atuotuo/p/6340183.html  升级docker1.13
 https://yq.aliyun.com/articles/69444?&utm_campaign=sys&utm_medium=market&utm_source=edm_email&msctype=email&mscareaid=cn&mscsiteid=cn&mscmsgid=7130117021600379067&    Docker 1.13 编排能力进化
 https://git.tiaozhan.com/xczh/jetbrains-license-server  
@@ -43,7 +46,7 @@ aliyun.global: true # 每台机器均部署一个nginx容器，达到高可用目的
 return 301 https://$host$request_uri;
 
 
-
+http://open.daocloud.io/ru-he-yong-docker-compose-pei-zhi-django-ying-yong-kai-fa-huan-jing/   如何用 Docker Compose 配置 Django 应用开发环境
 https://mp.weixin.qq.com/s?__biz=MzIzNjUxMzk2NQ==&mid=2247484639&idx=1&sn=7a035c7c413b75808a67ddcec99ee21b   Docker、Containerd、RunC 你应该知道的所有
 https://yq.aliyun.com/articles/69382?spm=5176.100239.blogrightarea69570.13.swjHZn   Docker日志收集新方案：fluent-pilot
 https://coding.net/u/twang2218/p/docker-example/git

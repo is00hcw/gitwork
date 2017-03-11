@@ -7,6 +7,15 @@ SoLoader是facebook出品的一款小巧的用于加载so库文件的开源项目，主要作用是自动检查
 http://pingguohe.net/2016/03/21/Dynimac-write-infomation-into-apk.html   一种动态为apk写入信息的方案
 http://pingguohe.net/2016/02/26/Android-App-secure-ssl.html  android https  
 https://my.oschina.net/vimfung/blog/744795   使用Android Studio进行JNI开发 － Mac篇
+http://blog.coderclock.com/2016/07/04/android/%E9%82%A3%E4%BA%9B%E5%80%BC%E5%BE%97%E4%BD%A0%E8%AF%95%E8%AF%95%E7%9A%84Android%E7%AB%9E%E5%93%81%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7/   那些值得你试试的Android竞品分析工具
+https://github.com/shwenzhang/AndResGuard  压缩apk
+https://github.com/tangqi92/Android-Tips   
+
+https://github.com/alibaba/ARouter
+http://www.jianshu.com/p/7cb2cc9b726a?from=groupmessage  简单好用的Android页面路由框架
+https://yq.aliyun.com/articles/71687?spm=5176.100239.blogcont71215.25.x83PHy  开源最佳实践：Android平台页面路由框架ARouter
+http://pingguohe.net/2017/02/28/vlayout-design.html   vlayout 是手机天猫 Android 版内广泛使用的一个基础 UI 框架项目 提供了一个用于RecyclerView的自定义的LayoutManger  
+https://github.com/alibaba/vlayout 
 
 阿里百川HotFix的Android版本在AndFix的基础上，增加了补丁版本管理、补丁安全校验、控制台灰度管理等更加人性化的功能，同时针对兼容性进行了完善，支持市面上超过800种常见机型
 https://github.com/Tencent/tinker  https://my.oschina.net/shwenzhang/blog/751618  微信官方的Android热补丁解决方案，它支持动态下发代码、So库以及资源，让应用能够在不需要重新安装的情况下实现更新。

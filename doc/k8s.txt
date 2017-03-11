@@ -15,7 +15,9 @@ http://blog.liulantao.com/blog/2015/2015-09-30-kubernetes-101-study-notes.html  
 http://blog.liulantao.com/blog/2015/2015-10-05-kubernetes-201-study-notes.html  Kubernetes 201 学习笔记
 
 https://mritd.me/2016/10/29/set-up-kubernetes-cluster-by-kubeadm/   kubeadm 搭建 kubernetes 集群
-
+https://yq.aliyun.com/articles/66474?spm=5176.100239.blogcont71037.27.7RzGnP   阿里云快速部署Kubernetes - VPC环境
+https://yq.aliyun.com/articles/71037?&utm_campaign=sys&utm_medium=market&utm_source=edm_email&msctype=email&mscareaid=cn&mscsiteid=cn&mscmsgid=7140117030301029566&  在阿里云上部署生产级别Kubernetes集群
+http://mp.weixin.qq.com/s?spm=5176.100239.blogcont71037.20.7RzGnP&__biz=MzI4MTQyMDAxMA==&mid=2247483665&idx=1&sn=d8b61666fe0a0965336d15250e2648cb&scene=0  也许您的Kubernetes集群并不需要SDN
 
 #用户测试的镜像，建议pull
 docker pull d1studio/echoserver:1.4

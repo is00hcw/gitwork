@@ -1,4 +1,6 @@
 ﻿https://my.oschina.net/huangyong/blog/164040   软件设计原则  SOLID
+http://www.ruanyifeng.com/blog/2016/09/software-architecture.html  软件架构入门
+https://yq.aliyun.com/articles/71673?spm=5176.100239.bloglist.77.wzsiSN  用大白话聊聊分布式系统
 模块划分,职责,接口,交互,选型,约束,适应变化
 double a = 0.1; 所创建的new BigDecimal(a);并不正好等一0.1，而是0.1000000000000000055511151231257827021181583404541015625 这是因为doule不能表示为任何有限长度的二进制小数。
 

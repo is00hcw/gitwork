@@ -22,6 +22,7 @@ http://www.jianshu.com/p/549d03f98678  利用docker-maven-plugin快速交测
 EnableAutoConfigurationImportSelector类使用了Spring Core包的SpringFactoriesLoader类的loadFactoryNamesof()方法。 SpringFactoriesLoader会查询META-INF/spring.factories文件中包含的JAR文件。 
 http://blog.5ibc.net/p/103504.html  Spring Boot的强大之处在于使用了Spring 4框架的新特性：@Conditional注释，此注释使得只有在特定条件满足时才启用一些配置。 
 值得注意的是，optional=true 表示依赖不会传递，换句话说，其他依赖该项目的项目，如果想要使用 devtools，需要重新引入
+https://www.mkyong.com/spring-boot/spring-boot-configurationproperties-example/   Spring Boot @ConfigurationProperties example
 
 扩展
 http://liuxi.name/blog/20161228/spring-container-extension.html  Spring生命周期回调与容器扩展

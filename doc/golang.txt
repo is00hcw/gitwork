@@ -75,6 +75,8 @@ http://www.hellogcc.org/effective_go.html  effective go
 godoc -http=:8000
 https://gowalker.org/
 
+https://my.oschina.net/u/569210/blog/852351   使用 Elastic Stack 来监控和调优 Golang 应用程序
+首先需要启用 Golang 的 expvar 服务，expvar（https://golang.org/pkg/expvar/） 是 Golang 提供的一个暴露内部变量或统计信息的标准包。使用的方法很简单，只需要在 Golang 的程序引入该包即可，它会自动注册现有的 http 服务上
 
 同一个目录中所有的go文件的package声明必须相同，所以main方法要单独放一个文件，否则在eclipse和liteide中都会报错
 GOPATH=工程根目录；其下应创建src，pkg，bin目录，bin目录中用于生成可执行文件，pkg目录中用于生成.a文件；golang中的import name，实际是到GOPATH中去寻找name.a

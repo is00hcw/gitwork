@@ -12,7 +12,9 @@ https://github.com/airyland/vux   https://vux.li/?x-page=oschina#!/demo
 http://jdc.jd.com/archives/2806  浅析渲染引擎与前端优化
 http://jdc.jd.com/archives/2942  JavaScript写类的前世今生
 https://github.com/wepayui/wepayui   微信支付
-
+http://www.ruanyifeng.com/blog/2017/02/fp-tutorial.html   函数式编程入门教程
+http://www.ruanyifeng.com/blog/2017/03/ramda.html  Ramda 函数库参考教程
+https://yq.aliyun.com/articles/71256?spm=5176.100239.bloglist.23.wzsiSN  前端知识库
 
 npm install -g generator-webpack-es6-cssnext
 npm install es6-promise whatwg-fetch --save

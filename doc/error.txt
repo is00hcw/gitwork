@@ -1,3 +1,5 @@
+nginx 访问js,css文件出错,open() "/root/86243.css" failed (13: Permission denied)  注意父层目录的权限和所有者, 通过chmod chown修复
+
 start greys failed, because : com.sun.tools.attach.VirtualMachineDescriptor 没找到tools.jar https://github.com/oldmanpushcart/greys-anatomy/issues/103   ../bin/unpack200 tools.pack tools.jar
 
 smartgit 没响应  git config --global http.postBuffer 1048576000
