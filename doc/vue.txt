@@ -7,6 +7,11 @@ https://segmentfault.com/a/1190000005863691  笔记本例子 https://coligo.io/learn-
 http://www.infoq.com/cn/articles/vue-2-progressive-front-end-solution
 http://xiangsongtao.com/article/584d614a65017d7408deb8bc
 http://lvyongbo.net/2016/09/27/%E7%AA%BA%E6%8E%A2Vue2/
+https://github.com/webplus/blog/issues/10  Vue 2.0开发实践（组件间通讯）
+http://www.cnblogs.com/xxcanghai/p/6124699.html  如何在Vue2中实现组件props双向绑定
+在Vue2中组件的props的数据流动改为了只能单向流动，即只能由组件外（调用组件方）通过组件的DOM属性attribute传递props给组件内，组件内只能被动接收组件外传递过来的数据，并且在组件内，不能修改由外层传来的props数据。
+http://blog.zhaiyifan.cn/2016/10/17/vue-2-quick-start/  Vue.js 2.0 快速上手 - 基础篇
+
 
 https://segmentfault.com/a/1190000006741478  vue-cli + webpack 多页面实例配置优化方法
 https://segmentfault.com/a/1190000005863691   使用 Vuex + Vue.js 构建单页应用

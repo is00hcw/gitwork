@@ -9,6 +9,15 @@ http://blog.csdn.net/kkk584520?spm=5176.100239.blogcont57695.6.Yhlwvx
 http://blog.csdn.net/kkk584520/article/details/51476816
 https://my.oschina.net/editorial-story/blog/826663   
 
+可以先通过 keras 上手，这是一个支持 TensorFlow 的上层封装 
+TensorFlowOnSpark，或从 sklearn+numpy+pandas 开始
+TensorFlow其分布式有 in-graph 和 between-gragh 两种架构模式
+其实一个 in-graph 就是模型并行，将模型中不同节点分布式地运行；between-graph 就是数据并行，同时训练多个 batch 的数据。要针对神经网络结构来设计，模型并行实现难度较大，而且需要网络中天然存在很多可以并行的节点。因此一般用数据并行的比较多。
+估值网络是深度强化学习中的一个模型，可以用来解决常见的强化学习问题，比如下棋，自动玩游戏，机器控制等等。
+实际上线生成可以使用 TensorFlow Serving
+https://my.oschina.net/editorial-story/blog/857784
+http://mt.sohu.com/20170219/n481131001.shtml
+
 机器学习公开课：
 coursera：https://www.coursera.org/learn/machine-learning
 网易公开课：http://open.163.com/special/opencourse/machinelearning.html
@@ -50,3 +59,11 @@ http://www.infoq.com/cn/articles/recommendation-algorithm-overview-part01?utm_ca
 http://colobu.com/2015/11/30/movie-recommendation-for-douban-users-by-spark-mllib/   使用Spark MLlib给豆瓣用户推荐电影
 
 https://medium.com/learning-new-stuff/how-to-learn-neural-networks-758b78f2736e#.20hej91el  Learning How To Code Neural Networks
+
+
+ios
+https://depthlove.github.io/2017/01/16/tensorflow-iOS-application/
+http://www.jianshu.com/p/cba9142f964b
+http://www.mattrajca.com/2016/11/25/getting-started-with-deep-mnist-and-tensorflow-on-ios.html
+from the root of your TensorFlow source folder:
+1 tensorflow/contrib/makefile/build_all_ios.sh 

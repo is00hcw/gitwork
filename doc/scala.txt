@@ -13,6 +13,7 @@ https://my.oschina.net/yangbajing/blog/717763  写给Java程序员的Scala入门
 https://github.com/helloscala/spring-boot-scala
 https://github.com/yangbajing/play-seed  
 https://my.oschina.net/yangbajing/blog/756191  Java/Scala互操作实践 1：基础操作
+http://zhangyi.farbox.com/post/architecture/our-practice-based-on-scala  基于Scala的产品开发实践
 
 https://my.oschina.net/yangbajing/blog/107745  sbt  https://github.com/CSUG/real_world_scala/blob/master/02_sbt.markdown
 http://colobu.com/2016/01/04/Scala-magic-functions/   Scala 魔法函数

@@ -1,3 +1,9 @@
+http://gosspublic.alicdn.com/aliyun-oss-sdk-4.6.0.min.js
+http://www.jianshu.com/p/645f63745abd  vue页面使用阿里oss上传功能
+https://help.aliyun.com/document_detail/32069.html   
+https://github.com/rockuw/oss-in-browser  https://github.com/rockuw/node-sts-app-server
+<script src="https://www.promisejs.org/polyfills/promise-6.1.0.js"></script>  
+
 http://oss-demo.aliyuncs.com/ram-policy-editor/?spm=5176.100239.blogcont60418.20.1hX9FK  oss ram policy
 后端端口使用9080端口（该端口为路由服务acsrouting_routing在每一台ECS主机上暴露的端口，所有的http请求会在路由服务acsrouting_routing上根据http协议的HOSTheader转发到相应的提供各种服务的容器内）
 slb实例会将集群中的所有节点加入作为后端，同时前端会暴露80端口，后端所有节点的机器会暴露9080端口，我们会启动一个路由应用，应用的名称叫”acsrouting”，是阿里云容器服务路由应用(Aliyun Container Service Routing)
