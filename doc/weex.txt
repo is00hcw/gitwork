@@ -10,6 +10,8 @@ sudo npm install -g ios-deploy --unsafe-perm=true
 npm install -g vue vue-cli 
 npm i vue-resource vue-router vuex --save
 
+http://www.jianshu.com/p/41cde2c62b81   Weex 是如何在 iOS 客户端上跑起来的
+http://www.jianshu.com/p/ac534f508fb0  深入浅出 JavaScriptCore
 https://m.aliyun.com/yunqi/articles/68818  Weex Conf回顾集锦：讲义PDF+活动视频
 https://github.com/xkli/WXSample.git
 https://github.com/weexteam/article/issues/25   WEEX SDK集成到工程(Integrate to Android)

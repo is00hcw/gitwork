@@ -1,5 +1,26 @@
-﻿http://www.cnblogs.com/dushao/p/5999596.html   微信小程序开发常见问题分析
+﻿https://www.awesomes.cn/repos/Dom/Frameworks?sort=trend  前端框架
+http://www.cnblogs.com/icyhoo/p/6282574.html  微信小程序UI组件、开发框架
+http://www.oschina.net/project/tag/418/weixin?lang=0&os=0&sort=time  开源框架
+http://www.cnblogs.com/dushao/p/5999596.html   微信小程序开发常见问题分析
 https://my.oschina.net/huangxiujie/blog/817654  小程序服务端集成微信支付
+http://blog.csdn.net/qq_28057577/article/details/55207786   小程序框架总结
+
+https://github.com/XpmJS/xpmjs
+https://wepyjs.github.io/wepy 小程序组件化开发框架 
+https://github.com/maichong/labrador  微信小程序模块化开发框架
+https://github.com/phodal/weapp-quick
+https://github.com/weui/weui-wxss
+https://github.com/weui/weui-design 设计图
+http://wevue.org/
+https://github.com/youzan/zanui-weapp
+
+https://github.com/localtunnel/localtunnel  暴露本地服务
+https://github.com/pd4d10/js-stack-from-scratch  从零开始构建 JavaScript 技术栈 - 中文版
+http://www.jianshu.com/p/f454c9122dcb  编写 Node.js Rest API 的 10 个最佳实践
+http://www.jianshu.com/p/86cd92bc4d8e  80% 应聘者都不及格的 JS 面试题
+http://www.jianshu.com/p/e9753d98fee4  你不知道的 JS 错误和调用栈常识
+husky 是GitHub上一个开源项目，它的做法是在 npm install 这个模块的时候自动在 .git/hooks 目录下创建很多hooks，然后再在package.json中指定每一个hook的执行脚本
+
 
 http://iot.weixin.qq.com/document-2_5.html  获取设备二维码
 http://mp.weixin.qq.com/wiki/18/28fc21e7ed87bec960651f0ce873ef8a.html    目前有2种类型的二维码，分别是临时二维码和永久二维码，前者有过期时间，最大为1800秒，但能够生成较多数量，后者无过期时间，数量较少（目前参数只支持1--100000）。两种二维码分别适用于帐号绑定、用户来源统计等场景。

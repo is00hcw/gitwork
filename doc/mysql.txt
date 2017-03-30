@@ -1,6 +1,7 @@
 ﻿可创建表数量，跟容量有关，1G 存储空间可创建 512 张表。比如购买的存储空间为 20G，那么最多可以创建 512*20=1W 张表。 shown processlist 的行对应的 Host 就是用户的出口 IP。
 MySQL数据库delete数据时，不支持表别名
 http://www.leexh.com/blog/2014/07/10/mysql-item-compare-bug/   Mysql查询类型转换诡异问题
+https://www.pureweber.com/article/mysql-conditional-count/  Mysql按条件计数的几种方法
 数字类型的索引,如果传入字符串可以使用索引. 字符串类型的索引,如果查询数字无法使用索引. https://blog.xupeng.me/2012/02/08/type-conversion-and-index-selection-of-mysql/
 id字段是字符串型，当我用整数型0作为where条件去与其比对时，字符串id被自动转为整数型，也就成了0。自然就把所有记录都给匹配出来了
 select 11 + '11', 11 + 'aa', 'a1' + 'bb', 11 + '0.01a';    http://seanlook.com/2016/05/05/mysql-type-conversion/
@@ -9,6 +10,7 @@ select 11 + '11', 11 + 'aa', 'a1' + 'bb', 11 + '0.01a';    http://seanlook.com/2
 0.01a转成double型也是被截断成0.01，所以11 + '0.01a' = 11.01。
 TRUNCATE TABLE '表名' 这样就利用SQL语句清空了该数据表，而不保留日志。
 MySQL优化器只有两个自由度：顺序选择；单表访问方式   https://yq.aliyun.com/articles/11222
+https://yq.aliyun.com/articles/72501?spm=5176.100239.bloglist.29.nbe69c    MySQL · 性能优化 · MySQL常见SQL错误用法
 http://tech.meituan.com/mysql-index.html   MySQL索引原理及慢查询优化
 https://github.com/Meituan-Dianping/SQLAdvisor  美团开源 SQL 优化工具 SQLAdvisor   https://www.oschina.net/news/82725/sqladvisor-opensource
 

@@ -44,6 +44,11 @@ const HelloMessage = (props) => <div>Hello {props.name}</div>;
 https://segmentfault.com/a/1190000006685370
 
 
+编码风格
+https://github.com/sivan/javascript-style-guide/blob/master/es5/README.md
+https://github.com/yuche/javascript
+http://blog.gejiawen.com/2015/07/27/es5-new-api/  ECMAScript5.1及其新增API简介
+http://yanhaijing.com/javascript/2015/09/11/learn-es2015/   ECMAScript 2015 简易教程
 
 react
 https://my.oschina.net/chkui/blog/789871  React由0到1

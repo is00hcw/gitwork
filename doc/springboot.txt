@@ -1,5 +1,9 @@
 mvn archetype:generate -DgroupId=com.wanke -DartifactId=wanke_stock_api -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
 
+http://blog.csdn.net/xiaoyu411502/article/details/47865561  部署Spring Boot应用
+https://opencredo.com/experiences-with-spring-boot/  Experiences with Spring Boot
+https://github.com/teaey/spring-boot-starter-dubbo   springboot dubbo
+http://www.bysocket.com/?page_id=1639#    Spring boot那些事   https://github.com/JeffLi1993/springboot-learning-example
 http://blog.javachen.com/2016/02/22/profile-usage-in-spring-boot.html  通过不同的profile，可以有对应的资源文件application-{profile}.properties。例如，application-dev.properties   
 http://blog.javachen.com/2016/02/22/devtools-in-spring-boot.html   DevTools in Spring Boot
 http://blog.javachen.com/2016/02/19/spring-boot-auto-configuration.html   
@@ -9,6 +13,7 @@ http://blog.javachen.com/2016/02/19/spring-boot-auto-configuration.html
 
 mapperHelper.processConfiguration(sqlSessionFactory.getConfiguration()); // 通用mapper
 sqlSessionFactory.getConfiguration().addInterceptor(interceptor);  // 分页
+https://waylau.gitbooks.io/spring-security-tutorial/content/   Spring Security 教程   https://github.com/waylau/spring-security-tutorial
 https://github.com/johntostring/spring-boot-shiro
 https://patrickgrimard.io/2016/01/18/spring-boot-devtools-first-look/
 http://yukinami.github.io/2016/05/28/%E7%94%A8Spring-Test%E8%BF%9B%E8%A1%8C%E9%A1%B5%E9%9D%A2%E7%9A%84%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95/    用Spring Test进行页面的功能测试
@@ -23,6 +28,7 @@ EnableAutoConfigurationImportSelector类使用了Spring Core包的SpringFactoriesLoade
 http://blog.5ibc.net/p/103504.html  Spring Boot的强大之处在于使用了Spring 4框架的新特性：@Conditional注释，此注释使得只有在特定条件满足时才启用一些配置。 
 值得注意的是，optional=true 表示依赖不会传递，换句话说，其他依赖该项目的项目，如果想要使用 devtools，需要重新引入
 https://www.mkyong.com/spring-boot/spring-boot-configurationproperties-example/   Spring Boot @ConfigurationProperties example
+
 
 扩展
 http://liuxi.name/blog/20161228/spring-container-extension.html  Spring生命周期回调与容器扩展
