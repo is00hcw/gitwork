@@ -13,6 +13,8 @@ MySQL优化器只有两个自由度：顺序选择；单表访问方式   https:
 https://yq.aliyun.com/articles/72501?spm=5176.100239.bloglist.29.nbe69c    MySQL · 性能优化 · MySQL常见SQL错误用法
 http://tech.meituan.com/mysql-index.html   MySQL索引原理及慢查询优化
 https://github.com/Meituan-Dianping/SQLAdvisor  美团开源 SQL 优化工具 SQLAdvisor   https://www.oschina.net/news/82725/sqladvisor-opensource
+https://segmentfault.com/a/1190000008131735  MySQL 性能优化神器 Explain 使用分析
+http://blog.csdn.net/joyous/article/details/53898972    SQL 多表复合查询修改 update set select
 
 spring.datasource.initSQL=set names utf8mb4
 int类型占4个字节，tinyint占1个字节。int(1) 和 int(4) 从本身长度还是存储方式上都是一样的，区别就是显示的长度不同，但是要设置一个参数：如果列制定了zerofill 就会用0填充显示，int(4)指定后就会显示为0002

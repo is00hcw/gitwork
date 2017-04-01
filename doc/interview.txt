@@ -4,6 +4,10 @@ https://my.oschina.net/huangyong/blog/164040   软件设计原则  SOLID
 http://www.ruanyifeng.com/blog/2016/09/software-architecture.html  软件架构入门
 https://yq.aliyun.com/articles/71673?spm=5176.100239.bloglist.77.wzsiSN  用大白话聊聊分布式系统
 https://yq.aliyun.com/articles/69520?spm=5176.2020520001.341724.3.RbZw5w   我的java问题排查工具单
+https://segmentfault.com/a/1190000008131735  MySQL 性能优化神器 Explain 使用分析
+http://mp.weixin.qq.com/s/hGnpHfn7a7yxjPBP78i4bg  解决分布式系统的一致性问题，我们需要了解哪些理论
+https://segmentfault.com/a/1190000007282628  Netty 源码分析教程
+
 模块划分,职责,接口,交互,选型,约束,适应变化
 double a = 0.1; 所创建的new BigDecimal(a);并不正好等一0.1，而是0.1000000000000000055511151231257827021181583404541015625 这是因为doule不能表示为任何有限长度的二进制小数。
 

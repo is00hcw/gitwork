@@ -45,7 +45,7 @@ registry.cn-hangzhou.aliyuncs.com/acs-sample/alisql:latest
 aliyun.global: true # Ã¿Ì¨»úÆ÷¾ù²¿ÊğÒ»¸önginxÈİÆ÷£¬´ïµ½¸ß¿ÉÓÃÄ¿µÄ
 return 301 https://$host$request_uri;
 
-
+https://segmentfault.com/a/1190000006907443?utm_source=tuicool&utm_medium=referral  Ê¹ÓÃ Docker Ò»²½¸ã¶¨ ZooKeeper ¼¯ÈºµÄ´î½¨
 http://open.daocloud.io/ru-he-yong-docker-compose-pei-zhi-django-ying-yong-kai-fa-huan-jing/   ÈçºÎÓÃ Docker Compose ÅäÖÃ Django Ó¦ÓÃ¿ª·¢»·¾³
 https://mp.weixin.qq.com/s?__biz=MzIzNjUxMzk2NQ==&mid=2247484639&idx=1&sn=7a035c7c413b75808a67ddcec99ee21b   Docker¡¢Containerd¡¢RunC ÄãÓ¦¸ÃÖªµÀµÄËùÓĞ
 https://yq.aliyun.com/articles/69382?spm=5176.100239.blogrightarea69570.13.swjHZn   DockerÈÕÖ¾ÊÕ¼¯ĞÂ·½°¸£ºfluent-pilot
@@ -57,6 +57,7 @@ http://www.howtoing.com/how-to-remove-docker-images-containers-and-volumes/  Èçº
 https://github.com/yangtao309/yangtao309.github.com/issues/1
 ÒªÊÖ¶¯É¾³ıËùÓĞ²å¼ş²¢½â¾ö´ËÎÊÌâ£¬ÇëÖ´ĞĞÒÔÏÂ²½Öè£º´Ó /var/lib/docker/plugins/ ÖĞÉ¾³ı plugins.json
 
+https://github.com/AliyunContainerService/DevOps?spm=5176.100239.blogcont72917.15.l4JEqT   °¢ÀïÔÆÈİÆ÷·şÎñ³ÖĞø½»¸¶
 https://yq.aliyun.com/articles/64970?spm=5176.100239.0.0.68bt6N  Ê¹ÓÃ°¢ÀïÔÆÈİÆ÷·şÎñJenkins 2.0ÊµÏÖ³ÖĞø¼¯³ÉÖ®PipelineÆª
 https://yq.aliyun.com/articles/66478?spm=5176.100238.goodcont.60.dtkE9k   ´î½¨Ë½ÓĞdocker²Ö¿â²¢Ê¹ÓÃOSS×÷Îª´æ´¢
 https://yq.aliyun.com/articles/61083?spm=5176.100244.teamconlist.41.Z5uTmf  °¢ÀïÔÆÈİÆ÷·şÎñ-ÅäÖÃhttpÖ±½ÓÌø×ªµ½https

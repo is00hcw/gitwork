@@ -17,7 +17,8 @@ NF是个代表总列数的系统变量，所以$NF代表最后一列，还支持
 也可以正则表达式定义多个分割符，下例指定了 '-' 和 ':'
  awk -F '[-:]' '{print $1,$2}’ access.log
 http://calvin1978.blogcn.com/articles/awk_accesslog.html
-
+https://yq.aliyun.com/articles/72012?spm=5176.100244.teamhomeleft.10.J7L3Tj   Sed&awk笔记系列
+https://yq.aliyun.com/articles/72014?spm=5176.100239.0.0.4GMyOC   简洁的 Bash Programming 技巧
 
 https://help.aliyun.com/knowledge_detail/5980334.html?pos=4  linux磁盘空间用满的处理方法
 df -h  查看磁盘空间占用，实际上是查看磁盘块占用的文件（block）
