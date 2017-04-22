@@ -4,7 +4,7 @@ https://github.com/Unknwon/go-fundamental-programming
 https://wide.b3log.org/playground
 https://wide.b3log.org/
 https://github.com/mailgun/godebug
-https://github.com/teambition/gear Go 语言的 Web 服务框架 Gear-go  
+https://github.com/teambition/gear Go 语言的 Web 服务框架 Gear-go    https://github.com/teambition/gear/blob/master/doc/design.md
 
 http://it.taocms.org/05/10911.htm  gokit
 http://studygolang.com/articles/7010

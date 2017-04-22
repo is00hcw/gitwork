@@ -11,6 +11,37 @@ http://www.infoq.com/cn/articles/introducing-reactmix   ReactMix：基于HTML+JS+CS
 https://mp.weixin.qq.com/s?__biz=MzA3ODg4MDk0Ng==&mid=2651112408&idx=1&sn=32c2636a2653fe9391b44de514261cbf   Moles：携程基于React Native的跨平台开发框架
 
 http://www.cnblogs.com/Upton/p/6180512.html  axios基本用法
+https://github.com/sorrycc/blog/issues/1   React + Redux 最佳实践
+https://github.com/sorrycc/blog/issues/8   dva 入门：手把手教你写应用
+https://github.com/sorrycc/blog/issues/18  12 步 30 分钟，完成用户管理的 CURD 应用 
+https://eggjs.org/zh-cn/tutorials/index.html
+http://ant-tool.github.io/dora.html  
+https://github.com/sorrycc/blog/issues/6   支付宝前端应用架构的发展和选择
+
+
+可视化
+https://motion.ant.design/edit#t%3Dnav_0_0%2Ccontent_0_0%2Ccontent_2_0%2Ccontent_3_0%2Ccontent_4_0%2Cfooter_0_0    主页编辑器   https://github.com/ant-motion/ant-motion-dva-cli-example/tree/master/src/routes/Home
+https://mobile.ant.design/docs/react/getting-started
+https://antv.alipay.com/g2/doc/tutorial/start/rc-g2.html   react 组件中使用 G2，我们封装了 g2-react 组件
+https://antv.alipay.com/vis/doc/chart/classify/compare.html  可视化基础
+https://antv.alipay.com/g6/tools/index.html   https://antv.alipay.com/g6/demo/index.html
+https://antv.alipay.com/g2-mobile/demo/07-candle/candle.html
+https://antv.alipay.com/g2/demo/index.html
+https://motion.ant.design/exhibition/   动效
+https://mobile.ant.design/index-cn  布局
+https://design.alipay.com/design/web/principle  设计原则
+https://design.alipay.com/design/mobile/easy
+
+https://www.iviewui.com/docs/guide/introduce
+http://ux.ant.design/
+https://github.com/ecomfe/echarts-gl
+http://uxco.re/components/button/     https://github.com/Jias/natty-fetch
+https://www.awesomes.cn/   前端组件库
+
+
+后台管理
+https://github.com/lin-xin/vue-manage-system
+
 
 首屏优化
 http://www.jianshu.com/p/a72b1c9d8c32   react博客开发记录之首屏优化  webpack.optimize.UglifyJsPlugin   webpack.optimize.CommonsChunkPlugin 

@@ -11,6 +11,11 @@ http://mp.weixin.qq.com/s/qRW_akbU3TSd0SxpF3iQmQ   DynamicCocoa：滴滴 iOS 动
 http://pingguohe.net/2016/12/20/Tangram-design-and-practice.html    页面动态化的基础 —— Tangram
 https://github.com/wequick/Small
 
+http://www.jianshu.com/p/87ef6720a096    最快让你上手ReactiveCocoa之基础篇
+http://www.jianshu.com/p/e10e5ca413b7   最快让你上手ReactiveCocoa之进阶篇
+https://github.com/SnapKit/Masonry  自动布局
+
+
 http://www.cnblogs.com/kenshincui/p/3985090.html
 http://www.cnblogs.com/kenshincui/p/3890880.html  IOS程序开发概览
 http://www.cnblogs.com/csharpstyle/articles/4176630.html    Ad Hoc 方式发布 APP
@@ -185,6 +190,8 @@ https://leancloud.cn/
 http://www.zhihu.com/question/22098754
 
 thread
+https://www.zybuluo.com/MicroCai/note/64272   Effective Objective-C Notes：GCD 实现同步锁
+http://tutuge.me/2015/04/03/something-about-gcd/    GCD使用经验与技巧浅谈
 http://blog.csdn.net/guodongsun0/article/details/46380895
 [self performSelectorInBackground:@selector(loadImage:) withObject:[NSNumber numberWithInt:i]];
 [self performSelectorOnMainThread:@selector(updateImage:) withObject:imageData waitUntilDone:YES];
@@ -197,3 +204,6 @@ GCD(Grand Central Dispatch)是基于C语言开发的一套多线程开发机制�
 dispatch_queue_t mainQueue= dispatch_get_main_queue();   //更新UI界面,此处调用了GCD主线程队列的方法
 dispatch_queue_t globalQueue=dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);   // 取得一个全局的并发队列
 可以使用NSThread的currentThread方法取得当前线程，使用 sleepForTimeInterval:方法让当前线程休眠。
+
+http://tutuge.me/2016/03/29/modular-and-component-summary/  对组件化与模块化的思考与总结 
+http://tutuge.me/2016/12/25/TTGPuzzleVerify/   开源项目-拼图验证控件TTGPuzzleVerify的实现

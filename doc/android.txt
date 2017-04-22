@@ -10,6 +10,12 @@ HttpDNS是使用HTTP协议向DNS服务器的80端口进行请求，代替传统的DNS协议向DNS服务器的
 
 http://pingguohe.net/2016/03/21/Dynimac-write-infomation-into-apk.html   一种动态为apk写入信息的方案
 http://pingguohe.net/2016/02/26/Android-App-secure-ssl.html  android https  
+https://jaq.alibaba.com/community/art/show?articleid=545   Android安全开发之安全使用HTTPS
+https://segmentfault.com/a/1190000004669570  Android 应用安全开发之浅谈加密算法的坑
+https://www.oschina.net/question/2625381_2234666  【阿里聚安全技术公开课】移动APP漏洞风险与解决方案
+https://pingplusplus.kf5.com/hc/kb/article/212345/  各个语言签名生成的示例
+
+
 https://my.oschina.net/vimfung/blog/744795   使用Android Studio进行JNI开发 － Mac篇
 http://blog.coderclock.com/2016/07/04/android/%E9%82%A3%E4%BA%9B%E5%80%BC%E5%BE%97%E4%BD%A0%E8%AF%95%E8%AF%95%E7%9A%84Android%E7%AB%9E%E5%93%81%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7/   那些值得你试试的Android竞品分析工具
 https://github.com/shwenzhang/AndResGuard  压缩apk
@@ -21,6 +27,8 @@ http://alighters.com/blog/2017/01/16/multidex-generate/     理解 Multidex 生成
 http://tangram.pingguohe.net/    Tangram，七巧板，是天猫团队开源的跨平台模块化 UI 界面方案   http://pingguohe.net/2017/03/30/what-is-tangram.html
 http://pingguohe.net/abouttangram/
 
+http://mp.weixin.qq.com/s/1p5Y0f5XdVXN2EZYT0AM_A    Android 插件技术实战总结
+https://github.com/rickdynasty/TwsPluginFramework   腾讯
 https://github.com/alibaba/atlas  手淘   http://atlas.taobao.org/docs/principle-intro/Runtime_principle.html
 https://github.com/alibaba/ARouter
 http://www.jianshu.com/p/7cb2cc9b726a?from=groupmessage  简单好用的Android页面路由框架

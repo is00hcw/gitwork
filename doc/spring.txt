@@ -1,6 +1,7 @@
 ﻿http://www.cnblogs.com/wcongcode/p/5482239.html   深入Spring:自定义注解加载和使用
 
 namespace -->  handler --> parser --> BeanPostProcessor
+https://my.oschina.net/dachengxi/blog/874466  SpringMVC执行流程及源码解析
 https://yq.aliyun.com/articles/57657?spm=5176.8067842.tagmain.64.GiXHiP
 spring.schema定义配置文档的文法规范，spring.handler定义客户化配置的解析工具--就可以将bean接入到spring容器里。Bean接入后还可以通过实现BeanPostProcessor或者init-method对bean做后处理甚至替换bean。
 Spring-beans的核心实体是BeanDefinition和BeanFactory。前者映射我们的定义，后者则是依据定义生产bean的工厂。

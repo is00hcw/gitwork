@@ -1,5 +1,6 @@
 ﻿http://kriszhang.com/motan-rpc-impl/  从motan看RPC框架设计
 https://github.com/weibocom/motan  微博rpc
+http://www.oschina.net/news/83719/tencent-tars-opensource   腾讯开源微服务架构 Tars，高性能 RPC 开发框架
 https://help.aliyun.com/document_detail/35478.html?spm=5176.7946893.222623.7.T2X8UJ   EDAS Dubbo使用指南
 
 启动时，需要指定参数-Ddubbo.shutdown.hook=true

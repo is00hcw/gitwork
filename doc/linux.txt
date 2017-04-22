@@ -1,6 +1,6 @@
 ﻿https://yq.aliyun.com/articles/7954?spm=5176.blog8954.yqblogcon1.13.drafBl   Linux工具快速上手，Linux很实用命令
 http://linuxtools-rst.readthedocs.org/zh_CN/latest/base/01_use_man.html
-
+https://www.oschina.net/translate/bash-scripting-quirks-safety-tips?lang=chs&page=1   编写快速安全 Bash 脚本的建议 
 
 检查连接  netstat -tan | awk '{print $6}' | sort | uniq -c 
 ss -s 
