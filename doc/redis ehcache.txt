@@ -11,7 +11,7 @@ http://git.oschina.net/284520459/nredis-proxy      https://git.oschina.net/28452
 https://my.oschina.net/liubingsmile/blog/786465  nredis-proxy 高性能Redis 服务中间件  https://my.oschina.net/liubingsmile/blog/825474  http://mt.sohu.com/20170217/n480942237.shtml
 http://blog.9i0i.com/?u013970991/article/details/53142780
 
-
+http://www.oschina.net/news/84232/xiecheng-opensource-xpipe    携程开源 Redis 多数据中心复制管理系统 X-Pipe
 https://github.com/sreeix/redis-proxy
 https://github.com/wandoulabs/codis/blob/release3.0/doc/tutorial_zh.md   codis 3.0
 http://my.oschina.net/vampire/blog/639329

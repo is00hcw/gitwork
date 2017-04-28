@@ -10,11 +10,21 @@ http://blog.fir.im/fir-im-weekly161223/   iOS / Android 动态化更新方案盘
 http://mp.weixin.qq.com/s/qRW_akbU3TSd0SxpF3iQmQ   DynamicCocoa：滴滴 iOS 动态化方案的诞生与起航.  DynamicCocoa 这种方案，绕了一个更大的道，从编译阶段入手，通过 clang 把 OC 代码编译成自己定制的 JS 格式，再动态下发去执行，做到原生开发，动态运行，主打动态添加功能
 http://pingguohe.net/2016/12/20/Tangram-design-and-practice.html    页面动态化的基础 —— Tangram
 https://github.com/wequick/Small
-
-http://www.jianshu.com/p/87ef6720a096    最快让你上手ReactiveCocoa之基础篇
-http://www.jianshu.com/p/e10e5ca413b7   最快让你上手ReactiveCocoa之进阶篇
 https://github.com/SnapKit/Masonry  自动布局
 
+http://www.jianshu.com/p/87ef6720a096   最快让你上手ReactiveCocoa之基础篇
+http://www.jianshu.com/p/e10e5ca413b7   最快让你上手ReactiveCocoa之进阶篇
+RAC核心是Signal，对应的类为RACSignal。它其实是一个信号源，Signal会给它的订阅者（Subscriber）发送一连串的事件，一个Signal可比作流水线中的一段管线，负责决定管线传输什么样的数据。Subscriber是Signal的订阅者，我们将Subscriber比作管线上的工人，它在拿到数据后对其进行加工处理。
+管线启动后，会返回一个RACDisposable对象。外部可以通过[RACDisposable dispose]方法随时停止这段管线的工作。一旦管线停止，subscriber worker将不再处理管线传送过来的任何类型的数据。
+http://www.jianshu.com/p/d262f2c55fbe   http://www.jianshu.com/p/5bc3a4c971c6   Promise,RAC与高阶函数
+http://www.cocoachina.com/ios/20150817/13071.html
+http://draveness.me/racchannel.html?utm_source=tuicool&utm_medium=referral  RAC 中的双向数据绑定 RACChannel
+http://draveness.me/racdelegateproxy.html   从代理到 RACSignal
+
+http://www.jianshu.com/p/2e7200bd5b79  HTTP 2.0 使用新的二进制格式：基本的协议单位是帧，每个帧都有不同的类型和用途，规范中定义了10种不同的帧。例如，报头(HEADERS)和数据(DATA)帧组成了基本的HTTP 请求和响应；其他帧例如 设置(SETTINGS),窗口更新(WINDOW_UPDATE), 和推送承诺(PUSH_PROMISE)是用来实现HTTP/2的其他功能。
+https://youzanmobile.github.io/2017/03/13/webview-container-ios/   iOS WebView 的 Hybrid 框架设计
+https://youzanmobile.github.io/2017/03/29/iconfont-in-app/   App中使用Iconfont的整套方案
+https://youzanmobile.github.io/2017/04/07/security-on-mobile/   安全图片方案
 
 http://www.cnblogs.com/kenshincui/p/3985090.html
 http://www.cnblogs.com/kenshincui/p/3890880.html  IOS程序开发概览

@@ -14,6 +14,8 @@ https://jaq.alibaba.com/community/art/show?articleid=545   Android安全开发之安全
 https://segmentfault.com/a/1190000004669570  Android 应用安全开发之浅谈加密算法的坑
 https://www.oschina.net/question/2625381_2234666  【阿里聚安全技术公开课】移动APP漏洞风险与解决方案
 https://pingplusplus.kf5.com/hc/kb/article/212345/  各个语言签名生成的示例
+http://mp.weixin.qq.com/s/u7qZp7ifUZoty8d8McH5QA     Android 减包 － 减少APK大小
+
 
 
 https://my.oschina.net/vimfung/blog/744795   使用Android Studio进行JNI开发 － Mac篇
@@ -21,8 +23,13 @@ http://blog.coderclock.com/2016/07/04/android/%E9%82%A3%E4%BA%9B%E5%80%BC%E5%BE%
 https://github.com/shwenzhang/AndResGuard  压缩apk
 https://github.com/tangqi92/Android-Tips   
 http://alighters.com/blog/2016/05/02/rxjava-plus-retrofitshi-xian-wang-luo-dai-li/   Rxjava+Retrofit 实现全局过期 Token 自动刷新
+http://tech.youzan.com/android_http/   有赞Android客户端网络架构演进
 http://alighters.com/blog/2017/01/16/multidex-generate/     理解 Multidex 生成
 
+https://youzanmobile.github.io/2017/04/14/youzan-app-modularization/   有赞 App 模块化实战经验总结
+要做到彻底隔离就必须打破这两种耦合关系：页面解耦 - 跳转协议    功能解耦 - 模块间 RPC
+https://youzanmobile.github.io/2017/04/10/app-config/  有赞 App 动态化配置中心实践
+https://youzanmobile.github.io/2017/03/01/zan-app-updater/  Android 强升逻辑和实现  https://github.com/LyndonChin/ZanAppUpdater
 
 http://tangram.pingguohe.net/    Tangram，七巧板，是天猫团队开源的跨平台模块化 UI 界面方案   http://pingguohe.net/2017/03/30/what-is-tangram.html
 http://pingguohe.net/abouttangram/

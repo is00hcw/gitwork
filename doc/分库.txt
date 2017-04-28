@@ -32,6 +32,8 @@ http://blog.ddup.us/2012/05/24/id-generation-in-distributed-environment/
 SnowFlake 41bit留给毫秒时间，10bit给MachineID，也就是机器要预先配置，剩下12位留给Sequence。
 微博使用了秒级的时间，用了30bit，Sequence 用了15位，理论上可以搞定3.2w/s的速度。用4bit来区分IDC，也就是可以支持16个 IDC，对于核心机房来说够了。剩下的有2bit 用来区分业务，由于当前发号服务是机房中心式的，1bit 来区分热备。是的，也没有用满64bit。
 
+https://my.oschina.net/editorial-story/blog/888650    深度认识 Sharding-JDBC：做最轻量级的数据库中间层
+https://www.slahser.com/2016/06/25/%E5%BD%93%E5%BD%93%E7%9A%84sharding-jdbc%E6%BA%90%E7%A0%81%E8%A7%A3%E8%AF%BB/   当当的sharding Jdbc源码解读
 http://gao-xianglong.iteye.com/blog/2019729  tddl
 http://itindex.net/detail/54369-%E9%87%8F%E7%BA%A7-mysql-sharding
 http://www.lanindex.com/%E4%B8%80%E8%87%B4%E6%80%A7%E5%93%88%E5%B8%8C%E7%AE%97%E6%B3%95%EF%BC%88consistent-hash%EF%BC%89%E7%9A%84%E9%BB%91%E7%A7%91%E6%8A%80/  一致性哈希(Jump Consistent Hash)

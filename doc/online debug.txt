@@ -1,6 +1,17 @@
 hbase:60010/master-status
 hbase:60010/zk.jsp
 
+Jmap是JDK自带的堆分析工具Java Memory Map，可以通过此工具打印出某个Java进程内存内的所有对象大小和数量；建议在测试环境中使用jmap -histo:live命令查询，执行此命令会触发一次Full GC）
+jmap -histo:live 20881 | grep QueryPartnerImpl
+jmap -dump:format=b,file=/tmp/heap.bin 20881
+jhat  /tmp/heap.bin
+Jhat是JDK自带的堆分析工具Java Heap Analyse Tool，可以将堆中的对象以HTML的形式显示出来，包括对象的数量、大小等，默认端口7000
+http://tech.meituan.com/mt-trip-springmvc-service-annotation-problem-research.html  Spring MVC注解故障追踪记
+http://josh-persistence.iteye.com/blog/2161848
+javOSize  -javaagent:javosize.jar  或者  java -jar javosize.jar <PID>
+http://leaver.me/2015/07/04/javOSize-%E6%96%B0%E4%B8%80%E4%BB%A3java%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7/?utm_source=tuicool&utm_medium=referral
+
+
 btrace
 http://qa.blog.163.com/blog/static/19014700220142257572460
 http://blog.csdn.net/wilsonpeng3/article/details/52576253
