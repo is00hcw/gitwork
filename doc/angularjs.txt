@@ -3,7 +3,7 @@ https://angular-2-training-book.rangle.io/
 http://www.cnblogs.com/yangxiao/p/5885286.html
 https://augury.angular.io/
 http://www.tuicool.com/articles/z6V3Ubz
-http://blog.csdn.net/a1104258464/article/details/51914450   webpack
+
 http://www.angularjs.cn/A2uB
 
 https://github.com/hacking-with-angular/angular2-travel.git

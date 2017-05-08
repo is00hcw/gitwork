@@ -74,12 +74,7 @@ http://www.w3cfuns.com/notes/15904/cad84afddab13604f987cbf511d265e4.html
 https://segmentfault.com/q/1010000005169531/a-1020000005170343  第三方
 http://blog.csdn.net/usluckily/article/details/51861892
 因为 Vue.js 指令是异步更新，如果想在修改数据之后修改 DOM ，应当在 Vue.nextTick 的回调中操作。
-http://webpack.github.io/docs/shimming-modules.html  三方库
-new webpack.optimize.CommonsChunkPlugin('common.js'),
-new webpack.ProvidePlugin({
-jQuery: "jquery",
-$: "jquery"
-})
+
 https://segmentfault.com/a/1190000004267935
 你可以直接就用 vue init <template-name> <project-name> 使用。你也可以运行 vue list 命令来看看现在有哪些官方模板是现在可用的。
 目前有以下模板可供选择：
@@ -111,28 +106,6 @@ https://smallpath.me/post/vue2-ssr-email-template
 https://segmentfault.com/a/1190000007985486
  
 
-webpack
-https://ant-tool.github.io/dora.html   dora 本质就是使用 koa 模块启动一个 koa 服务器   dora --plugins webpack,livereload,jsonapi
-https://github.com/sorrycc/roadhog
-https://webpack.toobug.net/zh-cn/chapter3/config.html
-https://github.com/petehunt/webpack-howto#9-async-loading   https://github.com/petehunt/webpack-howto/blob/master/README-zh.md
-https://medium.com/@dabit3/beginner-s-guide-to-webpack-b1f1a3638460#.if6jjz9i4
-http://www.jbrantly.com/typescript-and-webpack/
-http://www.jbrantly.com/es6-modules-with-typescript-and-webpack/
-https://segmentfault.com/a/1190000003970448
-http://cookingjs.github.io/zh-cn/intro.html
-https://segmentfault.com/a/1190000004577578   优化
-http://www.alloyteam.com/2016/01/webpack-use-optimization/?utm_source=tuicool&utm_medium=referral
-https://zhuanlan.zhihu.com/p/20914387?refer=jscss
-https://segmentfault.com/a/1190000004728494
-https://segmentfault.com/a/1190000003006331  工具
-相比Grunt，WebPack除了具备丰富的插件外，同时带有一套加载（Loader）系统。使它支持多种规范的加载方式，包括ES6、CommonJS、AMD等方式，这是Grunt、Gulp所不具备的。
-符合AMD规范，如RequireJS
-符合CMD 规范，如SeaJS
-NodeJS规范 CommonJS
-ECMAScript 6的模块化
-http://www.cnblogs.com/ihardcoder/p/5378290.html  浅析前端工程化
-http://www.cnblogs.com/ihardcoder/p/6090779.html  https://boijs.github.io/boit/  https://boijs.github.io/res/
 
 rxjs
 https://fe.ele.me/let-us-learn-rxjs/   Observable.fromEvent   Observable.fromPromise   Rx.Observable.interval(1000)

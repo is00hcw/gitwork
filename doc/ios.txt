@@ -46,7 +46,17 @@ http://pingguohe.net/2016/12/20/Tangram-design-and-practice.html  页面动态�
 http://pingguohe.net/2016/01/31/lazyscroll.html    iOS 高性能异构滚动视图构建方案 —— LazyScrollView
 https://yq.aliyun.com/articles/71685?spm=5176.100239.blogcont71215.19.x83PHy   iOS大型项目解耦方案有难度？BeeHive设计优化来帮助
 http://www.jianshu.com/p/07f1cb2b2773  阿里BeeHive源码小读  https://github.com/alibaba/BeeHive
+https://www.v2ex.com/t/322579    BeeHive 是用于 iOS 的 App 模块化编程的框架实现方案
+http://www.jianshu.com/p/24f6299ebe82    BeeHive —— 一个优雅但还在完善中的解耦框架
+http://www.jianshu.com/p/76da56b3bd55  iOS 组件化 —— 路由设计思路分析
 https://github.com/meili/MGJRouter
+
+http://www.jianshu.com/p/8a54c26a9349  2016年3月iOS面试总结
+http://www.jianshu.com/p/cd4c816111db  给iOS 模拟器“安装”app文件
+http://www.jianshu.com/p/41ecb06ae95f  手把手教你利用Jenkins持续集成iOS项目
+http://www.jianshu.com/p/d085032d4788  由FlexBox算法强力驱动的Weex布局引擎
+
+ATS检测工具: 苹果电脑可以用自带的工具进行检测，命令如下：nscurl --ats-diagnostics --verbose 网址
 
 lua
 https://my.oschina.net/vimfung/blog/814212  Lua与ObjC的交互

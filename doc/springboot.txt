@@ -1,6 +1,14 @@
 mvn archetype:generate -DgroupId=com.wanke -DartifactId=wanke_stock_api -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
 
+部署
+java -jar demo.jar --spring.profiles.active=dev 
+可以通过参数指定一个外部配置文件   java -jar demo.jar --spring.config.location=/opt/config/application.properties
+nohup java -jar myapp.jar --spring.config.location=application.yml > /dev/null 2>&1 &
+tpid=`ps -ef|grep $APP_NAME|grep -v grep|grep -v kill|awk '{print $2}'`
+http://blog.csdn.net/catoop/article/details/50588851    Spring Boot 部署与服务配置
+http://blog.csdn.net/xiaoyu411502/article/details/48049099
 http://blog.csdn.net/xiaoyu411502/article/details/47865561  部署Spring Boot应用
+
 https://opencredo.com/experiences-with-spring-boot/  Experiences with Spring Boot
 https://github.com/teaey/spring-boot-starter-dubbo   springboot dubbo
 http://www.bysocket.com/?page_id=1639#    Spring boot那些事   https://github.com/JeffLi1993/springboot-learning-example

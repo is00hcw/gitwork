@@ -1,3 +1,10 @@
+kompose是一个可以在kubernetes运行docker-compose.yml的工具，也可以将docker-compose.yml转换为kubernetes的相应文件，非常便利。  https://segmentfault.com/a/1190000009161385
+Kargo 是基于 ansible 统一部署，所以必须安装 ansible  https://github.com/kubernetes-incubator/kargo
+http://aliacs-k8s.oss-cn-hangzhou.aliyuncs.com/installer/kubemgr-1.6.1.sh
+https://yq.aliyun.com/articles/73922?commentId=9499    当 Kubernetes 遇到阿里云 之 快速部署1.6.1版本
+
+https://zhuanlan.zhihu.com/p/26550959   一键部署kubernetes 1.6高可用集群
+https://segmentfault.com/a/1190000008905929  5分钟搭建 K8S 集群  1.6
 https://www.kubernetes.org.cn/870.html   kubernetes1.4 基础篇：Learn Kubernetes 1.4 by 6 steps
 https://github.com/liumiaocn/easypack
 Kubernetes1.5GA正式版本发布   将PetSet改名为StatefulSet    增加了命令kubectl cp   将ScheduledJobs改名为CronJobs

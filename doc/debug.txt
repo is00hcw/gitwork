@@ -3,6 +3,9 @@ http://blog.csdn.net/huaweitman/article/details/51420687
 http://zhongl.iteye.com/blog/1562235    HouseMD, 比BTrace更实用的Java运行诊断工具    2012年淘宝的聚石写了HouseMD，将常用的几个Btrace脚本整合在一起形成一个独立风格的应用，但其核心代码用的是Scala
 http://yq.aliyun.com/articles/2390  Greys Java在线问题诊断工具
 curl -sLk http://ompc.oss.aliyuncs.com/greys/install.sh|sh
+watch -bf *.AdminServiceImpl loginUser params[0]+'|'+params[1]+'|'+returnObj
+sc -df *alibaba.Address
+https://github.com/oldmanpushcart/greys-anatomy/wiki/greys-pdf   Greys的原理和Btrace一样，依赖了JDK6+提供的Instumentation特性，所以必须要求目标的JDK环境是JDK6及其以上的版本。JRE中由于缺少tools.jar，所以无法直接运行Greys
 
 netstat -aonp | grep tcp| wc -l查看各种状态的TCP连接数量和
 netstat -natp|awk ‘{print $7}’|sort|uniq -c|sort -rn按照PID统计TCP连接的数量

@@ -1,0 +1,55 @@
+https://segmentfault.com/a/1190000006178770  入门 Webpack，看这篇就够了
+webpack --progress --colors --watch  --display-error-details
+webpack-dev-server --progress --colors
+
+http://blog.csdn.net/a1104258464/article/details/51914450   Webpack——令人困惑的地方
+http://yuyang041060120.github.io/2016/05/05/webpack-defineplugin-and-provideplugin/   通过DefinePlugin可以定义一些全局的变量
+https://techctu.gitbooks.io/sl-web-dev-guide/content/%E4%BD%BF%E7%94%A8webpackdefineplugin%E6%9D%A5%E5%AE%9A%E4%B9%89%E5%92%8C%E6%A4%8D%E5%85%A5%E7%8E%AF%E5%A2%83%E7%9B%B8%E5%85%B3%E5%8F%98%E9%87%8F.html
+
+http://webpack.github.io/docs/shimming-modules.html  三方库
+new webpack.optimize.CommonsChunkPlugin('common.js'),
+new webpack.ProvidePlugin({
+jQuery: "jquery",
+$: "jquery"
+})
+
+https://ant-tool.github.io/dora.html   dora 本质就是使用 koa 模块启动一个 koa 服务器   dora --plugins webpack,livereload,jsonapi
+https://github.com/sorrycc/roadhog
+https://webpack.toobug.net/zh-cn/chapter3/config.html
+https://github.com/petehunt/webpack-howto#9-async-loading   https://github.com/petehunt/webpack-howto/blob/master/README-zh.md
+https://medium.com/@dabit3/beginner-s-guide-to-webpack-b1f1a3638460#.if6jjz9i4
+http://www.jbrantly.com/typescript-and-webpack/
+http://www.jbrantly.com/es6-modules-with-typescript-and-webpack/
+https://segmentfault.com/a/1190000003970448
+http://cookingjs.github.io/zh-cn/intro.html
+https://segmentfault.com/a/1190000004577578   优化
+http://www.alloyteam.com/2016/01/webpack-use-optimization/?utm_source=tuicool&utm_medium=referral
+https://zhuanlan.zhihu.com/p/20914387?refer=jscss
+https://segmentfault.com/a/1190000004728494
+https://segmentfault.com/a/1190000003006331  工具
+相比Grunt，WebPack除了具备丰富的插件外，同时带有一套加载（Loader）系统。使它支持多种规范的加载方式，包括ES6、CommonJS、AMD等方式，这是Grunt、Gulp所不具备的。
+符合AMD规范，如RequireJS
+符合CMD 规范，如SeaJS
+NodeJS规范 CommonJS
+ECMAScript 6的模块化
+http://www.cnblogs.com/ihardcoder/p/5378290.html  浅析前端工程化
+http://www.cnblogs.com/ihardcoder/p/6090779.html  https://boijs.github.io/boit/  https://boijs.github.io/res/
+
+
+Webpack 使用一个名为 webpack.config.js 的配置文件
+在webpack中JavaScript，CSS，LESS，TypeScript，JSX，CoffeeScript，图片等静态文件都是模块，不同模块的加载是通过模块加载器（webpack-loader）来统一管理的。loaders之间是可以串联的，一个加载器的输出可以作为下一个加载器的输入
+根据loader中的设置，webpack会将小于指点大小的文件转化成 base64 格式的 dataUrl，其他图片会做适当的压缩并存放在指定目录中。
+CommonJS和AMD是用于JavaScript模块管理的两大规范，前者定义的是模块的同步加载，主要用于NodeJS；而后者则是异步加载，通过requirejs等工具适用于前端。
+http://blog.csdn.net/yczz/article/details/49251719
+http://www.ido321.com/1646.html
+http://www.w3ctech.com/topic/1557
+https://medium.com/@dabit3/beginner-s-guide-to-webpack-b1f1a3638460#.a48j3tvpm
+https://github.com/petehunt/webpack-howto
+http://segmentfault.com/a/1190000002551952
+http://www.cnblogs.com/Leo_wl/p/4793722.html
+http://www.cnblogs.com/Leo_wl/p/5134748.html
+npm install webpack jsx-loader babel-loader style-loader  css-loader url-loader  less-loader gulp gulp-webpack extract-text-webpack-plugin --save-dev
+http://yq.aliyun.com/articles/2913  阿里云无线&前端团队是如何基于webpack实现前端工程化的
+
+
+https://techblog.toutiao.com/2017/02/28/webpack/  webpack前端构建性能优化策略小结
