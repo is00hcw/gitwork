@@ -2,9 +2,13 @@ docker run ubuntu:14.04 /bin/echo 'Hello world'
 https://github.com/dockerfile/java
 同步时区-v /etc/localtime:/etc/localtime:ro -e TZ="Asia/Shanghai"
 docker run -d --name eshop_fireworks  -v /etc/localtime:/etc/localtime:ro -e TZ="Asia/Shanghai" -e spring.profiles.active=default,release  -p 8080:8080 -p 8888:8888 fireworks:20170505
-
 docker run --rm -v "$(pwd)":/app -p 8080:8080 -w /app nodejs:latest sh -c 'node app.js'
 docker run -v "$(pwd)":/app -w /app nodejs-supervisor:latest sh -c 'supervisor app.js'
+
+apache模式docker run -it --rm --name my-apache-php-app  -p 8000:80 -v "$PWD":/var/www/html php:5.4-apache
+fpm模式配置过程docker run -it --rm --name my-fpm-php-app  -p 9000:9000 -v "$PWD":/var/www/html php:5.4-fpm
+http://blog.csdn.net/jiashiwen/article/details/48806243  docker部署php环境
+
 https://yq.aliyun.com/articles/74448?spm=5176.100239.0.0.b67TEO   DockerCon 2017: Docker新特性初体验
 http://www.cnblogs.com/atuotuo/p/6340183.html  升级docker1.13
 https://yq.aliyun.com/articles/69444?&utm_campaign=sys&utm_medium=market&utm_source=edm_email&msctype=email&mscareaid=cn&mscsiteid=cn&mscmsgid=7130117021600379067&    Docker 1.13 编排能力进化

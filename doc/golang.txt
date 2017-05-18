@@ -1,4 +1,5 @@
-﻿https://my.oschina.net/u/2894582/blog/804421  Google Go 语言从入门到应用必备开源项目
+﻿在fishshell设置GOPATH：set -gx GOPATH /usr/local/Cellar/go/1.7.6
+https://my.oschina.net/u/2894582/blog/804421  Google Go 语言从入门到应用必备开源项目
 https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/directory.md
 https://github.com/Unknwon/go-fundamental-programming
 https://wide.b3log.org/playground
@@ -32,6 +33,31 @@ go get -u -v github.com/lukehoban/go-find-references
 go get -u -v sourcegraph.com/sqs/goreturns
 go get -u -v golang.org/x/tools/cmd/gorename
 go get -u -v github.com/derekparker/delve/cmd/dl
+
+
+http://liudanking.com/golang/golang-waitgroup-usage/?utm_source=tuicool&utm_medium=referral  Golang中WaitGroup使用的一点坑
+http://www.cnblogs.com/php-rearch/p/5962873.html  进一步认识golang中的并发
+某个地方需要创建多个goroutine，并且一定要等它们都执行完毕后再继续执行接下来的操作。WaitGroup最大的优点就是.Wait()可以阻塞到队列中的任务都完毕后才解除阻塞。
+channel是一种golang内置的类型，英语的直译为"通道"，其实，它真的就是一根管道，而且是一个先进先出的数据结构。我们能对channel进行的操作只有4种：(1) 创建chennel (通过make()函数)(2) 放入数据 (通过 channel <- data 操作) (3) 取出数据 (通过 <-channel 操作)(4)  关闭channel (通过close()函数)
+(1) channel是一种阻塞管道，是自动阻塞的。意思就是，如果管道满了，一个对channel放入数据的操作就会阻塞，直到有某个routine从channel中取出数据，这个放入数据的操作才会执行。相反同理，如果管道是空的，一个从channel取出数据的操作就会阻塞，直到某个routine向这个channel中放入数据，这个取出数据的操作才会执行。这事channel最重要的一个性质，没有之一。
+(2)channel分为有缓冲的channel和无缓冲的channel。两种channel的创建方法如下：
+ch := make(chan int) //无缓冲的channel，同等于make(chan int, 0)  
+ch := make(chan int, 5) //一个缓冲区大小为5的channel  
+主routine要向channel中放入一个数据，但是因为channel没有缓冲，相当于channel一直都是满的，所以这里会发生阻塞。对于无缓冲的channel，放入操作和取出操作不能再同一个routine中，而且应该是先确保有某个routine对它执行取出操作，然后才能在另一个routine中执行放入操作。
+在使用带缓冲的channel时一定要注意放入与取出的速率问题。
+(3)关闭后的channel可以取数据，但是不能放数据。而且，channel在执行了close()后并没有真的关闭，channel中的数据全部取走之后才会真正关闭。
+channel相比WaitGroup有一个很大的优点，就是channel不仅可以实现协程的同步，而且可以控制当前正在运行的goroutine的总数。
+
+http://tonybai.com/2014/09/29/a-channel-compendium-for-golang/  Golang Channel用法简编
+http://tonybai.com/2015/11/17/tcp-programming-in-golang/   Go语言TCP Socket编程
+http://www.ashan.org/archives/947  Golang， 以17个简短代码片段，切底弄懂 channel 基础
+http://blog.csdn.net/chenwenhao0304/article/details/50822687   golang 长短连接处理
+http://www.jianshu.com/p/c322edca985f  Tao - Go语言实现的TCP网络编程框架
+https://go-zh.org/doc/effective_go.html  实效Go编程
+http://www.cnblogs.com/php-rearch/p/5975890.html  debug输出
+通过debug.PrintStack()方法可以将当前所在的goroutine的stack trace打印出来. 可以通过pprof.Lookup("goroutine").WriteTo将所有的goroutine的stack trace都打印出来. 你可以使用runtime.Stack得到所有的goroutine的stack trace信息
+http://colobu.com/2016/12/21/how-to-dump-goroutine-stack-traces/  调试利器：dump goroutine 的 stacktrace
+
 
 热更新
 https://github.com/facebookgo/grace 

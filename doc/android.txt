@@ -1,49 +1,100 @@
+http://www.jianshu.com/p/357a26dd2cd6  使用RecyclerView创建性能更好的列表界面
+http://www.jianshu.com/p/81d03519dd33  自定义Android Studio工程模板  Android Studio 使用的是 FreeMarker 模板引擎，所以文件后缀都是 .ftl
 http://www.oschina.net/news/80873/50-tips-tips-and-resources-android-developers-must-know   Android 开发人员必知的50个秘诀、技巧和资源
 http://weishu.me/2016/12/30/simple-way-to-compile-android-source/  史上最简单Android源码编译环境搭建方法
 https://yq.aliyun.com/articles/67136?spm=5176.100238.goodcont.47.DNy5oa   阿里HotFix2.0升级详解——技术运营小二畅谈热修复领域那些事
 SoLoader是facebook出品的一款小巧的用于加载so库文件的开源项目，主要作用是自动检查和加载多个有依赖关系的so库文件。在Android平台下React-Native项目大量使用了动态链接库，即JNI技术，作为Java和JavaScript两种程序语言之间的通信桥梁。
-其中libreactnativejni.so是JNI桥梁的入口。 。好在Android 4.3版本（包括）之后，会自动检查和加载依赖库，但是React-Native是兼容到Android 4.1版本的，所以SoLoader就是一种兼容4.3以下版本的技术解决方案。
+其中libreactnativejni.so是JNI桥梁的入口。 好在Android 4.3版本（包括）之后，会自动检查和加载依赖库，但是React-Native是兼容到Android 4.1版本的，所以SoLoader就是一种兼容4.3以下版本的技术解决方案。
+http://www.jianshu.com/p/03da9f91f41f   借助Stetho在Chrome上调试Android网络&数据库
 
-http://mp.weixin.qq.com/s?__biz=MzAwMDU1MTE1OQ==&mid=209805123&idx=1&sn=ced8d67c3e2cc3ca38ef722949fa21f8&3rd=MzA3MDU4NTYzMw==&scene=6#rd&utm_source=tuicool&utm_medium=referral  App域名劫持之DNS高可用 
-HttpDNS是使用HTTP协议向DNS服务器的80端口进行请求，代替传统的DNS协议向DNS服务器的53端口进行请求,绕开了运营商的Local DNS，从而避免了使用运营商Local DNS造成的劫持和跨网问题。
-由于HttpDNS是通过ip直接请求http获取服务器A记录地址，不存在向本地运营商询问domain解析过程，所以从根本避免了劫持问题。 HttpDNSLib库主要由三个模块组成，查询模块，缓存模块，评估模块。
-
+安全
 http://pingguohe.net/2016/03/21/Dynimac-write-infomation-into-apk.html   一种动态为apk写入信息的方案
 http://pingguohe.net/2016/02/26/Android-App-secure-ssl.html  android https  
 https://jaq.alibaba.com/community/art/show?articleid=545   Android安全开发之安全使用HTTPS
 https://segmentfault.com/a/1190000004669570  Android 应用安全开发之浅谈加密算法的坑
 https://www.oschina.net/question/2625381_2234666  【阿里聚安全技术公开课】移动APP漏洞风险与解决方案
 https://pingplusplus.kf5.com/hc/kb/article/212345/  各个语言签名生成的示例
+http://mp.weixin.qq.com/s?__biz=MzAwMDU1MTE1OQ==&mid=209805123&idx=1&sn=ced8d67c3e2cc3ca38ef722949fa21f8&3rd=MzA3MDU4NTYzMw==&scene=6#rd&utm_source=tuicool&utm_medium=referral  App域名劫持之DNS高可用 
+HttpDNS是使用HTTP协议向DNS服务器的80端口进行请求，代替传统的DNS协议向DNS服务器的53端口进行请求,绕开了运营商的Local DNS，从而避免了使用运营商Local DNS造成的劫持和跨网问题。
+由于HttpDNS是通过ip直接请求http获取服务器A记录地址，不存在向本地运营商询问domain解析过程，所以从根本避免了劫持问题。 HttpDNSLib库主要由三个模块组成，查询模块，缓存模块，评估模块。
+
+
+
+压缩apk
+https://techblog.toutiao.com/2017/05/16/apk/   头条APK瘦身之路
 http://mp.weixin.qq.com/s/u7qZp7ifUZoty8d8McH5QA     Android 减包 － 减少APK大小
-
-
+https://yq.aliyun.com/articles/64692?spm=5176.100238.goodcont.358.Ke9cUL  APP加固新方向——混淆和瘦身
+https://zhuanlan.zhihu.com/p/23882195?from=groupmessage  APK瘦身记，如何实现高达53%的压缩效果
+https://yq.aliyun.com/articles/57284?spm=5176.100238.goodcont.5.DxzG2I  APK瘦身记，如何实现高达53%的压缩效果
+https://github.com/shwenzhang/AndResGuard  压缩apk
+https://mp.weixin.qq.com/s/9IGYG6hNKL1V7N_p16p2Hg  Android APK 瘦身 - JOOX Music项目实战
 
 https://my.oschina.net/vimfung/blog/744795   使用Android Studio进行JNI开发 － Mac篇
 http://blog.coderclock.com/2016/07/04/android/%E9%82%A3%E4%BA%9B%E5%80%BC%E5%BE%97%E4%BD%A0%E8%AF%95%E8%AF%95%E7%9A%84Android%E7%AB%9E%E5%93%81%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7/   那些值得你试试的Android竞品分析工具
-https://github.com/shwenzhang/AndResGuard  压缩apk
 https://github.com/tangqi92/Android-Tips   
 http://alighters.com/blog/2016/05/02/rxjava-plus-retrofitshi-xian-wang-luo-dai-li/   Rxjava+Retrofit 实现全局过期 Token 自动刷新
-http://tech.youzan.com/android_http/   有赞Android客户端网络架构演进
-http://alighters.com/blog/2017/01/16/multidex-generate/     理解 Multidex 生成
 
+
+优化,内存泄漏
+http://www.cnblogs.com/chenxibobo/p/6402786.html   Android应用开发性能优化完全分析
+https://github.com/square/leakcanary  square内存泄漏检测
+http://www.jianshu.com/p/7db231163168
+https://www.liaohuqiu.net/cn/posts/leak-canary-read-me/
+https://github.com/square/haha
+
+router
+https://yq.aliyun.com/articles/71687?spm=5176.100239.blogcont71215.25.x83PHy  开源最佳实践：Android平台页面路由框架ARouter
+https://github.com/BaronZ88/ModularizationProject
+https://github.com/BaronZ88/Router
+https://github.com/BaronZ88/MinimalistWeather
+http://baronzhang.com/blog/RxJava/RxJava%E7%B3%BB%E5%88%97%E7%95%AA%E5%A4%96%E7%AF%87%EF%BC%9A%E4%B8%80%E4%B8%AARxJava%E8%A7%A3%E5%86%B3%E5%A4%8D%E6%9D%82%E4%B8%9A%E5%8A%A1%E9%80%BB%E8%BE%91%E7%9A%84%E6%A1%88%E4%BE%8B/   RxJava系列番外篇：一个RxJava解决复杂业务逻辑的案例
+有的同学可能会想到用隐式跳转，通过 Intent 匹配规则来实现：Intent intent = new Intent(Intent.ACTION_VIEW, "<scheme>://<host>:<port>/<path>");
+路由（Router）部分通过 Java 注解结合动态代理来实现，这一点和 Retrofit 的实现原理是一样的。参数注入器（Injector）部分通过 Java 编译时注解来实现，实现思路和 ButterKnife 这类编译时注解框架类似。
+http://www.jianshu.com/p/7cb2cc9b726a?from=groupmessage  简单好用的Android页面路由框架
+https://github.com/alibaba/ARouter
+
+
+组件化,模块化
+http://www.jianshu.com/p/a092bcc3de7d   Android Studio 中 Gradle 依赖的统一管理    http://blog.csdn.net/cai_iac/article/details/51850291
+http://baronzhang.com/blog/Framework/Android-%E6%A8%A1%E5%9D%97%E5%8C%96%E6%8E%A2%E7%B4%A2%E4%B8%8E%E5%AE%9E%E8%B7%B5/   Android 模块化探索与实践
+http://www.cnblogs.com/chenxibobo/p/6187954.html   Android项目架构之业务组件化
+http://www.jianshu.com/p/b475affa092f  Android开发：由模块化到组件化
+http://www.infoq.com/cn/articles/practice-of-netease-android-project-template   网易 Android工程模板化实践
+http://www.infoq.com/cn/articles/ctrip-app-architecture  携程移动App架构优化之旅
+http://tech.youzan.com/android_http/   有赞Android客户端网络架构演进
 https://youzanmobile.github.io/2017/04/14/youzan-app-modularization/   有赞 App 模块化实战经验总结
 要做到彻底隔离就必须打破这两种耦合关系：页面解耦 - 跳转协议    功能解耦 - 模块间 RPC
 https://youzanmobile.github.io/2017/04/10/app-config/  有赞 App 动态化配置中心实践
 https://youzanmobile.github.io/2017/03/01/zan-app-updater/  Android 强升逻辑和实现  https://github.com/LyndonChin/ZanAppUpdater
+http://blog.spinytech.com/2016/12/28/android_modularization/?utm_source=tuicool&utm_medium=referral   Android架构思考(模块化、多进程)
+http://mp.weixin.qq.com/s/lqkqNv7BW2F7dPKOTzlxQw?utm_source=tuicool&utm_medium=referral
+Activity 在项目中不再负责 View 的职责，仅仅是一个全局的控制者，负责创建 View 和 Presenter 的实例；Presenter Layer: 作为 View Layer 和 Model Layer 的之间的纽带，它从 Model 层中获取数据，然后调用 View 的接口去控制 View；契约类 Contract 来统一管理 View 和 Presenter 的接口
+http://baronzhang.com/blog/Framework/%E5%AE%89%E5%B1%85%E5%AE%A2Android%E9%A1%B9%E7%9B%AE%E6%9E%B6%E6%9E%84%E6%BC%94%E8%BF%9B/
 
+https://race604.com/annotation-processing/   注释代码生成
+https://github.com/Spring-Xu/AnnotationProcessorDemo/wiki/ButterKnife核心技术揭秘
+
+http://pingguohe.net/2017/02/28/vlayout-design.html   vlayout 是手机天猫 Android 版内广泛使用的一个基础 UI 框架项目 提供了一个用于RecyclerView的自定义的LayoutManger  
+https://github.com/alibaba/vlayout 
 http://tangram.pingguohe.net/    Tangram，七巧板，是天猫团队开源的跨平台模块化 UI 界面方案   http://pingguohe.net/2017/03/30/what-is-tangram.html
 http://pingguohe.net/abouttangram/
 
-http://mp.weixin.qq.com/s/1p5Y0f5XdVXN2EZYT0AM_A    Android 插件技术实战总结
+http://alighters.com/blog/2017/01/16/multidex-generate/     理解 Multidex 生成
 https://github.com/rickdynasty/TwsPluginFramework   腾讯
 https://github.com/alibaba/atlas  手淘   http://atlas.taobao.org/docs/principle-intro/Runtime_principle.html
-https://github.com/alibaba/ARouter
-http://www.jianshu.com/p/7cb2cc9b726a?from=groupmessage  简单好用的Android页面路由框架
-https://yq.aliyun.com/articles/71687?spm=5176.100239.blogcont71215.25.x83PHy  开源最佳实践：Android平台页面路由框架ARouter
-http://pingguohe.net/2017/02/28/vlayout-design.html   vlayout 是手机天猫 Android 版内广泛使用的一个基础 UI 框架项目 提供了一个用于RecyclerView的自定义的LayoutManger  
-https://github.com/alibaba/vlayout 
+
+http://blog.csdn.net/qq_25943493/article/details/51463884   android热更新技术研究
+http://wereadteam.github.io/2016/07/26/AndroidPatch/?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io   Android Patch 方案与持续交付
+https://github.com/singwhatiwanna/dynamic-load-apk
+http://www.jianshu.com/p/f1217cce93ef  使用DroidPlugin实践应用的插件化
+http://blog.csdn.net/h3c4lenovo/article/details/50751643  Android插件化开发 第五篇 [360 Droid Plugin]
 
 
+插件化,热更新
+而Android的插件化原理基本上就是以ClassLoader为基础进行的啦，Android中包含DexClassLoader和PathClassLoader
+动态加载是指我们将APP中并非启动必用的so库放在服务器上，当用户需要使用某项功能时再从网络获取相关的so库并加载运行，一般我们都是使用System.loadLibrary来加载so库的
+http://www.cnblogs.com/chenxibobo/p/6076459.html    Android分包方案multidex
+http://mp.weixin.qq.com/s/1p5Y0f5XdVXN2EZYT0AM_A    Android 插件技术实战总结
 http://www.oschina.net/news/83062/meituan-open-source-robust   美团 Android 热更新方案 Robust 开源   https://github.com/Meituan-Dianping/Robust
 http://tech.meituan.com/android_autopatch.html
 阿里百川HotFix的Android版本在AndFix的基础上，增加了补丁版本管理、补丁安全校验、控制台灰度管理等更加人性化的功能，同时针对兼容性进行了完善，支持市面上超过800种常见机型
@@ -61,20 +112,21 @@ QQ空间的方案，插桩，见安卓App热补丁动态修复技术介绍
 此外，微信的方案是多classloader，这种方式可以解决用multidex方式在部分机型上不生效patch的问题，同时还带来一个好处，这种多classloader的方式使用的是instant run的代码，如果存在native library的修复，也会带来极大的方便。
 http://blog.csdn.net/sbsujjbcy/article/details/52541803   Android 热补丁技术——资源的热修复
 http://mp.weixin.qq.com/s?__biz=MzA3NTYzODYzMg==&mid=2653577964&idx=1&sn=bac5c8883b7aaaf7d7d9ea227f200412  QFix探索之路——手Q热补丁轻量级方案
-https://yq.aliyun.com/articles/64692?spm=5176.100238.goodcont.358.Ke9cUL  APP加固新方向——混淆和瘦身
+https://github.com/LiuHongtao/hthotfix-android
+
 
 Freeline本质上是一个热补丁方案，将修过过的*.java和资源文件分别打成dex和pack，然后通过socket传输到手机上，在运行期动态加载生效。 
 https://yq.aliyun.com/articles/62334?spm=5176.100239.blogcont59122.15.peq2Ma  Android秒级编译工具Freeline新特性支持！
 https://github.com/T-Group/QFix?spm=5176.100239.blogcont62334.23.rLMEuE
 
-http://www.infoq.com/cn/articles/ctrip-app-architecture  携程移动App架构优化之旅
-https://zhuanlan.zhihu.com/p/23882195?from=groupmessage  APK瘦身记，如何实现高达53%的压缩效果
+
+
 https://github.com/android-notes/SwissArmyKnife   android免root兼容所有版本ui调试工具
 http://www.oschina.net/news/78857/best-android-libraries-for-developers  面向开发者的最佳 Android 库列表
 https://yq.aliyun.com/articles/59177?spm=5176.100239.bloglist.16.EjXXV7     Freeline - Android平台上的秒级编译方案   https://github.com/alibaba/freeline
 https://github.com/alibaba/java-dns-cache-manipulator/tree/master/library   代码里面设置dns ip绑定
 https://yq.aliyun.com/articles/58517?spm=5176.8067842.tagmain.62.gdmKQ2  深度理解Android InstantRun原理以及源码分析
-http://www.infoq.com/cn/articles/practice-of-netease-android-project-template?utm_campaign=rightbar_v2&utm_source=infoq&utm_medium=articles_link&utm_content=link_text   网易 Android工程模板化实践
+
 
 https://mp.weixin.qq.com/s?__biz=MzA4NTQwNDcyMA==&mid=2650661681&idx=1&sn=b151aba0c5fb702492f6bbd82211988d   Google开源的FlexboxLayout
 http://blog.csdn.net/walid1992/article/details/52167539  代码规范
@@ -117,22 +169,13 @@ http://baichuan.taobao.com/docs/doc.htm?spm=a3c0d.7629140.0.0.15uSgA&treeId=195&
 
 
 
-
-https://yq.aliyun.com/articles/25387?spm=5176.8091938.0.0.d2D3Me   Android应用开发架构概述
 https://github.com/liuguangli/MVPTeach?spm=5176.100239.blogcont8132.5.HeMaSn   mvp
 https://yq.aliyun.com/articles/57838?&utm_campaign=sys&utm_medium=market&utm_source=edm_email&msctype=email&mscareaid=cn&mscmsgid=4730116072100639934&   提高代码质量－工具篇
 
+
+https://yq.aliyun.com/articles/25387?spm=5176.8091938.0.0.d2D3Me   Android应用开发架构概述
 http://www.jianshu.com/p/ca76aec23ddf 分析平安好医生技术栈
-http://blog.csdn.net/qq_25943493/article/details/51463884   android热更新技术研究
-http://wereadteam.github.io/2016/07/26/AndroidPatch/?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io   Android Patch 方案与持续交付
-https://github.com/singwhatiwanna/dynamic-load-apk
-http://www.jianshu.com/p/f1217cce93ef
-http://blog.csdn.net/h3c4lenovo/article/details/50751643
-
-
-
 http://mp.weixin.qq.com/s?__biz=MzA3ODg4MDk0Ng==&mid=2651112554&idx=1&sn=95e57e0d6cb95f5c209ee8065380a395#rd   网易 Android工程模板化实践
-https://yq.aliyun.com/articles/57284?spm=5176.100238.goodcont.5.DxzG2I  APK瘦身记，如何实现高达53%的压缩效果
 https://yq.aliyun.com/articles/57255?spm=5176.100239.blogcont57284.26.uyiqmb  Android项目持续集成实践之Gitlab CI
 http://www.oschina.net/news/75092/android-flatbuffers-json   Android 开发者应该使用 FlatBuffers 替代 JSON
 https://yq.aliyun.com/articles/57666?spm=5176.100239.bloglist.53.y4etsZ   Android局域网通信机制初探

@@ -1,4 +1,7 @@
-﻿http://kriszhang.com/motan-rpc-impl/  从motan看RPC框架设计
+﻿http://www.jianshu.com/p/8f0a7e22bb8c Java面试题集
+https://github.com/closedevice/interview-about
+
+http://kriszhang.com/motan-rpc-impl/  从motan看RPC框架设计
 https://github.com/ElemeFE/node-interview  饿了么nodejs面试
 https://my.oschina.net/huangyong/blog/164040   软件设计原则  SOLID
 http://www.ruanyifeng.com/blog/2016/09/software-architecture.html  软件架构入门

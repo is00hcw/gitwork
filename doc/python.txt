@@ -1,5 +1,7 @@
 pyenv可以帮助你在一台开发机上建立多个版本的python环境， 并提供方便的切换方法。
 virtualenv则提供了一种功能， 就是将一个目录建立为一个虚拟的python环境， 这样的话， 用户可以建立多个虚拟环境， 每个环境里面的python版本可以是不同的， 也可以是相同的， 而且环境之间相互独立。
+https://github.com/michaelliao/awesome-python-webapp
+https://github.com/michaelliao/awesome-python3-webapp
 
 https://zhuanlan.zhihu.com/p/20811026?refer=gevin-view  Flask 入门指南
 http://blog.csdn.net/qq_32198277/article/details/52432890  nginx+Gunicorn部署你的Flask项目

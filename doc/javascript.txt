@@ -8,7 +8,7 @@ https://github.com/ElementUI/element-starter
 https://weui.io/
 https://github.com/airyland/vux   https://vux.li/?x-page=oschina#!/demo
 
-
+http://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000   https://github.com/michaelliao/learn-javascript   
 http://jdc.jd.com/archives/2806  浅析渲染引擎与前端优化
 http://jdc.jd.com/archives/2942  JavaScript写类的前世今生
 https://github.com/wepayui/wepayui   微信支付
