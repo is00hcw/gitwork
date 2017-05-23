@@ -1,4 +1,5 @@
 https://www.zhihu.com/question/25289041
+http://www.oschina.net/news/84980/why-i-turn-to-kotlin  
 https://zhuanlan.zhihu.com/p/23101437  Kotlin 从入门到放弃 视频
 https://github.com/enbandari/Kotlin-Tutorials
 https://mp.weixin.qq.com/s?__biz=MzA3NTYzODYzMg==&mid=404087761&idx=1&sn=d80625ee52f860a7a2ed4c238d2151b6&scene=0#wechat_redirect  Android开发必备知识：为什么说Kotlin值得一试
@@ -8,3 +9,4 @@ http://www.jianshu.com/p/b265b9bcef6c    Spring Boot in Kotlin实践
 http://www.infoq.com/cn/news/2017/03/kotlin-11-released   Kotlin 1.1最关键的新特性之一就是协程（coroutine），这个特性可以通过使用三个高层级的构造（construct）来实现：async、await和yield
 https://mp.weixin.qq.com/s/DmYBThjkkZSNbzjZ7ZQCPg?utm_source=tuicool&utm_medium=referral  深入理解 Kotlin Coroutine （一）
 https://mp.weixin.qq.com/s/ZffDC_w4IPh0SNlo4hPKiQ?utm_source=tuicool&utm_medium=referral  深入理解 Kotlin coroutine (二）
+http://droidyue.com/blog/2017/05/08/how-to-study-kotlin/    研究学习Kotlin的一些方法

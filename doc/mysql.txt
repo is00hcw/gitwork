@@ -449,3 +449,18 @@ LONGTEXT	4,294,967,295 bytes	~4GB
 http://www.cnblogs.com/billyxp/p/3548540.html
 
 根据谷歌官方的建议，存储经纬度的时候，使用double(10,6)就可以了。这样，这些字段将会存储小数点后 6 位数以及小数点前最多 4 位数，如 -153.456783 度，可以把表占用的存储空间降至最低。同时保证精确性。
+
+
+
+https://help.aliyun.com/knowledge_detail/41702.html  RDS MySQL使用utf8mb4字符集存储emoji表情
+http://www.cnblogs.com/shihaiming/p/5855616.html  更改MySQL数据库的编码为utf8mb4
+修改数据库配置文件/etc/my.cnf
+character-set-server=utf8mb4 
+collation_server=utf8mb4_unicode_ci
+重启MySQL（按照官方文档，这两个选项都是可以动态设置的，但是实际的经验是Server必须重启一下）
+
+SHOW VARIABLES WHERE Variable_name LIKE 'character_set_%' OR Variable_name LIKE 'collation%';
+更改数据库编码：ALTER DATABASE fireworks CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+
+更改表编码：ALTER TABLE goods_review CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci; 
+ALTER TABLE goods_review CHANGE content mediumtext  CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;

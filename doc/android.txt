@@ -1,4 +1,9 @@
 http://www.jianshu.com/p/357a26dd2cd6  使用RecyclerView创建性能更好的列表界面
+http://droidyue.com/blog/2017/05/14/a-little-but-useful-debug-skill_for_android/  一个简单实用的Android调试应用技巧
+http://droidyue.com/blog/2015/09/26/android-tuning-tool-strictmode/  Android性能调优利器StrictMode
+http://droidyue.com/blog/2017/04/16/speedup-gradle-building/   一些关于加速Gradle构建的个人经验
+http://droidyue.com/blog/2017/04/09/error-prone-tool-for-java-and-android/  Error-prone,Google出品的Java和Android Bug分析利器
+
 http://www.jianshu.com/p/81d03519dd33  自定义Android Studio工程模板  Android Studio 使用的是 FreeMarker 模板引擎，所以文件后缀都是 .ftl
 http://www.oschina.net/news/80873/50-tips-tips-and-resources-android-developers-must-know   Android 开发人员必知的50个秘诀、技巧和资源
 http://weishu.me/2016/12/30/simple-way-to-compile-android-source/  史上最简单Android源码编译环境搭建方法

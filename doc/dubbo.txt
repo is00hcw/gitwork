@@ -1,4 +1,7 @@
-﻿http://kriszhang.com/motan-rpc-impl/  从motan看RPC框架设计
+﻿基本的流程是：InvokerInvocationHandler ->ClusterInvoker ->LoadBalance -> ProtocolFilterWrapper -> Protocol -> DubboInvoker
+RpcContext.getContext().setAttachment(CallChainContext.TRACEID, traceIdValue);
+
+http://kriszhang.com/motan-rpc-impl/  从motan看RPC框架设计
 https://github.com/weibocom/motan  微博rpc
 http://www.jianshu.com/p/941c2fe65d52  spring boot motan  https://github.com/chenxing2/spring-boot-motan-demo
 https://coding.net/u/javacore/p/spring-boot-motan-demo/git
