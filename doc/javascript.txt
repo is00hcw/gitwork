@@ -160,6 +160,8 @@ http://www.alloyteam.com/2016/05/super-small-web-gesture-library-alloyfinger-rel
 http://www.alloyteam.com/2016/05/mobile-web-development-debugging-tools-alloylever-introduced/   移动web开发调试工具AlloyLever介绍
 https://github.com/WechatFE/vConsole
 https://github.com/AlloyTeam/AlloyLever
+https://www.oschina.net/p/eruda  手机网页前端调试面板 Eruda    
+
 
 test
 http://www.oschina.net/p/dagger  Dagger是网易杭州研究院QA团队开发的一个轻量级、运行稳定的WebUI自动化测试框架，主要基于Selenium及TestNg可以认为是对Selenium进行二次封装的一个框架

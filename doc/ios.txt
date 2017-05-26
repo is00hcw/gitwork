@@ -4,6 +4,7 @@ https://my.oschina.net/u/727843/blog/391946
 http://xudafeng.github.io/slide/archives/native-in-practice/#/   移动客户端编程实战
 https://github.com/fengling2300/networkTest   http://oncenote.com/2014/10/21/Security-1-HTTPS/
 
+https://zhuanlan.zhihu.com/p/26955368  如何打造易扩展的高性能图片组件
 http://blog.cnbang.net/tech/3354/   iOS 开发技术栈与进阶
 http://blog.cnbang.net/internet/3245/  如何面试iOS工程师
 http://blog.fir.im/fir-im-weekly161223/   iOS / Android 动态化更新方案盘点
@@ -11,7 +12,7 @@ http://mp.weixin.qq.com/s/qRW_akbU3TSd0SxpF3iQmQ   DynamicCocoa：滴滴 iOS 动
 http://pingguohe.net/2016/12/20/Tangram-design-and-practice.html    页面动态化的基础 —— Tangram
 https://github.com/wequick/Small
 https://github.com/SnapKit/Masonry  自动布局
-
+https://objectivec2swift.com/#/home/converter/  转swift
 https://yq.aliyun.com/articles/74464?spm=5176.8067842.tagmain.5.X20x6y  深入Objective-C Runtime机制(一):类和对象的实现
 
 https://my.oschina.net/leejun2005/blog/504732  iOS 统计打点那些事  https://github.com/steipete/Aspects
