@@ -1,4 +1,9 @@
-﻿可创建表数量，跟容量有关，1G 存储空间可创建 512 张表。比如购买的存储空间为 20G，那么最多可以创建 512*20=1W 张表。 shown processlist 的行对应的 Host 就是用户的出口 IP。
+﻿https://github.com/rolandhe/hiriver  MySQL 数据变化的监控与分发框架 Hiriver  
+
+
+https://www.qcloud.com/community/article/306781   pt-mysql-summary 工具获取，再加以分析，也可以通过如下两个工具来实时查看innotop  orzdba
+https://www.qcloud.com/community/article/655790   MySQL Online DDL
+可创建表数量，跟容量有关，1G 存储空间可创建 512 张表。比如购买的存储空间为 20G，那么最多可以创建 512*20=1W 张表。 shown processlist 的行对应的 Host 就是用户的出口 IP。
 MySQL数据库delete数据时，不支持表别名
 http://www.leexh.com/blog/2014/07/10/mysql-item-compare-bug/   Mysql查询类型转换诡异问题
 https://www.pureweber.com/article/mysql-conditional-count/  Mysql按条件计数的几种方法
@@ -39,6 +44,16 @@ http://mp.weixin.qq.com/s/A7SFqsclK5xVrfHQK6-Zdw  MySQL当前存在的三种复�
 MySQL5.5的版本在一步同步的基础之上，以插件的形式实现了一个变种的同步方案，称之为半同步（semi-sync replication）。这个插件在源生的异步复制上，添加了一个同步的过程：当从库接收到了主库的变更（即事务）时，会通知主库。主库上的操作有两种：接收到这个通知以后才去commit事务；接受到之后释放session。这两种方式是由主库上的具体配置决定的。当主库收不到从库的变更通知超时时，由半同步复制自动切换到异步同步
 MySQL组复制是一个MySQL插件，它建立在现有的MySQL复制基础结构上，利用了二进制日志，基于行的日志记录和全局事务标识符等功能。组复制（Group Replication）基于分布式一致性算法(Paxos协议的变体)实现，一个组允许部分节点挂掉，只要保证绝大多数节点仍然存活并且之间的通讯是没有问题的，那么这个组对外仍然能够提供服务. 简而言之，一个Group Replication就是一组节点，每个节点都可以独立执行事务，而读写事务则会在于group内的其他节点进行协调之后再commit。因此，当一个事务准备提交时，会自动在group内进行原子性的广播，告知其他节点变更了什么内容/执行了什么事务。这种原子广播的方式，使得这个事务在每一个节点上都保持着同样顺序。
 
+
+canal
+https://yq.aliyun.com/articles/9044   如何将RDS的数据同步到本地自建数据库
+https://github.com/alibaba/canal/wiki/QuickStart
+https://github.com/alibaba/canal/wiki/ClientExample
+http://www.jianshu.com/p/df4c109addbc  canal 基于zookeeper的HA安装
+http://www.chenjianyu.com.cn/canal_detail.html#/
+http://niko2014.github.io/2016/11/07/java/opsrc/canal/canal_zookeeper_ha/
+http://www.jianshu.com/p/6299048fad66
+https://my.oschina.net/dxqr/blog/524795  Canal & Otter 的一些注意事项和最佳实践
 
 alisql  rds
 微信开源 PhxSQL：高可用强一致的 MySQL 集群   http://www.oschina.net/news/76658/tecent-wechat-opensource-phxsql

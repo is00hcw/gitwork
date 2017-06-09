@@ -2,6 +2,7 @@ CNN(卷积神经网络)、RNN(循环神经网络)、DNN(深度神经网络)
 https://yq.aliyun.com/articles/75293?spm=5176.100239.0.0.b67TEO    
 https://yq.aliyun.com/articles/72878?spm=5176.100239.0.0.b67TEO
 
+https://cloud.tencent.com/community/article/576219?fromSource=gwzcw.234888.234888.234888  深度学习入门与实战
 https://github.com/ZuzooVn/machine-learning-for-software-engineers/blob/master/README-zh-CN.md     自上而下的学习路线: 软件工程师的机器学习
 https://github.com/caicloud/tensorflow-tutorial
 https://yq.aliyun.com/articles/72878?spm=5176.100239.bloglist.157.6XLsku   快速在阿里云上构建机器学习应用

@@ -1,4 +1,5 @@
 mvn archetype:generate -DgroupId=com.wanke -DartifactId=wanke_stock_api -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+@ServletComponentScan 可以自动扫描webservlet,但是跟springboot的注解冲突,导致Controller不起作用
 
 部署
 java -jar demo.jar --spring.profiles.active=dev 

@@ -22,7 +22,15 @@ http://www.cnblogs.com/nosqlcoco/p/6125274.html  微信小程序之使用weui.wx
 http://www.cnblogs.com/nosqlcoco/p/6242316.html  微信小程序之登录态维护(十一)
 http://www.cnblogs.com/nosqlcoco/p/6195572.html  微信小程序之页面路由(九)
 getCurrentPages() 函数用于获取当前页面栈的实例，以数组形式按栈的顺序给出，第一个元素为首页，最后一个元素为当前页面。
+https://github.com/tencentyun/wecos  WeCOS —— 微信小程序 COS 瘦身解决方案
 
+https://github.com/tencentyun/wafer/issues/8  自行部署 Wafer 的一点心得
+https://www.it-man.cn/?p=140   微信小程序session管理
+
+https://segmentfault.com/a/1190000008132184
+WeCOS 不仅支持自动将小程序项目的图片资源上传到配置好的腾讯云对象存储服务(COS)上存储，同时，还可以自动替换项目代码中本地资源引用地址为线上 URL，并移除项目目录中的图片资源。为小程序项目包瘦身，一键解决项目包超过 1MB 的烦恼。
+输入 npm install wecos -g
+在与开发目录 app 同目录下创建一个 wecos.config.json 配置文件
 
 https://github.com/localtunnel/localtunnel  暴露本地服务
 https://github.com/pd4d10/js-stack-from-scratch  从零开始构建 JavaScript 技术栈 - 中文版

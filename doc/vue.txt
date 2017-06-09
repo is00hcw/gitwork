@@ -1,4 +1,7 @@
 vue.js
+https://www.qcloud.com/community/article/430630001490779316   包学会之浅入浅出Vue.js：开学篇
+https://www.qcloud.com/community/article/118752  企鹅社区移动版Vue2.0升级手记
+https://www.qcloud.com/community/article/608654?fromSource=gwzcw.114365.114365.114365  Vue.js前后端同构方案之准备篇：代码优化
 https://github.com/Coffcer/Blog/issues/3   vue 性能优化  异步组件
 https://github.com/MeCKodo/vue-tutorial   vue2.0 构建单页应用最佳实战 - V2EX
 http://www.jianshu.com/p/5ba253651c3b   Vue2.0 新手完全填坑攻略——从环境搭建到发布

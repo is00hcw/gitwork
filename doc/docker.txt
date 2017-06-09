@@ -1,3 +1,14 @@
+°²×°docker£ºcurl -sSL https://get.daocloud.io/docker | sh
+°²×°¼ÓËÙÆ÷£ºcurl -sSL https://get.daocloud.io/daotools/set_mirror.sh | sh -s http://3f3b0655.m.daocloud.io
+ÍøÒ×¾µÏñÖĞĞÄ£ºhttps://c.163.com/hub#/m/home/
+daocloud¾µÏñÊĞ³¡£ºhttps://hub.daocloud.io/
+docker pull hub.c.163.com/library/tomcat:latest
+centos7 ÉÏÃæÆô¶¯·şÎñÒÔ¼°¹Ø±Õ·şÎñÒÑ¾­²»ÊÇÒÔÇ°µÄservice stop/start xxxx 
+https://www.qcloud.com/community/article/759292  ÀûÓÃ Docker ¿ìËÙ´î½¨ git ²Ö¿â Gitlab Óë´úÂëÉóÔÄ Gerrit Æ½Ì¨
+https://my.oschina.net/donhui/blog/472644   docker-reviewboard    https://github.com/ikatson/docker-reviewboard/blob/master/docker-compose.yml
+https://www.qcloud.com/community/article/723556  ÈçºÎ±àĞ´×î¼ÑµÄDockerfile
+https://blog.fundebug.com/2017/05/02/about-docker-sock/   Docker¶à²½¹¹½¨¸üĞ¡µÄJava¾µÏñ
+
 docker run ubuntu:14.04 /bin/echo 'Hello world'
 https://github.com/dockerfile/java
 Í¬²½Ê±Çø-v /etc/localtime:/etc/localtime:ro -e TZ="Asia/Shanghai"
@@ -25,8 +36,10 @@ https://yq.aliyun.com/articles/29941?spm=5176.100239.0.0.68bt6N   Docker ¾µÏñ¼ÓË
 https://hpc.aliyun.com/doc/docker%E9%95%9C%E5%83%8F%E6%9C%8D%E5%8A%A1?spm=5176.100210.0.0.2PoQcr
 https://help.aliyun.com/document_detail/25985.html
 
+https://yq.aliyun.com/articles/59048  ¿çÈëÁ÷Ê½¼ÆËãÊ±´ú£¬ÓÃ²»×Åºé»ÄÖ®Á¦¡ª¡ªÔÚ°¢ÀïÔÆÈİÆ÷·şÎñÉÏÒ»¼ü²¿ÊğJStorm
 °¢ÀïÔÆ¹«¿ªÁËËûÃÇµÄ¾µÏñ²Ö¿â  http://maven.aliyun.com/nexus    
 https://yq.aliyun.com/articles/65274?spm=5176.100239.blogcont46991.11.rYefW9   Maven Docker¾µÏñÊ¹ÓÃ¼¼ÇÉ
+https://cr.console.aliyun.com/?spm=5176.2020520152.210.d103.lY5uK4#/namespace/index
 docker login --username=xxx@163.com registry.cn-hangzhou.aliyuncs.com
 docker pull registry.cn-hangzhou.aliyuncs.com/is00hcw/openresty:[¾µÏñ°æ±¾ºÅ]
 docker tag [ImageId] registry.cn-hangzhou.aliyuncs.com/is00hcw/openresty:[¾µÏñ°æ±¾ºÅ]

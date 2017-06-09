@@ -7,6 +7,36 @@ https://wide.b3log.org/
 https://github.com/mailgun/godebug
 https://github.com/teambition/gear Go 语言的 Web 服务框架 Gear-go    https://github.com/teambition/gear/blob/master/doc/design.md
 
+http://www.flysnow.org/2016/12/28/from-java-to-golang.html  从Java到Golang快速入门
+http://www.flysnow.org/2017/04/11/go-in-action-go-goroutine.html   runtime.GOMAXPROCS(runtime.NumCPU())
+互斥锁mutex sync.Mutex，这个互斥锁有两个方法，一个是mutex.Lock(),一个是mutex.Unlock(),这两个之间的区域就是临界区，临界区的代码是安全的。
+如果一个通道被关闭了，我们就不能往这个通道里发送数据了，如果发送的话，会引起painc异常。但是，我们还可以接收通道里的数据，如果通道里没有数据的话，接收的数据是nil。
+无缓冲的通道指的是通道的大小为0，也就是说，这种类型的通道在接收前没有能力保存任何值，发送goroutine和接收gouroutine必须是同步的，同时准备后，如果没有同时准备好的话，先执行的操作就会阻塞等待，直到另一个相对应的操作准备好为止。这种无缓冲的通道我们也称之为同步通道。
+有缓冲通道，其实是一个队列，对于有缓冲的通道，向其发送操作就是向队列的尾部插入元素，接收操作则是从队列的头部删除元素，并返回这个刚刚删除的元素。当队列满的时候，发送操作会阻塞；当队列空的时候，接受操作会阻塞。有缓冲的通道，不要求发送和接收操作时同步的，相反可以解耦发送和接收操作。
+定义单向通道也很简单，只需要在定义的时候，带上<-即可。
+var send chan<- int //只能发送
+var receive <-chan int //只能接收
+read里使用读锁，也就是RLock和RUnlock，写锁的方法名和我们平时使用的一样Lock和Unlock, var rw *sync.RWMutex = new(sync.RWMutex)
+data map[interface{}]interface{}
+make只能用来分配及初始化类型为slice，map，chan的数据；new可以分配任意类型的数据
+new分配返回的是指针，即类型*T；make返回引用，即T 。 new分配的空间被清零，make分配后，会进行初始化。
+
+内建函数make(T, args)与new(T)的用途不一样。它只用来创建slice，map和channel，并且返回一个初始化的(而不是置零)，类型为T的值（而不是*T）。之所以有所不同，是因为这三个类型的背后引用了使用前必须初始化的数据结构。例如，slice是一个三元描述符，包含一个指向数据（在数组中）的指针，长度，以及容量，在这些项被初始化之前，slice都是nil的。对于slice，map和channel，make初始化这些内部数据结构，并准备好可用的值。
+如果用C来描述，Go中的new大概相当于：
+T *t = (T*)malloc(sizeof(T))
+memset(t, 0, sizeof(T))
+rect3 := &Rect{0, 0, 100, 200}
+
+https://my.oschina.net/tjt/blog/910153  Go Concurrency 实战
+select 让你可以同时等待多个通道操作。(poll/epoll?) 注意select 要么写个死循环用超时,要不就定好次数.或者加上default让select变成非阻塞的
+其中time.After返回<-chan Time,直接向select发送消息    case <-time.After(time.Second * 1)
+default,当监听的channel都没有准备好的时候，默认执行的
+time.Sleep(time.Duration(rand.Intn(1000)) * time.Millisecond)
+data := make(map[string]interface{}, 1)  
+json_obj, err := json.Marshal(data)  //序列化  
+json_err := json.Unmarshal(json_obj, &marshal_data)     //反序列化  
+
+
 http://it.taocms.org/05/10911.htm  gokit
 http://studygolang.com/articles/7010
 
@@ -221,3 +251,25 @@ timeout := time.After(30 * time.Second)
 
 http://studygolang.com/articles/2027   WaitGroup总共有三个方法：Add(delta int),　Done(),　Wait()。
 
+
+
+对于 int 、 float64 和 string 数组或是分片的排序， go 分别提供了 sort.Ints() 、 sort.Float64s() 和 sort.Strings() 函数， 默认都是从小到大排序。
+go 中对某个 Type 的对象 obj 排序， 可以使用 sort.Sort(obj) 即可，就是需要对 Type 类型绑定三个方法 ： Len() 求长度、 Less(i,j) 比较第 i 和 第 j 个元素大小的函数、 Swap(i,j) 交换第 i 和第 j 个元素的函数。sort 包下的三个类型 IntSlice 、 Float64Slice 、 StringSlice 分别实现了这三个方法， 对应排序的是 [] int 、 [] float64 和 [] string
+https://my.oschina.net/2xixi/blog/489780  Golang操作数据库
+https://my.oschina.net/2xixi/blog/488811  go语言解析html  https://github.com/PuerkitoBio/goquery
+http://www.tuicool.com/articles/jUJJ3q  Golang如何解析Html代码
+http://studygolang.com/articles/2730   golang 获取网页内容
+http://blog.csdn.net/liangguangchuan/article/details/52858791   goLang 多线程抓取网页数据
+http://blog.csdn.net/liangguangchuan/article/details/53928979    golang 使用 goquery 抓取 知乎周刊
+  
+http://studygolang.com/articles/2685  Go语言中的 Array, Slice和 Map
+var c = [...]int {1, 2, 3, 4, 5}   //由初始化列表决定数组长度，不可省去标识符 "..."，否则将变成切片Slice
+在声明的时候，直接初始化 var slice1 = []int {1 ,2, 3, 4, 5}
+var slice1 = make([]int, 5)  //长度和容量都是 5
+可以使用“{}”来在声明的时候进行初始化  var map1 map[string]int {}  
+var map2 = make(map[string]int)  //字典的创建
+
+
+new 的作用是 初始化 一个指向类型的指针 (*T)， make 的作用是为 slice, map 或者 channel 初始化，并且返回引用 T
+内建函数 make 分配并且初始化 一个 slice, 或者 map 或者 chan 对象。 并且只能是这三种对象。 但是make 的返回值就是这个类型（即使一个引用类型），而不是指针。
+GOPATH 环境变量是用来指定GOROOT之外的，包含项目的源文件和他们的二进制文件的目录。 

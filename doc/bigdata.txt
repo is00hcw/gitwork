@@ -1,4 +1,18 @@
-﻿http://ixirong.com/2015/03/16/something-about-fastdfs/  fastdfs 环境搭建使用及最佳实践
+﻿https://yq.aliyun.com/articles/72538?spm=5176.100239.blogcont72534.55.YCh403  《云数据·大计算：海量日志数据分析与应用》Workshop-入口
+https://yq.aliyun.com/articles/72581?spm=5176.100239.0.0.fBuUC8  《在线用户行为分析：基于流式计算的数据处理及应用》Workshop-入口
+https://yq.aliyun.com/articles/96391?spm=5176.8091938.0.0.DdY8tz  MaxCompute（原ODPS）开发入门指南——数据上云篇
+https://help.aliyun.com/document_detail/47451.html?spm=5176.product27797.6.588.iFTE4i
+http://fluentular.herokuapp.com/?spm=5176.doc47450.2.4.QlAlOm  fluentd正则表达式
+https://yq.aliyun.com/articles/68579?spm=5176.100239.blogcont96391.45.LwAGso  基于阿里云数加·StreamCompute快速构建网站日志实时分析大屏
+https://yq.aliyun.com/articles/89645?spm=5176.100239.blogrightarea88294.19.ixruTF  手把手，教你用MaxCompute+OpenSearch搭建分布式搜索引擎
+https://yqfile.alicdn.com/6fd363cb00bcc8160e6dc0a8791366690e5cc962.png
+https://data.aliyun.com/experience/case1?spm=5176.100239.blogcont96380.54.6CBkuR  快速搭建一个BI销售数据分析系统
+https://data.aliyun.com/experience?spm=a2c0j.8278940.630038.1.oqCw0C  数加体验馆
+https://help.aliyun.com/document_detail/49571.html?spm=5176.doc42751.6.545.Tqedd2   深度学习
+https://yq.aliyun.com/articles/89763?spm=5176.100239.blogcont97659.23.i616P5  阿里云数加（大数据）公开数据集（公测ing）
+https://yq.aliyun.com/articles/97659?spm=5176.100239.0.0.l7tVQn  数据库工程师快速上手MaxCompute进行ETL
+
+http://ixirong.com/2015/03/16/something-about-fastdfs/  fastdfs 环境搭建使用及最佳实践
 
 
 http://blog.javachen.com/2013/04/06/install-cloudera-cdh-by-yum/   使用yum安装CDH Hadoop集群 

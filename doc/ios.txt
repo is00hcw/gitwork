@@ -1,10 +1,16 @@
-﻿https://segmentfault.com/a/1190000000487144  14 款好用的 iOS 开发工具
+﻿https://github.com/Tencent/wcdb  WCDB是一个高效、完整、易用的移动数据库框架，基于SQLCipher，支持iOS, macOS和Android
+
+https://www.apple.com/education/everyone-can-code/
+https://itunes.apple.com/us/author/apple-education/id939801385?mt=11
+https://segmentfault.com/a/1190000000487144  14 款好用的 iOS 开发工具
 http://blog.csdn.net/potato512/article/details/52176073  自动打包
 https://my.oschina.net/u/727843/blog/391946
 http://xudafeng.github.io/slide/archives/native-in-practice/#/   移动客户端编程实战
 https://github.com/fengling2300/networkTest   http://oncenote.com/2014/10/21/Security-1-HTTPS/
 
 https://zhuanlan.zhihu.com/p/26955368  如何打造易扩展的高性能图片组件
+https://www.qcloud.com/community/article/164816001481011837  经验之道：最有效的 iOS 内存泄漏检测
+https://www.qcloud.com/community/article/238578  iOS 中的 Promise 设计模式
 http://blog.cnbang.net/tech/3354/   iOS 开发技术栈与进阶
 http://blog.cnbang.net/internet/3245/  如何面试iOS工程师
 http://blog.fir.im/fir-im-weekly161223/   iOS / Android 动态化更新方案盘点
@@ -14,6 +20,39 @@ https://github.com/wequick/Small
 https://github.com/SnapKit/Masonry  自动布局
 https://objectivec2swift.com/#/home/converter/  转swift
 https://yq.aliyun.com/articles/74464?spm=5176.8067842.tagmain.5.X20x6y  深入Objective-C Runtime机制(一):类和对象的实现
+http://www.cnblogs.com/kenshincui/p/3983982.html  iOS开发系列--并行开发其实很容易
+
+http://colin1994.github.io/2017/04/09/OpenGLES-Lesson02/
+
+直播
+https://github.com/loyinglin/LearnOpenGLES
+https://github.com/loyinglin/GPUImage 源码级别对GPUImage进行剖析    http://www.jianshu.com/p/095107abc7ba
+https://www.objccn.io/issue-21-9/ 基于 OpenCV 的人脸识别
+https://github.com/tiantianlan/LiveExplanation  直播技术的总结  http://www.jianshu.com/p/bd42bacbe4cc
+https://github.com/BradLarson/GPUImage
+https://github.com/hardman/AWLive
+https://github.com/chenliming777/LMLiveStreaming    https://github.com/goodow/GDLiveStreaming
+https://github.com/LaiFengiOS/LFLiveKit
+https://github.com/Flipboard/FLAnimatedImage
+http://blog.csdn.net/u1031/article/details/50788093   用GPUImage来给视频加入水印
+GPUImageVideoCamera  GPUImage最关键在于GPUImageFramebuffer这个类，这个类会保存当前处理好的图片信息。
+滤镜处理的原理就是把静态图片或者视频的每一帧进行图形变换再显示出来。它的本质就是像素点的坐标和颜色变化，这点从GPUImage项目中滤镜的源代码就可以了解到。
+https://yq.aliyun.com/articles/55708  使用GPUImage实现视频滤镜
+http://www.cnblogs.com/fuunnyy/p/6753910.html  美颜需要用到CoreImage框架下的CIDetector和CIFeature，以及CIFaceBalance等相关的类。
+http://colin1994.github.io/2016/10/21/Core-Image-OverView/
+http://www.jianshu.com/p/945fc806a9b4  基于GPUImage的实时美颜滤镜
+http://www.jianshu.com/p/ba1f79f8f6fa  在直播应用中添加Faceu效果
+http://www.jianshu.com/p/b69bd12ada07   关于视频直播技术，你想要知道的都在这里了（二）处理
+Android 也有 GPUImage 这个库的移植：https://github.com/CyberAgent/android-gpuimage 同时，Google 官方也开源了一个伟大的库，覆盖了 Android 上面很多多媒体和图形图像相关的处理：https://github.com/google/grafika
+https://sqhtiamo.github.io/note/public/2017/02/09/live/qiniu/  七牛视频直播学习笔记
+http://blog.qiniu.com/archives/category/视频直播技术
+http://blog.qiniu.com/archives/7463
+1、推流：LFLiveKit 2、播放：ijkplayer 3、服务器:nginx+rtmp+ffmpeg 
+http://www.52learn.wang/archives/1429
+一个完整的直播系统需要涉及到的技术主要包括以下方面： 1.采集、2.滤镜处理、3.编码、4.推流、5.CDN分发、6.拉流、7.解码、8.播放、9.聊天互动。 其中1～4由LFLiveKit完成（2由GPUImage完成），5就是搭建的本地服务器，6～8由ijkplayer完成
+http://notes.zhaoshuai123.com/2016/10/17/视频直播类App研究总结/
+http://7xrubd.com1.z0.glb.clouddn.com/图像技术在直播中的应用-邱彦林-1021.pdf
+
 
 https://my.oschina.net/leejun2005/blog/504732  iOS 统计打点那些事  https://github.com/steipete/Aspects
 http://www.jianshu.com/p/87ef6720a096   最快让你上手ReactiveCocoa之基础篇

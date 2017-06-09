@@ -1,5 +1,7 @@
 ﻿基本的流程是：InvokerInvocationHandler ->ClusterInvoker ->LoadBalance -> ProtocolFilterWrapper -> Protocol -> DubboInvoker
 RpcContext.getContext().setAttachment(CallChainContext.TRACEID, traceIdValue);
+https://mp.weixin.qq.com/s/Dm2_gS7k8MIgM_rQw-SLpg  程超：手把手教你动手扩展分布式调用链
+https://github.com/lenovoDTC/dubbo-G
 
 http://kriszhang.com/motan-rpc-impl/  从motan看RPC框架设计
 https://github.com/weibocom/motan  微博rpc
@@ -10,6 +12,36 @@ https://github.com/opentracing/opentracing-java
 http://blog.csdn.net/akfly/article/details/53976303   motan学习笔记 六 opentracing Brave+zipkin实现
 http://blog.csdn.net/akfly/article/details/53975388
 https://yq.aliyun.com/articles/75338?spm=5176.100239.blogrightarea71685.33.doAGJt   分布式调用跟踪与监控实战
+
+
+http://qinghua.github.io/dubbo-1/
+http://qinghua.github.io/dubbo-3/   监控与管理dubbo服务
+http://qinghua.github.io/dubbo-2/
+https://github.com/alibaba/spring-boot-starter-dubbo
+https://github.com/linux-china/spring-boot-dubbo
+https://yq.aliyun.com/articles/60789  在Docker中运行Dubbo应用
+http://www.jianshu.com/p/68edb8c6c75c  通过修改dubbo源码实现dubbo应用容器内部署
+http://crabdave.iteye.com/blog/2363576  docker dubbo-admin
+http://www.cnblogs.com/fr5s/p/5649389.html   docker tomcat7 dubbo-admin monitor
+http://www.jianshu.com/p/1727264416a5  Docker运行Dubbo provider
+http://www.cnblogs.com/johnd/p/set-docker-hostname.html  自定义Docker容器的 hostname
+
+https://github.com/joshlong/cloud-native-workshop
+https://github.com/jessyZu/dubbo-zipkin-spring-starter
+http://tech.lede.com/2017/04/19/rd/server/SpringCloudSleuth/    Spring Cloud技术分析（3）- spring cloud sleuth
+https://yq.aliyun.com/articles/78128?spm=5176.100239.blogcont78144.18.5bmRNe   spring-cloud-sleuth+zipkin追踪服务实现(一)
+https://yq.aliyun.com/articles/78144  spring-cloud-sleuth+zipkin追踪服务实现(二)
+
+http://blog.spring-cloud.io/blog/sc-sleuth.html   SpringCloudSleuth 微服务架构下的分布式追踪
+添加Sleuth后，日志格式输出样例如下，Slf4J MDC[appname,traceId,spanId,exportable]。这个是Sleuth基于logback输出的日志格式
+#zipkin地址，Sleuth会将trace数据以http的方式发送，采样率percentage=1意味着100%发送
+#sleuth也会产生性能消耗，因此percentage=1只是为了方便调试用例，生产环境下根据需要配置
+spring.zipkin.base-url=http://localhost:9411
+spring.sleuth.sampler.percentage=1
+
+
+https://github.com/openzipkin/zipkin/blob/master/zipkin-storage/mysql/src/main/resources/mysql.sql
+STORAGE_TYPE=MySQL MySQL_HOST=192.192.192.192 MySQL_TCP_PORT=3306 MySQL_DB=mytestdb MySQL_USER=root MySQL_PASS=123456 nohup Java -jar zipkin-server-1.5.1-exec.jar &
 
 
 http://www.oschina.net/news/83719/tencent-tars-opensource   腾讯开源微服务架构 Tars，高性能 RPC 开发框架

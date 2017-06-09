@@ -1,7 +1,9 @@
 http://mirrors.flysnow.org/  下载镜像
+https://zhuanlan.zhihu.com/p/27026614  Google 官方推出应用开发架构指南  LiveData 还能够自动响应各组件的声明周期事件，防止内存泄漏
 http://geek.csdn.net/news/detail/198991   Google 官方应用架构的最佳实践指南
 https://zhuanlan.zhihu.com/p/26832197  使用 Annotation 改善 Android 代码
 http://www.jianshu.com/p/03da9f91f41f   借助Stetho在Chrome上调试Android网络&数据库
+https://www.qcloud.com/community/article/439099   Android 开发： 小工具，大效率
 http://blog.csdn.net/gorgle/article/details/52151709  JakeWharton的timber自动生成Tag原理   http://einverne.github.io/post/2016/06/android-lib-timber.html
 https://toutiao.io/posts/171682/app_preview  Android 调试自测工具（一）：Hugo、Timber、Scalpel
 http://blog.csdn.net/q919233914/article/details/52996384    DiffUtil为recycleview的数据变化提供数据对比的工具类。 
@@ -87,9 +89,12 @@ http://baronzhang.com/blog/Framework/%E5%AE%89%E5%B1%85%E5%AE%A2Android%E9%A1%B9
 https://race604.com/annotation-processing/   注释代码生成
 https://github.com/Spring-Xu/AnnotationProcessorDemo/wiki/ButterKnife核心技术揭秘
 
+https://github.com/alibaba/UltraViewPager  UltraViewPager 是阿里开源的一个封装多种特性的 ViewPager ，主要是为多页面切换场景提供统一解决方案。
+https://github.com/zhihu/Matisse  Matisse 是知乎开源的一个漂亮的 Android 本地图片、视频选择器
 http://pingguohe.net/2017/02/28/vlayout-design.html   vlayout 是手机天猫 Android 版内广泛使用的一个基础 UI 框架项目 提供了一个用于RecyclerView的自定义的LayoutManger  
 https://github.com/alibaba/vlayout 
 http://tangram.pingguohe.net/    Tangram，七巧板，是天猫团队开源的跨平台模块化 UI 界面方案   http://pingguohe.net/2017/03/30/what-is-tangram.html
+https://github.com/alibaba/tangram-android
 http://pingguohe.net/abouttangram/
 
 http://alighters.com/blog/2017/01/16/multidex-generate/     理解 Multidex 生成

@@ -8,6 +8,12 @@ https://github.com/ElementUI/element-starter
 https://weui.io/
 https://github.com/airyland/vux   https://vux.li/?x-page=oschina#!/demo
 
+https://fundebug.com/  javascript错误监控
+https://github.com/BetterJS/doc   https://www.qcloud.com/community/article/498929001487125840
+http://www.barretlee.com/blog/2015/08/20/cb-fe-monitor/   前端代码异常日志收集与监控
+http://www.cnblogs.com/xianyulaodi/p/6201829.html   聊聊js代码异常监控  https://www.baidufe.com/item/7ee009bfbcd0fe94bd3e.html  
+
+https://blog.fundebug.com/2017/06/02/javascript-new-for-beginner/  JavaScript初学者必看“new”
 http://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000   https://github.com/michaelliao/learn-javascript   
 http://jdc.jd.com/archives/2806  浅析渲染引擎与前端优化
 http://jdc.jd.com/archives/2942  JavaScript写类的前世今生
@@ -15,6 +21,11 @@ https://github.com/wepayui/wepayui   微信支付
 http://www.ruanyifeng.com/blog/2017/02/fp-tutorial.html   函数式编程入门教程
 http://www.ruanyifeng.com/blog/2017/03/ramda.html  Ramda 函数库参考教程
 https://yq.aliyun.com/articles/71256?spm=5176.100239.bloglist.23.wzsiSN  前端知识库
+
+https://blog.fundebug.com/2017/04/07/solve-script-error/   Script error.解决方法
+https://github.com/joeyguo/blog/issues/13  脚本错误量极致优化-监控上报与Script error
+https://github.com/joeyguo/blog/issues/14  脚本错误量极致优化-让脚本错误一目了然
+https://blog.fundebug.com/2017/03/13/sourcemap-tutorial/   Source Map入门教程
 
 npm install -g generator-webpack-es6-cssnext
 npm install es6-promise whatwg-fetch --save

@@ -1,3 +1,15 @@
+https://github.com/alibaba/uirecorder/blob/master/README_zh-cn.md
+http://www.jianshu.com/p/14122ce0d4fb
+http://shaofan.org/ui-recorder/?utm_source=tuicool&utm_medium=referral
+ NodeJs (版本号 >= v7.x)  使用await等语法
+ npm install uirecorder mocha -g
+ 启动WebDriver服务器 java -jar selenium-server-standalone-2.53.1.jar   http://selenium-release.storage.googleapis.com/index.html
+
+npm config set registry http://registry.cnpmjs.org
+npm install -g cnpm --registry=https://registry.npm.taobao.org
+http://www.jianshu.com/p/07b2ff3a9ba2
+https://fuxiaosong.cn/2017/01/10/Macaca-uirecorder-%E5%AE%9E%E7%8E%B0-Android-%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/
+
 自动化
 http://www.oschina.net/p/UI-Recorder
 http://www.oschina.net/p/cafe
