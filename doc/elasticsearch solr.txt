@@ -1,3 +1,29 @@
+https://www.zybuluo.com/1234567890/note/672738 ElasticSearch-java实例
+http://yyqian.com/post/1463461156000/  Elasticsearch 学习笔记
+http://jolefstar.com/elasticsearch-architecture/  Elasticsearch 架构以及源码概览
+https://oss.aliyuncs.com/yqfiles/ELK调研.pd...%5Bsuntingtao%5D.1461556683.pdf
+http://www.jianshu.com/p/f4bdfda8b390  Elasticsearch的基础分布式架构以及shard相关知识和节点的扩容、容错
+http://www.jianshu.com/p/7a46f9d0b9b7  Elasticsearch---document存放时的路由原理及增删改查原理
+https://zhuanlan.zhihu.com/p/27352681  深入浅出 spring-data-elasticsearch 之 ElasticSearch 架构初探（一）
+https://www.elastic.co/guide/cn/elasticsearch/guide/current/_scale_horizontally.html
+https://wizardforcel.gitbooks.io/mastering-elasticsearch/content/chapter-4/42_README.html
+
+分布式系统要解决的第一个问题就是节点之间互相发现以及选主的机制。如果使用了 Zookeeper/Etcd 这样的成熟的服务发现工具，这两个问题都一并解决了。
+集群是去中心化的，有一个主节点（Master）。主节点是动态选举，因此不会出现单点故障。分布式存储系统为了解决单机容量以及容灾的问题，都需要有分片以及副本机制。Elasticsearch 没有采用节点级别的主从复制，而是基于分片。它当前还未提供分片切分（shard-splitting）的机制，只能创建索引的时候静态设置。
+primary shard的数量在创建索引的时候就固定了，replica shard的数量可以随时修改primary shard的默认数量是5，replica默认是1，默认有10个shard，5个primary shard，5个replica shard
+分片是一个功能完整的搜索引擎，它拥有使用一个节点上的所有资源的能力。 我们这个拥有6个分片（3个主分片和3个副本分片）的索引可以最大扩容到6个节点，每个节点上存在一个分片，并且每个分片拥有所在节点的全部资源。
+主分片的数目在索引创建时 就已经确定了下来。实际上，这个数目定义了这个索引能够 存储 的最大数据量。（实际大小取决于你的数据、硬件和使用场景。） 但是，读操作——搜索和返回数据——可以同时被主分片 或 副本分片所处理，所以当你拥有越多的副本分片时，也将拥有越高的吞吐量。在运行中的集群上是可以动态调整副本分片数目
+coordinate node对document进行路由，将请求转发到对应的node，此时会使用round-robin随机轮询算法，在paimary shard以及所有replica中随机选择一个，让读请求负载均衡
+官方文档的说法是分片切分成本和重新索引的成本差不多，所以建议干脆通过接口重新索引。
+Elasticsearch 的分片默认是基于id 哈希的，id可以用户指定，也可以自动生成。但这个可以通过参数（routing）或者在mapping配置中修改。当前版本默认的哈希算法是MurmurHash3。
+Elasticsearch 禁止同一个分片的主分片和副本分片在同一个节点上，所以如果是一个节点的集群是不能有副本的。
+
+存储路由过程由下面地公式决定：shard = hash(routing) % number_of_primary_shards
+routing 是可变值，支持自定义，默认文档 _id。 但我们也可以手动指定 PUT /index/type/id?routing=user_id
+这也解释了为什么主切片的数量只能在创建索引时定义且不能修改：如果主切片的数量在未来改变了，所有先前的路由值就失效了，文档也就永远找不到了。
+所有的文档API（get、index、delete、bulk、update、mget）都接收一个routing参数，它用来自定义文档到分片的映射。自定义路由值可以确保所有相关文档.比如用户的文章,按照用户账号路由,就可以实现属于同一用户的文档被保存在同一分片上。
+在默认情况下，Elasticsearch 采用 TF-IDF (term frequency–inverse document frequency) 算法
+
 http://blog.csdn.net/sunnyyoona/article/details/51747381  [Elasticsearch]elasticsearch+kibana+marvel安装
 kibana 2.6.1  Elasticsearch 2.4.1
 kibana plugin --install elastic/sense

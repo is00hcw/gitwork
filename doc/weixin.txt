@@ -1,11 +1,57 @@
-﻿https://www.awesomes.cn/repos/Dom/Frameworks?sort=trend  前端框架
+﻿https://www.it120.cc/info/wxapp/314 商城小程序  https://github.com/EastWorld/wechat-app-mall
+https://github.com/ateddy/wechatapp
+
+先在控制台打印出Promise看看，console.dir(Promise)  
+Promise是一个函数，自己身上有all、race、reject、resolve等方法，原型上有then、catch等方法
+Promise.race方法同样是将多个Promise实例，包装成一个新的Promise实例。all方法的效果实际上是「谁跑的慢，以谁为准执行回调」，那么相对的就有另一个方法race「谁跑的快，以谁为准执行回调」。
+Promise.race([runAsync1(), runAsync2(), runAsync3()])  
+https://segmentfault.com/a/1190000002928371  谈谈 ES6 的 Promise 对象
+
+block 和 flex 的区别，即子元素 view 换行显示（block）和行内显示（flex）的差异。
+http://www.51xuediannao.com/html+css/htmlcssjq/display_flex.html 微信小程序布局display flex布局介绍 
+http://blog.csdn.net/jasonzds/article/details/54807884
+http://blog.csdn.net/aoaoxiexie/article/details/53991432
+http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html   
+http://blog.csdn.net/DJH996064549/article/details/56278119?locationNum=16&fps=1
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+http://wow.techbrood.com/fiddle/33125?vm=full  在线测试flexbox
+http://www.css88.com/demo/flexbox-playground/  测试flexbox布局
+https://codepen.io/enxaneta/full/adLPwv  可视化
+https://cvan.io/flexboxin5/
+http://www.flexboxpatterns.com/feature-list
+http://www.cnblogs.com/jtrend/p/6404225.html
+https://paulund.co.uk/css-flexbox
+
+http://jonibologna.com/flexbox-cheatsheet/    https://codepen.io/jonitrythall/pen/pAlei
+http://jsfiddle.net/abhitalks/xghqmq6u/
+http://www.runoob.com/try/try.php?filename=trycss3_flex  http://wow.techbrood.com/fiddle/16981
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+https://css-tricks.com/snippets/css/complete-guide-grid/
+https://www.cssgridplayground.com/   在线测试GRID
+https://alialaa.github.io/css-grid-cheat-sheet/  在线测试GRID
+https://sanwen.net/a/uxulbpo.html   CSS Grid布局：快速入门  https://codepen.io/tutsplus/pen/YGWpVJ
+http://www.w3cplus.com/css3/playing-with-css-grid-layout.html
+https://mp.weixin.qq.com/s?__biz=MjM5NzE0MjQ2Mw==&mid=404965021&idx=1&sn=977d02fe0041a494dbf12a4785ae8c11&scene=19#wechat_redirect CSS Grid布局指南
+
+http://www.jianshu.com/p/449c3b848790  安装mockbin服务
+
+wx.reportAnalytics(eventName, data) 自定义分析数据上报接口。
+https://mp.weixin.qq.com/debug/wxadoc/dev/image/login.png?t=2017616  登录时序图
+key设置路径：微信商户平台(pay.weixin.qq.com)-->账户设置-->API安全-->密钥设置
+
+https://github.com/CFETeam/weapp-demo-album    http://cnodejs.org/topic/57eb9cddea2fa420446d43a4
+http://www.cnblogs.com/NKnife/p/6283605.html  微信小程序开发踩坑记录
+https://www.it120.cc/info/wxapp/314  商城小程序源码
+https://www.awesomes.cn/repos/Dom/Frameworks?sort=trend  前端框架
 http://www.cnblogs.com/icyhoo/p/6282574.html  微信小程序UI组件、开发框架
 http://www.oschina.net/project/tag/418/weixin?lang=0&os=0&sort=time  开源框架
 http://www.cnblogs.com/dushao/p/5999596.html   微信小程序开发常见问题分析
 https://my.oschina.net/huangxiujie/blog/817654  小程序服务端集成微信支付
 http://blog.csdn.net/qq_28057577/article/details/55207786   小程序框架总结
+http://www.jianshu.com/p/0135769db89c  微信小程序 页面传值
 
-
+https://github.com/youzan/zanui-weapp  有赞小程序   http://tech.youzan.com/zanui-weapp/
 https://github.com/weui/weui-wxss  WeUI for 小程序 为微信小程序量身设计
 http://www.open-open.com/lib/view/open1474939234732.html
 https://weui.io/
@@ -31,6 +77,17 @@ https://segmentfault.com/a/1190000008132184
 WeCOS 不仅支持自动将小程序项目的图片资源上传到配置好的腾讯云对象存储服务(COS)上存储，同时，还可以自动替换项目代码中本地资源引用地址为线上 URL，并移除项目目录中的图片资源。为小程序项目包瘦身，一键解决项目包超过 1MB 的烦恼。
 输入 npm install wecos -g
 在与开发目录 app 同目录下创建一个 wecos.config.json 配置文件
+
+微信小程序架构分析 
+https://zhuanlan.zhihu.com/p/22754296?refer=fedevs
+https://zhuanlan.zhihu.com/p/22765476?refer=fedevs
+https://zhuanlan.zhihu.com/p/22932309
+https://github.com/beautify-web/js-beautify
+打开微信 web 开发者工具，然后输入 openVendor() 便会打开 WeappVendor这个目录，这里包含了 view 模块和 service 模块使用的几个核心文件：
+wcc 可执行程序，用于将 wxml 转为 view 模块使用的 js 代码，使用方式为wcc xxx.wxml
+wcsc 可执行程序，用于将 wxss 转为 view 模块使用的 css 代码，使用方式为 wcsc xxx.wxss
+https://github.com/chemzqm/wept
+https://zhuanlan.zhihu.com/p/25126957  小程序开发的一些经验
 
 https://github.com/localtunnel/localtunnel  暴露本地服务
 https://github.com/pd4d10/js-stack-from-scratch  从零开始构建 JavaScript 技术栈 - 中文版

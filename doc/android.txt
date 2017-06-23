@@ -2,6 +2,25 @@ http://mirrors.flysnow.org/  下载镜像
 https://zhuanlan.zhihu.com/p/27026614  Google 官方推出应用开发架构指南  LiveData 还能够自动响应各组件的声明周期事件，防止内存泄漏
 http://geek.csdn.net/news/detail/198991   Google 官方应用架构的最佳实践指南
 https://zhuanlan.zhihu.com/p/26832197  使用 Annotation 改善 Android 代码
+http://dev.qq.com/topic/5799d7844bef22a823b3ad44  一步一步实现Android的MVP框架
+https://segmentfault.com/a/1190000003927200  Android MVP模式 简单易懂的介绍方式
+对于 activity 来说，它既与界面的展示，事件等有关系，又与业务数据层有着直接的关系，无疑 activity 层会极剧膨胀，变得极难阅读和维护。在这种结构下, activity 同时承担了 view 层和 controller 层的工作，所以我们需要给 activity 减负
+Presenter 层是连接 Model 层和 View 层的中间层，因此持有 View 层的接口和 Model 层的接口。这里就可以看到 MVP 框架的威力了，通过接口的形式将 View 层和 Model 层完全隔离开来。
+接口的作用类似给层与层之间制定的一种通信协议，两个不同的层级相互交流，只要遵守这些协议即可，并不需要知道具体的实现是怎样. 无论是从api获得，还是从本地数据库读取数据，本质上都是IO操作。 TaskManager 是作为业务层，对获取到的数据进行拼装，然后交给调用层。
+Android 规定，主线程是无法直接进行网络请求,会抛出 NetworkOnMainThreadException 异常
+final Handler mainHandler = new Handler(Looper.getMainLooper());
+http://www.jianshu.com/p/6917510b0e4c  RxJava常见的使用场景总结   https://github.com/THEONE10211024/RxJavaSamples
+http://blog.csdn.net/lzyzsd/article/details/50120801  RxJava使用场景小结
+http://blog.csdn.net/theone10211024/article/details/50435325  可能是东半球最全的RxJava使用场景小结
+Observable.concat(memory, disk, network).first()  依次检查
+Observable.merge(observable1, observable2)  并发等待
+NetworkService.getToken("username", "password").flatMap(s -> NetworkService.getMessage(s))  依赖顺序调用
+subscribeOn()和observeOn()的区别
+subscribeOn()主要改变的是订阅的线程。即call()执行的线程
+observeOn()主要改变的是发送的线程。即onNext()执行的线程。
+当我们调用了Observable.subscribe()方法，发生了什么：创建Subscriber对象，调用OnSubscribe对象的call方法。注意，Subscriber什么都没做
+
+https://github.com/NetEase/Emmagee  APP性能测试工具Emmagee
 http://www.jianshu.com/p/03da9f91f41f   借助Stetho在Chrome上调试Android网络&数据库
 https://www.qcloud.com/community/article/439099   Android 开发： 小工具，大效率
 http://blog.csdn.net/gorgle/article/details/52151709  JakeWharton的timber自动生成Tag原理   http://einverne.github.io/post/2016/06/android-lib-timber.html
@@ -16,11 +35,19 @@ http://droidyue.com/blog/2017/04/09/error-prone-tool-for-java-and-android/  Erro
 http://www.jianshu.com/p/81d03519dd33  自定义Android Studio工程模板  Android Studio 使用的是 FreeMarker 模板引擎，所以文件后缀都是 .ftl
 http://www.oschina.net/news/80873/50-tips-tips-and-resources-android-developers-must-know   Android 开发人员必知的50个秘诀、技巧和资源
 http://weishu.me/2016/12/30/simple-way-to-compile-android-source/  史上最简单Android源码编译环境搭建方法
-https://yq.aliyun.com/articles/67136?spm=5176.100238.goodcont.47.DNy5oa   阿里HotFix2.0升级详解——技术运营小二畅谈热修复领域那些事
 SoLoader是facebook出品的一款小巧的用于加载so库文件的开源项目，主要作用是自动检查和加载多个有依赖关系的so库文件。在Android平台下React-Native项目大量使用了动态链接库，即JNI技术，作为Java和JavaScript两种程序语言之间的通信桥梁。
 其中libreactnativejni.so是JNI桥梁的入口。 好在Android 4.3版本（包括）之后，会自动检查和加载依赖库，但是React-Native是兼容到Android 4.1版本的，所以SoLoader就是一种兼容4.3以下版本的技术解决方案。
+
+http://dev.qq.com/topic/57ac4a0ea374c75371c08ce8  Android进程保活招式大全
+监控手机锁屏解锁事件，在屏幕锁屏时启动1个像素的 Activity，在用户解锁时将 Activity 销毁掉。注意该 Activity 需设计成用户无感知。通过该方案，可以使进程的优先级在屏幕锁屏时间由4提升为最高优先级1。
+Android 中 Service 的优先级为4，通过 setForeground 接口可以将后台 Service 设置为前台 Service，使进程的优先级由4提升为2，从而使进程的优先级仅仅低于用户当前正在交互的进程，与可见进程优先级一致，使进程被杀死的概率大大降低。
+
+
+第三方库
 http://geek.csdn.net/news/detail/198760  开源整理：Android App 新手指引开源控件
+https://git.oschina.net/zftlive/zftlive 
  
+
 
 安全
 http://pingguohe.net/2016/03/21/Dynimac-write-infomation-into-apk.html   一种动态为apk写入信息的方案
@@ -101,49 +128,102 @@ http://alighters.com/blog/2017/01/16/multidex-generate/     理解 Multidex 生成
 https://github.com/rickdynasty/TwsPluginFramework   腾讯
 https://github.com/alibaba/atlas  手淘   http://atlas.taobao.org/docs/principle-intro/Runtime_principle.html
 
-http://blog.csdn.net/qq_25943493/article/details/51463884   android热更新技术研究
-http://wereadteam.github.io/2016/07/26/AndroidPatch/?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io   Android Patch 方案与持续交付
+
 https://github.com/singwhatiwanna/dynamic-load-apk
 http://www.jianshu.com/p/f1217cce93ef  使用DroidPlugin实践应用的插件化
 http://blog.csdn.net/h3c4lenovo/article/details/50751643  Android插件化开发 第五篇 [360 Droid Plugin]
 
 
 插件化,热更新
+简要说来，Instant Run中的资源热修复分为两步：
+构造一个新的AssetManager，并通过反射调用addAssetPath，把这个完整的新资源包加入到AssetManager中。这样就得到了一个含有所有新资源的AssetManager。
+找到所有之前引用到原有AssetManager的地方，通过反射，把引用处替换为AssetManager。 Java层的AssetManager只是个包装，真正关于资源处理的所有逻辑，其实都位于native层由C++实现的AssetManager。
+原因是这样的，在app运行到一半的时候，所有需要发生变更的Class已经被加载过了，在Android上是无法对一个Class进行卸载的。而腾讯系的方案，都是让Classloader去加载新的类。如果不重启，原来的类还在虚拟机中，就无法加载新类。因此，只有在下次重启的时候，在还没走到业务逻辑之前抢先加载补丁中的新类，这样后续访问这个类时，就会Resolve为新的类。从而达到热修复的目的。
+Andfix采用的方法是，在已经加载了的类中直接在native层替换掉原有方法，是在原来类的基础上进行修改的。
+一般来说，一个resources.arsc里面包含若干个package，不过默认情况下，由打包工具aapt打出来的包只有一个package。这个package里包含了app中的所有资源信息。资源信息主要是指每个资源的名称以及它对应的编号。我们知道，Android中的每个资源，都有它唯一的编号。编号是一个32位数字，用十六进制来表示就是0xPPTTEEEE。PP为package id，TT为type id，EEEE为entry id。
+aapt d resources app-debug.apk
+类似类修复反射注入方式。把补丁so库的路径插入到nativeLibraryDirectories数组的最前面，就能够达到加载so库的时候是补丁so库
+https://yq.aliyun.com/articles/74598?t=t1  Android热修复升级探索——追寻极致的代码热替换
+https://yq.aliyun.com/articles/96378  Android热修复升级探索——资源更新之新思路
+https://mp.weixin.qq.com/s/5KjSPvUflbg0pVRIjtLiRA?spm=5176.100239.blogcont102404.14.zIXw6P 阿里推出业界首个非侵入式热修复方案Sophix
+https://yq.aliyun.com/articles/62685?spm=5176.100239.blogcont74598.30.tAF0u9  Android热修复技术选型——三大流派解析
+https://yq.aliyun.com/articles/67136?spm=5176.100239.blogcont74598.27.tAF0u9  阿里HotFix2.0升级详解——技术运营小二畅谈热修复领域那些事
+http://www.jianshu.com/p/6f687dec55e4 Android Hotfix 新方案——Amigo 源码解读
+http://www.jianshu.com/p/eec0ab6800a4  Android热修复方案比较
+https://mp.weixin.qq.com/s?__biz=MzA3NTYzODYzMg==&mid=2653577702&idx=1&sn=1288c77cd8fc2db68dc92cf18d675ace&scene=4#wechat_redirect  Android 动态链接库加载原理及 HotFix 方案介绍
+http://blog.csdn.net/qq_25943493/article/details/51463884   android热更新技术研究
+https://mp.weixin.qq.com/s?__biz=MzI1MTA1MzM2Nw==&mid=400118620&idx=1&sn=b4fdd5055731290eef12ad0d17f39d4a  安卓App热补丁动态修复技术介绍
+https://mp.weixin.qq.com/s?__biz=MzAwNDY1ODY2OQ==&mid=2649286306&idx=1&sn=d6b2865e033a99de60b2d4314c6e0a25&scene=1&srcid=0811AOttpqUnh1Wu5PYcXbnZ#rd 微信Android热补丁实践演进之路
+http://wereadteam.github.io/2016/07/26/AndroidPatch/?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io   Android Patch 方案与持续交付
 而Android的插件化原理基本上就是以ClassLoader为基础进行的啦，Android中包含DexClassLoader和PathClassLoader
 动态加载是指我们将APP中并非启动必用的so库放在服务器上，当用户需要使用某项功能时再从网络获取相关的so库并加载运行，一般我们都是使用System.loadLibrary来加载so库的
 http://www.cnblogs.com/chenxibobo/p/6076459.html    Android分包方案multidex
 http://mp.weixin.qq.com/s/1p5Y0f5XdVXN2EZYT0AM_A    Android 插件技术实战总结
 http://www.oschina.net/news/83062/meituan-open-source-robust   美团 Android 热更新方案 Robust 开源   https://github.com/Meituan-Dianping/Robust
+https://mp.weixin.qq.com/s/GuzbU1M1LY1VKmN7PyVbHQ  蘑菇街Android热修复探索之路 https://github.com/meili/Aceso
+http://mp.weixin.qq.com/s/1_hPg07VoiKHiujIyRqANA   微店 Android 插件化实践
+http://mp.weixin.qq.com/s/iLi1qrRYh4SAgFWxO40fFw   Tinker 爬坑之路
 http://tech.meituan.com/android_autopatch.html
+https://yq.aliyun.com/articles/67136?spm=5176.100238.goodcont.47.DNy5oa   阿里HotFix2.0升级详解——技术运营小二畅谈热修复领域那些事
 阿里百川HotFix的Android版本在AndFix的基础上，增加了补丁版本管理、补丁安全校验、控制台灰度管理等更加人性化的功能，同时针对兼容性进行了完善，支持市面上超过800种常见机型
 https://github.com/Tencent/tinker  https://my.oschina.net/shwenzhang/blog/751618  微信官方的Android热补丁解决方案，它支持动态下发代码、So库以及资源，让应用能够在不需要重新安装的情况下实现更新。
-https://mp.weixin.qq.com/s?__biz=MzAwNDY1ODY2OQ==&mid=2649286306&idx=1&sn=d6b2865e033a99de60b2d4314c6e0a25    微信Android热补丁实践演进之路
 https://github.com/TangXiaoLv/Android-Easy-MultiDex  Android，multidex，splitdex，分包插件 
 https://github.com/iReaderAndroid/ZeusPlugin 插件化和补丁在目前看来是老生常谈的东西了，市面上已经有一堆实现方案，如DroidPlugin、Small、Android-Plugin-Framework。
 http://mp.weixin.qq.com/s?__biz=MzA3ODg4MDk0Ng==&mid=2651112601&idx=1&sn=8ac730ff885077f0b4a001fe27cf782d#rd  掌阅Android App插件补丁实践  https://github.com/iReaderAndroid/ZeusPlugin
 Dex的热修复目前来看基本上有四种方案：
 阿里系的从native层入手，见AndFix
 QQ空间的方案，插桩，见安卓App热补丁动态修复技术介绍
-
 微信的方案，见微信Android热补丁实践演进之路，dexDiff和dexPatch，方法很牛逼，需要全量插入，但是这个全量插入的dex中需要删除一些过早加载的类，不然同样会报class is pre verified异常，还有一个缺点就是合成占内存和内置存储空间。微信读书的方式和微信类似，见Android Patch 方案与持续交付，不过微信读书是miniloader方式，启动时容易ANR，在我锤子手机上变现出来特别明显，长时间的卡图标现象。
 美团的方案，也就是instant run的方案，见Android热更新方案Robust
 此外，微信的方案是多classloader，这种方式可以解决用multidex方式在部分机型上不生效patch的问题，同时还带来一个好处，这种多classloader的方式使用的是instant run的代码，如果存在native library的修复，也会带来极大的方便。
 http://blog.csdn.net/sbsujjbcy/article/details/52541803   Android 热补丁技术——资源的热修复
 http://mp.weixin.qq.com/s?__biz=MzA3NTYzODYzMg==&mid=2653577964&idx=1&sn=bac5c8883b7aaaf7d7d9ea227f200412  QFix探索之路——手Q热补丁轻量级方案
 https://github.com/LiuHongtao/hthotfix-android
-
-
-Freeline本质上是一个热补丁方案，将修过过的*.java和资源文件分别打成dex和pack，然后通过socket传输到手机上，在运行期动态加载生效。 
-https://yq.aliyun.com/articles/62334?spm=5176.100239.blogcont59122.15.peq2Ma  Android秒级编译工具Freeline新特性支持！
 https://github.com/T-Group/QFix?spm=5176.100239.blogcont62334.23.rLMEuE
 
+https://github.com/eleme/Amigo/blob/master/README_zh.md#amigo     http://www.oschina.net/p/amigo   Amigo，是一个Android 平台的hotfix库，由饿了么公司开源。
+https://zhuanlan.zhihu.com/p/24305296   MultiDex工作原理分析和优化方案
+https://github.com/bunnyblue/ACDD
+http://blog.csdn.net/qxs965266509/article/details/49816007
+http://blog.csdn.net/lmj623565791/article/details/49883661
+http://www.tuicool.com/articles/Fraqeab
+http://blog.csdn.net/t12x3456/article/details/39958755
+http://www.infoq.com/cn/articles/ctrip-android-dynamic-loading 携程插件化  https://github.com/CtripMobile/DynamicAPK
+https://github.com/Qihoo360/DroidPlugin
+下面是几种比较流行的开源热补丁方案：
+1. AndFix  http://www.oschina.net/p/andfix
+1. HotFix  https://github.com/dodola/HotFix
+1. Nuwa  https://github.com/jasonross/Nuwa  http://www.jianshu.com/p/72c17fb76f21  nuwa 仅支持更新 Java 代码，不能更新资源和 so 文件
+1. DroidFix  https://github.com/bunnyblue/DroidFix
+http://news.oneapm.com/developers-discussion-apk/
+http://www.wtoutiao.com/p/10awJ9K.html   Android热补丁动态更新实践
+https://yq.aliyun.com/articles/14738?spm=5176.blog26252.yqblogcon1.17.p4gifk  如何将「插件化」接入到项目之中
+
+http://www.jianshu.com/p/72c17fb76f21?spm=5176.blog8722.yqblogcon1.12.MP1pf8   基于Nuwa实现Android自动化HotFix
+https://github.com/archmages/HotFixSamples
+https://github.com/alibaba/LuaViewSDK
+http://dev.qq.com/topic/57a31921ac3a1fb613dd40f3  
+在这方面 Instant Run 的设计很精巧。它让 PathClassLoader 插入的父 loader （IncrementalClassLoader）包装了 DelegateClassLoader，并且把 DelegateClassLoader 的父 loader 设置为 PathClassLoader
+App 加载资源是依赖 Context#getResources 函数返回的 Resources 对象。Resources 内部包装了 AssetManager，最终由 AssetManager 从 apk 文件中加载资源。所以我们反射了替换系统默认的 Resources，让 AssetManager 从我们更新后的 apk 中加载资源。
+Android 系统在安装 apk 时候已经把 AndroidManifest.xml 文件解析并写入到系统中，目前还不支持修改四大组件
+在 Android 项目中使用 native 函数前需要先调用 System.loadLibrary(libName) 首先想到的是在代码中把加载 so 文件的代码改成System.load(libFilePath)，让系统加载自己指定的 libFilePath 文件。
+查找 lib 文件是通过调用 PathClassLoader 的 findLibrary，最终调用到 DexPathList 的 findLibrary。DexPathList 会在自己维护的列表目录中查找对应的 lib 文件是否存在。所以我们在发现 patch 文件中有 so 文件变更的时候，会在 PathClassLoader 的 nativeLibraryDirectories（Android6.0以下）或者nativeLibraryPathElements （Android 6.0及以上）的最前面插入自定义的lib文件目录。这样 ClassLoader 在 findLibrary 的时候会先在自定义的 lib 目录中查找，优先加载变更过的 so 文件。
+Chrome 最初升级方案也是 bsdiff，而后慢慢演变出 Courgette 算法。 我们对于补丁框架的定义不仅仅是『修复bug』就足够，除此之外，如何快速接入，如何做到不影响现有流程，这对于很多应用来说至关重要。
+
+http://www.jianshu.com/p/0202845db617
+-obfuscationdictionary {filename} 使用给定文件中的关键字作为要混淆方法的名称
+ 在Android资源中，有一种资源类型称为Public，它们一般是定义在res/values/public.xml文件中。   每当Android资源打包工具aapt重新编译被修改过的资源时，都会重新给这些资源赋予ID，这就可能会造成同一个资源项在两次不同的编译中被赋予不 同的ID。因此，当我们将自己定义的资源导出来给第三 方应用程序使用时，就需要通过public.xml文件将导出来的资源的ID固定下来。
+BaseDexClassLoader–>pathList–>dexElements
+换句话说，只要在static方法，构造方法，private方法，override方法中直接引用了其他dex中的类，那么这个类就不会被打上CLASS_ISPREVERIFIED标记。
 
 
 https://github.com/android-notes/SwissArmyKnife   android免root兼容所有版本ui调试工具
 http://www.oschina.net/news/78857/best-android-libraries-for-developers  面向开发者的最佳 Android 库列表
-https://yq.aliyun.com/articles/59177?spm=5176.100239.bloglist.16.EjXXV7     Freeline - Android平台上的秒级编译方案   https://github.com/alibaba/freeline
 https://github.com/alibaba/java-dns-cache-manipulator/tree/master/library   代码里面设置dns ip绑定
 https://yq.aliyun.com/articles/58517?spm=5176.8067842.tagmain.62.gdmKQ2  深度理解Android InstantRun原理以及源码分析
+https://yq.aliyun.com/articles/59177?spm=5176.100239.bloglist.16.EjXXV7     Freeline - Android平台上的秒级编译方案   https://github.com/alibaba/freeline
+Freeline本质上是一个热补丁方案，将修过过的*.java和资源文件分别打成dex和pack，然后通过socket传输到手机上，在运行期动态加载生效。 
+https://yq.aliyun.com/articles/62334?spm=5176.100239.blogcont59122.15.peq2Ma  Android秒级编译工具Freeline新特性支持！
 
 
 https://mp.weixin.qq.com/s?__biz=MzA4NTQwNDcyMA==&mid=2650661681&idx=1&sn=b151aba0c5fb702492f6bbd82211988d   Google开源的FlexboxLayout
@@ -176,8 +256,7 @@ Gradle 默认是当前目录下寻找 build.gradle 文件执行任务，这样执行 build 会使得整个
 ./gradlew -p app build
 
 
-Android：文件名必须为 baichuan-hotfix-patch.jar
-iOS：文件名必须为 main.js
+Android：文件名必须为 baichuan-hotfix-patch.jar   iOS：文件名必须为 main.js
 http://baichuan.taobao.com/docs/doc.htm?spm=a3c0d.7629140.0.0.CcQ659&treeId=234&articleId=105459&docType=1
 http://baichuan.taobao.com/docs/doc.htm?spm=a3c0d.7629140.0.0.rscI9s&treeId=234&articleId=105517&docType=1
 http://baichuan.taobao.com/product/maliApp.htm?spm=a3c0d.8115102.0.0.HhNslC
@@ -363,41 +442,8 @@ http://stormzhang.com/android/2015/03/05/android-debug-use-chrome/
 http://mp.weixin.qq.com/s?__biz=MzA3ODg4MDk0Ng==&mid=401955288&idx=1&sn=cd6e26f8ccecdde318f873b681e33526#rd
 Facebook的插桩方法，他们在考察了Android内建的Debug以及另一些方法后，选择了字节码重写技术，避免了手工插桩的劳动，且性能损失降到最低。
 Stetho 是 Facebook 开源的一个 Android 调试工具。是一个 Chrome Developer Tools 的扩展，可用来检测应用的网络、数据库、WebKit 等方面的功能。开发者也可通过它的 dumpapp 工具提供强大的命令行接口来访问应用内部。
-
 官网地址：http://facebook.github.io/stetho/
  
-
-
-补丁，热修复
-https://zhuanlan.zhihu.com/p/24305296   MultiDex工作原理分析和优化方案
-https://github.com/bunnyblue/ACDD
-http://blog.csdn.net/qxs965266509/article/details/49816007
-http://blog.csdn.net/lmj623565791/article/details/49883661
-http://www.tuicool.com/articles/Fraqeab
-http://blog.csdn.net/t12x3456/article/details/39958755
-http://www.infoq.com/cn/articles/ctrip-android-dynamic-loading 携程插件化  https://github.com/CtripMobile/DynamicAPK
-https://github.com/Qihoo360/DroidPlugin
-下面是几种比较流行的开源热补丁方案：
-1. AndFix  http://www.oschina.net/p/andfix
-1. HotFix  https://github.com/dodola/HotFix
-1. Nuwa  https://github.com/jasonross/Nuwa  http://www.jianshu.com/p/72c17fb76f21  
-1. DroidFix  https://github.com/bunnyblue/DroidFix
-http://news.oneapm.com/developers-discussion-apk/
-http://www.wtoutiao.com/p/10awJ9K.html   Android热补丁动态更新实践
-https://yq.aliyun.com/articles/14738?spm=5176.blog26252.yqblogcon1.17.p4gifk  如何将「插件化」接入到项目之中
-http://mp.weixin.qq.com/s?__biz=MzI1MTA1MzM2Nw==&mid=400118620&idx=1&sn=b4fdd5055731290eef12ad0d17f39d4a&scene=0#wechat_redirect  安卓App热补丁动态修复技术介绍
-http://www.jianshu.com/p/72c17fb76f21?spm=5176.blog8722.yqblogcon1.12.MP1pf8   基于Nuwa实现Android自动化HotFix
-https://github.com/archmages/HotFixSamples
-https://github.com/alibaba/LuaViewSDK
-http://www.oschina.net/p/amigo   Amigo，是一个Android 平台的hotfix库，由饿了么公司开源。
-
-
-http://www.jianshu.com/p/0202845db617
--obfuscationdictionary {filename} 使用给定文件中的关键字作为要混淆方法的名称
- 在Android资源中，有一种资源类型称为Public，它们一般是定义在res/values/public.xml文件中。   每当Android资源打包工具aapt重新编译被修改过的资源时，都会重新给这些资源赋予ID，这就可能会造成同一个资源项在两次不同的编译中被赋予不 同的ID。因此，当我们将自己定义的资源导出来给第三 方应用程序使用时，就需要通过public.xml文件将导出来的资源的ID固定下来。
-BaseDexClassLoader–>pathList–>dexElements
-换句话说，只要在static方法，构造方法，private方法，override方法中直接引用了其他dex中的类，那么这个类就不会被打上CLASS_ISPREVERIFIED标记。
-
 
 http://blog.tingyun.com/web/article/detail/155   Android客户端性能优化（魅族资深工程师毫无保留奉献）
 利用LeakCanary 来检查Android 内存泄漏   http://www.jianshu.com/p/0049e9b344b0

@@ -1,7 +1,60 @@
+https://www.easemob.com/press/535  环信人工智能专家李理：详解卷积神经网络
+http://yyqian.com/post/1471831725000/   Machine Learning 课程小结
+http://www.jianshu.com/p/6766fbcd43b9  TensorFlow 入门
+http://www.jianshu.com/p/e112012a4b2d  一文学会用 Tensorflow 搭建神经网络
+https://morvanzhou.github.io/tutorials/machine-learning/tensorflow/
+https://github.com/MorvanZhou/tutorials/tree/master/tensorflowTUT
+https://github.com/MorvanZhou/Tensorflow-Tutorial
+http://www.cnblogs.com/LittleHann/p/6413864.html#commentform   TensorFlow入门学习(让机器/算法帮助我们作出选择)
+http://www.52cs.org/?p=1157  TensorFlow深度学习，一篇文章就够了
+https://wenku.baidu.com/course/study/53b9fd0a79563c1ec5da7107  百度视频课程
+https://github.com/tobegit3hub/tensorflow_examples
+Tensor(张量)意味着 N 维数组，Flow(流)意味着基于数据流图的计算，TensorFlow即为张量从图的一端流动到另一端。
+在训练网络之前，需要定义一个代价函数，常见的代价函数包括回归问题的方差以及分类时候的交叉熵。
+要给节点输入数据时用 placeholder，在 TensorFlow 中用placeholder 来描述等待输入的节点，只需要指定类型即可，然后在执行节点的时候用一个字典来“喂”这些节点。相当于先把变量 hold 住，然后每次从外部传入data，注意 placeholder 和 feed_dict 是绑定用的。
+ overfitting，就是过度准确地拟合了历史数据，而对新数据预测时就会有很大误差   dropout 是指在深度学习网络的训练过程中，按照一定的概率将一部分神经网络单元暂时从网络中丢弃，相当于从原始的网络中找到一个更瘦的网络
+我们需要了解分布式TensorFlow中ps、worker、in-graph、between-graph、synchronous training和asynchronous training的概念。首先ps是整个训练集群的参数服务器，保存模型的Variable，worker是计算模型梯度的节点，得到的梯度向量会交付给ps更新模型。
+利用链式求导法则对隐含层的节点进行求导，即梯度下降+链式求导法则，专业名称为反向传播
+ReLu(Rectified Linear Units)激活函数
+
+https://github.com/ahangchen/GoogleML  Google机器学习教程笔记（基础版）
+https://github.com/ahangchen/GDLnotes
+http://blog.csdn.net/stdcoutzyx/article/details/41596663   卷积神经网络
+
+http://old.sebug.net/paper/books/scipydoc/index.html
+
+Keras, TensorLayer, TFLearn 
+https://github.com/zsdonghao/tensorlayer
+http://tensorlayercn.readthedocs.io/zh/latest/
+pip install tensorlayer
+
+https://github.com/fchollet/keras
+http://tflearn.org/
+http://tflearn.org/installation/
+https://github.com/tflearn/tflearn.git
+# Ubuntu/Linux 64-bit, CPU only, Python 2.7
+$ export TF_BINARY_URL=https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.1.0-cp27-none-linux_x86_64.whl
+
+# Mac OS X, CPU only, Python 2.7:
+$ export TF_BINARY_URL=https://storage.googleapis.com/tensorflow/mac/cpu/tensorflow-1.1.0-py2-none-any.whl
+
+sudo pip install $TF_BINARY_URL
+pip install tflearn
+sudo pip install six --upgrade --target="/usr/lib/python2.7/dist-packages"
+tensorboard --logdir=/tmp/tflearn_logs/
+http://www.cnblogs.com/xiaodi914/p/5687477.html
+https://zhuanlan.zhihu.com/p/25322066?utm_source=weibo&utm_medium=social
+
+
 CNN(卷积神经网络)、RNN(循环神经网络)、DNN(深度神经网络)
 https://yq.aliyun.com/articles/75293?spm=5176.100239.0.0.b67TEO    
 https://yq.aliyun.com/articles/72878?spm=5176.100239.0.0.b67TEO
 
+在 Python 语言中, 返回的 tensor 是 numpy ndarray 对象; 在 C 和 C++ 语言中, 返回的 tensor 是 tensorflow::Tensor 实例
+TensorFlow 程序通常被组织成一个构建阶段和一个执行阶段. 在构建阶段, op 的执行步骤 被描述成一个图. 在执行阶段, 使用会话执行执行图中的 op.
+例如, 通常在构建阶段创建一个图来表示和训练神经网络, 然后在执行阶段反复执行图中的训练 op.
+
+https://github.com/innovation-cat/DeepLearningBook
 https://cloud.tencent.com/community/article/576219?fromSource=gwzcw.234888.234888.234888  深度学习入门与实战
 https://github.com/ZuzooVn/machine-learning-for-software-engineers/blob/master/README-zh-CN.md     自上而下的学习路线: 软件工程师的机器学习
 https://github.com/caicloud/tensorflow-tutorial
@@ -66,6 +119,49 @@ http://www.infoq.com/cn/articles/recommendation-algorithm-overview-part01?utm_ca
 http://colobu.com/2015/11/30/movie-recommendation-for-douban-users-by-spark-mllib/   使用Spark MLlib给豆瓣用户推荐电影
 
 https://medium.com/learning-new-stuff/how-to-learn-neural-networks-758b78f2736e#.20hej91el  Learning How To Code Neural Networks
+
+
+函数说明
+Python提供了__future__模块，把下一个新版本的特性导入到当前版本，于是我们就可以在当前版本中测试一些新版本的特性。  http://www.liaoxuefeng.com/wiki/001374738125095c955c1e6d8bb493182103fac9270762a000/001386820023084e5263fe54fde4e4e8616597058cc4ba1000
+tf.reshape(tensor, shape, name=None) 函数的作用是将tensor变换为参数shape的形式。 其中shape为一个列表形式，特殊的一点是列表中可以存在-1。-1代表的含义是不用我们自己指定这一维的大小，函数会自动计算，但列表中只能存在一个-1。
+指定输入输出数据格式，默认格式为"NHWC", 数据按这样的顺序存储：
+[batch, in_height, in_width, in_channels]
+也可以用这种方式："NCHW", 数据按这样的顺序存储：
+[batch, in_channels, in_height, in_width]
+tf.mul、tf.sub 和 tf.neg 被弃用，现在使用的是 tf.multiply、tf.subtract 和 tf.negative.
+tf.nn.softmax_cross_entropy_with_logits(logits, labels, name=None)	计算logits和labels的softmax交叉熵
+tf.nn.sigmoid_cross_entropy_with_logits(logits, targets, name=None)	计算输入logits, targets的交叉熵
+http://blog.csdn.net/lenbow/article/details/52152766
+http://blog.csdn.net/lenbow/article/details/52181159  Graph Tensor
+http://blog.csdn.net/lenbow/article/details/52213105  TFRecordWriter session
+http://blog.csdn.net/lenbow/article/details/52218551  optimizer SummaryWriter  saver
+
+http://blog.csdn.net/u014595019/article/details/52728886
+CNN相比与传统神经网络，最大的区别就是引入了卷积层和池化层。 卷积是使用tf.nn.conv2d, 池化使用tf.nn.max_pool
+tf.nn.conv2d功能：给定4维的input和filter，计算出一个2维的卷积结果
+    input   的格式要求为一个张量，[batch, in_height, in_width, in_channels],批次数，图像高度，图像宽度，通道数
+    filter  的格式为[filter_height, filter_width, in_channels, out_channels]，滤波器高度，宽度，输入通道数，输出通道数
+    strides 一个长为4的list. 表示每次卷积以后在input中滑动的距离
+tf.nn.max_pool 进行最大值池化操作,而avg_pool 则进行平均值池化操作
+    value:  一个4D张量，格式为[batch, height, width, channels]，与conv2d中input格式一样
+    ksize:  长为4的list,表示池化窗口的尺寸
+    strides: 窗口的滑动值，与conv2d中的一样
+
+a = tf.nn.softmax(tf.matmul(x, W) + b)      # a表示模型的实际输出
+
+# 定义损失函数和训练方法
+cross_entropy = tf.reduce_mean(-tf.reduce_sum(y * tf.log(a), reduction_indices=[1])) # 损失函数为交叉熵
+optimizer = tf.train.GradientDescentOptimizer(0.5) # 梯度下降法，学习速率为0.5
+train = optimizer.minimize(cross_entropy)  # 训练目标：最小化损失函数
+http://blog.csdn.net/u014595019/article/details/52562159  深度学习笔记(三)：激活函数和损失函数
+激活函数的主要作用是提供网络的非线性建模能力。如果没有激活函数，那么该网络仅能够表达线性映射，此时即便有再多的隐藏层，其整个网络跟单层神经网络也是等价的。因此也可以认为，只有加入了激活函数之后，深度神经网络才具备了分层的非线性映射学习能力。 
+
+CNN
+W_conv1 = weight_variable([5, 5, 1, 32])
+b_conv1 = bias_variable([32])
+x_image = tf.reshape(x, [-1,28,28,1])
+h_conv1 = tf.nn.relu(conv2d(x_image, W_conv1) + b_conv1)
+h_pool1 = max_pool_2x2(h_conv1)
 
 
 ios

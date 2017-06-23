@@ -79,11 +79,19 @@ https://wereadteam.github.io/2016/05/23/GYBootingProtection/  微信读书开发
 https://wereadteam.github.io/2016/07/06/GYDataCenter/  GYDataCenter：高性能数据库框架
 https://wereadteam.github.io/2016/02/25/GYHttpMock/  GYHttpMock：iOS HTTP请求模拟工具
 https://wereadteam.github.io/2016/02/22/MLeaksFinder/  MLeaksFinder：精准 iOS 内存泄露检测工具
-https://github.com/SnapKit/Masonry   
-http://www.oschina.net/p/ohhttpstubs 
 http://blog.csdn.net/colorapp/article/details/47007431  unit test
 http://blog.shiqichan.com/using-afnetworking-sdwebimage-and-ohhttpstubs/
+
+第三方库
+https://github.com/SnapKit/Masonry   
+https://github.com/mxcl/PromiseKit
+https://github.com/danielgindi/Charts 报表
 https://www.oschina.net/p/lottie  动画
+http://www.oschina.net/p/ohhttpstubs 
+https://github.com/WenchaoD/FSCalendar
+https://github.com/dzenbot/DZNEmptyDataSet
+https://github.com/ViccAlexander/Chameleon
+https://www.oschina.net/translate/33-ios-open-source-libraries-that-will-dominate-2017?lang=chs&page=1#
 
 http://pingguohe.net/2016/12/20/Tangram-design-and-practice.html  页面动态化的基础 —— Tangram
 http://pingguohe.net/2016/01/31/lazyscroll.html    iOS 高性能异构滚动视图构建方案 —— LazyScrollView

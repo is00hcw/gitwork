@@ -1,3 +1,6 @@
+http://www.csdn.net/article/2015-04-10/2824443  直戳OpenStack痛处？IaaS开源新兵ZStack架构设计全解析
+http://www.csdn.net/article/2015-05-18/2824690 ZStack深度试用：部署、架构与网络及其与OpenStack的对比
+
 IaaS提供系统的物理部署能力
 PaaS层主要提供基础平台的能力
 BaaS层主要提供领域平台的能力  ？firebase
@@ -25,3 +28,15 @@ http://usergrid.apache.org/
 
 guice
 http://blog.muhuk.com/2015/05/28/using_guice_effectively.html#.Vz6Ji9x96_4
+
+ansible
+http://www.jianshu.com/p/41c4ed3ce779   ansible
+http://www.cnblogs.com/PythonOrg/p/6593910.html
+http://www.jianshu.com/p/f0cf027225df  《Ansible_Up-And-Running》笔记1-Ansible超详细使用指南
+http://www.tuicool.com/articles/VFJzA3b  ansible的playbook介绍和实战
+https://segmentfault.com/a/1190000008459574  初创公司如何实现 Ansible 多机房自动部署发布
+https://github.com/pingcap/docs-cn/blob/master/op-guide/ansible-deployment.md
+https://segmentfault.com/a/1190000009716533  使用 Ansible 安装部署 TiDB
+yum install epel-release
+sudo add-apt-repository ppa:ansible/ansible
+docker run -v `pwd`:/playbook --rm -it williamyeh/ansible:ubuntu16.04 /bin/bash

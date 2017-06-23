@@ -10,6 +10,14 @@ npm install -g cnpm --registry=https://registry.npm.taobao.org
 http://www.jianshu.com/p/07b2ff3a9ba2
 https://fuxiaosong.cn/2017/01/10/Macaca-uirecorder-%E5%AE%9E%E7%8E%B0-Android-%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/
 
+测试覆盖率
+http://tech.youzan.com/code-coverage/
+http://tmq.qq.com/2016/08/java-code-coverage-tools-jacoco-principle/
+http://tmq.qq.com/2016/08/java-code-coverage-tools-jacoco-practice-2/
+http://www.jianshu.com/p/b22c8edf0299
+http://www.jianshu.com/p/1a4a81f09526
+
+
 自动化
 http://www.oschina.net/p/UI-Recorder
 http://www.oschina.net/p/cafe

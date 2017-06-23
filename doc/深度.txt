@@ -1,0 +1,11 @@
+http://www.cnblogs.com/LittleHann/p/4783581.html    Java Attach API
+AttachProvider 的实现是针对不同的操作来使用的。 也就是说，如果你在windows上 
+你需要使用WindowsAttachProvider，在Maco上要使用MacosxAttachProvider ，使用Linux 就要使用 LinuxAttachProvider 
+Agent-Class: com.sun.btrace.agent.Main
+http://blog.csdn.net/xsl_bj/article/details/51351898  java instrument原理和Aattach API
+https://github.com/raphw/byte-buddy
+http://blog.csdn.net/taiyangdao/article/details/53027563  Java字节码操作类库汇总
+http://blog.csdn.net/kisimple/article/details/46959381  BTrace实现浅析
+http://blog.csdn.net/conquer0715/article/details/51781206  Btrace 原理分析
+http://www.jianshu.com/p/a396d8893a4c    grays-anatomy
+

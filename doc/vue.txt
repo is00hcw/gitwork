@@ -15,12 +15,13 @@ http://www.cnblogs.com/xxcanghai/p/6124699.html  如何在Vue2中实现组件props双向绑
 在Vue2中组件的props的数据流动改为了只能单向流动，即只能由组件外（调用组件方）通过组件的DOM属性attribute传递props给组件内，组件内只能被动接收组件外传递过来的数据，并且在组件内，不能修改由外层传来的props数据。
 http://blog.zhaiyifan.cn/2016/10/17/vue-2-quick-start/  Vue.js 2.0 快速上手 - 基础篇
 https://my.oschina.net/u/3317396/blog/885622   VUE2.0学习总结
+https://github.com/ElemeFE/keynote/tree/master/PPT   饿了么ppt  https://elemefe.github.io/keynote/
 
 https://segmentfault.com/a/1190000006741478  vue-cli + webpack 多页面实例配置优化方法
 https://segmentfault.com/a/1190000005863691   使用 Vuex + Vue.js 构建单页应用
 http://www.open-open.com/lib/view/open1447060624960.html   Vue.js 快速入门
 http://www.open-open.com/lib/view/open1462026812188.html   用 Vuex 构建一个笔记应用
-https://zhuanlan.zhihu.com/p/21802181   Mint UI —— 基于 Vue.js 的移动端组件库
+
 
 https://segmentfault.com/a/1190000006751300   前后端分离与前端工程化
 使用 // 来代替http: 和 https: 浏览器会自动适应两种协议的资源访问，兼容性较好。
@@ -37,6 +38,12 @@ https://jsfiddle.net/reeco/jw5hphqg/4/   http://www.doc00.com/doc/1001004eg   vu
 https://segmentfault.com/q/1010000005894526/a-1020000005899559
 http://www.imooc.com/article/2688
 http://www.cnblogs.com/terry01/p/5888650.html
+
+
+第三方开源库
+https://elemefe.github.io/v-charts/#/line  vue集成echart
+https://elemefe.github.io/vue-amap/#/zh-cn/base/amap  高德地图
+https://zhuanlan.zhihu.com/p/21802181   Mint UI —— 基于 Vue.js 的移动端组件库
 http://elemefe.github.io/mint-ui/#!/
 https://github.com/airyland/vux
 https://github.com/ElemeFE/vue-desktop

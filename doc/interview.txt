@@ -1,4 +1,9 @@
-﻿http://www.jianshu.com/p/8f0a7e22bb8c Java面试题集
+﻿互联网分布式架构设计，提高系统并发能力的方式，方法论上主要有两种：垂直扩展（Scale Up）与水平扩展（Scale Out）。垂直扩展：提升单机处理能力。垂直扩展的方式又有两种：
+（1）增强单机硬件性能，例如：增加CPU核数如32核，升级更好的网卡如万兆，升级更好的硬盘如SSD，扩充硬盘容量如2T，扩充系统内存如128G；
+（2）提升单机架构性能，例如：使用Cache来减少IO次数，使用异步来增加单服务吞吐量，使用无锁数据结构来减少响应时间；
+水平扩展：只要增加服务器数量，就能线性扩充系统性能。反向代理层可以通过“DNS轮询”的方式来进行水平扩展； 站点层可以通过nginx来进行水平扩展；服务层可以通过服务连接池来进行水平扩展；数据库可以按照数据范围，或者数据哈希的方式来进行水平扩展；
+
+http://www.jianshu.com/p/8f0a7e22bb8c Java面试题集
 https://github.com/closedevice/interview-about
 
 http://kriszhang.com/motan-rpc-impl/  从motan看RPC框架设计

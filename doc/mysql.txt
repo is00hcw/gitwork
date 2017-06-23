@@ -1,4 +1,8 @@
-﻿https://github.com/rolandhe/hiriver  MySQL 数据变化的监控与分发框架 Hiriver  
+﻿MySQL 5中 非空CHAR的最大总长度是255【字节】；非空VARCHAR的最大总长度是65533【字节】。可空CHAR的最大总长度是254【字节】；可空VARCHAR的最大总长度是65532【字节】。
+原因：非空标记需要占据一个字节，VARCHAR超过255需要用2个字节标记字段长度，不超过255用1个字节标记字段长度. 注意上边是 【字节】，不是【字符】。但mysql5字段定义时，是定义的【字符】数。比如varchar(10)，你仅能存入10个英文字母或者汉字，尽管一个字符可能占多个字节。
+text和varchar基本相同。text会忽略指定的大小这和varchar有所不同，text不能有默认值。尾部有空格不会被截断。text使用额外的2个字节来存储数据的大小，varchar根据存储数据的大小选择用几个字节来存储。text的65535字节全部用来存储数据，varchar则会占用1－3个字节去存储数据大小和非空标记。
+如果存储的数据大于64K，就必须使用到mediumtext , longtext
+https://github.com/rolandhe/hiriver  MySQL 数据变化的监控与分发框架 Hiriver  
 
 
 https://www.qcloud.com/community/article/306781   pt-mysql-summary 工具获取，再加以分析，也可以通过如下两个工具来实时查看innotop  orzdba
@@ -479,3 +483,27 @@ SHOW VARIABLES WHERE Variable_name LIKE 'character_set_%' OR Variable_name LIKE 
 
 更改表编码：ALTER TABLE goods_review CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci; 
 ALTER TABLE goods_review CHANGE content mediumtext  CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+
+SELECT INTO 语句从一个表复制数据，然后把数据插入到另一个新表中。 SELECT name, url INTO WebsitesBackup2016 FROM Websites;
+INSERT INTO SELECT 语句从一个表复制数据，然后把数据插入到一个已存在的表中。目标表中任何已存在的行都不会受影响。 INSERT INTO Websites (name, country) SELECT app_name, country FROM apps WHERE id=1;
+
+replace into 跟 insert 功能类似，不同点在于：replace into 首先尝试插入数据到表中， 1. 如果发现表中已经有此行数据（根据主键或者唯一索引判断）则先删除此行数据，然后插入新的数据。 2. 否则，直接插入新数据。
+MySQL replace into 有三种形式：
+1. replace into tbl_name(col_name, ...) values(...)
+2. replace into tbl_name(col_name, ...) select ...
+3. replace into tbl_name set col_name=value, ...
+
+
+Mysql 根据时间戳按年月日分组统计
+create_time时间格式
+SELECT DATE_FORMAT(create_time,'%Y%u') weeks,COUNT(id) COUNT FROM role GROUP BY weeks;
+SELECT DATE_FORMAT(create_time,'%Y%m%d') days,COUNT(id) COUNT FROM role GROUP BY days;
+SELECT DATE_FORMAT(create_time,'%Y%m') months,COUNT(id) COUNT FROM role GROUP BY months
+create_time时间戳格式
+SELECT FROM_UNIXTIME(create_time,'%Y%u') weeks,COUNT(id) COUNT FROM role GROUP BY weeks;
+SELECT FROM_UNIXTIME(create_time,'%Y%m%d') days,COUNT(id) COUNT FROM role GROUP BY days;
+SELECT FROM_UNIXTIME(create_time,'%Y%m') months,COUNT(id) COUNT FROM role GROUP BY months
+
+SELECT date_format(FROM_UNIXTIME( `time`),'%Y-%m-%d') AS time,count(*) as count FROM `表名` WHERE 1 group by time
+FROM_UNIXTIME(create_time,'%Y-%m-%d %H:00:00') AS hours
