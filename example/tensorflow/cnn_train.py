@@ -23,7 +23,6 @@ def max_pool_2x2(x):
 mnist = input_data.read_data_sets("MNIST_data/", one_hot=True)
 print("Download Done!")
 
-sess = tf.InteractiveSession()
 
 # paras
 W_conv1 = weight_varible([5, 5, 1, 32])
@@ -68,15 +67,24 @@ train_step = tf.train.AdamOptimizer(1e-4).minimize(cross_entropy)
 correct_prediction = tf.equal(tf.arg_max(y_conv, 1), tf.arg_max(y_, 1))
 accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
 
-sess.run(tf.initialize_all_variables())
+#sess = tf.InteractiveSession()
+init = tf.global_variables_initializer()
+sess = tf.Session()
+sess.run(init)
 
-for i in range(20000):
+# model saver
+saver = tf.train.Saver()
+
+for i in range(1000):
     batch = mnist.train.next_batch(50)
 
     if i % 100 == 0:
-        train_accuacy = accuracy.eval(feed_dict={x: batch[0], y_: batch[1], keep_prob: 1.0})
+        #train_accuacy = accuracy.eval(feed_dict={x: batch[0], y_: batch[1], keep_prob: 1.0})
+        train_accuacy = sess.run(accuracy, feed_dict={x: batch[0], y_: batch[1], keep_prob: 1.0})
         print("step %d, training accuracy %g"%(i, train_accuacy))
-    train_step.run(feed_dict = {x: batch[0], y_: batch[1], keep_prob: 0.5})
+    #train_step.run(feed_dict = {x: batch[0], y_: batch[1], keep_prob: 0.5})
+    sess.run(train_step, feed_dict = {x: batch[0], y_: batch[1], keep_prob: 0.5})
 
-# accuacy on test
-print("test accuracy %g"%(accuracy.eval(feed_dict={x: mnist.test.images, y_: mnist.test.labels, keep_prob: 1.0})))
+# save model
+save_path = saver.save(sess, "./model/minist_cnn.ckpt")
+print("Model saved in file: ", save_path)
