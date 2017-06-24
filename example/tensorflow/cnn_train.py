@@ -75,7 +75,7 @@ sess.run(init)
 # model saver
 saver = tf.train.Saver()
 
-for i in range(1000):
+for i in range(20000):
     batch = mnist.train.next_batch(50)
 
     if i % 100 == 0:

@@ -1,4 +1,8 @@
 https://www.easemob.com/press/535  环信人工智能专家李理：详解卷积神经网络
+http://www.jeyzhang.com/tensorflow-learning-notes.html  TensorFlow学习笔记1：入门
+http://www.jeyzhang.com/tensorflow-learning-notes-2.html
+
+
 http://yyqian.com/post/1471831725000/   Machine Learning 课程小结
 http://www.jianshu.com/p/6766fbcd43b9  TensorFlow 入门
 http://www.jianshu.com/p/e112012a4b2d  一文学会用 Tensorflow 搭建神经网络
@@ -162,6 +166,8 @@ b_conv1 = bias_variable([32])
 x_image = tf.reshape(x, [-1,28,28,1])
 h_conv1 = tf.nn.relu(conv2d(x_image, W_conv1) + b_conv1)
 h_pool1 = max_pool_2x2(h_conv1)
+https://docs.ucloud.cn/analysis/uai-service/dev/tensorflow/mnist
+https://github.com/ucloud/uai-sdk/blob/master/examples/tensorflow/mnist_1.1/mnist_inference.py
 
 
 ios

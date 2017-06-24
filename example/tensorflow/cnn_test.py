@@ -2,8 +2,67 @@
 
 __author__ = 'chapter'
 
+# from __future__ import absolute_import
+# from __future__ import division
+# from __future__ import print_function
+
 import tensorflow as tf
+import numpy as np
 from tensorflow.examples.tutorials.mnist import input_data
+import sys
+from PIL import Image,ImageFilter
+
+def imageprepare(argv):
+    """
+    This function returns the pixel values.
+    The imput is a png file location.
+    """
+    im = Image.open(argv).convert('L')
+    width = float(im.size[0])
+    height = float(im.size[1])
+    newImage = Image.new('L', (28, 28), (255)) #creates white canvas of 28x28 pixels
+    
+    if width > height: #check which dimension is bigger
+        #Width is bigger. Width becomes 20 pixels.
+        nheight = int(round((20.0/width*height),0)) #resize height according to ratio width
+        if (nheigth == 0): #rare case but minimum is 1 pixel
+            nheigth = 1  
+        # resize and sharpen
+        img = im.resize((20,nheight), Image.ANTIALIAS).filter(ImageFilter.SHARPEN)
+        wtop = int(round(((28 - nheight)/2),0)) #caculate horizontal pozition
+        newImage.paste(img, (4, wtop)) #paste resized image on white canvas
+    else:
+        #Height is bigger. Heigth becomes 20 pixels. 
+        nwidth = int(round((20.0/height*width),0)) #resize width according to ratio height
+        if (nwidth == 0): #rare case but minimum is 1 pixel
+            nwidth = 1
+         # resize and sharpen
+        img = im.resize((nwidth,20), Image.ANTIALIAS).filter(ImageFilter.SHARPEN)
+        wleft = int(round(((28 - nwidth)/2),0)) #caculate vertical pozition
+        newImage.paste(img, (wleft, 4)) #paste resized image on white canvas
+    
+    #newImage.save("sample.png")
+
+    tv = list(newImage.getdata()) #get pixel values
+    
+    #normalize pixels to 0 and 1. 0 is pure white, 1 is pure black.
+    tva = [ (255-x)*1.0/255.0 for x in tv] 
+    return [tva]
+
+
+def load_images(files, batch_size):
+    imgs = []
+    for i in range(batch_size):
+      im = Image.open(files[i]).resize((28, 28)).convert('L')
+      im = np.array(im)
+      im = im.reshape(784)
+      im = im.astype(np.float32)
+      im = np.multiply(im, 1.0 / 255.0)
+      imgs.append(im)
+
+    imgs = np.array(imgs)
+    return imgs
+
 
 def weight_varible(shape):
     initial = tf.truncated_normal(shape, stddev=0.1)
@@ -66,14 +125,49 @@ correct_prediction = tf.equal(tf.arg_max(y_conv, 1), tf.arg_max(y_, 1))
 accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
 
 #sess = tf.InteractiveSession()
+init = tf.global_variables_initializer()
 sess = tf.Session()
+sess.run(init)
 
 # model saver
 saver = tf.train.Saver()
 saver.restore(sess, "./model/minist_cnn.ckpt")
 print("model restore " )
 
+# 取出一个测试图片
+def test_mnist_one():
+    idx=0
+    img = mnist.test.images[idx]
+    ret = sess.run(y_conv, feed_dict = {x : img.reshape(1, 784), keep_prob: 1.0})
+    print("计算模型结果成功！")
+    print("预测结果:%d"%(ret.argmax()))
+    print("实际结果:%d"%(mnist.test.labels[idx].argmax()))
 
-# accuacy on test
-test_result = sess.run(accuracy, feed_dict={x: mnist.test.images, y_: mnist.test.labels, keep_prob: 1.0})
-print("test accuracy %g"%test_result )
+
+# accuacy on all mnist test image set
+def test_mnist_all():
+    test_result = sess.run(accuracy, feed_dict={x: mnist.test.images, y_: mnist.test.labels, keep_prob: 1.0})
+    print("test accuracy %g"%test_result )
+
+# read 28*28 image from files
+def test_local_image():
+    imgs = load_images(["./2.jpg"],1)
+    predict_values = sess.run(y_conv, feed_dict = {x : imgs, keep_prob: 1.0})
+    print("predict_values %s" % predict_values)
+    ret = []
+    for val in predict_values:
+        ret_val = np.array_str(np.argmax(val)) + '\n'
+        ret.append(ret_val)
+    print("ret %s" % ret)
+
+# test_local_image()
+
+img = imageprepare("./5.png");
+prediction = tf.argmax(y_conv,1)
+predict_values = sess.run(prediction, feed_dict={x : img, keep_prob: 1.0})
+print (predict_values)
+
+# predict_values = sess.run(y_conv, feed_dict = {x : img, keep_prob: 1.0})
+# print("predict_values %s" % predict_values)
+# for val in predict_values:
+#     print(np.array_str(np.argmax(val)) + '\n')
