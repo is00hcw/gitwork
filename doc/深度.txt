@@ -14,3 +14,15 @@ http://www.jianshu.com/p/a396d8893a4c    grays-anatomy
 （1）索引分级      索引分为全量库、日增量库、小时增量库。
 （2）dump&merge    dumper：将在线的数据导出  merger：将离线的数据合并到高一级别的索引中去
 当有修改请求发生时，只会操作最低级别的索引，例如小时库。当有查询请求发生时，会同时查询各个级别的索引，将结果合并，得到最新的数据：
+
+
+effective java
+https://notes.piasy.com/Android-Java/EffectiveJava.html
+http://www.jianshu.com/p/018e1589cfe1
+http://blog.csdn.net/followmyinclinations/article/details/53175435
+
+深入理解java虚拟机
+https://notes.piasy.com/Android-Java/InsideJVM.html
+
+Java concurrency in Practice
+Java Performance
