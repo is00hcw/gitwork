@@ -136,12 +136,25 @@ print("model restore " )
 
 # 取出一个测试图片
 def test_mnist_one():
-    idx=0
-    img = mnist.test.images[idx]
-    ret = sess.run(y_conv, feed_dict = {x : img.reshape(1, 784), keep_prob: 1.0})
-    print("计算模型结果成功！")
+    # idx=0
+    # img = mnist.test.images[idx]
+    # ret = sess.run(y_conv, feed_dict = {x : img.reshape(1, 784), keep_prob: 1.0})
+    # print("计算模型结果成功！")
+    # print("预测结果:%d"%(ret.argmax()))
+    # print("实际结果:%d"%(mnist.test.labels[idx].argmax()))
+
+    batch_x, batch_y = mnist.test.next_batch(1)   #取一组训练数据
+    #batch_x 为（1，784）数组（保存图像信息） batch_y 为（1,10）（保存图像标签，第几位数是1，就表示几）
+    # print(sess.run(accuracy, feed_dict={x: batch_x, y_: batch_y, keep_prob: 1.0}))  #验证训练数据的准确性
+    ret = sess.run(y_conv, feed_dict = {x : batch_x, keep_prob: 1.0})
     print("预测结果:%d"%(ret.argmax()))
-    print("实际结果:%d"%(mnist.test.labels[idx].argmax()))
+
+    im = np.reshape(batch_x,(28,28))   #将一维数组转化为28*28的图像数组  float32 （0-1）
+    #此时通过观察数组中数字部分，能大致的看出图像表示的数字
+    #为了直观的看到，可以将数组转化为图像
+    imag = Image.fromarray(np.uint8(im*255))  #这里读入的数组是 float32 型的，范围是 0-1，而 PIL.Image 数据是 uinit8 型的，范围是0-255，要进行转换
+    imag.show()
+    imag.save('./test.png')
 
 
 # accuacy on all mnist test image set
@@ -162,12 +175,30 @@ def test_local_image():
 
 # test_local_image()
 
-img = imageprepare("./5.png");
-prediction = tf.argmax(y_conv,1)
-predict_values = sess.run(prediction, feed_dict={x : img, keep_prob: 1.0})
-print (predict_values)
 
+def test_file(filepath) :
+    img = Image.open(filepath).convert('L');
+    img.show()
+    mm = np.array(img) #打开图片，转化为灰度并转化为数组size（n,m） 值0-255    
+    imm = imm/255           #将值转化为0-1   
+    imm_3 = Image.fromarray(imm)    #转化为图像
+    imm_4 = imm_3.resize([28,28])   #压缩    
+    im_array = np.array(imm_4)     #转化为数组
+    fs = im_array.reshape((1,784))  #转化为符合验证一维的数组
+    print(sess.run(tf.argmax(y_conv,1), feed_dict={x: fs, keep_prob: 1.0})) #输出模型的识别值 
+
+# img = imageprepare("./5.png");
 # predict_values = sess.run(y_conv, feed_dict = {x : img, keep_prob: 1.0})
 # print("predict_values %s" % predict_values)
 # for val in predict_values:
 #     print(np.array_str(np.argmax(val)) + '\n')
+
+
+# img = imageprepare("./5.png");
+# prediction = tf.argmax(y_conv,1)
+# predict_values = sess.run(prediction, feed_dict={x : img, keep_prob: 1.0})
+# print (predict_values)
+
+# test_mnist_one();
+
+test_file("./test.png")

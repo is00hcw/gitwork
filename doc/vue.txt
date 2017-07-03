@@ -1,4 +1,6 @@
 vue.js
+https://my.oschina.net/talenttan/blog/903019  Vue开发步骤
+https://github.com/lzxb/vue2-demo  从零构建vue2 + vue-router + vuex 开发环境到入门，实现基本的登录退出功能   gulp-sftp
 https://www.qcloud.com/community/article/430630001490779316   包学会之浅入浅出Vue.js：开学篇
 https://www.qcloud.com/community/article/118752  企鹅社区移动版Vue2.0升级手记
 https://www.qcloud.com/community/article/608654?fromSource=gwzcw.114365.114365.114365  Vue.js前后端同构方案之准备篇：代码优化
@@ -33,6 +35,12 @@ Vuex 要解决的就是这些问题，Vuex 背后有四个核心的概念：
 Getters: 在组件内部获取 store 中状态的函数
 Mutations: 修改状态的事件回调函数
 Actions: 组件内部用来分发 mutations 事件的函数
+
+State对象存储原始数据；
+Getters函数定义State的获取方式，组件引入Getters获取数据并完成视图渲染；
+Mutations定义State中数据的更新方式，并唯一持有对State的更新入口；
+Actions作为Mutations的外层包装，对内持有对Mutations的访问权限，对外提供数据更新的入口。
+
 
 https://jsfiddle.net/reeco/jw5hphqg/4/   http://www.doc00.com/doc/1001004eg   vue-resource
 https://segmentfault.com/q/1010000005894526/a-1020000005899559
@@ -95,6 +103,7 @@ webpack-simple - 拥有基础功能的 Webpack + vue-loader 用于快速原型开发。
 
 
 优化
+http://vuejsdevelopers.com/2017/06/18/vue-js-boost-your-app-with-webpack/?utm_campaign=Revue%20newsletter&utm_medium=Newsletter&utm_source=Vue.js%20Feed    4 Ways To Boost Your Vue.js App With Webpack
 https://github.com/hilongjw/vue-lazyload
 http://ac.alloyteam.com/summary.html 腾讯大会
 http://download.csdn.net/meeting/meeting_detail/23  sdcc 2016

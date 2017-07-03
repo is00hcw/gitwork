@@ -6,7 +6,11 @@ https://wide.b3log.org/playground
 https://wide.b3log.org/
 https://github.com/mailgun/godebug
 https://github.com/teambition/gear Go 语言的 Web 服务框架 Gear-go    https://github.com/teambition/gear/blob/master/doc/design.md
+https://github.com/qiniu/qlang
 
+http://www.cnblogs.com/jesse-joygenio/p/goroutine-limie-rate.html  限速
+https://github.com/xiaojiaqi/10billionhongbaos/wiki/%E6%89%9B%E4%BD%8F100%E4%BA%BF%E6%AC%A1%E8%AF%B7%E6%B1%82%EF%BC%9F%E6%88%91%E4%BB%AC%E6%9D%A5%E8%AF%95%E4%B8%80%E8%AF%95
+https://segmentfault.com/a/1190000004607115   sysctl -w fs.file-max=10485760 #系统允许的文件描述符数量10m
 http://www.flysnow.org/2016/12/28/from-java-to-golang.html  从Java到Golang快速入门
 http://www.flysnow.org/2017/04/11/go-in-action-go-goroutine.html   runtime.GOMAXPROCS(runtime.NumCPU())
 互斥锁mutex sync.Mutex，这个互斥锁有两个方法，一个是mutex.Lock(),一个是mutex.Unlock(),这两个之间的区域就是临界区，临界区的代码是安全的。

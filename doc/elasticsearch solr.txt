@@ -1,4 +1,23 @@
-https://www.zybuluo.com/1234567890/note/672738 ElasticSearch-java实例
+https://github.com/NLPchina/elasticsearch-sql
+http://www.nlpcn.org:9999/web/    http://localhost:9200/_plugin/sql/
+http://120.24.39.98:9200/_sql?sql=select * from indexName limit 10
+http://localhost:9200/_sql/_explain?sql=select * from indexName limit 10
+https://www.oschina.net/p/elastichd?fromerr=KxMuKnWp    https://github.com/farmerx/ElasticHD
+
+http://www.yiibai.com/elasticsearch/elasticsearch_query_dsl.html  http查询列子
+http://qiita.com/vanhuyz/items/04a6871ae5f53ba5a97f  bool查询复合
+https://www.zybuluo.com/1234567890/note/672738 ElasticSearch-java实例  AggregationBuilder
+http://dev.dafan.info/detail/410094?p=61   elasticSearch基本查询详解
+http://okfnlabs.org/blog/2013/07/01/elasticsearch-query-tutorial.html
+https://taohiko.wordpress.com/2014/07/18/query-dsl-elasticsearch-vs-sql/
+term用于精确查询，match用于全文检索
+term query查询  提供的查询词是不分词的(not analyzed)，即只有完全包含才算匹配；
+match query的查询词是被分词处理的（analyzed），即首先分词，然后构造相应的查询，所以应该确保查询的分词器和索引的分词器是一致的；
+https://www.elastic.co/guide/en/elasticsearch/guide/current/_queries_and_filters.html
+Query查询上下文：查询操作不仅仅会进行查询，还会计算分值，用于确定相关度；Query会计算文档和query之间的相关性，并将结果存放到_score字段中，随后_score被用来对匹配到的文档进行排序。
+Filter过滤器上下文：查询操作仅判断是否满足查询条件，不会计算得分，查询的结果可以被缓存。
+Filter作用于有确定值的字段，判断这些字段是否满足特定的条件。
+
 http://yyqian.com/post/1463461156000/  Elasticsearch 学习笔记
 http://jolefstar.com/elasticsearch-architecture/  Elasticsearch 架构以及源码概览
 https://oss.aliyuncs.com/yqfiles/ELK调研.pd...%5Bsuntingtao%5D.1461556683.pdf

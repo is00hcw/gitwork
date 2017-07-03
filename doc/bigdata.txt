@@ -20,6 +20,7 @@ http://blog.csdn.net/sweetvvck/article/details/38842665?utm_source=tuicool
 wget http://mirror.bit.edu.cn/apache/zookeeper/zookeeper-3.4.6/zookeeper-3.4.6.tar.gz 
 
 http://www.infoq.com/cn/news/2014/06/sql-on-hadoop   8个值得关注的SQL-on-Hadoop框架
+Apache Drill是一个低延迟的分布式海量数据（涵盖结构化、半结构化以及嵌套数据）交互式查询引擎，使用ANSI SQL兼容语法，支持本地文件、HDFS、HBase、MongoDB等后端存储，支持Parquet、JSON、CSV、TSV、PSV等数据格式。
 Hive是原始的SQL-on-Hadoop解决方案。它是一个开源的Java项目，能够将SQL转换成一系列可以在标准的Hadoop TaskTrackers上运行的MapReduce任务。Hive通过一个metastore（本身就是一个数据库）存储表模式、分区和位置  
 Impala是一个针对Hadoop的开源的“交互式”SQL查询引擎。它由Cloudera构建，与Hive不同的是它并没有使用MapReduce执行查询，而是使用了自己的执行守护进程集合，这些进程需要与Hadoop数据节点安装在一起。
 Hive适合于长时间的批处理查询分析，而Impala适合于实时交互式SQL查询，Impala给数据分析人员提供了快速实验、验证想法的大数据分析工具。

@@ -1,5 +1,11 @@
 mvn archetype:generate -DgroupId=com.wanke -DartifactId=wanke_stock_api -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
 @ServletComponentScan 可以自动扫描webservlet,但是跟springboot的注解冲突,导致Controller不起作用
+https://github.com/alibaba/druid/tree/master/druid-spring-boot-starter  
+String driverClass = DatabaseDriver.fromJdbcUrl(url).getDriverClassName();
+ private void bind(DruidDataSource result) {
+        MutablePropertyValues properties = new MutablePropertyValues(this.properties);
+        new RelaxedDataBinder(result).withAlias("url", "jdbcUrl").withAlias("username", "user").bind(properties);
+    }
 
 部署
 java -jar demo.jar --spring.profiles.active=dev 

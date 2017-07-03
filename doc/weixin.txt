@@ -221,3 +221,21 @@ http://uwsgi-docs.readthedocs.org/en/latest/Install.html
 http://wechat-python-sdk.readthedocs.org/zh_CN/master/tutorial.html
 pip install uwsgi
 pip install wechat-sdk
+
+
+============bot================
+执行如下命令来安装 Python 3
+yum install epel-release
+yum install python34
+接下来安装 Pip
+yum install python34-setuptools
+easy_install-3.4 pip
+安装完成 Python 3 和 pip ，接下来我们就可以开始安装 wxpy 了
+在命令行中执行 pip3 install -i https://pypi.doubanio.com/simple/ -U wxpy
+
+from wxpy import *
+bot = Bot('bot.pkl',console_qr=True)
+
+https://zhuanlan.zhihu.com/p/26277794  如何用Python做一个微信自动拉群机器人
+https://www.v2ex.com/t/343685
+http://itchat.readthedocs.io/zh/latest/     https://github.com/littlecodersh/itchat

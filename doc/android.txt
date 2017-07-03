@@ -1,4 +1,11 @@
 http://mirrors.flysnow.org/  下载镜像
+http://gityuan.com/2016/08/20/Android_N/  小米工程师 搭建Android 7.0的源码环境
+http://gityuan.com/android/  Android系统开篇
+http://rk700.github.io/2017/03/15/virtualapp-basic/  VirtualApp沙盒基本原理
+启动init进程(pid=1),是Linux系统的用户进程，init进程是所有用户进程的鼻祖。Zygote进程是Android系统的第一个Java进程(即虚拟机进程)，Zygote是所有Java进程的父进程，Zygote进程本身是由init进程孵化而来的。
+System Server进程，是由Zygote进程fork而来，System Server是Zygote孵化的第一个进程，System Server负责启动和管理整个Java framework，包含ActivityManager，PowerManager等服务。
+
+
 https://zhuanlan.zhihu.com/p/27026614  Google 官方推出应用开发架构指南  LiveData 还能够自动响应各组件的声明周期事件，防止内存泄漏
 http://geek.csdn.net/news/detail/198991   Google 官方应用架构的最佳实践指南
 https://zhuanlan.zhihu.com/p/26832197  使用 Annotation 改善 Android 代码
@@ -133,6 +140,7 @@ https://github.com/singwhatiwanna/dynamic-load-apk
 http://www.jianshu.com/p/f1217cce93ef  使用DroidPlugin实践应用的插件化
 http://blog.csdn.net/h3c4lenovo/article/details/50751643  Android插件化开发 第五篇 [360 Droid Plugin]
 
+ContentProvider使用了匿名共享内存(Ashmem)机制完成数据共享，因此它可以很方便地完成大量数据的传输。ContentProvider主要支持query, insert, update, delete操作，由于这个组件一般工作在别的进程，因此这些调用都是Binder调用
 
 插件化,热更新
 简要说来，Instant Run中的资源热修复分为两步：
@@ -149,6 +157,10 @@ https://mp.weixin.qq.com/s/5KjSPvUflbg0pVRIjtLiRA?spm=5176.100239.blogcont102404
 https://yq.aliyun.com/articles/62685?spm=5176.100239.blogcont74598.30.tAF0u9  Android热修复技术选型——三大流派解析
 https://yq.aliyun.com/articles/67136?spm=5176.100239.blogcont74598.27.tAF0u9  阿里HotFix2.0升级详解——技术运营小二畅谈热修复领域那些事
 http://www.jianshu.com/p/6f687dec55e4 Android Hotfix 新方案——Amigo 源码解读
+http://mp.weixin.qq.com/s/W2E207JTm8iz80ypP4UtvA  滴滴插件化项目VirtualAPK开源  https://github.com/didi/VirtualAPK
+https://mp.weixin.qq.com/s?__biz=MzA3ODg4MDk0Ng==&mid=2651113434&idx=1&sn=99a473c6fad2f7b366b2cba2afb96f7a&chksm=844c6e07b33be7112222c0d78be23979912f12d6c99ad2c7bfac766e67e4be4619709f170b09&mpshare=1&scene=1&srcid=0628gRj4w4sW8cxYupnu3TXk#rd   全面插件化：RePlugin的使命
+https://github.com/Qihoo360/RePlugin  
+https://github.com/asLody/VirtualApp/blob/master/CHINESE.md
 http://www.jianshu.com/p/eec0ab6800a4  Android热修复方案比较
 https://mp.weixin.qq.com/s?__biz=MzA3NTYzODYzMg==&mid=2653577702&idx=1&sn=1288c77cd8fc2db68dc92cf18d675ace&scene=4#wechat_redirect  Android 动态链接库加载原理及 HotFix 方案介绍
 http://blog.csdn.net/qq_25943493/article/details/51463884   android热更新技术研究

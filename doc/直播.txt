@@ -11,7 +11,15 @@ HTTPDNSµÄºÃ´¦ÏÔ¶øÒ×¼û£ºÒ»¿É¾«×¼»ñµÃÓÃ»§¶ËµÄIP£¬ÓĞĞ§±ÜÃâÓÃ»§Åä´íLdns£¨ÓĞÊ±ÊÇÍøÂçÖ
 BGP¼´Border Gateway Protocol £¨±ß½çÍø¹ØĞ­Òé£©£¬ÒµÄÚ¼ò³ÆBGP. ´Ó½á¹¹ÉÏ½²£¬¿Ï¶¨ÊÇÓĞÓĞÏŞ¸öµçĞÅÁªÍ¨Á½¸öÔËÓªÉÌµÄ½»»ãµã£¬Ïàµ±ÓÚĞÅÏ¢ÇÅÁº¡£ Õâ¾Í»á´øÀ´Á½¸öÎÊÌâ£º1¡¢Â·³ÌÒªÈÆÔ¶£¬ÍøÂçÑÓ³Ù¸ßÇÒ²»ÎÈ¶¨£»2¡¢¸ß·åÆÚÓµ¶Â£¬µ¼ÖÂÖ±²¥Á÷¿¨¶Ù¡£
 BGPµÄ¼¼ÊõÔ­ÀíÍù¼òµ¥µÄËµ¾ÍÊÇÔÊĞíÍ¬Ò»IPÔÚ²»Í¬ÍøÂçÖĞ¹ã²¥²»Í¬µÄÂ·ÓÉĞÅÏ¢£¬Ğ§¹û¾ÍÊÇÍ¬Ò»¸öIP£¬µ±µçĞÅÓÃ»§À´·ÃÎÊÊ±×ßµçĞÅÍøÄÚµÄÂ·ÓÉ£¬ÁªÍ¨ÓÃ»§À´·ÃÎÊÊ±×ßµÄÁªÍ¨µÄÂ·ÓÉ¡£
 ²ÉÓÃÁËH265±à½âÂë£¬ÔÚ»­ÖÊÉÏ£¬Æä´ø¿íÏûºÄÒªÔ¶Ô¶µÍÓÚH264£¬µ«´øÀ´¸½¼ÓÉÏµÄ¼¼ÊõÎÊÌâÊÇÊ×ÏÈºóÌ¨ÒªÓĞ×ªÂë
+DTS£¨Decode Time Stamp£©£º½âÂëÊ±¼ä´Á£¬Õâ¸öÊ±¼ä´ÁµÄÒâÒåÔÚÓÚ¸æËß²¥·ÅÆ÷¸ÃÔÚÊ²Ã´Ê±ºò½âÂëÕâÒ»Ö¡µÄÊı¾İ¡£
+PTS£¨Presentation Time Stamp£©£ºÏÔÊ¾Ê±¼ä´Á£¬Õâ¸öÊ±¼ä´ÁÓÃÀ´¸æËß²¥·ÅÆ÷¸ÃÔÚÊ²Ã´Ê±ºòÏÔÊ¾ÕâÒ»Ö¡µÄÊı¾İ¡£
 
+http://www.jianshu.com/p/162a5821525c  ÒôÊÓÆµÖªÊ¶Ğ¡½á
+http://www.jianshu.com/p/d99e83cab39a  ÑĞ·¢Ö±²¥APPµÄÊÕ»ñ-iOS
+http://www.jianshu.com/p/965df0f28014   GPUImageÏêÏ¸½âÎö£¨Æß£©ÎÄ×ÖË®Ó¡ºÍ¶¯Ì¬Í¼ÏñË®Ó¡
+https://zhuanlan.zhihu.com/p/27304704   ¹ØÓÚÖ±²¥£¬ËùÓĞµÄ¼¼ÊõÏ¸½Ú¶¼ÔÚÕâÀïÁË£¨ËÄ£©
+https://zhuanlan.zhihu.com/p/23531863   ¹ØÓÚÖ±²¥£¬ËùÓĞµÄ¼¼ÊõÏ¸½Ú¶¼ÔÚÕâÀïÁË£¨Èı£©
+https://my.oschina.net/u/3325049/blog/997720 È«Õ»¿ª·¢¡ª¡ª¶¯ÊÖ´òÔìÊôÓÚ×Ô¼ºµÄÖ±²¥¼ä£¨Vue+SpringBoot+Nginx£©
 https://yq.aliyun.com/articles/62941?spm=5176.100239.blogcont62685.13.jvSLGI ÌÔ±¦Ö±²¥¼¼Êõ·ÖÏí£ºÈçºÎ´òÔìÌåÑéÓÅĞãµÄ¡°Ö±²¥+¡±²úÆ·£¿
 http://www.jianshu.com/p/1e14ee263f1a  ÒÆ¶¯Ö±²¥¼¼ÊõÃë¿ªÓÅ»¯¾­Ñé
 https://juejin.im/post/58eaf49a8d6d8100618bc238  ÊÓÆµÖ±²¥Ãë¿ª±³ºóµÄ¼¼ÊõÓëÓÅ»¯¾­Ñé
@@ -36,6 +44,16 @@ http://bugly.qq.com/bbs/forum.php?mod=viewthread&tid=1073  threejs
 6. À­Á÷£ºĞèÒª·şÎñ¶Ë´¦Àí×ªÂë£¬Ö§³Ö¶à·Ö±æÂÊ£¬Ö§³Ö RTP ÊµÊ±´«ÊäĞ­Òé£»
 7. ½âÂë£º¿ÉÒÔÊ¹ÓÃÓ²¼ş»òÕßÈí¼ş½âÂë£»
 8. ²¥·Å¡£
+
+
+GPUImageMovie ½ÓÊÕĞèÒªÌí¼ÓÂË¾µµÄÊÓÆµ 
+GPUImageView Ô¤ÀÀÊÓÆµĞ§¹û 
+GPUImageOutput ÊÓÆµÊäÈëÊä³öÅäÖÃ£¬ÕâÀï³ĞÔØÂË¾µ 
+GPUImageMovieWriter Ìí¼ÓÂË¾µ¼°Êä³öÊÓÆµ
+GPUImageAlphaBlendFilter *blendFilter = [[GPUImageAlphaBlendFilter alloc] init]; 
+Òª¼Ówatermark,ĞèÊ¹ÓÃ GPUImageUIElement¡£
+http://blog.csdn.net/create_pro/article/details/60964403
+
 
 https://gold.xitu.io/entry/56acefa4a341310052ce20d1  goim
 http://blog.qiniu.com/archives/6611

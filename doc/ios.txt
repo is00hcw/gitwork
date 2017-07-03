@@ -1,4 +1,7 @@
-﻿https://github.com/Tencent/wcdb  WCDB是一个高效、完整、易用的移动数据库框架，基于SQLCipher，支持iOS, macOS和Android
+﻿http://www.infoq.com/cn/news/2015/11/ibireme-interview
+http://www.infoq.com/cn/news/2016/05/lody-interview/
+https://github.com/Tencent/wcdb  WCDB是一个高效、完整、易用的移动数据库框架，基于SQLCipher，支持iOS, macOS和Android
+https://github.com/loyinglin/LearnOpenGLES
 
 https://www.apple.com/education/everyone-can-code/
 https://itunes.apple.com/us/author/apple-education/id939801385?mt=11

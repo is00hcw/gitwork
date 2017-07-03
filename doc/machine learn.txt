@@ -168,6 +168,24 @@ h_conv1 = tf.nn.relu(conv2d(x_image, W_conv1) + b_conv1)
 h_pool1 = max_pool_2x2(h_conv1)
 https://docs.ucloud.cn/analysis/uai-service/dev/tensorflow/mnist
 https://github.com/ucloud/uai-sdk/blob/master/examples/tensorflow/mnist_1.1/mnist_inference.py
+https://github.com/niektemme/tensorflow-mnist-predict
+http://wustmeiming.github.io/2017/01/09/Tensorflow%E6%A8%A1%E5%9E%8B%E4%BF%9D%E5%AD%98%E4%B8%8E%E4%BD%BF%E7%94%A8/  训练,测试脚本
+http://blog.csdn.net/sinat_34233802/article/details/69388510  保存,读取手写图片文件
+也就是说隐藏层中10^6个神经元的权值参数相同，那么此时不管隐藏层神经元的数目是多少，需要训练的参数就是这 10 × 10个权值参数（也就是卷积核(也称滤波器)的大小）
+CNN中主要有两种类型的网络层，分别是卷积层和池化/采样层(Pooling)。卷积层的作用是提取图像的各种特征；池化层的作用是对原始特征信号进行抽象，从而大幅度减少训练参数，另外还可以减轻模型过拟合的程度。
+前向传播体现了特征信息的传递，而反向传播则是体现误差信息对模型参数的矫正。
+
+RNN LSTM
+LSTM，全称为长短期记忆网络(Long Short Term Memory networks)，是一种特殊的RNN，能够学习到长期依赖关系。
+http://www.jianshu.com/p/3dbeb3ab9aa3
+tf.nn.rnn_cell.BasicLSTMCell
+tf.nn.rnn_cell.DropoutWrapper
+tf.nn.rnn_cell.MultiRNNCell
+
+NLP
+向量空间模型(Vector space models, VSMs)将词语表示为一个连续的词向量，并且语义接近的词语对应的词向量在空间上也是接近的。
+所有的方法在某种程度上都是基于一种分布式假说，该假说的思想是如果两个词的上下文(context)相同，那么这两个词所表达的语义也是一样的；换言之，两个词的语义是否相同或相似，取决于两个词的上下文内容，上下文相同表示两个词是可以等价替换的。
+简而言之，计数法是在大型语料中统计词语及邻近的词的共现频率，然后将之为每个词都映射为一个稠密的向量表示；预测法是直接利用词语的邻近词信息来得到预测词的词向量（词向量通常作为模型的训练参数）。
 
 
 ios

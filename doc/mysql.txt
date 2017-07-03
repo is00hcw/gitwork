@@ -2,9 +2,8 @@
 原因：非空标记需要占据一个字节，VARCHAR超过255需要用2个字节标记字段长度，不超过255用1个字节标记字段长度. 注意上边是 【字节】，不是【字符】。但mysql5字段定义时，是定义的【字符】数。比如varchar(10)，你仅能存入10个英文字母或者汉字，尽管一个字符可能占多个字节。
 text和varchar基本相同。text会忽略指定的大小这和varchar有所不同，text不能有默认值。尾部有空格不会被截断。text使用额外的2个字节来存储数据的大小，varchar根据存储数据的大小选择用几个字节来存储。text的65535字节全部用来存储数据，varchar则会占用1－3个字节去存储数据大小和非空标记。
 如果存储的数据大于64K，就必须使用到mediumtext , longtext
-https://github.com/rolandhe/hiriver  MySQL 数据变化的监控与分发框架 Hiriver  
 
-
+ 
 https://www.qcloud.com/community/article/306781   pt-mysql-summary 工具获取，再加以分析，也可以通过如下两个工具来实时查看innotop  orzdba
 https://www.qcloud.com/community/article/655790   MySQL Online DDL
 可创建表数量，跟容量有关，1G 存储空间可创建 512 张表。比如购买的存储空间为 20G，那么最多可以创建 512*20=1W 张表。 shown processlist 的行对应的 Host 就是用户的出口 IP。
@@ -21,9 +20,30 @@ TRUNCATE TABLE '表名' 这样就利用SQL语句清空了该数据表，而不�
 MySQL优化器只有两个自由度：顺序选择；单表访问方式   https://yq.aliyun.com/articles/11222
 https://yq.aliyun.com/articles/72501?spm=5176.100239.bloglist.29.nbe69c    MySQL · 性能优化 · MySQL常见SQL错误用法
 http://tech.meituan.com/mysql-index.html   MySQL索引原理及慢查询优化
+https://github.com/rolandhe/hiriver  MySQL 数据变化的监控与分发框架 Hiriver  
+
 https://github.com/Meituan-Dianping/SQLAdvisor  美团开源 SQL 优化工具 SQLAdvisor   https://www.oschina.net/news/82725/sqladvisor-opensource
 https://segmentfault.com/a/1190000008131735  MySQL 性能优化神器 Explain 使用分析
 http://blog.csdn.net/joyous/article/details/53898972    SQL 多表复合查询修改 update set select
+
+
+高可用
+https://zhuanlan.zhihu.com/p/25960208?group_id=828336013045813248   五大常见的MySQL高可用方案
+http://chuansong.me/n/2189245   架构师需要了解的Paxos原理、历程及实战
+https://github.com/cenalulu/mysql-mmm  MMM（Master-Master replication manager for MySQL）是Google技术团队开发的一款比较老的高可用产品，在业内使用的并不多，社区也不活跃
+MHA（MySQL Master High Availability）是由Facebook工程师Yoshinori Matsunobu开发的一款MySQL高可用软件。从名字就可以看出，MHA只负责MySQL主库的高可用。
+MySQL社区关于分布式协议Raft和Paxos非常火，社区也推出了基于Paxos的MGR版本的MySQL，通过Paxos将一致性和切换过程下推到数据库内部，向上层屏蔽了切换细节。
+在5.7以后的版本中，由于lossless replication、logical多线程复制等一些列新特性的引入，使得MySQL原生半同步复制更加可靠。
+MHA Manager会定时探测集群中的master节点，当master出现故障时，它可以自动将最新数据的slave提升为新的master，然后将所有其他的slave重新指向新的master，整个故障转移过程对应用程序完全透明。MHA Node运行在每台MySQL服务器上，主要作用是切换时处理二进制日志，确保切换尽量少丢数据。
+http://chuansong.me/n/2189245  架构师需要了解的Paxos原理、历程及实战
+数据库高可用的几个基本需求： 数据不丢失 服务持续可用  自动的主备切换
+使用Paxos协议的日志同步可以实现这三个需求，而 Paxos 协议需要依赖一个基本假设，主备之间有多数派机器（N / 2 + 1）存活并且他们之间的网络通信正常，如果不满足这个条件，则无法启动服务，数据也无法写入和读取。
+Paxos 协议是一个解决分布式系统中，多个节点之间就某个值（提案）达成一致（决议）的通信协议。
+Proposer 生成全局唯一且递增的提案 ID（Proposalid，以高位时间戳 + 低位机器 IP 可以保证唯一性和递增性），向 Paxos 集群的所有机器发送 PrepareRequest，这里无需携带提案内容，只携带 Proposalid 即可。
+Paxos 算法解决的问题是一个分布式系统如何就某个值（决议）达成一致。一个典型的场景是，在一个分布式数据库系统中，如果各节点的初始状态一致，每个节点都执行相同的操作序列，那么他们最后能得到一个一致的状态。为保证每个节点执行相同的命令序列，需要在每一条指令上执行一个“一致性算法”以保证每个节点看到的指令一致，是分布式计算中的重要问题。
+
+
+
 
 spring.datasource.initSQL=set names utf8mb4
 int类型占4个字节，tinyint占1个字节。int(1) 和 int(4) 从本身长度还是存储方式上都是一样的，区别就是显示的长度不同，但是要设置一个参数：如果列制定了zerofill 就会用0填充显示，int(4)指定后就会显示为0002
