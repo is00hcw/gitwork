@@ -27,8 +27,21 @@ http://www.cnblogs.com/kenshincui/p/3983982.html  iOS开发系列--并行开发�
 
 http://colin1994.github.io/2017/04/09/OpenGLES-Lesson02/
 
+http://indieambitions.com/idevblogaday/mixing-videos-gpuimage/
+http://16623.courses.cs.cmu.edu/
+https://github.com/slucey-cs-cmu-edu/CIFaceFeature_Lena
+https://github.com/slucey-cs-cmu-edu/Smerk_Example
+
 直播
+http://www.voidcn.com/blog/XjingweiU/article/p-1898404.html  GPUImage简单说明
+https://github.com/tapharmonic/Learning-AV-Foundation
+http://www.hudongdong.com/ios/546.html  IOS视频编辑功能详解上篇-添加水印   https://github.com/DamonHu/VideoEditDemo
+http://www.hudongdong.com/ios/550.html  IOS视频编辑功能详解下篇-视频裁剪、视频拼接、音视频的处理
+导入图片 (任意方式导入, 这里用GPUImagePicture来载入, url 是对应图片的地址)  [[GPUImagePicture alloc] initWithURL: url];
 https://github.com/loyinglin/LearnOpenGLES
+https://github.com/Tim9Liu9/TimLiu-iOS#%E8%A7%86%E9%A2%91%E5%A4%84%E7%90%86
+https://github.com/IFTTT/FastttCamera
+https://github.com/andrei200287/SAVideoRangeSlider
 https://github.com/loyinglin/GPUImage 源码级别对GPUImage进行剖析    http://www.jianshu.com/p/095107abc7ba
 https://www.objccn.io/issue-21-9/ 基于 OpenCV 的人脸识别
 https://github.com/tiantianlan/LiveExplanation  直播技术的总结  http://www.jianshu.com/p/bd42bacbe4cc
@@ -36,6 +49,10 @@ https://github.com/BradLarson/GPUImage
 https://github.com/hardman/AWLive
 https://github.com/chenliming777/LMLiveStreaming    https://github.com/goodow/GDLiveStreaming
 https://github.com/LaiFengiOS/LFLiveKit
+https://github.com/ksvc/KSYLive_iOS
+https://github.com/ksvc/KSYMediaEditorKit_iOS
+https://github.com/ksvc/KSYMediaPlayer_iOS
+https://github.com/chenliming777/LMLiveStreaming
 https://github.com/Flipboard/FLAnimatedImage
 http://blog.csdn.net/u1031/article/details/50788093   用GPUImage来给视频加入水印
 GPUImageVideoCamera  GPUImage最关键在于GPUImageFramebuffer这个类，这个类会保存当前处理好的图片信息。
@@ -226,6 +243,12 @@ if(clz && [clz respondsToSelector:method])
 
 
 build
+安装打包插件 sudo gem install cocoapods-packager
+打包 pod package Lib.podspec –library –force 
+–library指定打包成 .a 文件，如果不带上将会打包成 .framework 文件。 –force是指强制覆盖。
+http://hcoder.cn/2015/08/19/cocoaPods/
+http://www.cnblogs.com/brycezhang/p/4117180.html  使用CocoaPods开发并打包静态库
+https://cnbin.github.io/blog/2015/09/06/cocoapods-shi-yong-shou-ce/  CocoaPods 使用手册
 https://fastlane.tools/
 https://github.com/facebook/xctool
 http://www.cnblogs.com/brycezhang/p/4117180.html  pod生成类库

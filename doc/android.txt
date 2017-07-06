@@ -10,6 +10,8 @@ System Server进程，是由Zygote进程fork而来，System Server是Zygote孵化的第一个进程
 对于IPC(Inter-Process Communication, 进程间通信)，Linux现有管道、消息队列、共享内存、套接字、信号量、信号这些IPC机制，Android额外还有Binder IPC机制，Android OS中的Zygote进程的IPC采用的是Socket机制，在上层system server、media server以及上层App之间更多的是采用Binder IPC方式来完成跨进程间的通信。对于Android上层架构中，很多时候是在同一个进程的线程之间需要相互通信，例如同一个进程的主线程与工作线程之间的通信，往往采用的Handler消息机制。
 Handler消息机制是由一组MessageQueue、Message、Looper、Handler共同组成的 。很多时候，Handler是工作线程向UI主线程发送消息，即App应用中只有主线程能更新UI，其他工作线程往往是完成相应工作后，通过Handler告知主线程需要做出相应地UI更新操作，Handler分发相应的消息给UI主线程去完成
 
+
+http://techforum-img.cn-hangzhou.oss-pub.aliyun-inc.com/%E6%B7%B1%E5%85%A5%E6%8E%A2%E7%B4%A2Android%E7%83%AD%E4%BF%AE%E5%A4%8D%E6%8A%80%E6%9C%AF%E5%8E%9F%E7%90%866.29b-final.pdf   阿里热修复
 https://zhuanlan.zhihu.com/p/27026614  Google 官方推出应用开发架构指南  LiveData 还能够自动响应各组件的声明周期事件，防止内存泄漏
 http://geek.csdn.net/news/detail/198991   Google 官方应用架构的最佳实践指南
 https://zhuanlan.zhihu.com/p/26832197  使用 Annotation 改善 Android 代码

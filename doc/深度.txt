@@ -16,10 +16,35 @@ http://www.jianshu.com/p/a396d8893a4c    grays-anatomy
 当有修改请求发生时，只会操作最低级别的索引，例如小时库。当有查询请求发生时，会同时查询各个级别的索引，将结果合并，得到最新的数据：
 
 
+软引用（Soft Reference）：软引用和弱引用的区别在于，若一个对象是弱引用可达，无论当前内存是否充足它都会被回收，而软引用可达的对象在内存不充足时才会被回收，因此软引用要比弱引用“强”一些
+当用作map的key时重定义object.equals   重写equals时也重写hashCode函数
+
+
+https://segmentfault.com/a/1190000004980525  CircuitBreaker模式的Java实现
+命令查询职责分离模式(Command Query Responsibility Segregation，CQRS)，该模式从业务上分离修改 (Command，增，删，改，会对系统状态进行修改)和查询（Query，查，不会对系统状态进行修改)的行为。
+但是传统的CRUD方法有一些问题：使用同一个对象实体来进行数据库读写可能会太粗糙，大多数情况下，比如编辑的时候可能只需要更新个别字段，但是却需要将整个对象都穿进去，有些字段其实是不需要更新的。在查询的时候在表现层可能只需要个别字段，但是需要查询和返回整个实体对象。
+CQRS使用分离的接口将数据查询操作(Queries)和数据修改操作(Commands)分离开来，这也意味着在查询和更新过程中使用的数据模型也是不一样的。这样读和写逻辑就隔离开来了。
+
+http://www.infoq.com/cn/articles/netty-million-level-push-service-design-points  Netty系列之Netty百万级推送服务设计要点
+
+
 effective java
 https://notes.piasy.com/Android-Java/EffectiveJava.html
 http://www.jianshu.com/p/018e1589cfe1
 http://blog.csdn.net/followmyinclinations/article/details/53175435
+不再使用的对象一定要解除引用，避免memory leak 例如，用数组实现一个栈，pop的时候，如果仅仅是移动下标，没有把pop出栈的数组位置引用解除，将发生内存泄漏
+实现缓存的时候也很容易导致内存泄漏，放进缓存的对象一定要有换出机制，或者通过弱引用来进行引用  listner和callback也有可能导致内存泄漏，最好使用弱引用来进行引用，使得其可以被GC
+Constructors must not invoke overridable methods. 父类的构造函数比子类的构造函数先执行，而如果父类构造函数中调用了可重写的方法，那么就会导致子类的重写方法比子类的构造函数先执行，会导致corruption。
+如果实现了Serializable接口，readResolve/writeReplace必须是protected，而非private
+List<String>是List的子类，但却不是List<Object>的子类。 任何参数化的List均是List<?>的子类，可以作为参数传入接受List<?>的函数
+anonymous class 不能有static成员变量和方法声明??
+arrays are covariant(协变): 如果Sub是Super的子类，那么Sub[]也是Super[]的子类
+作为输入是要赋值给E类型的，当然应该是E的子类（这里的extends包括E类型本身）；而输出是要把E赋值给传入参数的，当然应该是E的父类（同样包括E本身）
+直接用class.cast将会导致unchecked warning，可以通过class.asSubclass来进行转换
+public <T> void putFavorite(Class<T> type, T instance) {
+ favorites.put(type, type.cast(instance));
+}
+
 
 深入理解java虚拟机
 https://notes.piasy.com/Android-Java/InsideJVM.html

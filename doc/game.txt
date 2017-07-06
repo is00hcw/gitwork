@@ -1,3 +1,11 @@
+https://github.com/DragonBones/DragonBonesJS
+http://dragonbones.com/cn/download.html#.WVoHxufCwSQ
+https://m.aliyun.com/yunqi/articles/7474
+https://yq.aliyun.com/articles/41520?spm=5176.100239.blogcont62633.19.UITcxU
+http://g.alicdn.com/tmapp/animation-data/2.2.41/tahiti/demo/css.html?spm=5176.100239.0.0.4QtpOG
+
+
+
 http://hiloteam.github.io/Hilo/examples/index.html#ParticleSystem
 我们知道一个游戏运行的核心流程——在一个Loop循环内，接受输入并完成对所有可视对象的游戏属性更新，然后渲染。
 整个渲染过程开始于舞台，当调用舞台Stage的tick方法后，会遍历整个显示结构树，逐个调用可视对象的render方法，而具体的渲染实现则由相应的渲染器Renderer完成。
