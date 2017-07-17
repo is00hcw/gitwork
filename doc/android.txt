@@ -1,6 +1,7 @@
 http://mirrors.flysnow.org/  下载镜像  http://www.androiddevtools.cn/
 http://gityuan.com/2016/08/20/Android_N/  小米工程师 搭建Android 7.0的源码环境
 http://gityuan.com/android/  Android系统开篇
+https://blog.dreamtobe.cn/android-toolset/  Android开发周边
 http://gityuan.com/2016/03/19/android-build/  理解Android编译命令
 http://gityuan.com/2016/04/24/how-to-study-android/  如何自学Android  邓凡平  罗升阳
 https://www.diycode.cc/wiki/androidbook  书单

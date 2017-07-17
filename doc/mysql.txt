@@ -3,7 +3,7 @@
 text和varchar基本相同。text会忽略指定的大小这和varchar有所不同，text不能有默认值。尾部有空格不会被截断。text使用额外的2个字节来存储数据的大小，varchar根据存储数据的大小选择用几个字节来存储。text的65535字节全部用来存储数据，varchar则会占用1－3个字节去存储数据大小和非空标记。
 如果存储的数据大于64K，就必须使用到mediumtext , longtext
 
- 
+https://my.oschina.net/feinik/blog/1305784   如何理解并正确使用MySql索引
 https://www.qcloud.com/community/article/306781   pt-mysql-summary 工具获取，再加以分析，也可以通过如下两个工具来实时查看innotop  orzdba
 https://www.qcloud.com/community/article/655790   MySQL Online DDL
 可创建表数量，跟容量有关，1G 存储空间可创建 512 张表。比如购买的存储空间为 20G，那么最多可以创建 512*20=1W 张表。 shown processlist 的行对应的 Host 就是用户的出口 IP。

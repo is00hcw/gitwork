@@ -8,6 +8,8 @@ https://github.com/ElementUI/element-starter
 https://weui.io/
 https://github.com/airyland/vux   https://vux.li/?x-page=oschina#!/demo
 
+https://my.oschina.net/editorial-story/blog/1359292  动画
+
 https://fundebug.com/  javascript错误监控
 https://github.com/BetterJS/doc   https://www.qcloud.com/community/article/498929001487125840
 http://www.barretlee.com/blog/2015/08/20/cb-fe-monitor/   前端代码异常日志收集与监控

@@ -1,6 +1,8 @@
 https://github.com/luin/ioredis
 https://github.com/thunks/thunk-redis
 
+http://blog.csdn.net/yin767833376/article/details/53518272  Redis 4.0新功能介绍
+https://yq.aliyun.com/articles/68593  redis4.0、codis、阿里云redis 3种redis集群对比分析
 http://www.cnblogs.com/gomysql/p/4395504.html  Redis Cluster 3.0搭建与使用
 http://www.cnblogs.com/gomysql/p/3617238.html  主从
 https://github.com/nicolasff/webdis  http接口

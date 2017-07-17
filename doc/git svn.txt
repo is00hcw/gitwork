@@ -17,6 +17,7 @@ http://learngitbranching.js.org/
 https://github.com/github/gitignore  
 https://github.com/git-lfs/git-lfs
 https://my.oschina.net/u/2399867/blog/675541  7个重要的Git使用技巧
+https://my.oschina.net/jarvan4dev/blog/1422874  穷人也能拥抱‘持续集成’与‘持续交付’
 
 rebase操作过程是把本地提交一次一个地迁移到更新了的中央仓库master分支之上。 这意味着可能要解决在迁移某个提交时出现的合并冲突，而不是解决包含了所有提交的大型合并时所出现的冲突。
 git rebase --continue

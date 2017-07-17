@@ -7,6 +7,10 @@ String driverClass = DatabaseDriver.fromJdbcUrl(url).getDriverClassName();
         new RelaxedDataBinder(result).withAlias("url", "jdbcUrl").withAlias("username", "user").bind(properties);
     }
 
+
+http://git.oschina.net/didispace/SpringBoot-Learning   例子代码下载
+http://blog.didispace.com/Spring-Boot%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/   Spring Boot基础教程
+
 部署
 java -jar demo.jar --spring.profiles.active=dev 
 可以通过参数指定一个外部配置文件   java -jar demo.jar --spring.config.location=/opt/config/application.properties
