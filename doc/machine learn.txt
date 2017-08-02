@@ -13,6 +13,9 @@ http://www.cnblogs.com/LittleHann/p/6413864.html#commentform   TensorFlowÈëÃÅÑ§Ï
 http://www.52cs.org/?p=1157  TensorFlowÉî¶ÈÑ§Ï°£¬Ò»ÆªÎÄÕÂ¾Í¹»ÁË
 https://wenku.baidu.com/course/study/53b9fd0a79563c1ec5da7107  °Ù¶ÈÊÓÆµ¿Î³Ì
 https://github.com/tobegit3hub/tensorflow_examples
+http://www.infoq.com/cn/articles/rust-in-2017-rust-past-present-and-future?utm_campaign=rightbar_v2&utm_source=infoq&utm_medium=articles_link&utm_content=link_text  Éî¶ÈÑ§Ï°ÀûÆ÷£ºTensorFlowÓëÉî¶È¾í»ıÉñ¾­ÍøÂç
+http://www.infoq.com/cn/articles/introduction-of-tensorflow-part4?utm_campaign=rightbar_v2&utm_source=infoq&utm_medium=articles_link&utm_content=link_text  ÉîÈëÇ³³öTensorflow£¨ËÄ£©£º¾í»ıÉñ¾­ÍøÂç
+
 Tensor(ÕÅÁ¿)ÒâÎ¶×Å N Î¬Êı×é£¬Flow(Á÷)ÒâÎ¶×Å»ùÓÚÊı¾İÁ÷Í¼µÄ¼ÆËã£¬TensorFlow¼´ÎªÕÅÁ¿´ÓÍ¼µÄÒ»¶ËÁ÷¶¯µ½ÁíÒ»¶Ë¡£
 ÔÚÑµÁ·ÍøÂçÖ®Ç°£¬ĞèÒª¶¨ÒåÒ»¸ö´ú¼Ûº¯Êı£¬³£¼ûµÄ´ú¼Ûº¯Êı°üÀ¨»Ø¹éÎÊÌâµÄ·½²îÒÔ¼°·ÖÀàÊ±ºòµÄ½»²æìØ¡£
 Òª¸ø½ÚµãÊäÈëÊı¾İÊ±ÓÃ placeholder£¬ÔÚ TensorFlow ÖĞÓÃplaceholder À´ÃèÊöµÈ´ıÊäÈëµÄ½Úµã£¬Ö»ĞèÒªÖ¸¶¨ÀàĞÍ¼´¿É£¬È»ºóÔÚÖ´ĞĞ½ÚµãµÄÊ±ºòÓÃÒ»¸ö×ÖµäÀ´¡°Î¹¡±ÕâĞ©½Úµã¡£Ïàµ±ÓÚÏÈ°Ñ±äÁ¿ hold ×¡£¬È»ºóÃ¿´Î´ÓÍâ²¿´«Èëdata£¬×¢Òâ placeholder ºÍ feed_dict ÊÇ°ó¶¨ÓÃµÄ¡£

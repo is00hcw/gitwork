@@ -1,0 +1,214 @@
+烧录wifi固件, 拔掉底板arduino, wifi板要跳线GND进入烧录模式
+烧录arduino程序, 要拔掉gokit扩展板, 烧完程序后,断电,单独给扩展板上电
+
+
+gedit忽略驱动程序签名  
+C:\Windows\System32\drivers 可能缺少 usbser.sys
+C:\Windows\inf\setupapi.dev.log 清空日志, 看是否有错误  搜索 mdmcpq.inf_amd64_neutral_
+
+
+http://wiki.dfrobot.com.cn/index.php/Arduino编程参考手册（多页面版）
+http://www.dfrobot.com.cn/community/portal.php?mod=topic&topicid=1
+
+https://www.robomart.com/image/catalog/RM0058/01.jpg
+https://www.robomart.com/image/catalog/RM0058/02.jpg
+https://www.arduino.cc/en/Tutorial/BuiltInExamples
+
+http://www.cnblogs.com/rayray/archive/2013/03/16/2961528.html   开发入门教程【五】Hello Arduino
+http://www.jianshu.com/p/2f274f8b3dab  Arduino 烧写bootloader
+
+https://img.alicdn.com/imgextra/i4/1639117447/TB2.TRZf_AKh1JjSZFDXXbKlFXa_!!1639117447.jpg
+arduino套件资料链接:
+第一个 http://pan.baidu.com/s/1c23Aa9E  密码: sxnc
+第二个 http://pan.baidu.com/s/1sjNYZ3R  密码：5ph5
+第三个:  https://pan.baidu.com/s/1ctKBNo  密码: i7c5
+资料链接说明：第一个为光盘资料，如果你光盘能打开就不用下载。第二个为新增加的视频资料，光盘没有，要下载。第三个也是增加内容是图形化编程S4A的教程，这3个下载链接都是百度网盘
+中英文电子书下载链接:  https://pan.baidu.com/s/1pLz7Thh  密码: jdbp 
+https://yunpan.taobao.com/s/2h64IdVTxhR?spm=a220o.1000855.0.0.4732a2bdRsGsq8#/    朗译电子LY-51S开发板资料
+ 
+
+https://zhoujianshi.github.io/articles/2015/上拉电阻的作用/index.html  上拉电阻的作用，就是把引脚的高阻态（悬空态）变成高电平态。
+http://forum.eepw.com.cn/thread/223922/1
+LED灯短脚和长脚区别：一般长脚表示正极，短脚表示负极。主要是为了区分极性。
+图1的电路在低电平的时候LED才发光，电流是从电源灌入到单片机的IO管脚，也就是用灌电流驱动LED。
+图2要想驱动LED发光，需要IO管脚输出高电平，这个电流完全是由单片机管脚提供的，像是从管脚将电流拉出来一样，所以形象的称其为，拉电流。
+1、逻辑门输出为高电平时的负载电流（为拉电流）。
+2、逻辑门输出为低电平时的负载电流（为灌电流）。
+3、逻辑门输入为高电平时的电流（为灌电流）。
+4、逻辑门输入为低电平时的电流（为拉电流）。
+
+
+http://www.jikexueyuan.com/course/2450.html  SD卡视频
+http://blog.163.com/gc_2299/blog/static/22429216820169194724352/
+http://www.geek-workshop.com/thread-104-1-1.html
+https://www.arduino.cc/en/Reference/SDCardNotes
+On the board, connect GND to ground, 5v to 5v, CLK to Pin 13 on your Arduino, DO to pin 12, DI to pin 11, and CS to pin 10. If you are already using pin 10, you can use a different pin, as long as you remember to change the pin in SD.begin().
+SD卡类型有SD1、SD2、SDHC，大多数SD模块支持的SD类型容量是2G以下，SDHC的容量是32G以下.    引脚定义：
+  DO：主设备数据输出，从设备数据输入
+  CK：时钟信号，由主设备产生
+  CS：从设备使能信号，由主设备控制
+  Di：主设备数据输入，从设备数据输出
+http://blog.csdn.net/ling3ye/article/details/72147629  Arduino Uno SD卡模块 （一）获取SDcard的信息
+
+
+
+
+
+http://www.jianshu.com/p/d7820918b148  【Arduino基础教程】继电器
+继电器标注‘-’的管脚接地(GND)， 标注"+”的管脚接 5V， (图中左侧）标注‘S'的管脚接信号(数字I/O)
+http://www.jianshu.com/p/d7820918b148   继电器
+http://www.i-element.org/继电器基础知识与arduino控制/
+
+
+http://wiki.dfrobot.com.cn/index.php/(SKU:DFR0267)Bluno蓝牙4.0控制器_兼容Arduino#BLUNO.E5.9F.BA.E7.A1.80.E7.A4.BA.E4.BE.8B
+http://www.jikexueyuan.com/course/752.html    蓝牙视频
+http://www.jianshu.com/p/d63f53b0823d   Arduino蓝牙模块HC-05的AT配置
+http://blog.csdn.net/mtobeiyf/article/details/52096966   HC-06蓝牙模块使用小结
+http://www.cnblogs.com/rayray/p/3157601.html   Arduino蓝牙模块与Android实现通信   
+http://www.amarino-toolkit.net/index.php/download.html  Amarino=Android meet arduino 有了它可以用android手机通过蓝牙来控制arduino
+https://code.google.com/archive/p/amarino/downloads
+http://www.jianshu.com/p/981266b507f5  Android 通过蓝牙语音控制 Arduino
+Arduino与蓝牙模块的基本连接方法是：+5V --> 5V, GND --> GND, 蓝牙RX --> Arduino的TX, 蓝牙TX --> Arduino的RX。
+向HC-05发送AT指令，只需要在HC-05在AT状态下通过波特率38400发送即可。常用的AT指令有:
+AT --> 返回OK，表明在AT状态
+AT+NAME=<名称> --> 更改蓝牙名称
+AT+ADDR? --> 打印蓝牙地址
+AT+PSWD=<密码> --> 设置配对密码
+HC-05开启AT状态的方法是：按住HC-05的复位键的同时，为蓝牙模块上电。
+AT+NAME=Bluetooth-Master  蓝牙主机名称为Bluetooth-Master 
+AT+ROLE=1                蓝牙模式为主模式
+AT+CMODE=1              蓝牙连接模式为任意地址连接模式
+AT+PSWD=1234             蓝牙配对密码为1234
+AT+UART=9600，0，0       蓝牙通信串口波特率为9600，停止位1位，无校验位
+AT+RMAAD                 清空配对列表
+
+
+nfc
+http://blog.csdn.net/leytton/article/details/73480974  Arduino教程 RFID-RC522读IC卡门禁原理及破解防御
+http://www.cnblogs.com/MicroHao/p/3592986.html   Arduino+RFID RC522 +继电器
+
+esp8266
+https://github.com/chzhewl/baozhai
+http://www.dfrobot.com.cn/community/thread-13653-1-1.html   ESP8266-01+Arduino控制使用入门
+http://www.electrodragon.com/w/File:Sscom32E.zip
+https://my.oschina.net/liyongyao/blog/409924  ESP8266（wifi模块）使用实录（一、连接路由器）
+http://blog.csdn.net/jackhuang2015/article/details/45032571  【Arduino学习笔记】手把手教你使用ESP8266----②调试篇
+http://blog.csdn.net/csdnhuaong/article/details/67011585
+http://www.pridopia.co.uk/pi-doc/ESP8266ATCommandsSet.pdf
+http://blog.csdn.net/csdnhuaong/article/details/67011585   ESP8266初识小结
+http://wiki.ai-thinker.com/esp8266/sdk   ESP8266 最新SDK发布
+http://wiki.ai-thinker.com/esp8266/examples/at_demo  ESP8266使用AT指令开发示例
+http://wiki.ai-thinker.com/tools
+https://github.com/tuanpmt/esp_mqtt   
+http://www.jianshu.com/p/6a3e38798916 ESP8266的MQTT客户端搭建教程
+http://blog.csdn.net/jackhuang2015/article/details/50839130
+http://www.51hei.com/bbs/dpj-55995-1.html  
+https://my.oschina.net/lixinspace/blog/396103?p=1
+http://zhongbest.com/2016/09/07/esp8266-01/
+连接上ESP8266的WIFI后，在串口调试软件中发送AT+CWLIF(执行指令）
+指令：AT+CWLIF
+说明：查看已接入设备的IP地址，例如：手机、电脑等。
+发送AT+CIFSR(执行指令）
+指令：AT+CIFSR
+说明:查看ESP8266模块的IP地址
+https://github.com/AppStackCC/ESP8266-Config
+https://github.com/akshath/SocketTest
+http://ruten-proteus.blogspot.com/2014/12/esp8266-at-command.html
+https://www.espressif.com/sites/default/files/documentation/4a-esp8266_at_instruction_set_cn.pdf
+http://wiki.ai-thinker.com/esp8266/examples/at_demo
+http://blog.csdn.net/wangyijieonline/article/details/53087344
+http://blog.csdn.net/zhangxuechao_/article/details/75229059  ESP8266 AT指令
+http://blog.csdn.net/qq_24397253/article/details/52749765    安信可ESP8266 12f机智云开发板微信直连云   
+本文中提到的所有代码、固件、文档、请至 链接：http://pan.baidu.com/s/1i58Zc81 密码：jzuz 下载。
+https://wenku.baidu.com/view/95b52035ba0d4a7303763a19.html   安信可ESP8266&机智云测试板使用说明
+http://blog.csdn.net/hhx__/article/details/52966274  安信可 ESP8266机智云开发板：编译与烧录
+http://blog.csdn.net/qq_24397253/article/details/52852241
+https://github.com/espressif/ESP8266_RTOS_SDK
+http://club.gizwits.com/thread-2779-1-1.html   【esp8266机智云安信可开发板】+照明智能开关
+安信可科技（Ai-Thinker）日前宣布，旗下的ESP8266系列又增添了新成员，新型号被命名为ESP-12S
+https://zhoujianshi.github.io/articles/2015/ESP8266串口Wifi模块固件烧写与激活/index.html   
+https://zhoujianshi.github.io/articles/2015/ESP8266串口Wifi模块的基本用法/index.html
+http://www.dfrobot.com.cn/community/thread-13653-1-1.html   ESP8266-01+Arduino控制使用入门
+https://github.com/esp8266/Arduino
+http://blog.csdn.net/jackhuang2015/article/details/53241013   手把手使用esp8266一起来做智能插排-硬件篇
+http://blog.csdn.net/aiyustudio/article/details/50377947   Arduino IDE for ESP8266
+http://www.windworkshop.cn/?p=758  Arduino IDE for ESP8266教程
+http://arduino.esp8266.com/stable/package_esp8266com_index.json
+https://raw.githubusercontent.com/DFRobot/FireBeetle-ESP8266/master/package_firebeetle8266_index.json
+http://blog.csdn.net/yannanxiu/article/details/53088534  ESP8266的MQTT客户端搭建教程（基于NONS_SDK_v2.0）
+http://www.martyncurrey.com/esp8266-and-the-arduino-ide/
+
+xbee
+http://wiki.dfrobot.com.cn/index.php/(SKU:TEL0092)WiFi_Bee-ESP8266_无线模块
+把IO/扩展板“RUN/Prog”开关拨在“Prog”，ESP8266模块“BOOT/UART”开关拨在"BOOT"上。
+要查看调试信息，FTDI的TXD接IO扩展板的10脚，RXD接IO扩展板的11脚，GND接到扩展板的GND脚。
+
+mac os
+sudo pip install ino
+brew install picocom
+brew install platformio
+brew install minicom
+ls /dev | grep tty.usb
+https://www.smslit.top/2016/06/15/ino-vim-arduino/
+https://www.smslit.top/2017/05/20/platformio-start/    开启platformio之旅
+http://www.cnblogs.com/litifeng/p/5823806.html     用platformio编写arduino程序
+http://www.jianshu.com/p/1470beddca34
+
+
+gprs
+可以插两个usb ttl, 连GPS的只需要一根输入数据线, 长的天线是GPS
+AT+GPS=1  AT+AGPS=1  AT+GPSRD=1(1秒刷新一次,从AT的串口输出)
+http://wiki.ai-thinker.com/gprs 
+http://wiki.ai-thinker.com/gprs/examples  
+http://blog.csdn.net/cc214042/article/details/52488731   GSM模块_GPRS数据传输机制和原理
+http://blog.csdn.net/Leytton/article/details/72724081  安信可A7模块 GPRS/GPS使用教程
+http://blog.csdn.net/qicheng777/article/details/72023232?locationNum=5&fps=1  安信可A7模块介绍，以及GPRS基本测试命令
+http://www.multisilicon.com/blog/a22201774~/pdu.htm
+http://www.electrodragon.com/w/GSM_GPRS_A6_Module
+
+首先，要把A7模块的GPS功能打开，在GPRS模式下用AT命令打开： AT+GPS=1 
+然后将原本连在模块U_TXD上的线连到GPS_TXD，然后打开串口调试工具上波特率设置为9600。
+http://blog.csdn.net/peter_tang6/article/details/72146764    串口GPS显示坐标信息
+http://blog.csdn.net/Peter_tang6/article/details/72792271?locationNum=8&fps=1  安信可A7编程获取GPS信息
+http://blog.csdn.net/peter_tang6/article/details/71908499    GPRS串口拨打电话及发短信
+http://blog.csdn.net/Peter_tang6/article/details/72800088    安信可GPRS打电话发短信编程
+SIM800E是一款纯数据的双频GSM/GPRS模块,SMT 封装，可以低功耗地实现短消息、数据和传真信息的传输。
+http://wiki.dfrobot.com.cn/index.php/(SKU:TEL0089)SIM800H_GPRS_Shield_V1.0通信模块   
+http://wiki.dfrobot.com.cn/index.php?title=(SKU:TEL0097)SIM808_GPS/GPRS/GSM_Shield_V1.0通信模块
+https://github.com/DFRobot/DFRobot_SIM808
+http://wiki.dfrobot.com.cn/index.php?title=(SKU:TEL0001)SIM800C_GPS/GPRS/GSM_Shield_V1.0通信模块
+http://wiki.dfrobot.com.cn/index.php?title=(SKU:TEL0051)GPS/GPRS/GSM_扩展板_V3.0
+
+
+https://github.com/EdwinKestler/SIM800_MQTT
+https://elementztechblog.wordpress.com/2016/07/18/arduino-mqtt-library-for-sim800-gsm-modem/comment-page-1/
+https://github.com/elementzonline/SIM800_MQTT
+
+
+机智云
+http://dev.gizwits.com/zh-cn/developer/resource/hardware?type=GoKit  
+http://docs.gizwits.com/zh-cn/UserManual/hide/videos.html   视频教程
+http://club.gizwits.com/thread-5674-1-1.html   【Gokit 试用 】+MCU版自建宠物屋的实现
+http://docs.gizwits.com/zh-cn/deviceDev/ArduinoUNO/sdk.html   Gizwits类方法介绍
+如果需要在这套程序中读取一个云端下发的数据，首先需要通过myGizwits.hasBeenSet()这条函数判断这个数据点事件有是否发生，如果数据点事件发生了就通过myGizwits.read(,)这个函数去把发生的事件所产生的数据读取出来，然后再做相应的判断。
+http://club.gizwits.com/thread-3102-1-1.html   GOKIT底板基本外设和IO引脚
+http://club.gizwits.com/thread-2903-1-1.html  Arduino UNO R3作为底板的gokit 2的开发指南
+
+
+
+http://interactive-matter.eu/how-to/arduino-http-client-library/
+https://www.arduino.cc/en/Tutorial/HttpClient  HttpClient.h
+http://plclive.com/a/tongxinjiekou/2016/0620/546.html   ArduinoJson
+http://blog.csdn.net/zhang_yu_joseph/article/details/50041235  EthernetClient
+http://blog.yeelink.net/?p=94
+http://www.arduino.cn/thread-8514-1-1.html  http server
+
+
+https://segmentfault.com/a/1190000008378990  mqtt
+http://blog.csdn.net/nono365/article/details/72955923?ref=myread
+
+ BSP是嵌入式系统中介于硬件平台和操作系统之间的中间层软件，主要目的是为了屏蔽底层硬件的多样性，根据操作系统的要求完成对硬件的直接操作，向操作系统提供底层硬件信息并最终启动操作系统。BSP具有硬件相关性和操作系统相关性的特点，其主要作用包括：
+    (1)初始化底层硬件，为操作系统提供底层硬件信息；
+    (2)初始化相关硬件设备，主要是存储设备、通信设备；
+    (3)检测系统硬件是否正常；
+    (4)加载操作系统并启动系统运行。

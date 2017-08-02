@@ -3,7 +3,11 @@ http://mqttfx.org/
 http://websocketshow.fc.bdysite.com/
 https://github.com/arvindr21/mqttApp
 https://rndm.io/go-and-mqtt/
-
+https://www.eclipse.org/paho/clients/android/
+https://help.aliyun.com/document_detail/44885.html?spm=5176.doc50069.6.632.dw34xS
+compile 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.1.0'
+compile 'org.eclipse.paho:org.eclipse.paho.android.service:1.1.0'
+compile group: 'commons-codec', name: 'commons-codec', version: '1.5'
 
 http://yunba.io/docs/#สนำร-socket.io-api
 http://yunba.io/account/apps/details/54852d1352be1f7e1dd83351/#showPublish

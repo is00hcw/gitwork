@@ -1,6 +1,9 @@
 ﻿https://www.it120.cc/info/wxapp/314 商城小程序  https://github.com/EastWorld/wechat-app-mall
 https://github.com/ateddy/wechatapp
 
+https://github.com/tumobi/nideshop-mini-program 高仿严选  https://github.com/tumobi/nideshop
+http://www.jianshu.com/p/78a0f5f424e1
+
 先在控制台打印出Promise看看，console.dir(Promise)  
 Promise是一个函数，自己身上有all、race、reject、resolve等方法，原型上有then、catch等方法
 Promise.race方法同样是将多个Promise实例，包装成一个新的Promise实例。all方法的效果实际上是「谁跑的慢，以谁为准执行回调」，那么相对的就有另一个方法race「谁跑的快，以谁为准执行回调」。
