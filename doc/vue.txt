@@ -17,6 +17,7 @@ http://www.cnblogs.com/xxcanghai/p/6124699.html  如何在Vue2中实现组件props双向绑
 在Vue2中组件的props的数据流动改为了只能单向流动，即只能由组件外（调用组件方）通过组件的DOM属性attribute传递props给组件内，组件内只能被动接收组件外传递过来的数据，并且在组件内，不能修改由外层传来的props数据。
 http://blog.zhaiyifan.cn/2016/10/17/vue-2-quick-start/  Vue.js 2.0 快速上手 - 基础篇
 https://my.oschina.net/u/3317396/blog/885622   VUE2.0学习总结
+https://github.com/jkchao/blog/issues/15  Vue 2.3、2.4知识点小结
 https://github.com/ElemeFE/keynote/tree/master/PPT   饿了么ppt  https://elemefe.github.io/keynote/
 
 https://segmentfault.com/a/1190000006741478  vue-cli + webpack 多页面实例配置优化方法
@@ -103,6 +104,11 @@ webpack-simple - 拥有基础功能的 Webpack + vue-loader 用于快速原型开发。
 
 
 优化
+代码分块/Code Splitting  顾名思义，就是讲代码分成块，按需加载．这样，如果首屏不需要的块，就不用加载了  https://segmentfault.com/a/1190000009352506
+如果我们能把不同路由对应的组件分割成不同的代码块，然后当路由被访问的时候才加载对应组件，这样就更加高效了  require.ensure 是 Webpack 的特殊语法，用来设置 code-split point
+异步组件是非常方便的，简而言之，它能让你的应用代码分离，使非必要组件（比如模态，选项卡，折叠内容，其他页面等）在首页加载后延迟加载， 从而让用户更快的看到主页。
+事件总线模式或者vuex也可以解决跨非直接父子组件通信的问题，但VUE2.4.0版本提供了一种新的解决方案。组件的$attrs包含所有未被注册的props
+http://www.cnblogs.com/wuxianqiang/p/7236752.html  详解 Vue 2.4.0 带来的 4 个重大变化
 http://vuejsdevelopers.com/2017/06/18/vue-js-boost-your-app-with-webpack/?utm_campaign=Revue%20newsletter&utm_medium=Newsletter&utm_source=Vue.js%20Feed    4 Ways To Boost Your Vue.js App With Webpack
 https://github.com/hilongjw/vue-lazyload
 http://ac.alloyteam.com/summary.html 腾讯大会
@@ -123,7 +129,12 @@ https://blog.alphatr.com/how-to-use-ssr-in-vue-2.0.html
 https://smallpath.me/post/thinkjs-ssr
 https://smallpath.me/post/vue2-ssr-email-template
 https://segmentfault.com/a/1190000007985486
- 
+只是用来改善少数营销页面（例如 /, /about, /contact 等）的 SEO，那么您可能需要预渲染。无需使用 web 服务器实时动态编译 HTML，而是使用预渲染方式，在构建时(build time)简单地生成针对特定路由的静态 HTML 文件。优点是设置预渲染更简单，并可以将您的前端作为一个完全静态的站点。如果您使用 webpack，您可以使用 prerender-spa-plugin 轻松地添加预渲染。
+https://ssr.vuejs.org/zh/basic.html
+Vue2.0在服务端创建了虚拟DOM，因此可以在服务端可以提前渲染出来，解决了单页面一直存在的问题：SEO和初次加载耗时较多的问题。同时在真正意义上做到了前后端共用一套代码。
+客户端请求服务器，服务器根据请求地址获得匹配的组件，在调用匹配到的组件返回 Promise (官方是preFetch方法)来将需要的数据拿到。最后再通过<script>window.__initial_state=data</script>将其写入网页，最后将服务端渲染好的网页返回回去。
+接下来客户端会将vuex将写入的 __initial_state__ 替换为当前的全局状态树，再用这个状态树去检查服务端渲染好的数据有没有问题。遇到没被服务端渲染的组件，再去发异步请求拿数据。说白了就是一个类似React的 shouldComponentUpdate 的Diff操作。
+
 
 
 rxjs
